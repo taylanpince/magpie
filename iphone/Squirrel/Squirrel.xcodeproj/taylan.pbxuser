@@ -1,0 +1,59 @@
+// !$*UTF8*$!
+{
+	1D6058900D05DD3D006BFB54 /* Squirrel */ = {
+		activeExec = 0;
+		executables = (
+			EC6EB78E0FD0AA6100E6F9D8 /* Squirrel */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = EC6EB78E0FD0AA6100E6F9D8 /* Squirrel */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* Squirrel */;
+		codeSenseManager = EC6EB7980FD0AA8000E6F9D8 /* Code sense */;
+		executables = (
+			EC6EB78E0FD0AA6100E6F9D8 /* Squirrel */,
+		);
+		perUserDictionary = {
+			PBXPerProjectTemplateStateSaveDate = 265333345;
+			PBXWorkspaceStateSaveDate = 265333345;
+		};
+		sourceControlManager = EC6EB7970FD0AA8000E6F9D8 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	EC6EB78E0FD0AA6100E6F9D8 /* Squirrel */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Squirrel;
+		sourceDirectories = (
+		);
+	};
+	EC6EB7970FD0AA8000E6F9D8 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	EC6EB7980FD0AA8000E6F9D8 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+}
