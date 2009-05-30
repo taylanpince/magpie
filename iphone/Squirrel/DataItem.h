@@ -11,8 +11,8 @@
 @class DataSet;
 @class DataEntry;
 
-@interface DataItem :  NSManagedObject  
-{
+@interface DataItem :  NSManagedObject {
+	
 }
 
 @property (nonatomic, retain) NSString * name;
@@ -23,6 +23,7 @@
 
 
 @interface DataItem (CoreDataGeneratedAccessors)
+
 - (void)addData_entriesObject:(DataEntry *)value;
 - (void)removeData_entriesObject:(DataEntry *)value;
 - (void)addData_entries:(NSSet *)value;

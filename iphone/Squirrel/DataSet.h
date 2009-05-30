@@ -11,8 +11,8 @@
 @class DataPanel;
 @class DataItem;
 
-@interface DataSet :  NSManagedObject  
-{
+@interface DataSet :  NSManagedObject {
+	
 }
 
 @property (nonatomic, retain) NSString * name;
@@ -23,6 +23,7 @@
 
 
 @interface DataSet (CoreDataGeneratedAccessors)
+
 - (void)addData_panelsObject:(DataPanel *)value;
 - (void)removeData_panelsObject:(DataPanel *)value;
 - (void)addData_panels:(NSSet *)value;

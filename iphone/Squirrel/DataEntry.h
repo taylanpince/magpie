@@ -10,8 +10,8 @@
 
 @class DataItem;
 
-@interface DataEntry :  NSManagedObject  
-{
+@interface DataEntry :  NSManagedObject {
+	
 }
 
 @property (nonatomic, retain) NSNumber * value;

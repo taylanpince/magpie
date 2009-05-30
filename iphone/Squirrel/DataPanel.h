@@ -10,8 +10,8 @@
 
 @class DataSet;
 
-@interface DataPanel :  NSManagedObject  
-{
+@interface DataPanel :  NSManagedObject {
+	
 }
 
 @property (nonatomic, retain) NSString * name;

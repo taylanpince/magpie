@@ -19,11 +19,12 @@
 		289233A70DB2D0840083E9F9 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A50DB2D0840083E9F9 /* MainView.m */; };
 		289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */; };
 		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
-		EC6EB7CD0FD1946B00E6F9D8 /* DataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB7CC0FD1946B00E6F9D8 /* DataModel.xcdatamodel */; };
+		EC6EB7CD0FD1946B00E6F9D8 /* Squirrel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB7CC0FD1946B00E6F9D8 /* Squirrel.xcdatamodel */; };
 		EC6EB8120FD197B600E6F9D8 /* DataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB80B0FD197B600E6F9D8 /* DataItem.m */; };
 		EC6EB8130FD197B600E6F9D8 /* DataPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB80D0FD197B600E6F9D8 /* DataPanel.m */; };
 		EC6EB8140FD197B600E6F9D8 /* DataEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB80F0FD197B600E6F9D8 /* DataEntry.m */; };
 		EC6EB8150FD197B600E6F9D8 /* DataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */; };
+		EC6EB8240FD19A6300E6F9D8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6EB8230FD19A6300E6F9D8 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +48,7 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Squirrel_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Squirrel_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Squirrel-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Squirrel-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		EC6EB7CC0FD1946B00E6F9D8 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		EC6EB7CC0FD1946B00E6F9D8 /* Squirrel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Squirrel.xcdatamodel; sourceTree = "<group>"; };
 		EC6EB80A0FD197B600E6F9D8 /* DataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataItem.h; sourceTree = "<group>"; };
 		EC6EB80B0FD197B600E6F9D8 /* DataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataItem.m; sourceTree = "<group>"; };
 		EC6EB80C0FD197B600E6F9D8 /* DataPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPanel.h; sourceTree = "<group>"; };
@@ -56,6 +57,7 @@
 		EC6EB80F0FD197B600E6F9D8 /* DataEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEntry.m; sourceTree = "<group>"; };
 		EC6EB8100FD197B600E6F9D8 /* DataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSet.h; sourceTree = "<group>"; };
 		EC6EB8110FD197B600E6F9D8 /* DataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSet.m; sourceTree = "<group>"; };
+		EC6EB8230FD19A6300E6F9D8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */,
+				EC6EB8240FD19A6300E6F9D8 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +146,7 @@
 				280E754B0DD40C5E005A515E /* MainView.xib */,
 				280E754C0DD40C5E005A515E /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Squirrel-Info.plist */,
-				EC6EB7CC0FD1946B00E6F9D8 /* DataModel.xcdatamodel */,
+				EC6EB7CC0FD1946B00E6F9D8 /* Squirrel.xcdatamodel */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC6EB8230FD19A6300E6F9D8 /* CoreData.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765580DF743DE002DB57D /* CoreGraphics.framework */,
@@ -241,7 +245,7 @@
 				289233A70DB2D0840083E9F9 /* MainView.m in Sources */,
 				289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */,
 				289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */,
-				EC6EB7CD0FD1946B00E6F9D8 /* DataModel.xcdatamodel in Sources */,
+				EC6EB7CD0FD1946B00E6F9D8 /* Squirrel.xcdatamodel in Sources */,
 				EC6EB8120FD197B600E6F9D8 /* DataItem.m in Sources */,
 				EC6EB8130FD197B600E6F9D8 /* DataPanel.m in Sources */,
 				EC6EB8140FD197B600E6F9D8 /* DataEntry.m in Sources */,
