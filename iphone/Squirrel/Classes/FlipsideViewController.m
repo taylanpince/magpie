@@ -9,6 +9,7 @@
 #import "FlipsideViewController.h"
 #import "DataSet.h"
 #import "AddSetViewController.h"
+#import "EditSetViewController.h"
 
 
 @implementation FlipsideViewController
@@ -60,6 +61,7 @@
 
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
 	if (indexPath.row == [[fetchedResultsController fetchedObjects] count]) {
@@ -95,7 +97,14 @@
 		[addingContext release];
 		[controller release];
 	} else {
+		EditSetViewController *controller = [[EditSetViewController alloc] initWithStyle:UITableViewStyleGrouped];
+		DataSet *dataSet = (DataSet *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
+
+		controller.dataSet = dataSet;
 		
+		[self.navigationController pushViewController:controller animated:YES];
+		
+		[controller release];
 	}
 }
 

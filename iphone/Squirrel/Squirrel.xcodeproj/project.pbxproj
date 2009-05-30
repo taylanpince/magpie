@@ -27,6 +27,7 @@
 		EC6EB8AB0FD1AEB500E6F9D8 /* AddSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB8AA0FD1AEB500E6F9D8 /* AddSetViewController.m */; };
 		EC6EB8AD0FD1B12F00E6F9D8 /* AddSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6EB8AC0FD1B12F00E6F9D8 /* AddSetView.xib */; };
 		EC6EB8E20FD1B81E00E6F9D8 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB8E10FD1B81E00E6F9D8 /* EditableTableViewCell.m */; };
+		EC6EB9560FD1CFDC00E6F9D8 /* EditSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB9550FD1CFDC00E6F9D8 /* EditSetViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,8 @@
 		EC6EB8AC0FD1B12F00E6F9D8 /* AddSetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSetView.xib; sourceTree = "<group>"; };
 		EC6EB8E00FD1B81E00E6F9D8 /* EditableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTableViewCell.h; sourceTree = "<group>"; };
 		EC6EB8E10FD1B81E00E6F9D8 /* EditableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableTableViewCell.m; sourceTree = "<group>"; };
+		EC6EB9540FD1CFDC00E6F9D8 /* EditSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditSetViewController.h; sourceTree = "<group>"; };
+		EC6EB9550FD1CFDC00E6F9D8 /* EditSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditSetViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +183,8 @@
 				289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */,
 				EC6EB8A90FD1AEB500E6F9D8 /* AddSetViewController.h */,
 				EC6EB8AA0FD1AEB500E6F9D8 /* AddSetViewController.m */,
+				EC6EB9540FD1CFDC00E6F9D8 /* EditSetViewController.h */,
+				EC6EB9550FD1CFDC00E6F9D8 /* EditSetViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 				EC6EB8150FD197B600E6F9D8 /* DataSet.m in Sources */,
 				EC6EB8AB0FD1AEB500E6F9D8 /* AddSetViewController.m in Sources */,
 				EC6EB8E20FD1B81E00E6F9D8 /* EditableTableViewCell.m in Sources */,
+				EC6EB9560FD1CFDC00E6F9D8 /* EditSetViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
