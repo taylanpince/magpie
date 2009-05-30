@@ -12,6 +12,8 @@
 
 @implementation MainViewController
 
+@synthesize managedObjectContext;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
@@ -43,15 +45,19 @@
 }
 
 
-- (IBAction)showInfo {    
-	
+- (IBAction)showInfo {
 	FlipsideViewController *controller = [[FlipsideViewController alloc] initWithNibName:@"FlipsideView" bundle:nil];
 	controller.delegate = self;
+	controller.managedObjectContext = self.managedObjectContext;
 	
-	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-	[self presentModalViewController:controller animated:YES];
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+	navController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+	navController.navigationBar.barStyle = UIBarStyleBlack;
+	
+	[self presentModalViewController:navController animated:YES];
 	
 	[controller release];
+	[navController release];
 }
 
 
@@ -69,6 +75,8 @@
 
 
 - (void)dealloc {
+	[managedObjectContext release];
+	
     [super dealloc];
 }
 

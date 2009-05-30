@@ -19,6 +19,7 @@
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     
 	MainViewController *aController = [[MainViewController alloc] initWithNibName:@"MainView" bundle:nil];
+	aController.managedObjectContext = self.managedObjectContext;
 	self.mainViewController = aController;
 	[aController release];
 	

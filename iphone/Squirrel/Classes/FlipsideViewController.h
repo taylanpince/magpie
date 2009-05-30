@@ -6,16 +6,24 @@
 //  Copyright Taylan Pince 2009. All rights reserved.
 //
 
+#import "AddSetViewController.h"
+
 @protocol FlipsideViewControllerDelegate;
 
 
-@interface FlipsideViewController : UIViewController {
+@interface FlipsideViewController : UITableViewController <NSFetchedResultsControllerDelegate, AddSetViewControllerDelegate> {
 	id <FlipsideViewControllerDelegate> delegate;
+	
+	NSFetchedResultsController *fetchedResultsController;
+    NSManagedObjectContext *managedObjectContext;
+	NSManagedObjectContext *addManagedObjectContext;
 }
 
 @property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
 
-- (IBAction)done;
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain) NSManagedObjectContext *addManagedObjectContext;
 
 @end
 
@@ -23,4 +31,3 @@
 @protocol FlipsideViewControllerDelegate
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller;
 @end
-
