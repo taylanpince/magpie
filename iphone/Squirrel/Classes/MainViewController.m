@@ -3,7 +3,7 @@
 //  Squirrel
 //
 //  Created by Taylan Pince on 29/05/09.
-//  Copyright __MyCompanyName__ 2009. All rights reserved.
+//  Copyright Taylan Pince 2009. All rights reserved.
 //
 
 #import "MainViewController.h"
@@ -39,7 +39,6 @@
 
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
-    
 	[self dismissModalViewControllerAnimated:YES];
 }
 
@@ -55,15 +54,6 @@
 	[controller release];
 }
 
-
-
-/*
- // Override to allow orientations other than the default portrait orientation.
- - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
- // Return YES for supported orientations
- return (interfaceOrientation == UIInterfaceOrientationPortrait);
- }
- */
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.

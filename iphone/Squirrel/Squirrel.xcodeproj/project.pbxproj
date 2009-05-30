@@ -19,6 +19,11 @@
 		289233A70DB2D0840083E9F9 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A50DB2D0840083E9F9 /* MainView.m */; };
 		289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */; };
 		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
+		EC6EB7CD0FD1946B00E6F9D8 /* DataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB7CC0FD1946B00E6F9D8 /* DataModel.xcdatamodel */; };
+		EC6EB8120FD197B600E6F9D8 /* DataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB80B0FD197B600E6F9D8 /* DataItem.m */; };
+		EC6EB8130FD197B600E6F9D8 /* DataPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB80D0FD197B600E6F9D8 /* DataPanel.m */; };
+		EC6EB8140FD197B600E6F9D8 /* DataEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB80F0FD197B600E6F9D8 /* DataEntry.m */; };
+		EC6EB8150FD197B600E6F9D8 /* DataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +47,15 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Squirrel_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Squirrel_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Squirrel-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Squirrel-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		EC6EB7CC0FD1946B00E6F9D8 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		EC6EB80A0FD197B600E6F9D8 /* DataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataItem.h; sourceTree = "<group>"; };
+		EC6EB80B0FD197B600E6F9D8 /* DataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataItem.m; sourceTree = "<group>"; };
+		EC6EB80C0FD197B600E6F9D8 /* DataPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPanel.h; sourceTree = "<group>"; };
+		EC6EB80D0FD197B600E6F9D8 /* DataPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPanel.m; sourceTree = "<group>"; };
+		EC6EB80E0FD197B600E6F9D8 /* DataEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataEntry.h; sourceTree = "<group>"; };
+		EC6EB80F0FD197B600E6F9D8 /* DataEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEntry.m; sourceTree = "<group>"; };
+		EC6EB8100FD197B600E6F9D8 /* DataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSet.h; sourceTree = "<group>"; };
+		EC6EB8110FD197B600E6F9D8 /* DataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +115,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				EC6EB7CE0FD196DA00E6F9D8 /* Models */,
 				289233A00DB2D0730083E9F9 /* Main View */,
 				281C6CD70DB2D82200F60ACC /* Flipside View */,
 				080E96DDFE201D6D7F000001 /* Application Delegate */,
@@ -128,6 +143,7 @@
 				280E754B0DD40C5E005A515E /* MainView.xib */,
 				280E754C0DD40C5E005A515E /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Squirrel-Info.plist */,
+				EC6EB7CC0FD1946B00E6F9D8 /* DataModel.xcdatamodel */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -140,6 +156,21 @@
 				288765580DF743DE002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC6EB7CE0FD196DA00E6F9D8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EC6EB80A0FD197B600E6F9D8 /* DataItem.h */,
+				EC6EB80B0FD197B600E6F9D8 /* DataItem.m */,
+				EC6EB80C0FD197B600E6F9D8 /* DataPanel.h */,
+				EC6EB80D0FD197B600E6F9D8 /* DataPanel.m */,
+				EC6EB80E0FD197B600E6F9D8 /* DataEntry.h */,
+				EC6EB80F0FD197B600E6F9D8 /* DataEntry.m */,
+				EC6EB8100FD197B600E6F9D8 /* DataSet.h */,
+				EC6EB8110FD197B600E6F9D8 /* DataSet.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +241,11 @@
 				289233A70DB2D0840083E9F9 /* MainView.m in Sources */,
 				289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */,
 				289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */,
+				EC6EB7CD0FD1946B00E6F9D8 /* DataModel.xcdatamodel in Sources */,
+				EC6EB8120FD197B600E6F9D8 /* DataItem.m in Sources */,
+				EC6EB8130FD197B600E6F9D8 /* DataPanel.m in Sources */,
+				EC6EB8140FD197B600E6F9D8 /* DataEntry.m in Sources */,
+				EC6EB8150FD197B600E6F9D8 /* DataSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
