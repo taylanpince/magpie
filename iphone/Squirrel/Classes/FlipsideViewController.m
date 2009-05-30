@@ -21,10 +21,11 @@
     [super viewDidLoad];
 	
 	self.navigationItem.title = @"Settings";
+	self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-	UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
-	[self.navigationItem setRightBarButtonItem:doneButton];
-	[doneButton release];
+	UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
+	[self.navigationItem setRightBarButtonItem:saveButton];
+	[saveButton release];
 	
 	NSError *error;
 
@@ -39,7 +40,7 @@
 }
 
 
-- (void)done:(id)sender {
+- (void)save:(id)sender {
 	[self.delegate flipsideViewControllerDidFinish:self];	
 }
 
@@ -82,7 +83,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.row == [[fetchedResultsController fetchedObjects] count]) {
-		AddSetViewController *controller = [[AddSetViewController alloc] initWithNibName:@"AddSetView" bundle:nil];
+		AddSetViewController *controller = [[AddSetViewController alloc] initWithStyle:UITableViewStyleGrouped];
 		controller.delegate = self;
 		
 		NSManagedObjectContext *addingContext = [[NSManagedObjectContext alloc] init];
@@ -106,6 +107,31 @@
 		
 		[controller release];
 	}
+}
+
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (indexPath.row == [[fetchedResultsController fetchedObjects] count]) {
+		return UITableViewCellEditingStyleInsert;
+	} else {
+		return UITableViewCellEditingStyleDelete;
+	}
+}
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+		NSManagedObjectContext *context = [fetchedResultsController managedObjectContext];
+		[context deleteObject:[fetchedResultsController objectAtIndexPath:indexPath]];
+		
+		NSError *error;
+
+		if (![context save:&error]) {
+			// Handle the error.
+		}
+		
+		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }   
 }
 
 

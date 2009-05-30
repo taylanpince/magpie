@@ -46,7 +46,7 @@
 
 
 - (IBAction)showInfo {
-	FlipsideViewController *controller = [[FlipsideViewController alloc] initWithNibName:@"FlipsideView" bundle:nil];
+	FlipsideViewController *controller = [[FlipsideViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	controller.delegate = self;
 	controller.managedObjectContext = self.managedObjectContext;
 	

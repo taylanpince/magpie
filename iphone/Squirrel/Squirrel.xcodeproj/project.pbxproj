@@ -11,7 +11,6 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		280E754D0DD40C5E005A515E /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754A0DD40C5E005A515E /* FlipsideView.xib */; };
 		280E754E0DD40C5E005A515E /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754B0DD40C5E005A515E /* MainView.xib */; };
 		280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754C0DD40C5E005A515E /* MainWindow.xib */; };
 		288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765580DF743DE002DB57D /* CoreGraphics.framework */; };
@@ -23,11 +22,11 @@
 		EC6EB8130FD197B600E6F9D8 /* DataPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB80D0FD197B600E6F9D8 /* DataPanel.m */; };
 		EC6EB8140FD197B600E6F9D8 /* DataEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB80F0FD197B600E6F9D8 /* DataEntry.m */; };
 		EC6EB8150FD197B600E6F9D8 /* DataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */; };
-		EC6EB8240FD19A6300E6F9D8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6EB8230FD19A6300E6F9D8 /* CoreData.framework */; };
 		EC6EB8AB0FD1AEB500E6F9D8 /* AddSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB8AA0FD1AEB500E6F9D8 /* AddSetViewController.m */; };
-		EC6EB8AD0FD1B12F00E6F9D8 /* AddSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6EB8AC0FD1B12F00E6F9D8 /* AddSetView.xib */; };
 		EC6EB8E20FD1B81E00E6F9D8 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB8E10FD1B81E00E6F9D8 /* EditableTableViewCell.m */; };
 		EC6EB9560FD1CFDC00E6F9D8 /* EditSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB9550FD1CFDC00E6F9D8 /* EditSetViewController.m */; };
+		EC6EB9B20FD1D86400E6F9D8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6EB9B10FD1D86400E6F9D8 /* Icon.png */; };
+		ECB3A9FD0FD1DB3800F81F02 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB3A9FC0FD1DB3800F81F02 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +35,6 @@
 		1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquirrelAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* Squirrel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Squirrel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		280E754A0DD40C5E005A515E /* FlipsideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipsideView.xib; sourceTree = "<group>"; };
 		280E754B0DD40C5E005A515E /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		280E754C0DD40C5E005A515E /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		288765580DF743DE002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,14 +56,14 @@
 		EC6EB80F0FD197B600E6F9D8 /* DataEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEntry.m; sourceTree = "<group>"; };
 		EC6EB8100FD197B600E6F9D8 /* DataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSet.h; sourceTree = "<group>"; };
 		EC6EB8110FD197B600E6F9D8 /* DataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSet.m; sourceTree = "<group>"; };
-		EC6EB8230FD19A6300E6F9D8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		EC6EB8A90FD1AEB500E6F9D8 /* AddSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSetViewController.h; sourceTree = "<group>"; };
 		EC6EB8AA0FD1AEB500E6F9D8 /* AddSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSetViewController.m; sourceTree = "<group>"; };
-		EC6EB8AC0FD1B12F00E6F9D8 /* AddSetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSetView.xib; sourceTree = "<group>"; };
 		EC6EB8E00FD1B81E00E6F9D8 /* EditableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTableViewCell.h; sourceTree = "<group>"; };
 		EC6EB8E10FD1B81E00E6F9D8 /* EditableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableTableViewCell.m; sourceTree = "<group>"; };
 		EC6EB9540FD1CFDC00E6F9D8 /* EditSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditSetViewController.h; sourceTree = "<group>"; };
 		EC6EB9550FD1CFDC00E6F9D8 /* EditSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditSetViewController.m; sourceTree = "<group>"; };
+		EC6EB9B10FD1D86400E6F9D8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		ECB3A9FC0FD1DB3800F81F02 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +74,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */,
-				EC6EB8240FD19A6300E6F9D8 /* CoreData.framework in Frameworks */,
+				ECB3A9FD0FD1DB3800F81F02 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +136,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EC6EB8AC0FD1B12F00E6F9D8 /* AddSetView.xib */,
-				280E754A0DD40C5E005A515E /* FlipsideView.xib */,
+				EC6EB9B10FD1D86400E6F9D8 /* Icon.png */,
 				280E754B0DD40C5E005A515E /* MainView.xib */,
 				280E754C0DD40C5E005A515E /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Squirrel-Info.plist */,
@@ -151,7 +148,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EC6EB8230FD19A6300E6F9D8 /* CoreData.framework */,
+				ECB3A9FC0FD1DB3800F81F02 /* CoreData.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765580DF743DE002DB57D /* CoreGraphics.framework */,
@@ -247,10 +244,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				280E754D0DD40C5E005A515E /* FlipsideView.xib in Resources */,
 				280E754E0DD40C5E005A515E /* MainView.xib in Resources */,
 				280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */,
-				EC6EB8AD0FD1B12F00E6F9D8 /* AddSetView.xib in Resources */,
+				EC6EB9B20FD1D86400E6F9D8 /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,12 +306,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Taylan Pince";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4B3DE6FE-0417-4D89-8849-F4C2DD740654";
 				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;
