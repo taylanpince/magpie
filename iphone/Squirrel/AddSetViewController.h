@@ -8,25 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol AddSetViewControllerDelegate;
-
 @class DataSet, EditableTableViewCell;
 
-
 @interface AddSetViewController : UITableViewController {
-	id <AddSetViewControllerDelegate> delegate;
-	
 	DataSet *dataSet;
 	EditableTableViewCell *nameCell;
 }
 
-@property (nonatomic, assign) id <AddSetViewControllerDelegate> delegate;
-
 @property (nonatomic, retain) DataSet *dataSet;
 
-@end
-
-
-@protocol AddSetViewControllerDelegate
-- (void)addSetViewController:(AddSetViewController *)controller didFinishWithSave:(BOOL)save;
 @end

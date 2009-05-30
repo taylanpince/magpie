@@ -6,33 +6,27 @@
 //  Copyright 2009 Taylan Pince. All rights reserved.
 //
 
-#import <CoreData/CoreData.h>
-
-@class DataPanel;
-@class DataItem;
-
-@interface DataSet :  NSManagedObject {
+@interface DataSet : NSObject {
+	sqlite3 *database;
+	NSInteger primaryKey;
+	NSString *name;
+	NSDate *lastUpdated;
 	
+	BOOL hydrated;
+	BOOL dirty;
 }
 
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSSet* data_panels;
-@property (nonatomic, retain) NSSet* data_items;
+@property (assign, nonatomic, readonly) NSInteger primaryKey;
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSDate *lastUpdated;
+
++ (void)finalizeStatements;
+
+- (id)initWithPrimaryKey:(NSInteger)pk database:(sqlite3 *)db;
+- (void)insertIntoDatabase:(sqlite3 *)database;
+
+- (void)hydrate;
+- (void)dehydrate;
+- (void)deleteFromDatabase;
 
 @end
-
-
-@interface DataSet (CoreDataGeneratedAccessors)
-
-- (void)addData_panelsObject:(DataPanel *)value;
-- (void)removeData_panelsObject:(DataPanel *)value;
-- (void)addData_panels:(NSSet *)value;
-- (void)removeData_panels:(NSSet *)value;
-
-- (void)addData_itemsObject:(DataItem *)value;
-- (void)removeData_itemsObject:(DataItem *)value;
-- (void)addData_items:(NSSet *)value;
-- (void)removeData_items:(NSSet *)value;
-
-@end
-

@@ -60,12 +60,6 @@
 - (void)save:(id)sender {
 	dataSet.name = nameCell.textField.text;
 	
-	NSError *error;
-	
-	if (![dataSet.managedObjectContext save:&error]) {
-		// Handle the error.
-	}
-	
 	[self.navigationController popViewControllerAnimated:YES];
 }
 

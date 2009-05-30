@@ -8,18 +8,25 @@
 
 #import "SquirrelAppDelegate.h"
 #import "MainViewController.h"
+#import "DataSet.h"
+
+
+@interface SquirrelAppDelegate (Private)
+- (void)createEditableCopyOfDatabaseIfNeeded;
+- (void)initializeDatabase;
+@end
+
 
 @implementation SquirrelAppDelegate
 
-
-@synthesize window;
-@synthesize mainViewController;
+@synthesize window, mainViewController, dataSets;
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-    
+	[self createEditableCopyOfDatabaseIfNeeded];
+	[self initializeDatabase];
+	
 	MainViewController *aController = [[MainViewController alloc] initWithNibName:@"MainView" bundle:nil];
-	aController.managedObjectContext = self.managedObjectContext;
 	self.mainViewController = aController;
 	[aController release];
 	
@@ -29,62 +36,60 @@
 }
 
 
-- (void)applicationWillTerminate:(UIApplication *)application {
+- (void)createEditableCopyOfDatabaseIfNeeded {
+    BOOL success;
     NSError *error;
-	
-    if (managedObjectContext != nil) {
-        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-			// Handle error
-        } 
-    }
-}
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *writableDBPath = [self.applicationDocumentsDirectory stringByAppendingPathComponent:@"Squirrel.sql"];
 
-
-- (NSManagedObjectContext *) managedObjectContext {
-    if (managedObjectContext != nil) {
-        return managedObjectContext;
-    }
-	
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-	
-    if (coordinator != nil) {
-        managedObjectContext = [[NSManagedObjectContext alloc] init];
-        [managedObjectContext setPersistentStoreCoordinator: coordinator];
-    }
+    success = [fileManager fileExistsAtPath:writableDBPath];
     
-	return managedObjectContext;
-}
+	if (success) return;
 
-
-- (NSManagedObjectModel *)managedObjectModel {
-    if (managedObjectModel != nil) {
-        return managedObjectModel;
-    }
-
-    managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];    
+    NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Squirrel.sql"];
+    success = [fileManager copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
     
-	return managedObjectModel;
+	if (!success) {
+        NSAssert1(0, @"Failed to create writable database file with message '%@'.", [error localizedDescription]);
+    }
 }
 
 
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
-    if (persistentStoreCoordinator != nil) {
-        return persistentStoreCoordinator;
+- (void)initializeDatabase {
+    NSMutableArray *dataSetsArray = [[NSMutableArray alloc] init];
+    self.dataSets = dataSetsArray;
+    [dataSetsArray release];
+
+    NSString *path = [self.applicationDocumentsDirectory stringByAppendingPathComponent:@"Squirrel.sql"];
+
+    if (sqlite3_open([path UTF8String], &database) == SQLITE_OK) {
+        const char *sql = "SELECT pk FROM data_sets";
+        sqlite3_stmt *statement;
+
+        if (sqlite3_prepare_v2(database, sql, -1, &statement, NULL) == SQLITE_OK) {
+            while (sqlite3_step(statement) == SQLITE_ROW) {
+                int primaryKey = sqlite3_column_int(statement, 0);
+
+                DataSet *dataSet = [[DataSet alloc] initWithPrimaryKey:primaryKey database:database];
+                [dataSets addObject:dataSet];
+                [dataSet release];
+            }
+        }
+
+        sqlite3_finalize(statement);
+    } else {
+        sqlite3_close(database);
+        NSAssert1(0, @"Failed to open database with message '%s'.", sqlite3_errmsg(database));
     }
-	
-	NSString *storePath = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"Squirrel.sqlite"];
-	NSURL *storeURL = [NSURL fileURLWithPath:storePath];
-	
-	NSError *error;
-	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption, [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
-	
-    persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: [self managedObjectModel]];
-	
-    if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
-		NSLog(@"Error: %@", [error localizedFailureReason]);
-    }    
-	
-    return persistentStoreCoordinator;
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+    [dataSets makeObjectsPerformSelector:@selector(dehydrate)];
+    [DataSet finalizeStatements];
+
+    if (sqlite3_close(database) != SQLITE_OK) {
+        NSAssert1(0, @"Error: failed to close database with message '%s'.", sqlite3_errmsg(database));
+    }
 }
 
 
@@ -96,11 +101,20 @@
 }
 
 
-- (void)dealloc {
-    [managedObjectContext release];
-    [managedObjectModel release];
-    [persistentStoreCoordinator release];
+- (void)removeDataSet:(DataSet *)dataSet {
+    [dataSet deleteFromDatabase];
+    [dataSets removeObject:dataSet];
+}
 
+
+- (void)addDataSet:(DataSet *)dataSet {
+    [dataSet insertIntoDatabase:database];
+    [dataSets addObject:dataSet];
+}
+
+
+- (void)dealloc {
+	[dataSets release];
     [mainViewController release];
     [window release];
     [super dealloc];

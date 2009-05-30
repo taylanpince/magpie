@@ -17,16 +17,13 @@
 		289233A70DB2D0840083E9F9 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A50DB2D0840083E9F9 /* MainView.m */; };
 		289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */; };
 		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
-		EC6EB7CD0FD1946B00E6F9D8 /* Squirrel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB7CC0FD1946B00E6F9D8 /* Squirrel.xcdatamodel */; };
-		EC6EB8120FD197B600E6F9D8 /* DataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB80B0FD197B600E6F9D8 /* DataItem.m */; };
-		EC6EB8130FD197B600E6F9D8 /* DataPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB80D0FD197B600E6F9D8 /* DataPanel.m */; };
-		EC6EB8140FD197B600E6F9D8 /* DataEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB80F0FD197B600E6F9D8 /* DataEntry.m */; };
 		EC6EB8150FD197B600E6F9D8 /* DataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */; };
 		EC6EB8AB0FD1AEB500E6F9D8 /* AddSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB8AA0FD1AEB500E6F9D8 /* AddSetViewController.m */; };
 		EC6EB8E20FD1B81E00E6F9D8 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB8E10FD1B81E00E6F9D8 /* EditableTableViewCell.m */; };
 		EC6EB9560FD1CFDC00E6F9D8 /* EditSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB9550FD1CFDC00E6F9D8 /* EditSetViewController.m */; };
 		EC6EB9B20FD1D86400E6F9D8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6EB9B10FD1D86400E6F9D8 /* Icon.png */; };
-		ECB3A9FD0FD1DB3800F81F02 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB3A9FC0FD1DB3800F81F02 /* CoreData.framework */; };
+		ECFBFBA60FD1E87B00EEE684 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFBFBA50FD1E87B00EEE684 /* libsqlite3.0.dylib */; };
+		ECFBFBA80FD1EDCA00EEE684 /* Squirrel.sql in Resources */ = {isa = PBXBuildFile; fileRef = ECFBFBA70FD1EDCA00EEE684 /* Squirrel.sql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,13 +44,6 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Squirrel_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Squirrel_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Squirrel-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Squirrel-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		EC6EB7CC0FD1946B00E6F9D8 /* Squirrel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Squirrel.xcdatamodel; sourceTree = "<group>"; };
-		EC6EB80A0FD197B600E6F9D8 /* DataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataItem.h; sourceTree = "<group>"; };
-		EC6EB80B0FD197B600E6F9D8 /* DataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataItem.m; sourceTree = "<group>"; };
-		EC6EB80C0FD197B600E6F9D8 /* DataPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPanel.h; sourceTree = "<group>"; };
-		EC6EB80D0FD197B600E6F9D8 /* DataPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPanel.m; sourceTree = "<group>"; };
-		EC6EB80E0FD197B600E6F9D8 /* DataEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataEntry.h; sourceTree = "<group>"; };
-		EC6EB80F0FD197B600E6F9D8 /* DataEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEntry.m; sourceTree = "<group>"; };
 		EC6EB8100FD197B600E6F9D8 /* DataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSet.h; sourceTree = "<group>"; };
 		EC6EB8110FD197B600E6F9D8 /* DataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSet.m; sourceTree = "<group>"; };
 		EC6EB8A90FD1AEB500E6F9D8 /* AddSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSetViewController.h; sourceTree = "<group>"; };
@@ -63,7 +53,8 @@
 		EC6EB9540FD1CFDC00E6F9D8 /* EditSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditSetViewController.h; sourceTree = "<group>"; };
 		EC6EB9550FD1CFDC00E6F9D8 /* EditSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditSetViewController.m; sourceTree = "<group>"; };
 		EC6EB9B10FD1D86400E6F9D8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		ECB3A9FC0FD1DB3800F81F02 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		ECFBFBA50FD1E87B00EEE684 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		ECFBFBA70FD1EDCA00EEE684 /* Squirrel.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = Squirrel.sql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +65,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */,
-				ECB3A9FD0FD1DB3800F81F02 /* CoreData.framework in Frameworks */,
+				ECFBFBA60FD1E87B00EEE684 /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +131,7 @@
 				280E754B0DD40C5E005A515E /* MainView.xib */,
 				280E754C0DD40C5E005A515E /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Squirrel-Info.plist */,
-				EC6EB7CC0FD1946B00E6F9D8 /* Squirrel.xcdatamodel */,
+				ECFBFBA70FD1EDCA00EEE684 /* Squirrel.sql */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -148,7 +139,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ECB3A9FC0FD1DB3800F81F02 /* CoreData.framework */,
+				ECFBFBA50FD1E87B00EEE684 /* libsqlite3.0.dylib */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765580DF743DE002DB57D /* CoreGraphics.framework */,
@@ -159,12 +150,6 @@
 		EC6EB7CE0FD196DA00E6F9D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EC6EB80A0FD197B600E6F9D8 /* DataItem.h */,
-				EC6EB80B0FD197B600E6F9D8 /* DataItem.m */,
-				EC6EB80C0FD197B600E6F9D8 /* DataPanel.h */,
-				EC6EB80D0FD197B600E6F9D8 /* DataPanel.m */,
-				EC6EB80E0FD197B600E6F9D8 /* DataEntry.h */,
-				EC6EB80F0FD197B600E6F9D8 /* DataEntry.m */,
 				EC6EB8100FD197B600E6F9D8 /* DataSet.h */,
 				EC6EB8110FD197B600E6F9D8 /* DataSet.m */,
 			);
@@ -247,6 +232,7 @@
 				280E754E0DD40C5E005A515E /* MainView.xib in Resources */,
 				280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */,
 				EC6EB9B20FD1D86400E6F9D8 /* Icon.png in Resources */,
+				ECFBFBA80FD1EDCA00EEE684 /* Squirrel.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,10 +248,6 @@
 				289233A70DB2D0840083E9F9 /* MainView.m in Sources */,
 				289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */,
 				289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */,
-				EC6EB7CD0FD1946B00E6F9D8 /* Squirrel.xcdatamodel in Sources */,
-				EC6EB8120FD197B600E6F9D8 /* DataItem.m in Sources */,
-				EC6EB8130FD197B600E6F9D8 /* DataPanel.m in Sources */,
-				EC6EB8140FD197B600E6F9D8 /* DataEntry.m in Sources */,
 				EC6EB8150FD197B600E6F9D8 /* DataSet.m in Sources */,
 				EC6EB8AB0FD1AEB500E6F9D8 /* AddSetViewController.m in Sources */,
 				EC6EB8E20FD1B81E00E6F9D8 /* EditableTableViewCell.m in Sources */,
@@ -313,7 +295,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4B3DE6FE-0417-4D89-8849-F4C2DD740654";
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos2.2.1;
 			};
 			name = Debug;
 		};

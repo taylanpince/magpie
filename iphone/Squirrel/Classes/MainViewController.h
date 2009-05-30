@@ -9,10 +9,8 @@
 #import "FlipsideViewController.h"
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
-	NSManagedObjectContext *managedObjectContext;
-}
 
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+}
 
 - (IBAction)showInfo;
 

@@ -6,6 +6,7 @@
 //  Copyright 2009 Taylan Pince. All rights reserved.
 //
 
+#import "SquirrelAppDelegate.h"
 #import "AddSetViewController.h"
 #import "EditableTableViewCell.h"
 #import "DataSet.h"
@@ -13,7 +14,7 @@
 
 @implementation AddSetViewController
 
-@synthesize delegate, dataSet;
+@synthesize dataSet;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -65,12 +66,14 @@
 - (void)save:(id)sender {
 	dataSet.name = nameCell.textField.text;
 	
-	[delegate addSetViewController:self didFinishWithSave:YES];
+	[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] addDataSet:self.dataSet];
+	
+	[self.navigationController popViewControllerAnimated:YES];
 }
 
 
 - (void)cancel:(id)sender {
-	[delegate addSetViewController:self didFinishWithSave:NO];
+	[self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

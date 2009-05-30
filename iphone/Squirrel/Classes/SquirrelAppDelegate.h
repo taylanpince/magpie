@@ -6,25 +6,24 @@
 //  Copyright Taylan Pince 2009. All rights reserved.
 //
 
-@class MainViewController;
+@class DataSet, MainViewController;
 
 @interface SquirrelAppDelegate : NSObject <UIApplicationDelegate> {
-	NSManagedObjectModel *managedObjectModel;
-    NSManagedObjectContext *managedObjectContext;	    
-    NSPersistentStoreCoordinator *persistentStoreCoordinator;
+    sqlite3 *database;
+	NSMutableArray *dataSets;
 	
     UIWindow *window;
     MainViewController *mainViewController;
 }
 
-@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
-@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-
+@property (nonatomic, retain) NSMutableArray *dataSets;
 @property (nonatomic, readonly) NSString *applicationDocumentsDirectory;
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) MainViewController *mainViewController;
+
+- (void)removeDataSet:(DataSet *)dataSet;
+- (void)addDataSet:(DataSet *)dataSet;
 
 @end
 
