@@ -18,7 +18,6 @@
         textField = [[UITextField alloc] initWithFrame:CGRectZero];
 		textField.placeholder = @"Name";
 		textField.delegate = self;
-        textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
         textField.font = [UIFont systemFontOfSize:16.0];
         textField.textColor = [UIColor blackColor];
 		
@@ -31,7 +30,7 @@
 - (void)layoutSubviews {
 	[super layoutSubviews];
 
-    textField.frame = CGRectInset(self.contentView.frame, 10.0, 0.0);
+    textField.frame = CGRectInset(self.contentView.frame, 10.0, 11.0);
 }
 
 

@@ -13,11 +13,13 @@
 
 @interface EditSetViewController : UITableViewController <EditableTableViewCellDelegate> {
 	DataSet *dataSet;
+	NSMutableString *dataSetName;
 	NSMutableArray *dataItems;
 	UITextField *activeTextField;
 }
 
 @property (nonatomic, retain) DataSet *dataSet;
+@property (nonatomic, retain) NSMutableString *dataSetName;
 @property (nonatomic, retain) NSMutableArray *dataItems;
 @property (nonatomic, assign) UITextField *activeTextField;
 

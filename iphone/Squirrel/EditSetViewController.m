@@ -14,7 +14,7 @@
 
 @implementation EditSetViewController
 
-@synthesize dataSet, dataItems, activeTextField;
+@synthesize dataSet, dataSetName, dataItems, activeTextField;
 
 /*
 - (id)initWithStyle:(UITableViewStyle)style {
@@ -48,6 +48,7 @@
 	[dataSet hydrate];
 	
 	dataItems = [dataSet.dataItems mutableCopy];
+	dataSetName = [dataSet.name mutableCopy];
 	
 	if (dataItems == nil) {
 		dataItems = [[NSMutableArray alloc] init];
@@ -59,7 +60,9 @@
 	if (activeTextField) {
 		[activeTextField resignFirstResponder];
 	}
-	NSLog(@"Data Set Data Items: %@", dataSet.dataItems);
+	
+	dataSet.name = dataSetName;
+
 	for (DataItem *dataItem in dataItems) {
 		if (dataItem.name != nil & ![dataItem.name isEqualToString:@""]) {
 			if ([dataSet.dataItems containsObject:dataItem]) {
@@ -77,6 +80,9 @@
 
 
 - (void)cancel:(id)sender {
+	dataItems = nil;
+	dataSetName = nil;
+	
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -218,7 +224,7 @@
 
 - (void)didEndEditingTextFieldAtIndexPath:(NSIndexPath *)indexPath withValue:(NSString *)newValue {
 	if (indexPath.section == 0) {
-		dataSet.name = newValue;
+		dataSetName = [newValue mutableCopy];
 	} else {
 		DataItem *dataItem = (DataItem *)[dataItems objectAtIndex:indexPath.row];
 		
@@ -228,7 +234,9 @@
 
 
 - (void)dealloc {
+	[dataSet release];
 	[dataItems release];
+	[dataSetName release];
     [super dealloc];
 }
 
