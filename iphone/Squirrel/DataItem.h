@@ -1,19 +1,18 @@
 //
-//  DataSet.h
+//  DataItem.h
 //  Squirrel
 //
-//  Created by Taylan Pince on 30/05/09.
+//  Created by Taylan Pince on 31/05/09.
 //  Copyright 2009 Taylan Pince. All rights reserved.
 //
 
-@class DataItem;
+@class DataSet;
 
-@interface DataSet : NSObject {
+@interface DataItem : NSObject {
 	sqlite3 *database;
 	NSInteger primaryKey;
 	NSString *name;
-	NSDate *lastUpdated;
-	NSMutableArray *dataItems;
+	DataSet *dataSet;
 	
 	BOOL hydrated;
 	BOOL dirty;
@@ -21,8 +20,7 @@
 
 @property (assign, nonatomic, readonly) NSInteger primaryKey;
 @property (copy, nonatomic) NSString *name;
-@property (copy, nonatomic) NSDate *lastUpdated;
-@property (retain, nonatomic) NSMutableArray *dataItems;
+@property (copy, nonatomic) DataSet *dataSet;
 
 + (void)finalizeStatements;
 
@@ -32,8 +30,5 @@
 - (void)hydrate;
 - (void)dehydrate;
 - (void)deleteFromDatabase;
-
-- (void)addDataItem:(DataItem *)dataItem;
-- (void)removeDataItem:(DataItem *)dataItem;
 
 @end

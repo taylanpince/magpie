@@ -6,16 +6,19 @@
 //  Copyright 2009 Taylan Pince. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "EditableTableViewCell.h"
 
-@class DataSet, EditableTableViewCell;
+@class DataSet;
 
 
-@interface EditSetViewController : UITableViewController {
+@interface EditSetViewController : UITableViewController <EditableTableViewCellDelegate> {
 	DataSet *dataSet;
-	EditableTableViewCell *nameCell;
+	NSMutableArray *dataItems;
+	UITextField *activeTextField;
 }
 
 @property (nonatomic, retain) DataSet *dataSet;
+@property (nonatomic, retain) NSMutableArray *dataItems;
+@property (nonatomic, assign) UITextField *activeTextField;
 
 @end

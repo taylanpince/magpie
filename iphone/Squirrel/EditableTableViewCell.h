@@ -6,13 +6,25 @@
 //  Copyright 2009 Taylan Pince. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@protocol EditableTableViewCellDelegate;
 
 
-@interface EditableTableViewCell : UITableViewCell {
+@interface EditableTableViewCell : UITableViewCell <UITextFieldDelegate> {
 	UITextField *textField;
+	NSIndexPath *indexPath;
+	
+	id <EditableTableViewCellDelegate> delegate;
 }
 
 @property (nonatomic, retain) UITextField *textField;
+@property (nonatomic, retain) NSIndexPath *indexPath;
 
+@property (nonatomic, assign) id <EditableTableViewCellDelegate> delegate;
+
+@end
+
+
+@protocol EditableTableViewCellDelegate
+- (void)didEndEditingTextFieldAtIndexPath:(NSIndexPath *)indexPath withValue:(NSString *)newValue;
+- (void)didBeginEditingTextFieldAtIndexPath:(NSIndexPath *)indexPath withTextField:(UITextField *)field;
 @end

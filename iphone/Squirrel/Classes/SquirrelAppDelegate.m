@@ -9,6 +9,7 @@
 #import "SquirrelAppDelegate.h"
 #import "MainViewController.h"
 #import "DataSet.h"
+#import "DataItem.h"
 
 
 @interface SquirrelAppDelegate (Private)
@@ -85,7 +86,9 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     [dataSets makeObjectsPerformSelector:@selector(dehydrate)];
+	
     [DataSet finalizeStatements];
+	[DataItem finalizeStatements];
 
     if (sqlite3_close(database) != SQLITE_OK) {
         NSAssert1(0, @"Error: failed to close database with message '%s'.", sqlite3_errmsg(database));

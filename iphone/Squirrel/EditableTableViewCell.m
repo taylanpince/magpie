@@ -11,15 +11,16 @@
 
 @implementation EditableTableViewCell
 
-@synthesize textField;
+@synthesize textField, delegate, indexPath;
 
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
         textField = [[UITextField alloc] initWithFrame:CGRectZero];
 		textField.placeholder = @"Name";
+		textField.delegate = self;
         textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
         textField.font = [UIFont systemFontOfSize:16.0];
-        textField.textColor = [UIColor darkGrayColor];
+        textField.textColor = [UIColor blackColor];
 		
         [self addSubview:textField];
     }
@@ -28,7 +29,9 @@
 
 
 - (void)layoutSubviews {
-    textField.frame = CGRectInset(self.contentView.bounds, 20.0, 0.0);
+	[super layoutSubviews];
+
+    textField.frame = CGRectInset(self.contentView.frame, 10.0, 0.0);
 }
 
 
@@ -38,13 +41,22 @@
     if (selected) {
         textField.textColor = [UIColor whiteColor];
     } else {
-        textField.textColor = [UIColor darkGrayColor];
+        textField.textColor = [UIColor blackColor];
     }
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)field {
+	[delegate didBeginEditingTextFieldAtIndexPath:indexPath withTextField:field];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)field {
+	[delegate didEndEditingTextFieldAtIndexPath:indexPath withValue:field.text];
 }
 
 
 - (void)dealloc {
 	[textField release];
+	[indexPath release];
 	
     [super dealloc];
 }
