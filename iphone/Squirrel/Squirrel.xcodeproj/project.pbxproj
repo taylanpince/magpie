@@ -22,6 +22,7 @@
 		EC6EB9560FD1CFDC00E6F9D8 /* DataSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */; };
 		EC6EB9B20FD1D86400E6F9D8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6EB9B10FD1D86400E6F9D8 /* Icon.png */; };
 		ECFB00510FD46F6600EEE684 /* DataPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */; };
+		ECFB00B80FD4830300EEE684 /* SelectDataSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */; };
 		ECFBFBA60FD1E87B00EEE684 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFBFBA50FD1E87B00EEE684 /* libsqlite3.0.dylib */; };
 		ECFBFBA80FD1EDCA00EEE684 /* Squirrel.sql in Resources */ = {isa = PBXBuildFile; fileRef = ECFBFBA70FD1EDCA00EEE684 /* Squirrel.sql */; };
 		ECFBFC420FD28B1700EEE684 /* DataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */; };
@@ -55,6 +56,8 @@
 		EC6EB9B10FD1D86400E6F9D8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPanelViewController.h; sourceTree = "<group>"; };
 		ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPanelViewController.m; sourceTree = "<group>"; };
+		ECFB00B60FD4830300EEE684 /* SelectDataSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectDataSetViewController.h; sourceTree = "<group>"; };
+		ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectDataSetViewController.m; sourceTree = "<group>"; };
 		ECFBFBA50FD1E87B00EEE684 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		ECFBFBA70FD1EDCA00EEE684 /* Squirrel.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = Squirrel.sql; sourceTree = "<group>"; };
 		ECFBFC400FD28B1700EEE684 /* DataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataItem.h; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 				EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */,
 				ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */,
 				ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */,
+				ECFB00B60FD4830300EEE684 /* SelectDataSetViewController.h */,
+				ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 				ECFBFC420FD28B1700EEE684 /* DataItem.m in Sources */,
 				ECFBFFF50FD463F000EEE684 /* DataPanel.m in Sources */,
 				ECFB00510FD46F6600EEE684 /* DataPanelViewController.m in Sources */,
+				ECFB00B80FD4830300EEE684 /* SelectDataSetViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

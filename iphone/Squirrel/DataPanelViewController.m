@@ -10,11 +10,13 @@
 #import "DataPanelViewController.h"
 #import "EditableTableViewCell.h"
 #import "DataPanel.h"
+#import "DataSet.h"
+#import "SelectDataSetViewController.h"
 
 
 @implementation DataPanelViewController
 
-@synthesize dataPanel, dataPanelName, activeTextField;
+@synthesize dataPanel, dataPanelName, dataPanelType, dataPanelSet, activeTextField;
 
 
 - (void)viewDidLoad {
@@ -35,20 +37,27 @@
 	UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
 	[self.navigationItem setLeftBarButtonItem:cancelButton];
 	[cancelButton release];
+
+	if (dataPanelName) [dataPanelName release];
+	if (dataPanelType) [dataPanelType release];
+	
+	if (dataPanel.primaryKey) {
+		[dataPanel hydrate];
+		
+		dataPanelName = [dataPanel.name mutableCopy];
+		dataPanelType = [dataPanel.type mutableCopy];
+		dataPanelSet = dataPanel.dataSet;
+	} else {
+		dataPanelName = [[NSMutableString alloc] init];
+		dataPanelName = [[NSMutableString alloc] init];
+		dataPanelSet = [[DataSet alloc] init];
+	}
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	
-	if (dataPanelName) [dataPanelName release];
-	
-	if (dataPanel.primaryKey) {
-		dataPanelName = [dataPanel.name mutableCopy];
-	} else {
-		dataPanelName = [[NSMutableString alloc] init];
-	}
-	
+	NSLog(@"Data Panel Set: %@", dataPanelSet.name);
 }
 
 
@@ -67,6 +76,8 @@
 	}
 	
 	dataPanel.name = dataPanelName;
+	dataPanel.type = dataPanelType;
+	dataPanel.dataSet = dataPanelSet;
 	
 	if (!dataPanel.primaryKey) {
 		[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] addDataPanel:dataPanel];
@@ -77,7 +88,11 @@
 
 
 - (void)cancel:(id)sender {
+	[dataPanelName release];
 	dataPanelName = nil;
+	
+	[dataPanelType release];
+	dataPanelType = nil;
 	
 	[self.navigationController popViewControllerAnimated:YES];
 }
@@ -94,48 +109,67 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return 3;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	static NSString *CellIdentifier = @"Cell";
-	
-	EditableTableViewCell *cell = (EditableTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-	
-	if (cell == nil) {
-		cell = [[[EditableTableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+	if (indexPath.row == 0) {
+		static NSString *CellIdentifier = @"Cell";
+		
+		EditableTableViewCell *cell = (EditableTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		
+		if (cell == nil) {
+			cell = [[[EditableTableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+		}
+		
+		cell.delegate = self;
+		cell.indexPath = indexPath;
+		
+		cell.textField.text = dataPanelName;
+		
+		return cell;
+	} else {
+		static NSString *CellIdentifier = @"SelectCell";
+		
+		UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		
+		if (cell == nil) {
+			cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+		}
+		
+		if (indexPath.row == 1) {
+			if (dataPanelSet.primaryKey) {
+				cell.text = dataPanelSet.name;
+			} else {
+				cell.text = @"Select a Data Set";
+			}
+		} else if (indexPath.row == 2) {
+			if (dataPanelType) {
+				cell.text = dataPanelType;
+			} else {
+				cell.text = @"Select a Panel Type";
+			}
+		}
+
+		return cell;
 	}
-	
-	cell.delegate = self;
-	cell.indexPath = indexPath;
-	
-	cell.textField.text = dataPanelName;
-	
-	return cell;
 }
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//	if (indexPath.section == 1 & indexPath.row == 0) {
-//		if (activeTextField) {
-//			[activeTextField resignFirstResponder];
-//		}
-//		
-//		[tableView deselectRowAtIndexPath:indexPath animated:YES];
-//		
-//		NSArray *indexPaths = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:1 inSection:1], nil];
-//		
-//		DataItem *dataItem = [[DataItem alloc] init];
-//		[dataItems insertObject:dataItem atIndex:0];
-//		[dataItem release];
-//		
-//		[tableView beginUpdates];
-//		[tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationLeft];
-//		[tableView endUpdates];
-//		
-//		[tableView selectRowAtIndexPath:[indexPaths objectAtIndex:0] animated:NO scrollPosition:UITableViewScrollPositionBottom];
-//	}
-//}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (indexPath.row == 1) {
+		SelectDataSetViewController *controller = [[SelectDataSetViewController alloc] initWithStyle:UITableViewStyleGrouped];
+		
+		controller.dataSet = dataPanelSet;
+		controller.delegate = self;
+		
+		[self.navigationController pushViewController:controller animated:YES];
+		[controller release];
+	} else if (indexPath.row == 2) {
+		
+	}
+}
 
 
 - (void)didBeginEditingTextFieldAtIndexPath:(NSIndexPath *)indexPath withTextField:(UITextField *)field {
@@ -159,9 +193,19 @@
 }
 
 
+- (void)didUpdateDataSet:(DataSet *)newDataSet {
+	if (![dataPanelSet isEqualTo:newDataSet]) {
+		dataPanelSet = newDataSet;
+		
+		[self.tableView reloadData];
+	}
+}
+
+
 - (void)dealloc {
 	[dataPanel release];
 	[dataPanelName release];
+	[dataPanelType release];
     [super dealloc];
 }
 

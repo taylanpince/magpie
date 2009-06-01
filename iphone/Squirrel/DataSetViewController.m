@@ -109,7 +109,10 @@
 
 
 - (void)cancel:(id)sender {
+	[dataItems release];
 	dataItems = nil;
+	
+	[dataSetName release];
 	dataSetName = nil;
 	
 	[self.navigationController popViewControllerAnimated:YES];
