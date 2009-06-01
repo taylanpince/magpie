@@ -9,7 +9,9 @@
 #import "SquirrelAppDelegate.h"
 #import "FlipsideViewController.h"
 #import "DataSet.h"
+#import "DataPanel.h"
 #import "DataSetViewController.h"
+#import "DataPanelViewController.h"
 
 
 @implementation FlipsideViewController
@@ -41,12 +43,16 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return [[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] count] + 1;
+	if (section == 0) {
+		return [[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] count] + 1;
+	} else {
+		return [[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels] count] + 1;
+	}
 }
 
 
@@ -60,13 +66,24 @@
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 	
-	NSMutableArray *dataSets = [(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets];
-    
-	if (indexPath.row == [dataSets count]) {
-		cell.text = @"Add a new data set";
+	if (indexPath.section == 0) {
+		NSMutableArray *dataSets = [(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets];
+		
+		if (indexPath.row == [dataSets count]) {
+			cell.text = @"Add a new data set";
+		} else {
+			DataSet *dataSet = [dataSets objectAtIndex:indexPath.row];
+			cell.text = dataSet.name;
+		}
 	} else {
-		DataSet *dataSet = [dataSets objectAtIndex:indexPath.row];
-		cell.text = dataSet.name;
+		NSMutableArray *dataPanels = [(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels];
+		
+		if (indexPath.row == [dataPanels count]) {
+			cell.text = @"Add a new data panel";
+		} else {
+			DataPanel *dataPanel = [dataPanels objectAtIndex:indexPath.row];
+			cell.text = dataPanel.name;
+		}
 	}
 
     return cell;
@@ -74,64 +91,87 @@
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"Data Sets";
+    return (section == 0) ? @"Data Sets" : @"Data Panels";
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	DataSet *dataSet;
-	
-	if (indexPath.row == [[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] count]) {
-		dataSet = [[[DataSet alloc] init] autorelease];
+	if (indexPath.section == 0) {
+		DataSet *dataSet;
+		
+		if (indexPath.row == [[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] count]) {
+			dataSet = [[[DataSet alloc] init] autorelease];
+		} else {
+			dataSet = [[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] objectAtIndex:indexPath.row];
+		}
+
+		DataSetViewController *controller = [[DataSetViewController alloc] initWithStyle:UITableViewStyleGrouped];
+
+		controller.dataSet = dataSet;
+		
+		[self.navigationController pushViewController:controller animated:YES];
+		
+		[controller release];
 	} else {
-		dataSet = [[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] objectAtIndex:indexPath.row];
+		DataPanel *dataPanel;
+		
+		if (indexPath.row == [[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels] count]) {
+			dataPanel = [[[DataPanel alloc] init] autorelease];
+		} else {
+			dataPanel = [[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels] objectAtIndex:indexPath.row];
+		}
+		
+		DataPanelViewController *controller = [[DataPanelViewController alloc] initWithStyle:UITableViewStyleGrouped];
+		
+		controller.dataPanel = dataPanel;
+		
+		[self.navigationController pushViewController:controller animated:YES];
+		
+		[controller release];
 	}
-
-	DataSetViewController *controller = [[DataSetViewController alloc] initWithStyle:UITableViewStyleGrouped];
-
-	controller.dataSet = dataSet;
-	
-	[self.navigationController pushViewController:controller animated:YES];
-	
-	[controller release];
 }
 
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.row == [[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] count]) {
-		return UITableViewCellEditingStyleInsert;
+	if (indexPath.section == 0) {
+		if (indexPath.row == [[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] count]) {
+			return UITableViewCellEditingStyleInsert;
+		} else {
+			return UITableViewCellEditingStyleDelete;
+		}
 	} else {
-		return UITableViewCellEditingStyleDelete;
+		if (indexPath.row == [[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels] count]) {
+			return UITableViewCellEditingStyleInsert;
+		} else {
+			return UITableViewCellEditingStyleDelete;
+		}
 	}
 }
 
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-		SquirrelAppDelegate *appDelegate = (SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate];
-		DataSet *dataSet = [[appDelegate dataSets] objectAtIndex:indexPath.row];
-		
-		[appDelegate removeDataSet:dataSet];
-		
-		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+		if (indexPath.section == 0) {
+			SquirrelAppDelegate *appDelegate = (SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate];
+			DataSet *dataSet = [[appDelegate dataSets] objectAtIndex:indexPath.row];
+			
+			[appDelegate removeDataSet:dataSet];
+			
+			[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+		} else {
+			SquirrelAppDelegate *appDelegate = (SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate];
+			DataPanel *dataPanel = [[appDelegate dataPanels] objectAtIndex:indexPath.row];
+			
+			[appDelegate removeDataPanel:dataPanel];
+			
+			[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+		}
     }   
 }
 
 
-/*
- // Override to allow orientations other than the default portrait orientation.
- - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
- // Return YES for supported orientations
- return (interfaceOrientation == UIInterfaceOrientationPortrait);
- }
- */
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-}
-
-- (void)viewDidUnload {
-
 }
 
 

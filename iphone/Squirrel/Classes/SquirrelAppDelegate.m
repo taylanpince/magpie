@@ -10,6 +10,7 @@
 #import "MainViewController.h"
 #import "DataSet.h"
 #import "DataItem.h"
+#import "DataPanel.h"
 
 
 @interface SquirrelAppDelegate (Private)
@@ -20,7 +21,7 @@
 
 @implementation SquirrelAppDelegate
 
-@synthesize window, mainViewController, dataSets;
+@synthesize window, mainViewController, dataSets, dataPanels;
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
@@ -61,6 +62,10 @@
     self.dataSets = dataSetsArray;
     [dataSetsArray release];
 
+    NSMutableArray *dataPanelsArray = [[NSMutableArray alloc] init];
+    self.dataPanels = dataPanelsArray;
+    [dataPanelsArray release];
+	
     NSString *path = [self.applicationDocumentsDirectory stringByAppendingPathComponent:@"Squirrel.sql"];
 
     if (sqlite3_open([path UTF8String], &database) == SQLITE_OK) {
@@ -75,8 +80,26 @@
                 [dataSets addObject:dataSet];
                 [dataSet release];
             }
-        }
+        } else {
+			NSAssert1(0, @"Failed to prepare statement with error message: '%s'.", sqlite3_errmsg(database));
+		}
 
+        sqlite3_finalize(statement);
+
+		sql = "SELECT pk FROM data_panels";
+		
+        if (sqlite3_prepare_v2(database, sql, -1, &statement, NULL) == SQLITE_OK) {
+            while (sqlite3_step(statement) == SQLITE_ROW) {
+                int primaryKey = sqlite3_column_int(statement, 0);
+				
+                DataPanel *dataPanel = [[DataPanel alloc] initWithPrimaryKey:primaryKey database:database];
+                [dataPanels	addObject:dataPanel];
+                [dataPanel release];
+            }
+        } else {
+			NSAssert1(0, @"Failed to prepare statement with error message: '%s'.", sqlite3_errmsg(database));
+		}
+		
         sqlite3_finalize(statement);
     } else {
         sqlite3_close(database);
@@ -86,9 +109,11 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     [dataSets makeObjectsPerformSelector:@selector(dehydrate)];
+    [dataPanels makeObjectsPerformSelector:@selector(dehydrate)];
 	
     [DataSet finalizeStatements];
 	[DataItem finalizeStatements];
+	[DataPanel finalizeStatements];
 
     if (sqlite3_close(database) != SQLITE_OK) {
         NSAssert1(0, @"Error: failed to close database with message '%s'.", sqlite3_errmsg(database));
@@ -116,8 +141,21 @@
 }
 
 
+- (void)removeDataPanel:(DataPanel *)dataPanel {
+    [dataPanel deleteFromDatabase];
+    [dataPanels removeObject:dataPanel];
+}
+
+
+- (void)addDataPanel:(DataPanel *)dataPanel {
+    [dataPanel insertIntoDatabase:database];
+    [dataPanels addObject:dataPanel];
+}
+
+
 - (void)dealloc {
 	[dataSets release];
+	[dataPanels release];
     [mainViewController release];
     [window release];
     [super dealloc];

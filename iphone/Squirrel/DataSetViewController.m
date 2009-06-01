@@ -121,11 +121,6 @@
 }
 
 
-- (void)viewDidUnload {
-	
-}
-
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
 }
