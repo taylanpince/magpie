@@ -15,7 +15,7 @@
 
 @implementation DataSetViewController
 
-@synthesize dataSet, dataSetName, dataItems, activeTextField;
+@synthesize dataSet, dataSetName, dataItems, activeTextField, deletedDataItems;
 
 
 - (void)viewDidLoad {
@@ -29,6 +29,7 @@
 	if (dataSet.primaryKey) {
 		self.title = dataSet.name;
 	} else {
+		self.title = @"New Data Set";
 		saveButton.enabled = NO;
 	}
 	
@@ -44,6 +45,12 @@
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	
+	if (dataItems) [dataItems release];
+	if (deletedDataItems) [deletedDataItems release];
+	if (dataSetName) [dataSetName release];
+	
+	deletedDataItems = [[NSMutableArray alloc] init];
+	
 	if (dataSet.primaryKey) {
 		[dataSet selectRelated];
 		
@@ -58,6 +65,15 @@
 		dataSetName = [[NSMutableString alloc] init];
 	}
 
+}
+
+
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	
+	if (!dataSet.primaryKey) {
+		[self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
+	}
 }
 
 
@@ -82,6 +98,12 @@
 		}
 	}
 	
+	for (DataItem *dataItem in deletedDataItems) {
+		if ([dataSet.dataItems containsObject:dataItem]) {
+			[dataSet removeDataItem:dataItem];
+		}
+	}
+	
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -93,20 +115,11 @@
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
 }
+
 
 - (void)viewDidUnload {
 	
@@ -142,7 +155,7 @@
 		cell.indexPath = indexPath;
 		
 		if (indexPath.section == 0) {
-			cell.textField.text = dataSet.name;
+			cell.textField.text = dataSetName;
 		} else {
 			cell.textField.text = [[dataItems objectAtIndex:indexPath.row] name];
 		}
@@ -191,32 +204,37 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (activeTextField) {
-		[activeTextField resignFirstResponder];
-	}
-	
-	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	if (indexPath.section == 1 & indexPath.row == [dataItems count]) {
+		if (activeTextField) {
+			[activeTextField resignFirstResponder];
+		}
 
-	NSArray *indexPaths = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:[dataItems count] inSection:1], nil];
-	
-	DataItem *dataItem = [[DataItem alloc] init];
-	[dataItems addObject:dataItem];
-	[dataItem release];
-	
-    [tableView beginUpdates];
-	[tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationLeft];
-    [tableView endUpdates];
+		[tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+		NSArray *indexPaths = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:[dataItems count] inSection:1], nil];
+		
+		DataItem *dataItem = [[DataItem alloc] init];
+		[dataItems addObject:dataItem];
+		[dataItem release];
+		
+		[tableView beginUpdates];
+		[tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationLeft];
+		[tableView endUpdates];
+		
+		[tableView selectRowAtIndexPath:[indexPaths objectAtIndex:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
+	}
 }
 
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-		DataItem *dataItem = (DataItem *)[dataItems objectAtIndex:indexPath.row];
-		
-		if ([dataSet.dataItems containsObject:dataItem]) {
-			[dataSet removeDataItem:dataItem];
+		if (activeTextField) {
+			[activeTextField resignFirstResponder];
 		}
 		
+		DataItem *dataItem = (DataItem *)[dataItems objectAtIndex:indexPath.row];
+		
+		[deletedDataItems addObject:dataItem];
 		[dataItems removeObject:dataItem];
 		
 		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -225,7 +243,7 @@
 
 
 - (void)didBeginEditingTextFieldAtIndexPath:(NSIndexPath *)indexPath withTextField:(UITextField *)field {
-	self.activeTextField = field;
+	activeTextField = field;
 }
 
 
@@ -248,13 +266,13 @@
 	} else {
 		saveButton.enabled = YES;
 	}
-
 }
 
 
 - (void)dealloc {
 	[dataSet release];
 	[dataItems release];
+	[deletedDataItems release];
 	[dataSetName release];
     [super dealloc];
 }

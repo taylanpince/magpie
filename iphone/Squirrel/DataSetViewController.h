@@ -15,12 +15,14 @@
 	DataSet *dataSet;
 	NSMutableString *dataSetName;
 	NSMutableArray *dataItems;
+	NSMutableArray *deletedDataItems;
 	UITextField *activeTextField;
 }
 
 @property (nonatomic, retain) DataSet *dataSet;
 @property (nonatomic, retain) NSMutableString *dataSetName;
 @property (nonatomic, retain) NSMutableArray *dataItems;
+@property (nonatomic, retain) NSMutableArray *deletedDataItems;
 @property (nonatomic, assign) UITextField *activeTextField;
 
 @end

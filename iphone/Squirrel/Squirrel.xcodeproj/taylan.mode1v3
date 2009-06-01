@@ -333,7 +333,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ECFBFEE90FD41BF400EEE684</string>
+										<string>ECFBFF7F0FD42CBF00EEE684</string>
 										<key>history</key>
 										<array>
 											<string>EC6EB7CF0FD196DD00E6F9D8</string>
@@ -352,13 +352,13 @@
 											<string>ECFBFE780FD38D0300EEE684</string>
 											<string>ECFBFE950FD38FD600EEE684</string>
 											<string>ECFBFEA70FD390E400EEE684</string>
-											<string>ECFBFEA80FD390E400EEE684</string>
-											<string>ECFBFEB40FD3918200EEE684</string>
 											<string>ECFBFEB50FD3918200EEE684</string>
 											<string>ECFBFEBF0FD391AB00EEE684</string>
-											<string>ECFBFEE20FD41B9B00EEE684</string>
-											<string>ECFBFEE30FD41B9B00EEE684</string>
-											<string>ECFBFEE40FD41B9B00EEE684</string>
+											<string>ECFBFF030FD4245C00EEE684</string>
+											<string>ECFBFF170FD4277C00EEE684</string>
+											<string>ECFBFF670FD42B5C00EEE684</string>
+											<string>ECFBFF7A0FD42CA100EEE684</string>
+											<string>ECFBFF7B0FD42CA100EEE684</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -427,14 +427,10 @@
 											<string>ECFBFD150FD2AF9300EEE684</string>
 											<string>ECFBFD1C0FD2AF9300EEE684</string>
 											<string>ECFBFD1D0FD2AF9300EEE684</string>
-											<string>ECFBFD2B0FD2B09300EEE684</string>
 											<string>ECFBFD390FD2B2AC00EEE684</string>
-											<string>ECFBFD430FD2B46A00EEE684</string>
 											<string>ECFBFD440FD2B46A00EEE684</string>
-											<string>ECFBFD450FD2B46A00EEE684</string>
 											<string>ECFBFD460FD2B46A00EEE684</string>
 											<string>ECFBFD480FD2B46A00EEE684</string>
-											<string>ECFBFD4A0FD2B46A00EEE684</string>
 											<string>ECFBFD4B0FD2B46A00EEE684</string>
 											<string>ECFBFD5D0FD2B6BD00EEE684</string>
 											<string>ECFBFD5E0FD2B6BD00EEE684</string>
@@ -506,13 +502,27 @@
 											<string>ECFBFEBD0FD3918200EEE684</string>
 											<string>ECFBFEC10FD391AB00EEE684</string>
 											<string>ECFBFECD0FD419B800EEE684</string>
-											<string>ECFBFECE0FD419B800EEE684</string>
 											<string>ECFBFECF0FD419B800EEE684</string>
-											<string>ECFBFED00FD419B800EEE684</string>
-											<string>ECFBFEDE0FD41B4A00EEE684</string>
 											<string>ECFBFEE50FD41B9B00EEE684</string>
-											<string>ECFBFEE60FD41B9B00EEE684</string>
 											<string>ECFBFEE70FD41B9B00EEE684</string>
+											<string>ECFBFF050FD4245C00EEE684</string>
+											<string>ECFBFF060FD4245C00EEE684</string>
+											<string>ECFBFF0D0FD4257700EEE684</string>
+											<string>ECFBFF0E0FD4257700EEE684</string>
+											<string>ECFBFF1B0FD4277C00EEE684</string>
+											<string>ECFBFF1C0FD4277C00EEE684</string>
+											<string>ECFBFF1D0FD4277C00EEE684</string>
+											<string>ECFBFF1E0FD4277C00EEE684</string>
+											<string>ECFBFF1F0FD4277C00EEE684</string>
+											<string>ECFBFF200FD4277C00EEE684</string>
+											<string>ECFBFF250FD427E900EEE684</string>
+											<string>ECFBFF260FD427E900EEE684</string>
+											<string>ECFBFF340FD4297B00EEE684</string>
+											<string>ECFBFF350FD4297B00EEE684</string>
+											<string>ECFBFF690FD42B5C00EEE684</string>
+											<string>ECFBFF6A0FD42B5C00EEE684</string>
+											<string>ECFBFF720FD42BD400EEE684</string>
+											<string>ECFBFF7C0FD42CA100EEE684</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -709,9 +719,9 @@
 		<string>ECFBFC740FD2998700EEE684</string>
 		<string>ECFBFC750FD2998700EEE684</string>
 		<string>EC6EB79A0FD0AB2E00E6F9D8</string>
+		<string>/Users/taylan/Documents/Development/Personal/squirrel/iphone/Squirrel/Squirrel.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>/Users/taylan/Documents/Development/Personal/squirrel/iphone/Squirrel/Squirrel.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>4 55 1436 823 0 0 1440 878 </string>

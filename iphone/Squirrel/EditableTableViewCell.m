@@ -38,13 +38,9 @@
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    if (selected) {
-        textField.textColor = [UIColor whiteColor];
-    } else {
-        textField.textColor = [UIColor blackColor];
-    }
+	if (selected) {
+		[textField becomeFirstResponder];
+	}
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)field {
@@ -60,6 +56,12 @@
 	[replacedString replaceCharactersInRange:range withString:string];
 
 	[delegate didChangeEditingTextFieldAtIndexPath:indexPath withValue:replacedString];
+	
+	return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)field {
+	[textField resignFirstResponder];
 	
 	return YES;
 }
