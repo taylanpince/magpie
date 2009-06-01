@@ -17,8 +17,6 @@
 	NSMutableArray *dataItems;
 	NSMutableArray *deletedDataItems;
 	UITextField *activeTextField;
-	
-	BOOL adding;
 }
 
 @property (nonatomic, retain) DataSet *dataSet;

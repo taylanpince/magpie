@@ -39,17 +39,6 @@
 	UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
 	[self.navigationItem setLeftBarButtonItem:cancelButton];
 	[cancelButton release];
-	
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardDidShowNotification object:nil];
-}
-
-
-- (void)keyboardWasShown:(NSNotification*)aNotification {
-	if (adding) {
-		adding = NO;
-		
-		[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[dataItems count] inSection:1] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
-	}
 }
 
 
@@ -224,9 +213,6 @@
 		[tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationLeft];
 		[tableView endUpdates];
 		
-//		adding = YES;
-//		EditableTableViewCell *cell = (EditableTableViewCell *)[tableView cellForRowAtIndexPath:[indexPaths objectAtIndex:0]];
-//		[cell.textField becomeFirstResponder];
 		[tableView selectRowAtIndexPath:[indexPaths objectAtIndex:0] animated:NO scrollPosition:UITableViewScrollPositionBottom];
 	}
 }
