@@ -12,6 +12,7 @@
 #import "DataPanel.h"
 #import "DataSet.h"
 #import "SelectDataSetViewController.h"
+#import "SelectPanelTypeViewController.h"
 
 
 @implementation DataPanelViewController
@@ -167,7 +168,13 @@
 		[self.navigationController pushViewController:controller animated:YES];
 		[controller release];
 	} else if (indexPath.row == 2) {
+		SelectPanelTypeViewController *controller = [[SelectPanelTypeViewController alloc] initWithStyle:UITableViewStyleGrouped];
 		
+		controller.panelType = dataPanelType;
+		controller.delegate = self;
+		
+		[self.navigationController pushViewController:controller animated:YES];
+		[controller release];
 	}
 }
 
@@ -196,6 +203,15 @@
 - (void)didUpdateDataSet:(DataSet *)newDataSet {
 	if (![dataPanelSet isEqualTo:newDataSet]) {
 		dataPanelSet = newDataSet;
+		
+		[self.tableView reloadData];
+	}
+}
+
+
+- (void)didUpdatePanelType:(NSMutableString *)newPanelType {
+	if (![dataPanelType isEqualToString:newPanelType]) {
+		dataPanelType = newPanelType;
 		
 		[self.tableView reloadData];
 	}

@@ -321,7 +321,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DataPanelViewController.m</string>
+								<string>DataPanelViewController.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,11 +329,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DataPanelViewController.m</string>
+										<string>DataPanelViewController.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ECFB01420FD48EBE00EEE684</string>
+										<string>ECFB015C0FD4911C00EEE684</string>
 										<key>history</key>
 										<array>
 											<string>EC6EB7CF0FD196DD00E6F9D8</string>
@@ -358,11 +358,13 @@
 											<string>ECFB00E60FD4897E00EEE684</string>
 											<string>ECFB00E70FD4897E00EEE684</string>
 											<string>ECFB011D0FD48C5700EEE684</string>
-											<string>ECFB011E0FD48C5700EEE684</string>
-											<string>ECFB012B0FD48CF000EEE684</string>
-											<string>ECFB013D0FD48EBE00EEE684</string>
 											<string>ECFB013E0FD48EBE00EEE684</string>
-											<string>ECFB013F0FD48EBE00EEE684</string>
+											<string>ECFB01490FD4911B00EEE684</string>
+											<string>ECFB014A0FD4911B00EEE684</string>
+											<string>ECFB014B0FD4911B00EEE684</string>
+											<string>ECFB014C0FD4911B00EEE684</string>
+											<string>ECFB014D0FD4911B00EEE684</string>
+											<string>ECFB014E0FD4911B00EEE684</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -564,6 +566,19 @@
 											<string>ECFB013A0FD48DEE00EEE684</string>
 											<string>ECFB01400FD48EBE00EEE684</string>
 											<string>ECFB01410FD48EBE00EEE684</string>
+											<string>ECFB014F0FD4911C00EEE684</string>
+											<string>ECFB01500FD4911C00EEE684</string>
+											<string>ECFB01510FD4911C00EEE684</string>
+											<string>ECFB01520FD4911C00EEE684</string>
+											<string>ECFB01530FD4911C00EEE684</string>
+											<string>ECFB01540FD4911C00EEE684</string>
+											<string>ECFB01550FD4911C00EEE684</string>
+											<string>ECFB01560FD4911C00EEE684</string>
+											<string>ECFB01570FD4911C00EEE684</string>
+											<string>ECFB01580FD4911C00EEE684</string>
+											<string>ECFB01590FD4911C00EEE684</string>
+											<string>ECFB015A0FD4911C00EEE684</string>
+											<string>ECFB015B0FD4911C00EEE684</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

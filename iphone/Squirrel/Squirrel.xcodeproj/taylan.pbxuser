@@ -362,6 +362,26 @@
 			ECFB01400FD48EBE00EEE684 /* PBXTextBookmark */ = ECFB01400FD48EBE00EEE684 /* PBXTextBookmark */;
 			ECFB01410FD48EBE00EEE684 /* PBXTextBookmark */ = ECFB01410FD48EBE00EEE684 /* PBXTextBookmark */;
 			ECFB01420FD48EBE00EEE684 /* PBXTextBookmark */ = ECFB01420FD48EBE00EEE684 /* PBXTextBookmark */;
+			ECFB01490FD4911B00EEE684 /* PBXTextBookmark */ = ECFB01490FD4911B00EEE684 /* PBXTextBookmark */;
+			ECFB014A0FD4911B00EEE684 /* PBXTextBookmark */ = ECFB014A0FD4911B00EEE684 /* PBXTextBookmark */;
+			ECFB014B0FD4911B00EEE684 /* PBXTextBookmark */ = ECFB014B0FD4911B00EEE684 /* PBXTextBookmark */;
+			ECFB014C0FD4911B00EEE684 /* PBXTextBookmark */ = ECFB014C0FD4911B00EEE684 /* PBXTextBookmark */;
+			ECFB014D0FD4911B00EEE684 /* PBXTextBookmark */ = ECFB014D0FD4911B00EEE684 /* PBXTextBookmark */;
+			ECFB014E0FD4911B00EEE684 /* PBXTextBookmark */ = ECFB014E0FD4911B00EEE684 /* PBXTextBookmark */;
+			ECFB014F0FD4911C00EEE684 /* PBXTextBookmark */ = ECFB014F0FD4911C00EEE684 /* PBXTextBookmark */;
+			ECFB01500FD4911C00EEE684 /* PBXTextBookmark */ = ECFB01500FD4911C00EEE684 /* PBXTextBookmark */;
+			ECFB01510FD4911C00EEE684 /* PBXTextBookmark */ = ECFB01510FD4911C00EEE684 /* PBXTextBookmark */;
+			ECFB01520FD4911C00EEE684 /* PBXTextBookmark */ = ECFB01520FD4911C00EEE684 /* PBXTextBookmark */;
+			ECFB01530FD4911C00EEE684 /* PBXTextBookmark */ = ECFB01530FD4911C00EEE684 /* PBXTextBookmark */;
+			ECFB01540FD4911C00EEE684 /* PBXTextBookmark */ = ECFB01540FD4911C00EEE684 /* PBXTextBookmark */;
+			ECFB01550FD4911C00EEE684 /* PBXTextBookmark */ = ECFB01550FD4911C00EEE684 /* PBXTextBookmark */;
+			ECFB01560FD4911C00EEE684 /* PBXTextBookmark */ = ECFB01560FD4911C00EEE684 /* PBXTextBookmark */;
+			ECFB01570FD4911C00EEE684 /* PBXTextBookmark */ = ECFB01570FD4911C00EEE684 /* PBXTextBookmark */;
+			ECFB01580FD4911C00EEE684 /* PBXTextBookmark */ = ECFB01580FD4911C00EEE684 /* PBXTextBookmark */;
+			ECFB01590FD4911C00EEE684 /* PBXTextBookmark */ = ECFB01590FD4911C00EEE684 /* PBXTextBookmark */;
+			ECFB015A0FD4911C00EEE684 /* PBXTextBookmark */ = ECFB015A0FD4911C00EEE684 /* PBXTextBookmark */;
+			ECFB015B0FD4911C00EEE684 /* PBXTextBookmark */ = ECFB015B0FD4911C00EEE684 /* PBXTextBookmark */;
+			ECFB015C0FD4911C00EEE684 /* PBXTextBookmark */ = ECFB015C0FD4911C00EEE684 /* PBXTextBookmark */;
 			ECFBFBD10FD1F5D100EEE684 /* PBXTextBookmark */ = ECFBFBD10FD1F5D100EEE684 /* PBXTextBookmark */;
 			ECFBFBD20FD1F5D100EEE684 /* PBXTextBookmark */ = ECFBFBD20FD1F5D100EEE684 /* PBXTextBookmark */;
 			ECFBFBD50FD1F5E100EEE684 /* PBXTextBookmark */ = ECFBFBD50FD1F5E100EEE684 /* PBXTextBookmark */;
@@ -2499,16 +2519,16 @@
 	};
 	ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1139, 572}}";
-			sepNavSelRange = "{733, 0}";
-			sepNavVisRange = "{0, 824}";
+			sepNavIntBoundsRect = "{{0, 0}, {1188, 549}}";
+			sepNavSelRange = "{459, 0}";
+			sepNavVisRange = "{0, 905}";
 		};
 	};
 	ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1139, 3408}}";
-			sepNavSelRange = "{1257, 0}";
-			sepNavVisRange = "{796, 1130}";
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 3712}}";
+			sepNavSelRange = "{4736, 0}";
+			sepNavVisRange = "{4213, 1193}";
 		};
 	};
 	ECFB00560FD4721100EEE684 /* PBXTextBookmark */ = {
@@ -2526,7 +2546,7 @@
 		fRef = ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */;
 		name = "DataPanelViewController.h: 22";
 		rLen = 0;
-		rLoc = 758;
+		rLoc = 839;
 		rType = 0;
 		vrLen = 566;
 		vrLoc = 0;
@@ -2546,7 +2566,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 23";
 		rLen = 0;
-		rLoc = 510;
+		rLoc = 552;
 		rType = 0;
 		vrLen = 977;
 		vrLoc = 394;
@@ -2586,7 +2606,7 @@
 		fRef = ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */;
 		name = "DataPanelViewController.h: 22";
 		rLen = 0;
-		rLoc = 758;
+		rLoc = 839;
 		rType = 0;
 		vrLen = 566;
 		vrLoc = 0;
@@ -2606,7 +2626,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 23";
 		rLen = 0;
-		rLoc = 510;
+		rLoc = 552;
 		rType = 0;
 		vrLen = 977;
 		vrLoc = 394;
@@ -2946,7 +2966,7 @@
 		fRef = ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */;
 		name = "DataPanelViewController.h: 11";
 		rLen = 0;
-		rLoc = 248;
+		rLoc = 290;
 		rType = 0;
 		vrLen = 747;
 		vrLoc = 0;
@@ -2956,7 +2976,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 52";
 		rLen = 0;
-		rLoc = 1677;
+		rLoc = 1719;
 		rType = 0;
 		vrLen = 1131;
 		vrLoc = 751;
@@ -2976,7 +2996,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 126";
 		rLen = 0;
-		rLoc = 4029;
+		rLoc = 4071;
 		rType = 0;
 		vrLen = 1118;
 		vrLoc = 2587;
@@ -2986,7 +3006,7 @@
 		fRef = ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */;
 		name = "DataPanelViewController.h: 21";
 		rLen = 0;
-		rLoc = 641;
+		rLoc = 722;
 		rType = 0;
 		vrLen = 554;
 		vrLoc = 0;
@@ -2996,7 +3016,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 126";
 		rLen = 0;
-		rLoc = 4029;
+		rLoc = 4071;
 		rType = 0;
 		vrLen = 1118;
 		vrLoc = 2587;
@@ -3006,7 +3026,7 @@
 		fRef = ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */;
 		name = "DataPanelViewController.h: 25";
 		rLen = 0;
-		rLoc = 756;
+		rLoc = 837;
 		rType = 0;
 		vrLen = 747;
 		vrLoc = 0;
@@ -3016,7 +3036,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 52";
 		rLen = 0;
-		rLoc = 1677;
+		rLoc = 1719;
 		rType = 0;
 		vrLen = 1131;
 		vrLoc = 751;
@@ -3026,7 +3046,7 @@
 		fRef = ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */;
 		name = "DataPanelViewController.h: 11";
 		rLen = 0;
-		rLoc = 248;
+		rLoc = 290;
 		rType = 0;
 		vrLen = 747;
 		vrLoc = 0;
@@ -3036,7 +3056,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 57";
 		rLen = 0;
-		rLoc = 1677;
+		rLoc = 1719;
 		rType = 0;
 		vrLen = 842;
 		vrLoc = 1461;
@@ -3056,7 +3076,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 94";
 		rLen = 0;
-		rLoc = 2456;
+		rLoc = 2498;
 		rType = 0;
 		vrLen = 790;
 		vrLoc = 1958;
@@ -3076,7 +3096,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 151";
 		rLen = 0;
-		rLoc = 3979;
+		rLoc = 4021;
 		rType = 0;
 		vrLen = 1134;
 		vrLoc = 3958;
@@ -3086,7 +3106,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 150";
 		rLen = 0;
-		rLoc = 3967;
+		rLoc = 4009;
 		rType = 0;
 		vrLen = 935;
 		vrLoc = 3323;
@@ -3096,7 +3116,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 139";
 		rLen = 0;
-		rLoc = 3717;
+		rLoc = 3759;
 		rType = 0;
 		vrLen = 936;
 		vrLoc = 3089;
@@ -3106,7 +3126,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 162";
 		rLen = 0;
-		rLoc = 4462;
+		rLoc = 4504;
 		rType = 0;
 		vrLen = 884;
 		vrLoc = 2382;
@@ -3116,7 +3136,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 162";
 		rLen = 0;
-		rLoc = 4462;
+		rLoc = 4504;
 		rType = 0;
 		vrLen = 967;
 		vrLoc = 3333;
@@ -3124,15 +3144,15 @@
 	ECFB00B60FD4830300EEE684 /* SelectDataSetViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1139, 572}}";
-			sepNavSelRange = "{387, 0}";
+			sepNavSelRange = "{215, 0}";
 			sepNavVisRange = "{0, 596}";
 		};
 	};
 	ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {999, 1216}}";
-			sepNavSelRange = "{1591, 0}";
-			sepNavVisRange = "{1338, 499}";
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 1216}}";
+			sepNavSelRange = "{246, 0}";
+			sepNavVisRange = "{0, 615}";
 		};
 	};
 	ECFB00BF0FD484E800EEE684 /* PBXTextBookmark */ = {
@@ -3140,7 +3160,7 @@
 		fRef = ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */;
 		name = "DataPanelViewController.h: 11";
 		rLen = 0;
-		rLoc = 248;
+		rLoc = 290;
 		rType = 0;
 		vrLen = 747;
 		vrLoc = 0;
@@ -3180,7 +3200,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 14";
 		rLen = 0;
-		rLoc = 331;
+		rLoc = 373;
 		rType = 0;
 		vrLen = 1105;
 		vrLoc = 796;
@@ -3190,7 +3210,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 162";
 		rLen = 0;
-		rLoc = 4462;
+		rLoc = 4504;
 		rType = 0;
 		vrLen = 776;
 		vrLoc = 3698;
@@ -3200,7 +3220,7 @@
 		fRef = ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */;
 		name = "DataPanelViewController.h: 11";
 		rLen = 0;
-		rLoc = 248;
+		rLoc = 290;
 		rType = 0;
 		vrLen = 747;
 		vrLoc = 0;
@@ -3210,7 +3230,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 14";
 		rLen = 0;
-		rLoc = 331;
+		rLoc = 373;
 		rType = 0;
 		vrLen = 1048;
 		vrLoc = 853;
@@ -3240,7 +3260,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 168";
 		rLen = 0;
-		rLoc = 4460;
+		rLoc = 4502;
 		rType = 0;
 		vrLen = 955;
 		vrLoc = 3995;
@@ -3250,7 +3270,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 168";
 		rLen = 0;
-		rLoc = 4460;
+		rLoc = 4502;
 		rType = 0;
 		vrLen = 1145;
 		vrLoc = 2693;
@@ -3270,7 +3290,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 168";
 		rLen = 0;
-		rLoc = 4460;
+		rLoc = 4502;
 		rType = 0;
 		vrLen = 1145;
 		vrLoc = 2693;
@@ -3320,7 +3340,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 168";
 		rLen = 0;
-		rLoc = 4460;
+		rLoc = 4502;
 		rType = 0;
 		vrLen = 1143;
 		vrLoc = 2695;
@@ -3340,7 +3360,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 45";
 		rLen = 0;
-		rLoc = 1676;
+		rLoc = 1718;
 		rType = 0;
 		vrLen = 962;
 		vrLoc = 1032;
@@ -3350,7 +3370,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 54";
 		rLen = 0;
-		rLoc = 1549;
+		rLoc = 1591;
 		rType = 0;
 		vrLen = 1144;
 		vrLoc = 794;
@@ -3360,7 +3380,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 59";
 		rLen = 0;
-		rLoc = 1674;
+		rLoc = 1716;
 		rType = 0;
 		vrLen = 1149;
 		vrLoc = 794;
@@ -3400,7 +3420,7 @@
 		fRef = ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */;
 		name = "DataPanelViewController.h: 15";
 		rLen = 0;
-		rLoc = 378;
+		rLoc = 459;
 		rType = 0;
 		vrLen = 824;
 		vrLoc = 0;
@@ -3430,7 +3450,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 61";
 		rLen = 0;
-		rLoc = 1679;
+		rLoc = 1721;
 		rType = 0;
 		vrLen = 851;
 		vrLoc = 4397;
@@ -3440,7 +3460,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 61";
 		rLen = 0;
-		rLoc = 1679;
+		rLoc = 1721;
 		rType = 0;
 		vrLen = 851;
 		vrLoc = 4397;
@@ -3450,7 +3470,7 @@
 		fRef = ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */;
 		name = "DataPanelViewController.h: 11";
 		rLen = 0;
-		rLoc = 248;
+		rLoc = 290;
 		rType = 0;
 		vrLen = 747;
 		vrLoc = 0;
@@ -3490,7 +3510,7 @@
 		fRef = ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */;
 		name = "DataPanelViewController.h: 15";
 		rLen = 0;
-		rLoc = 378;
+		rLoc = 459;
 		rType = 0;
 		vrLen = 824;
 		vrLoc = 0;
@@ -3500,7 +3520,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 61";
 		rLen = 0;
-		rLoc = 1679;
+		rLoc = 1721;
 		rType = 0;
 		vrLen = 851;
 		vrLoc = 4397;
@@ -3530,7 +3550,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 202";
 		rLen = 0;
-		rLoc = 5209;
+		rLoc = 5547;
 		rType = 0;
 		vrLen = 718;
 		vrLoc = 4532;
@@ -3540,7 +3560,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 199";
 		rLen = 0;
-		rLoc = 5169;
+		rLoc = 5507;
 		rType = 0;
 		vrLen = 758;
 		vrLoc = 4532;
@@ -3550,7 +3570,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 167";
 		rLen = 0;
-		rLoc = 4361;
+		rLoc = 4403;
 		rType = 0;
 		vrLen = 909;
 		vrLoc = 3899;
@@ -3560,7 +3580,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 167";
 		rLen = 0;
-		rLoc = 4361;
+		rLoc = 4403;
 		rType = 0;
 		vrLen = 952;
 		vrLoc = 3899;
@@ -3570,7 +3590,7 @@
 		fRef = ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */;
 		name = "DataPanelViewController.h: 15";
 		rLen = 0;
-		rLoc = 378;
+		rLoc = 459;
 		rType = 0;
 		vrLen = 824;
 		vrLoc = 0;
@@ -3610,7 +3630,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 167";
 		rLen = 0;
-		rLoc = 4361;
+		rLoc = 4403;
 		rType = 0;
 		vrLen = 952;
 		vrLoc = 3899;
@@ -3630,7 +3650,7 @@
 		fRef = ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */;
 		name = "DataPanelViewController.h: 15";
 		rLen = 0;
-		rLoc = 378;
+		rLoc = 459;
 		rType = 0;
 		vrLen = 824;
 		vrLoc = 0;
@@ -3720,7 +3740,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 167";
 		rLen = 0;
-		rLoc = 4361;
+		rLoc = 4403;
 		rType = 0;
 		vrLen = 761;
 		vrLoc = 4706;
@@ -3750,7 +3770,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 167";
 		rLen = 0;
-		rLoc = 4361;
+		rLoc = 4403;
 		rType = 0;
 		vrLen = 761;
 		vrLoc = 4706;
@@ -3870,7 +3890,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 167";
 		rLen = 0;
-		rLoc = 4361;
+		rLoc = 4403;
 		rType = 0;
 		vrLen = 756;
 		vrLoc = 4706;
@@ -3890,7 +3910,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 205";
 		rLen = 0;
-		rLoc = 5234;
+		rLoc = 5572;
 		rType = 0;
 		vrLen = 810;
 		vrLoc = 4562;
@@ -3900,7 +3920,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 199";
 		rLen = 0;
-		rLoc = 5124;
+		rLoc = 5462;
 		rType = 0;
 		vrLen = 760;
 		vrLoc = 4562;
@@ -3910,7 +3930,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 96";
 		rLen = 0;
-		rLoc = 2456;
+		rLoc = 2498;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 2080;
@@ -3920,7 +3940,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 208";
 		rLen = 0;
-		rLoc = 5331;
+		rLoc = 5857;
 		rType = 0;
 		vrLen = 719;
 		vrLoc = 4660;
@@ -3930,7 +3950,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 208";
 		rLen = 0;
-		rLoc = 5331;
+		rLoc = 5857;
 		rType = 0;
 		vrLen = 719;
 		vrLoc = 4660;
@@ -3940,7 +3960,7 @@
 		fRef = ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */;
 		name = "DataPanelViewController.h: 26";
 		rLen = 0;
-		rLoc = 733;
+		rLoc = 814;
 		rType = 0;
 		vrLen = 824;
 		vrLoc = 0;
@@ -3950,7 +3970,7 @@
 		fRef = ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */;
 		name = "DataPanelViewController.h: 26";
 		rLen = 0;
-		rLoc = 733;
+		rLoc = 814;
 		rType = 0;
 		vrLen = 824;
 		vrLoc = 0;
@@ -3970,7 +3990,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 208";
 		rLen = 0;
-		rLoc = 5331;
+		rLoc = 5857;
 		rType = 0;
 		vrLen = 720;
 		vrLoc = 4659;
@@ -3980,7 +4000,7 @@
 		fRef = ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */;
 		name = "DataPanelViewController.h: 26";
 		rLen = 0;
-		rLoc = 733;
+		rLoc = 814;
 		rType = 0;
 		vrLen = 824;
 		vrLoc = 0;
@@ -4000,10 +4020,224 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 45";
 		rLen = 0;
-		rLoc = 1257;
+		rLoc = 1299;
 		rType = 0;
 		vrLen = 1130;
 		vrLoc = 796;
+	};
+	ECFB01430FD48F3B00EEE684 /* SelectPanelTypeViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 572}}";
+			sepNavSelRange = "{490, 0}";
+			sepNavVisRange = "{0, 696}";
+		};
+	};
+	ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 1248}}";
+			sepNavSelRange = "{1706, 0}";
+			sepNavVisRange = "{0, 680}";
+		};
+	};
+	ECFB01490FD4911B00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00B60FD4830300EEE684 /* SelectDataSetViewController.h */;
+		name = "SelectDataSetViewController.h: 11";
+		rLen = 0;
+		rLoc = 215;
+		rType = 0;
+		vrLen = 596;
+		vrLoc = 0;
+	};
+	ECFB014A0FD4911B00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */;
+		name = "SelectDataSetViewController.m: 14";
+		rLen = 0;
+		rLoc = 246;
+		rType = 0;
+		vrLen = 615;
+		vrLoc = 0;
+	};
+	ECFB014B0FD4911B00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */;
+		name = "SelectPanelTypeViewController.m: 72";
+		rLen = 0;
+		rLoc = 1706;
+		rType = 0;
+		vrLen = 680;
+		vrLoc = 0;
+	};
+	ECFB014C0FD4911B00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB01430FD48F3B00EEE684 /* SelectPanelTypeViewController.h */;
+		name = "SelectPanelTypeViewController.h: 20";
+		rLen = 0;
+		rLoc = 490;
+		rType = 0;
+		vrLen = 696;
+		vrLoc = 0;
+	};
+	ECFB014D0FD4911B00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
+		name = "DataPanelViewController.m: 174";
+		rLen = 0;
+		rLoc = 4736;
+		rType = 0;
+		vrLen = 1165;
+		vrLoc = 4213;
+	};
+	ECFB014E0FD4911B00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */;
+		name = "DataPanelViewController.h: 31";
+		rLen = 0;
+		rLoc = 905;
+		rType = 0;
+		vrLen = 903;
+		vrLoc = 0;
+	};
+	ECFB014F0FD4911C00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
+		name = "DataPanelViewController.m: 45";
+		rLen = 0;
+		rLoc = 1299;
+		rType = 0;
+		vrLen = 1092;
+		vrLoc = 3408;
+	};
+	ECFB01500FD4911C00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB01430FD48F3B00EEE684 /* SelectPanelTypeViewController.h */;
+		name = "SelectPanelTypeViewController.h: 8";
+		rLen = 0;
+		rLoc = 153;
+		rType = 0;
+		vrLen = 256;
+		vrLoc = 0;
+	};
+	ECFB01510FD4911C00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00B60FD4830300EEE684 /* SelectDataSetViewController.h */;
+		name = "SelectDataSetViewController.h: 11";
+		rLen = 0;
+		rLoc = 215;
+		rType = 0;
+		vrLen = 596;
+		vrLoc = 0;
+	};
+	ECFB01520FD4911C00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB01430FD48F3B00EEE684 /* SelectPanelTypeViewController.h */;
+		name = "SelectPanelTypeViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 623;
+		vrLoc = 0;
+	};
+	ECFB01530FD4911C00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */;
+		name = "SelectPanelTypeViewController.m: 20";
+		rLen = 0;
+		rLoc = 363;
+		rType = 0;
+		vrLen = 580;
+		vrLoc = 0;
+	};
+	ECFB01540FD4911C00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB01430FD48F3B00EEE684 /* SelectPanelTypeViewController.h */;
+		name = "SelectPanelTypeViewController.h: 20";
+		rLen = 0;
+		rLoc = 490;
+		rType = 0;
+		vrLen = 696;
+		vrLoc = 0;
+	};
+	ECFB01550FD4911C00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */;
+		name = "SelectPanelTypeViewController.m: 72";
+		rLen = 0;
+		rLoc = 1706;
+		rType = 0;
+		vrLen = 680;
+		vrLoc = 0;
+	};
+	ECFB01560FD4911C00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
+		name = "DataPanelViewController.m: 174";
+		rLen = 0;
+		rLoc = 4736;
+		rType = 0;
+		vrLen = 1064;
+		vrLoc = 4061;
+	};
+	ECFB01570FD4911C00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */;
+		name = "DataPanelViewController.h: 31";
+		rLen = 0;
+		rLoc = 905;
+		rType = 0;
+		vrLen = 903;
+		vrLoc = 0;
+	};
+	ECFB01580FD4911C00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
+		name = "DataPanelViewController.m: 216";
+		rLen = 0;
+		rLoc = 5757;
+		rType = 0;
+		vrLen = 547;
+		vrLoc = 5341;
+	};
+	ECFB01590FD4911C00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */;
+		name = "SelectPanelTypeViewController.m: 72";
+		rLen = 0;
+		rLoc = 1706;
+		rType = 0;
+		vrLen = 680;
+		vrLoc = 0;
+	};
+	ECFB015A0FD4911C00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB01430FD48F3B00EEE684 /* SelectPanelTypeViewController.h */;
+		name = "SelectPanelTypeViewController.h: 20";
+		rLen = 0;
+		rLoc = 490;
+		rType = 0;
+		vrLen = 696;
+		vrLoc = 0;
+	};
+	ECFB015B0FD4911C00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
+		name = "DataPanelViewController.m: 174";
+		rLen = 0;
+		rLoc = 4736;
+		rType = 0;
+		vrLen = 1165;
+		vrLoc = 4213;
+	};
+	ECFB015C0FD4911C00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */;
+		name = "DataPanelViewController.h: 16";
+		rLen = 0;
+		rLoc = 459;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 0;
 	};
 	ECFBFBD10FD1F5D100EEE684 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

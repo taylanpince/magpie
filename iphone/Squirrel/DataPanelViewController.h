@@ -8,11 +8,12 @@
 
 #import "EditableTableViewCell.h"
 #import "SelectDataSetViewController.h"
+#import "SelectPanelTypeViewController.h"
 
 @class DataPanel, DataSet;
 
 
-@interface DataPanelViewController : UITableViewController <EditableTableViewCellDelegate, SelectDataSetViewControllerDelegate> {
+@interface DataPanelViewController : UITableViewController <EditableTableViewCellDelegate, SelectDataSetViewControllerDelegate, SelectPanelTypeViewControllerDelegate> {
 	DataPanel *dataPanel;
 	NSMutableString *dataPanelName;
 	NSMutableString *dataPanelType;
