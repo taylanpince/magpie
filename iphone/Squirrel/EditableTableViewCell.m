@@ -21,7 +21,6 @@
         textField.font = [UIFont systemFontOfSize:16.0];
         textField.textColor = [UIColor blackColor];
 		textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
-		textField.enablesReturnKeyAutomatically = YES;
 		textField.returnKeyType = UIReturnKeyDone;
 		
         [self addSubview:textField];

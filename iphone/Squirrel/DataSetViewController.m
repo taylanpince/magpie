@@ -39,6 +39,17 @@
 	UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
 	[self.navigationItem setLeftBarButtonItem:cancelButton];
 	[cancelButton release];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardDidShowNotification object:nil];
+}
+
+
+- (void)keyboardWasShown:(NSNotification*)aNotification {
+	if (adding) {
+		adding = NO;
+		
+		[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[dataItems count] inSection:1] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+	}
 }
 
 
@@ -72,7 +83,7 @@
 	[super viewDidAppear:animated];
 	
 	if (!dataSet.primaryKey) {
-		[self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
+		[self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
 	}
 }
 
@@ -142,7 +153,19 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.section == 0 | indexPath.row < [dataItems count]) {
+	if (indexPath.section == 1 & indexPath.row == 0) {
+		static NSString *CellIdentifier = @"AddCell";
+		
+		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		
+		if (cell == nil) {
+			cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+		}
+		
+		cell.text = @"Add a new data item";
+		
+		return cell;
+	} else {
 		static NSString *CellIdentifier = @"NameCell";
 		
 		EditableTableViewCell *cell = (EditableTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -157,20 +180,8 @@
 		if (indexPath.section == 0) {
 			cell.textField.text = dataSetName;
 		} else {
-			cell.textField.text = [[dataItems objectAtIndex:indexPath.row] name];
+			cell.textField.text = [[dataItems objectAtIndex:(indexPath.row - 1)] name];
 		}
-		
-		return cell;
-	} else {
-		static NSString *CellIdentifier = @"AddCell";
-		
-		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-		
-		if (cell == nil) {
-			cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
-		}
-		
-		cell.text = @"Add a new data item";
 		
 		return cell;
 	}
@@ -181,7 +192,7 @@
 	if (indexPath.section == 0) {
 		return UITableViewCellEditingStyleNone;
 	} else {
-		if (indexPath.row < [dataItems count]) {
+		if (indexPath.row > 0) {
 			return UITableViewCellEditingStyleDelete;
 		} else {
 			return UITableViewCellEditingStyleInsert;
@@ -195,33 +206,28 @@
 }
 
 
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.section == 1 & indexPath.row == [dataItems count]) {
-		return indexPath;
-	} else {
-		return nil;
-	}
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.section == 1 & indexPath.row == [dataItems count]) {
+	if (indexPath.section == 1 & indexPath.row == 0) {
 		if (activeTextField) {
 			[activeTextField resignFirstResponder];
 		}
 
 		[tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-		NSArray *indexPaths = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:[dataItems count] inSection:1], nil];
+		NSArray *indexPaths = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:1 inSection:1], nil];
 		
 		DataItem *dataItem = [[DataItem alloc] init];
-		[dataItems addObject:dataItem];
+		[dataItems insertObject:dataItem atIndex:0];
 		[dataItem release];
 		
 		[tableView beginUpdates];
 		[tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationLeft];
 		[tableView endUpdates];
 		
-		[tableView selectRowAtIndexPath:[indexPaths objectAtIndex:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
+//		adding = YES;
+//		EditableTableViewCell *cell = (EditableTableViewCell *)[tableView cellForRowAtIndexPath:[indexPaths objectAtIndex:0]];
+//		[cell.textField becomeFirstResponder];
+		[tableView selectRowAtIndexPath:[indexPaths objectAtIndex:0] animated:NO scrollPosition:UITableViewScrollPositionBottom];
 	}
 }
 
@@ -232,7 +238,7 @@
 			[activeTextField resignFirstResponder];
 		}
 		
-		DataItem *dataItem = (DataItem *)[dataItems objectAtIndex:indexPath.row];
+		DataItem *dataItem = (DataItem *)[dataItems objectAtIndex:(indexPath.row - 1)];
 		
 		[deletedDataItems addObject:dataItem];
 		[dataItems removeObject:dataItem];
@@ -251,7 +257,7 @@
 	if (indexPath.section == 0) {
 		dataSetName = [newValue mutableCopy];
 	} else {
-		DataItem *dataItem = (DataItem *)[dataItems objectAtIndex:indexPath.row];
+		DataItem *dataItem = (DataItem *)[dataItems objectAtIndex:(indexPath.row - 1)];
 		
 		dataItem.name = newValue;
 	}
@@ -259,12 +265,14 @@
 
 
 - (void)didChangeEditingTextFieldAtIndexPath:(NSIndexPath *)indexPath withValue:(NSString *)newValue {
-	UIBarButtonItem *saveButton = self.navigationItem.rightBarButtonItem;
+	if (indexPath.section == 0) {
+		UIBarButtonItem *saveButton = self.navigationItem.rightBarButtonItem;
 
-	if ([newValue isEqualToString:@""]) {
-		saveButton.enabled = NO;
-	} else {
-		saveButton.enabled = YES;
+		if ([newValue isEqualToString:@""]) {
+			saveButton.enabled = NO;
+		} else {
+			saveButton.enabled = YES;
+		}
 	}
 }
 
