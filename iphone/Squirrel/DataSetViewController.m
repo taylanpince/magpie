@@ -17,14 +17,6 @@
 
 @synthesize dataSet, dataSetName, dataItems, activeTextField;
 
-/*
-- (id)initWithStyle:(UITableViewStyle)style {
-    // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-    if (self = [super initWithStyle:style]) {
-    }
-    return self;
-}
-*/
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,8 +29,7 @@
 	if (dataSet.primaryKey) {
 		self.title = dataSet.name;
 	} else {
-		NSLog(@"Adding");
-//		saveButton.enabled = NO;
+		saveButton.enabled = NO;
 	}
 	
 	[self.navigationItem setRightBarButtonItem:saveButton];
@@ -246,6 +237,18 @@
 		
 		dataItem.name = newValue;
 	}
+}
+
+
+- (void)didChangeEditingTextFieldAtIndexPath:(NSIndexPath *)indexPath withValue:(NSString *)newValue {
+	UIBarButtonItem *saveButton = self.navigationItem.rightBarButtonItem;
+
+	if ([newValue isEqualToString:@""]) {
+		saveButton.enabled = NO;
+	} else {
+		saveButton.enabled = YES;
+	}
+
 }
 
 

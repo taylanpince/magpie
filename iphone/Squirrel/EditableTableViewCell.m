@@ -20,6 +20,9 @@
 		textField.delegate = self;
         textField.font = [UIFont systemFontOfSize:16.0];
         textField.textColor = [UIColor blackColor];
+		textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+		textField.enablesReturnKeyAutomatically = YES;
+		textField.returnKeyType = UIReturnKeyDone;
 		
         [self addSubview:textField];
     }
@@ -50,6 +53,15 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)field {
 	[delegate didEndEditingTextFieldAtIndexPath:indexPath withValue:field.text];
+}
+
+- (BOOL)textField:(UITextField *)field shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+	NSMutableString *replacedString = [NSMutableString stringWithString:field.text];
+	[replacedString replaceCharactersInRange:range withString:string];
+
+	[delegate didChangeEditingTextFieldAtIndexPath:indexPath withValue:replacedString];
+	
+	return YES;
 }
 
 
