@@ -57,7 +57,6 @@ static sqlite3_stmt *select_related_statement = nil;
     if (self = [super init]) {
         primaryKey = pk;
         database = db;
-		dataItems = [[NSMutableArray alloc] init];
 
         if (init_statement == nil) {
             const char *sql = "SELECT name FROM data_sets WHERE pk=?";
@@ -158,7 +157,6 @@ static sqlite3_stmt *select_related_statement = nil;
 
 
 - (void)hydrate {
-	if (dataItems == nil) dataItems = [[NSMutableArray alloc] init];
     if (hydrated) return;
 
     if (hydrate_statement == nil) {
@@ -180,6 +178,14 @@ static sqlite3_stmt *select_related_statement = nil;
     }
 
     sqlite3_reset(hydrate_statement);
+
+    hydrated = YES;
+}
+
+
+- (void)selectRelated {
+	if (dataItems == nil) dataItems = [[NSMutableArray alloc] init];
+	if (related) return;
 	
 	if (select_related_statement == nil) {
 		const char *sql = "SELECT pk FROM data_items WHERE data_set=?";
@@ -202,8 +208,8 @@ static sqlite3_stmt *select_related_statement = nil;
 	}
 	
 	sqlite3_reset(select_related_statement);
-
-    hydrated = YES;
+	
+	related = YES;
 }
 
 

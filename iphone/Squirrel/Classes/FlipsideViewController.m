@@ -9,8 +9,7 @@
 #import "SquirrelAppDelegate.h"
 #import "FlipsideViewController.h"
 #import "DataSet.h"
-#import "AddSetViewController.h"
-#import "EditSetViewController.h"
+#import "DataSetViewController.h"
 
 
 @implementation FlipsideViewController
@@ -80,24 +79,21 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	DataSet *dataSet;
+	
 	if (indexPath.row == [[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] count]) {
-		AddSetViewController *controller = [[AddSetViewController alloc] initWithStyle:UITableViewStyleGrouped];
-
-		controller.dataSet = [[[DataSet alloc] init] autorelease];
-		
-		[self.navigationController pushViewController:controller animated:YES];
-
-		[controller release];
+		dataSet = [[[DataSet alloc] init] autorelease];
 	} else {
-		EditSetViewController *controller = [[EditSetViewController alloc] initWithStyle:UITableViewStyleGrouped];
-		DataSet *dataSet = [[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] objectAtIndex:indexPath.row];
-
-		controller.dataSet = dataSet;
-		
-		[self.navigationController pushViewController:controller animated:YES];
-		
-		[controller release];
+		dataSet = [[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] objectAtIndex:indexPath.row];
 	}
+
+	DataSetViewController *controller = [[DataSetViewController alloc] initWithStyle:UITableViewStyleGrouped];
+
+	controller.dataSet = dataSet;
+	
+	[self.navigationController pushViewController:controller animated:YES];
+	
+	[controller release];
 }
 
 

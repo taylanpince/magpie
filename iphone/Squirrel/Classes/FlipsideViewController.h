@@ -6,8 +6,6 @@
 //  Copyright Taylan Pince 2009. All rights reserved.
 //
 
-#import "AddSetViewController.h"
-
 @protocol FlipsideViewControllerDelegate;
 
 

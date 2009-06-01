@@ -1,18 +1,19 @@
 //
-//  EditSetViewController.m
+//  DataSetViewController.m
 //  Squirrel
 //
 //  Created by Taylan Pince on 30/05/09.
 //  Copyright 2009 Taylan Pince. All rights reserved.
 //
 
-#import "EditSetViewController.h"
+#import "SquirrelAppDelegate.h"
+#import "DataSetViewController.h"
 #import "EditableTableViewCell.h"
 #import "DataSet.h"
 #import "DataItem.h"
 
 
-@implementation EditSetViewController
+@implementation DataSetViewController
 
 @synthesize dataSet, dataSetName, dataItems, activeTextField;
 
@@ -28,11 +29,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.title = dataSet.name;
 	self.editing = YES;
 	self.tableView.allowsSelectionDuringEditing = YES;
 	
 	UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
+	
+	if (dataSet.primaryKey) {
+		self.title = dataSet.name;
+	} else {
+		NSLog(@"Adding");
+//		saveButton.enabled = NO;
+	}
+	
 	[self.navigationItem setRightBarButtonItem:saveButton];
 	[saveButton release];
 	
@@ -45,14 +53,20 @@
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	
-	[dataSet hydrate];
-	
-	dataItems = [dataSet.dataItems mutableCopy];
-	dataSetName = [dataSet.name mutableCopy];
-	
-	if (dataItems == nil) {
+	if (dataSet.primaryKey) {
+		[dataSet selectRelated];
+		
+		dataItems = [dataSet.dataItems mutableCopy];
+		dataSetName = [dataSet.name mutableCopy];
+		
+		if (dataItems == nil) {
+			dataItems = [[NSMutableArray alloc] init];
+		}
+	} else {
 		dataItems = [[NSMutableArray alloc] init];
+		dataSetName = [[NSMutableString alloc] init];
 	}
+
 }
 
 
@@ -62,14 +76,16 @@
 	}
 	
 	dataSet.name = dataSetName;
+	
+	if (!dataSet.primaryKey) {
+		[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] addDataSet:dataSet];
+	}
 
 	for (DataItem *dataItem in dataItems) {
 		if (dataItem.name != nil & ![dataItem.name isEqualToString:@""]) {
 			if ([dataSet.dataItems containsObject:dataItem]) {
-				NSLog(@"Update %@", dataItem.name);
 				[dataItem dehydrate];
 			} else {
-				NSLog(@"Insert %@", dataItem.name);
 				[dataSet addDataItem:dataItem];
 			}
 		}

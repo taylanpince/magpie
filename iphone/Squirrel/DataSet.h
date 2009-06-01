@@ -17,6 +17,7 @@
 	
 	BOOL hydrated;
 	BOOL dirty;
+	BOOL related;
 }
 
 @property (assign, nonatomic, readonly) NSInteger primaryKey;
@@ -32,6 +33,7 @@
 - (void)hydrate;
 - (void)dehydrate;
 - (void)deleteFromDatabase;
+- (void)selectRelated;
 
 - (void)addDataItem:(DataItem *)dataItem;
 - (void)removeDataItem:(DataItem *)dataItem;

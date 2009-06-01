@@ -1,5 +1,5 @@
 //
-//  EditSetViewController.h
+//  DataSetViewController.h
 //  Squirrel
 //
 //  Created by Taylan Pince on 30/05/09.
@@ -11,7 +11,7 @@
 @class DataSet;
 
 
-@interface EditSetViewController : UITableViewController <EditableTableViewCellDelegate> {
+@interface DataSetViewController : UITableViewController <EditableTableViewCellDelegate> {
 	DataSet *dataSet;
 	NSMutableString *dataSetName;
 	NSMutableArray *dataItems;
