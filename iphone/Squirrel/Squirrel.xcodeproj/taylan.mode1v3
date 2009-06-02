@@ -321,7 +321,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MainViewController.m</string>
+								<string>PanelView.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,11 +329,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MainViewController.m</string>
+										<string>PanelView.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ECFB03950FD4E66200EEE684</string>
+										<string>ECFB057F0FD512D500EEE684</string>
 										<key>history</key>
 										<array>
 											<string>EC6EB7D00FD196DD00E6F9D8</string>
@@ -346,12 +346,10 @@
 											<string>ECFB00560FD4721100EEE684</string>
 											<string>ECFB015F0FD4921F00EEE684</string>
 											<string>ECFB01920FD4A19A00EEE684</string>
-											<string>ECFB01A20FD4A1CD00EEE684</string>
 											<string>ECFB01A30FD4A1CD00EEE684</string>
 											<string>ECFB01B50FD4A3E100EEE684</string>
 											<string>ECFB01C20FD4A45200EEE684</string>
 											<string>ECFB02210FD4B1C000EEE684</string>
-											<string>ECFB022B0FD4B45D00EEE684</string>
 											<string>ECFB022C0FD4B45D00EEE684</string>
 											<string>ECFB025E0FD4B8D600EEE684</string>
 											<string>ECFB028F0FD4C93900EEE684</string>
@@ -364,18 +362,16 @@
 											<string>ECFB03210FD4D6AE00EEE684</string>
 											<string>ECFB03220FD4D6AE00EEE684</string>
 											<string>ECFB032E0FD4D7C800EEE684</string>
-											<string>ECFB03410FD4D9F400EEE684</string>
 											<string>ECFB03420FD4D9F400EEE684</string>
 											<string>ECFB03430FD4D9F400EEE684</string>
 											<string>ECFB03660FD4DE1600EEE684</string>
 											<string>ECFB03670FD4DE1600EEE684</string>
 											<string>ECFB03680FD4DE1600EEE684</string>
-											<string>ECFB03910FD4E65800EEE684</string>
-											<string>ECFB03820FD4E25500EEE684</string>
-										</array>
-										<key>nextStack</key>
-										<array>
-											<string>ECFB03920FD4E65800EEE684</string>
+											<string>ECFB04430FD4F48800EEE684</string>
+											<string>ECFB04D30FD503F000EEE684</string>
+											<string>ECFB05750FD512A400EEE684</string>
+											<string>ECFB057C0FD512D500EEE684</string>
+											<string>ECFB057D0FD512D500EEE684</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -570,6 +566,12 @@
 											<string>ECFB036B0FD4DE1600EEE684</string>
 											<string>ECFB036C0FD4DE1600EEE684</string>
 											<string>ECFB036D0FD4DE1600EEE684</string>
+											<string>ECFB04390FD4F3B200EEE684</string>
+											<string>ECFB04D50FD503F000EEE684</string>
+											<string>ECFB04D60FD503F000EEE684</string>
+											<string>ECFB05760FD512A400EEE684</string>
+											<string>ECFB05770FD512A400EEE684</string>
+											<string>ECFB057E0FD512D500EEE684</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

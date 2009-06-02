@@ -24,7 +24,7 @@
 	CGPoint top = CGPointMake(10.0, 10.0);
 	
 	for (DataPanel *dataPanel in [(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels]) {
-		PanelView *panelView = [[PanelView alloc] initWithFrame:CGRectMake(top.x, top.y, scrollView.frame.size.width - 20.0, 200.0)];
+		PanelView *panelView = [[PanelView alloc] initWithFrame:CGRectMake(top.x, top.y, scrollView.frame.size.width - 20.0, 250.0)];
 		
 		[dataPanel.dataSet selectRelated];
 		
