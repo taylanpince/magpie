@@ -86,7 +86,7 @@
 
         sqlite3_finalize(statement);
 
-		sql = "SELECT pk FROM data_panels";
+		sql = "SELECT pk FROM data_panels ORDER BY weight ASC";
 		
         if (sqlite3_prepare_v2(database, sql, -1, &statement, NULL) == SQLITE_OK) {
             while (sqlite3_step(statement) == SQLITE_ROW) {
@@ -148,8 +148,20 @@
 
 
 - (void)addDataPanel:(DataPanel *)dataPanel {
+	dataPanel.weight = [NSNumber numberWithInt:[dataPanels count]];
+	
     [dataPanel insertIntoDatabase:database];
     [dataPanels addObject:dataPanel];
+}
+
+
+- (void)reorderDataPanels {
+	int order = 0;
+	
+	for (DataPanel *dataPanel in dataPanels) {
+		dataPanel.weight = [NSNumber numberWithInt:order];
+		order++;
+	}
 }
 
 

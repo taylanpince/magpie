@@ -84,10 +84,16 @@
 		} else {
 			DataPanel *dataPanel = [dataPanels objectAtIndex:indexPath.row];
 			cell.mainLabel.text = dataPanel.name;
+			cell.subLabel.text = dataPanel.type;
 		}
 	}
 
     return cell;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return (indexPath.section == 1 & indexPath.row < [[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels] count]) ? 56.0 : 42.0;
 }
 
 
@@ -179,7 +185,36 @@
 			
 			[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
 		}
-    }   
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+		[self tableView:tableView didSelectRowAtIndexPath:indexPath];
+	}
+}
+
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+	return (indexPath.section == 1 & indexPath.row < [[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels] count]);
+}
+
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+	SquirrelAppDelegate *appDelegate = (SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate];
+	DataPanel *dataPanel = [[[appDelegate dataPanels] objectAtIndex:fromIndexPath.row] retain];
+	
+	[[appDelegate dataPanels] removeObjectAtIndex:fromIndexPath.row];
+	[[appDelegate dataPanels] insertObject:dataPanel atIndex:toIndexPath.row];
+	
+	[appDelegate reorderDataPanels];
+}
+
+
+- (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath {
+	if (proposedDestinationIndexPath.section == 0) {
+		return [NSIndexPath indexPathForRow:0 inSection:1];
+	} else if (proposedDestinationIndexPath.row >= [[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels] count]) {
+		return [NSIndexPath indexPathForRow:([[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels] count] - 1) inSection:1];
+	} else {
+		return proposedDestinationIndexPath;
+	}
 }
 
 

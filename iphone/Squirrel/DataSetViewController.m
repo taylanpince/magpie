@@ -230,7 +230,9 @@
 		[dataItems removeObject:dataItem];
 		
 		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+		[self tableView:tableView didSelectRowAtIndexPath:indexPath];
+	}
 }
 
 

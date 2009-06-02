@@ -17,10 +17,13 @@
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
         mainLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+		subLabel = [[UILabel alloc] initWithFrame:CGRectZero];
 		
 		mainLabel.font = [UIFont boldSystemFontOfSize:16.0];
+		subLabel.font = [UIFont systemFontOfSize:12.0];
 		
         [self addSubview:mainLabel];
+		[self addSubview:subLabel];
     }
     return self;
 }
@@ -29,7 +32,14 @@
 - (void)layoutSubviews {
 	[super layoutSubviews];
 	
-    mainLabel.frame = CGRectInset(self.contentView.frame, 10.0, 11.0);
+    mainLabel.frame = CGRectMake(self.contentView.frame.origin.x + 10.0, self.contentView.frame.origin.y + 10.0, self.contentView.frame.size.width - 20.0, 20.0);
+	
+	if ([subLabel.text isEqualToString:@""] | subLabel.text == nil) {
+		subLabel.hidden = YES;
+	} else {
+		subLabel.hidden = NO;
+		subLabel.frame = CGRectMake(self.contentView.frame.origin.x + 10.0, mainLabel.frame.origin.y + mainLabel.frame.size.height, self.contentView.frame.size.width - 20.0, 20.0);
+	}
 }
 
 
@@ -38,8 +48,10 @@
 	
 	if (selected) {
 		mainLabel.textColor = [UIColor whiteColor];
+		subLabel.textColor = [UIColor whiteColor];
 	} else {
 		mainLabel.textColor = [UIColor blackColor];
+		subLabel.textColor = [UIColor lightGrayColor];
 	}
 }
 

@@ -28,6 +28,7 @@
 - (void)addDataSet:(DataSet *)dataSet;
 - (void)removeDataPanel:(DataPanel *)dataPanel;
 - (void)addDataPanel:(DataPanel *)dataPanel;
+- (void)reorderDataPanels;
 
 @end
 
