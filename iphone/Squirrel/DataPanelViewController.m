@@ -208,14 +208,12 @@
 
 
 - (void)didUpdateDataSet:(DataSet *)newDataSet {
-	if (![dataPanelSet isEqualTo:newDataSet]) {
-		dataPanelSet = newDataSet;
-		
-		[self.tableView reloadData];
-		
-		if (![dataPanelName isEqualToString:@""] & ![dataPanelType isEqualToString:@""]) {
-			self.navigationItem.rightBarButtonItem.enabled = YES;
-		}
+	dataPanelSet = newDataSet;
+	
+	[self.tableView reloadData];
+	
+	if (![dataPanelName isEqualToString:@""] & ![dataPanelType isEqualToString:@""]) {
+		self.navigationItem.rightBarButtonItem.enabled = YES;
 	}
 }
 

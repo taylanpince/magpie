@@ -284,7 +284,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {214, 764}}</string>
+							<string>{{0, 60}, {214, 764}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -321,7 +321,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DataSetViewController.m</string>
+								<string>FlipsideViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,11 +329,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DataSetViewController.m</string>
+										<string>FlipsideViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ECFB03130FD4D24900EEE684</string>
+										<string>ECFB03290FD4D6AE00EEE684</string>
 										<key>history</key>
 										<array>
 											<string>EC6EB7CF0FD196DD00E6F9D8</string>
@@ -361,16 +361,16 @@
 											<string>ECFB025E0FD4B8D600EEE684</string>
 											<string>ECFB028F0FD4C93900EEE684</string>
 											<string>ECFB029A0FD4C97700EEE684</string>
-											<string>ECFB02B70FD4CCC600EEE684</string>
 											<string>ECFB02B80FD4CCC600EEE684</string>
-											<string>ECFB02D20FD4CE5C00EEE684</string>
 											<string>ECFB02D30FD4CE5C00EEE684</string>
 											<string>ECFB02EF0FD4D02200EEE684</string>
 											<string>ECFB02F00FD4D02200EEE684</string>
 											<string>ECFB03050FD4D1C000EEE684</string>
-											<string>ECFB030F0FD4D24900EEE684</string>
-											<string>ECFB03100FD4D24900EEE684</string>
-											<string>ECFB02B90FD4CCC600EEE684</string>
+											<string>ECFB031F0FD4D6AE00EEE684</string>
+											<string>ECFB03200FD4D6AE00EEE684</string>
+											<string>ECFB03210FD4D6AE00EEE684</string>
+											<string>ECFB03220FD4D6AE00EEE684</string>
+											<string>ECFB03230FD4D6AE00EEE684</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -553,6 +553,11 @@
 											<string>ECFB03070FD4D1C000EEE684</string>
 											<string>ECFB03110FD4D24900EEE684</string>
 											<string>ECFB03120FD4D24900EEE684</string>
+											<string>ECFB03240FD4D6AE00EEE684</string>
+											<string>ECFB03250FD4D6AE00EEE684</string>
+											<string>ECFB03260FD4D6AE00EEE684</string>
+											<string>ECFB03270FD4D6AE00EEE684</string>
+											<string>ECFB03280FD4D6AE00EEE684</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -770,12 +775,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DataPanel.m</string>
+								<string>DataPanelViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -792,8 +799,6 @@
 							<string>421pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>

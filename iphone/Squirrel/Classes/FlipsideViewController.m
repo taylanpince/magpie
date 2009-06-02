@@ -84,7 +84,7 @@
 		} else {
 			DataPanel *dataPanel = [dataPanels objectAtIndex:indexPath.row];
 			cell.mainLabel.text = dataPanel.name;
-			cell.subLabel.text = dataPanel.type;
+			cell.subLabel.text = [NSString stringWithFormat:@"%@, %@", dataPanel.type, dataPanel.dataSet.name];
 		}
 	}
 

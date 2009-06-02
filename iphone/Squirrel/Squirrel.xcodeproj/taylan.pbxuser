@@ -11,7 +11,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1139, 2832}}";
 			sepNavSelRange = "{4801, 0}";
-			sepNavVisRange = "{4324, 748}";
+			sepNavVisRange = "{1983, 1445}";
 		};
 	};
 	1D6058900D05DD3D006BFB54 /* Squirrel */ = {
@@ -58,9 +58,9 @@
 	};
 	289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1335, 3632}}";
-			sepNavSelRange = "{6337, 129}";
-			sepNavVisRange = "{5422, 1418}";
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 3968}}";
+			sepNavSelRange = "{2694, 0}";
+			sepNavVisRange = "{1524, 1454}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -681,6 +681,21 @@
 			ECFB03110FD4D24900EEE684 /* PBXTextBookmark */ = ECFB03110FD4D24900EEE684 /* PBXTextBookmark */;
 			ECFB03120FD4D24900EEE684 /* PBXTextBookmark */ = ECFB03120FD4D24900EEE684 /* PBXTextBookmark */;
 			ECFB03130FD4D24900EEE684 /* PBXTextBookmark */ = ECFB03130FD4D24900EEE684 /* PBXTextBookmark */;
+			ECFB03150FD4D4D300EEE684 /* PBXTextBookmark */ = ECFB03150FD4D4D300EEE684 /* PBXTextBookmark */;
+			ECFB03160FD4D4D300EEE684 /* PBXTextBookmark */ = ECFB03160FD4D4D300EEE684 /* PBXTextBookmark */;
+			ECFB03170FD4D4D300EEE684 /* PBXTextBookmark */ = ECFB03170FD4D4D300EEE684 /* PBXTextBookmark */;
+			ECFB03180FD4D4D300EEE684 /* PBXTextBookmark */ = ECFB03180FD4D4D300EEE684 /* PBXTextBookmark */;
+			ECFB031F0FD4D6AE00EEE684 /* PBXTextBookmark */ = ECFB031F0FD4D6AE00EEE684 /* PBXTextBookmark */;
+			ECFB03200FD4D6AE00EEE684 /* PBXTextBookmark */ = ECFB03200FD4D6AE00EEE684 /* PBXTextBookmark */;
+			ECFB03210FD4D6AE00EEE684 /* PBXTextBookmark */ = ECFB03210FD4D6AE00EEE684 /* PBXTextBookmark */;
+			ECFB03220FD4D6AE00EEE684 /* PBXTextBookmark */ = ECFB03220FD4D6AE00EEE684 /* PBXTextBookmark */;
+			ECFB03230FD4D6AE00EEE684 /* PBXTextBookmark */ = ECFB03230FD4D6AE00EEE684 /* PBXTextBookmark */;
+			ECFB03240FD4D6AE00EEE684 /* PBXTextBookmark */ = ECFB03240FD4D6AE00EEE684 /* PBXTextBookmark */;
+			ECFB03250FD4D6AE00EEE684 /* PBXTextBookmark */ = ECFB03250FD4D6AE00EEE684 /* PBXTextBookmark */;
+			ECFB03260FD4D6AE00EEE684 /* PBXTextBookmark */ = ECFB03260FD4D6AE00EEE684 /* PBXTextBookmark */;
+			ECFB03270FD4D6AE00EEE684 /* PBXTextBookmark */ = ECFB03270FD4D6AE00EEE684 /* PBXTextBookmark */;
+			ECFB03280FD4D6AE00EEE684 /* PBXTextBookmark */ = ECFB03280FD4D6AE00EEE684 /* PBXTextBookmark */;
+			ECFB03290FD4D6AE00EEE684 /* PBXTextBookmark */ = ECFB03290FD4D6AE00EEE684 /* PBXTextBookmark */;
 			ECFBFBD10FD1F5D100EEE684 /* PBXTextBookmark */ = ECFBFBD10FD1F5D100EEE684 /* PBXTextBookmark */;
 			ECFBFBD20FD1F5D100EEE684 /* PBXTextBookmark */ = ECFBFBD20FD1F5D100EEE684 /* PBXTextBookmark */;
 			ECFBFBD50FD1F5E100EEE684 /* PBXTextBookmark */ = ECFBFBD50FD1F5E100EEE684 /* PBXTextBookmark */;
@@ -2066,7 +2081,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1139, 4320}}";
 			sepNavSelRange = "{6407, 0}";
-			sepNavVisRange = "{5396, 1252}";
+			sepNavVisRange = "{5396, 1283}";
 		};
 	};
 	EC6EB9660FD1D26200E6F9D8 /* PBXTextBookmark */ = {
@@ -2174,7 +2189,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 132";
 		rLen = 0;
-		rLoc = 5241;
+		rLoc = 5304;
 		rType = 0;
 		vrLen = 1313;
 		vrLoc = 3493;
@@ -2321,7 +2336,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 173";
 		rLen = 22;
-		rLoc = 5347;
+		rLoc = 5469;
 		rType = 0;
 		vrLen = 1206;
 		vrLoc = 4453;
@@ -2511,7 +2526,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 149";
 		rLen = 0;
-		rLoc = 4605;
+		rLoc = 4727;
 		rType = 0;
 		vrLen = 1199;
 		vrLoc = 3542;
@@ -2531,7 +2546,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 229";
 		rLen = 0;
-		rLoc = 7158;
+		rLoc = 7280;
 		rType = 0;
 		vrLen = 577;
 		vrLoc = 5634;
@@ -2621,7 +2636,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 150";
 		rLen = 0;
-		rLoc = 4603;
+		rLoc = 4725;
 		rType = 0;
 		vrLen = 707;
 		vrLoc = 6061;
@@ -2641,7 +2656,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 158";
 		rLen = 0;
-		rLoc = 4787;
+		rLoc = 4909;
 		rType = 0;
 		vrLen = 531;
 		vrLoc = 6251;
@@ -2671,7 +2686,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 145";
 		rLen = 0;
-		rLoc = 4300;
+		rLoc = 4422;
 		rType = 0;
 		vrLen = 1310;
 		vrLoc = 3608;
@@ -2731,7 +2746,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 152";
 		rLen = 0;
-		rLoc = 4665;
+		rLoc = 4787;
 		rType = 0;
 		vrLen = 1350;
 		vrLoc = 3582;
@@ -2751,7 +2766,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 173";
 		rLen = 22;
-		rLoc = 5347;
+		rLoc = 5469;
 		rType = 0;
 		vrLen = 1206;
 		vrLoc = 4453;
@@ -2825,9 +2840,9 @@
 	};
 	ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1139, 4048}}";
-			sepNavSelRange = "{3315, 0}";
-			sepNavVisRange = "{2667, 1174}";
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 3968}}";
+			sepNavSelRange = "{5937, 0}";
+			sepNavVisRange = "{5332, 959}";
 		};
 	};
 	ECFB00560FD4721100EEE684 /* PBXTextBookmark */ = {
@@ -2875,7 +2890,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 144";
 		rLen = 0;
-		rLoc = 5859;
+		rLoc = 5922;
 		rType = 0;
 		vrLen = 1112;
 		vrLoc = 3968;
@@ -2955,7 +2970,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 81";
 		rLen = 8;
-		rLoc = 2343;
+		rLoc = 2465;
 		rType = 0;
 		vrLen = 1015;
 		vrLoc = 1897;
@@ -3035,7 +3050,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 173";
 		rLen = 0;
-		rLoc = 5371;
+		rLoc = 5493;
 		rType = 0;
 		vrLen = 1187;
 		vrLoc = 4598;
@@ -3055,7 +3070,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 81";
 		rLen = 8;
-		rLoc = 2343;
+		rLoc = 2465;
 		rType = 0;
 		vrLen = 1015;
 		vrLoc = 1897;
@@ -3849,7 +3864,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 202";
 		rLen = 0;
-		rLoc = 5817;
+		rLoc = 5733;
 		rType = 0;
 		vrLen = 718;
 		vrLoc = 4532;
@@ -3859,7 +3874,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 199";
 		rLen = 0;
-		rLoc = 5777;
+		rLoc = 5732;
 		rType = 0;
 		vrLen = 758;
 		vrLoc = 4532;
@@ -3909,7 +3924,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 81";
 		rLen = 8;
-		rLoc = 2343;
+		rLoc = 2465;
 		rType = 0;
 		vrLen = 732;
 		vrLoc = 6097;
@@ -3969,7 +3984,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 81";
 		rLen = 8;
-		rLoc = 2343;
+		rLoc = 2465;
 		rType = 0;
 		vrLen = 732;
 		vrLoc = 6097;
@@ -3989,7 +4004,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 248";
 		rLen = 91;
-		rLoc = 6991;
+		rLoc = 7113;
 		rType = 0;
 		vrLen = 732;
 		vrLoc = 6097;
@@ -4009,7 +4024,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 248";
 		rLen = 91;
-		rLoc = 6991;
+		rLoc = 7113;
 		rType = 0;
 		vrLen = 732;
 		vrLoc = 6097;
@@ -4089,7 +4104,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 112";
 		rLen = 0;
-		rLoc = 3702;
+		rLoc = 3765;
 		rType = 0;
 		vrLen = 1360;
 		vrLoc = 2526;
@@ -4129,7 +4144,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 112";
 		rLen = 0;
-		rLoc = 3702;
+		rLoc = 3765;
 		rType = 0;
 		vrLen = 1360;
 		vrLoc = 2526;
@@ -4209,7 +4224,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 205";
 		rLen = 0;
-		rLoc = 5991;
+		rLoc = 5937;
 		rType = 0;
 		vrLen = 810;
 		vrLoc = 4562;
@@ -4239,7 +4254,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 208";
 		rLen = 0;
-		rLoc = 6438;
+		rLoc = 6383;
 		rType = 0;
 		vrLen = 719;
 		vrLoc = 4660;
@@ -4249,7 +4264,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 208";
 		rLen = 0;
-		rLoc = 6438;
+		rLoc = 6383;
 		rType = 0;
 		vrLen = 719;
 		vrLoc = 4660;
@@ -4279,7 +4294,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 232";
 		rLen = 0;
-		rLoc = 6683;
+		rLoc = 6805;
 		rType = 0;
 		vrLen = 1195;
 		vrLoc = 3041;
@@ -4289,7 +4304,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 208";
 		rLen = 0;
-		rLoc = 6438;
+		rLoc = 6383;
 		rType = 0;
 		vrLen = 720;
 		vrLoc = 4659;
@@ -4309,7 +4324,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 232";
 		rLen = 0;
-		rLoc = 6683;
+		rLoc = 6805;
 		rType = 0;
 		vrLen = 1195;
 		vrLoc = 3041;
@@ -4493,7 +4508,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 216";
 		rLen = 0;
-		rLoc = 6338;
+		rLoc = 6283;
 		rType = 0;
 		vrLen = 547;
 		vrLoc = 5341;
@@ -5117,7 +5132,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 166";
 		rLen = 0;
-		rLoc = 4847;
+		rLoc = 4969;
 		rType = 0;
 		vrLen = 1017;
 		vrLoc = 3562;
@@ -5157,7 +5172,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 166";
 		rLen = 0;
-		rLoc = 4847;
+		rLoc = 4969;
 		rType = 0;
 		vrLen = 1017;
 		vrLoc = 3562;
@@ -5197,7 +5212,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 166";
 		rLen = 0;
-		rLoc = 4847;
+		rLoc = 4969;
 		rType = 0;
 		vrLen = 1017;
 		vrLoc = 3564;
@@ -5257,7 +5272,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 166";
 		rLen = 0;
-		rLoc = 4847;
+		rLoc = 4969;
 		rType = 0;
 		vrLen = 1017;
 		vrLoc = 3564;
@@ -5397,7 +5412,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 153";
 		rLen = 0;
-		rLoc = 4725;
+		rLoc = 4847;
 		rType = 0;
 		vrLen = 1040;
 		vrLoc = 3564;
@@ -5447,7 +5462,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 153";
 		rLen = 0;
-		rLoc = 4725;
+		rLoc = 4847;
 		rType = 0;
 		vrLen = 1040;
 		vrLoc = 3564;
@@ -5605,7 +5620,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 112";
 		rLen = 0;
-		rLoc = 3702;
+		rLoc = 3765;
 		rType = 0;
 		vrLen = 1360;
 		vrLoc = 2526;
@@ -6125,7 +6140,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 171";
 		rLen = 0;
-		rLoc = 6332;
+		rLoc = 6395;
 		rType = 0;
 		vrLen = 1311;
 		vrLoc = 4474;
@@ -6135,7 +6150,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 159";
 		rLen = 11;
-		rLoc = 5430;
+		rLoc = 5493;
 		rType = 0;
 		vrLen = 1322;
 		vrLoc = 4464;
@@ -6165,7 +6180,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 159";
 		rLen = 11;
-		rLoc = 5430;
+		rLoc = 5493;
 		rType = 0;
 		vrLen = 1322;
 		vrLoc = 4464;
@@ -6205,7 +6220,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 171";
 		rLen = 0;
-		rLoc = 6332;
+		rLoc = 6395;
 		rType = 0;
 		vrLen = 1323;
 		vrLoc = 4460;
@@ -6245,7 +6260,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 171";
 		rLen = 0;
-		rLoc = 6332;
+		rLoc = 6395;
 		rType = 0;
 		vrLen = 1323;
 		vrLoc = 4460;
@@ -6315,7 +6330,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 165";
 		rLen = 0;
-		rLoc = 5782;
+		rLoc = 5845;
 		rType = 0;
 		vrLen = 1191;
 		vrLoc = 1901;
@@ -6365,7 +6380,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 169";
 		rLen = 0;
-		rLoc = 5850;
+		rLoc = 5913;
 		rType = 0;
 		vrLen = 1397;
 		vrLoc = 4589;
@@ -6385,7 +6400,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 166";
 		rLen = 0;
-		rLoc = 5740;
+		rLoc = 5803;
 		rType = 0;
 		vrLen = 1384;
 		vrLoc = 4699;
@@ -6405,7 +6420,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 166";
 		rLen = 0;
-		rLoc = 5740;
+		rLoc = 5803;
 		rType = 0;
 		vrLen = 1350;
 		vrLoc = 4699;
@@ -6415,7 +6430,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 166";
 		rLen = 0;
-		rLoc = 5740;
+		rLoc = 5803;
 		rType = 0;
 		vrLen = 921;
 		vrLoc = 5251;
@@ -6435,7 +6450,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 166";
 		rLen = 0;
-		rLoc = 5740;
+		rLoc = 5803;
 		rType = 0;
 		vrLen = 921;
 		vrLoc = 5251;
@@ -6445,7 +6460,7 @@
 		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
 		name = "DataPanelViewController.m: 233";
 		rLen = 0;
-		rLoc = 6335;
+		rLoc = 6280;
 		rType = 0;
 		vrLen = 736;
 		vrLoc = 5732;
@@ -6465,7 +6480,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 166";
 		rLen = 0;
-		rLoc = 5740;
+		rLoc = 5803;
 		rType = 0;
 		vrLen = 998;
 		vrLoc = 5174;
@@ -6485,7 +6500,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 89";
 		rLen = 0;
-		rLoc = 2638;
+		rLoc = 2701;
 		rType = 0;
 		vrLen = 1227;
 		vrLoc = 1412;
@@ -6495,7 +6510,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 191";
 		rLen = 0;
-		rLoc = 6474;
+		rLoc = 6537;
 		rType = 0;
 		vrLen = 1177;
 		vrLoc = 5130;
@@ -6505,7 +6520,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 192";
 		rLen = 0;
-		rLoc = 7218;
+		rLoc = 7281;
 		rType = 0;
 		vrLen = 1240;
 		vrLoc = 5273;
@@ -6515,7 +6530,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 192";
 		rLen = 0;
-		rLoc = 7218;
+		rLoc = 7281;
 		rType = 0;
 		vrLen = 1351;
 		vrLoc = 5778;
@@ -6525,7 +6540,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 200";
 		rLen = 0;
-		rLoc = 7788;
+		rLoc = 7851;
 		rType = 0;
 		vrLen = 1472;
 		vrLoc = 5660;
@@ -6535,7 +6550,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 200";
 		rLen = 0;
-		rLoc = 7788;
+		rLoc = 7851;
 		rType = 0;
 		vrLen = 1474;
 		vrLoc = 5660;
@@ -6555,7 +6570,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 200";
 		rLen = 0;
-		rLoc = 7788;
+		rLoc = 7851;
 		rType = 0;
 		vrLen = 1474;
 		vrLoc = 5660;
@@ -6585,7 +6600,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 198";
 		rLen = 0;
-		rLoc = 7218;
+		rLoc = 7281;
 		rType = 0;
 		vrLen = 1733;
 		vrLoc = 5660;
@@ -6635,7 +6650,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 198";
 		rLen = 0;
-		rLoc = 7218;
+		rLoc = 7281;
 		rType = 0;
 		vrLen = 1733;
 		vrLoc = 5660;
@@ -6715,7 +6730,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 198";
 		rLen = 0;
-		rLoc = 7216;
+		rLoc = 7279;
 		rType = 0;
 		vrLen = 1771;
 		vrLoc = 5660;
@@ -6745,7 +6760,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 198";
 		rLen = 0;
-		rLoc = 7216;
+		rLoc = 7279;
 		rType = 0;
 		vrLen = 1355;
 		vrLoc = 4694;
@@ -6755,7 +6770,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 198";
 		rLen = 0;
-		rLoc = 7216;
+		rLoc = 7279;
 		rType = 0;
 		vrLen = 1774;
 		vrLoc = 5660;
@@ -6785,7 +6800,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 198";
 		rLen = 0;
-		rLoc = 7216;
+		rLoc = 7279;
 		rType = 0;
 		vrLen = 1352;
 		vrLoc = 4697;
@@ -6805,7 +6820,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 87";
 		rLen = 0;
-		rLoc = 2634;
+		rLoc = 2697;
 		rType = 0;
 		vrLen = 1272;
 		vrLoc = 1417;
@@ -6843,7 +6858,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 64";
 		rLen = 67;
-		rLoc = 1655;
+		rLoc = 1665;
 		rType = 0;
 		vrLen = 928;
 		vrLoc = 1172;
@@ -6873,7 +6888,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 60";
 		rLen = 0;
-		rLoc = 1536;
+		rLoc = 1546;
 		rType = 0;
 		vrLen = 1158;
 		vrLoc = 1027;
@@ -6903,7 +6918,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 87";
 		rLen = 0;
-		rLoc = 2634;
+		rLoc = 2697;
 		rType = 0;
 		vrLen = 1425;
 		vrLoc = 1419;
@@ -6913,7 +6928,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 87";
 		rLen = 0;
-		rLoc = 2634;
+		rLoc = 2697;
 		rType = 0;
 		vrLen = 1274;
 		vrLoc = 1417;
@@ -6953,7 +6968,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 87";
 		rLen = 0;
-		rLoc = 2634;
+		rLoc = 2697;
 		rType = 0;
 		vrLen = 1425;
 		vrLoc = 1419;
@@ -6973,7 +6988,7 @@
 		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
 		name = "DataPanel.m: 60";
 		rLen = 0;
-		rLoc = 1536;
+		rLoc = 1546;
 		rType = 0;
 		vrLen = 1158;
 		vrLoc = 1027;
@@ -7003,7 +7018,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 87";
 		rLen = 0;
-		rLoc = 2634;
+		rLoc = 2697;
 		rType = 0;
 		vrLen = 1272;
 		vrLoc = 1524;
@@ -7013,7 +7028,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 87";
 		rLen = 0;
-		rLoc = 2634;
+		rLoc = 2697;
 		rType = 0;
 		vrLen = 1331;
 		vrLoc = 1524;
@@ -7033,7 +7048,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 87";
 		rLen = 0;
-		rLoc = 2634;
+		rLoc = 2697;
 		rType = 0;
 		vrLen = 1331;
 		vrLoc = 1524;
@@ -7143,7 +7158,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 87";
 		rLen = 0;
-		rLoc = 2632;
+		rLoc = 2695;
 		rType = 0;
 		vrLen = 1244;
 		vrLoc = 1415;
@@ -7153,7 +7168,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 96";
 		rLen = 0;
-		rLoc = 2914;
+		rLoc = 2977;
 		rType = 0;
 		vrLen = 1072;
 		vrLoc = 1895;
@@ -7163,7 +7178,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 96";
 		rLen = 0;
-		rLoc = 2904;
+		rLoc = 2967;
 		rType = 0;
 		vrLen = 1074;
 		vrLoc = 1895;
@@ -7183,7 +7198,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 96";
 		rLen = 0;
-		rLoc = 2904;
+		rLoc = 2967;
 		rType = 0;
 		vrLen = 1074;
 		vrLoc = 1895;
@@ -7223,7 +7238,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 96";
 		rLen = 0;
-		rLoc = 2911;
+		rLoc = 2974;
 		rType = 0;
 		vrLen = 1218;
 		vrLoc = 2553;
@@ -7273,7 +7288,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 96";
 		rLen = 0;
-		rLoc = 2911;
+		rLoc = 2974;
 		rType = 0;
 		vrLen = 1218;
 		vrLoc = 2553;
@@ -7343,7 +7358,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 96";
 		rLen = 0;
-		rLoc = 2911;
+		rLoc = 2974;
 		rType = 0;
 		vrLen = 1218;
 		vrLoc = 2553;
@@ -7363,7 +7378,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 96";
 		rLen = 0;
-		rLoc = 2890;
+		rLoc = 2953;
 		rType = 0;
 		vrLen = 1273;
 		vrLoc = 2249;
@@ -7373,7 +7388,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 96";
 		rLen = 0;
-		rLoc = 2890;
+		rLoc = 2953;
 		rType = 0;
 		vrLen = 1323;
 		vrLoc = 1690;
@@ -7393,7 +7408,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 96";
 		rLen = 0;
-		rLoc = 2890;
+		rLoc = 2953;
 		rType = 0;
 		vrLen = 1323;
 		vrLoc = 1690;
@@ -7473,7 +7488,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 96";
 		rLen = 0;
-		rLoc = 2890;
+		rLoc = 2953;
 		rType = 0;
 		vrLen = 1323;
 		vrLoc = 1690;
@@ -7493,7 +7508,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 189";
 		rLen = 0;
-		rLoc = 6464;
+		rLoc = 6527;
 		rType = 0;
 		vrLen = 1514;
 		vrLoc = 4997;
@@ -7503,7 +7518,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 189";
 		rLen = 0;
-		rLoc = 6464;
+		rLoc = 6527;
 		rType = 0;
 		vrLen = 1534;
 		vrLoc = 4997;
@@ -7513,7 +7528,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 189";
 		rLen = 0;
-		rLoc = 6461;
+		rLoc = 6524;
 		rType = 0;
 		vrLen = 1286;
 		vrLoc = 5422;
@@ -7523,7 +7538,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 188";
 		rLen = 129;
-		rLoc = 6337;
+		rLoc = 6400;
 		rType = 0;
 		vrLen = 1418;
 		vrLoc = 5422;
@@ -7543,7 +7558,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 188";
 		rLen = 129;
-		rLoc = 6337;
+		rLoc = 6400;
 		rType = 0;
 		vrLen = 1418;
 		vrLoc = 5422;
@@ -7567,6 +7582,154 @@
 		rType = 0;
 		vrLen = 1252;
 		vrLoc = 5396;
+	};
+	ECFB03150FD4D4D300EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
+		name = "DataPanel.m: 64";
+		rLen = 0;
+		rLoc = 1674;
+		rType = 0;
+		vrLen = 877;
+		vrLoc = 1172;
+	};
+	ECFB03160FD4D4D300EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "warning: 'DataSet' may not respond to '-isEqualTo:'";
+		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
+		rLen = 1;
+		rLoc = 210;
+		rType = 1;
+	};
+	ECFB03170FD4D4D300EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
+		name = "DataPanel.m: 64";
+		rLen = 0;
+		rLoc = 1674;
+		rType = 0;
+		vrLen = 877;
+		vrLoc = 1172;
+	};
+	ECFB03180FD4D4D300EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
+		name = "DataPanelViewController.m: 211";
+		rLen = 0;
+		rLoc = 5732;
+		rType = 0;
+		vrLen = 660;
+		vrLoc = 5332;
+	};
+	ECFB031F0FD4D6AE00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */;
+		name = "DataSetViewController.m: 235";
+		rLen = 0;
+		rLoc = 6407;
+		rType = 0;
+		vrLen = 1283;
+		vrLoc = 5396;
+	};
+	ECFB03200FD4D6AE00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
+		name = "SquirrelAppDelegate.m: 151";
+		rLen = 0;
+		rLoc = 4801;
+		rType = 0;
+		vrLen = 1445;
+		vrLoc = 1983;
+	};
+	ECFB03210FD4D6AE00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
+		name = "DataPanelViewController.m: 218";
+		rLen = 0;
+		rLoc = 5937;
+		rType = 0;
+		vrLen = 959;
+		vrLoc = 5332;
+	};
+	ECFB03220FD4D6AE00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
+		name = "DataPanel.m: 71";
+		rLen = 0;
+		rLoc = 2042;
+		rType = 0;
+		vrLen = 1301;
+		vrLoc = 984;
+	};
+	ECFB03230FD4D6AE00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
+		name = "FlipsideViewController.m: 180";
+		rLen = 0;
+		rLoc = 6029;
+		rType = 0;
+		vrLen = 1418;
+		vrLoc = 5422;
+	};
+	ECFB03240FD4D6AE00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */;
+		name = "DataSetViewController.m: 235";
+		rLen = 0;
+		rLoc = 6407;
+		rType = 0;
+		vrLen = 1283;
+		vrLoc = 5396;
+	};
+	ECFB03250FD4D6AE00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
+		name = "FlipsideViewController.m: 180";
+		rLen = 0;
+		rLoc = 6029;
+		rType = 0;
+		vrLen = 1418;
+		vrLoc = 5422;
+	};
+	ECFB03260FD4D6AE00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
+		name = "SquirrelAppDelegate.m: 151";
+		rLen = 0;
+		rLoc = 4801;
+		rType = 0;
+		vrLen = 1445;
+		vrLoc = 1983;
+	};
+	ECFB03270FD4D6AE00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
+		name = "DataPanelViewController.m: 218";
+		rLen = 0;
+		rLoc = 5937;
+		rType = 0;
+		vrLen = 959;
+		vrLoc = 5332;
+	};
+	ECFB03280FD4D6AE00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */;
+		name = "DataPanel.m: 71";
+		rLen = 0;
+		rLoc = 2042;
+		rType = 0;
+		vrLen = 1301;
+		vrLoc = 984;
+	};
+	ECFB03290FD4D6AE00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
+		name = "FlipsideViewController.m: 87";
+		rLen = 0;
+		rLoc = 2694;
+		rType = 0;
+		vrLen = 1454;
+		vrLoc = 1524;
 	};
 	ECFBFBD10FD1F5D100EEE684 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -8019,7 +8182,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 144";
 		rLen = 0;
-		rLoc = 7931;
+		rLoc = 7994;
 		rType = 0;
 		vrLen = 1453;
 		vrLoc = 2566;
@@ -8177,7 +8340,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 85";
 		rLen = 0;
-		rLoc = 3202;
+		rLoc = 3265;
 		rType = 0;
 		vrLen = 678;
 		vrLoc = 48;
@@ -8207,7 +8370,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 85";
 		rLen = 0;
-		rLoc = 3202;
+		rLoc = 3265;
 		rType = 0;
 		vrLen = 678;
 		vrLoc = 48;
@@ -8237,7 +8400,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 85";
 		rLen = 0;
-		rLoc = 3202;
+		rLoc = 3265;
 		rType = 0;
 		vrLen = 1336;
 		vrLoc = 1950;
@@ -8307,7 +8470,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 85";
 		rLen = 0;
-		rLoc = 3202;
+		rLoc = 3265;
 		rType = 0;
 		vrLen = 1336;
 		vrLoc = 1950;
@@ -8407,7 +8570,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 85";
 		rLen = 0;
-		rLoc = 3202;
+		rLoc = 3265;
 		rType = 0;
 		vrLen = 1334;
 		vrLoc = 1950;
@@ -8447,7 +8610,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 116";
 		rLen = 0;
-		rLoc = 5241;
+		rLoc = 5304;
 		rType = 0;
 		vrLen = 1305;
 		vrLoc = 2603;
@@ -8471,7 +8634,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 116";
 		rLen = 0;
-		rLoc = 5241;
+		rLoc = 5304;
 		rType = 0;
 		vrLen = 1351;
 		vrLoc = 1982;
@@ -8561,7 +8724,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 116";
 		rLen = 0;
-		rLoc = 5241;
+		rLoc = 5304;
 		rType = 0;
 		vrLen = 1351;
 		vrLoc = 1982;
@@ -8740,7 +8903,7 @@
 		isa = PBXTextBookmark;
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 55";
-		rLen = 1130;
+		rLen = 1193;
 		rLoc = 1528;
 		rType = 0;
 		vrLen = 1189;
@@ -8770,7 +8933,7 @@
 		isa = PBXTextBookmark;
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 55";
-		rLen = 1130;
+		rLen = 1193;
 		rLoc = 1528;
 		rType = 0;
 		vrLen = 1189;
@@ -9620,7 +9783,7 @@
 		isa = PBXTextBookmark;
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 55";
-		rLen = 1130;
+		rLen = 1193;
 		rLoc = 1528;
 		rType = 0;
 		vrLen = 1281;
@@ -9710,7 +9873,7 @@
 		isa = PBXTextBookmark;
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 55";
-		rLen = 1130;
+		rLen = 1193;
 		rLoc = 1528;
 		rType = 0;
 		vrLen = 1305;
@@ -9940,7 +10103,7 @@
 		isa = PBXTextBookmark;
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 55";
-		rLen = 1130;
+		rLen = 1193;
 		rLoc = 1528;
 		rType = 0;
 		vrLen = 1281;
@@ -10401,7 +10564,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 113";
 		rLen = 1471;
-		rLoc = 4997;
+		rLoc = 5060;
 		rType = 0;
 		vrLen = 1312;
 		vrLoc = 2884;
@@ -10431,7 +10594,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 113";
 		rLen = 1471;
-		rLoc = 4997;
+		rLoc = 5060;
 		rType = 0;
 		vrLen = 1312;
 		vrLoc = 2884;
@@ -11671,7 +11834,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 88";
 		rLen = 0;
-		rLoc = 3202;
+		rLoc = 3265;
 		rType = 0;
 		vrLen = 1141;
 		vrLoc = 1980;
@@ -11731,7 +11894,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 88";
 		rLen = 0;
-		rLoc = 3202;
+		rLoc = 3265;
 		rType = 0;
 		vrLen = 1141;
 		vrLoc = 1980;
@@ -11861,7 +12024,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 88";
 		rLen = 0;
-		rLoc = 3202;
+		rLoc = 3265;
 		rType = 0;
 		vrLen = 1140;
 		vrLoc = 1979;
@@ -11911,7 +12074,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 88";
 		rLen = 0;
-		rLoc = 3202;
+		rLoc = 3265;
 		rType = 0;
 		vrLen = 1140;
 		vrLoc = 1980;
@@ -11971,7 +12134,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 88";
 		rLen = 0;
-		rLoc = 3202;
+		rLoc = 3265;
 		rType = 0;
 		vrLen = 1140;
 		vrLoc = 1979;
@@ -12031,7 +12194,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 88";
 		rLen = 0;
-		rLoc = 3202;
+		rLoc = 3265;
 		rType = 0;
 		vrLen = 1140;
 		vrLoc = 1979;
@@ -12051,7 +12214,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 88";
 		rLen = 0;
-		rLoc = 3202;
+		rLoc = 3265;
 		rType = 0;
 		vrLen = 1140;
 		vrLoc = 1979;
@@ -12661,7 +12824,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 90";
 		rLen = 0;
-		rLoc = 3202;
+		rLoc = 3265;
 		rType = 0;
 		vrLen = 1330;
 		vrLoc = 1968;
@@ -12671,7 +12834,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 88";
 		rLen = 0;
-		rLoc = 3202;
+		rLoc = 3265;
 		rType = 0;
 		vrLen = 1511;
 		vrLoc = 1968;
@@ -12691,7 +12854,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 88";
 		rLen = 0;
-		rLoc = 3202;
+		rLoc = 3265;
 		rType = 0;
 		vrLen = 1511;
 		vrLoc = 1968;
@@ -14325,9 +14488,9 @@
 	};
 	ECFBFFF40FD463F000EEE684 /* DataPanel.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {803, 4568}}";
-			sepNavSelRange = "{1664, 0}";
-			sepNavVisRange = "{1172, 923}";
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 4176}}";
+			sepNavSelRange = "{2042, 0}";
+			sepNavVisRange = "{984, 1301}";
 		};
 	};
 }
