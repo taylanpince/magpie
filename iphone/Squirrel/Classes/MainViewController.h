@@ -9,8 +9,10 @@
 #import "FlipsideViewController.h"
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
-
+	IBOutlet UIScrollView *scrollView;
 }
+
+@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 
 - (IBAction)showInfo;
 
