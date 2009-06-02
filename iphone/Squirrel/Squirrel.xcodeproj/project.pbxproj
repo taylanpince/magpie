@@ -28,6 +28,7 @@
 		ECFB01E90FD4AD3900EEE684 /* FastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB01E80FD4AD3900EEE684 /* FastTableViewCell.m */; };
 		ECFB033C0FD4D80100EEE684 /* PanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */; };
 		ECFB04310FD4F34400EEE684 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFB04300FD4F34400EEE684 /* QuartzCore.framework */; };
+		ECFB058A0FD57CF000EEE684 /* DataEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */; };
 		ECFBFBA60FD1E87B00EEE684 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFBFBA50FD1E87B00EEE684 /* libsqlite3.0.dylib */; };
 		ECFBFBA80FD1EDCA00EEE684 /* Squirrel.sql in Resources */ = {isa = PBXBuildFile; fileRef = ECFBFBA70FD1EDCA00EEE684 /* Squirrel.sql */; };
 		ECFBFC420FD28B1700EEE684 /* DataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */; };
@@ -72,6 +73,8 @@
 		ECFB033A0FD4D80100EEE684 /* PanelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelView.h; sourceTree = "<group>"; };
 		ECFB033B0FD4D80100EEE684 /* PanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelView.m; sourceTree = "<group>"; };
 		ECFB04300FD4F34400EEE684 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		ECFB05880FD57CF000EEE684 /* DataEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataEntry.h; sourceTree = "<group>"; };
+		ECFB05890FD57CF000EEE684 /* DataEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEntry.m; sourceTree = "<group>"; };
 		ECFBFBA50FD1E87B00EEE684 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		ECFBFBA70FD1EDCA00EEE684 /* Squirrel.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = Squirrel.sql; sourceTree = "<group>"; };
 		ECFBFC400FD28B1700EEE684 /* DataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataItem.h; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 				ECFBFC410FD28B1700EEE684 /* DataItem.m */,
 				ECFBFFF30FD463F000EEE684 /* DataPanel.h */,
 				ECFBFFF40FD463F000EEE684 /* DataPanel.m */,
+				ECFB05880FD57CF000EEE684 /* DataEntry.h */,
+				ECFB05890FD57CF000EEE684 /* DataEntry.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				ECFB01DF0FD4AA7100EEE684 /* InfoTableViewCell.m in Sources */,
 				ECFB01E90FD4AD3900EEE684 /* FastTableViewCell.m in Sources */,
 				ECFB033C0FD4D80100EEE684 /* PanelView.m in Sources */,
+				ECFB058A0FD57CF000EEE684 /* DataEntry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

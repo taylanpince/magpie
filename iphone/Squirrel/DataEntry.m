@@ -1,25 +1,22 @@
 //
-//  DataItem.m
+//  DataEntry.m
 //  Squirrel
 //
-//  Created by Taylan Pince on 31/05/09.
+//  Created by Taylan Pince on 02/06/09.
 //  Copyright 2009 Taylan Pince. All rights reserved.
 //
 
-#import "DataItem.h"
-#import "DataSet.h"
 #import "DataEntry.h"
+#import "DataItem.h"
+
 
 static sqlite3_stmt *insert_statement = nil;
 static sqlite3_stmt *init_statement = nil;
 static sqlite3_stmt *delete_statement = nil;
 static sqlite3_stmt *hydrate_statement = nil;
 static sqlite3_stmt *dehydrate_statement = nil;
-static sqlite3_stmt *select_related_statement = nil;
 
-@implementation DataItem
-
-@synthesize dataEntries;
+@implementation DataEntry
 
 + (void)finalizeStatements {
     if (insert_statement) {
@@ -46,11 +43,6 @@ static sqlite3_stmt *select_related_statement = nil;
         sqlite3_finalize(dehydrate_statement);
         dehydrate_statement = nil;
     }
-    
-	if (select_related_statement) {
-        sqlite3_finalize(select_related_statement);
-        select_related_statement = nil;
-    }
 }
 
 
@@ -60,7 +52,7 @@ static sqlite3_stmt *select_related_statement = nil;
         database = db;
 		
         if (init_statement == nil) {
-            const char *sql = "SELECT name FROM data_items WHERE pk=?";
+            const char *sql = "SELECT value FROM data_entries WHERE pk=?";
 			
             if (sqlite3_prepare_v2(database, sql, -1, &init_statement, NULL) != SQLITE_OK) {
                 NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
@@ -70,9 +62,7 @@ static sqlite3_stmt *select_related_statement = nil;
         sqlite3_bind_int(init_statement, 1, primaryKey);
         
 		if (sqlite3_step(init_statement) == SQLITE_ROW) {
-            self.name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(init_statement, 0)];
-        } else {
-            self.name = @"No name";
+            self.value = [NSNumber numberWithFloat:sqlite3_column_double(init_statement, 0)];
         }
 		
         sqlite3_reset(init_statement);
@@ -86,15 +76,16 @@ static sqlite3_stmt *select_related_statement = nil;
     database = db;
 	
     if (insert_statement == nil) {
-        static char *sql = "INSERT INTO data_items (name,data_set) VALUES(?,?)";
+        static char *sql = "INSERT INTO data_entries (value,timestamp,data_item) VALUES(?,?,?)";
 		
         if (sqlite3_prepare_v2(database, sql, -1, &insert_statement, NULL) != SQLITE_OK) {
             NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
         }
     }
 	
-    sqlite3_bind_text(insert_statement, 1, [name UTF8String], -1, SQLITE_TRANSIENT);
-	sqlite3_bind_int(insert_statement, 2, [dataSet primaryKey]);
+    sqlite3_bind_double(insert_statement, 1, [value floatValue]);
+	sqlite3_bind_int(insert_statement, 2, [timeStamp timeIntervalSince1970]);
+	sqlite3_bind_int(insert_statement, 3, [dataItem primaryKey]);
 	
     int success = sqlite3_step(insert_statement);
 	
@@ -110,14 +101,15 @@ static sqlite3_stmt *select_related_statement = nil;
 }
 
 - (void)dealloc {
-    [name release];
-	[dataSet release];
+    [value release];
+	[timeStamp release];
+	[dataItem release];
     [super dealloc];
 }
 
 - (void)deleteFromDatabase {
     if (delete_statement == nil) {
-        const char *sql = "DELETE FROM data_items WHERE pk=?";
+        const char *sql = "DELETE FROM data_entries WHERE pk=?";
 		
         if (sqlite3_prepare_v2(database, sql, -1, &delete_statement, NULL) != SQLITE_OK) {
             NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
@@ -133,24 +125,6 @@ static sqlite3_stmt *select_related_statement = nil;
     if (success != SQLITE_DONE) {
         NSAssert1(0, @"Error: failed to delete from database with message '%s'.", sqlite3_errmsg(database));
     }
-	
-	if (select_related_statement == nil) {
-		const char *sql = "SELECT pk FROM data_entries WHERE data_item=?";
-		
-		if (sqlite3_prepare_v2(database, sql, -1, &select_related_statement, NULL) != SQLITE_OK) {
-			NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
-		}
-	}
-	
-	sqlite3_bind_int(select_related_statement, 1, primaryKey);
-	
-	while (sqlite3_step(select_related_statement) == SQLITE_ROW) {
-		DataEntry *dataEntry = [[DataEntry alloc] initWithPrimaryKey:sqlite3_column_int(select_related_statement, 0) database:database];
-		[dataEntry deleteFromDatabase];
-		[dataEntry release];
-	}
-	
-	sqlite3_reset(select_related_statement);
 }
 
 
@@ -158,7 +132,7 @@ static sqlite3_stmt *select_related_statement = nil;
     if (hydrated) return;
 	
     if (hydrate_statement == nil) {
-        const char *sql = "SELECT data_set FROM data_items WHERE pk=?";
+        const char *sql = "SELECT data_item FROM data_entries WHERE pk=?";
 		
         if (sqlite3_prepare_v2(database, sql, -1, &hydrate_statement, NULL) != SQLITE_OK) {
             NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
@@ -170,11 +144,7 @@ static sqlite3_stmt *select_related_statement = nil;
     int success = sqlite3_step(hydrate_statement);
     
 	if (success == SQLITE_ROW) {
-        int setPrimaryKey = sqlite3_column_int(hydrate_statement, 0);
-		
-		self.dataSet = [[DataSet alloc] initWithPrimaryKey:setPrimaryKey database:database];
-    } else {
-		
+		self.dataItem = [[DataItem alloc] initWithPrimaryKey:sqlite3_column_int(hydrate_statement, 0) database:database];
     }
 	
     sqlite3_reset(hydrate_statement);
@@ -186,16 +156,17 @@ static sqlite3_stmt *select_related_statement = nil;
 - (void)dehydrate {
     if (dirty) {
         if (dehydrate_statement == nil) {
-            const char *sql = "UPDATE data_items SET name=?, data_set=? WHERE pk=?";
+            const char *sql = "UPDATE data_entries SET value=?, timestamp=?, data_set=? WHERE pk=?";
 			
             if (sqlite3_prepare_v2(database, sql, -1, &dehydrate_statement, NULL) != SQLITE_OK) {
                 NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
             }
         }
 		
-        sqlite3_bind_text(dehydrate_statement, 1, [name UTF8String], -1, SQLITE_TRANSIENT);
-        sqlite3_bind_double(dehydrate_statement, 2, [dataSet primaryKey]);
-        sqlite3_bind_int(dehydrate_statement, 3, primaryKey);
+		sqlite3_bind_double(dehydrate_statement, 1, [value floatValue]);
+		sqlite3_bind_int(dehydrate_statement, 2, [timeStamp timeIntervalSince1970]);
+		sqlite3_bind_int(dehydrate_statement, 3, [dataItem primaryKey]);
+        sqlite3_bind_int(dehydrate_statement, 4, primaryKey);
 		
         int success = sqlite3_step(dehydrate_statement);
 		
@@ -208,41 +179,13 @@ static sqlite3_stmt *select_related_statement = nil;
         dirty = NO;
     }
 	
-//    [name release];
-//    name = nil;
-//	
-//    [dataSet release];
-//    dataSet = nil;
+	//    [name release];
+	//    name = nil;
+	//	
+	//    [dataSet release];
+	//    dataSet = nil;
 	
     hydrated = NO;
-}
-
-
-- (void)selectRelated {
-	if (dataEntries == nil) dataEntries = [[NSMutableArray alloc] init];
-	if (related) return;
-	
-	if (select_related_statement == nil) {
-		const char *sql = "SELECT pk FROM data_entries WHERE data_item=?";
-		
-		if (sqlite3_prepare_v2(database, sql, -1, &select_related_statement, NULL) != SQLITE_OK) {
-			NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
-		}
-	}
-	
-	[dataEntries removeAllObjects];
-	
-	sqlite3_bind_int(select_related_statement, 1, primaryKey);
-	
-	while (sqlite3_step(select_related_statement) == SQLITE_ROW) {
-		DataEntry *dataEntry = [[DataEntry alloc] initWithPrimaryKey:sqlite3_column_int(select_related_statement, 0) database:database];
-		[dataEntries addObject:dataEntry];
-		[dataEntry release];
-	}
-	
-	sqlite3_reset(select_related_statement);
-	
-	related = YES;
 }
 
 
@@ -250,39 +193,37 @@ static sqlite3_stmt *select_related_statement = nil;
     return primaryKey;
 }
 
-- (NSString *)name {
-    return name;
+- (NSNumber *)value {
+    return value;
 }
 
-- (void)setName:(NSString *)aString {
-    if ((!name && !aString) || (name && aString && [name isEqualToString:aString])) return;
+- (void)setValue:(NSNumber *)aValue {
+    if ((!value && !aValue) || (value && aValue && value == aValue)) return;
     dirty = YES;
-    [name release];
-    name = [aString copy];
+    [value release];
+    value = [aValue copy];
 }
 
-- (DataSet *)dataSet {
-    return dataSet;
+- (NSDate *)timeStamp {
+	return timeStamp;
 }
 
-- (void)setDataSet:(DataSet *)aDataSet {
-    if ((!dataSet && !aDataSet) || (dataSet && aDataSet && [dataSet isEqual:aDataSet])) return;
+- (void)setTimeStamp:(NSDate *)aTimeStamp {
+    if ((!timeStamp && !aTimeStamp) || (timeStamp && aTimeStamp && [timeStamp isEqualToDate:aTimeStamp])) return;
+	dirty = YES;
+	[timeStamp release];
+	timeStamp = [aTimeStamp copy];
+}
+
+- (DataItem *)dataItem {
+    return dataItem;
+}
+
+- (void)setDataItem:(DataItem *)aDataItem {
+    if ((!dataItem && !aDataItem) || (dataItem && aDataItem && [dataItem isEqual:aDataItem])) return;
     dirty = YES;
-    [dataSet release];
-    dataSet = [aDataSet retain];
-}
-
-
-- (void)removeDataEntry:(DataEntry *)dataEntry {
-    [dataEntry deleteFromDatabase];
-    [dataEntries removeObject:dataEntry];
-}
-
-
-- (void)addDataEntry:(DataEntry *)dataEntry {
-	dataEntry.dataItem = self;
-    [dataEntry insertIntoDatabase:database];
-    [dataEntries addObject:dataEntry];
+    [dataItem release];
+    dataItem = [aDataItem retain];
 }
 
 @end

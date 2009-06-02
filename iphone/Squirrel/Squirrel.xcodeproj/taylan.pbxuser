@@ -9,9 +9,9 @@
 	};
 	1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1139, 2912}}";
-			sepNavSelRange = "{4801, 0}";
-			sepNavVisRange = "{270, 1055}";
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 2864}}";
+			sepNavSelRange = "{3866, 0}";
+			sepNavVisRange = "{4495, 710}";
 		};
 	};
 	1D6058900D05DD3D006BFB54 /* Squirrel */ = {
@@ -49,15 +49,15 @@
 	289233A80DB2D0DB0083E9F9 /* MainViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1139, 572}}";
-			sepNavSelRange = "{272, 0}";
-			sepNavVisRange = "{0, 396}";
+			sepNavSelRange = "{301, 0}";
+			sepNavVisRange = "{0, 438}";
 		};
 	};
 	289233A90DB2D0DB0083E9F9 /* MainViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1139, 1056}}";
-			sepNavSelRange = "{657, 0}";
-			sepNavVisRange = "{308, 1038}";
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 1360}}";
+			sepNavSelRange = "{290, 0}";
+			sepNavVisRange = "{44, 881}";
 		};
 	};
 	289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */ = {
@@ -70,15 +70,15 @@
 	};
 	289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1335, 3552}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1335, 3408}}";
 			sepNavSelRange = "{7170, 0}";
-			sepNavVisRange = "{6395, 890}";
+			sepNavVisRange = "{6534, 1333}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = EC6EB78E0FD0AA6100E6F9D8 /* Squirrel */;
-		activeSDKPreference = iphoneos2.2.1;
+		activeSDKPreference = iphonesimulator2.2.1;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Squirrel */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* Squirrel */,
@@ -888,6 +888,87 @@
 			ECFB057D0FD512D500EEE684 /* PBXTextBookmark */ = ECFB057D0FD512D500EEE684 /* PBXTextBookmark */;
 			ECFB057E0FD512D500EEE684 /* PBXTextBookmark */ = ECFB057E0FD512D500EEE684 /* PBXTextBookmark */;
 			ECFB057F0FD512D500EEE684 /* PBXTextBookmark */ = ECFB057F0FD512D500EEE684 /* PBXTextBookmark */;
+			ECFB05830FD5685D00EEE684 /* PBXTextBookmark */ = ECFB05830FD5685D00EEE684 /* PBXTextBookmark */;
+			ECFB05860FD5689100EEE684 /* PBXTextBookmark */ = ECFB05860FD5689100EEE684 /* PBXTextBookmark */;
+			ECFB058E0FD587DD00EEE684 /* PBXTextBookmark */ = ECFB058E0FD587DD00EEE684 /* PBXTextBookmark */;
+			ECFB058F0FD587DD00EEE684 /* PBXTextBookmark */ = ECFB058F0FD587DD00EEE684 /* PBXTextBookmark */;
+			ECFB05900FD587DD00EEE684 /* PBXTextBookmark */ = ECFB05900FD587DD00EEE684 /* PBXTextBookmark */;
+			ECFB05910FD587DD00EEE684 /* PBXTextBookmark */ = ECFB05910FD587DD00EEE684 /* PBXTextBookmark */;
+			ECFB05960FD5884600EEE684 /* PBXTextBookmark */ = ECFB05960FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05970FD5884600EEE684 /* PBXTextBookmark */ = ECFB05970FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05980FD5884600EEE684 /* PBXTextBookmark */ = ECFB05980FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05990FD5884600EEE684 /* PBXTextBookmark */ = ECFB05990FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB059A0FD5884600EEE684 /* PBXTextBookmark */ = ECFB059A0FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB059B0FD5884600EEE684 /* PBXTextBookmark */ = ECFB059B0FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB059C0FD5884600EEE684 /* PBXTextBookmark */ = ECFB059C0FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB059D0FD5884600EEE684 /* PBXTextBookmark */ = ECFB059D0FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB059E0FD5884600EEE684 /* PBXTextBookmark */ = ECFB059E0FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB059F0FD5884600EEE684 /* PBXTextBookmark */ = ECFB059F0FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05A00FD5884600EEE684 /* PBXTextBookmark */ = ECFB05A00FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05A10FD5884600EEE684 /* PBXTextBookmark */ = ECFB05A10FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05A20FD5884600EEE684 /* PBXTextBookmark */ = ECFB05A20FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05A30FD5884600EEE684 /* PBXTextBookmark */ = ECFB05A30FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05A40FD5884600EEE684 /* PBXTextBookmark */ = ECFB05A40FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05A50FD5884600EEE684 /* PBXTextBookmark */ = ECFB05A50FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05A60FD5884600EEE684 /* PBXTextBookmark */ = ECFB05A60FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05A70FD5884600EEE684 /* PBXTextBookmark */ = ECFB05A70FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05A80FD5884600EEE684 /* PBXTextBookmark */ = ECFB05A80FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05A90FD5884600EEE684 /* PBXTextBookmark */ = ECFB05A90FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05AA0FD5884600EEE684 /* PBXTextBookmark */ = ECFB05AA0FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05AB0FD5884600EEE684 /* PBXTextBookmark */ = ECFB05AB0FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05AC0FD5884600EEE684 /* PBXTextBookmark */ = ECFB05AC0FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05AD0FD5884600EEE684 /* PBXTextBookmark */ = ECFB05AD0FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05AE0FD5884600EEE684 /* PBXTextBookmark */ = ECFB05AE0FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05AF0FD5884600EEE684 /* PBXTextBookmark */ = ECFB05AF0FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05B00FD5884600EEE684 /* PBXTextBookmark */ = ECFB05B00FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05B10FD5884600EEE684 /* PBXTextBookmark */ = ECFB05B10FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05B20FD5884600EEE684 /* PBXTextBookmark */ = ECFB05B20FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05B30FD5884600EEE684 /* PBXTextBookmark */ = ECFB05B30FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05B40FD5884600EEE684 /* PBXTextBookmark */ = ECFB05B40FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05B50FD5884600EEE684 /* PBXTextBookmark */ = ECFB05B50FD5884600EEE684 /* PBXTextBookmark */;
+			ECFB05B60FD5896200EEE684 /* PBXTextBookmark */ = ECFB05B60FD5896200EEE684 /* PBXTextBookmark */;
+			ECFB05B70FD5896200EEE684 /* PBXTextBookmark */ = ECFB05B70FD5896200EEE684 /* PBXTextBookmark */;
+			ECFB05B80FD5896200EEE684 /* PBXTextBookmark */ = ECFB05B80FD5896200EEE684 /* PBXTextBookmark */;
+			ECFB05B90FD5896200EEE684 /* PBXTextBookmark */ = ECFB05B90FD5896200EEE684 /* PBXTextBookmark */;
+			ECFB05BA0FD5896200EEE684 /* PBXTextBookmark */ = ECFB05BA0FD5896200EEE684 /* PBXTextBookmark */;
+			ECFB05BB0FD5896200EEE684 /* PBXTextBookmark */ = ECFB05BB0FD5896200EEE684 /* PBXTextBookmark */;
+			ECFB05BC0FD5896200EEE684 /* PBXTextBookmark */ = ECFB05BC0FD5896200EEE684 /* PBXTextBookmark */;
+			ECFB05BD0FD5896200EEE684 /* PBXTextBookmark */ = ECFB05BD0FD5896200EEE684 /* PBXTextBookmark */;
+			ECFB05BE0FD5896200EEE684 /* PBXTextBookmark */ = ECFB05BE0FD5896200EEE684 /* PBXTextBookmark */;
+			ECFB05BF0FD5896200EEE684 /* PBXTextBookmark */ = ECFB05BF0FD5896200EEE684 /* PBXTextBookmark */;
+			ECFB05C00FD5896200EEE684 /* PBXTextBookmark */ = ECFB05C00FD5896200EEE684 /* PBXTextBookmark */;
+			ECFB05C10FD5896200EEE684 /* PBXTextBookmark */ = ECFB05C10FD5896200EEE684 /* PBXTextBookmark */;
+			ECFB05C20FD5896200EEE684 /* PBXTextBookmark */ = ECFB05C20FD5896200EEE684 /* PBXTextBookmark */;
+			ECFB05C30FD5896200EEE684 /* PBXTextBookmark */ = ECFB05C30FD5896200EEE684 /* PBXTextBookmark */;
+			ECFB05C40FD58A1F00EEE684 /* PBXTextBookmark */ = ECFB05C40FD58A1F00EEE684 /* PBXTextBookmark */;
+			ECFB05C50FD58A1F00EEE684 /* PBXTextBookmark */ = ECFB05C50FD58A1F00EEE684 /* PBXTextBookmark */;
+			ECFB05C60FD58A1F00EEE684 /* PBXTextBookmark */ = ECFB05C60FD58A1F00EEE684 /* PBXTextBookmark */;
+			ECFB05C70FD58A1F00EEE684 /* PBXTextBookmark */ = ECFB05C70FD58A1F00EEE684 /* PBXTextBookmark */;
+			ECFB05C80FD58A1F00EEE684 /* PBXTextBookmark */ = ECFB05C80FD58A1F00EEE684 /* PBXTextBookmark */;
+			ECFB05CA0FD58B9300EEE684 /* PBXTextBookmark */ = ECFB05CA0FD58B9300EEE684 /* PBXTextBookmark */;
+			ECFB05CB0FD58B9300EEE684 /* PBXTextBookmark */ = ECFB05CB0FD58B9300EEE684 /* PBXTextBookmark */;
+			ECFB05CC0FD58B9300EEE684 /* PBXTextBookmark */ = ECFB05CC0FD58B9300EEE684 /* PBXTextBookmark */;
+			ECFB05CD0FD58B9300EEE684 /* PBXTextBookmark */ = ECFB05CD0FD58B9300EEE684 /* PBXTextBookmark */;
+			ECFB05CE0FD58BA000EEE684 /* PBXTextBookmark */ = ECFB05CE0FD58BA000EEE684 /* PBXTextBookmark */;
+			ECFB05CF0FD58BA000EEE684 /* PBXTextBookmark */ = ECFB05CF0FD58BA000EEE684 /* PBXTextBookmark */;
+			ECFB05D00FD58BA000EEE684 /* PBXTextBookmark */ = ECFB05D00FD58BA000EEE684 /* PBXTextBookmark */;
+			ECFB05D10FD58BA000EEE684 /* PBXTextBookmark */ = ECFB05D10FD58BA000EEE684 /* PBXTextBookmark */;
+			ECFB05D30FD58BB900EEE684 /* PBXTextBookmark */ = ECFB05D30FD58BB900EEE684 /* PBXTextBookmark */;
+			ECFB05D40FD58BB900EEE684 /* PBXTextBookmark */ = ECFB05D40FD58BB900EEE684 /* PBXTextBookmark */;
+			ECFB05D80FD58C9100EEE684 /* PBXTextBookmark */ = ECFB05D80FD58C9100EEE684 /* PBXTextBookmark */;
+			ECFB05D90FD58C9100EEE684 /* PBXTextBookmark */ = ECFB05D90FD58C9100EEE684 /* PBXTextBookmark */;
+			ECFB05DA0FD58C9100EEE684 /* PBXTextBookmark */ = ECFB05DA0FD58C9100EEE684 /* PBXTextBookmark */;
+			ECFB05DB0FD58C9100EEE684 /* PBXTextBookmark */ = ECFB05DB0FD58C9100EEE684 /* PBXTextBookmark */;
+			ECFB05E10FD58E6F00EEE684 /* PBXTextBookmark */ = ECFB05E10FD58E6F00EEE684 /* PBXTextBookmark */;
+			ECFB05E20FD58E6F00EEE684 /* PBXTextBookmark */ = ECFB05E20FD58E6F00EEE684 /* PBXTextBookmark */;
+			ECFB05E30FD58E6F00EEE684 /* PBXTextBookmark */ = ECFB05E30FD58E6F00EEE684 /* PBXTextBookmark */;
+			ECFB05E40FD58E6F00EEE684 /* PBXTextBookmark */ = ECFB05E40FD58E6F00EEE684 /* PBXTextBookmark */;
+			ECFB05E50FD58E6F00EEE684 /* PBXTextBookmark */ = ECFB05E50FD58E6F00EEE684 /* PBXTextBookmark */;
+			ECFB05E60FD58E6F00EEE684 /* PBXTextBookmark */ = ECFB05E60FD58E6F00EEE684 /* PBXTextBookmark */;
+			ECFB05E70FD58E6F00EEE684 /* PBXTextBookmark */ = ECFB05E70FD58E6F00EEE684 /* PBXTextBookmark */;
+			ECFB05E80FD58E6F00EEE684 /* PBXTextBookmark */ = ECFB05E80FD58E6F00EEE684 /* PBXTextBookmark */;
+			ECFB05E90FD58E6F00EEE684 /* PBXTextBookmark */ = ECFB05E90FD58E6F00EEE684 /* PBXTextBookmark */;
+			ECFB05EA0FD58E6F00EEE684 /* PBXTextBookmark */ = ECFB05EA0FD58E6F00EEE684 /* PBXTextBookmark */;
 			ECFBFBD10FD1F5D100EEE684 /* PBXTextBookmark */ = ECFBFBD10FD1F5D100EEE684 /* PBXTextBookmark */;
 			ECFBFBD20FD1F5D100EEE684 /* PBXTextBookmark */ = ECFBFBD20FD1F5D100EEE684 /* PBXTextBookmark */;
 			ECFBFBD50FD1F5E100EEE684 /* PBXTextBookmark */ = ECFBFBD50FD1F5E100EEE684 /* PBXTextBookmark */;
@@ -1935,16 +2016,16 @@
 	EC6EB8100FD197B600E6F9D8 /* DataSet.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1139, 688}}";
-			sepNavSelRange = "{707, 0}";
+			sepNavSelRange = "{773, 110}";
 			sepNavVisRange = "{128, 762}";
 			sepNavWindowFrame = "{{19, 54}, {1182, 819}}";
 		};
 	};
 	EC6EB8110FD197B600E6F9D8 /* DataSet.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1139, 4624}}";
-			sepNavSelRange = "{3592, 0}";
-			sepNavVisRange = "{4420, 979}";
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 4688}}";
+			sepNavSelRange = "{3549, 0}";
+			sepNavVisRange = "{2926, 1124}";
 		};
 	};
 	EC6EB8290FD19BD600E6F9D8 /* PBXTextBookmark */ = {
@@ -1952,7 +2033,7 @@
 		fRef = EC6EB80A0FD197B600E6F9D8 /* DataItem.h */;
 		name = "DataItem.h: 26";
 		rLen = 0;
-		rLoc = 660;
+		rLoc = 892;
 		rType = 0;
 		vrLen = 216;
 		vrLoc = 0;
@@ -1992,9 +2073,9 @@
 		fRef = EC6EB80E0FD197B600E6F9D8 /* DataEntry.h */;
 		name = "DataEntry.h: 14";
 		rLen = 0;
-		rLoc = 226;
+		rLoc = 736;
 		rType = 0;
-		vrLen = 389;
+		vrLen = 218;
 		vrLoc = 0;
 	};
 	EC6EB82E0FD19BD600E6F9D8 /* PBXTextBookmark */ = {
@@ -2002,9 +2083,9 @@
 		fRef = EC6EB80F0FD197B600E6F9D8 /* DataEntry.m */;
 		name = "DataEntry.m: 6";
 		rLen = 0;
-		rLoc = 108;
+		rLoc = 95;
 		rType = 0;
-		vrLen = 270;
+		vrLen = 195;
 		vrLoc = 0;
 	};
 	EC6EB82F0FD19BD600E6F9D8 /* PBXTextBookmark */ = {
@@ -2022,7 +2103,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 21";
 		rLen = 0;
-		rLoc = 7998;
+		rLoc = 7966;
 		rType = 0;
 		vrLen = 288;
 		vrLoc = 0;
@@ -2069,7 +2150,7 @@
 		rLen = 0;
 		rLoc = 0;
 		rType = 0;
-		vrLen = 394;
+		vrLen = 218;
 		vrLoc = 0;
 	};
 	EC6EB83C0FD19BD600E6F9D8 /* PBXTextBookmark */ = {
@@ -2097,9 +2178,9 @@
 		fRef = EC6EB80F0FD197B600E6F9D8 /* DataEntry.m */;
 		name = "DataEntry.m: 6";
 		rLen = 0;
-		rLoc = 108;
+		rLoc = 95;
 		rType = 0;
-		vrLen = 270;
+		vrLen = 195;
 		vrLoc = 0;
 	};
 	EC6EB8430FD19BD600E6F9D8 /* PBXTextBookmark */ = {
@@ -2117,7 +2198,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 103";
 		rLen = 0;
-		rLoc = 5120;
+		rLoc = 5175;
 		rType = 0;
 		vrLen = 800;
 		vrLoc = 29;
@@ -2147,7 +2228,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 22";
 		rLen = 0;
-		rLoc = 744;
+		rLoc = 766;
 		rType = 0;
 		vrLen = 932;
 		vrLoc = 140;
@@ -2157,7 +2238,7 @@
 		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
 		name = "MainViewController.h: 15";
 		rLen = 0;
-		rLoc = 368;
+		rLoc = 410;
 		rType = 0;
 		vrLen = 418;
 		vrLoc = 0;
@@ -2191,15 +2272,15 @@
 	EC6EB8E00FD1B81E00E6F9D8 /* EditableTableViewCell.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1139, 572}}";
-			sepNavSelRange = "{549, 0}";
+			sepNavSelRange = "{474, 75}";
 			sepNavVisRange = "{0, 908}";
 		};
 	};
 	EC6EB8E10FD1B81E00E6F9D8 /* EditableTableViewCell.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1139, 1248}}";
-			sepNavSelRange = "{849, 123}";
-			sepNavVisRange = "{181, 1049}";
+			sepNavSelRange = "{827, 0}";
+			sepNavVisRange = "{1092, 854}";
 		};
 	};
 	EC6EB8EB0FD1B9F600E6F9D8 /* PBXTextBookmark */ = {
@@ -2341,7 +2422,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 53";
 		rLen = 0;
-		rLoc = 1340;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1150;
 		vrLoc = 724;
@@ -2478,7 +2559,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 9";
 		rLen = 0;
-		rLoc = 165;
+		rLoc = 133;
 		rType = 0;
 		vrLen = 855;
 		vrLoc = 0;
@@ -2488,7 +2569,7 @@
 		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
 		name = "DataItem.h: 9";
 		rLen = 0;
-		rLoc = 148;
+		rLoc = 159;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 0;
@@ -2538,7 +2619,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 95";
 		rLen = 0;
-		rLoc = 2656;
+		rLoc = 2678;
 		rType = 0;
 		vrLen = 1289;
 		vrLoc = 1985;
@@ -2588,7 +2669,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 9";
 		rLen = 0;
-		rLoc = 165;
+		rLoc = 133;
 		rType = 0;
 		vrLen = 855;
 		vrLoc = 0;
@@ -2608,7 +2689,7 @@
 		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
 		name = "DataItem.h: 23";
 		rLen = 4;
-		rLoc = 413;
+		rLoc = 469;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 0;
@@ -2628,7 +2709,7 @@
 		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
 		name = "DataItem.h: 23";
 		rLen = 4;
-		rLoc = 413;
+		rLoc = 469;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 0;
@@ -2648,7 +2729,7 @@
 		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
 		name = "DataItem.h: 23";
 		rLen = 4;
-		rLoc = 413;
+		rLoc = 469;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 0;
@@ -2668,7 +2749,7 @@
 		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
 		name = "DataItem.h: 23";
 		rLen = 0;
-		rLoc = 447;
+		rLoc = 503;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 0;
@@ -2688,7 +2769,7 @@
 		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
 		name = "DataItem.h: 14";
 		rLen = 0;
-		rLoc = 242;
+		rLoc = 253;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 0;
@@ -2708,7 +2789,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 146";
 		rLen = 40;
-		rLoc = 4066;
+		rLoc = 4981;
 		rType = 0;
 		vrLen = 858;
 		vrLoc = 3507;
@@ -2748,7 +2829,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 209";
 		rLen = 257;
-		rLoc = 5618;
+		rLoc = 7387;
 		rType = 0;
 		vrLen = 629;
 		vrLoc = 5253;
@@ -2788,7 +2869,7 @@
 		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
 		name = "DataItem.h: 9";
 		rLen = 0;
-		rLoc = 148;
+		rLoc = 159;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 0;
@@ -2898,7 +2979,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 9";
 		rLen = 0;
-		rLoc = 165;
+		rLoc = 133;
 		rType = 0;
 		vrLen = 855;
 		vrLoc = 0;
@@ -2908,7 +2989,7 @@
 		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
 		name = "DataItem.h: 9";
 		rLen = 0;
-		rLoc = 148;
+		rLoc = 159;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 0;
@@ -2968,7 +3049,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 154";
 		rLen = 0;
-		rLoc = 5113;
+		rLoc = 5168;
 		rType = 0;
 		vrLen = 651;
 		vrLoc = 4167;
@@ -2978,7 +3059,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 154";
 		rLen = 0;
-		rLoc = 5113;
+		rLoc = 5168;
 		rType = 0;
 		vrLen = 651;
 		vrLoc = 4167;
@@ -2998,7 +3079,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 154";
 		rLen = 0;
-		rLoc = 5113;
+		rLoc = 5168;
 		rType = 0;
 		vrLen = 651;
 		vrLoc = 4167;
@@ -3032,9 +3113,9 @@
 	};
 	ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {922, 3872}}";
+			sepNavIntBoundsRect = "{{0, 0}, {922, 3808}}";
 			sepNavSelRange = "{5937, 0}";
-			sepNavVisRange = "{5332, 751}";
+			sepNavVisRange = "{5676, 604}";
 		};
 	};
 	ECFB00560FD4721100EEE684 /* PBXTextBookmark */ = {
@@ -3202,7 +3283,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 147";
 		rLen = 0;
-		rLoc = 4850;
+		rLoc = 4905;
 		rType = 0;
 		vrLen = 939;
 		vrLoc = 3690;
@@ -3212,7 +3293,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 9";
 		rLen = 0;
-		rLoc = 165;
+		rLoc = 133;
 		rType = 0;
 		vrLen = 939;
 		vrLoc = 2075;
@@ -3232,7 +3313,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 143";
 		rLen = 0;
-		rLoc = 4690;
+		rLoc = 4745;
 		rType = 0;
 		vrLen = 1363;
 		vrLoc = 2802;
@@ -3252,7 +3333,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 147";
 		rLen = 18;
-		rLoc = 4821;
+		rLoc = 4876;
 		rType = 0;
 		vrLen = 826;
 		vrLoc = 3963;
@@ -3272,7 +3353,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 9";
 		rLen = 0;
-		rLoc = 165;
+		rLoc = 133;
 		rType = 0;
 		vrLen = 939;
 		vrLoc = 2075;
@@ -3302,7 +3383,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 147";
 		rLen = 0;
-		rLoc = 4850;
+		rLoc = 4905;
 		rType = 0;
 		vrLen = 826;
 		vrLoc = 3963;
@@ -3322,7 +3403,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 147";
 		rLen = 0;
-		rLoc = 4850;
+		rLoc = 4905;
 		rType = 0;
 		vrLen = 939;
 		vrLoc = 3690;
@@ -3332,7 +3413,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 9";
 		rLen = 0;
-		rLoc = 165;
+		rLoc = 133;
 		rType = 0;
 		vrLen = 937;
 		vrLoc = 2075;
@@ -3342,7 +3423,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 9";
 		rLen = 0;
-		rLoc = 165;
+		rLoc = 133;
 		rType = 0;
 		vrLen = 939;
 		vrLoc = 2075;
@@ -3352,7 +3433,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 9";
 		rLen = 0;
-		rLoc = 165;
+		rLoc = 133;
 		rType = 0;
 		vrLen = 939;
 		vrLoc = 2075;
@@ -3362,7 +3443,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 135";
 		rLen = 0;
-		rLoc = 4524;
+		rLoc = 4579;
 		rType = 0;
 		vrLen = 1208;
 		vrLoc = 744;
@@ -3372,7 +3453,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 135";
 		rLen = 0;
-		rLoc = 4524;
+		rLoc = 4579;
 		rType = 0;
 		vrLen = 1208;
 		vrLoc = 744;
@@ -3382,7 +3463,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 97";
 		rLen = 0;
-		rLoc = 2621;
+		rLoc = 2589;
 		rType = 0;
 		vrLen = 939;
 		vrLoc = 2075;
@@ -3392,7 +3473,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 98";
 		rLen = 0;
-		rLoc = 2738;
+		rLoc = 2760;
 		rType = 0;
 		vrLen = 1484;
 		vrLoc = 1983;
@@ -3402,7 +3483,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 97";
 		rLen = 0;
-		rLoc = 2621;
+		rLoc = 2589;
 		rType = 0;
 		vrLen = 939;
 		vrLoc = 2075;
@@ -3412,7 +3493,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 98";
 		rLen = 0;
-		rLoc = 2738;
+		rLoc = 2760;
 		rType = 0;
 		vrLen = 1452;
 		vrLoc = 1983;
@@ -3422,7 +3503,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 97";
 		rLen = 0;
-		rLoc = 2621;
+		rLoc = 2589;
 		rType = 0;
 		vrLen = 939;
 		vrLoc = 2075;
@@ -3432,7 +3513,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 72";
 		rLen = 1;
-		rLoc = 2201;
+		rLoc = 2223;
 		rType = 0;
 		vrLen = 1485;
 		vrLoc = 1983;
@@ -3442,7 +3523,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 97";
 		rLen = 0;
-		rLoc = 2621;
+		rLoc = 2589;
 		rType = 0;
 		vrLen = 939;
 		vrLoc = 2075;
@@ -3452,7 +3533,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 90";
 		rLen = 0;
-		rLoc = 2875;
+		rLoc = 2897;
 		rType = 0;
 		vrLen = 1367;
 		vrLoc = 2091;
@@ -3462,7 +3543,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 90";
 		rLen = 0;
-		rLoc = 2875;
+		rLoc = 2897;
 		rType = 0;
 		vrLen = 1400;
 		vrLoc = 2091;
@@ -3492,7 +3573,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 90";
 		rLen = 0;
-		rLoc = 2875;
+		rLoc = 2897;
 		rType = 0;
 		vrLen = 1400;
 		vrLoc = 2091;
@@ -5414,7 +5495,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 240";
 		rLen = 0;
-		rLoc = 6995;
+		rLoc = 6963;
 		rType = 0;
 		vrLen = 1019;
 		vrLoc = 5983;
@@ -5484,7 +5565,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 240";
 		rLen = 0;
-		rLoc = 6995;
+		rLoc = 6963;
 		rType = 0;
 		vrLen = 1019;
 		vrLoc = 5983;
@@ -6272,7 +6353,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 183";
 		rLen = 0;
-		rLoc = 4419;
+		rLoc = 4387;
 		rType = 0;
 		vrLen = 1273;
 		vrLoc = 4269;
@@ -6312,7 +6393,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 183";
 		rLen = 0;
-		rLoc = 4419;
+		rLoc = 4387;
 		rType = 0;
 		vrLen = 1273;
 		vrLoc = 4269;
@@ -6352,7 +6433,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 157";
 		rLen = 0;
-		rLoc = 4419;
+		rLoc = 4387;
 		rType = 0;
 		vrLen = 1071;
 		vrLoc = 3397;
@@ -6362,7 +6443,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 133";
 		rLen = 18;
-		rLoc = 4380;
+		rLoc = 4435;
 		rType = 0;
 		vrLen = 795;
 		vrLoc = 4050;
@@ -6382,7 +6463,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 157";
 		rLen = 0;
-		rLoc = 4419;
+		rLoc = 4387;
 		rType = 0;
 		vrLen = 1071;
 		vrLoc = 3397;
@@ -6392,7 +6473,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 137";
 		rLen = 0;
-		rLoc = 4401;
+		rLoc = 4456;
 		rType = 0;
 		vrLen = 774;
 		vrLoc = 4048;
@@ -6422,7 +6503,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 137";
 		rLen = 0;
-		rLoc = 4401;
+		rLoc = 4456;
 		rType = 0;
 		vrLen = 781;
 		vrLoc = 4042;
@@ -6432,7 +6513,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 137";
 		rLen = 0;
-		rLoc = 4401;
+		rLoc = 4456;
 		rType = 0;
 		vrLen = 775;
 		vrLoc = 4048;
@@ -6462,7 +6543,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 138";
 		rLen = 0;
-		rLoc = 4401;
+		rLoc = 4456;
 		rType = 0;
 		vrLen = 871;
 		vrLoc = 4052;
@@ -6472,7 +6553,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 137";
 		rLen = 0;
-		rLoc = 4401;
+		rLoc = 4456;
 		rType = 0;
 		vrLen = 864;
 		vrLoc = 4052;
@@ -6482,7 +6563,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 137";
 		rLen = 0;
-		rLoc = 4401;
+		rLoc = 4456;
 		rType = 0;
 		vrLen = 904;
 		vrLoc = 4052;
@@ -6492,7 +6573,7 @@
 		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
 		name = "DataItem.h: 9";
 		rLen = 0;
-		rLoc = 148;
+		rLoc = 159;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 0;
@@ -6502,7 +6583,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 135";
 		rLen = 0;
-		rLoc = 3592;
+		rLoc = 3560;
 		rType = 0;
 		vrLen = 1061;
 		vrLoc = 3407;
@@ -6532,7 +6613,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 137";
 		rLen = 0;
-		rLoc = 4401;
+		rLoc = 4456;
 		rType = 0;
 		vrLen = 904;
 		vrLoc = 4052;
@@ -6542,7 +6623,7 @@
 		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
 		name = "DataItem.h: 9";
 		rLen = 0;
-		rLoc = 148;
+		rLoc = 159;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 0;
@@ -6552,7 +6633,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 135";
 		rLen = 0;
-		rLoc = 3592;
+		rLoc = 3560;
 		rType = 0;
 		vrLen = 1061;
 		vrLoc = 3407;
@@ -6582,7 +6663,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 134";
 		rLen = 0;
-		rLoc = 4401;
+		rLoc = 4456;
 		rType = 0;
 		vrLen = 850;
 		vrLoc = 4052;
@@ -6602,7 +6683,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 134";
 		rLen = 0;
-		rLoc = 4401;
+		rLoc = 4456;
 		rType = 0;
 		vrLen = 850;
 		vrLoc = 4052;
@@ -6752,7 +6833,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 134";
 		rLen = 0;
-		rLoc = 4401;
+		rLoc = 4456;
 		rType = 0;
 		vrLen = 850;
 		vrLoc = 4052;
@@ -6772,7 +6853,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 89";
 		rLen = 0;
-		rLoc = 2872;
+		rLoc = 2894;
 		rType = 0;
 		vrLen = 1412;
 		vrLoc = 2331;
@@ -6822,7 +6903,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 160";
 		rLen = 30;
-		rLoc = 5004;
+		rLoc = 5059;
 		rType = 0;
 		vrLen = 661;
 		vrLoc = 4442;
@@ -6872,7 +6953,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 160";
 		rLen = 0;
-		rLoc = 5033;
+		rLoc = 5088;
 		rType = 0;
 		vrLen = 645;
 		vrLoc = 4438;
@@ -6882,7 +6963,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 160";
 		rLen = 0;
-		rLoc = 5033;
+		rLoc = 5088;
 		rType = 0;
 		vrLen = 667;
 		vrLoc = 4438;
@@ -6902,7 +6983,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 160";
 		rLen = 0;
-		rLoc = 5033;
+		rLoc = 5088;
 		rType = 0;
 		vrLen = 667;
 		vrLoc = 4438;
@@ -6942,7 +7023,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 151";
 		rLen = 0;
-		rLoc = 4739;
+		rLoc = 4794;
 		rType = 0;
 		vrLen = 736;
 		vrLoc = 4324;
@@ -6972,7 +7053,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 151";
 		rLen = 0;
-		rLoc = 4802;
+		rLoc = 4857;
 		rType = 0;
 		vrLen = 709;
 		vrLoc = 4324;
@@ -7002,7 +7083,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 151";
 		rLen = 0;
-		rLoc = 4739;
+		rLoc = 4794;
 		rType = 0;
 		vrLen = 736;
 		vrLoc = 4324;
@@ -7060,7 +7141,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 135";
 		rLen = 0;
-		rLoc = 3592;
+		rLoc = 3560;
 		rType = 0;
 		vrLen = 1061;
 		vrLoc = 3407;
@@ -7070,7 +7151,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 151";
 		rLen = 0;
-		rLoc = 4739;
+		rLoc = 4794;
 		rType = 0;
 		vrLen = 1293;
 		vrLoc = 2778;
@@ -7130,7 +7211,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 135";
 		rLen = 0;
-		rLoc = 3592;
+		rLoc = 3560;
 		rType = 0;
 		vrLen = 1061;
 		vrLoc = 3407;
@@ -7140,7 +7221,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 151";
 		rLen = 0;
-		rLoc = 4739;
+		rLoc = 4794;
 		rType = 0;
 		vrLen = 1520;
 		vrLoc = 1682;
@@ -7150,7 +7231,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 135";
 		rLen = 0;
-		rLoc = 3592;
+		rLoc = 3560;
 		rType = 0;
 		vrLen = 1061;
 		vrLoc = 3407;
@@ -7170,7 +7251,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 151";
 		rLen = 0;
-		rLoc = 4739;
+		rLoc = 4794;
 		rType = 0;
 		vrLen = 1293;
 		vrLoc = 2778;
@@ -7280,7 +7361,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 151";
 		rLen = 0;
-		rLoc = 4739;
+		rLoc = 4794;
 		rType = 0;
 		vrLen = 1292;
 		vrLoc = 2778;
@@ -7300,7 +7381,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 151";
 		rLen = 0;
-		rLoc = 4801;
+		rLoc = 4856;
 		rType = 0;
 		vrLen = 730;
 		vrLoc = 4324;
@@ -7310,7 +7391,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 151";
 		rLen = 0;
-		rLoc = 4801;
+		rLoc = 4856;
 		rType = 0;
 		vrLen = 748;
 		vrLoc = 4324;
@@ -7320,7 +7401,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 135";
 		rLen = 0;
-		rLoc = 3592;
+		rLoc = 3560;
 		rType = 0;
 		vrLen = 979;
 		vrLoc = 4420;
@@ -7330,7 +7411,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 151";
 		rLen = 0;
-		rLoc = 4801;
+		rLoc = 4856;
 		rType = 0;
 		vrLen = 748;
 		vrLoc = 4324;
@@ -7340,7 +7421,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 135";
 		rLen = 0;
-		rLoc = 3592;
+		rLoc = 3560;
 		rType = 0;
 		vrLen = 979;
 		vrLoc = 4420;
@@ -7828,7 +7909,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 151";
 		rLen = 0;
-		rLoc = 4801;
+		rLoc = 4856;
 		rType = 0;
 		vrLen = 1445;
 		vrLoc = 1983;
@@ -7888,7 +7969,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 151";
 		rLen = 0;
-		rLoc = 4801;
+		rLoc = 4856;
 		rType = 0;
 		vrLen = 1445;
 		vrLoc = 1983;
@@ -7938,7 +8019,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 151";
 		rLen = 0;
-		rLoc = 4801;
+		rLoc = 4856;
 		rType = 0;
 		vrLen = 1060;
 		vrLoc = 176;
@@ -7948,7 +8029,7 @@
 		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
 		name = "MainViewController.h: 12";
 		rLen = 0;
-		rLoc = 298;
+		rLoc = 340;
 		rType = 0;
 		vrLen = 296;
 		vrLoc = 0;
@@ -7988,7 +8069,7 @@
 		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
 		name = "MainViewController.h: 15";
 		rLen = 0;
-		rLoc = 368;
+		rLoc = 410;
 		rType = 0;
 		vrLen = 295;
 		vrLoc = 0;
@@ -7998,7 +8079,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 151";
 		rLen = 0;
-		rLoc = 4801;
+		rLoc = 4856;
 		rType = 0;
 		vrLen = 1060;
 		vrLoc = 176;
@@ -8018,7 +8099,7 @@
 		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
 		name = "MainViewController.h: 12";
 		rLen = 0;
-		rLoc = 298;
+		rLoc = 340;
 		rType = 0;
 		vrLen = 296;
 		vrLoc = 0;
@@ -8028,7 +8109,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 12";
 		rLen = 0;
-		rLoc = 272;
+		rLoc = 315;
 		rType = 0;
 		vrLen = 760;
 		vrLoc = 143;
@@ -8036,15 +8117,15 @@
 	ECFB033A0FD4D80100EEE684 /* PanelView.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1139, 572}}";
-			sepNavSelRange = "{263, 0}";
-			sepNavVisRange = "{0, 270}";
+			sepNavSelRange = "{440, 97}";
+			sepNavVisRange = "{0, 544}";
 		};
 	};
 	ECFB033B0FD4D80100EEE684 /* PanelView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1139, 2752}}";
-			sepNavSelRange = "{1565, 0}";
-			sepNavVisRange = "{814, 1071}";
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 2048}}";
+			sepNavSelRange = "{2971, 0}";
+			sepNavVisRange = "{2101, 1004}";
 		};
 	};
 	ECFB03410FD4D9F400EEE684 /* PBXTextBookmark */ = {
@@ -8052,7 +8133,7 @@
 		fRef = ECFB033A0FD4D80100EEE684 /* PanelView.h */;
 		name = "PanelView.h: 16";
 		rLen = 0;
-		rLoc = 263;
+		rLoc = 339;
 		rType = 0;
 		vrLen = 270;
 		vrLoc = 0;
@@ -8082,7 +8163,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 31";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 578;
 		vrLoc = 0;
@@ -8092,7 +8173,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 24";
 		rLen = 0;
-		rLoc = 741;
+		rLoc = 813;
 		rType = 0;
 		vrLen = 874;
 		vrLoc = 44;
@@ -8102,7 +8183,7 @@
 		fRef = ECFB033A0FD4D80100EEE684 /* PanelView.h */;
 		name = "PanelView.h: 11";
 		rLen = 0;
-		rLoc = 208;
+		rLoc = 284;
 		rType = 0;
 		vrLen = 177;
 		vrLoc = 0;
@@ -8112,7 +8193,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 24";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 0;
@@ -8122,7 +8203,7 @@
 		fRef = ECFB033A0FD4D80100EEE684 /* PanelView.h */;
 		name = "PanelView.h: 16";
 		rLen = 0;
-		rLoc = 263;
+		rLoc = 339;
 		rType = 0;
 		vrLen = 270;
 		vrLoc = 0;
@@ -8152,7 +8233,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 31";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 578;
 		vrLoc = 0;
@@ -8162,7 +8243,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 24";
 		rLen = 0;
-		rLoc = 660;
+		rLoc = 703;
 		rType = 0;
 		vrLen = 831;
 		vrLoc = 44;
@@ -8172,7 +8253,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 24";
 		rLen = 0;
-		rLoc = 617;
+		rLoc = 660;
 		rType = 0;
 		vrLen = 833;
 		vrLoc = 44;
@@ -8182,7 +8263,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 24";
 		rLen = 0;
-		rLoc = 617;
+		rLoc = 660;
 		rType = 0;
 		vrLen = 834;
 		vrLoc = 44;
@@ -8192,7 +8273,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 31";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 578;
 		vrLoc = 0;
@@ -8202,7 +8283,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 24";
 		rLen = 0;
-		rLoc = 617;
+		rLoc = 660;
 		rType = 0;
 		vrLen = 834;
 		vrLoc = 44;
@@ -8212,7 +8293,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 27";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 553;
 		vrLoc = 0;
@@ -8222,7 +8303,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 26";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 635;
 		vrLoc = 0;
@@ -8232,7 +8313,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 24";
 		rLen = 0;
-		rLoc = 594;
+		rLoc = 637;
 		rType = 0;
 		vrLen = 837;
 		vrLoc = 41;
@@ -8242,7 +8323,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 26";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 653;
 		vrLoc = 0;
@@ -8252,7 +8333,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 24";
 		rLen = 0;
-		rLoc = 594;
+		rLoc = 637;
 		rType = 0;
 		vrLen = 837;
 		vrLoc = 41;
@@ -8262,7 +8343,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 26";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 635;
 		vrLoc = 0;
@@ -8272,7 +8353,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 26";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 653;
 		vrLoc = 0;
@@ -8282,7 +8363,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 26";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 653;
 		vrLoc = 0;
@@ -8292,7 +8373,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 24";
 		rLen = 0;
-		rLoc = 617;
+		rLoc = 660;
 		rType = 0;
 		vrLen = 728;
 		vrLoc = 139;
@@ -8302,7 +8383,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 30";
 		rLen = 0;
-		rLoc = 795;
+		rLoc = 867;
 		rType = 0;
 		vrLen = 781;
 		vrLoc = 139;
@@ -8312,7 +8393,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 28";
 		rLen = 0;
-		rLoc = 790;
+		rLoc = 862;
 		rType = 0;
 		vrLen = 788;
 		vrLoc = 139;
@@ -8322,7 +8403,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 151";
 		rLen = 0;
-		rLoc = 4801;
+		rLoc = 4856;
 		rType = 0;
 		vrLen = 1055;
 		vrLoc = 270;
@@ -8342,7 +8423,7 @@
 		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
 		name = "MainViewController.h: 12";
 		rLen = 0;
-		rLoc = 272;
+		rLoc = 314;
 		rType = 0;
 		vrLen = 396;
 		vrLoc = 0;
@@ -8352,7 +8433,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 28";
 		rLen = 0;
-		rLoc = 790;
+		rLoc = 862;
 		rType = 0;
 		vrLen = 898;
 		vrLoc = 139;
@@ -8362,7 +8443,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 28";
 		rLen = 0;
-		rLoc = 790;
+		rLoc = 862;
 		rType = 0;
 		vrLen = 898;
 		vrLoc = 139;
@@ -8372,7 +8453,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 151";
 		rLen = 0;
-		rLoc = 4801;
+		rLoc = 4856;
 		rType = 0;
 		vrLen = 1055;
 		vrLoc = 270;
@@ -8392,7 +8473,7 @@
 		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
 		name = "MainViewController.h: 12";
 		rLen = 0;
-		rLoc = 272;
+		rLoc = 314;
 		rType = 0;
 		vrLen = 396;
 		vrLoc = 0;
@@ -8402,7 +8483,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 62";
 		rLen = 0;
-		rLoc = 1577;
+		rLoc = 1816;
 		rType = 0;
 		vrLen = 740;
 		vrLoc = 732;
@@ -8412,7 +8493,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 32";
 		rLen = 0;
-		rLoc = 806;
+		rLoc = 878;
 		rType = 0;
 		vrLen = 810;
 		vrLoc = 143;
@@ -8422,7 +8503,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 26";
 		rLen = 0;
-		rLoc = 629;
+		rLoc = 672;
 		rType = 0;
 		vrLen = 811;
 		vrLoc = 143;
@@ -8432,7 +8513,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 36";
 		rLen = 0;
-		rLoc = 929;
+		rLoc = 1001;
 		rType = 0;
 		vrLen = 863;
 		vrLoc = 143;
@@ -8442,7 +8523,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 36";
 		rLen = 0;
-		rLoc = 929;
+		rLoc = 1001;
 		rType = 0;
 		vrLen = 887;
 		vrLoc = 143;
@@ -8452,7 +8533,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 26";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 653;
 		vrLoc = 0;
@@ -8462,7 +8543,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 36";
 		rLen = 0;
-		rLoc = 929;
+		rLoc = 1001;
 		rType = 0;
 		vrLen = 887;
 		vrLoc = 143;
@@ -8482,7 +8563,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 28";
 		rLen = 0;
-		rLoc = 703;
+		rLoc = 746;
 		rType = 0;
 		vrLen = 871;
 		vrLoc = 175;
@@ -8492,7 +8573,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 44";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 722;
 		vrLoc = 231;
@@ -8502,7 +8583,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 28";
 		rLen = 0;
-		rLoc = 703;
+		rLoc = 746;
 		rType = 0;
 		vrLen = 871;
 		vrLoc = 175;
@@ -8522,7 +8603,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 53";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 331;
@@ -8532,7 +8613,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 48";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 955;
 		vrLoc = 495;
@@ -8542,7 +8623,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 56";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 1017;
 		vrLoc = 495;
@@ -8552,7 +8633,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 57";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 1037;
 		vrLoc = 495;
@@ -8562,7 +8643,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 57";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 1045;
 		vrLoc = 495;
@@ -8572,7 +8653,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 57";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 1045;
 		vrLoc = 495;
@@ -8582,7 +8663,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 27";
 		rLen = 0;
-		rLoc = 656;
+		rLoc = 699;
 		rType = 0;
 		vrLen = 888;
 		vrLoc = 175;
@@ -8592,7 +8673,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 27";
 		rLen = 0;
-		rLoc = 656;
+		rLoc = 699;
 		rType = 0;
 		vrLen = 888;
 		vrLoc = 175;
@@ -8602,7 +8683,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 17";
 		rLen = 0;
-		rLoc = 307;
+		rLoc = 350;
 		rType = 0;
 		vrLen = 1038;
 		vrLoc = 308;
@@ -8612,7 +8693,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 57";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 1045;
 		vrLoc = 495;
@@ -8622,7 +8703,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 17";
 		rLen = 0;
-		rLoc = 307;
+		rLoc = 350;
 		rType = 0;
 		vrLen = 1038;
 		vrLoc = 308;
@@ -8632,7 +8713,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 75";
 		rLen = 0;
-		rLoc = 3963;
+		rLoc = 3055;
 		rType = 0;
 		vrLen = 999;
 		vrLoc = 804;
@@ -8642,7 +8723,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 66";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 1086;
 		vrLoc = 804;
@@ -8652,7 +8733,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 67";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 1042;
 		vrLoc = 899;
@@ -8662,7 +8743,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 67";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 1055;
 		vrLoc = 899;
@@ -8682,7 +8763,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 67";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 1056;
 		vrLoc = 899;
@@ -8702,7 +8783,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 81";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 910;
 		vrLoc = 1126;
@@ -8712,7 +8793,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 85";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 621;
 		vrLoc = 1934;
@@ -8722,7 +8803,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 93";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 675;
 		vrLoc = 1807;
@@ -8732,7 +8813,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 95";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 755;
 		vrLoc = 1842;
@@ -8742,7 +8823,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 90";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 819;
 		vrLoc = 1892;
@@ -8752,7 +8833,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 95";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 844;
 		vrLoc = 1892;
@@ -8762,7 +8843,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 98";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 907;
 		vrLoc = 1892;
@@ -8772,7 +8853,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 93";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 874;
 		vrLoc = 1892;
@@ -8782,7 +8863,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 88";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 946;
 		vrLoc = 1914;
@@ -8792,7 +8873,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 83";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 914;
 		vrLoc = 1914;
@@ -8802,7 +8883,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 84";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 796;
 		vrLoc = 1914;
@@ -8812,7 +8893,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 98";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 788;
 		vrLoc = 1914;
@@ -8822,7 +8903,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 93";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 821;
 		vrLoc = 1914;
@@ -8832,7 +8913,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 95";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 797;
 		vrLoc = 1914;
@@ -8842,7 +8923,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 95";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 853;
 		vrLoc = 1914;
@@ -8852,7 +8933,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 93";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 898;
 		vrLoc = 1914;
@@ -8862,7 +8943,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 96";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 942;
 		vrLoc = 1939;
@@ -8872,7 +8953,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 87";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 969;
 		vrLoc = 1939;
@@ -8882,7 +8963,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 52";
 		rLen = 0;
-		rLoc = 2482;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 1165;
 		vrLoc = 740;
@@ -8892,7 +8973,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 30";
 		rLen = 0;
-		rLoc = 603;
+		rLoc = 613;
 		rType = 0;
 		vrLen = 666;
 		vrLoc = 133;
@@ -8902,7 +8983,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 90";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 938;
 		vrLoc = 1995;
@@ -8912,7 +8993,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 82";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 939;
 		vrLoc = 1995;
@@ -8922,7 +9003,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 89";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 938;
 		vrLoc = 1995;
@@ -8932,7 +9013,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 82";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 938;
 		vrLoc = 1995;
@@ -8942,7 +9023,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 96";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 1016;
 		vrLoc = 1995;
@@ -8952,7 +9033,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 84";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 1208;
 		vrLoc = 1798;
@@ -8962,7 +9043,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 90";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 930;
 		vrLoc = 1798;
@@ -8972,7 +9053,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 84";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 856;
 		vrLoc = 1943;
@@ -8982,7 +9063,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 102";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 1150;
 		vrLoc = 2046;
@@ -8992,7 +9073,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 102";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 1155;
 		vrLoc = 2046;
@@ -9002,7 +9083,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 102";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 1125;
 		vrLoc = 2046;
@@ -9012,7 +9093,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 109";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 1133;
 		vrLoc = 2046;
@@ -9022,7 +9103,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 106";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 1219;
 		vrLoc = 2046;
@@ -9032,7 +9113,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 102";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 1246;
 		vrLoc = 2046;
@@ -9042,7 +9123,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 111";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 3054;
 		rType = 0;
 		vrLen = 1185;
 		vrLoc = 2215;
@@ -9052,7 +9133,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 80";
 		rLen = 0;
-		rLoc = 2478;
+		rLoc = 2811;
 		rType = 0;
 		vrLen = 991;
 		vrLoc = 537;
@@ -9062,7 +9143,7 @@
 		fRef = ECFB033A0FD4D80100EEE684 /* PanelView.h */;
 		name = "PanelView.h: 16";
 		rLen = 0;
-		rLoc = 263;
+		rLoc = 339;
 		rType = 0;
 		vrLen = 270;
 		vrLoc = 0;
@@ -9072,7 +9153,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 44";
 		rLen = 0;
-		rLoc = 753;
+		rLoc = 763;
 		rType = 0;
 		vrLen = 594;
 		vrLoc = 323;
@@ -9082,7 +9163,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 44";
 		rLen = 0;
-		rLoc = 753;
+		rLoc = 763;
 		rType = 0;
 		vrLen = 594;
 		vrLoc = 323;
@@ -9092,7 +9173,7 @@
 		fRef = ECFB033A0FD4D80100EEE684 /* PanelView.h */;
 		name = "PanelView.h: 16";
 		rLen = 0;
-		rLoc = 263;
+		rLoc = 339;
 		rType = 0;
 		vrLen = 270;
 		vrLoc = 0;
@@ -9102,7 +9183,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 44";
 		rLen = 0;
-		rLoc = 777;
+		rLoc = 787;
 		rType = 0;
 		vrLen = 683;
 		vrLoc = 323;
@@ -9112,7 +9193,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 85";
 		rLen = 0;
-		rLoc = 2462;
+		rLoc = 2795;
 		rType = 0;
 		vrLen = 1206;
 		vrLoc = 1006;
@@ -9122,7 +9203,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 86";
 		rLen = 0;
-		rLoc = 2462;
+		rLoc = 2795;
 		rType = 0;
 		vrLen = 1307;
 		vrLoc = 1006;
@@ -9132,7 +9213,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 85";
 		rLen = 0;
-		rLoc = 2462;
+		rLoc = 2795;
 		rType = 0;
 		vrLen = 1309;
 		vrLoc = 1006;
@@ -9142,7 +9223,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 86";
 		rLen = 0;
-		rLoc = 2462;
+		rLoc = 2795;
 		rType = 0;
 		vrLen = 1368;
 		vrLoc = 1006;
@@ -9152,7 +9233,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 72";
 		rLen = 0;
-		rLoc = 1826;
+		rLoc = 2159;
 		rType = 0;
 		vrLen = 1326;
 		vrLoc = 1070;
@@ -9162,7 +9243,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 75";
 		rLen = 0;
-		rLoc = 2029;
+		rLoc = 2362;
 		rType = 0;
 		vrLen = 1252;
 		vrLoc = 1153;
@@ -9172,7 +9253,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 75";
 		rLen = 0;
-		rLoc = 2029;
+		rLoc = 2362;
 		rType = 0;
 		vrLen = 1190;
 		vrLoc = 1153;
@@ -9182,7 +9263,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 72";
 		rLen = 0;
-		rLoc = 1826;
+		rLoc = 2159;
 		rType = 0;
 		vrLen = 1191;
 		vrLoc = 1153;
@@ -9192,7 +9273,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 72";
 		rLen = 0;
-		rLoc = 1826;
+		rLoc = 2159;
 		rType = 0;
 		vrLen = 1193;
 		vrLoc = 1153;
@@ -9202,7 +9283,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 71";
 		rLen = 0;
-		rLoc = 1768;
+		rLoc = 2101;
 		rType = 0;
 		vrLen = 1217;
 		vrLoc = 1153;
@@ -9212,7 +9293,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 76";
 		rLen = 0;
-		rLoc = 1920;
+		rLoc = 2253;
 		rType = 0;
 		vrLen = 1214;
 		vrLoc = 1153;
@@ -9222,7 +9303,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 73";
 		rLen = 0;
-		rLoc = 1826;
+		rLoc = 2159;
 		rType = 0;
 		vrLen = 1212;
 		vrLoc = 1153;
@@ -9232,7 +9313,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 73";
 		rLen = 0;
-		rLoc = 1826;
+		rLoc = 2159;
 		rType = 0;
 		vrLen = 1211;
 		vrLoc = 1153;
@@ -9242,7 +9323,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 73";
 		rLen = 0;
-		rLoc = 1826;
+		rLoc = 2159;
 		rType = 0;
 		vrLen = 1214;
 		vrLoc = 1153;
@@ -9252,7 +9333,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 71";
 		rLen = 0;
-		rLoc = 1768;
+		rLoc = 2101;
 		rType = 0;
 		vrLen = 1191;
 		vrLoc = 1153;
@@ -9262,7 +9343,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 72";
 		rLen = 0;
-		rLoc = 1777;
+		rLoc = 2110;
 		rType = 0;
 		vrLen = 1213;
 		vrLoc = 1153;
@@ -9272,7 +9353,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 72";
 		rLen = 0;
-		rLoc = 1777;
+		rLoc = 2110;
 		rType = 0;
 		vrLen = 1214;
 		vrLoc = 1153;
@@ -9282,7 +9363,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 72";
 		rLen = 0;
-		rLoc = 1777;
+		rLoc = 2110;
 		rType = 0;
 		vrLen = 1254;
 		vrLoc = 1153;
@@ -9292,7 +9373,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 80";
 		rLen = 0;
-		rLoc = 1719;
+		rLoc = 2052;
 		rType = 0;
 		vrLen = 1295;
 		vrLoc = 1180;
@@ -9302,7 +9383,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 70";
 		rLen = 0;
-		rLoc = 1471;
+		rLoc = 1481;
 		rType = 0;
 		vrLen = 993;
 		vrLoc = 1004;
@@ -9312,7 +9393,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 102";
 		rLen = 0;
-		rLoc = 2478;
+		rLoc = 2811;
 		rType = 0;
 		vrLen = 1297;
 		vrLoc = 1227;
@@ -9322,7 +9403,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 68";
 		rLen = 0;
-		rLoc = 1259;
+		rLoc = 1269;
 		rType = 0;
 		vrLen = 1348;
 		vrLoc = 1103;
@@ -9332,7 +9413,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 68";
 		rLen = 0;
-		rLoc = 1259;
+		rLoc = 1269;
 		rType = 0;
 		vrLen = 1348;
 		vrLoc = 1103;
@@ -9342,7 +9423,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 92";
 		rLen = 0;
-		rLoc = 2029;
+		rLoc = 2362;
 		rType = 0;
 		vrLen = 1265;
 		vrLoc = 1539;
@@ -9352,7 +9433,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 90";
 		rLen = 0;
-		rLoc = 2029;
+		rLoc = 2362;
 		rType = 0;
 		vrLen = 1267;
 		vrLoc = 1539;
@@ -9362,7 +9443,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 90";
 		rLen = 0;
-		rLoc = 2029;
+		rLoc = 2362;
 		rType = 0;
 		vrLen = 1321;
 		vrLoc = 1539;
@@ -9372,7 +9453,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 82";
 		rLen = 0;
-		rLoc = 1817;
+		rLoc = 2150;
 		rType = 0;
 		vrLen = 1151;
 		vrLoc = 1384;
@@ -9382,7 +9463,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 91";
 		rLen = 0;
-		rLoc = 2157;
+		rLoc = 2490;
 		rType = 0;
 		vrLen = 1195;
 		vrLoc = 1384;
@@ -9392,7 +9473,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 92";
 		rLen = 0;
-		rLoc = 2157;
+		rLoc = 2490;
 		rType = 0;
 		vrLen = 1185;
 		vrLoc = 1384;
@@ -9402,7 +9483,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 97";
 		rLen = 0;
-		rLoc = 2406;
+		rLoc = 2739;
 		rType = 0;
 		vrLen = 907;
 		vrLoc = 1384;
@@ -9412,7 +9493,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 95";
 		rLen = 0;
-		rLoc = 2342;
+		rLoc = 2675;
 		rType = 0;
 		vrLen = 994;
 		vrLoc = 1384;
@@ -9422,7 +9503,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 95";
 		rLen = 0;
-		rLoc = 2342;
+		rLoc = 2675;
 		rType = 0;
 		vrLen = 993;
 		vrLoc = 1384;
@@ -9432,7 +9513,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 99";
 		rLen = 0;
-		rLoc = 2238;
+		rLoc = 2571;
 		rType = 0;
 		vrLen = 1190;
 		vrLoc = 1384;
@@ -9442,7 +9523,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 99";
 		rLen = 0;
-		rLoc = 2340;
+		rLoc = 2673;
 		rType = 0;
 		vrLen = 1300;
 		vrLoc = 1384;
@@ -9452,7 +9533,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 99";
 		rLen = 0;
-		rLoc = 2340;
+		rLoc = 2673;
 		rType = 0;
 		vrLen = 1287;
 		vrLoc = 1384;
@@ -9462,7 +9543,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 98";
 		rLen = 0;
-		rLoc = 2236;
+		rLoc = 2569;
 		rType = 0;
 		vrLen = 1287;
 		vrLoc = 1384;
@@ -9472,7 +9553,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 97";
 		rLen = 0;
-		rLoc = 2236;
+		rLoc = 2569;
 		rType = 0;
 		vrLen = 1293;
 		vrLoc = 1384;
@@ -9482,7 +9563,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 88";
 		rLen = 0;
-		rLoc = 2022;
+		rLoc = 2355;
 		rType = 0;
 		vrLen = 1301;
 		vrLoc = 1384;
@@ -9492,7 +9573,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 92";
 		rLen = 0;
-		rLoc = 2157;
+		rLoc = 2490;
 		rType = 0;
 		vrLen = 1264;
 		vrLoc = 1384;
@@ -9502,7 +9583,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 92";
 		rLen = 50;
-		rLoc = 2107;
+		rLoc = 2440;
 		rType = 0;
 		vrLen = 1301;
 		vrLoc = 1384;
@@ -9512,7 +9593,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 101";
 		rLen = 0;
-		rLoc = 2406;
+		rLoc = 2739;
 		rType = 0;
 		vrLen = 1248;
 		vrLoc = 1487;
@@ -9522,7 +9603,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 82";
 		rLen = 0;
-		rLoc = 1768;
+		rLoc = 2101;
 		rType = 0;
 		vrLen = 1239;
 		vrLoc = 1487;
@@ -9532,7 +9613,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 82";
 		rLen = 0;
-		rLoc = 1768;
+		rLoc = 2101;
 		rType = 0;
 		vrLen = 1248;
 		vrLoc = 1487;
@@ -9542,7 +9623,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 86";
 		rLen = 0;
-		rLoc = 1888;
+		rLoc = 2221;
 		rType = 0;
 		vrLen = 1248;
 		vrLoc = 1487;
@@ -9552,7 +9633,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 82";
 		rLen = 0;
-		rLoc = 1783;
+		rLoc = 2116;
 		rType = 0;
 		vrLen = 1427;
 		vrLoc = 1203;
@@ -9562,7 +9643,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 83";
 		rLen = 0;
-		rLoc = 1826;
+		rLoc = 2159;
 		rType = 0;
 		vrLen = 1384;
 		vrLoc = 1203;
@@ -9572,7 +9653,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 75";
 		rLen = 0;
-		rLoc = 1648;
+		rLoc = 1981;
 		rType = 0;
 		vrLen = 1341;
 		vrLoc = 1180;
@@ -9582,7 +9663,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 82";
 		rLen = 0;
-		rLoc = 1782;
+		rLoc = 2115;
 		rType = 0;
 		vrLen = 1339;
 		vrLoc = 1180;
@@ -9592,7 +9673,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 93";
 		rLen = 0;
-		rLoc = 2236;
+		rLoc = 2569;
 		rType = 0;
 		vrLen = 1084;
 		vrLoc = 1422;
@@ -9602,7 +9683,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 81";
 		rLen = 0;
-		rLoc = 1768;
+		rLoc = 2101;
 		rType = 0;
 		vrLen = 1095;
 		vrLoc = 1262;
@@ -9612,7 +9693,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 81";
 		rLen = 0;
-		rLoc = 1803;
+		rLoc = 2136;
 		rType = 0;
 		vrLen = 1101;
 		vrLoc = 1262;
@@ -9622,7 +9703,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 81";
 		rLen = 0;
-		rLoc = 1767;
+		rLoc = 2100;
 		rType = 0;
 		vrLen = 1184;
 		vrLoc = 1155;
@@ -9632,7 +9713,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 81";
 		rLen = 0;
-		rLoc = 1765;
+		rLoc = 2098;
 		rType = 0;
 		vrLen = 1200;
 		vrLoc = 1155;
@@ -9642,7 +9723,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 81";
 		rLen = 0;
-		rLoc = 1765;
+		rLoc = 2098;
 		rType = 0;
 		vrLen = 1213;
 		vrLoc = 1155;
@@ -9662,7 +9743,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 81";
 		rLen = 0;
-		rLoc = 1765;
+		rLoc = 2098;
 		rType = 0;
 		vrLen = 1213;
 		vrLoc = 1155;
@@ -9682,7 +9763,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 27";
 		rLen = 0;
-		rLoc = 657;
+		rLoc = 700;
 		rType = 0;
 		vrLen = 1036;
 		vrLoc = 308;
@@ -9692,7 +9773,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 27";
 		rLen = 0;
-		rLoc = 657;
+		rLoc = 700;
 		rType = 0;
 		vrLen = 1036;
 		vrLoc = 308;
@@ -9702,7 +9783,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 27";
 		rLen = 0;
-		rLoc = 657;
+		rLoc = 700;
 		rType = 0;
 		vrLen = 1038;
 		vrLoc = 308;
@@ -9712,7 +9793,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 81";
 		rLen = 0;
-		rLoc = 1765;
+		rLoc = 2098;
 		rType = 0;
 		vrLen = 1190;
 		vrLoc = 1178;
@@ -9722,7 +9803,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 27";
 		rLen = 0;
-		rLoc = 657;
+		rLoc = 700;
 		rType = 0;
 		vrLen = 1038;
 		vrLoc = 308;
@@ -9732,17 +9813,835 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 74";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1575;
 		rType = 0;
 		vrLen = 1071;
 		vrLoc = 814;
+	};
+	ECFB05830FD5685D00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 36";
+		rLen = 51;
+		rLoc = 606;
+		rType = 0;
+		vrLen = 684;
+		vrLoc = 324;
+	};
+	ECFB05860FD5689100EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 36";
+		rLen = 0;
+		rLoc = 606;
+		rType = 0;
+		vrLen = 784;
+		vrLoc = 375;
+	};
+	ECFB05880FD57CF000EEE684 /* DataEntry.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 608}}";
+			sepNavSelRange = "{319, 0}";
+			sepNavVisRange = "{0, 731}";
+		};
+	};
+	ECFB05890FD57CF000EEE684 /* DataEntry.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 3616}}";
+			sepNavSelRange = "{4057, 0}";
+			sepNavVisRange = "{5335, 693}";
+		};
+	};
+	ECFB058E0FD587DD00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
+		name = "DataPanelViewController.m: 218";
+		rLen = 0;
+		rLoc = 5937;
+		rType = 0;
+		vrLen = 604;
+		vrLoc = 5676;
+	};
+	ECFB058F0FD587DD00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "error: 'dirty' undeclared (first use in this function)";
+		fRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */;
+		rLen = 1;
+		rLoc = 68;
+		rType = 1;
+	};
+	ECFB05900FD587DD00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
+		name = "DataPanelViewController.m: 218";
+		rLen = 0;
+		rLoc = 5937;
+		rType = 0;
+		vrLen = 604;
+		vrLoc = 5676;
+	};
+	ECFB05910FD587DD00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */;
+		name = "DataEntry.m: 69";
+		rLen = 20;
+		rLoc = 1791;
+		rType = 0;
+		vrLen = 651;
+		vrLoc = 1386;
+	};
+	ECFB05960FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033A0FD4D80100EEE684 /* PanelView.h */;
+		name = "PanelView.h: 22";
+		rLen = 0;
+		rLoc = 403;
+		rType = 0;
+		vrLen = 544;
+		vrLoc = 0;
+	};
+	ECFB05970FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB8E00FD1B81E00E6F9D8 /* EditableTableViewCell.h */;
+		name = "EditableTableViewCell.h: 22";
+		rLen = 75;
+		rLoc = 474;
+		rType = 0;
+		vrLen = 908;
+		vrLoc = 0;
+	};
+	ECFB05980FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB8E10FD1B81E00E6F9D8 /* EditableTableViewCell.m */;
+		name = "EditableTableViewCell.m: 27";
+		rLen = 0;
+		rLoc = 827;
+		rType = 0;
+		vrLen = 854;
+		vrLoc = 1092;
+	};
+	ECFB05990FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 76";
+		rLen = 0;
+		rLoc = 1935;
+		rType = 0;
+		vrLen = 1228;
+		vrLoc = 1244;
+	};
+	ECFB059A0FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB8100FD197B600E6F9D8 /* DataSet.h */;
+		name = "DataSet.h: 33";
+		rLen = 0;
+		rLoc = 707;
+		rType = 0;
+		vrLen = 762;
+		vrLoc = 128;
+	};
+	ECFB059B0FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
+		name = "DataSet.m: 228";
+		rLen = 21;
+		rLoc = 6586;
+		rType = 0;
+		vrLen = 1066;
+		vrLoc = 6026;
+	};
+	ECFB059C0FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
+		name = "DataItem.m: 208";
+		rLen = 0;
+		rLoc = 7386;
+		rType = 0;
+		vrLen = 647;
+		vrLoc = 5235;
+	};
+	ECFB059D0FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
+		name = "DataItem.h: 17";
+		rLen = 44;
+		rLoc = 305;
+		rType = 0;
+		vrLen = 660;
+		vrLoc = 0;
+	};
+	ECFB059E0FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB05880FD57CF000EEE684 /* DataEntry.h */;
+		name = "DataEntry.h: 21";
+		rLen = 0;
+		rLoc = 319;
+		rType = 0;
+		vrLen = 731;
+		vrLoc = 0;
+	};
+	ECFB059F0FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */;
+		name = "DataEntry.m: 146";
+		rLen = 0;
+		rLoc = 4057;
+		rType = 0;
+		vrLen = 796;
+		vrLoc = 0;
+	};
+	ECFB05A00FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* SquirrelAppDelegate.h */;
+		name = "SquirrelAppDelegate.h: 31";
+		rLen = 0;
+		rLoc = 926;
+		rType = 0;
+		vrLen = 934;
+		vrLoc = 0;
+	};
+	ECFB05A10FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 78";
+		rLen = 0;
+		rLoc = 1987;
+		rType = 0;
+		vrLen = 1239;
+		vrLoc = 1236;
+	};
+	ECFB05A20FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033A0FD4D80100EEE684 /* PanelView.h */;
+		name = "PanelView.h: 22";
+		rLen = 0;
+		rLoc = 403;
+		rType = 0;
+		vrLen = 544;
+		vrLoc = 0;
+	};
+	ECFB05A30FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 24";
+		rLen = 0;
+		rLoc = 383;
+		rType = 0;
+		vrLen = 657;
+		vrLoc = 0;
+	};
+	ECFB05A40FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB8E00FD1B81E00E6F9D8 /* EditableTableViewCell.h */;
+		name = "EditableTableViewCell.h: 22";
+		rLen = 75;
+		rLoc = 474;
+		rType = 0;
+		vrLen = 908;
+		vrLoc = 0;
+	};
+	ECFB05A50FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB8E10FD1B81E00E6F9D8 /* EditableTableViewCell.m */;
+		name = "EditableTableViewCell.m: 27";
+		rLen = 0;
+		rLoc = 827;
+		rType = 0;
+		vrLen = 854;
+		vrLoc = 1092;
+	};
+	ECFB05A60FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 76";
+		rLen = 0;
+		rLoc = 1935;
+		rType = 0;
+		vrLen = 1228;
+		vrLoc = 1244;
+	};
+	ECFB05A70FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
+		name = "DataItem.h: 21";
+		rLen = 152;
+		rLoc = 352;
+		rType = 0;
+		vrLen = 660;
+		vrLoc = 0;
+	};
+	ECFB05A80FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */;
+		name = "DataEntry.m: 79";
+		rLen = 0;
+		rLoc = 2016;
+		rType = 0;
+		vrLen = 990;
+		vrLoc = 1817;
+	};
+	ECFB05A90FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */;
+		name = "DataEntry.m: 87";
+		rLen = 0;
+		rLoc = 2372;
+		rType = 0;
+		vrLen = 1003;
+		vrLoc = 1817;
+	};
+	ECFB05AA0FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
+		name = "DataSet.m: 135";
+		rLen = 0;
+		rLoc = 3560;
+		rType = 0;
+		vrLen = 979;
+		vrLoc = 4420;
+	};
+	ECFB05AB0FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB8100FD197B600E6F9D8 /* DataSet.h */;
+		name = "DataSet.h: 33";
+		rLen = 0;
+		rLoc = 707;
+		rType = 0;
+		vrLen = 762;
+		vrLoc = 128;
+	};
+	ECFB05AC0FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
+		name = "DataSet.m: 228";
+		rLen = 21;
+		rLoc = 6586;
+		rType = 0;
+		vrLen = 1066;
+		vrLoc = 6026;
+	};
+	ECFB05AD0FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */;
+		name = "DataEntry.m: 174";
+		rLen = 0;
+		rLoc = 5033;
+		rType = 0;
+		vrLen = 796;
+		vrLoc = 0;
+	};
+	ECFB05AE0FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
+		name = "DataItem.h: 25";
+		rLen = 204;
+		rLoc = 564;
+		rType = 0;
+		vrLen = 660;
+		vrLoc = 0;
+	};
+	ECFB05AF0FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
+		name = "DataItem.m: 208";
+		rLen = 0;
+		rLoc = 7386;
+		rType = 0;
+		vrLen = 647;
+		vrLoc = 5235;
+	};
+	ECFB05B00FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB05880FD57CF000EEE684 /* DataEntry.h */;
+		name = "DataEntry.h: 21";
+		rLen = 0;
+		rLoc = 319;
+		rType = 0;
+		vrLen = 731;
+		vrLoc = 0;
+	};
+	ECFB05B10FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */;
+		name = "DataEntry.m: 146";
+		rLen = 0;
+		rLoc = 4057;
+		rType = 0;
+		vrLen = 1266;
+		vrLoc = 3643;
+	};
+	ECFB05B20FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB05880FD57CF000EEE684 /* DataEntry.h */;
+		name = "DataEntry.h: 21";
+		rLen = 0;
+		rLoc = 319;
+		rType = 0;
+		vrLen = 731;
+		vrLoc = 0;
+	};
+	ECFB05B30FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */;
+		name = "DataEntry.m: 146";
+		rLen = 0;
+		rLoc = 4057;
+		rType = 0;
+		vrLen = 796;
+		vrLoc = 0;
+	};
+	ECFB05B40FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* SquirrelAppDelegate.h */;
+		name = "SquirrelAppDelegate.h: 31";
+		rLen = 0;
+		rLoc = 926;
+		rType = 0;
+		vrLen = 934;
+		vrLoc = 0;
+	};
+	ECFB05B50FD5884600EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
+		name = "SquirrelAppDelegate.m: 118";
+		rLen = 0;
+		rLoc = 3964;
+		rType = 0;
+		vrLen = 1375;
+		vrLoc = 2900;
+	};
+	ECFB05B60FD5896200EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
+		name = "SquirrelAppDelegate.m: 115";
+		rLen = 0;
+		rLoc = 3866;
+		rType = 0;
+		vrLen = 710;
+		vrLoc = 4495;
+	};
+	ECFB05B70FD5896200EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
+		name = "DataSet.m: 187";
+		rLen = 0;
+		rLoc = 5147;
+		rType = 0;
+		vrLen = 1043;
+		vrLoc = 5143;
+	};
+	ECFB05B80FD5896200EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB8100FD197B600E6F9D8 /* DataSet.h */;
+		name = "DataSet.h: 37";
+		rLen = 110;
+		rLoc = 773;
+		rType = 0;
+		vrLen = 762;
+		vrLoc = 128;
+	};
+	ECFB05B90FD5896200EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
+		name = "DataItem.h: 39";
+		rLen = 0;
+		rLoc = 861;
+		rType = 0;
+		vrLen = 763;
+		vrLoc = 129;
+	};
+	ECFB05BA0FD5896200EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
+		name = "DataItem.m: 54";
+		rLen = 0;
+		rLoc = 1259;
+		rType = 0;
+		vrLen = 1057;
+		vrLoc = 1253;
+	};
+	ECFB05BB0FD5896200EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
+		name = "SquirrelAppDelegate.m: 115";
+		rLen = 0;
+		rLoc = 3866;
+		rType = 0;
+		vrLen = 710;
+		vrLoc = 4495;
+	};
+	ECFB05BC0FD5896200EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB8100FD197B600E6F9D8 /* DataSet.h */;
+		name = "DataSet.h: 33";
+		rLen = 0;
+		rLoc = 707;
+		rType = 0;
+		vrLen = 762;
+		vrLoc = 128;
+	};
+	ECFB05BD0FD5896200EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
+		name = "DataItem.h: 16";
+		rLen = 0;
+		rLoc = 302;
+		rType = 0;
+		vrLen = 690;
+		vrLoc = 0;
+	};
+	ECFB05BE0FD5896200EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB8100FD197B600E6F9D8 /* DataSet.h */;
+		name = "DataSet.h: 26";
+		rLen = 57;
+		rLoc = 496;
+		rType = 0;
+		vrLen = 762;
+		vrLoc = 128;
+	};
+	ECFB05BF0FD5896200EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
+		name = "DataItem.h: 25";
+		rLen = 0;
+		rLoc = 561;
+		rType = 0;
+		vrLen = 749;
+		vrLoc = 0;
+	};
+	ECFB05C00FD5896200EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
+		name = "DataSet.m: 187";
+		rLen = 0;
+		rLoc = 5147;
+		rType = 0;
+		vrLen = 1043;
+		vrLoc = 5143;
+	};
+	ECFB05C10FD5896200EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB8100FD197B600E6F9D8 /* DataSet.h */;
+		name = "DataSet.h: 37";
+		rLen = 110;
+		rLoc = 773;
+		rType = 0;
+		vrLen = 762;
+		vrLoc = 128;
+	};
+	ECFB05C20FD5896200EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
+		name = "DataItem.h: 39";
+		rLen = 0;
+		rLoc = 861;
+		rType = 0;
+		vrLen = 763;
+		vrLoc = 129;
+	};
+	ECFB05C30FD5896200EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
+		name = "DataItem.m: 203";
+		rLen = 0;
+		rLoc = 6243;
+		rType = 0;
+		vrLen = 677;
+		vrLoc = 5022;
+	};
+	ECFB05C40FD58A1F00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
+		name = "DataSet.m: 134";
+		rLen = 0;
+		rLoc = 3549;
+		rType = 0;
+		vrLen = 1124;
+		vrLoc = 2926;
+	};
+	ECFB05C50FD58A1F00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
+		name = "DataItem.m: 267";
+		rLen = 0;
+		rLoc = 7933;
+		rType = 0;
+		vrLen = 927;
+		vrLoc = 5540;
+	};
+	ECFB05C60FD58A1F00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
+		name = "DataItem.m: 267";
+		rLen = 0;
+		rLoc = 7933;
+		rType = 0;
+		vrLen = 928;
+		vrLoc = 5540;
+	};
+	ECFB05C70FD58A1F00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
+		name = "DataSet.m: 134";
+		rLen = 0;
+		rLoc = 3549;
+		rType = 0;
+		vrLen = 1124;
+		vrLoc = 2926;
+	};
+	ECFB05C80FD58A1F00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
+		name = "DataItem.m: 228";
+		rLen = 0;
+		rLoc = 6465;
+		rType = 0;
+		vrLen = 948;
+		vrLoc = 6257;
+	};
+	ECFB05CA0FD58B9300EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */;
+		name = "DataEntry.m: 69";
+		rLen = 20;
+		rLoc = 1791;
+		rType = 0;
+		vrLen = 651;
+		vrLoc = 1386;
+	};
+	ECFB05CB0FD58B9300EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "error: 'Data' undeclared (first use in this function)";
+		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
+		rLen = 1;
+		rLoc = 147;
+		rType = 1;
+	};
+	ECFB05CC0FD58B9300EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */;
+		name = "DataEntry.m: 69";
+		rLen = 20;
+		rLoc = 1791;
+		rType = 0;
+		vrLen = 651;
+		vrLoc = 1386;
+	};
+	ECFB05CD0FD58B9300EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
+		name = "DataItem.m: 148";
+		rLen = 131;
+		rLoc = 4193;
+		rType = 0;
+		vrLen = 658;
+		vrLoc = 3750;
+	};
+	ECFB05CE0FD58BA000EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */;
+		name = "DataEntry.m: 146";
+		rLen = 0;
+		rLoc = 4057;
+		rType = 0;
+		vrLen = 693;
+		vrLoc = 5335;
+	};
+	ECFB05CF0FD58BA000EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
+		name = "DataItem.m: 136";
+		rLen = 0;
+		rLoc = 3751;
+		rType = 0;
+		vrLen = 1131;
+		vrLoc = 3750;
+	};
+	ECFB05D00FD58BA000EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */;
+		name = "DataEntry.m: 146";
+		rLen = 0;
+		rLoc = 4057;
+		rType = 0;
+		vrLen = 693;
+		vrLoc = 5335;
+	};
+	ECFB05D10FD58BA000EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
+		name = "DataItem.m: 148";
+		rLen = 47;
+		rLoc = 4256;
+		rType = 0;
+		vrLen = 1080;
+		vrLoc = 3750;
+	};
+	ECFB05D30FD58BB900EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "error: 'dataItems' undeclared (first use in this function)";
+		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
+		rLen = 1;
+		rLoc = 232;
+		rType = 1;
+	};
+	ECFB05D40FD58BB900EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
+		name = "DataItem.m: 233";
+		rLen = 0;
+		rLoc = 6682;
+		rType = 0;
+		vrLen = 733;
+		vrLoc = 6361;
+	};
+	ECFB05D80FD58C9100EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
+		name = "DataItem.m: 231";
+		rLen = 0;
+		rLoc = 6673;
+		rType = 0;
+		vrLen = 955;
+		vrLoc = 6120;
+	};
+	ECFB05D90FD58C9100EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 76";
+		rLen = 0;
+		rLoc = 1935;
+		rType = 0;
+		vrLen = 1228;
+		vrLoc = 1244;
+	};
+	ECFB05DA0FD58C9100EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
+		name = "DataItem.m: 231";
+		rLen = 0;
+		rLoc = 6673;
+		rType = 0;
+		vrLen = 955;
+		vrLoc = 6120;
+	};
+	ECFB05DB0FD58C9100EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 81";
+		rLen = 0;
+		rLoc = 1930;
+		rType = 0;
+		vrLen = 1028;
+		vrLoc = 1051;
+	};
+	ECFB05E10FD58E6F00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 116";
+		rLen = 0;
+		rLoc = 2971;
+		rType = 0;
+		vrLen = 1004;
+		vrLoc = 2101;
+	};
+	ECFB05E20FD58E6F00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
+		name = "MainViewController.h: 13";
+		rLen = 0;
+		rLoc = 301;
+		rType = 0;
+		vrLen = 438;
+		vrLoc = 0;
+	};
+	ECFB05E30FD58E6F00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033A0FD4D80100EEE684 /* PanelView.h */;
+		name = "PanelView.h: 28";
+		rLen = 97;
+		rLoc = 440;
+		rType = 0;
+		vrLen = 544;
+		vrLoc = 0;
+	};
+	ECFB05E40FD58E6F00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
+		name = "MainViewController.m: 44";
+		rLen = 0;
+		rLoc = 1008;
+		rType = 0;
+		vrLen = 832;
+		vrLoc = 664;
+	};
+	ECFB05E50FD58E6F00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 114";
+		rLen = 0;
+		rLoc = 3050;
+		rType = 0;
+		vrLen = 996;
+		vrLoc = 1906;
+	};
+	ECFB05E60FD58E6F00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033A0FD4D80100EEE684 /* PanelView.h */;
+		name = "PanelView.h: 28";
+		rLen = 0;
+		rLoc = 516;
+		rType = 0;
+		vrLen = 544;
+		vrLoc = 0;
+	};
+	ECFB05E70FD58E6F00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 116";
+		rLen = 0;
+		rLoc = 2971;
+		rType = 0;
+		vrLen = 1004;
+		vrLoc = 2101;
+	};
+	ECFB05E80FD58E6F00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
+		name = "MainViewController.h: 13";
+		rLen = 0;
+		rLoc = 301;
+		rType = 0;
+		vrLen = 438;
+		vrLoc = 0;
+	};
+	ECFB05E90FD58E6F00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033A0FD4D80100EEE684 /* PanelView.h */;
+		name = "PanelView.h: 28";
+		rLen = 97;
+		rLoc = 440;
+		rType = 0;
+		vrLen = 544;
+		vrLoc = 0;
+	};
+	ECFB05EA0FD58E6F00EEE684 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
+		name = "MainViewController.m: 14";
+		rLen = 0;
+		rLoc = 290;
+		rType = 0;
+		vrLen = 881;
+		vrLoc = 44;
 	};
 	ECFBFBD10FD1F5D100EEE684 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		comments = "error: 'title' undeclared (first use in this function)";
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		rLen = 1;
-		rLoc = 97;
+		rLoc = 96;
 		rType = 1;
 	};
 	ECFBFBD20FD1F5D100EEE684 /* PBXTextBookmark */ = {
@@ -9750,7 +10649,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 82";
 		rLen = 85;
-		rLoc = 2536;
+		rLoc = 2504;
 		rType = 0;
 		vrLen = 451;
 		vrLoc = 2113;
@@ -9760,7 +10659,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 82";
 		rLen = 0;
-		rLoc = 2584;
+		rLoc = 2552;
 		rType = 0;
 		vrLen = 521;
 		vrLoc = 2113;
@@ -9778,7 +10677,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 82";
 		rLen = 0;
-		rLoc = 2584;
+		rLoc = 2552;
 		rType = 0;
 		vrLen = 521;
 		vrLoc = 2113;
@@ -9848,7 +10747,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 63";
 		rLen = 0;
-		rLoc = 2012;
+		rLoc = 2034;
 		rType = 0;
 		vrLen = 913;
 		vrLoc = 0;
@@ -9868,7 +10767,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 52";
 		rLen = 0;
-		rLoc = 1344;
+		rLoc = 1583;
 		rType = 0;
 		vrLen = 892;
 		vrLoc = 0;
@@ -9878,7 +10777,7 @@
 		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
 		name = "MainViewController.h: 15";
 		rLen = 0;
-		rLoc = 368;
+		rLoc = 410;
 		rType = 0;
 		vrLen = 295;
 		vrLoc = 0;
@@ -9888,7 +10787,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 187";
 		rLen = 0;
-		rLoc = 7199;
+		rLoc = 7167;
 		rType = 0;
 		vrLen = 663;
 		vrLoc = 5099;
@@ -9948,7 +10847,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 107";
 		rLen = 0;
-		rLoc = 3911;
+		rLoc = 3966;
 		rType = 0;
 		vrLen = 1175;
 		vrLoc = 4249;
@@ -9968,7 +10867,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 106";
 		rLen = 0;
-		rLoc = 3911;
+		rLoc = 3966;
 		rType = 0;
 		vrLen = 1019;
 		vrLoc = 4397;
@@ -9988,7 +10887,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 58";
 		rLen = 0;
-		rLoc = 1712;
+		rLoc = 1734;
 		rType = 0;
 		vrLen = 2213;
 		vrLoc = 1536;
@@ -10008,7 +10907,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 43";
 		rLen = 0;
-		rLoc = 1186;
+		rLoc = 1208;
 		rType = 0;
 		vrLen = 1147;
 		vrLoc = 736;
@@ -10028,7 +10927,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 12";
 		rLen = 0;
-		rLoc = 270;
+		rLoc = 292;
 		rType = 0;
 		vrLen = 913;
 		vrLoc = 0;
@@ -10048,7 +10947,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 138";
 		rLen = 0;
-		rLoc = 4967;
+		rLoc = 4935;
 		rType = 0;
 		vrLen = 1464;
 		vrLoc = 3388;
@@ -10068,7 +10967,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 127";
 		rLen = 12;
-		rLoc = 4539;
+		rLoc = 4507;
 		rType = 0;
 		vrLen = 1036;
 		vrLoc = 3089;
@@ -10138,7 +11037,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 12";
 		rLen = 0;
-		rLoc = 270;
+		rLoc = 292;
 		rType = 0;
 		vrLen = 913;
 		vrLoc = 0;
@@ -10158,7 +11057,7 @@
 		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
 		name = "MainViewController.h: 15";
 		rLen = 0;
-		rLoc = 368;
+		rLoc = 410;
 		rType = 0;
 		vrLen = 295;
 		vrLoc = 0;
@@ -10168,7 +11067,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 15";
 		rLen = 0;
-		rLoc = 333;
+		rLoc = 376;
 		rType = 0;
 		vrLen = 892;
 		vrLoc = 0;
@@ -10238,7 +11137,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 63";
 		rLen = 0;
-		rLoc = 2012;
+		rLoc = 2034;
 		rType = 0;
 		vrLen = 913;
 		vrLoc = 0;
@@ -10258,7 +11157,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 52";
 		rLen = 0;
-		rLoc = 1344;
+		rLoc = 1583;
 		rType = 0;
 		vrLen = 892;
 		vrLoc = 0;
@@ -10268,7 +11167,7 @@
 		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
 		name = "MainViewController.h: 15";
 		rLen = 0;
-		rLoc = 368;
+		rLoc = 410;
 		rType = 0;
 		vrLen = 295;
 		vrLoc = 0;
@@ -10278,7 +11177,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 187";
 		rLen = 0;
-		rLoc = 7199;
+		rLoc = 7167;
 		rType = 0;
 		vrLen = 663;
 		vrLoc = 5099;
@@ -10436,7 +11335,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 63";
 		rLen = 0;
-		rLoc = 2012;
+		rLoc = 2034;
 		rType = 0;
 		vrLen = 729;
 		vrLoc = 0;
@@ -10536,7 +11435,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 63";
 		rLen = 0;
-		rLoc = 2012;
+		rLoc = 2034;
 		rType = 0;
 		vrLen = 729;
 		vrLoc = 0;
@@ -10623,16 +11522,16 @@
 	};
 	ECFBFC400FD28B1700EEE684 /* DataItem.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1139, 572}}";
-			sepNavSelRange = "{148, 0}";
-			sepNavVisRange = "{0, 660}";
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 672}}";
+			sepNavSelRange = "{861, 0}";
+			sepNavVisRange = "{129, 763}";
 		};
 	};
 	ECFBFC410FD28B1700EEE684 /* DataItem.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1139, 3600}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 817}";
+			sepNavIntBoundsRect = "{{0, 0}, {964, 4652}}";
+			sepNavSelRange = "{6689, 0}";
+			sepNavVisRange = "{6361, 735}";
 		};
 	};
 	ECFBFC5A0FD2998700EEE684 /* PBXTextBookmark */ = {
@@ -10660,7 +11559,7 @@
 		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
 		name = "DataItem.h: 23";
 		rLen = 0;
-		rLoc = 446;
+		rLoc = 502;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 0;
@@ -10690,7 +11589,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 104";
 		rLen = 0;
-		rLoc = 4324;
+		rLoc = 4379;
 		rType = 0;
 		vrLen = 777;
 		vrLoc = 2820;
@@ -10700,7 +11599,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 259";
 		rLen = 0;
-		rLoc = 7910;
+		rLoc = 7878;
 		rType = 0;
 		vrLen = 947;
 		vrLoc = 6172;
@@ -10710,7 +11609,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 88";
 		rLen = 0;
-		rLoc = 2441;
+		rLoc = 2678;
 		rType = 0;
 		vrLen = 1167;
 		vrLoc = 4038;
@@ -10750,7 +11649,7 @@
 		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
 		name = "DataItem.h: 15";
 		rLen = 0;
-		rLoc = 260;
+		rLoc = 271;
 		rType = 0;
 		vrLen = 301;
 		vrLoc = 0;
@@ -10760,7 +11659,7 @@
 		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
 		name = "DataItem.h: 23";
 		rLen = 0;
-		rLoc = 446;
+		rLoc = 502;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 0;
@@ -10770,7 +11669,7 @@
 		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
 		name = "DataItem.h: 23";
 		rLen = 0;
-		rLoc = 446;
+		rLoc = 502;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 0;
@@ -10790,7 +11689,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 9";
 		rLen = 7549;
-		rLoc = 165;
+		rLoc = 133;
 		rType = 0;
 		vrLen = 843;
 		vrLoc = 0;
@@ -10800,7 +11699,7 @@
 		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
 		name = "DataItem.h: 23";
 		rLen = 0;
-		rLoc = 446;
+		rLoc = 502;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 0;
@@ -10810,7 +11709,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 80";
 		rLen = 0;
-		rLoc = 2057;
+		rLoc = 2294;
 		rType = 0;
 		vrLen = 1032;
 		vrLoc = 2284;
@@ -10820,7 +11719,7 @@
 		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
 		name = "DataItem.h: 23";
 		rLen = 0;
-		rLoc = 446;
+		rLoc = 502;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 0;
@@ -10830,7 +11729,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 215";
 		rLen = 0;
-		rLoc = 5864;
+		rLoc = 7633;
 		rType = 0;
 		vrLen = 1030;
 		vrLoc = 1891;
@@ -10860,7 +11759,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 104";
 		rLen = 0;
-		rLoc = 4324;
+		rLoc = 4379;
 		rType = 0;
 		vrLen = 777;
 		vrLoc = 2820;
@@ -10870,7 +11769,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 259";
 		rLen = 0;
-		rLoc = 7910;
+		rLoc = 7878;
 		rType = 0;
 		vrLen = 947;
 		vrLoc = 6172;
@@ -10880,7 +11779,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 88";
 		rLen = 0;
-		rLoc = 2441;
+		rLoc = 2678;
 		rType = 0;
 		vrLen = 1167;
 		vrLoc = 4038;
@@ -10900,7 +11799,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 88";
 		rLen = 0;
-		rLoc = 2441;
+		rLoc = 2678;
 		rType = 0;
 		vrLen = 1167;
 		vrLoc = 4038;
@@ -10930,7 +11829,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 88";
 		rLen = 0;
-		rLoc = 2441;
+		rLoc = 2678;
 		rType = 0;
 		vrLen = 1167;
 		vrLoc = 4038;
@@ -10970,7 +11869,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 259";
 		rLen = 0;
-		rLoc = 7910;
+		rLoc = 7878;
 		rType = 0;
 		vrLen = 947;
 		vrLoc = 6172;
@@ -10990,7 +11889,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 259";
 		rLen = 0;
-		rLoc = 7910;
+		rLoc = 7878;
 		rType = 0;
 		vrLen = 1001;
 		vrLoc = 5918;
@@ -11000,7 +11899,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 259";
 		rLen = 0;
-		rLoc = 7910;
+		rLoc = 7878;
 		rType = 0;
 		vrLen = 1001;
 		vrLoc = 5918;
@@ -11010,7 +11909,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 224";
 		rLen = 0;
-		rLoc = 7714;
+		rLoc = 7682;
 		rType = 0;
 		vrLen = 1025;
 		vrLoc = 5935;
@@ -11020,7 +11919,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 224";
 		rLen = 0;
-		rLoc = 7714;
+		rLoc = 7682;
 		rType = 0;
 		vrLen = 997;
 		vrLoc = 5481;
@@ -11040,7 +11939,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 224";
 		rLen = 0;
-		rLoc = 7714;
+		rLoc = 7682;
 		rType = 0;
 		vrLen = 997;
 		vrLoc = 5481;
@@ -11820,7 +12719,7 @@
 		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
 		name = "MainViewController.h: 15";
 		rLen = 0;
-		rLoc = 368;
+		rLoc = 410;
 		rType = 0;
 		vrLen = 295;
 		vrLoc = 0;
@@ -11950,7 +12849,7 @@
 		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
 		name = "MainViewController.h: 15";
 		rLen = 0;
-		rLoc = 368;
+		rLoc = 410;
 		rType = 0;
 		vrLen = 295;
 		vrLoc = 0;
@@ -12340,7 +13239,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 221";
 		rLen = 0;
-		rLoc = 7714;
+		rLoc = 7682;
 		rType = 0;
 		vrLen = 947;
 		vrLoc = 6174;
@@ -12350,7 +13249,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 88";
 		rLen = 0;
-		rLoc = 2441;
+		rLoc = 2678;
 		rType = 0;
 		vrLen = 1053;
 		vrLoc = 4262;
@@ -12380,7 +13279,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 221";
 		rLen = 0;
-		rLoc = 7714;
+		rLoc = 7682;
 		rType = 0;
 		vrLen = 854;
 		vrLoc = 6267;
@@ -12390,7 +13289,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 88";
 		rLen = 0;
-		rLoc = 2441;
+		rLoc = 2678;
 		rType = 0;
 		vrLen = 1041;
 		vrLoc = 1741;
@@ -12400,7 +13299,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 221";
 		rLen = 0;
-		rLoc = 7714;
+		rLoc = 7682;
 		rType = 0;
 		vrLen = 947;
 		vrLoc = 6174;
@@ -12420,7 +13319,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 88";
 		rLen = 0;
-		rLoc = 2441;
+		rLoc = 2678;
 		rType = 0;
 		vrLen = 1053;
 		vrLoc = 4262;
@@ -12450,7 +13349,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 221";
 		rLen = 0;
-		rLoc = 7714;
+		rLoc = 7682;
 		rType = 0;
 		vrLen = 854;
 		vrLoc = 6267;
@@ -12460,7 +13359,7 @@
 		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
 		name = "DataItem.h: 23";
 		rLen = 4;
-		rLoc = 413;
+		rLoc = 469;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 0;
@@ -12470,7 +13369,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 88";
 		rLen = 0;
-		rLoc = 2441;
+		rLoc = 2678;
 		rType = 0;
 		vrLen = 1052;
 		vrLoc = 4262;
@@ -12490,7 +13389,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 221";
 		rLen = 0;
-		rLoc = 7714;
+		rLoc = 7682;
 		rType = 0;
 		vrLen = 854;
 		vrLoc = 6267;
@@ -12500,7 +13399,7 @@
 		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
 		name = "DataItem.h: 23";
 		rLen = 4;
-		rLoc = 413;
+		rLoc = 469;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 0;
@@ -12510,7 +13409,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 216";
 		rLen = 0;
-		rLoc = 5871;
+		rLoc = 7640;
 		rType = 0;
 		vrLen = 652;
 		vrLoc = 5213;
@@ -12520,7 +13419,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 216";
 		rLen = 0;
-		rLoc = 5871;
+		rLoc = 7640;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 1022;
@@ -12540,7 +13439,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 216";
 		rLen = 0;
-		rLoc = 5871;
+		rLoc = 7640;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 1022;
@@ -12660,7 +13559,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 251";
 		rLen = 0;
-		rLoc = 7714;
+		rLoc = 7682;
 		rType = 0;
 		vrLen = 833;
 		vrLoc = 6285;
@@ -12670,7 +13569,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 216";
 		rLen = 0;
-		rLoc = 5871;
+		rLoc = 7640;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 1022;
@@ -12710,7 +13609,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 221";
 		rLen = 0;
-		rLoc = 7714;
+		rLoc = 7682;
 		rType = 0;
 		vrLen = 947;
 		vrLoc = 6174;
@@ -12730,7 +13629,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 245";
 		rLen = 0;
-		rLoc = 7714;
+		rLoc = 7682;
 		rType = 0;
 		vrLen = 1082;
 		vrLoc = 4117;
@@ -12770,7 +13669,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 167";
 		rLen = 0;
-		rLoc = 5155;
+		rLoc = 5123;
 		rType = 0;
 		vrLen = 918;
 		vrLoc = 4276;
@@ -12790,7 +13689,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 251";
 		rLen = 0;
-		rLoc = 7714;
+		rLoc = 7682;
 		rType = 0;
 		vrLen = 833;
 		vrLoc = 6285;
@@ -12810,7 +13709,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 216";
 		rLen = 0;
-		rLoc = 5871;
+		rLoc = 7640;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 1022;
@@ -12850,7 +13749,7 @@
 		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
 		name = "DataItem.h: 23";
 		rLen = 4;
-		rLoc = 413;
+		rLoc = 469;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 0;
@@ -12890,7 +13789,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 251";
 		rLen = 0;
-		rLoc = 7714;
+		rLoc = 7682;
 		rType = 0;
 		vrLen = 876;
 		vrLoc = 6286;
@@ -12910,7 +13809,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 251";
 		rLen = 0;
-		rLoc = 7714;
+		rLoc = 7682;
 		rType = 0;
 		vrLen = 876;
 		vrLoc = 6286;
@@ -12930,7 +13829,7 @@
 		fRef = ECFBFC400FD28B1700EEE684 /* DataItem.h */;
 		name = "DataItem.h: 23";
 		rLen = 4;
-		rLoc = 413;
+		rLoc = 469;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 0;
@@ -13020,7 +13919,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 212";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 7041;
 		rType = 0;
 		vrLen = 1087;
 		vrLoc = 4065;
@@ -13050,7 +13949,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 212";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 7041;
 		rType = 0;
 		vrLen = 1087;
 		vrLoc = 4065;
@@ -13060,7 +13959,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 212";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 7041;
 		rType = 0;
 		vrLen = 1087;
 		vrLoc = 4065;
@@ -13080,7 +13979,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 21";
 		rLen = 0;
-		rLoc = 559;
+		rLoc = 527;
 		rType = 0;
 		vrLen = 823;
 		vrLoc = 0;
@@ -13090,7 +13989,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 21";
 		rLen = 0;
-		rLoc = 559;
+		rLoc = 527;
 		rType = 0;
 		vrLen = 777;
 		vrLoc = 6291;
@@ -13100,7 +13999,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 216";
 		rLen = 0;
-		rLoc = 5871;
+		rLoc = 7640;
 		rType = 0;
 		vrLen = 1241;
 		vrLoc = 1957;
@@ -13120,7 +14019,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 21";
 		rLen = 0;
-		rLoc = 559;
+		rLoc = 527;
 		rType = 0;
 		vrLen = 777;
 		vrLoc = 6291;
@@ -13140,7 +14039,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 216";
 		rLen = 0;
-		rLoc = 5871;
+		rLoc = 7640;
 		rType = 0;
 		vrLen = 1241;
 		vrLoc = 1957;
@@ -13190,7 +14089,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 216";
 		rLen = 0;
-		rLoc = 5871;
+		rLoc = 7640;
 		rType = 0;
 		vrLen = 1052;
 		vrLoc = 4262;
@@ -13210,7 +14109,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 216";
 		rLen = 0;
-		rLoc = 5871;
+		rLoc = 7640;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 4260;
@@ -13230,7 +14129,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 184";
 		rLen = 90;
-		rLoc = 5213;
+		rLoc = 6128;
 		rType = 0;
 		vrLen = 1043;
 		vrLoc = 4284;
@@ -13240,7 +14139,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 184";
 		rLen = 90;
-		rLoc = 5213;
+		rLoc = 6128;
 		rType = 0;
 		vrLen = 1044;
 		vrLoc = 4284;
@@ -13260,7 +14159,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 184";
 		rLen = 90;
-		rLoc = 5213;
+		rLoc = 6128;
 		rType = 0;
 		vrLen = 1044;
 		vrLoc = 4284;
@@ -13290,7 +14189,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 248";
 		rLen = 0;
-		rLoc = 7716;
+		rLoc = 7684;
 		rType = 0;
 		vrLen = 777;
 		vrLoc = 6291;
@@ -13320,7 +14219,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 248";
 		rLen = 0;
-		rLoc = 7716;
+		rLoc = 7684;
 		rType = 0;
 		vrLen = 777;
 		vrLoc = 6291;
@@ -13350,7 +14249,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 104";
 		rLen = 0;
-		rLoc = 4324;
+		rLoc = 4379;
 		rType = 0;
 		vrLen = 811;
 		vrLoc = 2786;
@@ -13370,7 +14269,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 88";
 		rLen = 0;
-		rLoc = 3810;
+		rLoc = 3832;
 		rType = 0;
 		vrLen = 1083;
 		vrLoc = 2262;
@@ -13380,7 +14279,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 12";
 		rLen = 0;
-		rLoc = 269;
+		rLoc = 291;
 		rType = 0;
 		vrLen = 932;
 		vrLoc = 0;
@@ -13400,7 +14299,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 12";
 		rLen = 0;
-		rLoc = 269;
+		rLoc = 291;
 		rType = 0;
 		vrLen = 932;
 		vrLoc = 0;
@@ -13430,7 +14329,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 248";
 		rLen = 0;
-		rLoc = 7716;
+		rLoc = 7684;
 		rType = 0;
 		vrLen = 798;
 		vrLoc = 6270;
@@ -13450,7 +14349,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 60";
 		rLen = 0;
-		rLoc = 1434;
+		rLoc = 1402;
 		rType = 0;
 		vrLen = 997;
 		vrLoc = 1187;
@@ -13460,7 +14359,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 60";
 		rLen = 0;
-		rLoc = 1434;
+		rLoc = 1402;
 		rType = 0;
 		vrLen = 1038;
 		vrLoc = 1102;
@@ -13480,7 +14379,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 60";
 		rLen = 0;
-		rLoc = 1434;
+		rLoc = 1402;
 		rType = 0;
 		vrLen = 1038;
 		vrLoc = 1102;
@@ -13510,7 +14409,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 60";
 		rLen = 0;
-		rLoc = 1434;
+		rLoc = 1402;
 		rType = 0;
 		vrLen = 1043;
 		vrLoc = 1097;
@@ -13530,7 +14429,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 141";
 		rLen = 0;
-		rLoc = 4442;
+		rLoc = 4410;
 		rType = 0;
 		vrLen = 1096;
 		vrLoc = 3511;
@@ -13540,7 +14439,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 172";
 		rLen = 0;
-		rLoc = 5155;
+		rLoc = 5123;
 		rType = 0;
 		vrLen = 1102;
 		vrLoc = 3186;
@@ -13550,7 +14449,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 149";
 		rLen = 0;
-		rLoc = 4171;
+		rLoc = 4139;
 		rType = 0;
 		vrLen = 1137;
 		vrLoc = 3278;
@@ -13560,7 +14459,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 149";
 		rLen = 0;
-		rLoc = 4171;
+		rLoc = 4139;
 		rType = 0;
 		vrLen = 1137;
 		vrLoc = 3278;
@@ -13570,7 +14469,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 149";
 		rLen = 0;
-		rLoc = 4171;
+		rLoc = 4139;
 		rType = 0;
 		vrLen = 741;
 		vrLoc = 6773;
@@ -13600,7 +14499,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 149";
 		rLen = 0;
-		rLoc = 4171;
+		rLoc = 4139;
 		rType = 0;
 		vrLen = 741;
 		vrLoc = 6773;
@@ -13990,7 +14889,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 149";
 		rLen = 0;
-		rLoc = 4171;
+		rLoc = 4139;
 		rType = 0;
 		vrLen = 961;
 		vrLoc = 2053;
@@ -14050,7 +14949,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 12";
 		rLen = 0;
-		rLoc = 269;
+		rLoc = 291;
 		rType = 0;
 		vrLen = 1256;
 		vrLoc = 1780;
@@ -14120,7 +15019,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 149";
 		rLen = 0;
-		rLoc = 4171;
+		rLoc = 4139;
 		rType = 0;
 		vrLen = 961;
 		vrLoc = 2053;
@@ -14180,7 +15079,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 12";
 		rLen = 0;
-		rLoc = 269;
+		rLoc = 291;
 		rType = 0;
 		vrLen = 777;
 		vrLoc = 2875;
@@ -14240,7 +15139,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 12";
 		rLen = 0;
-		rLoc = 269;
+		rLoc = 291;
 		rType = 0;
 		vrLen = 1256;
 		vrLoc = 1780;
@@ -14260,7 +15159,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 120";
 		rLen = 0;
-		rLoc = 5072;
+		rLoc = 5127;
 		rType = 0;
 		vrLen = 777;
 		vrLoc = 2885;
@@ -14280,7 +15179,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 127";
 		rLen = 0;
-		rLoc = 5201;
+		rLoc = 5256;
 		rType = 0;
 		vrLen = 839;
 		vrLoc = 2807;
@@ -14300,7 +15199,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 120";
 		rLen = 0;
-		rLoc = 5072;
+		rLoc = 5127;
 		rType = 0;
 		vrLen = 1347;
 		vrLoc = 1927;
@@ -14320,7 +15219,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 12";
 		rLen = 0;
-		rLoc = 269;
+		rLoc = 291;
 		rType = 0;
 		vrLen = 956;
 		vrLoc = 45;
@@ -14330,7 +15229,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */;
 		name = "SquirrelAppDelegate.m: 127";
 		rLen = 0;
-		rLoc = 5201;
+		rLoc = 5256;
 		rType = 0;
 		vrLen = 839;
 		vrLoc = 2807;
@@ -14360,7 +15259,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 254";
 		rLen = 0;
-		rLoc = 7714;
+		rLoc = 7682;
 		rType = 0;
 		vrLen = 993;
 		vrLoc = 6587;
@@ -14390,7 +15289,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 161";
 		rLen = 0;
-		rLoc = 4442;
+		rLoc = 4410;
 		rType = 0;
 		vrLen = 777;
 		vrLoc = 7032;
@@ -14410,7 +15309,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 254";
 		rLen = 0;
-		rLoc = 7714;
+		rLoc = 7682;
 		rType = 0;
 		vrLen = 993;
 		vrLoc = 6587;
@@ -14450,7 +15349,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 255";
 		rLen = 0;
-		rLoc = 7714;
+		rLoc = 7682;
 		rType = 0;
 		vrLen = 1106;
 		vrLoc = 6405;
@@ -14480,7 +15379,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 184";
 		rLen = 90;
-		rLoc = 5213;
+		rLoc = 6128;
 		rType = 0;
 		vrLen = 1043;
 		vrLoc = 4284;
@@ -14500,7 +15399,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 60";
 		rLen = 0;
-		rLoc = 1434;
+		rLoc = 1402;
 		rType = 0;
 		vrLen = 1045;
 		vrLoc = 5912;
@@ -14530,7 +15429,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 255";
 		rLen = 0;
-		rLoc = 7714;
+		rLoc = 7682;
 		rType = 0;
 		vrLen = 994;
 		vrLoc = 6712;
@@ -14570,7 +15469,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 60";
 		rLen = 0;
-		rLoc = 1434;
+		rLoc = 1402;
 		rType = 0;
 		vrLen = 1207;
 		vrLoc = 4264;
@@ -14580,7 +15479,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 184";
 		rLen = 90;
-		rLoc = 5213;
+		rLoc = 6128;
 		rType = 0;
 		vrLen = 1043;
 		vrLoc = 4284;
@@ -14600,7 +15499,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 60";
 		rLen = 0;
-		rLoc = 1434;
+		rLoc = 1402;
 		rType = 0;
 		vrLen = 1045;
 		vrLoc = 5912;
@@ -14640,7 +15539,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 212";
 		rLen = 0;
-		rLoc = 6054;
+		rLoc = 6022;
 		rType = 0;
 		vrLen = 1044;
 		vrLoc = 6004;
@@ -14680,7 +15579,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 60";
 		rLen = 0;
-		rLoc = 1434;
+		rLoc = 1402;
 		rType = 0;
 		vrLen = 1086;
 		vrLoc = 5870;
@@ -14700,7 +15599,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 212";
 		rLen = 0;
-		rLoc = 6054;
+		rLoc = 6022;
 		rType = 0;
 		vrLen = 1044;
 		vrLoc = 6004;
@@ -15280,7 +16179,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 212";
 		rLen = 0;
-		rLoc = 6054;
+		rLoc = 6022;
 		rType = 0;
 		vrLen = 764;
 		vrLoc = 7046;
@@ -15320,7 +16219,7 @@
 		fRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */;
 		name = "DataSet.m: 212";
 		rLen = 0;
-		rLoc = 6054;
+		rLoc = 6022;
 		rType = 0;
 		vrLen = 764;
 		vrLoc = 7046;

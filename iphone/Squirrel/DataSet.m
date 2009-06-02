@@ -6,7 +6,6 @@
 //  Copyright 2009 Taylan Pince. All rights reserved.
 //
 
-#import "SquirrelAppDelegate.h"
 #import "DataSet.h"
 #import "DataItem.h"
 #import "DataPanel.h"

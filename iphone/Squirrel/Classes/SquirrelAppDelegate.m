@@ -11,6 +11,7 @@
 #import "DataSet.h"
 #import "DataItem.h"
 #import "DataPanel.h"
+#import "DataEntry.h"
 
 
 @interface SquirrelAppDelegate (Private)
@@ -114,6 +115,7 @@
     [DataSet finalizeStatements];
 	[DataItem finalizeStatements];
 	[DataPanel finalizeStatements];
+	[DataEntry finalizeStatements];
 
     if (sqlite3_close(database) != SQLITE_OK) {
         NSAssert1(0, @"Error: failed to close database with message '%s'.", sqlite3_errmsg(database));

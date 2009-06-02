@@ -10,6 +10,8 @@
 #import "MainViewController.h"
 #import "DataPanel.h"
 #import "DataSet.h"
+#import "DataItem.h"
+#import "DataEntry.h"
 #import "PanelView.h"
 
 
@@ -29,6 +31,7 @@
 		[dataPanel.dataSet selectRelated];
 		
 		panelView.dataPanel = dataPanel;
+		panelView.delegate = self;
 		
 		top.y += panelView.frame.size.height + 10.0;
 
@@ -37,6 +40,11 @@
 	}
 	
 	scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, top.y);
+}
+
+
+- (void)didBeginAddingNewDataEntryForView:(PanelView *)panelView forDataItem:(DataItem *)dataItem {
+	NSLog(@"Did Being Adding New Data Entry: %@", dataItem.name);
 }
 
 

@@ -21,7 +21,7 @@
 
 @implementation PanelView
 
-@synthesize dataPanel;
+@synthesize dataPanel, delegate;
 
 
 #define MAIN_FONT_SIZE 18
@@ -74,6 +74,14 @@ static UIFont *mainFont = nil;
 		
 		[self addSubview:titleLabel];
 		
+		UIButton *addButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
+		
+		addButton.frame = CGRectMake(point.x + 200.0, point.y, 10.0, 10.0);
+		addButton.tag = counter;
+		
+		[addButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchUpInside];
+		[self addSubview:addButton];
+		
 		point.y += titleLabel.frame.size.height + 6.0;
 		
 		[titleLabel release];
@@ -103,51 +111,11 @@ static UIFont *mainFont = nil;
 }
 
 
-//- (void)drawRect:(CGRect)rect {
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//	UIColor *backgroundColor = [UIColor lightGrayColor];
-//	UIColor *labelColor = [UIColor blackColor];
-//	
-//	[backgroundColor set];
-//	
-//	CGContextFillRect(context, rect);
-//
-//	CGPoint point = CGPointMake(rect.origin.x + 10.0, rect.origin.y + 10.0);
-//	
-//	[labelColor set];
-//	
-//	CGSize drawnSize = [dataPanel.name drawInRect:CGRectMake(point.x, point.y, rect.size.width, 600.0f) withFont:mainFont lineBreakMode:UILineBreakModeTailTruncation];
-//	
-//	point.y += drawnSize.height + 6.0;
-//	
-//	int counter = 0;
-//	
-//	for (DataItem *dataItem in dataPanel.dataSet.dataItems) {
-//		CGSize drawnSize = [dataItem.name drawInRect:CGRectMake(point.x, point.y, rect.size.width, 600.0f) withFont:mainFont lineBreakMode:UILineBreakModeTailTruncation];
-//		
-//		point.y += drawnSize.height;
-//		
-////		CGRect drawnRect = CGRectMake(point.x, point.y, ((counter + 1) * 50.0), 10.0);
-////		CGContextFillRect(context, drawnRect);
-////		
-////		point.y += drawnRect.size.height + 6.0;
-//		
-//		CALayer *aLayer = [CALayer layer];
-//		
-//		aLayer.bounds = CGRectMake(point.x, point.y, ((counter + 1) * 50.0), 10.0);
-//		aLayer.backgroundColor = [[UIColor blueColor] CGColor];
-////		aLayer.delegate = self;
-//		
-//		[(CALayer *)[self layer] addSublayer:aLayer];
-//		[aLayer release];
-//		
-//		counter++;
-//	}
-//}
-
-
-- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx {
-	NSLog(@"Draw Layer");
+- (void)didTouchAddButton:(id)sender {
+	UIButton *addButton = (UIButton *)sender;
+	DataItem *dataItem = [dataPanel.dataSet.dataItems objectAtIndex:addButton.tag];
+	
+	[delegate didBeginAddingNewDataEntryForView:self forDataItem:dataItem];
 }
 
 
