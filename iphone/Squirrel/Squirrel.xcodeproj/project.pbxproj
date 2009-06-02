@@ -16,6 +16,9 @@
 		288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765580DF743DE002DB57D /* CoreGraphics.framework */; };
 		289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */; };
 		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
+		EC341D9D0FD5AAE40003212C /* DataEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC341D9C0FD5AAE40003212C /* DataEntryViewController.m */; };
+		EC341E540FD5C9EE0003212C /* EditDataEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */; };
+		EC341E550FD5C9EE0003212C /* DataEntryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC341E530FD5C9EE0003212C /* DataEntryView.xib */; };
 		EC6EB8150FD197B600E6F9D8 /* DataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */; };
 		EC6EB8E20FD1B81E00E6F9D8 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB8E10FD1B81E00E6F9D8 /* EditableTableViewCell.m */; };
 		EC6EB9560FD1CFDC00E6F9D8 /* DataSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */; };
@@ -51,6 +54,11 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Squirrel_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Squirrel_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Squirrel-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Squirrel-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		EC341D9B0FD5AAE40003212C /* DataEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataEntryViewController.h; sourceTree = "<group>"; };
+		EC341D9C0FD5AAE40003212C /* DataEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEntryViewController.m; sourceTree = "<group>"; };
+		EC341E510FD5C9EE0003212C /* EditDataEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDataEntryViewController.h; sourceTree = "<group>"; };
+		EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditDataEntryViewController.m; sourceTree = "<group>"; };
+		EC341E530FD5C9EE0003212C /* DataEntryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataEntryView.xib; sourceTree = "<group>"; };
 		EC6EB8100FD197B600E6F9D8 /* DataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSet.h; sourceTree = "<group>"; };
 		EC6EB8110FD197B600E6F9D8 /* DataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSet.m; sourceTree = "<group>"; };
 		EC6EB8E00FD1B81E00E6F9D8 /* EditableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTableViewCell.h; sourceTree = "<group>"; };
@@ -148,6 +156,7 @@
 				EC6EB9B10FD1D86400E6F9D8 /* Icon.png */,
 				280E754B0DD40C5E005A515E /* MainView.xib */,
 				280E754C0DD40C5E005A515E /* MainWindow.xib */,
+				EC341E530FD5C9EE0003212C /* DataEntryView.xib */,
 				8D1107310486CEB800E47090 /* Squirrel-Info.plist */,
 				ECFBFBA70FD1EDCA00EEE684 /* Squirrel.sql */,
 			);
@@ -196,6 +205,10 @@
 				ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */,
 				ECFB01430FD48F3B00EEE684 /* SelectPanelTypeViewController.h */,
 				ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */,
+				EC341D9B0FD5AAE40003212C /* DataEntryViewController.h */,
+				EC341D9C0FD5AAE40003212C /* DataEntryViewController.m */,
+				EC341E510FD5C9EE0003212C /* EditDataEntryViewController.h */,
+				EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -277,6 +290,7 @@
 				280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */,
 				EC6EB9B20FD1D86400E6F9D8 /* Icon.png in Resources */,
 				ECFBFBA80FD1EDCA00EEE684 /* Squirrel.sql in Resources */,
+				EC341E550FD5C9EE0003212C /* DataEntryView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +318,8 @@
 				ECFB01E90FD4AD3900EEE684 /* FastTableViewCell.m in Sources */,
 				ECFB033C0FD4D80100EEE684 /* PanelView.m in Sources */,
 				ECFB058A0FD57CF000EEE684 /* DataEntry.m in Sources */,
+				EC341D9D0FD5AAE40003212C /* DataEntryViewController.m in Sources */,
+				EC341E540FD5C9EE0003212C /* EditDataEntryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,10 +7,11 @@
 //
 
 #import "FlipsideViewController.h"
+#import "DataEntryViewController.h"
 #import "PanelView.h"
 
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, PanelViewDelegate> {
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, PanelViewDelegate, DataEntryViewControllerDelegate> {
 	IBOutlet UIScrollView *scrollView;
 }
 

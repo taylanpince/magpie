@@ -8,6 +8,8 @@
 
 #import "SquirrelAppDelegate.h"
 #import "MainViewController.h"
+#import "FlipsideViewController.h"
+#import "DataEntryViewController.h"
 #import "DataPanel.h"
 #import "DataSet.h"
 #import "DataItem.h"
@@ -44,7 +46,22 @@
 
 
 - (void)didBeginAddingNewDataEntryForView:(PanelView *)panelView forDataItem:(DataItem *)dataItem {
-	NSLog(@"Did Being Adding New Data Entry: %@", dataItem.name);
+	DataEntryViewController *controller = [[DataEntryViewController alloc] initWithStyle:UITableViewStyleGrouped];
+	
+	controller.delegate = self;
+	controller.dataItem = dataItem;
+	
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+	
+	[self presentModalViewController:navController animated:YES];
+	
+	[controller release];
+	[navController release];
+}
+
+
+- (void)didCloseDataEntryView {
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 
