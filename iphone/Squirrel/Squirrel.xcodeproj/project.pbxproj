@@ -25,6 +25,8 @@
 		ECFB00B80FD4830300EEE684 /* SelectDataSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */; };
 		ECFB01450FD48F3B00EEE684 /* SelectPanelTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */; };
 		ECFB01650FD49CE000EEE684 /* SelectableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB01640FD49CE000EEE684 /* SelectableTableViewCell.m */; };
+		ECFB01DF0FD4AA7100EEE684 /* InfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB01DE0FD4AA7100EEE684 /* InfoTableViewCell.m */; };
+		ECFB01E90FD4AD3900EEE684 /* FastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB01E80FD4AD3900EEE684 /* FastTableViewCell.m */; };
 		ECFBFBA60FD1E87B00EEE684 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFBFBA50FD1E87B00EEE684 /* libsqlite3.0.dylib */; };
 		ECFBFBA80FD1EDCA00EEE684 /* Squirrel.sql in Resources */ = {isa = PBXBuildFile; fileRef = ECFBFBA70FD1EDCA00EEE684 /* Squirrel.sql */; };
 		ECFBFC420FD28B1700EEE684 /* DataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */; };
@@ -64,6 +66,10 @@
 		ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPanelTypeViewController.m; sourceTree = "<group>"; };
 		ECFB01630FD49CE000EEE684 /* SelectableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectableTableViewCell.h; sourceTree = "<group>"; };
 		ECFB01640FD49CE000EEE684 /* SelectableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectableTableViewCell.m; sourceTree = "<group>"; };
+		ECFB01DD0FD4AA7100EEE684 /* InfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoTableViewCell.h; sourceTree = "<group>"; };
+		ECFB01DE0FD4AA7100EEE684 /* InfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoTableViewCell.m; sourceTree = "<group>"; };
+		ECFB01E70FD4AD3900EEE684 /* FastTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastTableViewCell.h; sourceTree = "<group>"; };
+		ECFB01E80FD4AD3900EEE684 /* FastTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastTableViewCell.m; sourceTree = "<group>"; };
 		ECFBFBA50FD1E87B00EEE684 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		ECFBFBA70FD1EDCA00EEE684 /* Squirrel.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = Squirrel.sql; sourceTree = "<group>"; };
 		ECFBFC400FD28B1700EEE684 /* DataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataItem.h; sourceTree = "<group>"; };
@@ -201,6 +207,10 @@
 				EC6EB8E10FD1B81E00E6F9D8 /* EditableTableViewCell.m */,
 				ECFB01630FD49CE000EEE684 /* SelectableTableViewCell.h */,
 				ECFB01640FD49CE000EEE684 /* SelectableTableViewCell.m */,
+				ECFB01DD0FD4AA7100EEE684 /* InfoTableViewCell.h */,
+				ECFB01DE0FD4AA7100EEE684 /* InfoTableViewCell.m */,
+				ECFB01E70FD4AD3900EEE684 /* FastTableViewCell.h */,
+				ECFB01E80FD4AD3900EEE684 /* FastTableViewCell.m */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -282,6 +292,8 @@
 				ECFB00B80FD4830300EEE684 /* SelectDataSetViewController.m in Sources */,
 				ECFB01450FD48F3B00EEE684 /* SelectPanelTypeViewController.m in Sources */,
 				ECFB01650FD49CE000EEE684 /* SelectableTableViewCell.m in Sources */,
+				ECFB01DF0FD4AA7100EEE684 /* InfoTableViewCell.m in Sources */,
+				ECFB01E90FD4AD3900EEE684 /* FastTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

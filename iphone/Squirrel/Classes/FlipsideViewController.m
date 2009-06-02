@@ -12,6 +12,7 @@
 #import "DataPanel.h"
 #import "DataSetViewController.h"
 #import "DataPanelViewController.h"
+#import "InfoTableViewCell.h"
 
 
 @implementation FlipsideViewController
@@ -59,10 +60,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    InfoTableViewCell *cell = (InfoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[InfoTableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 	
@@ -70,19 +71,19 @@
 		NSMutableArray *dataSets = [(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets];
 		
 		if (indexPath.row == [dataSets count]) {
-			cell.text = @"Add a new data set";
+			cell.mainLabel.text = @"Add a new data set";
 		} else {
 			DataSet *dataSet = [dataSets objectAtIndex:indexPath.row];
-			cell.text = dataSet.name;
+			cell.mainLabel.text = dataSet.name;
 		}
 	} else {
 		NSMutableArray *dataPanels = [(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels];
 		
 		if (indexPath.row == [dataPanels count]) {
-			cell.text = @"Add a new data panel";
+			cell.mainLabel.text = @"Add a new data panel";
 		} else {
 			DataPanel *dataPanel = [dataPanels objectAtIndex:indexPath.row];
-			cell.text = dataPanel.name;
+			cell.mainLabel.text = dataPanel.name;
 		}
 	}
 
@@ -157,7 +158,19 @@
 			
 			[appDelegate removeDataSet:dataSet];
 			
-			[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+			NSMutableArray *deletedRows = [NSMutableArray arrayWithObject:indexPath];
+			int rowNumber = 0;
+			
+			for (DataPanel *dataPanel in [appDelegate dataPanels]) {
+				if (dataPanel.dataSet.primaryKey == dataSet.primaryKey) {
+					[appDelegate removeDataPanel:dataPanel];
+					[deletedRows addObject:[NSIndexPath indexPathForRow:rowNumber inSection:1]];
+				}
+				
+				rowNumber++;
+			}
+			
+			[tableView deleteRowsAtIndexPaths:deletedRows withRowAnimation:UITableViewRowAnimationFade];
 		} else {
 			SquirrelAppDelegate *appDelegate = (SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate];
 			DataPanel *dataPanel = [[appDelegate dataPanels] objectAtIndex:indexPath.row];
