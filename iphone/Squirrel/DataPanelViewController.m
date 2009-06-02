@@ -201,7 +201,7 @@
 	
 	if ([newValue isEqualToString:@""]) {
 		saveButton.enabled = NO;
-	} else {
+	} else if (![dataPanelType isEqualToString:@""] & dataPanelSet != nil) {
 		saveButton.enabled = YES;
 	}
 }
@@ -212,15 +212,25 @@
 		dataPanelSet = newDataSet;
 		
 		[self.tableView reloadData];
+		
+		if (![dataPanelName isEqualToString:@""] & ![dataPanelType isEqualToString:@""]) {
+			self.navigationItem.rightBarButtonItem.enabled = YES;
+		}
 	}
 }
 
 
 - (void)didUpdatePanelType:(NSMutableString *)newPanelType {
 	if (![dataPanelType isEqualToString:newPanelType]) {
+		[dataPanelType release];
+		
 		dataPanelType = newPanelType;
 		
 		[self.tableView reloadData];
+		
+		if (![dataPanelName isEqualToString:@""] & dataPanelSet != nil) {
+			self.navigationItem.rightBarButtonItem.enabled = YES;
+		}
 	}
 }
 

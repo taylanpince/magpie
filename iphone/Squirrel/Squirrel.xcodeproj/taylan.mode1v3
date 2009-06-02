@@ -279,7 +279,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>33</integer>
+									<integer>10</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -321,7 +321,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>FlipsideViewController.m</string>
+								<string>DataPanelViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,11 +329,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>FlipsideViewController.m</string>
+										<string>DataPanelViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ECFB026D0FD4B94200EEE684</string>
+										<string>ECFB02730FD4C28500EEE684</string>
 										<key>history</key>
 										<array>
 											<string>EC6EB7CF0FD196DD00E6F9D8</string>
@@ -368,13 +368,9 @@
 											<string>ECFB02510FD4B78A00EEE684</string>
 											<string>ECFB025E0FD4B8D600EEE684</string>
 											<string>ECFB025F0FD4B8D600EEE684</string>
-											<string>ECFB02600FD4B8D600EEE684</string>
 											<string>ECFB026A0FD4B94200EEE684</string>
-											<string>ECFB026B0FD4B94200EEE684</string>
-										</array>
-										<key>nextStack</key>
-										<array>
-											<string>ECFB026C0FD4B94200EEE684</string>
+											<string>ECFB02700FD4C28500EEE684</string>
+											<string>ECFB02710FD4C28500EEE684</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -557,6 +553,7 @@
 											<string>ECFB02620FD4B8D600EEE684</string>
 											<string>ECFB02630FD4B8D600EEE684</string>
 											<string>ECFB02640FD4B8D600EEE684</string>
+											<string>ECFB02720FD4C28500EEE684</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
