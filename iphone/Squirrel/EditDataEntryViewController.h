@@ -10,9 +10,17 @@
 
 
 @interface EditDataEntryViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource> {
+	UIPickerView *pickerView;
+	UIDatePicker *datePickerView;
 	DataEntry *dataEntry;
+	
+	IBOutlet UITableView *formTableView;
 }
 
+@property (nonatomic, retain) UIPickerView *pickerView;
+@property (nonatomic, retain) UIDatePicker *datePickerView;
 @property (nonatomic, assign) DataEntry *dataEntry;
+
+@property (nonatomic, retain) IBOutlet UITableView *formTableView;
 
 @end

@@ -13,7 +13,7 @@
 
 @implementation EditDataEntryViewController
 
-@synthesize dataEntry;
+@synthesize dataEntry, formTableView, pickerView, datePickerView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,6 +33,16 @@
 	UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
 	[self.navigationItem setLeftBarButtonItem:cancelButton];
 	[cancelButton release];
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	
+	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+	
+	[formTableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+	[self tableView:formTableView didSelectRowAtIndexPath:indexPath];
 }
 
 
@@ -75,6 +85,36 @@
 }
 
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (indexPath.row == 0 & !pickerView) {
+		if (datePickerView) {
+			[datePickerView removeFromSuperview];
+			[datePickerView release];
+
+			datePickerView = nil;
+		}
+
+		pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0, 200.0, self.view.frame.size.width, 216.0)];
+		
+		pickerView.delegate = self;
+		pickerView.dataSource = self;
+		
+		[self.view addSubview:pickerView];
+	} else if (!datePickerView) {
+		if (pickerView) {
+			[pickerView removeFromSuperview];
+			[pickerView release];
+			
+			pickerView = nil;
+		}
+
+		datePickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0.0, 200.0, self.view.frame.size.width, 216.0)];
+		
+		[self.view addSubview:datePickerView];
+	}
+}
+
+
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
 	return 7;
 }
@@ -108,6 +148,9 @@
 
 
 - (void)dealloc {
+	[formTableView release];
+	[pickerView release];
+	[datePickerView release];
     [super dealloc];
 }
 

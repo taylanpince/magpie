@@ -284,7 +284,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 391}, {214, 764}}</string>
+							<string>{{0, 160}, {214, 764}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -333,7 +333,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>EC341E980FD5D1E30003212C</string>
+										<string>EC341ECA0FD5E29F0003212C</string>
 										<key>history</key>
 										<array>
 											<string>ECB3AA360FD1DDC700F81F02</string>
@@ -371,10 +371,10 @@
 											<string>EC341E6E0FD5CC9B0003212C</string>
 											<string>EC341E7E0FD5D0FE0003212C</string>
 											<string>EC341E7F0FD5D0FE0003212C</string>
-											<string>EC341E800FD5D0FE0003212C</string>
 											<string>EC341E820FD5D0FE0003212C</string>
-											<string>EC341E910FD5D14E0003212C</string>
-											<string>EC341E920FD5D14E0003212C</string>
+											<string>EC341E9F0FD5DD180003212C</string>
+											<string>EC341EBA0FD5DE9A0003212C</string>
+											<string>EC341EBB0FD5DE9A0003212C</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -442,8 +442,18 @@
 											<string>EC341E870FD5D0FE0003212C</string>
 											<string>EC341E880FD5D0FE0003212C</string>
 											<string>EC341E890FD5D0FE0003212C</string>
-											<string>EC341E8F0FD5D12A0003212C</string>
 											<string>EC341E930FD5D14E0003212C</string>
+											<string>EC341E9D0FD5DC0A0003212C</string>
+											<string>EC341EA20FD5DD180003212C</string>
+											<string>EC341EA30FD5DD180003212C</string>
+											<string>EC341EAA0FD5DD6C0003212C</string>
+											<string>EC341EAB0FD5DD6C0003212C</string>
+											<string>EC341EAC0FD5DD6C0003212C</string>
+											<string>EC341EAD0FD5DD6C0003212C</string>
+											<string>EC341EB60FD5DDE00003212C</string>
+											<string>EC341EB70FD5DDE00003212C</string>
+											<string>EC341EBC0FD5DE9A0003212C</string>
+											<string>EC341EBD0FD5DE9A0003212C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -641,8 +651,8 @@
 		<string>EC341DC00FD5ADB90003212C</string>
 		<string>EC6EB79A0FD0AB2E00E6F9D8</string>
 		<string>/Users/taylan/Documents/Development/Personal/squirrel/iphone/Squirrel/Squirrel.xcodeproj</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>4 55 1436 823 0 0 1440 878 </string>
