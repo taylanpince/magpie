@@ -32,6 +32,7 @@
 - (void)insertIntoDatabase:(sqlite3 *)database;
 
 - (void)hydrate;
+- (void)forceHydrate;
 - (void)dehydrate;
 - (void)deleteFromDatabase;
 

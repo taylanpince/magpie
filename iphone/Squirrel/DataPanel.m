@@ -150,13 +150,18 @@ static sqlite3_stmt *dehydrate_statement = nil;
 		self.type = (str) ? [NSString stringWithUTF8String:str] : @"";
 		self.weight = [NSNumber numberWithInt:sqlite3_column_int(hydrate_statement, 1)];
 		self.dataSet = [[DataSet alloc] initWithPrimaryKey:sqlite3_column_int(hydrate_statement, 2) database:database];
-    } else {
-
     }
 	
     sqlite3_reset(hydrate_statement);
 	
     hydrated = YES;
+}
+
+
+- (void)forceHydrate {
+	hydrated = NO;
+	
+	[self hydrate];
 }
 
 

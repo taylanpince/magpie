@@ -9,6 +9,7 @@
 #import "SquirrelAppDelegate.h"
 #import "DataPanelViewController.h"
 #import "EditableTableViewCell.h"
+#import	"SelectableTableViewCell.h"
 #import "DataPanel.h"
 #import "DataSet.h"
 #import "SelectDataSetViewController.h"
@@ -50,15 +51,13 @@
 		dataPanelSet = dataPanel.dataSet;
 	} else {
 		dataPanelName = [[NSMutableString alloc] init];
-		dataPanelName = [[NSMutableString alloc] init];
-		dataPanelSet = [[DataSet alloc] init];
+		dataPanelType = [[NSMutableString alloc] init];
 	}
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	NSLog(@"Data Panel Set: %@", dataPanelSet.name);
 }
 
 
@@ -133,24 +132,32 @@
 	} else {
 		static NSString *CellIdentifier = @"SelectCell";
 		
-		UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		SelectableTableViewCell *cell = (SelectableTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		
 		if (cell == nil) {
-			cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+			cell = [[[SelectableTableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
 			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 		}
 		
 		if (indexPath.row == 1) {
+			cell.titleLabel.text = @"Data Set";
+			
 			if (dataPanelSet.primaryKey) {
-				cell.text = dataPanelSet.name;
+				cell.dataLabel.text = dataPanelSet.name;
+				cell.blank = NO;
 			} else {
-				cell.text = @"Select a Data Set";
+				cell.dataLabel.text = @"Select a Data Set";
+				cell.blank = YES;
 			}
 		} else if (indexPath.row == 2) {
-			if (dataPanelType) {
-				cell.text = dataPanelType;
+			cell.titleLabel.text = @"Panel Type";
+			
+			if (![dataPanelType isEqualToString:@""]) {
+				cell.dataLabel.text = dataPanelType;
+				cell.blank = NO;
 			} else {
-				cell.text = @"Select a Panel Type";
+				cell.dataLabel.text = @"Select a Panel Type";
+				cell.blank = YES;
 			}
 		}
 

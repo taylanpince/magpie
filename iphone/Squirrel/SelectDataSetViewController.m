@@ -51,7 +51,7 @@
     
 	DataSet *cellDataSet = [[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] objectAtIndex:indexPath.row];
 	
-	if ([cellDataSet isEqualTo:dataSet]) {
+	if (dataSet != nil & cellDataSet.primaryKey == dataSet.primaryKey) {
 		cell.accessoryType = UITableViewCellAccessoryCheckmark;
 	}
 	

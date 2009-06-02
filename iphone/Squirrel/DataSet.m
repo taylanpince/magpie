@@ -213,30 +213,35 @@ static sqlite3_stmt *select_related_statement = nil;
 }
 
 
-- (void)dehydrate {
-    if (dirty) {
+- (void)save {
+	if (dirty) {
         if (dehydrate_statement == nil) {
             const char *sql = "UPDATE data_sets SET name=?, last_updated=? WHERE pk=?";
-
+			
             if (sqlite3_prepare_v2(database, sql, -1, &dehydrate_statement, NULL) != SQLITE_OK) {
                 NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
             }
         }
-
+		
         sqlite3_bind_text(dehydrate_statement, 1, [name UTF8String], -1, SQLITE_TRANSIENT);
         sqlite3_bind_double(dehydrate_statement, 2, [lastUpdated timeIntervalSince1970]);
         sqlite3_bind_int(dehydrate_statement, 3, primaryKey);
-
+		
         int success = sqlite3_step(dehydrate_statement);
-
+		
         sqlite3_reset(dehydrate_statement);
-
+		
         if (success != SQLITE_DONE) {
             NSAssert1(0, @"Error: failed to dehydrate with message '%s'.", sqlite3_errmsg(database));
         }
-
+		
         dirty = NO;
     }
+}
+
+
+- (void)dehydrate {
+    [self save];
 
     [name release];
     name = nil;

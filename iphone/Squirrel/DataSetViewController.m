@@ -86,6 +86,8 @@
 	
 	if (!dataSet.primaryKey) {
 		[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] addDataSet:dataSet];
+	} else {
+		[dataSet save];
 	}
 
 	for (DataItem *dataItem in dataItems) {
