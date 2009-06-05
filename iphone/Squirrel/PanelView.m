@@ -45,7 +45,7 @@ static UIFont *mainFont = nil;
 
 - (void)layoutSubviews {
 	if (rendered) return;
-	NSLog(@"Called layoutSubviews");
+
 	CGPoint point = CGPointMake(10.0, 10.0);
 	
 	UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, self.frame.size.width - 20.0, 20.0)];

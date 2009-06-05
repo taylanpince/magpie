@@ -236,6 +236,7 @@ static sqlite3_stmt *select_related_statement = nil;
 	
 	while (sqlite3_step(select_related_statement) == SQLITE_ROW) {
 		DataEntry *dataEntry = [[DataEntry alloc] initWithPrimaryKey:sqlite3_column_int(select_related_statement, 0) database:database];
+		dataEntry.dataItem = self;
 		[dataEntries addObject:dataEntry];
 		[dataEntry release];
 	}

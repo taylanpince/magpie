@@ -279,7 +279,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>13</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -321,7 +321,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MainViewController.m</string>
+								<string>DataEntryViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,11 +329,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MainViewController.m</string>
+										<string>DataEntryViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ECFD574F0FD9D11F00D6117E</string>
+										<string>ECFD57710FD9D4C800D6117E</string>
 										<key>history</key>
 										<array>
 											<string>ECB3AA360FD1DDC700F81F02</string>
@@ -363,20 +363,20 @@
 											<string>ECFD55B80FD99E2E00D6117E</string>
 											<string>ECFD56020FD9B28300D6117E</string>
 											<string>ECFD56030FD9B28300D6117E</string>
-											<string>ECFD56120FD9B32B00D6117E</string>
-											<string>ECFD56130FD9B32B00D6117E</string>
 											<string>ECFD56430FD9B72A00D6117E</string>
-											<string>ECFD565F0FD9B89A00D6117E</string>
 											<string>ECFD56600FD9B89A00D6117E</string>
 											<string>ECFD56610FD9B89A00D6117E</string>
 											<string>ECFD566B0FD9B8C400D6117E</string>
 											<string>ECFD567E0FD9BC2B00D6117E</string>
-											<string>ECFD56830FD9BC5700D6117E</string>
 											<string>ECFD568C0FD9BDA400D6117E</string>
 											<string>ECFD56E30FD9C45000D6117E</string>
 											<string>ECFD57420FD9D02B00D6117E</string>
-											<string>ECFD574B0FD9D0AA00D6117E</string>
-											<string>ECFD574C0FD9D0AA00D6117E</string>
+											<string>ECFD57510FD9D2EF00D6117E</string>
+											<string>ECFD575C0FD9D32A00D6117E</string>
+											<string>ECFD57610FD9D3AF00D6117E</string>
+											<string>ECFD57650FD9D3F000D6117E</string>
+											<string>ECFD576F0FD9D4C800D6117E</string>
+											<string>ECFD576B0FD9D4B200D6117E</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -403,7 +403,6 @@
 											<string>ECFB05A20FD5884600EEE684</string>
 											<string>ECFB05A40FD5884600EEE684</string>
 											<string>ECFB05A70FD5884600EEE684</string>
-											<string>ECFB05A80FD5884600EEE684</string>
 											<string>ECFB05AB0FD5884600EEE684</string>
 											<string>ECFB05B00FD5884600EEE684</string>
 											<string>ECFB05C00FD5896200EEE684</string>
@@ -453,11 +452,9 @@
 											<string>ECFD55590FD9973100D6117E</string>
 											<string>ECFD555A0FD9973100D6117E</string>
 											<string>ECFD555B0FD9973100D6117E</string>
-											<string>ECFD555C0FD9973100D6117E</string>
 											<string>ECFD555D0FD9973100D6117E</string>
 											<string>ECFD555E0FD9973100D6117E</string>
 											<string>ECFD555F0FD9973100D6117E</string>
-											<string>ECFD55600FD9973100D6117E</string>
 											<string>ECFD55680FD9979800D6117E</string>
 											<string>ECFD556E0FD9984500D6117E</string>
 											<string>ECFD55760FD9988B00D6117E</string>
@@ -496,7 +493,6 @@
 											<string>ECFD56210FD9B59E00D6117E</string>
 											<string>ECFD562F0FD9B6C100D6117E</string>
 											<string>ECFD56300FD9B6C100D6117E</string>
-											<string>ECFD56310FD9B6C100D6117E</string>
 											<string>ECFD56320FD9B6C100D6117E</string>
 											<string>ECFD56330FD9B6C100D6117E</string>
 											<string>ECFD56340FD9B6C100D6117E</string>
@@ -512,7 +508,6 @@
 											<string>ECFD56580FD9B80100D6117E</string>
 											<string>ECFD56640FD9B89A00D6117E</string>
 											<string>ECFD56650FD9B89A00D6117E</string>
-											<string>ECFD56660FD9B89A00D6117E</string>
 											<string>ECFD56670FD9B89A00D6117E</string>
 											<string>ECFD56680FD9B89A00D6117E</string>
 											<string>ECFD56690FD9B89A00D6117E</string>
@@ -568,6 +563,11 @@
 											<string>ECFD57450FD9D02B00D6117E</string>
 											<string>ECFD57460FD9D02B00D6117E</string>
 											<string>ECFD574D0FD9D0AA00D6117E</string>
+											<string>ECFD57540FD9D2EF00D6117E</string>
+											<string>ECFD57550FD9D2EF00D6117E</string>
+											<string>ECFD57630FD9D3AF00D6117E</string>
+											<string>ECFD57670FD9D3F000D6117E</string>
+											<string>ECFD57700FD9D4C800D6117E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -765,8 +765,8 @@
 		<string>ECFD54E00FD972AA00D6117E</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>EC6EB79A0FD0AB2E00E6F9D8</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/taylan/Documents/Development/Personal/squirrel/iphone/Squirrel/Squirrel.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -786,12 +786,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>DataEntryViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

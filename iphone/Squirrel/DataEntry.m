@@ -157,7 +157,7 @@ static sqlite3_stmt *dehydrate_statement = nil;
 - (void)dehydrate {
     if (dirty) {
         if (dehydrate_statement == nil) {
-            const char *sql = "UPDATE data_entries SET value=?, timestamp=?, data_set=? WHERE pk=?";
+            const char *sql = "UPDATE data_entries SET value=?, timestamp=?, data_item=? WHERE pk=?";
 			
             if (sqlite3_prepare_v2(database, sql, -1, &dehydrate_statement, NULL) != SQLITE_OK) {
                 NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));

@@ -29,9 +29,9 @@
 	};
 	289233A90DB2D0DB0083E9F9 /* MainViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1139, 1870}}";
-			sepNavSelRange = "{617, 0}";
-			sepNavVisRange = "{1814, 698}";
+			sepNavIntBoundsRect = "{{0, 0}, {1060, 1853}}";
+			sepNavSelRange = "{590, 0}";
+			sepNavVisRange = "{461, 133}";
 		};
 	};
 	289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */ = {
@@ -658,6 +658,31 @@
 			ECFD574D0FD9D0AA00D6117E /* PBXTextBookmark */ = ECFD574D0FD9D0AA00D6117E /* PBXTextBookmark */;
 			ECFD574E0FD9D0AA00D6117E /* PBXTextBookmark */ = ECFD574E0FD9D0AA00D6117E /* PBXTextBookmark */;
 			ECFD574F0FD9D11F00D6117E /* PBXTextBookmark */ = ECFD574F0FD9D11F00D6117E /* PBXTextBookmark */;
+			ECFD57510FD9D2EF00D6117E /* PBXTextBookmark */ = ECFD57510FD9D2EF00D6117E /* PBXTextBookmark */;
+			ECFD57520FD9D2EF00D6117E /* PBXTextBookmark */ = ECFD57520FD9D2EF00D6117E /* PBXTextBookmark */;
+			ECFD57530FD9D2EF00D6117E /* PBXTextBookmark */ = ECFD57530FD9D2EF00D6117E /* PBXTextBookmark */;
+			ECFD57540FD9D2EF00D6117E /* PBXTextBookmark */ = ECFD57540FD9D2EF00D6117E /* PBXTextBookmark */;
+			ECFD57550FD9D2EF00D6117E /* PBXTextBookmark */ = ECFD57550FD9D2EF00D6117E /* PBXTextBookmark */;
+			ECFD57560FD9D2EF00D6117E /* PBXTextBookmark */ = ECFD57560FD9D2EF00D6117E /* PBXTextBookmark */;
+			ECFD57570FD9D2EF00D6117E /* PBXTextBookmark */ = ECFD57570FD9D2EF00D6117E /* PBXTextBookmark */;
+			ECFD57590FD9D30E00D6117E /* PBXTextBookmark */ = ECFD57590FD9D30E00D6117E /* PBXTextBookmark */;
+			ECFD575C0FD9D32A00D6117E /* PBXTextBookmark */ = ECFD575C0FD9D32A00D6117E /* PBXTextBookmark */;
+			ECFD575D0FD9D32A00D6117E /* PBXTextBookmark */ = ECFD575D0FD9D32A00D6117E /* PBXTextBookmark */;
+			ECFD575E0FD9D32A00D6117E /* PBXTextBookmark */ = ECFD575E0FD9D32A00D6117E /* PBXTextBookmark */;
+			ECFD57610FD9D3AF00D6117E /* PBXTextBookmark */ = ECFD57610FD9D3AF00D6117E /* PBXTextBookmark */;
+			ECFD57620FD9D3AF00D6117E /* PBXTextBookmark */ = ECFD57620FD9D3AF00D6117E /* PBXTextBookmark */;
+			ECFD57630FD9D3AF00D6117E /* PBXTextBookmark */ = ECFD57630FD9D3AF00D6117E /* PBXTextBookmark */;
+			ECFD57640FD9D3AF00D6117E /* PBXTextBookmark */ = ECFD57640FD9D3AF00D6117E /* PBXTextBookmark */;
+			ECFD57650FD9D3F000D6117E /* PBXTextBookmark */ = ECFD57650FD9D3F000D6117E /* PBXTextBookmark */;
+			ECFD57660FD9D3F000D6117E /* PBXTextBookmark */ = ECFD57660FD9D3F000D6117E /* PBXTextBookmark */;
+			ECFD57670FD9D3F000D6117E /* PBXTextBookmark */ = ECFD57670FD9D3F000D6117E /* PBXTextBookmark */;
+			ECFD57680FD9D3F000D6117E /* PBXTextBookmark */ = ECFD57680FD9D3F000D6117E /* PBXTextBookmark */;
+			ECFD576B0FD9D4B200D6117E /* PBXTextBookmark */ = ECFD576B0FD9D4B200D6117E /* PBXTextBookmark */;
+			ECFD576C0FD9D4B200D6117E /* PBXTextBookmark */ = ECFD576C0FD9D4B200D6117E /* PBXTextBookmark */;
+			ECFD576D0FD9D4B200D6117E /* PBXTextBookmark */ = ECFD576D0FD9D4B200D6117E /* PBXTextBookmark */;
+			ECFD576F0FD9D4C800D6117E /* PBXTextBookmark */ = ECFD576F0FD9D4C800D6117E /* PBXTextBookmark */;
+			ECFD57700FD9D4C800D6117E /* PBXTextBookmark */ = ECFD57700FD9D4C800D6117E /* PBXTextBookmark */;
+			ECFD57710FD9D4C800D6117E /* PBXTextBookmark */ = ECFD57710FD9D4C800D6117E /* PBXTextBookmark */;
 		};
 		sourceControlManager = EC6EB7970FD0AA8000E6F9D8 /* Source Control */;
 		userBuildSettings = {
@@ -686,9 +711,9 @@
 	};
 	EC341D9C0FD5AAE40003212C /* DataEntryViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1212, 2686}}";
-			sepNavSelRange = "{2596, 0}";
-			sepNavVisRange = "{1941, 1056}";
+			sepNavIntBoundsRect = "{{0, 0}, {1212, 2669}}";
+			sepNavSelRange = "{854, 0}";
+			sepNavVisRange = "{403, 969}";
 		};
 	};
 	EC341DA20FD5AD450003212C /* PBXTextBookmark */ = {
@@ -800,9 +825,9 @@
 	};
 	EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1212, 3961}}";
-			sepNavSelRange = "{3182, 0}";
-			sepNavVisRange = "{3266, 507}";
+			sepNavIntBoundsRect = "{{0, 0}, {1004, 4046}}";
+			sepNavSelRange = "{3689, 0}";
+			sepNavVisRange = "{3217, 562}";
 		};
 	};
 	EC341E650FD5CC290003212C /* PBXTextBookmark */ = {
@@ -1146,7 +1171,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 151";
 		rLen = 0;
-		rLoc = 6279;
+		rLoc = 6314;
 		rType = 0;
 		vrLen = 847;
 		vrLoc = 2307;
@@ -1296,7 +1321,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 151";
 		rLen = 0;
-		rLoc = 6279;
+		rLoc = 6314;
 		rType = 0;
 		vrLen = 822;
 		vrLoc = 2421;
@@ -1326,7 +1351,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 151";
 		rLen = 0;
-		rLoc = 6279;
+		rLoc = 6314;
 		rType = 0;
 		vrLen = 848;
 		vrLoc = 2307;
@@ -1356,7 +1381,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 151";
 		rLen = 0;
-		rLoc = 6279;
+		rLoc = 6314;
 		rType = 0;
 		vrLen = 847;
 		vrLoc = 2307;
@@ -1376,7 +1401,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 151";
 		rLen = 0;
-		rLoc = 6279;
+		rLoc = 6314;
 		rType = 0;
 		vrLen = 847;
 		vrLoc = 2307;
@@ -1396,7 +1421,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 102";
 		rLen = 0;
-		rLoc = 3853;
+		rLoc = 3888;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 2462;
@@ -1704,9 +1729,9 @@
 	};
 	ECFB033B0FD4D80100EEE684 /* PanelView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1139, 2176}}";
-			sepNavSelRange = "{324, 0}";
-			sepNavVisRange = "{0, 623}";
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 2346}}";
+			sepNavSelRange = "{813, 0}";
+			sepNavVisRange = "{623, 795}";
 		};
 	};
 	ECFB03420FD4D9F400EEE684 /* PBXTextBookmark */ = {
@@ -1739,8 +1764,8 @@
 	ECFB05890FD57CF000EEE684 /* DataEntry.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1139, 3995}}";
-			sepNavSelRange = "{5600, 0}";
-			sepNavVisRange = "{911, 1038}";
+			sepNavSelRange = "{4540, 9}";
+			sepNavVisRange = "{4312, 1085}";
 		};
 	};
 	ECFB05970FD5884600EEE684 /* PBXTextBookmark */ = {
@@ -1878,7 +1903,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 267";
 		rLen = 0;
-		rLoc = 8158;
+		rLoc = 8187;
 		rType = 0;
 		vrLen = 928;
 		vrLoc = 5540;
@@ -1908,7 +1933,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 116";
 		rLen = 0;
-		rLoc = 3122;
+		rLoc = 3089;
 		rType = 0;
 		vrLen = 1004;
 		vrLoc = 2101;
@@ -1928,7 +1953,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 114";
 		rLen = 0;
-		rLoc = 3201;
+		rLoc = 3168;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 1906;
@@ -1942,9 +1967,9 @@
 	};
 	ECFBFC410FD28B1700EEE684 /* DataItem.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1139, 5355}}";
-			sepNavSelRange = "{7348, 0}";
-			sepNavVisRange = "{7120, 579}";
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 5423}}";
+			sepNavSelRange = "{7020, 0}";
+			sepNavVisRange = "{6241, 960}";
 		};
 	};
 	ECFBFC5B0FD2998700EEE684 /* PBXTextBookmark */ = {
@@ -2026,7 +2051,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 75";
 		rLen = 0;
-		rLoc = 1607;
+		rLoc = 1574;
 		rType = 0;
 		vrLen = 884;
 		vrLoc = 2217;
@@ -2036,7 +2061,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 139";
 		rLen = 0;
-		rLoc = 5209;
+		rLoc = 5244;
 		rType = 0;
 		vrLen = 978;
 		vrLoc = 0;
@@ -2046,7 +2071,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 107";
 		rLen = 0;
-		rLoc = 3895;
+		rLoc = 3930;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 2462;
@@ -2066,7 +2091,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 92";
 		rLen = 0;
-		rLoc = 3531;
+		rLoc = 3566;
 		rType = 0;
 		vrLen = 943;
 		vrLoc = 2169;
@@ -2136,7 +2161,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 121";
 		rLen = 0;
-		rLoc = 6248;
+		rLoc = 6283;
 		rType = 0;
 		vrLen = 598;
 		vrLoc = 2878;
@@ -2156,7 +2181,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 139";
 		rLen = 0;
-		rLoc = 5209;
+		rLoc = 5244;
 		rType = 0;
 		vrLen = 978;
 		vrLoc = 0;
@@ -2176,7 +2201,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 75";
 		rLen = 0;
-		rLoc = 1607;
+		rLoc = 1574;
 		rType = 0;
 		vrLen = 884;
 		vrLoc = 2217;
@@ -2186,7 +2211,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 115";
 		rLen = 0;
-		rLoc = 3928;
+		rLoc = 3963;
 		rType = 0;
 		vrLen = 814;
 		vrLoc = 2705;
@@ -2196,7 +2221,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 126";
 		rLen = 0;
-		rLoc = 4366;
+		rLoc = 4401;
 		rType = 0;
 		vrLen = 963;
 		vrLoc = 2864;
@@ -2206,7 +2231,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 133";
 		rLen = 0;
-		rLoc = 4521;
+		rLoc = 4556;
 		rType = 0;
 		vrLen = 1010;
 		vrLoc = 3159;
@@ -2216,7 +2241,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 137";
 		rLen = 0;
-		rLoc = 4519;
+		rLoc = 4554;
 		rType = 0;
 		vrLen = 913;
 		vrLoc = 3159;
@@ -2226,7 +2251,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 135";
 		rLen = 0;
-		rLoc = 4488;
+		rLoc = 4523;
 		rType = 0;
 		vrLen = 920;
 		vrLoc = 3159;
@@ -2246,7 +2271,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 93";
 		rLen = 0;
-		rLoc = 3331;
+		rLoc = 3366;
 		rType = 0;
 		vrLen = 931;
 		vrLoc = 1872;
@@ -2256,7 +2281,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 93";
 		rLen = 0;
-		rLoc = 3331;
+		rLoc = 3366;
 		rType = 0;
 		vrLen = 931;
 		vrLoc = 1872;
@@ -2326,7 +2351,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 190";
 		rLen = 0;
-		rLoc = 6526;
+		rLoc = 6561;
 		rType = 0;
 		vrLen = 682;
 		vrLoc = 4862;
@@ -2336,7 +2361,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 65";
 		rLen = 0;
-		rLoc = 2421;
+		rLoc = 2456;
 		rType = 0;
 		vrLen = 717;
 		vrLoc = 1622;
@@ -2416,7 +2441,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 73";
 		rLen = 0;
-		rLoc = 2361;
+		rLoc = 2396;
 		rType = 0;
 		vrLen = 827;
 		vrLoc = 1650;
@@ -2426,7 +2451,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 73";
 		rLen = 0;
-		rLoc = 2361;
+		rLoc = 2396;
 		rType = 0;
 		vrLen = 827;
 		vrLoc = 1650;
@@ -2536,7 +2561,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 284";
 		rLen = 0;
-		rLoc = 8121;
+		rLoc = 8150;
 		rType = 0;
 		vrLen = 755;
 		vrLoc = 7189;
@@ -2566,7 +2591,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 284";
 		rLen = 0;
-		rLoc = 8121;
+		rLoc = 8150;
 		rType = 0;
 		vrLen = 755;
 		vrLoc = 7189;
@@ -2646,7 +2671,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 284";
 		rLen = 0;
-		rLoc = 8121;
+		rLoc = 8150;
 		rType = 0;
 		vrLen = 757;
 		vrLoc = 7187;
@@ -2726,7 +2751,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 284";
 		rLen = 0;
-		rLoc = 8121;
+		rLoc = 8150;
 		rType = 0;
 		vrLen = 757;
 		vrLoc = 7187;
@@ -2746,7 +2771,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 284";
 		rLen = 0;
-		rLoc = 8121;
+		rLoc = 8150;
 		rType = 0;
 		vrLen = 757;
 		vrLoc = 7187;
@@ -2846,7 +2871,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 75";
 		rLen = 0;
-		rLoc = 1607;
+		rLoc = 1574;
 		rType = 0;
 		vrLen = 1106;
 		vrLoc = 823;
@@ -2906,7 +2931,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 75";
 		rLen = 0;
-		rLoc = 1607;
+		rLoc = 1574;
 		rType = 0;
 		vrLen = 1106;
 		vrLoc = 823;
@@ -3213,7 +3238,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 85";
 		rLen = 0;
-		rLoc = 2515;
+		rLoc = 2550;
 		rType = 0;
 		vrLen = 678;
 		vrLoc = 2007;
@@ -3243,7 +3268,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 85";
 		rLen = 0;
-		rLoc = 2515;
+		rLoc = 2550;
 		rType = 0;
 		vrLen = 678;
 		vrLoc = 2007;
@@ -3503,7 +3528,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 202";
 		rLen = 0;
-		rLoc = 6417;
+		rLoc = 6452;
 		rType = 0;
 		vrLen = 650;
 		vrLoc = 5317;
@@ -3843,7 +3868,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 166";
 		rLen = 1;
-		rLoc = 5421;
+		rLoc = 5456;
 		rType = 0;
 		vrLen = 986;
 		vrLoc = 3248;
@@ -3863,7 +3888,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 166";
 		rLen = 1;
-		rLoc = 5421;
+		rLoc = 5456;
 		rType = 0;
 		vrLen = 986;
 		vrLoc = 3248;
@@ -3933,7 +3958,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 159";
 		rLen = 0;
-		rLoc = 4705;
+		rLoc = 4740;
 		rType = 0;
 		vrLen = 1275;
 		vrLoc = 4472;
@@ -3943,7 +3968,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 173";
 		rLen = 0;
-		rLoc = 5443;
+		rLoc = 5478;
 		rType = 0;
 		vrLen = 1170;
 		vrLoc = 4633;
@@ -3953,7 +3978,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 175";
 		rLen = 0;
-		rLoc = 5530;
+		rLoc = 5565;
 		rType = 0;
 		vrLen = 1240;
 		vrLoc = 4557;
@@ -3963,7 +3988,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 181";
 		rLen = 0;
-		rLoc = 5609;
+		rLoc = 5644;
 		rType = 0;
 		vrLen = 1203;
 		vrLoc = 4557;
@@ -3973,7 +3998,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 193";
 		rLen = 0;
-		rLoc = 6174;
+		rLoc = 6209;
 		rType = 0;
 		vrLen = 694;
 		vrLoc = 5281;
@@ -3983,7 +4008,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 193";
 		rLen = 0;
-		rLoc = 6174;
+		rLoc = 6209;
 		rType = 0;
 		vrLen = 737;
 		vrLoc = 5281;
@@ -3993,7 +4018,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 194";
 		rLen = 0;
-		rLoc = 6248;
+		rLoc = 6283;
 		rType = 0;
 		vrLen = 941;
 		vrLoc = 4995;
@@ -4003,7 +4028,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 192";
 		rLen = 0;
-		rLoc = 6146;
+		rLoc = 6181;
 		rType = 0;
 		vrLen = 812;
 		vrLoc = 5199;
@@ -4013,7 +4038,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 193";
 		rLen = 0;
-		rLoc = 6248;
+		rLoc = 6283;
 		rType = 0;
 		vrLen = 876;
 		vrLoc = 5119;
@@ -4023,7 +4048,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 193";
 		rLen = 0;
-		rLoc = 6223;
+		rLoc = 6258;
 		rType = 0;
 		vrLen = 1064;
 		vrLoc = 4844;
@@ -4033,7 +4058,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 195";
 		rLen = 0;
-		rLoc = 6246;
+		rLoc = 6281;
 		rType = 0;
 		vrLen = 865;
 		vrLoc = 5302;
@@ -4043,7 +4068,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 182";
 		rLen = 0;
-		rLoc = 5609;
+		rLoc = 5644;
 		rType = 0;
 		vrLen = 931;
 		vrLoc = 5022;
@@ -4053,7 +4078,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 174";
 		rLen = 0;
-		rLoc = 5512;
+		rLoc = 5547;
 		rType = 0;
 		vrLen = 1090;
 		vrLoc = 4733;
@@ -4073,7 +4098,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 188";
 		rLen = 0;
-		rLoc = 6056;
+		rLoc = 6091;
 		rType = 0;
 		vrLen = 1046;
 		vrLoc = 4861;
@@ -4083,7 +4108,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 198";
 		rLen = 0;
-		rLoc = 6223;
+		rLoc = 6258;
 		rType = 0;
 		vrLen = 803;
 		vrLoc = 5302;
@@ -4093,7 +4118,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 179";
 		rLen = 0;
-		rLoc = 5662;
+		rLoc = 5697;
 		rType = 0;
 		vrLen = 907;
 		vrLoc = 5165;
@@ -4133,7 +4158,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 107";
 		rLen = 0;
-		rLoc = 3182;
+		rLoc = 3217;
 		rType = 0;
 		vrLen = 1006;
 		vrLoc = 3402;
@@ -4143,7 +4168,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 162";
 		rLen = 0;
-		rLoc = 4943;
+		rLoc = 4978;
 		rType = 0;
 		vrLen = 1275;
 		vrLoc = 4524;
@@ -4153,7 +4178,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 166";
 		rLen = 0;
-		rLoc = 4975;
+		rLoc = 5010;
 		rType = 0;
 		vrLen = 1301;
 		vrLoc = 4522;
@@ -4163,7 +4188,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 184";
 		rLen = 0;
-		rLoc = 5737;
+		rLoc = 5772;
 		rType = 0;
 		vrLen = 1263;
 		vrLoc = 4797;
@@ -4173,7 +4198,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 176";
 		rLen = 0;
-		rLoc = 5348;
+		rLoc = 5383;
 		rType = 0;
 		vrLen = 1457;
 		vrLoc = 4525;
@@ -4223,7 +4248,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 180";
 		rLen = 0;
-		rLoc = 5557;
+		rLoc = 5592;
 		rType = 0;
 		vrLen = 1368;
 		vrLoc = 4491;
@@ -4343,7 +4368,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 202";
 		rLen = 0;
-		rLoc = 6223;
+		rLoc = 6258;
 		rType = 0;
 		vrLen = 1179;
 		vrLoc = 5070;
@@ -4353,7 +4378,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 75";
 		rLen = 0;
-		rLoc = 1607;
+		rLoc = 1574;
 		rType = 0;
 		vrLen = 1106;
 		vrLoc = 823;
@@ -4373,7 +4398,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 202";
 		rLen = 0;
-		rLoc = 6223;
+		rLoc = 6258;
 		rType = 0;
 		vrLen = 1179;
 		vrLoc = 5070;
@@ -4383,7 +4408,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 75";
 		rLen = 0;
-		rLoc = 1607;
+		rLoc = 1574;
 		rType = 0;
 		vrLen = 1106;
 		vrLoc = 823;
@@ -4403,7 +4428,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 257";
 		rLen = 0;
-		rLoc = 7283;
+		rLoc = 7312;
 		rType = 0;
 		vrLen = 648;
 		vrLoc = 6700;
@@ -4413,7 +4438,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 102";
 		rLen = 0;
-		rLoc = 2536;
+		rLoc = 2503;
 		rType = 0;
 		vrLen = 1048;
 		vrLoc = 1981;
@@ -4423,7 +4448,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 102";
 		rLen = 0;
-		rLoc = 2536;
+		rLoc = 2503;
 		rType = 0;
 		vrLen = 1097;
 		vrLoc = 1932;
@@ -4443,7 +4468,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 254";
 		rLen = 0;
-		rLoc = 7303;
+		rLoc = 7332;
 		rType = 0;
 		vrLen = 736;
 		vrLoc = 6700;
@@ -4463,7 +4488,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 257";
 		rLen = 0;
-		rLoc = 7283;
+		rLoc = 7312;
 		rType = 0;
 		vrLen = 648;
 		vrLoc = 6700;
@@ -4473,7 +4498,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 104";
 		rLen = 0;
-		rLoc = 2708;
+		rLoc = 2675;
 		rType = 0;
 		vrLen = 1085;
 		vrLoc = 1981;
@@ -4493,7 +4518,7 @@
 		fRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */;
 		name = "DataEntry.m: 198";
 		rLen = 0;
-		rLoc = 5600;
+		rLoc = 5601;
 		rType = 0;
 		vrLen = 677;
 		vrLoc = 5446;
@@ -4533,7 +4558,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 264";
 		rLen = 0;
-		rLoc = 7370;
+		rLoc = 7399;
 		rType = 0;
 		vrLen = 671;
 		vrLoc = 6698;
@@ -4543,7 +4568,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 102";
 		rLen = 62;
-		rLoc = 2536;
+		rLoc = 2503;
 		rType = 0;
 		vrLen = 1173;
 		vrLoc = 1613;
@@ -4553,7 +4578,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 104";
 		rLen = 0;
-		rLoc = 2708;
+		rLoc = 2675;
 		rType = 0;
 		vrLen = 1049;
 		vrLoc = 1981;
@@ -4573,7 +4598,7 @@
 		fRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */;
 		name = "DataEntry.m: 198";
 		rLen = 0;
-		rLoc = 5600;
+		rLoc = 5601;
 		rType = 0;
 		vrLen = 677;
 		vrLoc = 5446;
@@ -4583,7 +4608,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 102";
 		rLen = 62;
-		rLoc = 2536;
+		rLoc = 2503;
 		rType = 0;
 		vrLen = 1176;
 		vrLoc = 1610;
@@ -4623,7 +4648,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 264";
 		rLen = 0;
-		rLoc = 7370;
+		rLoc = 7399;
 		rType = 0;
 		vrLen = 671;
 		vrLoc = 6698;
@@ -4633,7 +4658,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 102";
 		rLen = 0;
-		rLoc = 2597;
+		rLoc = 2564;
 		rType = 0;
 		vrLen = 1080;
 		vrLoc = 1760;
@@ -4643,7 +4668,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 98";
 		rLen = 0;
-		rLoc = 2353;
+		rLoc = 2320;
 		rType = 0;
 		vrLen = 1134;
 		vrLoc = 1760;
@@ -4653,7 +4678,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 98";
 		rLen = 0;
-		rLoc = 2353;
+		rLoc = 2320;
 		rType = 0;
 		vrLen = 1133;
 		vrLoc = 1760;
@@ -4663,7 +4688,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 98";
 		rLen = 0;
-		rLoc = 2353;
+		rLoc = 2320;
 		rType = 0;
 		vrLen = 1172;
 		vrLoc = 1760;
@@ -4673,7 +4698,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 264";
 		rLen = 0;
-		rLoc = 7370;
+		rLoc = 7399;
 		rType = 0;
 		vrLen = 670;
 		vrLoc = 6698;
@@ -4683,7 +4708,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 98";
 		rLen = 0;
-		rLoc = 2353;
+		rLoc = 2320;
 		rType = 0;
 		vrLen = 1172;
 		vrLoc = 1760;
@@ -4693,7 +4718,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 264";
 		rLen = 0;
-		rLoc = 7348;
+		rLoc = 7377;
 		rType = 0;
 		vrLen = 673;
 		vrLoc = 6698;
@@ -4703,7 +4728,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 264";
 		rLen = 0;
-		rLoc = 7329;
+		rLoc = 7358;
 		rType = 0;
 		vrLen = 670;
 		vrLoc = 6698;
@@ -4723,7 +4748,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 264";
 		rLen = 0;
-		rLoc = 7329;
+		rLoc = 7358;
 		rType = 0;
 		vrLen = 670;
 		vrLoc = 6698;
@@ -4813,7 +4838,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 98";
 		rLen = 0;
-		rLoc = 2353;
+		rLoc = 2320;
 		rType = 0;
 		vrLen = 1145;
 		vrLoc = 1787;
@@ -4843,7 +4868,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 98";
 		rLen = 0;
-		rLoc = 2353;
+		rLoc = 2320;
 		rType = 0;
 		vrLen = 1145;
 		vrLoc = 1787;
@@ -4853,7 +4878,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 265";
 		rLen = 0;
-		rLoc = 7329;
+		rLoc = 7358;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 6698;
@@ -4863,7 +4888,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 98";
 		rLen = 0;
-		rLoc = 2353;
+		rLoc = 2320;
 		rType = 0;
 		vrLen = 1090;
 		vrLoc = 1787;
@@ -4873,7 +4898,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 265";
 		rLen = 0;
-		rLoc = 7329;
+		rLoc = 7358;
 		rType = 0;
 		vrLen = 706;
 		vrLoc = 6698;
@@ -4883,7 +4908,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 265";
 		rLen = 0;
-		rLoc = 7329;
+		rLoc = 7358;
 		rType = 0;
 		vrLen = 706;
 		vrLoc = 6698;
@@ -4893,7 +4918,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 98";
 		rLen = 0;
-		rLoc = 2353;
+		rLoc = 2320;
 		rType = 0;
 		vrLen = 1090;
 		vrLoc = 1787;
@@ -4903,7 +4928,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 264";
 		rLen = 0;
-		rLoc = 7329;
+		rLoc = 7358;
 		rType = 0;
 		vrLen = 625;
 		vrLoc = 6861;
@@ -4913,7 +4938,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 265";
 		rLen = 0;
-		rLoc = 7329;
+		rLoc = 7358;
 		rType = 0;
 		vrLen = 630;
 		vrLoc = 6861;
@@ -4923,7 +4948,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 266";
 		rLen = 0;
-		rLoc = 7329;
+		rLoc = 7358;
 		rType = 0;
 		vrLen = 635;
 		vrLoc = 6861;
@@ -4933,7 +4958,7 @@
 		fRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */;
 		name = "DataEntry.m: 198";
 		rLen = 0;
-		rLoc = 5600;
+		rLoc = 5601;
 		rType = 0;
 		vrLen = 1038;
 		vrLoc = 911;
@@ -5003,7 +5028,7 @@
 		fRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */;
 		name = "DataEntry.m: 198";
 		rLen = 0;
-		rLoc = 5600;
+		rLoc = 5601;
 		rType = 0;
 		vrLen = 1038;
 		vrLoc = 911;
@@ -5063,7 +5088,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 264";
 		rLen = 0;
-		rLoc = 7329;
+		rLoc = 7358;
 		rType = 0;
 		vrLen = 676;
 		vrLoc = 7190;
@@ -5073,7 +5098,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 98";
 		rLen = 0;
-		rLoc = 2353;
+		rLoc = 2320;
 		rType = 0;
 		vrLen = 1090;
 		vrLoc = 1787;
@@ -5093,7 +5118,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 98";
 		rLen = 0;
-		rLoc = 2353;
+		rLoc = 2320;
 		rType = 0;
 		vrLen = 1090;
 		vrLoc = 1787;
@@ -5113,7 +5138,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 264";
 		rLen = 0;
-		rLoc = 7329;
+		rLoc = 7358;
 		rType = 0;
 		vrLen = 676;
 		vrLoc = 7190;
@@ -5123,7 +5148,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 102";
 		rLen = 0;
-		rLoc = 2567;
+		rLoc = 2534;
 		rType = 0;
 		vrLen = 1155;
 		vrLoc = 1932;
@@ -5133,7 +5158,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 102";
 		rLen = 0;
-		rLoc = 2567;
+		rLoc = 2534;
 		rType = 0;
 		vrLen = 1060;
 		vrLoc = 1787;
@@ -5143,7 +5168,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 98";
 		rLen = 0;
-		rLoc = 2353;
+		rLoc = 2320;
 		rType = 0;
 		vrLen = 1115;
 		vrLoc = 1787;
@@ -5153,7 +5178,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 98";
 		rLen = 0;
-		rLoc = 2353;
+		rLoc = 2320;
 		rType = 0;
 		vrLen = 1135;
 		vrLoc = 1787;
@@ -5163,7 +5188,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 99";
 		rLen = 0;
-		rLoc = 2356;
+		rLoc = 2323;
 		rType = 0;
 		vrLen = 1060;
 		vrLoc = 1787;
@@ -5173,7 +5198,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 99";
 		rLen = 0;
-		rLoc = 2356;
+		rLoc = 2323;
 		rType = 0;
 		vrLen = 1142;
 		vrLoc = 1787;
@@ -5193,7 +5218,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 99";
 		rLen = 0;
-		rLoc = 2356;
+		rLoc = 2323;
 		rType = 0;
 		vrLen = 1142;
 		vrLoc = 1787;
@@ -5213,7 +5238,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 264";
 		rLen = 0;
-		rLoc = 7348;
+		rLoc = 7377;
 		rType = 0;
 		vrLen = 537;
 		vrLoc = 7120;
@@ -5223,7 +5248,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 264";
 		rLen = 0;
-		rLoc = 7348;
+		rLoc = 7377;
 		rType = 0;
 		vrLen = 579;
 		vrLoc = 7120;
@@ -5243,7 +5268,7 @@
 		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
 		name = "DataItem.m: 264";
 		rLen = 0;
-		rLoc = 7348;
+		rLoc = 7377;
 		rType = 0;
 		vrLen = 579;
 		vrLoc = 7120;
@@ -5363,7 +5388,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 52";
 		rLen = 0;
-		rLoc = 846;
+		rLoc = 813;
 		rType = 0;
 		vrLen = 745;
 		vrLoc = 446;
@@ -5413,7 +5438,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 52";
 		rLen = 0;
-		rLoc = 846;
+		rLoc = 813;
 		rType = 0;
 		vrLen = 745;
 		vrLoc = 446;
@@ -5603,7 +5628,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 46";
 		rLen = 0;
-		rLoc = 846;
+		rLoc = 813;
 		rType = 0;
 		vrLen = 569;
 		vrLoc = 255;
@@ -5613,7 +5638,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 46";
 		rLen = 0;
-		rLoc = 846;
+		rLoc = 813;
 		rType = 0;
 		vrLen = 690;
 		vrLoc = 255;
@@ -5633,7 +5658,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 46";
 		rLen = 0;
-		rLoc = 846;
+		rLoc = 813;
 		rType = 0;
 		vrLen = 690;
 		vrLoc = 255;
@@ -5673,7 +5698,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 46";
 		rLen = 0;
-		rLoc = 846;
+		rLoc = 813;
 		rType = 0;
 		vrLen = 690;
 		vrLoc = 255;
@@ -5693,7 +5718,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 107";
 		rLen = 0;
-		rLoc = 2962;
+		rLoc = 2929;
 		rType = 0;
 		vrLen = 1059;
 		vrLoc = 1860;
@@ -5703,7 +5728,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 107";
 		rLen = 0;
-		rLoc = 2962;
+		rLoc = 2929;
 		rType = 0;
 		vrLen = 1183;
 		vrLoc = 1860;
@@ -5723,7 +5748,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 107";
 		rLen = 0;
-		rLoc = 2962;
+		rLoc = 2929;
 		rType = 0;
 		vrLen = 1183;
 		vrLoc = 1860;
@@ -5793,7 +5818,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 107";
 		rLen = 0;
-		rLoc = 2962;
+		rLoc = 2929;
 		rType = 0;
 		vrLen = 1180;
 		vrLoc = 1863;
@@ -5813,7 +5838,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 108";
 		rLen = 0;
-		rLoc = 2962;
+		rLoc = 2929;
 		rType = 0;
 		vrLen = 1122;
 		vrLoc = 1863;
@@ -5823,7 +5848,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 108";
 		rLen = 0;
-		rLoc = 2962;
+		rLoc = 2929;
 		rType = 0;
 		vrLen = 1165;
 		vrLoc = 1863;
@@ -5843,7 +5868,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 108";
 		rLen = 0;
-		rLoc = 2962;
+		rLoc = 2929;
 		rType = 0;
 		vrLen = 1165;
 		vrLoc = 1863;
@@ -5913,7 +5938,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 108";
 		rLen = 0;
-		rLoc = 2962;
+		rLoc = 2929;
 		rType = 0;
 		vrLen = 970;
 		vrLoc = 751;
@@ -5943,7 +5968,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 108";
 		rLen = 0;
-		rLoc = 2962;
+		rLoc = 2929;
 		rType = 0;
 		vrLen = 751;
 		vrLoc = 316;
@@ -5963,7 +5988,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 108";
 		rLen = 0;
-		rLoc = 2962;
+		rLoc = 2929;
 		rType = 0;
 		vrLen = 970;
 		vrLoc = 751;
@@ -5983,7 +6008,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 108";
 		rLen = 0;
-		rLoc = 2962;
+		rLoc = 2929;
 		rType = 0;
 		vrLen = 970;
 		vrLoc = 751;
@@ -6013,7 +6038,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 109";
 		rLen = 0;
-		rLoc = 2962;
+		rLoc = 2929;
 		rType = 0;
 		vrLen = 1062;
 		vrLoc = 2148;
@@ -6063,7 +6088,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 109";
 		rLen = 0;
-		rLoc = 2962;
+		rLoc = 2929;
 		rType = 0;
 		vrLen = 1062;
 		vrLoc = 2148;
@@ -6203,7 +6228,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 109";
 		rLen = 0;
-		rLoc = 2962;
+		rLoc = 2929;
 		rType = 0;
 		vrLen = 829;
 		vrLoc = 2449;
@@ -6233,7 +6258,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 47";
 		rLen = 0;
-		rLoc = 846;
+		rLoc = 813;
 		rType = 0;
 		vrLen = 1097;
 		vrLoc = 1976;
@@ -6253,7 +6278,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 109";
 		rLen = 0;
-		rLoc = 2962;
+		rLoc = 2929;
 		rType = 0;
 		vrLen = 829;
 		vrLoc = 2449;
@@ -6313,7 +6338,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 114";
 		rLen = 0;
-		rLoc = 2964;
+		rLoc = 2931;
 		rType = 0;
 		vrLen = 898;
 		vrLoc = 2399;
@@ -6323,7 +6348,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 114";
 		rLen = 0;
-		rLoc = 2964;
+		rLoc = 2931;
 		rType = 0;
 		vrLen = 1076;
 		vrLoc = 1976;
@@ -6343,7 +6368,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 114";
 		rLen = 0;
-		rLoc = 2964;
+		rLoc = 2931;
 		rType = 0;
 		vrLen = 1076;
 		vrLoc = 1976;
@@ -6373,7 +6398,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 114";
 		rLen = 0;
-		rLoc = 2964;
+		rLoc = 2931;
 		rType = 0;
 		vrLen = 1076;
 		vrLoc = 1976;
@@ -6403,7 +6428,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 114";
 		rLen = 0;
-		rLoc = 2964;
+		rLoc = 2931;
 		rType = 0;
 		vrLen = 921;
 		vrLoc = 2399;
@@ -6413,7 +6438,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 113";
 		rLen = 0;
-		rLoc = 2964;
+		rLoc = 2931;
 		rType = 0;
 		vrLen = 942;
 		vrLoc = 2399;
@@ -6423,7 +6448,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 119";
 		rLen = 0;
-		rLoc = 2964;
+		rLoc = 2931;
 		rType = 0;
 		vrLen = 943;
 		vrLoc = 2399;
@@ -6433,7 +6458,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 119";
 		rLen = 0;
-		rLoc = 2964;
+		rLoc = 2931;
 		rType = 0;
 		vrLen = 942;
 		vrLoc = 2399;
@@ -6563,7 +6588,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 111";
 		rLen = 0;
-		rLoc = 2961;
+		rLoc = 2928;
 		rType = 0;
 		vrLen = 997;
 		vrLoc = 2243;
@@ -6627,5 +6652,253 @@
 		rType = 0;
 		vrLen = 698;
 		vrLoc = 1814;
+	};
+	ECFD57510FD9D2EF00D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
+		name = "MainViewController.m: 37";
+		rLen = 0;
+		rLoc = 617;
+		rType = 0;
+		vrLen = 593;
+		vrLoc = 0;
+	};
+	ECFD57520FD9D2EF00D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */;
+		name = "DataEntry.m: 198";
+		rLen = 0;
+		rLoc = 5601;
+		rType = 0;
+		vrLen = 1107;
+		vrLoc = 4384;
+	};
+	ECFD57530FD9D2EF00D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
+		name = "EditDataEntryViewController.m: 76";
+		rLen = 0;
+		rLoc = 2389;
+		rType = 0;
+		vrLen = 808;
+		vrLoc = 1931;
+	};
+	ECFD57540FD9D2EF00D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
+		name = "MainViewController.m: 37";
+		rLen = 0;
+		rLoc = 617;
+		rType = 0;
+		vrLen = 593;
+		vrLoc = 0;
+	};
+	ECFD57550FD9D2EF00D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
+		name = "EditDataEntryViewController.m: 202";
+		rLen = 0;
+		rLoc = 6258;
+		rType = 0;
+		vrLen = 985;
+		vrLoc = 3386;
+	};
+	ECFD57560FD9D2EF00D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */;
+		name = "DataEntry.m: 198";
+		rLen = 0;
+		rLoc = 5601;
+		rType = 0;
+		vrLen = 1107;
+		vrLoc = 4384;
+	};
+	ECFD57570FD9D2EF00D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
+		name = "EditDataEntryViewController.m: 76";
+		rLen = 0;
+		rLoc = 2389;
+		rType = 0;
+		vrLen = 795;
+		vrLoc = 1931;
+	};
+	ECFD57590FD9D30E00D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
+		name = "EditDataEntryViewController.m: 76";
+		rLen = 0;
+		rLoc = 2379;
+		rType = 0;
+		vrLen = 796;
+		vrLoc = 1931;
+	};
+	ECFD575C0FD9D32A00D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
+		name = "EditDataEntryViewController.m: 76";
+		rLen = 0;
+		rLoc = 2379;
+		rType = 0;
+		vrLen = 807;
+		vrLoc = 1931;
+	};
+	ECFD575D0FD9D32A00D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
+		name = "EditDataEntryViewController.m: 76";
+		rLen = 0;
+		rLoc = 2379;
+		rType = 0;
+		vrLen = 807;
+		vrLoc = 1931;
+	};
+	ECFD575E0FD9D32A00D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */;
+		name = "DataEntry.m: 160";
+		rLen = 0;
+		rLoc = 4549;
+		rType = 0;
+		vrLen = 1106;
+		vrLoc = 4384;
+	};
+	ECFD57610FD9D3AF00D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */;
+		name = "DataEntry.m: 160";
+		rLen = 9;
+		rLoc = 4540;
+		rType = 0;
+		vrLen = 1085;
+		vrLoc = 4312;
+	};
+	ECFD57620FD9D3AF00D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
+		name = "DataItem.m: 264";
+		rLen = 0;
+		rLoc = 7377;
+		rType = 0;
+		vrLen = 538;
+		vrLoc = 7120;
+	};
+	ECFD57630FD9D3AF00D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */;
+		name = "DataEntry.m: 160";
+		rLen = 9;
+		rLoc = 4540;
+		rType = 0;
+		vrLen = 1085;
+		vrLoc = 4312;
+	};
+	ECFD57640FD9D3AF00D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
+		name = "DataItem.m: 239";
+		rLen = 0;
+		rLoc = 7020;
+		rType = 0;
+		vrLen = 958;
+		vrLoc = 6241;
+	};
+	ECFD57650FD9D3F000D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
+		name = "DataItem.m: 239";
+		rLen = 0;
+		rLoc = 7020;
+		rType = 0;
+		vrLen = 960;
+		vrLoc = 6241;
+	};
+	ECFD57660FD9D3F000D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 19";
+		rLen = 0;
+		rLoc = 324;
+		rType = 0;
+		vrLen = 623;
+		vrLoc = 0;
+	};
+	ECFD57670FD9D3F000D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */;
+		name = "DataItem.m: 239";
+		rLen = 0;
+		rLoc = 7020;
+		rType = 0;
+		vrLen = 960;
+		vrLoc = 6241;
+	};
+	ECFD57680FD9D3F000D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 49";
+		rLen = 0;
+		rLoc = 815;
+		rType = 0;
+		vrLen = 860;
+		vrLoc = 623;
+	};
+	ECFD576B0FD9D4B200D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "warning: 'NSNumberFormatter' may not respond to '-setHasThousandSeparators:'";
+		fRef = EC341D9C0FD5AAE40003212C /* DataEntryViewController.m */;
+		rLen = 1;
+		rLoc = 34;
+		rType = 1;
+	};
+	ECFD576C0FD9D4B200D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341D9C0FD5AAE40003212C /* DataEntryViewController.m */;
+		name = "DataEntryViewController.m: 35";
+		rLen = 0;
+		rLoc = 942;
+		rType = 0;
+		vrLen = 732;
+		vrLoc = 543;
+	};
+	ECFD576D0FD9D4B200D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
+		name = "MainViewController.m: 33";
+		rLen = 0;
+		rLoc = 590;
+		rType = 0;
+		vrLen = 133;
+		vrLoc = 461;
+	};
+	ECFD576F0FD9D4C800D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 48";
+		rLen = 0;
+		rLoc = 813;
+		rType = 0;
+		vrLen = 795;
+		vrLoc = 623;
+	};
+	ECFD57700FD9D4C800D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 48";
+		rLen = 0;
+		rLoc = 813;
+		rType = 0;
+		vrLen = 795;
+		vrLoc = 623;
+	};
+	ECFD57710FD9D4C800D6117E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341D9C0FD5AAE40003212C /* DataEntryViewController.m */;
+		name = "DataEntryViewController.m: 33";
+		rLen = 0;
+		rLoc = 854;
+		rType = 0;
+		vrLen = 969;
+		vrLoc = 403;
 	};
 }

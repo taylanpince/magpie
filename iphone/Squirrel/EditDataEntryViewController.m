@@ -72,6 +72,8 @@
 	
 	if (!dataEntry.primaryKey) {
 		[dataItem addDataEntry:dataEntry];
+	} else {
+		[dataEntry dehydrate];
 	}
 	
 	[self.navigationController popViewControllerAnimated:YES];
