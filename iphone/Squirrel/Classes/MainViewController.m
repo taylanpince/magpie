@@ -17,6 +17,11 @@
 #import "PanelView.h"
 
 
+@interface MainViewController (PrivateMethods)
+- (void)reloadPanels;
+@end
+
+
 @implementation MainViewController
 
 @synthesize scrollView;
@@ -24,20 +29,25 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	
+	[self reloadPanels];
+}
+
+
+- (void)reloadPanels {
 	CGPoint top = CGPointMake(10.0, 10.0);
 	
 	for (DataPanel *dataPanel in [(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels]) {
-		PanelView *panelView = [[PanelView alloc] initWithFrame:CGRectMake(top.x, top.y, scrollView.frame.size.width - 20.0, 250.0)];
+		PanelView *panelView = [[PanelView alloc] initWithFrame:CGRectMake(top.x, top.y, scrollView.frame.size.width - 20.0, 0.0)];
 		
 		[dataPanel.dataSet selectRelated];
-		
+
 		panelView.dataPanel = dataPanel;
 		panelView.delegate = self;
+
+		[scrollView addSubview:panelView];
 		
 		top.y += panelView.frame.size.height + 10.0;
 
-		[scrollView addSubview:panelView];
 		[panelView release];
 	}
 	
@@ -62,11 +72,13 @@
 
 - (void)didCloseDataEntryView {
 	[self dismissModalViewControllerAnimated:YES];
+	[self reloadPanels];
 }
 
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
 	[self dismissModalViewControllerAnimated:YES];
+	[self reloadPanels];
 }
 
 

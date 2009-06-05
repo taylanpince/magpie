@@ -15,9 +15,12 @@
 	DataPanel *dataPanel;
 	
 	id <PanelViewDelegate> delegate;
+	
+	BOOL rendered;
 }
 
 @property (nonatomic, assign) DataPanel *dataPanel;
+@property (nonatomic, assign) BOOL rendered;
 
 @property (nonatomic, assign) id <PanelViewDelegate> delegate;
 

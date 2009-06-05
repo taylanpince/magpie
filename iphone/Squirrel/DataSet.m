@@ -204,6 +204,7 @@ static sqlite3_stmt *select_related_statement = nil;
 		int itemPrimaryKey = sqlite3_column_int(select_related_statement, 0);
 		
 		DataItem *dataItem = [[DataItem alloc] initWithPrimaryKey:itemPrimaryKey database:database];
+		dataItem.dataSet = self;
 		[dataItem selectRelated];
 		[dataItems addObject:dataItem];
 		[dataItem release];
@@ -257,6 +258,16 @@ static sqlite3_stmt *select_related_statement = nil;
 
 - (NSInteger)primaryKey {
     return primaryKey;
+}
+
+- (float)total {
+	total = 0.0;
+	
+	for (DataItem *item in dataItems) {
+		total += item.total;
+	}
+	
+	return total;
 }
 
 - (NSString *)name {

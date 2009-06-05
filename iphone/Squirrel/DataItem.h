@@ -15,12 +15,17 @@
 	DataSet *dataSet;
 	NSMutableArray *dataEntries;
 	
+	float total;
+	float percentage;
+
 	BOOL hydrated;
 	BOOL dirty;
 	BOOL related;
 }
 
 @property (assign, nonatomic, readonly) NSInteger primaryKey;
+@property (assign, nonatomic, readonly) float total;
+@property (assign, nonatomic, readonly) float percentage;
 @property (copy, nonatomic) NSString *name;
 @property (copy, nonatomic) DataSet *dataSet;
 @property (retain, nonatomic) NSMutableArray *dataEntries;

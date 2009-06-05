@@ -14,14 +14,9 @@
 #import "DataSet.h"
 
 
-@interface PanelView (PrivateMethods)
-- (void)setupSubLayers;
-@end
-
-
 @implementation PanelView
 
-@synthesize dataPanel, delegate;
+@synthesize dataPanel, delegate, rendered;
 
 
 #define MAIN_FONT_SIZE 18
@@ -43,12 +38,14 @@ static UIFont *mainFont = nil;
 	if (dataPanel != aDataPanel) {
 		dataPanel = aDataPanel;
 		
-		[self setupSubLayers];
+		[self layoutSubviews];
 	}
 }
 
 
-- (void)setupSubLayers {
+- (void)layoutSubviews {
+	if (rendered) return;
+	NSLog(@"Called layoutSubviews");
 	CGPoint point = CGPointMake(10.0, 10.0);
 	
 	UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, self.frame.size.width - 20.0, 20.0)];
@@ -95,19 +92,23 @@ static UIFont *mainFont = nil;
 		[self.layer addSublayer:aLayer];
 		
 		CABasicAnimation *resizeAnimation = [CABasicAnimation animationWithKeyPath:@"bounds.size.width"];
-		
+
 		resizeAnimation.duration = 1.0;
 		resizeAnimation.removedOnCompletion = NO;
 		resizeAnimation.fillMode = kCAFillModeForwards;
-		resizeAnimation.toValue = [NSNumber numberWithFloat:((counter + 1) * 50.0)];
+		resizeAnimation.toValue = [NSNumber numberWithFloat:((self.frame.size.width - 20.0) * dataItem.percentage / 100.0)];
 		resizeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
-		
+
 		[aLayer addAnimation:resizeAnimation forKey:@"animateWidth"];
 		
 		point.y += aLayer.bounds.size.height + 6.0;
 		
 		counter++;
 	}
+	
+	self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, point.y);
+	
+	rendered = YES;
 }
 
 

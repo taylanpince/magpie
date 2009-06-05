@@ -250,6 +250,20 @@ static sqlite3_stmt *select_related_statement = nil;
     return primaryKey;
 }
 
+- (float)total {
+	total = 0.0;
+	
+	for (DataEntry *entry in dataEntries) {
+		total += [entry.value floatValue];
+	}
+	
+	return total;
+}
+
+- (float)percentage {
+	return 100 * self.total / dataSet.total;
+}
+
 - (NSString *)name {
     return name;
 }

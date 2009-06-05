@@ -15,12 +15,15 @@
 	NSDate *lastUpdated;
 	NSMutableArray *dataItems;
 	
+	float total;
+	
 	BOOL hydrated;
 	BOOL dirty;
 	BOOL related;
 }
 
 @property (assign, nonatomic, readonly) NSInteger primaryKey;
+@property (assign, nonatomic, readonly) float total;
 @property (copy, nonatomic) NSString *name;
 @property (copy, nonatomic) NSDate *lastUpdated;
 @property (retain, nonatomic) NSMutableArray *dataItems;

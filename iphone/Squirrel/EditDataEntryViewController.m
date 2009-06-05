@@ -199,8 +199,6 @@
 	
 	[dataEntryValue release];
 	dataEntryValue = [[NSNumber alloc] initWithFloat:[valueString floatValue]];
-
-	NSLog(@"%@ --> %f", valueString, [dataEntryValue floatValue]);
 	
 	[valueString release];
 	[formTableView reloadData];

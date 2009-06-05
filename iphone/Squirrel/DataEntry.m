@@ -194,6 +194,10 @@ static sqlite3_stmt *dehydrate_statement = nil;
     return primaryKey;
 }
 
+- (float)percentage {
+	return 100.0 * [value floatValue] / dataItem.total;
+}
+
 - (NSNumber *)value {
     return value;
 }

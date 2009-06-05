@@ -15,12 +15,15 @@
 	NSNumber *value;
 	NSDate *timeStamp;
 	DataItem *dataItem;
+	
+	float percentage;
 
 	BOOL hydrated;
 	BOOL dirty;
 }
 
 @property (assign, nonatomic, readonly) NSInteger primaryKey;
+@property (assign, nonatomic, readonly) float percentage;
 @property (copy, nonatomic) NSNumber *value;
 @property (copy, nonatomic) NSDate *timeStamp;
 @property (copy, nonatomic) DataItem *dataItem;
