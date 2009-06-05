@@ -21,8 +21,7 @@
 	[super viewDidLoad];
 	
 	self.title = dataItem.name;
-	self.editing = YES;
-	self.tableView.allowsSelectionDuringEditing = YES;
+	self.navigationItem.leftBarButtonItem = self.editButtonItem;
 	
 	UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
 	[self.navigationItem setRightBarButtonItem:doneButton];
@@ -103,6 +102,15 @@
 	[self.navigationController pushViewController:controller animated:YES];
 	
 	[controller release];
+}
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+		
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+		[self tableView:tableView didSelectRowAtIndexPath:indexPath];
+	}
 }
 
 

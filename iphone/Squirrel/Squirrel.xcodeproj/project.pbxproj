@@ -23,6 +23,8 @@
 		EC6EB8E20FD1B81E00E6F9D8 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB8E10FD1B81E00E6F9D8 /* EditableTableViewCell.m */; };
 		EC6EB9560FD1CFDC00E6F9D8 /* DataSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */; };
 		EC6EB9B20FD1D86400E6F9D8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6EB9B10FD1D86400E6F9D8 /* Icon.png */; };
+		ECE93A960FD8D48D006BA407 /* KeyPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE93A950FD8D48D006BA407 /* KeyPadViewController.m */; };
+		ECE93A980FD8D5A6006BA407 /* KeyPadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECE93A970FD8D5A6006BA407 /* KeyPadView.xib */; };
 		ECFB00510FD46F6600EEE684 /* DataPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */; };
 		ECFB00B80FD4830300EEE684 /* SelectDataSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */; };
 		ECFB01450FD48F3B00EEE684 /* SelectPanelTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */; };
@@ -66,6 +68,9 @@
 		EC6EB9540FD1CFDC00E6F9D8 /* DataSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSetViewController.h; sourceTree = "<group>"; };
 		EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSetViewController.m; sourceTree = "<group>"; };
 		EC6EB9B10FD1D86400E6F9D8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		ECE93A940FD8D48D006BA407 /* KeyPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyPadViewController.h; sourceTree = "<group>"; };
+		ECE93A950FD8D48D006BA407 /* KeyPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyPadViewController.m; sourceTree = "<group>"; };
+		ECE93A970FD8D5A6006BA407 /* KeyPadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyPadView.xib; sourceTree = "<group>"; };
 		ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPanelViewController.h; sourceTree = "<group>"; };
 		ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPanelViewController.m; sourceTree = "<group>"; };
 		ECFB00B60FD4830300EEE684 /* SelectDataSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectDataSetViewController.h; sourceTree = "<group>"; };
@@ -159,6 +164,7 @@
 				EC341E530FD5C9EE0003212C /* DataEntryView.xib */,
 				8D1107310486CEB800E47090 /* Squirrel-Info.plist */,
 				ECFBFBA70FD1EDCA00EEE684 /* Squirrel.sql */,
+				ECE93A970FD8D5A6006BA407 /* KeyPadView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -209,6 +215,8 @@
 				EC341D9C0FD5AAE40003212C /* DataEntryViewController.m */,
 				EC341E510FD5C9EE0003212C /* EditDataEntryViewController.h */,
 				EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */,
+				ECE93A940FD8D48D006BA407 /* KeyPadViewController.h */,
+				ECE93A950FD8D48D006BA407 /* KeyPadViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -291,6 +299,7 @@
 				EC6EB9B20FD1D86400E6F9D8 /* Icon.png in Resources */,
 				ECFBFBA80FD1EDCA00EEE684 /* Squirrel.sql in Resources */,
 				EC341E550FD5C9EE0003212C /* DataEntryView.xib in Resources */,
+				ECE93A980FD8D5A6006BA407 /* KeyPadView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +329,7 @@
 				ECFB058A0FD57CF000EEE684 /* DataEntry.m in Sources */,
 				EC341D9D0FD5AAE40003212C /* DataEntryViewController.m in Sources */,
 				EC341E540FD5C9EE0003212C /* EditDataEntryViewController.m in Sources */,
+				ECE93A960FD8D48D006BA407 /* KeyPadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,23 +8,33 @@
 
 #import "EditDataEntryViewController.h"
 #import "SelectableTableViewCell.h"
+#import "KeyPadViewController.h"
 #import "DataEntry.h"
 
 
 @implementation EditDataEntryViewController
 
-@synthesize dataEntry, formTableView, pickerView, datePickerView;
+@synthesize dataEntry, formTableView, datePickerView, keyPad, dataEntryValue, dataEntryTimeStamp;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
 	UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
 	
+	if (dataEntryValue) [dataEntryValue release];
+	if (dataEntryTimeStamp) [dataEntryTimeStamp release];
+	
 	if (dataEntry.primaryKey) {
 		self.title = @"Edit Data Entry";
+		
+		dataEntryValue = [[dataEntry.value stringValue] mutableCopy];
+		dataEntryTimeStamp = dataEntry.timeStamp;
 	} else {
 		self.title = @"Add Data Entry";
 		saveButton.enabled = NO;
+		
+		dataEntryValue = [[NSMutableString alloc] initWithString:@"+ 0"];
+		dataEntryTimeStamp = [[NSDate alloc] init];
 	}
 	
 	[self.navigationItem setRightBarButtonItem:saveButton];
@@ -74,11 +84,13 @@
 	if (cell == nil) {
 		cell = [[[SelectableTableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
 	}
-	
+
 	if (indexPath.row == 0) {
 		cell.titleLabel.text = @"Value";
+		cell.dataLabel.text = dataEntryValue;
 	} else {
 		cell.titleLabel.text = @"Time Stamp";
+		cell.dataLabel.text = [dataEntryTimeStamp description];
 	}
 	
 	return cell;
@@ -86,7 +98,7 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.row == 0 & !pickerView) {
+	if (indexPath.row == 0 & !keyPad) {
 		if (datePickerView) {
 			[datePickerView removeFromSuperview];
 			[datePickerView release];
@@ -94,18 +106,18 @@
 			datePickerView = nil;
 		}
 
-		pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0, 200.0, self.view.frame.size.width, 216.0)];
+		keyPad = [[KeyPadViewController alloc] initWithNibName:@"KeyPadView" bundle:nil];
 		
-		pickerView.delegate = self;
-		pickerView.dataSource = self;
+		keyPad.delegate = self;
+		keyPad.view.frame = CGRectMake(0.0, 200.0, self.view.frame.size.width, 216.0);
 		
-		[self.view addSubview:pickerView];
+		[self.view addSubview:keyPad.view];
 	} else if (!datePickerView) {
-		if (pickerView) {
-			[pickerView removeFromSuperview];
-			[pickerView release];
+		if (keyPad) {
+			[keyPad.view removeFromSuperview];
+			[keyPad release];
 			
-			pickerView = nil;
+			keyPad = nil;
 		}
 
 		datePickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0.0, 200.0, self.view.frame.size.width, 216.0)];
@@ -115,30 +127,38 @@
 }
 
 
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-	return 7;
-}
-
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-	if (component == 0) {
-		return 2;
-	} else if (component == 4) {
-		return 1;
+- (void)didTapKeyPad:(KeyPadViewController *)keyPad onKey:(NSString *)key {
+	if ([key isEqualToString:@"⌫"]) {
+		if ([dataEntryValue length] > 3) {
+			[dataEntryValue deleteCharactersInRange:NSMakeRange([dataEntryValue length] - 1, 1)];
+		} else {
+			[dataEntryValue release];
+			dataEntryValue = [[NSMutableString alloc] initWithString:@"+ 0"];
+		}
+	} else if ([key isEqualToString:@"C"]) {
+		[dataEntryValue release];
+		dataEntryValue = [[NSMutableString alloc] initWithString:@"+ 0"];
+	} else if ([key isEqualToString:@"±"]) {
+		if ([dataEntryValue hasPrefix:@"+"]) {
+			[dataEntryValue replaceCharactersInRange:NSMakeRange(0, 1) withString:@"-"];
+		} else {
+			[dataEntryValue replaceCharactersInRange:NSMakeRange(0, 1) withString:@"+"];
+		}
+	} else if ([key isEqualToString:@"."]) {
+		NSRange range = [dataEntryValue rangeOfString:@"."];
+		
+		if (range.location == NSNotFound) {
+			[dataEntryValue appendString:key];
+		}
 	} else {
-		return 10;
+		if ([[dataEntryValue substringFromIndex:2] isEqualToString:@"0"]) {
+			[dataEntryValue replaceCharactersInRange:NSMakeRange(2, 1) withString:key];
+		} else {
+			[dataEntryValue appendString:key];
+		}
 	}
-}
 
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-	if (component == 0) {
-		return (row == 0) ? @"+" : @"-";
-	} else if (component == 4) {
-		return @".";
-	} else {
-		return [NSString stringWithFormat:@"%d", row];
-	}
+	[formTableView reloadData];
 }
 
 
@@ -148,9 +168,12 @@
 
 
 - (void)dealloc {
+	[dataEntry release];
+	[dataEntryValue release];
+	[dataEntryTimeStamp release];
 	[formTableView release];
-	[pickerView release];
 	[datePickerView release];
+	[keyPad release];
     [super dealloc];
 }
 

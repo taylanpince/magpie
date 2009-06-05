@@ -6,20 +6,26 @@
 //  Copyright 2009 Taylan Pince. All rights reserved.
 //
 
-@class DataEntry;
+#import "KeyPadViewController.h"
+
+@class DataEntry, KeyPadViewController;
 
 
-@interface EditDataEntryViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource> {
-	UIPickerView *pickerView;
+@interface EditDataEntryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, KeyPadViewControllerDelegate> {
 	UIDatePicker *datePickerView;
+	KeyPadViewController *keyPad;
 	DataEntry *dataEntry;
+	NSMutableString *dataEntryValue;
+	NSDate *dataEntryTimeStamp;
 	
 	IBOutlet UITableView *formTableView;
 }
 
-@property (nonatomic, retain) UIPickerView *pickerView;
 @property (nonatomic, retain) UIDatePicker *datePickerView;
-@property (nonatomic, assign) DataEntry *dataEntry;
+@property (nonatomic, retain) KeyPadViewController *keyPad;
+@property (nonatomic, retain) DataEntry *dataEntry;
+@property (nonatomic, retain) NSMutableString *dataEntryValue;
+@property (nonatomic, retain) NSDate *dataEntryTimeStamp;
 
 @property (nonatomic, retain) IBOutlet UITableView *formTableView;
 
