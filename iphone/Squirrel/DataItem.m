@@ -223,7 +223,7 @@ static sqlite3_stmt *select_related_statement = nil;
 	if (related) return;
 	
 	if (select_related_statement == nil) {
-		const char *sql = "SELECT pk FROM data_entries WHERE data_item=?";
+		const char *sql = "SELECT pk FROM data_entries WHERE data_item=? ORDER BY timestamp DESC";
 		
 		if (sqlite3_prepare_v2(database, sql, -1, &select_related_statement, NULL) != SQLITE_OK) {
 			NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));

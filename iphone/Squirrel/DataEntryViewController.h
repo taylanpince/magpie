@@ -13,11 +13,15 @@
 
 @interface DataEntryViewController : UITableViewController {
 	DataItem *dataItem;
+	NSDateFormatter *dateFormatter;
+	NSNumberFormatter *valueFormatter;
 	
 	id <DataEntryViewControllerDelegate> delegate;
 }
 
-@property (nonatomic, assign) DataItem *dataItem;
+@property (nonatomic, retain) DataItem *dataItem;
+@property (nonatomic, retain) NSDateFormatter *dateFormatter;
+@property (nonatomic, retain) NSNumberFormatter *valueFormatter;
 
 @property (nonatomic, assign) id <DataEntryViewControllerDelegate> delegate;
 

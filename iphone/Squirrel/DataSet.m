@@ -204,6 +204,7 @@ static sqlite3_stmt *select_related_statement = nil;
 		int itemPrimaryKey = sqlite3_column_int(select_related_statement, 0);
 		
 		DataItem *dataItem = [[DataItem alloc] initWithPrimaryKey:itemPrimaryKey database:database];
+		[dataItem selectRelated];
 		[dataItems addObject:dataItem];
 		[dataItem release];
 	}

@@ -79,7 +79,7 @@ static UIFont *mainFont = nil;
 		addButton.frame = CGRectMake(point.x + 200.0, point.y, 10.0, 10.0);
 		addButton.tag = counter;
 		
-		[addButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchUpInside];
+		[addButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchDown];
 		[self addSubview:addButton];
 		
 		point.y += titleLabel.frame.size.height + 6.0;

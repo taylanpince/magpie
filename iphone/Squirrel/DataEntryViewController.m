@@ -15,7 +15,7 @@
 
 @implementation DataEntryViewController
 
-@synthesize dataItem, delegate;
+@synthesize dataItem, dateFormatter, valueFormatter, delegate;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -23,9 +23,27 @@
 	self.title = dataItem.name;
 	self.navigationItem.leftBarButtonItem = self.editButtonItem;
 	
+	if (dateFormatter) [dateFormatter release];
+	if (valueFormatter) [valueFormatter release];
+	
+	dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+	[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+	
+	valueFormatter = [[NSNumberFormatter alloc] init];
+	[valueFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+	[valueFormatter setHasThousandSeparators:YES];
+	
 	UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
 	[self.navigationItem setRightBarButtonItem:doneButton];
 	[doneButton release];
+}
+
+
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	
+	[self.tableView reloadData];
 }
 
 
@@ -68,9 +86,9 @@
 		cell.mainLabel.text = @"Add New Data Entry";
 	} else {
 		DataEntry *dataEntry = [dataItem.dataEntries objectAtIndex:(indexPath.row - 1)];
-		
-		cell.mainLabel.text = [dataEntry.value stringValue];
-		cell.subLabel.text = [dataEntry.timeStamp description];
+
+		cell.mainLabel.text = [valueFormatter stringFromNumber:dataEntry.value];
+		cell.subLabel.text = [dateFormatter stringFromDate:dataEntry.timeStamp];
 	}
 	
 	return cell;
@@ -86,6 +104,11 @@
 }
 
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return (indexPath.row == 0) ? 42.0 : 56.0;
+}
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	DataEntry *dataEntry;
 	
@@ -98,6 +121,7 @@
 	EditDataEntryViewController *controller = [[EditDataEntryViewController alloc] initWithNibName:@"DataEntryView" bundle:nil];
 	
 	controller.dataEntry = dataEntry;
+	controller.dataItem = dataItem;
 	
 	[self.navigationController pushViewController:controller animated:YES];
 	
@@ -107,7 +131,10 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+		DataEntry *dataEntry = [dataItem.dataEntries objectAtIndex:(indexPath.row - 1)];
 		
+		[dataItem removeDataEntry:dataEntry];
+		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
 		[self tableView:tableView didSelectRowAtIndexPath:indexPath];
 	}
@@ -115,6 +142,9 @@
 
 
 - (void)dealloc {
+	[dataItem release];
+	[dateFormatter release];
+	[valueFormatter release];
     [super dealloc];
 }
 

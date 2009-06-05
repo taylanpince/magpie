@@ -52,7 +52,7 @@ static sqlite3_stmt *dehydrate_statement = nil;
         database = db;
 		
         if (init_statement == nil) {
-            const char *sql = "SELECT value FROM data_entries WHERE pk=?";
+            const char *sql = "SELECT value,timestamp FROM data_entries WHERE pk=?";
 			
             if (sqlite3_prepare_v2(database, sql, -1, &init_statement, NULL) != SQLITE_OK) {
                 NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
@@ -63,6 +63,7 @@ static sqlite3_stmt *dehydrate_statement = nil;
         
 		if (sqlite3_step(init_statement) == SQLITE_ROW) {
             self.value = [NSNumber numberWithFloat:sqlite3_column_double(init_statement, 0)];
+			self.timeStamp = [NSDate dateWithTimeIntervalSince1970:sqlite3_column_double(init_statement, 1)];
         }
 		
         sqlite3_reset(init_statement);

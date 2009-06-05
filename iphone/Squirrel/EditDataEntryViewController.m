@@ -10,11 +10,12 @@
 #import "SelectableTableViewCell.h"
 #import "KeyPadViewController.h"
 #import "DataEntry.h"
+#import "DataItem.h"
 
 
 @implementation EditDataEntryViewController
 
-@synthesize dataEntry, formTableView, datePickerView, keyPad, dataEntryValue, dataEntryTimeStamp;
+@synthesize dataEntry, dataItem, formTableView, datePickerView, keyPad, dataEntryValue, dataEntryTimeStamp, dateFormatter, valueFormatter;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,17 +24,26 @@
 	
 	if (dataEntryValue) [dataEntryValue release];
 	if (dataEntryTimeStamp) [dataEntryTimeStamp release];
+	if (dateFormatter) [dateFormatter release];
+	if (valueFormatter) [valueFormatter release];
+	
+	dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+	[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+	
+	valueFormatter = [[NSNumberFormatter alloc] init];
+	[valueFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+	[valueFormatter setHasThousandSeparators:YES];
 	
 	if (dataEntry.primaryKey) {
 		self.title = @"Edit Data Entry";
 		
-		dataEntryValue = [[dataEntry.value stringValue] mutableCopy];
-		dataEntryTimeStamp = dataEntry.timeStamp;
+		dataEntryValue = [dataEntry.value copy];
+		dataEntryTimeStamp = [dataEntry.timeStamp copy];
 	} else {
 		self.title = @"Add Data Entry";
-		saveButton.enabled = NO;
 		
-		dataEntryValue = [[NSMutableString alloc] initWithString:@"+ 0"];
+		dataEntryValue = [[NSNumber alloc] initWithFloat:0.0];
 		dataEntryTimeStamp = [[NSDate alloc] init];
 	}
 	
@@ -57,7 +67,14 @@
 
 
 - (void)save:(id)sender {
+	dataEntry.value = dataEntryValue;
+	dataEntry.timeStamp = dataEntryTimeStamp;
 	
+	if (!dataEntry.primaryKey) {
+		[dataItem addDataEntry:dataEntry];
+	}
+	
+	[self.navigationController popViewControllerAnimated:YES];
 }
 
 
@@ -87,10 +104,10 @@
 
 	if (indexPath.row == 0) {
 		cell.titleLabel.text = @"Value";
-		cell.dataLabel.text = dataEntryValue;
+		cell.dataLabel.text = [valueFormatter stringFromNumber:dataEntryValue];
 	} else {
 		cell.titleLabel.text = @"Time Stamp";
-		cell.dataLabel.text = [dataEntryTimeStamp description];
+		cell.dataLabel.text = [dateFormatter stringFromDate:dataEntryTimeStamp];
 	}
 	
 	return cell;
@@ -112,7 +129,7 @@
 		keyPad.view.frame = CGRectMake(0.0, 200.0, self.view.frame.size.width, 216.0);
 		
 		[self.view addSubview:keyPad.view];
-	} else if (!datePickerView) {
+	} else if (indexPath.row == 1 & !datePickerView) {
 		if (keyPad) {
 			[keyPad.view removeFromSuperview];
 			[keyPad release];
@@ -122,42 +139,70 @@
 
 		datePickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0.0, 200.0, self.view.frame.size.width, 216.0)];
 		
+		[datePickerView addTarget:self action:@selector(didSelectDate:) forControlEvents:UIControlEventValueChanged];
+		[datePickerView setDate:dataEntryTimeStamp];
 		[self.view addSubview:datePickerView];
 	}
 }
 
 
+- (void)didSelectDate:(id)sender {
+	[dataEntryTimeStamp release];
+	
+	dataEntryTimeStamp = [datePickerView.date copy];
+	
+	[formTableView reloadData];
+}
+
+
 - (void)didTapKeyPad:(KeyPadViewController *)keyPad onKey:(NSString *)key {
+	NSMutableString *valueString = [[NSMutableString alloc] initWithString:[dataEntryValue stringValue]];
+	
 	if ([key isEqualToString:@"⌫"]) {
-		if ([dataEntryValue length] > 3) {
-			[dataEntryValue deleteCharactersInRange:NSMakeRange([dataEntryValue length] - 1, 1)];
+		NSRange range = [valueString rangeOfString:@"."];
+		
+		if (valueFormatter.alwaysShowsDecimalSeparator & range.location == NSNotFound) {
+			[valueFormatter setAlwaysShowsDecimalSeparator:NO];
+		} else if ([valueString length] > 1) {
+			[valueString deleteCharactersInRange:NSMakeRange([valueString length] - 1, 1)];
 		} else {
-			[dataEntryValue release];
-			dataEntryValue = [[NSMutableString alloc] initWithString:@"+ 0"];
+			[valueString release];
+			valueString = [[NSMutableString alloc] initWithString:@"0"];
 		}
 	} else if ([key isEqualToString:@"C"]) {
-		[dataEntryValue release];
-		dataEntryValue = [[NSMutableString alloc] initWithString:@"+ 0"];
+		[valueString release];
+		valueString = [[NSMutableString alloc] initWithString:@"0"];
+		[valueFormatter setAlwaysShowsDecimalSeparator:NO];
 	} else if ([key isEqualToString:@"±"]) {
-		if ([dataEntryValue hasPrefix:@"+"]) {
-			[dataEntryValue replaceCharactersInRange:NSMakeRange(0, 1) withString:@"-"];
+		if ([valueString hasPrefix:@"-"]) {
+			[valueString replaceCharactersInRange:NSMakeRange(0, 1) withString:@""];
 		} else {
-			[dataEntryValue replaceCharactersInRange:NSMakeRange(0, 1) withString:@"+"];
+			[valueString insertString:@"-" atIndex:0];
 		}
 	} else if ([key isEqualToString:@"."]) {
-		NSRange range = [dataEntryValue rangeOfString:@"."];
-		
-		if (range.location == NSNotFound) {
-			[dataEntryValue appendString:key];
-		}
+		[valueFormatter setAlwaysShowsDecimalSeparator:YES];
 	} else {
-		if ([[dataEntryValue substringFromIndex:2] isEqualToString:@"0"]) {
-			[dataEntryValue replaceCharactersInRange:NSMakeRange(2, 1) withString:key];
+		if ([[valueString substringToIndex:1] isEqualToString:@"0"] & !valueFormatter.alwaysShowsDecimalSeparator) {
+			[valueString replaceCharactersInRange:NSMakeRange(0, 1) withString:key];
 		} else {
-			[dataEntryValue appendString:key];
+			if (valueFormatter.alwaysShowsDecimalSeparator) {
+				NSRange range = [valueString rangeOfString:@"."];
+				
+				if (range.location == NSNotFound) {
+					[valueString appendString:@"."];
+				}
+			}
+			
+			[valueString appendString:key];
 		}
 	}
+	
+	[dataEntryValue release];
+	dataEntryValue = [[NSNumber alloc] initWithFloat:[valueString floatValue]];
 
+	NSLog(@"%@ --> %f", valueString, [dataEntryValue floatValue]);
+	
+	[valueString release];
 	[formTableView reloadData];
 }
 
@@ -168,9 +213,12 @@
 
 
 - (void)dealloc {
+	[dataItem release];
 	[dataEntry release];
 	[dataEntryValue release];
+	[valueFormatter release];
 	[dataEntryTimeStamp release];
+	[dateFormatter release];
 	[formTableView release];
 	[datePickerView release];
 	[keyPad release];
