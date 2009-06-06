@@ -34,6 +34,12 @@
 
 
 - (void)reloadPanels {
+	for (UIView *view in scrollView.subviews) {
+		if ([view isKindOfClass:[PanelView class]]) {
+			[view removeFromSuperview];
+		}
+	}
+	
 	CGPoint top = CGPointMake(10.0, 10.0);
 	
 	for (DataPanel *dataPanel in [(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels]) {

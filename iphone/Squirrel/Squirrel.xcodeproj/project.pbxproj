@@ -38,6 +38,7 @@
 		ECFBFBA80FD1EDCA00EEE684 /* Squirrel.sql in Resources */ = {isa = PBXBuildFile; fileRef = ECFBFBA70FD1EDCA00EEE684 /* Squirrel.sql */; };
 		ECFBFC420FD28B1700EEE684 /* DataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */; };
 		ECFBFFF50FD463F000EEE684 /* DataPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */; };
+		ECFD57B20FD9ECB700D6117E /* cog.png in Resources */ = {isa = PBXBuildFile; fileRef = ECFD57B10FD9ECB700D6117E /* cog.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		ECFBFC410FD28B1700EEE684 /* DataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataItem.m; sourceTree = "<group>"; };
 		ECFBFFF30FD463F000EEE684 /* DataPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPanel.h; sourceTree = "<group>"; };
 		ECFBFFF40FD463F000EEE684 /* DataPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPanel.m; sourceTree = "<group>"; };
+		ECFD57B10FD9ECB700D6117E /* cog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cog.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ECFD57B10FD9ECB700D6117E /* cog.png */,
 				EC6EB9B10FD1D86400E6F9D8 /* Icon.png */,
 				280E754B0DD40C5E005A515E /* MainView.xib */,
 				280E754C0DD40C5E005A515E /* MainWindow.xib */,
@@ -300,6 +303,7 @@
 				ECFBFBA80FD1EDCA00EEE684 /* Squirrel.sql in Resources */,
 				EC341E550FD5C9EE0003212C /* DataEntryView.xib in Resources */,
 				ECE93A980FD8D5A6006BA407 /* KeyPadView.xib in Resources */,
+				ECFD57B20FD9ECB700D6117E /* cog.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

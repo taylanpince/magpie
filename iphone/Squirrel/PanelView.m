@@ -19,13 +19,16 @@
 @synthesize dataPanel, delegate, rendered;
 
 
+#define SMALL_FONT_SIZE 12
 #define MAIN_FONT_SIZE 18
 
+static UIFont *smallFont = nil;
 static UIFont *mainFont = nil;
 
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+		smallFont = [[UIFont systemFontOfSize:SMALL_FONT_SIZE] retain];
         mainFont = [[UIFont boldSystemFontOfSize:MAIN_FONT_SIZE] retain];
 		
 		self.backgroundColor = [UIColor lightGrayColor];
@@ -51,7 +54,8 @@ static UIFont *mainFont = nil;
 	UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, self.frame.size.width - 20.0, 20.0)];
 	
 	titleLabel.text = dataPanel.name;
-	titleLabel.font = mainFont;
+	titleLabel.font = smallFont;
+	titleLabel.textAlignment = UITextAlignmentRight;
 	titleLabel.backgroundColor = [UIColor lightGrayColor];
 	
 	[self addSubview:titleLabel];
@@ -63,33 +67,44 @@ static UIFont *mainFont = nil;
     int counter = 0;
 	
 	for (DataItem *dataItem in dataPanel.dataSet.dataItems) {
-		UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, self.frame.size.width - 20.0, 20.0)];
+		CGSize titleSize = [dataItem.name sizeWithFont:mainFont];
+		UIButton *titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
 		
-		titleLabel.text = dataItem.name;
-		titleLabel.font = mainFont;
-		titleLabel.backgroundColor = [UIColor lightGrayColor];
+		[titleButton setTitle:dataItem.name forState:UIControlStateNormal];
+		[titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+		[titleButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchUpInside];
 		
-		[self addSubview:titleLabel];
+		titleButton.frame = CGRectMake(point.x, point.y, titleSize.width, titleSize.height);
+		titleButton.font = mainFont;
+		titleButton.tag = counter;
 		
-		UIButton *addButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
+		[self addSubview:titleButton];
 		
-		addButton.frame = CGRectMake(point.x + 200.0, point.y, 10.0, 10.0);
-		addButton.tag = counter;
+		UIButton *editButton = [UIButton buttonWithType:UIButtonTypeCustom];
 		
-		[addButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchDown];
-		[self addSubview:addButton];
+		[editButton setImage:[UIImage imageNamed:@"cog.png"] forState:UIControlStateNormal];
 		
-		point.y += titleLabel.frame.size.height + 6.0;
+		editButton.frame = CGRectMake(point.x + titleSize.width + 5.0, point.y + 3.0, 16.0, 16.0);
+		editButton.tag = counter;
 		
-		[titleLabel release];
+		[editButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchUpInside];
+		[self addSubview:editButton];
 		
-		CALayer *aLayer = [CALayer layer];
+		point.y += titleButton.frame.size.height + 6.0;
 		
-		aLayer.anchorPoint = CGPointMake(0.0, 0.0);
-		aLayer.frame = CGRectMake(point.x, point.y, 0.0, 20.0);
-		aLayer.backgroundColor = [[UIColor blackColor] CGColor];
+		CALayer *barLayer = [CALayer layer];
 		
-		[self.layer addSublayer:aLayer];
+		barLayer.anchorPoint = CGPointMake(0.0, 0.0);
+		barLayer.frame = CGRectMake(point.x, point.y, 0.0, 20.0);
+		barLayer.backgroundColor = [[UIColor blackColor] CGColor];
+		
+		CALayer *barBGLayer = [CALayer layer];
+		
+		barBGLayer.frame = CGRectMake(point.x, point.y, self.frame.size.width - 20.0, 20.0);
+		barBGLayer.backgroundColor = [[UIColor darkGrayColor] CGColor];
+		
+		[self.layer addSublayer:barBGLayer];
+		[self.layer addSublayer:barLayer];
 		
 		CABasicAnimation *resizeAnimation = [CABasicAnimation animationWithKeyPath:@"bounds.size.width"];
 
@@ -99,14 +114,14 @@ static UIFont *mainFont = nil;
 		resizeAnimation.toValue = [NSNumber numberWithFloat:((self.frame.size.width - 20.0) * dataItem.percentage / 100.0)];
 		resizeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
 
-		[aLayer addAnimation:resizeAnimation forKey:@"animateWidth"];
+		[barLayer addAnimation:resizeAnimation forKey:@"animateWidth"];
 		
-		point.y += aLayer.bounds.size.height + 6.0;
+		point.y += barLayer.bounds.size.height + 6.0;
 		
 		counter++;
 	}
 	
-	self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, point.y);
+	self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, point.y + 4.0);
 	
 	rendered = YES;
 }

@@ -59,6 +59,7 @@
 
 
 - (void)initializeDatabase {
+	NSMutableDictionary *dataSetsDict = [[NSMutableDictionary alloc] init];
     NSMutableArray *dataSetsArray = [[NSMutableArray alloc] init];
     self.dataSets = dataSetsArray;
     [dataSetsArray release];
@@ -79,6 +80,7 @@
 
                 DataSet *dataSet = [[DataSet alloc] initWithPrimaryKey:primaryKey database:database];
                 [dataSets addObject:dataSet];
+				[dataSetsDict setObject:[dataSets lastObject] forKey:[NSNumber numberWithInt:primaryKey]];
                 [dataSet release];
             }
         } else {
@@ -87,13 +89,15 @@
 
         sqlite3_finalize(statement);
 
-		sql = "SELECT pk FROM data_panels ORDER BY weight ASC";
+		sql = "SELECT pk, data_set FROM data_panels ORDER BY weight ASC";
 		
         if (sqlite3_prepare_v2(database, sql, -1, &statement, NULL) == SQLITE_OK) {
             while (sqlite3_step(statement) == SQLITE_ROW) {
                 int primaryKey = sqlite3_column_int(statement, 0);
+				int dataSetKey = sqlite3_column_int(statement, 1);
 				
                 DataPanel *dataPanel = [[DataPanel alloc] initWithPrimaryKey:primaryKey database:database];
+				dataPanel.dataSet = [dataSetsDict objectForKey:[NSNumber numberWithInt:dataSetKey]];
                 [dataPanels	addObject:dataPanel];
                 [dataPanel release];
             }
@@ -106,6 +110,8 @@
         sqlite3_close(database);
         NSAssert1(0, @"Failed to open database with message '%s'.", sqlite3_errmsg(database));
     }
+	
+	[dataSetsDict release];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

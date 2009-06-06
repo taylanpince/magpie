@@ -32,7 +32,6 @@
 	
 	valueFormatter = [[NSNumberFormatter alloc] init];
 	[valueFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-	[valueFormatter setHasThousandSeparators:YES];
 	
 	UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
 	[self.navigationItem setRightBarButtonItem:doneButton];

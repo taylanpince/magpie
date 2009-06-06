@@ -279,7 +279,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>1</integer>
+									<integer>47</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -333,7 +333,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ECFD57710FD9D4C800D6117E</string>
+										<string>ECFD57D20FD9EF2600D6117E</string>
 										<key>history</key>
 										<array>
 											<string>ECB3AA360FD1DDC700F81F02</string>
@@ -346,7 +346,6 @@
 											<string>ECFB02B80FD4CCC600EEE684</string>
 											<string>ECFB02F00FD4D02200EEE684</string>
 											<string>ECFB03420FD4D9F400EEE684</string>
-											<string>ECFB05A00FD5884600EEE684</string>
 											<string>EC341DA20FD5AD450003212C</string>
 											<string>EC341DA30FD5AD450003212C</string>
 											<string>EC341DDE0FD5B1A70003212C</string>
@@ -357,26 +356,27 @@
 											<string>ECFD54C70FD972AA00D6117E</string>
 											<string>ECFD54C80FD972AA00D6117E</string>
 											<string>ECFD552D0FD97CB000D6117E</string>
-											<string>ECFD55520FD9973100D6117E</string>
 											<string>ECFD55880FD99A5D00D6117E</string>
 											<string>ECFD55890FD99A5D00D6117E</string>
 											<string>ECFD55B80FD99E2E00D6117E</string>
 											<string>ECFD56020FD9B28300D6117E</string>
 											<string>ECFD56030FD9B28300D6117E</string>
-											<string>ECFD56430FD9B72A00D6117E</string>
 											<string>ECFD56600FD9B89A00D6117E</string>
-											<string>ECFD56610FD9B89A00D6117E</string>
 											<string>ECFD566B0FD9B8C400D6117E</string>
-											<string>ECFD567E0FD9BC2B00D6117E</string>
-											<string>ECFD568C0FD9BDA400D6117E</string>
 											<string>ECFD56E30FD9C45000D6117E</string>
 											<string>ECFD57420FD9D02B00D6117E</string>
-											<string>ECFD57510FD9D2EF00D6117E</string>
 											<string>ECFD575C0FD9D32A00D6117E</string>
 											<string>ECFD57610FD9D3AF00D6117E</string>
 											<string>ECFD57650FD9D3F000D6117E</string>
-											<string>ECFD576F0FD9D4C800D6117E</string>
-											<string>ECFD576B0FD9D4B200D6117E</string>
+											<string>ECFD57750FD9D82500D6117E</string>
+											<string>ECFD57760FD9D82500D6117E</string>
+											<string>ECFD57770FD9D82500D6117E</string>
+											<string>ECFD57780FD9D82500D6117E</string>
+											<string>ECFD57790FD9D82500D6117E</string>
+											<string>ECFD57920FD9E4FF00D6117E</string>
+											<string>ECFD579B0FD9E6A200D6117E</string>
+											<string>ECFD57D00FD9EF2600D6117E</string>
+											<string>ECFD57CB0FD9EF1700D6117E</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -395,8 +395,6 @@
 											<string>ECFB01AC0FD4A27500EEE684</string>
 											<string>ECFB02040FD4B08B00EEE684</string>
 											<string>ECFB02340FD4B45D00EEE684</string>
-											<string>ECFB02550FD4B78A00EEE684</string>
-											<string>ECFB02A50FD4CB5200EEE684</string>
 											<string>ECFB02C10FD4CCC600EEE684</string>
 											<string>ECFB02F20FD4D02200EEE684</string>
 											<string>ECFB036C0FD4DE1600EEE684</string>
@@ -430,9 +428,7 @@
 											<string>ECFD54ED0FD975CF00D6117E</string>
 											<string>ECFD54EE0FD975CF00D6117E</string>
 											<string>ECFD550F0FD97B6000D6117E</string>
-											<string>ECFD55110FD97B6000D6117E</string>
 											<string>ECFD55120FD97B6000D6117E</string>
-											<string>ECFD55130FD97B6000D6117E</string>
 											<string>ECFD55170FD97B6000D6117E</string>
 											<string>ECFD551E0FD97BA700D6117E</string>
 											<string>ECFD551F0FD97BA700D6117E</string>
@@ -444,13 +440,10 @@
 											<string>ECFD55350FD97CB000D6117E</string>
 											<string>ECFD55360FD97CB000D6117E</string>
 											<string>ECFD55390FD97CB000D6117E</string>
-											<string>ECFD553A0FD97CB000D6117E</string>
 											<string>ECFD55440FD995E500D6117E</string>
 											<string>ECFD55450FD995E500D6117E</string>
 											<string>ECFD55460FD995E500D6117E</string>
-											<string>ECFD55470FD995E500D6117E</string>
 											<string>ECFD55590FD9973100D6117E</string>
-											<string>ECFD555A0FD9973100D6117E</string>
 											<string>ECFD555B0FD9973100D6117E</string>
 											<string>ECFD555D0FD9973100D6117E</string>
 											<string>ECFD555E0FD9973100D6117E</string>
@@ -470,7 +463,6 @@
 											<string>ECFD559A0FD99A5D00D6117E</string>
 											<string>ECFD55AB0FD99B6100D6117E</string>
 											<string>ECFD55AC0FD99B6100D6117E</string>
-											<string>ECFD55B20FD99D9700D6117E</string>
 											<string>ECFD55C10FD99FE800D6117E</string>
 											<string>ECFD55C20FD99FE800D6117E</string>
 											<string>ECFD55C60FD9A0FC00D6117E</string>
@@ -519,7 +511,6 @@
 											<string>ECFD56800FD9BC2B00D6117E</string>
 											<string>ECFD56850FD9BC5700D6117E</string>
 											<string>ECFD568E0FD9BDA400D6117E</string>
-											<string>ECFD568F0FD9BDA400D6117E</string>
 											<string>ECFD56990FD9BE8D00D6117E</string>
 											<string>ECFD569A0FD9BE8D00D6117E</string>
 											<string>ECFD569B0FD9BE8D00D6117E</string>
@@ -568,6 +559,16 @@
 											<string>ECFD57630FD9D3AF00D6117E</string>
 											<string>ECFD57670FD9D3F000D6117E</string>
 											<string>ECFD57700FD9D4C800D6117E</string>
+											<string>ECFD577B0FD9D82500D6117E</string>
+											<string>ECFD577C0FD9D82500D6117E</string>
+											<string>ECFD577D0FD9D82500D6117E</string>
+											<string>ECFD577E0FD9D82500D6117E</string>
+											<string>ECFD577F0FD9D82500D6117E</string>
+											<string>ECFD57800FD9D82500D6117E</string>
+											<string>ECFD57810FD9D82500D6117E</string>
+											<string>ECFD57940FD9E4FF00D6117E</string>
+											<string>ECFD579C0FD9E6A200D6117E</string>
+											<string>ECFD57D10FD9EF2600D6117E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -765,8 +766,8 @@
 		<string>ECFD54E00FD972AA00D6117E</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>EC6EB79A0FD0AB2E00E6F9D8</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/taylan/Documents/Development/Personal/squirrel/iphone/Squirrel/Squirrel.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -1007,7 +1008,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MainViewController.m</string>
+										<string>DataEntryViewController.m</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>

@@ -33,7 +33,6 @@
 	
 	valueFormatter = [[NSNumberFormatter alloc] init];
 	[valueFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-	[valueFormatter setHasThousandSeparators:YES];
 	
 	if (dataEntry.primaryKey) {
 		self.title = @"Edit Data Entry";
