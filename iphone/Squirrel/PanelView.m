@@ -12,6 +12,7 @@
 #import "DataPanel.h"
 #import "DataItem.h"
 #import "DataSet.h"
+#import "LayerDelegate.h"
 
 
 @implementation PanelView
@@ -63,66 +64,92 @@ static UIFont *mainFont = nil;
 	point.y += titleLabel.frame.size.height + 6.0;
 	
 	[titleLabel release];
-	
-    int counter = 0;
-	
-	for (DataItem *dataItem in dataPanel.dataSet.dataItems) {
-		CGSize titleSize = [dataItem.name sizeWithFont:mainFont];
-		UIButton *titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
-		
-		[titleButton setTitle:dataItem.name forState:UIControlStateNormal];
-		[titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-		[titleButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchUpInside];
-		
-		titleButton.frame = CGRectMake(point.x, point.y, titleSize.width, titleSize.height);
-		titleButton.font = mainFont;
-		titleButton.tag = counter;
-		
-		[self addSubview:titleButton];
-		
-		UIButton *editButton = [UIButton buttonWithType:UIButtonTypeCustom];
-		
-		[editButton setImage:[UIImage imageNamed:@"cog.png"] forState:UIControlStateNormal];
-		
-		editButton.frame = CGRectMake(point.x + titleSize.width + 5.0, point.y + 3.0, 16.0, 16.0);
-		editButton.tag = counter;
-		
-		[editButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchUpInside];
-		[self addSubview:editButton];
-		
-		point.y += titleButton.frame.size.height + 6.0;
-		
-		CALayer *barLayer = [CALayer layer];
-		
-		barLayer.anchorPoint = CGPointMake(0.0, 0.0);
-		barLayer.frame = CGRectMake(point.x, point.y, 0.0, 20.0);
-		barLayer.backgroundColor = [[UIColor blackColor] CGColor];
-		
-		CALayer *barBGLayer = [CALayer layer];
-		
-		barBGLayer.frame = CGRectMake(point.x, point.y, self.frame.size.width - 20.0, 20.0);
-		barBGLayer.backgroundColor = [[UIColor darkGrayColor] CGColor];
-		
-		[self.layer addSublayer:barBGLayer];
-		[self.layer addSublayer:barLayer];
-		
-		CABasicAnimation *resizeAnimation = [CABasicAnimation animationWithKeyPath:@"bounds.size.width"];
 
-		resizeAnimation.duration = 1.0;
-		resizeAnimation.removedOnCompletion = NO;
-		resizeAnimation.fillMode = kCAFillModeForwards;
-		resizeAnimation.toValue = [NSNumber numberWithFloat:((self.frame.size.width - 20.0) * dataItem.percentage / 100.0)];
-		resizeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+	int counter = 0;
+	
+	if ([dataPanel.type isEqualToString:@"Bar Chart"]) {
+		for (DataItem *dataItem in dataPanel.dataSet.dataItems) {
+			CGSize titleSize = [dataItem.name sizeWithFont:mainFont];
+			UIButton *titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
+			
+			[titleButton setTitle:dataItem.name forState:UIControlStateNormal];
+			[titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+			[titleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+			[titleButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchUpInside];
+			
+			titleButton.frame = CGRectMake(point.x, point.y, titleSize.width, titleSize.height);
+			titleButton.font = mainFont;
+			titleButton.tag = counter;
+			
+			[self addSubview:titleButton];
+			
+			UIButton *editButton = [UIButton buttonWithType:UIButtonTypeCustom];
+			
+			[editButton setImage:[UIImage imageNamed:@"cog.png"] forState:UIControlStateNormal];
+			[editButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchUpInside];
+			
+			editButton.frame = CGRectMake(point.x + titleSize.width + 6.0, point.y + 3.0, 16.0, 16.0);
+			editButton.tag = counter;
+			
+			[self addSubview:editButton];
+			
+			point.y += titleButton.frame.size.height + 6.0;
+			
+			CALayer *barLayer = [CALayer layer];
+			
+			barLayer.anchorPoint = CGPointMake(0.0, 0.0);
+			barLayer.frame = CGRectMake(point.x, point.y, 0.0, 20.0);
+			barLayer.backgroundColor = [[UIColor blackColor] CGColor];
+			
+			CALayer *barBGLayer = [CALayer layer];
+			
+			barBGLayer.frame = CGRectMake(point.x, point.y, self.frame.size.width - 20.0, 20.0);
+			barBGLayer.backgroundColor = [[UIColor darkGrayColor] CGColor];
+			
+			[self.layer addSublayer:barBGLayer];
+			[self.layer addSublayer:barLayer];
+			
+			CABasicAnimation *resizeAnimation = [CABasicAnimation animationWithKeyPath:@"bounds.size.width"];
 
-		[barLayer addAnimation:resizeAnimation forKey:@"animateWidth"];
+			resizeAnimation.duration = 1.0;
+			resizeAnimation.removedOnCompletion = NO;
+			resizeAnimation.fillMode = kCAFillModeForwards;
+			resizeAnimation.toValue = [NSNumber numberWithFloat:((self.frame.size.width - 20.0) * dataItem.percentage / 100.0)];
+			resizeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+
+			[barLayer addAnimation:resizeAnimation forKey:@"animateWidth"];
+			
+			point.y += barLayer.bounds.size.height + 6.0;
+			
+			counter++;
+		}
+	} else if ([dataPanel.type isEqualToString:@"Pie Chart"]) {
+		float totalPercentage = 0.0;
 		
-		point.y += barLayer.bounds.size.height + 6.0;
+		LayerDelegate *layerDelegate = [[LayerDelegate alloc] init];
 		
-		counter++;
+		for (DataItem *dataItem in dataPanel.dataSet.dataItems) {
+			CALayer *circleLayer = [CALayer layer];
+			
+			circleLayer.frame = CGRectMake(point.x, point.y, self.frame.size.width - 20.0, 200.0);
+
+			[self.layer addSublayer:circleLayer];
+			[circleLayer setValue:[NSNumber numberWithInt:counter] forKey:@"tag"];
+			[circleLayer setValue:[NSNumber numberWithFloat:totalPercentage] forKey:@"totalPercentage"];
+			[circleLayer setValue:[NSNumber numberWithFloat:dataItem.percentage] forKey:@"percentage"];
+			[circleLayer setDelegate:layerDelegate];
+			[circleLayer setNeedsDisplay];
+
+			totalPercentage += dataItem.percentage;
+			
+			counter++;
+		}
+		
+		point.y += 200.0;
 	}
 	
 	self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, point.y + 4.0);
-	
+
 	rendered = YES;
 }
 

@@ -39,6 +39,7 @@
 		ECFBFC420FD28B1700EEE684 /* DataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */; };
 		ECFBFFF50FD463F000EEE684 /* DataPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */; };
 		ECFD57B20FD9ECB700D6117E /* cog.png in Resources */ = {isa = PBXBuildFile; fileRef = ECFD57B10FD9ECB700D6117E /* cog.png */; };
+		ECFD58640FDAECF000D6117E /* LayerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFD58630FDAECF000D6117E /* LayerDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,8 @@
 		ECFBFFF30FD463F000EEE684 /* DataPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPanel.h; sourceTree = "<group>"; };
 		ECFBFFF40FD463F000EEE684 /* DataPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPanel.m; sourceTree = "<group>"; };
 		ECFD57B10FD9ECB700D6117E /* cog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cog.png; sourceTree = "<group>"; };
+		ECFD58620FDAECF000D6117E /* LayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerDelegate.h; sourceTree = "<group>"; };
+		ECFD58630FDAECF000D6117E /* LayerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +138,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				ECFD58610FDAECDC00D6117E /* Layers */,
 				ECFB03390FD4D7F100EEE684 /* Views */,
 				EC6EB8DF0FD1B7F500E6F9D8 /* Table View Cells */,
 				EC6EB88B0FD1A58C00E6F9D8 /* View Controllers */,
@@ -248,6 +252,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		ECFD58610FDAECDC00D6117E /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				ECFD58620FDAECF000D6117E /* LayerDelegate.h */,
+				ECFD58630FDAECF000D6117E /* LayerDelegate.m */,
+			);
+			name = Layers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -334,6 +347,7 @@
 				EC341D9D0FD5AAE40003212C /* DataEntryViewController.m in Sources */,
 				EC341E540FD5C9EE0003212C /* EditDataEntryViewController.m in Sources */,
 				ECE93A960FD8D48D006BA407 /* KeyPadViewController.m in Sources */,
+				ECFD58640FDAECF000D6117E /* LayerDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
