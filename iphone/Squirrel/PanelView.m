@@ -86,7 +86,7 @@ static UIFont *mainFont = nil;
 			UIButton *editButton = [UIButton buttonWithType:UIButtonTypeCustom];
 			
 			[editButton setImage:[UIImage imageNamed:@"cog.png"] forState:UIControlStateNormal];
-			[editButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchUpInside];
+			[editButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchDown];
 			
 			editButton.frame = CGRectMake(point.x + titleSize.width + 6.0, point.y + 3.0, 16.0, 16.0);
 			editButton.tag = counter;
@@ -149,7 +149,7 @@ static UIFont *mainFont = nil;
 	}
 	
 	self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, point.y + 4.0);
-
+	
 	rendered = YES;
 }
 

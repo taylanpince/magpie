@@ -41,7 +41,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-	
+	[dataItem selectRelated];
 	[self.tableView reloadData];
 }
 
