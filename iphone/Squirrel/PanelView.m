@@ -125,13 +125,16 @@ static UIFont *mainFont = nil;
 		}
 	} else if ([dataPanel.type isEqualToString:@"Pie Chart"]) {
 		float totalPercentage = 0.0;
+		CGFloat circleTop = point.y;
 		
 		LayerDelegate *layerDelegate = [[LayerDelegate alloc] init];
+		
+		point.y += 210.0;
 		
 		for (DataItem *dataItem in dataPanel.dataSet.dataItems) {
 			CALayer *circleLayer = [CALayer layer];
 			
-			circleLayer.frame = CGRectMake(point.x, point.y, self.frame.size.width - 20.0, 200.0);
+			circleLayer.frame = CGRectMake(point.x, circleTop, self.frame.size.width - 20.0, 200.0);
 
 			[self.layer addSublayer:circleLayer];
 			[circleLayer setValue:[NSNumber numberWithInt:counter] forKey:@"tag"];
@@ -142,10 +145,42 @@ static UIFont *mainFont = nil;
 
 			totalPercentage += dataItem.percentage;
 			
+			CGSize titleSize = [dataItem.name sizeWithFont:mainFont];
+			
+			CALayer *boxLayer = [CALayer layer];
+			
+			boxLayer.frame = CGRectMake(point.x, point.y, titleSize.height, titleSize.height);
+			boxLayer.backgroundColor = [[UIColor colorWithWhite:(0.1 * counter) alpha:1.0] CGColor];
+			
+			[self.layer addSublayer:boxLayer];
+			
+			UIButton *titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
+			
+			[titleButton setTitle:dataItem.name forState:UIControlStateNormal];
+			[titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+			[titleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+			[titleButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchUpInside];
+			
+			titleButton.frame = CGRectMake(point.x + titleSize.height + 6.0, point.y, titleSize.width, titleSize.height);
+			titleButton.font = mainFont;
+			titleButton.tag = counter;
+			
+			[self addSubview:titleButton];
+			
+			UIButton *editButton = [UIButton buttonWithType:UIButtonTypeCustom];
+			
+			[editButton setImage:[UIImage imageNamed:@"cog.png"] forState:UIControlStateNormal];
+			[editButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchDown];
+			
+			editButton.frame = CGRectMake(point.x + titleSize.width + titleSize.height + 12.0, point.y + 3.0, 16.0, 16.0);
+			editButton.tag = counter;
+			
+			[self addSubview:editButton];
+			
+			point.y += titleButton.frame.size.height + 6.0;
+			
 			counter++;
 		}
-		
-		point.y += 200.0;
 	}
 	
 	self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, point.y + 4.0);
