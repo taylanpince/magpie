@@ -228,8 +228,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -282,12 +280,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>1</integer>
+									<integer>52</integer>
+									<integer>50</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {214, 764}}</string>
+							<string>{{0, 596}, {214, 764}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -317,6 +316,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -334,7 +335,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ECF5162B0FDC116400DA2B74</string>
+										<string>ECF516390FDC1CD900DA2B74</string>
 										<key>history</key>
 										<array>
 											<string>ECB3AA360FD1DDC700F81F02</string>
@@ -379,11 +380,12 @@
 											<string>EC85E4B50FDC113500431277</string>
 											<string>EC85E4B60FDC113500431277</string>
 											<string>EC85E4B70FDC113500431277</string>
-											<string>EC85E4C50FDC113500431277</string>
+											<string>ECF516360FDC1CD900DA2B74</string>
+											<string>ECF516370FDC1CD900DA2B74</string>
 										</array>
 										<key>nextStack</key>
 										<array>
-											<string>EC85E4C40FDC113500431277</string>
+											<string>ECF516380FDC1CD900DA2B74</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -619,6 +621,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>ECF5163C0FDC1CD900DA2B74</string>
+		<string>ECF5163D0FDC1CD900DA2B74</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>EC6EB79A0FD0AB2E00E6F9D8</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/taylan/Documents/Development/Personal/squirrel/iphone/Squirrel/Squirrel.xcodeproj</string>
 	</array>
@@ -700,7 +706,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>EC6EB79A0FD0AB2E00E6F9D8</string>
-				<string>EC85E4C80FDC113500431277</string>
+				<string>ECF5163A0FDC1CD900DA2B74</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -982,7 +988,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>EC85E4CF0FDC113500431277</string>
+				<string>ECF5163B0FDC1CD900DA2B74</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

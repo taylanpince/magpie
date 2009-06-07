@@ -112,6 +112,7 @@ static UIFont *mainFont = nil;
 			CABasicAnimation *resizeAnimation = [CABasicAnimation animationWithKeyPath:@"bounds.size.width"];
 
 			resizeAnimation.duration = 1.0;
+			resizeAnimation.beginTime = CACurrentMediaTime() + (counter / 10.0);
 			resizeAnimation.removedOnCompletion = NO;
 			resizeAnimation.fillMode = kCAFillModeForwards;
 			resizeAnimation.toValue = [NSNumber numberWithFloat:((self.frame.size.width - 20.0) * dataItem.percentage / 100.0)];
@@ -135,6 +136,7 @@ static UIFont *mainFont = nil;
 			CALayer *circleLayer = [CALayer layer];
 			
 			circleLayer.frame = CGRectMake(point.x, circleTop, self.frame.size.width - 20.0, 200.0);
+			circleLayer.opacity = 0.0;
 
 			[self.layer addSublayer:circleLayer];
 			[circleLayer setValue:[NSNumber numberWithInt:counter] forKey:@"tag"];
@@ -142,6 +144,17 @@ static UIFont *mainFont = nil;
 			[circleLayer setValue:[NSNumber numberWithFloat:dataItem.percentage] forKey:@"percentage"];
 			[circleLayer setDelegate:layerDelegate];
 			[circleLayer setNeedsDisplay];
+			
+			CABasicAnimation *fadeAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+			
+			fadeAnimation.duration = 1.0;
+			fadeAnimation.beginTime = CACurrentMediaTime() + (counter / 10.0);
+			fadeAnimation.removedOnCompletion = NO;
+			fadeAnimation.fillMode = kCAFillModeForwards;
+			fadeAnimation.toValue = [NSNumber numberWithFloat:1.0];
+			fadeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+			
+			[circleLayer addAnimation:fadeAnimation forKey:@"animateFade"];
 
 			totalPercentage += dataItem.percentage;
 			
