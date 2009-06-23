@@ -23,6 +23,8 @@
 		EC6EB8E20FD1B81E00E6F9D8 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB8E10FD1B81E00E6F9D8 /* EditableTableViewCell.m */; };
 		EC6EB9560FD1CFDC00E6F9D8 /* DataSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */; };
 		EC6EB9B20FD1D86400E6F9D8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6EB9B10FD1D86400E6F9D8 /* Icon.png */; };
+		ECB752C50FF16CAD007CCBCB /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB752C40FF16CAD007CCBCB /* bg.png */; };
+		ECB752DA0FF17A23007CCBCB /* rounded-box.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB752D90FF17A23007CCBCB /* rounded-box.png */; };
 		ECE93A960FD8D48D006BA407 /* KeyPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE93A950FD8D48D006BA407 /* KeyPadViewController.m */; };
 		ECE93A980FD8D5A6006BA407 /* KeyPadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECE93A970FD8D5A6006BA407 /* KeyPadView.xib */; };
 		ECFB00510FD46F6600EEE684 /* DataPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */; };
@@ -70,6 +72,8 @@
 		EC6EB9540FD1CFDC00E6F9D8 /* DataSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSetViewController.h; sourceTree = "<group>"; };
 		EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSetViewController.m; sourceTree = "<group>"; };
 		EC6EB9B10FD1D86400E6F9D8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		ECB752C40FF16CAD007CCBCB /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		ECB752D90FF17A23007CCBCB /* rounded-box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rounded-box.png"; sourceTree = "<group>"; };
 		ECE93A940FD8D48D006BA407 /* KeyPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyPadViewController.h; sourceTree = "<group>"; };
 		ECE93A950FD8D48D006BA407 /* KeyPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyPadViewController.m; sourceTree = "<group>"; };
 		ECE93A970FD8D5A6006BA407 /* KeyPadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyPadView.xib; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ECB752D90FF17A23007CCBCB /* rounded-box.png */,
+				ECB752C40FF16CAD007CCBCB /* bg.png */,
 				ECFD57B10FD9ECB700D6117E /* cog.png */,
 				EC6EB9B10FD1D86400E6F9D8 /* Icon.png */,
 				280E754B0DD40C5E005A515E /* MainView.xib */,
@@ -317,6 +323,8 @@
 				EC341E550FD5C9EE0003212C /* DataEntryView.xib in Resources */,
 				ECE93A980FD8D5A6006BA407 /* KeyPadView.xib in Resources */,
 				ECFD57B20FD9ECB700D6117E /* cog.png in Resources */,
+				ECB752C50FF16CAD007CCBCB /* bg.png in Resources */,
+				ECB752DA0FF17A23007CCBCB /* rounded-box.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

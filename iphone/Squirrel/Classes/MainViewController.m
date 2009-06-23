@@ -29,6 +29,9 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	
+	[scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]]];
+	
 	[self reloadPanels];
 }
 
@@ -40,10 +43,10 @@
 		}
 	}
 	
-	CGPoint top = CGPointMake(10.0, 10.0);
+	CGPoint top = CGPointMake(0.0, 10.0);
 	
 	for (DataPanel *dataPanel in [(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels]) {
-		PanelView *panelView = [[PanelView alloc] initWithFrame:CGRectMake(top.x, top.y, scrollView.frame.size.width - 20.0, 0.0)];
+		PanelView *panelView = [[PanelView alloc] initWithFrame:CGRectMake(top.x, top.y, scrollView.frame.size.width, 0.0)];
 		
 		[dataPanel.dataSet selectRelated];
 

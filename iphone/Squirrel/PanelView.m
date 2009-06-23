@@ -35,7 +35,7 @@ static UIFont *mainFont = nil;
 		smallBoldFont = [[UIFont boldSystemFontOfSize:SMALL_FONT_SIZE] retain];
         mainFont = [[UIFont boldSystemFontOfSize:MAIN_FONT_SIZE] retain];
 		
-		self.backgroundColor = [UIColor lightGrayColor];
+		[self setBackgroundColor:[UIColor clearColor]];
     }
     return self;
 }
@@ -53,9 +53,9 @@ static UIFont *mainFont = nil;
 - (void)layoutSubviews {
 	if (rendered) return;
 
-	CGPoint point = CGPointMake(10.0, 10.0);
+	CGPoint point = CGPointMake(20.0, 10.0);
 	
-	UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, self.frame.size.width - 20.0, 16.0)];
+	UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, self.frame.size.width - 40.0, 16.0)];
 	
 	titleLabel.text = dataPanel.name;
 	titleLabel.font = smallBoldFont;
@@ -68,7 +68,7 @@ static UIFont *mainFont = nil;
 	
 	[titleLabel release];
 	
-	UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, self.frame.size.width - 20.0, 20.0)];
+	UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, self.frame.size.width - 40.0, 20.0)];
 	
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 	[dateFormatter setDateStyle:NSDateFormatterMediumStyle];
@@ -123,7 +123,7 @@ static UIFont *mainFont = nil;
 			
 			CALayer *barBGLayer = [CALayer layer];
 			
-			barBGLayer.frame = CGRectMake(point.x, point.y, self.frame.size.width - 20.0, 20.0);
+			barBGLayer.frame = CGRectMake(point.x, point.y, self.frame.size.width - 40.0, 20.0);
 			barBGLayer.backgroundColor = [[UIColor darkGrayColor] CGColor];
 			
 			[self.layer addSublayer:barBGLayer];
@@ -135,7 +135,7 @@ static UIFont *mainFont = nil;
 			resizeAnimation.beginTime = CACurrentMediaTime() + (counter / 10.0);
 			resizeAnimation.removedOnCompletion = NO;
 			resizeAnimation.fillMode = kCAFillModeForwards;
-			resizeAnimation.toValue = [NSNumber numberWithDouble:((self.frame.size.width - 20.0) * dataItem.percentage / 100.0)];
+			resizeAnimation.toValue = [NSNumber numberWithDouble:((self.frame.size.width - 40.0) * dataItem.percentage / 100.0)];
 			resizeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
 
 			[barLayer addAnimation:resizeAnimation forKey:@"animateWidth"];
@@ -155,7 +155,7 @@ static UIFont *mainFont = nil;
 		for (DataItem *dataItem in dataPanel.dataSet.dataItems) {
 			CALayer *circleLayer = [CALayer layer];
 			
-			circleLayer.frame = CGRectMake(point.x, circleTop, self.frame.size.width - 20.0, 200.0);
+			circleLayer.frame = CGRectMake(point.x, circleTop, self.frame.size.width - 40.0, 200.0);
 			circleLayer.opacity = 0.0;
 
 			[self.layer addSublayer:circleLayer];
@@ -251,9 +251,27 @@ static UIFont *mainFont = nil;
 		
 	}
 	
-	self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, point.y + 4.0);
+	self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, point.y + 18.0);
 	
 	rendered = YES;
+}
+
+
+- (void)drawRect:(CGRect)rect {
+	CGContextRef context = UIGraphicsGetCurrentContext();
+	
+	rect.size.width -= 20.0;
+	rect.size.height -= 14.0;
+	rect.origin.x += 10.0;
+	
+	CGContextSaveGState(context);
+	CGContextSetShadow(context, CGSizeMake(2.0, -8.0), 4.0);
+	
+	UIImage *roundedBox = [[UIImage imageNamed:@"rounded-box.png"] stretchableImageWithLeftCapWidth:15 topCapHeight:15];
+	
+	[roundedBox drawInRect:rect];
+	
+	CGContextRestoreGState(context);
 }
 
 
