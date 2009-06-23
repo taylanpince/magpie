@@ -84,7 +84,7 @@ static sqlite3_stmt *dehydrate_statement = nil;
     database = db;
 	
     if (insert_statement == nil) {
-        static char *sql = "INSERT INTO data_panels (name,data_set) VALUES(?,?)";
+        static char *sql = "INSERT INTO data_panels (name,data_set,type,weight,color) VALUES(?,?,?,?,?)";
 		
         if (sqlite3_prepare_v2(database, sql, -1, &insert_statement, NULL) != SQLITE_OK) {
             NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
@@ -93,6 +93,9 @@ static sqlite3_stmt *dehydrate_statement = nil;
 	
     sqlite3_bind_text(insert_statement, 1, [name UTF8String], -1, SQLITE_TRANSIENT);
     sqlite3_bind_int(insert_statement, 2, [dataSet primaryKey]);
+    sqlite3_bind_text(insert_statement, 3, [type UTF8String], -1, SQLITE_TRANSIENT);
+    sqlite3_bind_int(insert_statement, 4, [weight intValue]);
+    sqlite3_bind_text(insert_statement, 5, [color UTF8String], -1, SQLITE_TRANSIENT);
 	
     int success = sqlite3_step(insert_statement);
 	
@@ -112,6 +115,7 @@ static sqlite3_stmt *dehydrate_statement = nil;
 	[type release];
 	[weight release];
 	[dataSet release];
+	[color release];
     [super dealloc];
 }
 
@@ -140,7 +144,7 @@ static sqlite3_stmt *dehydrate_statement = nil;
     if (hydrated) return;
 	
     if (hydrate_statement == nil) {
-        const char *sql = "SELECT type, weight, data_set FROM data_panels WHERE pk=?";
+        const char *sql = "SELECT type, weight, data_set, color FROM data_panels WHERE pk=?";
 		
         if (sqlite3_prepare_v2(database, sql, -1, &hydrate_statement, NULL) != SQLITE_OK) {
             NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
@@ -152,10 +156,13 @@ static sqlite3_stmt *dehydrate_statement = nil;
     int success = sqlite3_step(hydrate_statement);
     
 	if (success == SQLITE_ROW) {
-        char *str = (char *)sqlite3_column_text(hydrate_statement, 0);
-		self.type = (str) ? [NSString stringWithUTF8String:str] : @"";
+        char *typeCopy = (char *)sqlite3_column_text(hydrate_statement, 0);
+        char *colorCopy = (char *)sqlite3_column_text(hydrate_statement, 3);
+		
+		self.type = (typeCopy) ? [NSString stringWithUTF8String:typeCopy] : @"";
 		self.weight = [NSNumber numberWithInt:sqlite3_column_int(hydrate_statement, 1)];
 		self.dataSet = [[DataSet alloc] initWithPrimaryKey:sqlite3_column_int(hydrate_statement, 2) database:database];
+		self.color = (colorCopy) ? [NSString stringWithUTF8String:colorCopy] : @"";
     }
 	
     sqlite3_reset(hydrate_statement);
@@ -174,7 +181,7 @@ static sqlite3_stmt *dehydrate_statement = nil;
 - (void)dehydrate {
     if (dirty) {
         if (dehydrate_statement == nil) {
-            const char *sql = "UPDATE data_panels SET name=?, type=?, weight=?, data_set=? WHERE pk=?";
+            const char *sql = "UPDATE data_panels SET name=?, type=?, weight=?, data_set=?, color=? WHERE pk=?";
 			
             if (sqlite3_prepare_v2(database, sql, -1, &dehydrate_statement, NULL) != SQLITE_OK) {
                 NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
@@ -185,7 +192,8 @@ static sqlite3_stmt *dehydrate_statement = nil;
         sqlite3_bind_text(dehydrate_statement, 2, [type UTF8String], -1, SQLITE_TRANSIENT);
         sqlite3_bind_int(dehydrate_statement, 3, [weight intValue]);
         sqlite3_bind_int(dehydrate_statement, 4, [dataSet primaryKey]);
-        sqlite3_bind_int(dehydrate_statement, 5, primaryKey);
+        sqlite3_bind_text(dehydrate_statement, 5, [color UTF8String], -1, SQLITE_TRANSIENT);
+        sqlite3_bind_int(dehydrate_statement, 6, primaryKey);
 		
         int success = sqlite3_step(dehydrate_statement);
 		
@@ -227,6 +235,17 @@ static sqlite3_stmt *dehydrate_statement = nil;
     dirty = YES;
     [name release];
     name = [aString copy];
+}
+
+- (NSString *)color {
+    return color;
+}
+
+- (void)setColor:(NSString *)aColor {
+    if ((!color && !aColor) || (color && aColor && [color isEqualToString:aColor])) return;
+    dirty = YES;
+    [color release];
+    color = [aColor copy];
 }
 
 - (NSString *)type {

@@ -12,11 +12,12 @@
 	sqlite3 *database;
 	NSInteger primaryKey;
 	NSString *name;
+	NSDate *lastUpdated;
 	DataSet *dataSet;
 	NSMutableArray *dataEntries;
 	
-	float total;
-	float percentage;
+	double total;
+	double percentage;
 
 	BOOL hydrated;
 	BOOL dirty;
@@ -24,9 +25,10 @@
 }
 
 @property (assign, nonatomic, readonly) NSInteger primaryKey;
-@property (assign, nonatomic, readonly) float total;
-@property (assign, nonatomic, readonly) float percentage;
+@property (assign, nonatomic, readonly) double total;
+@property (assign, nonatomic, readonly) double percentage;
 @property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSDate *lastUpdated;
 @property (copy, nonatomic) DataSet *dataSet;
 @property (retain, nonatomic) NSMutableArray *dataEntries;
 

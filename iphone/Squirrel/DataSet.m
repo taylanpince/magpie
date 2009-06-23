@@ -60,7 +60,7 @@ static sqlite3_stmt *select_related_statement = nil;
         database = db;
 
         if (init_statement == nil) {
-            const char *sql = "SELECT name FROM data_sets WHERE pk=?";
+            const char *sql = "SELECT name, last_updated FROM data_sets WHERE pk=?";
 
             if (sqlite3_prepare_v2(database, sql, -1, &init_statement, NULL) != SQLITE_OK) {
                 NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
@@ -71,8 +71,10 @@ static sqlite3_stmt *select_related_statement = nil;
         
 		if (sqlite3_step(init_statement) == SQLITE_ROW) {
             self.name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(init_statement, 0)];
+			self.lastUpdated = [NSDate dateWithTimeIntervalSince1970:sqlite3_column_double(init_statement, 1)];
         } else {
             self.name = @"No name";
+			self.lastUpdated = [NSDate date];
         }
 
         sqlite3_reset(init_statement);
@@ -87,7 +89,7 @@ static sqlite3_stmt *select_related_statement = nil;
     database = db;
 
     if (insert_statement == nil) {
-        static char *sql = "INSERT INTO data_sets (name) VALUES(?)";
+        static char *sql = "INSERT INTO data_sets (name,last_updated) VALUES(?,?)";
 
         if (sqlite3_prepare_v2(database, sql, -1, &insert_statement, NULL) != SQLITE_OK) {
             NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
@@ -95,6 +97,7 @@ static sqlite3_stmt *select_related_statement = nil;
     }
 
     sqlite3_bind_text(insert_statement, 1, [name UTF8String], -1, SQLITE_TRANSIENT);
+	sqlite3_bind_double(insert_statement, 2, [lastUpdated timeIntervalSince1970]);
 
     int success = sqlite3_step(insert_statement);
 
@@ -260,7 +263,7 @@ static sqlite3_stmt *select_related_statement = nil;
     return primaryKey;
 }
 
-- (float)total {
+- (double)total {
 	total = 0.0;
 	
 	for (DataItem *item in dataItems) {

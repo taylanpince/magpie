@@ -75,6 +75,9 @@
 		[dataEntry dehydrate];
 	}
 	
+	dataItem.lastUpdated = [NSDate date];
+	[dataItem dehydrate];
+	
 	[self.navigationController popViewControllerAnimated:YES];
 }
 

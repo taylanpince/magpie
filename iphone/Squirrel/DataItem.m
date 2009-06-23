@@ -60,7 +60,7 @@ static sqlite3_stmt *select_related_statement = nil;
         database = db;
 		
         if (init_statement == nil) {
-            const char *sql = "SELECT name FROM data_items WHERE pk=?";
+            const char *sql = "SELECT name, last_updated FROM data_items WHERE pk=?";
 			
             if (sqlite3_prepare_v2(database, sql, -1, &init_statement, NULL) != SQLITE_OK) {
                 NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
@@ -71,8 +71,10 @@ static sqlite3_stmt *select_related_statement = nil;
         
 		if (sqlite3_step(init_statement) == SQLITE_ROW) {
             self.name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(init_statement, 0)];
+			self.lastUpdated = [NSDate dateWithTimeIntervalSince1970:sqlite3_column_double(init_statement, 1)];
         } else {
-            self.name = @"No name";
+            self.name = @"Anonymous Item";
+			self.lastUpdated = [NSDate date];
         }
 		
         sqlite3_reset(init_statement);
@@ -86,7 +88,7 @@ static sqlite3_stmt *select_related_statement = nil;
     database = db;
 	
     if (insert_statement == nil) {
-        static char *sql = "INSERT INTO data_items (name,data_set) VALUES(?,?)";
+        static char *sql = "INSERT INTO data_items (name,data_set,last_updated) VALUES(?,?,?)";
 		
         if (sqlite3_prepare_v2(database, sql, -1, &insert_statement, NULL) != SQLITE_OK) {
             NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
@@ -95,6 +97,7 @@ static sqlite3_stmt *select_related_statement = nil;
 	
     sqlite3_bind_text(insert_statement, 1, [name UTF8String], -1, SQLITE_TRANSIENT);
 	sqlite3_bind_int(insert_statement, 2, [dataSet primaryKey]);
+	sqlite3_bind_double(insert_statement, 3, [lastUpdated timeIntervalSince1970]);
 	
     int success = sqlite3_step(insert_statement);
 	
@@ -112,6 +115,7 @@ static sqlite3_stmt *select_related_statement = nil;
 - (void)dealloc {
     [name release];
 	[dataSet release];
+	[lastUpdated release];
     [super dealloc];
 }
 
@@ -186,7 +190,7 @@ static sqlite3_stmt *select_related_statement = nil;
 - (void)dehydrate {
     if (dirty) {
         if (dehydrate_statement == nil) {
-            const char *sql = "UPDATE data_items SET name=?, data_set=? WHERE pk=?";
+            const char *sql = "UPDATE data_items SET name=?, data_set=?, last_updated=? WHERE pk=?";
 			
             if (sqlite3_prepare_v2(database, sql, -1, &dehydrate_statement, NULL) != SQLITE_OK) {
                 NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
@@ -195,7 +199,8 @@ static sqlite3_stmt *select_related_statement = nil;
 		
         sqlite3_bind_text(dehydrate_statement, 1, [name UTF8String], -1, SQLITE_TRANSIENT);
         sqlite3_bind_double(dehydrate_statement, 2, [dataSet primaryKey]);
-        sqlite3_bind_int(dehydrate_statement, 3, primaryKey);
+		sqlite3_bind_double(dehydrate_statement, 3, [lastUpdated timeIntervalSince1970]);
+        sqlite3_bind_int(dehydrate_statement, 4, primaryKey);
 		
         int success = sqlite3_step(dehydrate_statement);
 		
@@ -251,17 +256,17 @@ static sqlite3_stmt *select_related_statement = nil;
     return primaryKey;
 }
 
-- (float)total {
+- (double)total {
 	total = 0.0;
 	
 	for (DataEntry *entry in dataEntries) {
-		total += [entry.value floatValue];
+		total += [entry.value doubleValue];
 	}
 	
 	return total;
 }
 
-- (float)percentage {
+- (double)percentage {
 	return 100 * self.total / dataSet.total;
 }
 
@@ -274,6 +279,19 @@ static sqlite3_stmt *select_related_statement = nil;
     dirty = YES;
     [name release];
     name = [aString copy];
+}
+
+- (NSDate *)lastUpdated {
+    return lastUpdated;
+}
+
+- (void)setLastUpdated:(NSDate *)aDate {
+    if ((!lastUpdated && !aDate) || (lastUpdated && aDate && [lastUpdated isEqualToDate:aDate])) return;
+    dirty = YES;
+    [lastUpdated release];
+    lastUpdated = [aDate copy];
+	
+	self.dataSet.lastUpdated = lastUpdated;
 }
 
 - (DataSet *)dataSet {

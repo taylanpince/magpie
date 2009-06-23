@@ -12,6 +12,7 @@
 #import "DataPanel.h"
 #import "DataItem.h"
 #import "DataSet.h"
+#import "DataEntry.h"
 #import "LayerDelegate.h"
 
 
@@ -24,12 +25,14 @@
 #define MAIN_FONT_SIZE 18
 
 static UIFont *smallFont = nil;
+static UIFont *smallBoldFont = nil;
 static UIFont *mainFont = nil;
 
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
 		smallFont = [[UIFont systemFontOfSize:SMALL_FONT_SIZE] retain];
+		smallBoldFont = [[UIFont boldSystemFontOfSize:SMALL_FONT_SIZE] retain];
         mainFont = [[UIFont boldSystemFontOfSize:MAIN_FONT_SIZE] retain];
 		
 		self.backgroundColor = [UIColor lightGrayColor];
@@ -52,19 +55,36 @@ static UIFont *mainFont = nil;
 
 	CGPoint point = CGPointMake(10.0, 10.0);
 	
-	UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, self.frame.size.width - 20.0, 20.0)];
+	UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, self.frame.size.width - 20.0, 16.0)];
 	
 	titleLabel.text = dataPanel.name;
-	titleLabel.font = smallFont;
+	titleLabel.font = smallBoldFont;
 	titleLabel.textAlignment = UITextAlignmentRight;
 	titleLabel.backgroundColor = [UIColor lightGrayColor];
 	
 	[self addSubview:titleLabel];
 	
-	point.y += titleLabel.frame.size.height + 6.0;
+	point.y += titleLabel.frame.size.height;
 	
 	[titleLabel release];
-
+	
+	UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, self.frame.size.width - 20.0, 20.0)];
+	
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+	[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+	
+	dateLabel.text = [dateFormatter stringFromDate:dataPanel.dataSet.lastUpdated];
+	dateLabel.font = smallFont;
+	dateLabel.textAlignment = UITextAlignmentRight;
+	dateLabel.backgroundColor = [UIColor lightGrayColor];
+	
+	[self addSubview:dateLabel];
+	
+	point.y += dateLabel.frame.size.height + 6.0;
+	
+	[dateLabel release];
+	
 	int counter = 0;
 	
 	if ([dataPanel.type isEqualToString:@"Bar Chart"]) {
@@ -115,7 +135,7 @@ static UIFont *mainFont = nil;
 			resizeAnimation.beginTime = CACurrentMediaTime() + (counter / 10.0);
 			resizeAnimation.removedOnCompletion = NO;
 			resizeAnimation.fillMode = kCAFillModeForwards;
-			resizeAnimation.toValue = [NSNumber numberWithFloat:((self.frame.size.width - 20.0) * dataItem.percentage / 100.0)];
+			resizeAnimation.toValue = [NSNumber numberWithDouble:((self.frame.size.width - 20.0) * dataItem.percentage / 100.0)];
 			resizeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
 
 			[barLayer addAnimation:resizeAnimation forKey:@"animateWidth"];
@@ -125,7 +145,7 @@ static UIFont *mainFont = nil;
 			counter++;
 		}
 	} else if ([dataPanel.type isEqualToString:@"Pie Chart"]) {
-		float totalPercentage = 0.0;
+		double totalPercentage = 0.0;
 		CGFloat circleTop = point.y;
 		
 		LayerDelegate *layerDelegate = [[LayerDelegate alloc] init];
@@ -140,8 +160,8 @@ static UIFont *mainFont = nil;
 
 			[self.layer addSublayer:circleLayer];
 			[circleLayer setValue:[NSNumber numberWithInt:counter] forKey:@"tag"];
-			[circleLayer setValue:[NSNumber numberWithFloat:totalPercentage] forKey:@"totalPercentage"];
-			[circleLayer setValue:[NSNumber numberWithFloat:dataItem.percentage] forKey:@"percentage"];
+			[circleLayer setValue:[NSNumber numberWithDouble:totalPercentage] forKey:@"totalPercentage"];
+			[circleLayer setValue:[NSNumber numberWithDouble:dataItem.percentage] forKey:@"percentage"];
 			[circleLayer setDelegate:layerDelegate];
 			[circleLayer setNeedsDisplay];
 			
@@ -151,11 +171,23 @@ static UIFont *mainFont = nil;
 			fadeAnimation.beginTime = CACurrentMediaTime() + (counter / 10.0);
 			fadeAnimation.removedOnCompletion = NO;
 			fadeAnimation.fillMode = kCAFillModeForwards;
-			fadeAnimation.toValue = [NSNumber numberWithFloat:1.0];
+			fadeAnimation.toValue = [NSNumber numberWithDouble:1.0];
 			fadeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
 			
 			[circleLayer addAnimation:fadeAnimation forKey:@"animateFade"];
 
+			CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+			
+			scaleAnimation.duration = 0.5;
+			scaleAnimation.beginTime = CACurrentMediaTime() + (counter / 10.0);
+			scaleAnimation.removedOnCompletion = NO;
+			scaleAnimation.fillMode = kCAFillModeForwards;
+			scaleAnimation.fromValue = [NSNumber numberWithDouble:1.5];
+			scaleAnimation.toValue = [NSNumber numberWithDouble:1.0];
+			scaleAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+			
+			[circleLayer addAnimation:scaleAnimation forKey:@"animateScale"];
+			
 			totalPercentage += dataItem.percentage;
 			
 			CGSize titleSize = [dataItem.name sizeWithFont:mainFont];
@@ -194,6 +226,29 @@ static UIFont *mainFont = nil;
 			
 			counter++;
 		}
+	} else if ([dataPanel.type isEqualToString:@"Latest Entry as Words"]) {
+		NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+		
+		[numberFormatter setNumberStyle:NSNumberFormatterSpellOutStyle];
+		
+		NSNumber *numberValue = [NSNumber numberWithDouble:3.2];
+		CGSize valueSize = [[[numberFormatter stringFromNumber:numberValue] uppercaseString] sizeWithFont:mainFont constrainedToSize:CGSizeMake(self.frame.size.width - 20.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
+		UILabel *valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, valueSize.width, valueSize.height)];
+
+		valueLabel.lineBreakMode = UILineBreakModeWordWrap;
+		valueLabel.numberOfLines = 0;
+		valueLabel.text = [[numberFormatter stringFromNumber:numberValue] uppercaseString];
+		valueLabel.font = mainFont;
+		valueLabel.backgroundColor = [UIColor lightGrayColor];
+		
+		[self addSubview:valueLabel];
+
+		point.y += valueLabel.frame.size.height + 6.0;
+
+		[valueLabel release];
+		[numberFormatter release];
+	} else if ([dataPanel.type isEqualToString:@"Latest Entry as Numbers"]) {
+		
 	}
 	
 	self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, point.y + 4.0);

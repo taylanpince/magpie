@@ -62,7 +62,7 @@ static sqlite3_stmt *dehydrate_statement = nil;
         sqlite3_bind_int(init_statement, 1, primaryKey);
         
 		if (sqlite3_step(init_statement) == SQLITE_ROW) {
-            self.value = [NSNumber numberWithFloat:sqlite3_column_double(init_statement, 0)];
+            self.value = [NSNumber numberWithDouble:sqlite3_column_double(init_statement, 0)];
 			self.timeStamp = [NSDate dateWithTimeIntervalSince1970:sqlite3_column_double(init_statement, 1)];
         }
 		
@@ -84,7 +84,7 @@ static sqlite3_stmt *dehydrate_statement = nil;
         }
     }
 	
-    sqlite3_bind_double(insert_statement, 1, [value floatValue]);
+    sqlite3_bind_double(insert_statement, 1, [value doubleValue]);
 	sqlite3_bind_int(insert_statement, 2, [timeStamp timeIntervalSince1970]);
 	sqlite3_bind_int(insert_statement, 3, [dataItem primaryKey]);
 	
@@ -164,7 +164,7 @@ static sqlite3_stmt *dehydrate_statement = nil;
             }
         }
 		
-		sqlite3_bind_double(dehydrate_statement, 1, [value floatValue]);
+		sqlite3_bind_double(dehydrate_statement, 1, [value doubleValue]);
 		sqlite3_bind_int(dehydrate_statement, 2, [timeStamp timeIntervalSince1970]);
 		sqlite3_bind_int(dehydrate_statement, 3, [dataItem primaryKey]);
         sqlite3_bind_int(dehydrate_statement, 4, primaryKey);
@@ -194,8 +194,8 @@ static sqlite3_stmt *dehydrate_statement = nil;
     return primaryKey;
 }
 
-- (float)percentage {
-	return 100.0 * [value floatValue] / dataItem.total;
+- (double)percentage {
+	return 100.0 * [value doubleValue] / dataItem.total;
 }
 
 - (NSNumber *)value {

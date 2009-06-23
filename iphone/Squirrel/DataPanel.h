@@ -13,6 +13,7 @@
 	NSInteger primaryKey;
 	NSString *name;
 	NSString *type;
+	NSString *color;
 	NSNumber *weight;
 	DataSet *dataSet;
 	
@@ -22,6 +23,7 @@
 
 @property (assign, nonatomic, readonly) NSInteger primaryKey;
 @property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *color;
 @property (copy, nonatomic) NSString *type;
 @property (copy, nonatomic) NSNumber *weight;
 @property (copy, nonatomic) DataSet *dataSet;
