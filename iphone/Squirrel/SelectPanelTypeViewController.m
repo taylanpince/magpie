@@ -18,7 +18,7 @@
     [super viewDidLoad];
 	
 	if (panelTypes == nil) {
-		panelTypes = [[NSArray alloc] initWithObjects:@"Pie Chart", @"Bar Chart", @"Latest Entry as Words", @"Latest Entry as Numbers", nil];
+		panelTypes = [[NSArray alloc] initWithObjects:@"Pie Chart", @"Bar Chart", @"Latest Entry as Words", @"Latest Entry as Numbers", @"Latest Entry Type", nil];
 	}
 }
 

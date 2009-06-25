@@ -42,7 +42,7 @@
 	} else {
 		self.title = @"Add Data Entry";
 		
-		dataEntryValue = [[NSNumber alloc] initWithFloat:0.0];
+		dataEntryValue = [[NSNumber alloc] initWithDouble:0.0];
 		dataEntryTimeStamp = [[NSDate alloc] init];
 	}
 	
@@ -202,7 +202,7 @@
 	}
 	
 	[dataEntryValue release];
-	dataEntryValue = [[NSNumber alloc] initWithFloat:[valueString floatValue]];
+	dataEntryValue = [[NSNumber alloc] initWithDouble:[valueString doubleValue]];
 	
 	[valueString release];
 	[formTableView reloadData];

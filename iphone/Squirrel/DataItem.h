@@ -45,4 +45,6 @@
 - (void)addDataEntry:(DataEntry *)dataEntry;
 - (void)removeDataEntry:(DataEntry *)dataEntry;
 
+- (DataEntry *)latestDataEntry;
+
 @end

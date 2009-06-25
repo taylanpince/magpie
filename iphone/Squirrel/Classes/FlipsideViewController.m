@@ -72,6 +72,7 @@
 		
 		if (indexPath.row == [dataSets count]) {
 			cell.mainLabel.text = @"Add a new data set";
+			cell.subLabel.text = @"";
 		} else {
 			DataSet *dataSet = [dataSets objectAtIndex:indexPath.row];
 			cell.mainLabel.text = dataSet.name;
@@ -81,6 +82,7 @@
 		
 		if (indexPath.row == [dataPanels count]) {
 			cell.mainLabel.text = @"Add a new data panel";
+			cell.subLabel.text = @"";
 		} else {
 			DataPanel *dataPanel = [dataPanels objectAtIndex:indexPath.row];
 			cell.mainLabel.text = dataPanel.name;
@@ -162,8 +164,6 @@
 			SquirrelAppDelegate *appDelegate = (SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate];
 			DataSet *dataSet = [[appDelegate dataSets] objectAtIndex:indexPath.row];
 			
-			[appDelegate removeDataSet:dataSet];
-			
 			NSMutableArray *deletedRows = [NSMutableArray arrayWithObject:indexPath];
 			int rowNumber = 0;
 			
@@ -175,6 +175,8 @@
 				
 				rowNumber++;
 			}
+			
+			[appDelegate removeDataSet:dataSet];
 			
 			[tableView deleteRowsAtIndexPaths:deletedRows withRowAnimation:UITableViewRowAnimationFade];
 		} else {

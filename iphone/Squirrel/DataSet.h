@@ -42,4 +42,6 @@
 - (void)addDataItem:(DataItem *)dataItem;
 - (void)removeDataItem:(DataItem *)dataItem;
 
+- (DataItem *)latestDataItem;
+
 @end

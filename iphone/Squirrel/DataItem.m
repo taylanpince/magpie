@@ -318,4 +318,12 @@ static sqlite3_stmt *select_related_statement = nil;
     [dataEntries addObject:dataEntry];
 }
 
+
+- (DataEntry *)latestDataEntry {
+	NSSortDescriptor *sorter = [[[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:YES] autorelease];
+	NSArray *sortedItems = [dataEntries sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sorter, nil]];
+	
+	return [sortedItems lastObject];
+}
+
 @end

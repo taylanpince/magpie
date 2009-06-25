@@ -42,6 +42,12 @@
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 	[dataItem selectRelated];
+	
+	NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
+	
+	[dataItem.dataEntries sortUsingDescriptors:[NSArray arrayWithObjects:sorter, nil]];
+	[sorter release];
+	
 	[self.tableView reloadData];
 }
 

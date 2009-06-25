@@ -53,14 +53,14 @@ static UIFont *mainFont = nil;
 - (void)layoutSubviews {
 	if (rendered) return;
 
-	CGPoint point = CGPointMake(20.0, 10.0);
+	CGPoint point = CGPointMake(20.0, 5.0);
 	
-	UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, self.frame.size.width - 40.0, 16.0)];
+	UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, self.frame.size.width - 40.0, 14.0)];
 	
 	titleLabel.text = dataPanel.name;
 	titleLabel.font = smallBoldFont;
 	titleLabel.textAlignment = UITextAlignmentRight;
-	titleLabel.backgroundColor = [UIColor lightGrayColor];
+	titleLabel.backgroundColor = [UIColor clearColor];
 	
 	[self addSubview:titleLabel];
 	
@@ -77,11 +77,11 @@ static UIFont *mainFont = nil;
 	dateLabel.text = [dateFormatter stringFromDate:dataPanel.dataSet.lastUpdated];
 	dateLabel.font = smallFont;
 	dateLabel.textAlignment = UITextAlignmentRight;
-	dateLabel.backgroundColor = [UIColor lightGrayColor];
+	dateLabel.backgroundColor = [UIColor clearColor];
 	
 	[self addSubview:dateLabel];
 	
-	point.y += dateLabel.frame.size.height + 6.0;
+	point.y += dateLabel.frame.size.height + 10.0;
 	
 	[dateLabel release];
 	
@@ -106,7 +106,7 @@ static UIFont *mainFont = nil;
 			UIButton *editButton = [UIButton buttonWithType:UIButtonTypeCustom];
 			
 			[editButton setImage:[UIImage imageNamed:@"cog.png"] forState:UIControlStateNormal];
-			[editButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchDown];
+			[editButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchUpInside];
 			
 			editButton.frame = CGRectMake(point.x + titleSize.width + 6.0, point.y + 3.0, 16.0, 16.0);
 			editButton.tag = counter;
@@ -215,7 +215,7 @@ static UIFont *mainFont = nil;
 			UIButton *editButton = [UIButton buttonWithType:UIButtonTypeCustom];
 			
 			[editButton setImage:[UIImage imageNamed:@"cog.png"] forState:UIControlStateNormal];
-			[editButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchDown];
+			[editButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchUpInside];
 			
 			editButton.frame = CGRectMake(point.x + titleSize.width + titleSize.height + 12.0, point.y + 3.0, 16.0, 16.0);
 			editButton.tag = counter;
@@ -231,15 +231,15 @@ static UIFont *mainFont = nil;
 		
 		[numberFormatter setNumberStyle:NSNumberFormatterSpellOutStyle];
 		
-		NSNumber *numberValue = [NSNumber numberWithDouble:3.2];
-		CGSize valueSize = [[[numberFormatter stringFromNumber:numberValue] uppercaseString] sizeWithFont:mainFont constrainedToSize:CGSizeMake(self.frame.size.width - 20.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
+		NSNumber *numberValue = [[[dataPanel.dataSet latestDataItem] latestDataEntry] value];
+		CGSize valueSize = [[[numberFormatter stringFromNumber:numberValue] uppercaseString] sizeWithFont:mainFont constrainedToSize:CGSizeMake(self.frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
 		UILabel *valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, valueSize.width, valueSize.height)];
 
 		valueLabel.lineBreakMode = UILineBreakModeWordWrap;
 		valueLabel.numberOfLines = 0;
 		valueLabel.text = [[numberFormatter stringFromNumber:numberValue] uppercaseString];
 		valueLabel.font = mainFont;
-		valueLabel.backgroundColor = [UIColor lightGrayColor];
+		valueLabel.backgroundColor = [UIColor clearColor];
 		
 		[self addSubview:valueLabel];
 
@@ -248,7 +248,37 @@ static UIFont *mainFont = nil;
 		[valueLabel release];
 		[numberFormatter release];
 	} else if ([dataPanel.type isEqualToString:@"Latest Entry as Numbers"]) {
+		NSNumber *numberValue = [[[dataPanel.dataSet latestDataItem] latestDataEntry] value];
+		CGSize valueSize = [[numberValue stringValue] sizeWithFont:mainFont constrainedToSize:CGSizeMake(self.frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
+		UILabel *valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, valueSize.width, valueSize.height)];
 		
+		valueLabel.lineBreakMode = UILineBreakModeWordWrap;
+		valueLabel.numberOfLines = 0;
+		valueLabel.text = [numberValue stringValue];
+		valueLabel.font = mainFont;
+		valueLabel.backgroundColor = [UIColor clearColor];
+		
+		[self addSubview:valueLabel];
+		
+		point.y += valueLabel.frame.size.height + 6.0;
+		
+		[valueLabel release];
+	} else if ([dataPanel.type isEqualToString:@"Latest Entry Type"]) {
+		NSString *entryName = [[dataPanel.dataSet latestDataItem] name];
+		CGSize valueSize = [[entryName uppercaseString] sizeWithFont:mainFont constrainedToSize:CGSizeMake(self.frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
+		UILabel *valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, valueSize.width, valueSize.height)];
+		
+		valueLabel.lineBreakMode = UILineBreakModeWordWrap;
+		valueLabel.numberOfLines = 0;
+		valueLabel.text = [entryName uppercaseString];
+		valueLabel.font = mainFont;
+		valueLabel.backgroundColor = [UIColor clearColor];
+		
+		[self addSubview:valueLabel];
+		
+		point.y += valueLabel.frame.size.height + 6.0;
+		
+		[valueLabel release];
 	}
 	
 	self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, point.y + 18.0);
@@ -266,12 +296,93 @@ static UIFont *mainFont = nil;
 	
 	CGContextSaveGState(context);
 	CGContextSetShadow(context, CGSizeMake(2.0, -8.0), 4.0);
+	CGContextSetRGBFillColor(context, 0.88, 0.88, 0.88, 1.0);
 	
-	UIImage *roundedBox = [[UIImage imageNamed:@"rounded-box.png"] stretchableImageWithLeftCapWidth:15 topCapHeight:15];
+	int corner_radius = 10;
 	
-	[roundedBox drawInRect:rect];
+	CGContextBeginPath(context);
+	CGContextMoveToPoint(context, rect.origin.x, rect.origin.y + corner_radius);
+	CGContextAddArcToPoint(context, rect.origin.x, rect.origin.y, rect.origin.x + corner_radius, rect.origin.y, corner_radius);
+	CGContextAddLineToPoint(context, rect.origin.x + rect.size.width - corner_radius, rect.origin.y);
+	CGContextAddArcToPoint(context, rect.origin.x + rect.size.width, rect.origin.y, rect.origin.x + rect.size.width, rect.origin.y + corner_radius, corner_radius);
+	CGContextAddLineToPoint(context, rect.origin.x + rect.size.width, rect.origin.y + rect.size.height - corner_radius);
+	CGContextAddArcToPoint(context, rect.origin.x + rect.size.width, rect.origin.y + rect.size.height, rect.origin.x + rect.size.width - corner_radius, rect.origin.y + rect.size.height, corner_radius);
+	CGContextAddLineToPoint(context, rect.origin.x + corner_radius, rect.origin.y + rect.size.height);
+	CGContextAddArcToPoint(context, rect.origin.x, rect.origin.y + rect.size.height, rect.origin.x, rect.origin.y + rect.size.height - corner_radius, corner_radius);
+	CGContextAddLineToPoint(context, rect.origin.x, rect.origin.y + corner_radius);
+	CGContextClosePath(context);
 	
+	CGContextFillPath(context);
 	CGContextRestoreGState(context);
+	
+	CGContextSaveGState(context);
+	
+	int header_height = 40;
+
+	CGContextBeginPath(context);
+	CGContextMoveToPoint(context, rect.origin.x, rect.origin.y + corner_radius);
+	CGContextAddArcToPoint(context, rect.origin.x, rect.origin.y, rect.origin.x + corner_radius, rect.origin.y, corner_radius);
+	CGContextAddLineToPoint(context, rect.origin.x + rect.size.width - corner_radius, rect.origin.y);
+	CGContextAddArcToPoint(context, rect.origin.x + rect.size.width, rect.origin.y, rect.origin.x + rect.size.width, rect.origin.y + corner_radius, corner_radius);
+	CGContextAddLineToPoint(context, rect.origin.x + rect.size.width, rect.origin.y + header_height);
+	CGContextAddLineToPoint(context, rect.origin.x, rect.origin.y + header_height);
+	CGContextAddLineToPoint(context, rect.origin.x, rect.origin.y + corner_radius);
+	CGContextClosePath(context);
+
+	CGContextClip(context);
+	
+	size_t num_locations = 4;
+	CGFloat locations[4] = {
+		0.0,
+		0.025,
+		0.975,
+		1.0
+	};
+
+	CGFloat components[16] = {
+		1.0, 1.0, 1.0, 1.0,
+		0.65, 0.65, 0.65, 1.0,
+		0.5, 0.5, 0.5, 1.0,
+		0.4, 0.4, 0.4, 1.0
+	};
+	
+	CGGradientRef gradient = CGGradientCreateWithColorComponents(CGColorSpaceCreateDeviceRGB(), components, locations, num_locations);
+	
+	CGContextDrawLinearGradient(context, gradient, CGPointMake(0.0, 0.0), CGPointMake(0.0, header_height), 0);
+	
+	CGGradientRelease(gradient);
+	CGContextRestoreGState(context);
+
+	CGContextBeginPath(context);
+	CGContextMoveToPoint(context, rect.origin.x, rect.origin.y + corner_radius);
+	CGContextAddArcToPoint(context, rect.origin.x, rect.origin.y, rect.origin.x + corner_radius, rect.origin.y, corner_radius);
+	CGContextAddLineToPoint(context, rect.origin.x + rect.size.width - corner_radius, rect.origin.y);
+	CGContextAddArcToPoint(context, rect.origin.x + rect.size.width, rect.origin.y, rect.origin.x + rect.size.width, rect.origin.y + corner_radius, corner_radius);
+	CGContextAddLineToPoint(context, rect.origin.x + rect.size.width, rect.origin.y + rect.size.height - corner_radius);
+	CGContextAddArcToPoint(context, rect.origin.x + rect.size.width, rect.origin.y + rect.size.height, rect.origin.x + rect.size.width - corner_radius, rect.origin.y + rect.size.height, corner_radius);
+	CGContextAddLineToPoint(context, rect.origin.x + corner_radius, rect.origin.y + rect.size.height);
+	CGContextAddArcToPoint(context, rect.origin.x, rect.origin.y + rect.size.height, rect.origin.x, rect.origin.y + rect.size.height - corner_radius, corner_radius);
+	CGContextAddLineToPoint(context, rect.origin.x, rect.origin.y + corner_radius);
+	CGContextClosePath(context);
+	
+	CGContextClip(context);
+
+	size_t bottom_locations_num = 2;
+	CGFloat bottom_locations[2] = {
+		0.0,
+		1.0
+	};
+	
+	CGFloat bottom_components[16] = {
+		0.88, 0.88, 0.88, 1.0,
+		0.6, 0.6, 0.6, 1.0
+	};
+	
+	CGGradientRef bottom_gradient = CGGradientCreateWithColorComponents(CGColorSpaceCreateDeviceRGB(), bottom_components, bottom_locations, bottom_locations_num);
+	
+	CGContextDrawLinearGradient(context, bottom_gradient, CGPointMake(0.0, rect.size.height - 6.0), CGPointMake(0.0, rect.size.height), 0);
+	
+	CGGradientRelease(bottom_gradient);
 }
 
 
