@@ -24,6 +24,9 @@
 		EC6EB9560FD1CFDC00E6F9D8 /* DataSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */; };
 		EC6EB9B20FD1D86400E6F9D8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6EB9B10FD1D86400E6F9D8 /* Icon.png */; };
 		ECB752C50FF16CAD007CCBCB /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB752C40FF16CAD007CCBCB /* bg.png */; };
+		ECC882650FF91A5E0092B227 /* SelectPanelColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC882640FF91A5E0092B227 /* SelectPanelColorViewController.m */; };
+		ECC8828B0FF9232F0092B227 /* PanelColor.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC8828A0FF9232F0092B227 /* PanelColor.m */; };
+		ECDB5B7A0FF3291100FC52FA /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = ECDB5B790FF3291100FC52FA /* gear.png */; };
 		ECE93A960FD8D48D006BA407 /* KeyPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE93A950FD8D48D006BA407 /* KeyPadViewController.m */; };
 		ECE93A980FD8D5A6006BA407 /* KeyPadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECE93A970FD8D5A6006BA407 /* KeyPadView.xib */; };
 		ECFB00510FD46F6600EEE684 /* DataPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */; };
@@ -72,6 +75,11 @@
 		EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSetViewController.m; sourceTree = "<group>"; };
 		EC6EB9B10FD1D86400E6F9D8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		ECB752C40FF16CAD007CCBCB /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		ECC882630FF91A5E0092B227 /* SelectPanelColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPanelColorViewController.h; sourceTree = "<group>"; };
+		ECC882640FF91A5E0092B227 /* SelectPanelColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPanelColorViewController.m; sourceTree = "<group>"; };
+		ECC882890FF9232F0092B227 /* PanelColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelColor.h; sourceTree = "<group>"; };
+		ECC8828A0FF9232F0092B227 /* PanelColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelColor.m; sourceTree = "<group>"; };
+		ECDB5B790FF3291100FC52FA /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		ECE93A940FD8D48D006BA407 /* KeyPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyPadViewController.h; sourceTree = "<group>"; };
 		ECE93A950FD8D48D006BA407 /* KeyPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyPadViewController.m; sourceTree = "<group>"; };
 		ECE93A970FD8D5A6006BA407 /* KeyPadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyPadView.xib; sourceTree = "<group>"; };
@@ -166,6 +174,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ECDB5B790FF3291100FC52FA /* gear.png */,
 				ECB752C40FF16CAD007CCBCB /* bg.png */,
 				ECFD57B10FD9ECB700D6117E /* cog.png */,
 				EC6EB9B10FD1D86400E6F9D8 /* Icon.png */,
@@ -221,6 +230,8 @@
 				ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */,
 				ECFB01430FD48F3B00EEE684 /* SelectPanelTypeViewController.h */,
 				ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */,
+				ECC882630FF91A5E0092B227 /* SelectPanelColorViewController.h */,
+				ECC882640FF91A5E0092B227 /* SelectPanelColorViewController.m */,
 				EC341D9B0FD5AAE40003212C /* DataEntryViewController.h */,
 				EC341D9C0FD5AAE40003212C /* DataEntryViewController.m */,
 				EC341E510FD5C9EE0003212C /* EditDataEntryViewController.h */,
@@ -249,6 +260,8 @@
 		ECFB03390FD4D7F100EEE684 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ECC882890FF9232F0092B227 /* PanelColor.h */,
+				ECC8828A0FF9232F0092B227 /* PanelColor.m */,
 				ECFB033A0FD4D80100EEE684 /* PanelView.h */,
 				ECFB033B0FD4D80100EEE684 /* PanelView.m */,
 			);
@@ -321,6 +334,7 @@
 				ECE93A980FD8D5A6006BA407 /* KeyPadView.xib in Resources */,
 				ECFD57B20FD9ECB700D6117E /* cog.png in Resources */,
 				ECB752C50FF16CAD007CCBCB /* bg.png in Resources */,
+				ECDB5B7A0FF3291100FC52FA /* gear.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +366,8 @@
 				EC341E540FD5C9EE0003212C /* EditDataEntryViewController.m in Sources */,
 				ECE93A960FD8D48D006BA407 /* KeyPadViewController.m in Sources */,
 				ECFD58640FDAECF000D6117E /* LayerDelegate.m in Sources */,
+				ECC882650FF91A5E0092B227 /* SelectPanelColorViewController.m in Sources */,
+				ECC8828B0FF9232F0092B227 /* PanelColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "PanelView.h"
+#import "PanelColor.h"
 #import "DataPanel.h"
 #import "DataItem.h"
 #import "DataSet.h"
@@ -54,6 +55,7 @@ static UIFont *mainFont = nil;
 	if (rendered) return;
 
 	CGPoint point = CGPointMake(20.0, 5.0);
+	UIColor *textColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0];
 	
 	UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, self.frame.size.width - 40.0, 14.0)];
 	
@@ -61,6 +63,7 @@ static UIFont *mainFont = nil;
 	titleLabel.font = smallBoldFont;
 	titleLabel.textAlignment = UITextAlignmentRight;
 	titleLabel.backgroundColor = [UIColor clearColor];
+	titleLabel.textColor = textColor;
 	
 	[self addSubview:titleLabel];
 	
@@ -78,6 +81,7 @@ static UIFont *mainFont = nil;
 	dateLabel.font = smallFont;
 	dateLabel.textAlignment = UITextAlignmentRight;
 	dateLabel.backgroundColor = [UIColor clearColor];
+	dateLabel.textColor = textColor;
 	
 	[self addSubview:dateLabel];
 	
@@ -89,12 +93,13 @@ static UIFont *mainFont = nil;
 	
 	if ([dataPanel.type isEqualToString:@"Bar Chart"]) {
 		for (DataItem *dataItem in dataPanel.dataSet.dataItems) {
-			CGSize titleSize = [dataItem.name sizeWithFont:mainFont];
+			NSString *title = [NSString stringWithFormat:@"%@ (%1.2f)", dataItem.name, dataItem.total];
+			CGSize titleSize = [title sizeWithFont:mainFont];
 			UIButton *titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
 			
-			[titleButton setTitle:dataItem.name forState:UIControlStateNormal];
-			[titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-			[titleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+			[titleButton setTitle:title forState:UIControlStateNormal];
+			[titleButton setTitleColor:textColor forState:UIControlStateNormal];
+			[titleButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
 			[titleButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchUpInside];
 			
 			titleButton.frame = CGRectMake(point.x, point.y, titleSize.width, titleSize.height);
@@ -119,12 +124,12 @@ static UIFont *mainFont = nil;
 			
 			barLayer.anchorPoint = CGPointMake(0.0, 0.0);
 			barLayer.frame = CGRectMake(point.x, point.y, 0.0, 20.0);
-			barLayer.backgroundColor = [[UIColor blackColor] CGColor];
+			barLayer.backgroundColor = [[PanelColor colorWithName:dataPanel.color alpha:1.0] CGColor];
 			
 			CALayer *barBGLayer = [CALayer layer];
 			
 			barBGLayer.frame = CGRectMake(point.x, point.y, self.frame.size.width - 40.0, 20.0);
-			barBGLayer.backgroundColor = [[UIColor darkGrayColor] CGColor];
+			barBGLayer.backgroundColor = [[PanelColor colorWithName:dataPanel.color alpha:0.5] CGColor];
 			
 			[self.layer addSublayer:barBGLayer];
 			[self.layer addSublayer:barLayer];
@@ -162,6 +167,7 @@ static UIFont *mainFont = nil;
 			[circleLayer setValue:[NSNumber numberWithInt:counter] forKey:@"tag"];
 			[circleLayer setValue:[NSNumber numberWithDouble:totalPercentage] forKey:@"totalPercentage"];
 			[circleLayer setValue:[NSNumber numberWithDouble:dataItem.percentage] forKey:@"percentage"];
+			[circleLayer setValue:dataPanel.color forKey:@"color"];
 			[circleLayer setDelegate:layerDelegate];
 			[circleLayer setNeedsDisplay];
 			
@@ -195,15 +201,15 @@ static UIFont *mainFont = nil;
 			CALayer *boxLayer = [CALayer layer];
 			
 			boxLayer.frame = CGRectMake(point.x, point.y, titleSize.height, titleSize.height);
-			boxLayer.backgroundColor = [[UIColor colorWithWhite:(0.1 * counter) alpha:1.0] CGColor];
+			boxLayer.backgroundColor = [[PanelColor colorWithName:dataPanel.color alpha:1.0 - (0.2 * counter)] CGColor];
 			
 			[self.layer addSublayer:boxLayer];
 			
 			UIButton *titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
 			
 			[titleButton setTitle:dataItem.name forState:UIControlStateNormal];
-			[titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-			[titleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+			[titleButton setTitleColor:textColor forState:UIControlStateNormal];
+			[titleButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
 			[titleButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchUpInside];
 			
 			titleButton.frame = CGRectMake(point.x + titleSize.height + 6.0, point.y, titleSize.width, titleSize.height);
@@ -240,6 +246,7 @@ static UIFont *mainFont = nil;
 		valueLabel.text = [[numberFormatter stringFromNumber:numberValue] uppercaseString];
 		valueLabel.font = mainFont;
 		valueLabel.backgroundColor = [UIColor clearColor];
+		valueLabel.textColor = textColor;
 		
 		[self addSubview:valueLabel];
 
@@ -257,6 +264,7 @@ static UIFont *mainFont = nil;
 		valueLabel.text = [numberValue stringValue];
 		valueLabel.font = mainFont;
 		valueLabel.backgroundColor = [UIColor clearColor];
+		valueLabel.textColor = textColor;
 		
 		[self addSubview:valueLabel];
 		
@@ -273,6 +281,7 @@ static UIFont *mainFont = nil;
 		valueLabel.text = [entryName uppercaseString];
 		valueLabel.font = mainFont;
 		valueLabel.backgroundColor = [UIColor clearColor];
+		valueLabel.textColor = textColor;
 		
 		[self addSubview:valueLabel];
 		
@@ -331,19 +340,30 @@ static UIFont *mainFont = nil;
 
 	CGContextClip(context);
 	
-	size_t num_locations = 4;
-	CGFloat locations[4] = {
+//	CGContextSetRGBFillColor(context, 0.24, 0.48, 0.65, 1.0);
+	[[PanelColor colorWithName:dataPanel.color alpha:1.0] set];
+	
+	CGContextAddRect(context, CGRectMake(0.0, 0.0, rect.origin.x + rect.size.width, header_height));
+	
+	CGContextFillPath(context);
+	
+	size_t num_locations = 6;
+	CGFloat locations[6] = {
 		0.0,
 		0.025,
+		0.5,
+		0.5,
 		0.975,
 		1.0
 	};
 
-	CGFloat components[16] = {
-		1.0, 1.0, 1.0, 1.0,
-		0.65, 0.65, 0.65, 1.0,
-		0.5, 0.5, 0.5, 1.0,
-		0.4, 0.4, 0.4, 1.0
+	CGFloat components[24] = {
+		1.0, 1.0, 1.0, 0.5,
+		0.75, 0.75, 0.75, 0.5,
+		0.6, 0.6, 0.6, 0.5,
+		0.5, 0.5, 0.5, 0.5,
+		0.25, 0.25, 0.25, 0.5,
+		0.0, 0.0, 0.0, 0.5
 	};
 	
 	CGGradientRef gradient = CGGradientCreateWithColorComponents(CGColorSpaceCreateDeviceRGB(), components, locations, num_locations);

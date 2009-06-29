@@ -9,6 +9,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "LayerDelegate.h"
+#import "PanelColor.h"
 
 
 @implementation LayerDelegate
@@ -23,7 +24,7 @@
 	CGFloat startAngle = ((360.0 * [[layer valueForKey:@"totalPercentage"] floatValue] / 100.0) - 5.0) * (M_PI / 180.0);
 	CGFloat endAngle = startAngle + ((360.0 * [[layer valueForKey:@"percentage"] floatValue] / 100.0) * (M_PI / 180.0));
 
-	CGContextSetFillColorWithColor(ctx, [[UIColor colorWithWhite:0.1 * [[layer valueForKey:@"tag"] floatValue] alpha:1.0] CGColor]);
+	CGContextSetFillColorWithColor(ctx, [[PanelColor colorWithName:[layer valueForKey:@"color"] alpha:1.0 - (0.2 * [[layer valueForKey:@"tag"] floatValue])] CGColor]);
 	CGContextMoveToPoint(ctx, centerX, centerY);
     CGContextAddArc(ctx, centerX, centerY, radius, startAngle, endAngle, 0);
 	CGContextClosePath(ctx);

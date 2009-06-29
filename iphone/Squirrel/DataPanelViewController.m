@@ -14,11 +14,12 @@
 #import "DataSet.h"
 #import "SelectDataSetViewController.h"
 #import "SelectPanelTypeViewController.h"
+#import "SelectPanelColorViewController.h"
 
 
 @implementation DataPanelViewController
 
-@synthesize dataPanel, dataPanelName, dataPanelType, dataPanelSet, activeTextField;
+@synthesize dataPanel, dataPanelName, dataPanelType, dataPanelSet, dataPanelColor, activeTextField;
 
 
 - (void)viewDidLoad {
@@ -42,16 +43,19 @@
 
 	if (dataPanelName) [dataPanelName release];
 	if (dataPanelType) [dataPanelType release];
+	if (dataPanelColor) [dataPanelColor release];
 	
 	if (dataPanel.primaryKey) {
 		[dataPanel hydrate];
 		
 		dataPanelName = [dataPanel.name mutableCopy];
 		dataPanelType = [dataPanel.type mutableCopy];
+		dataPanelColor = [dataPanel.color mutableCopy];
 		dataPanelSet = dataPanel.dataSet;
 	} else {
 		dataPanelName = [[NSMutableString alloc] init];
 		dataPanelType = [[NSMutableString alloc] init];
+		dataPanelColor = [[NSMutableString alloc] initWithString:@"Blue"];
 	}
 }
 
@@ -77,6 +81,7 @@
 	
 	dataPanel.name = dataPanelName;
 	dataPanel.type = dataPanelType;
+	dataPanel.color = dataPanelColor;
 	dataPanel.dataSet = dataPanelSet;
 	
 	if (!dataPanel.primaryKey) {
@@ -94,6 +99,9 @@
 	[dataPanelType release];
 	dataPanelType = nil;
 	
+	[dataPanelColor release];
+	dataPanelColor = nil;
+	
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -109,7 +117,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 4;
 }
 
 
@@ -159,6 +167,10 @@
 				cell.dataLabel.text = @"Select a Panel Type";
 				cell.blank = YES;
 			}
+		} else if (indexPath.row == 3) {
+			cell.titleLabel.text = @"Panel Color";
+			cell.dataLabel.text = dataPanelColor;
+			cell.blank = NO;
 		}
 
 		return cell;
@@ -178,6 +190,14 @@
 		SelectPanelTypeViewController *controller = [[SelectPanelTypeViewController alloc] initWithStyle:UITableViewStyleGrouped];
 		
 		controller.panelType = dataPanelType;
+		controller.delegate = self;
+		
+		[self.navigationController pushViewController:controller animated:YES];
+		[controller release];
+	} else if (indexPath.row == 3) {
+		SelectPanelColorViewController *controller = [[SelectPanelColorViewController alloc] initWithStyle:UITableViewStyleGrouped];
+		
+		controller.panelColor = dataPanelColor;
 		controller.delegate = self;
 		
 		[self.navigationController pushViewController:controller animated:YES];
@@ -212,7 +232,7 @@
 	
 	[self.tableView reloadData];
 	
-	if (![dataPanelName isEqualToString:@""] & ![dataPanelType isEqualToString:@""]) {
+	if (![dataPanelName isEqualToString:@""] && ![dataPanelType isEqualToString:@""]) {
 		self.navigationItem.rightBarButtonItem.enabled = YES;
 	}
 }
@@ -226,7 +246,22 @@
 		
 		[self.tableView reloadData];
 		
-		if (![dataPanelName isEqualToString:@""] & dataPanelSet != nil) {
+		if (![dataPanelName isEqualToString:@""] && dataPanelSet != nil) {
+			self.navigationItem.rightBarButtonItem.enabled = YES;
+		}
+	}
+}
+
+
+- (void)didUpdatePanelColor:(NSMutableString *)newPanelColor {
+	if (![dataPanelColor isEqualToString:newPanelColor]) {
+		[dataPanelColor release];
+		
+		dataPanelColor = newPanelColor;
+		
+		[self.tableView reloadData];
+		
+		if (![dataPanelName isEqualToString:@""] && dataPanelType != nil && dataPanelSet != nil) {
 			self.navigationItem.rightBarButtonItem.enabled = YES;
 		}
 	}
@@ -237,6 +272,7 @@
 	[dataPanel release];
 	[dataPanelName release];
 	[dataPanelType release];
+	[dataPanelColor release];
     [super dealloc];
 }
 

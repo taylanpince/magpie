@@ -51,7 +51,7 @@ static sqlite3_stmt *dehydrate_statement = nil;
         database = db;
 		
         if (init_statement == nil) {
-            const char *sql = "SELECT name, type, weight FROM data_panels WHERE pk=?";
+            const char *sql = "SELECT name, type, weight, color FROM data_panels WHERE pk=?";
 			
             if (sqlite3_prepare_v2(database, sql, -1, &init_statement, NULL) != SQLITE_OK) {
                 NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
@@ -68,6 +68,9 @@ static sqlite3_stmt *dehydrate_statement = nil;
 			self.type = (typeStr) ? [NSString stringWithUTF8String:typeStr] : @"";
 			
 			self.weight = [NSNumber numberWithInt:sqlite3_column_int(init_statement, 2)];
+
+			char *colorStr = (char *)sqlite3_column_text(init_statement, 3);
+            self.color = (colorStr) ? [NSString stringWithUTF8String:colorStr] : @"";
         } else {
             self.name = @"No name";
         }
