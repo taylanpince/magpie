@@ -13,11 +13,14 @@
 	UITextField *textField;
 	NSIndexPath *indexPath;
 	
+	BOOL showsAccessoryButton;
+	
 	id <EditableTableViewCellDelegate> delegate;
 }
 
 @property (nonatomic, retain) UITextField *textField;
 @property (nonatomic, retain) NSIndexPath *indexPath;
+@property (nonatomic, assign) BOOL showsAccessoryButton;
 
 @property (nonatomic, assign) id <EditableTableViewCellDelegate> delegate;
 

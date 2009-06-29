@@ -76,6 +76,7 @@
 		} else {
 			DataSet *dataSet = [dataSets objectAtIndex:indexPath.row];
 			cell.mainLabel.text = dataSet.name;
+			cell.subLabel.text = @"";
 		}
 	} else {
 		NSMutableArray *dataPanels = [(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels];

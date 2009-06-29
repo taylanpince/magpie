@@ -11,7 +11,7 @@
 
 @implementation EditableTableViewCell
 
-@synthesize textField, delegate, indexPath;
+@synthesize textField, delegate, indexPath, showsAccessoryButton;
 
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
@@ -55,7 +55,7 @@
 	[replacedString replaceCharactersInRange:range withString:string];
 
 	[delegate didChangeEditingTextFieldAtIndexPath:indexPath withValue:replacedString];
-	
+		
 	return YES;
 }
 

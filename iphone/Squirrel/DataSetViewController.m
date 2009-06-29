@@ -11,6 +11,7 @@
 #import "EditableTableViewCell.h"
 #import "DataSet.h"
 #import "DataItem.h"
+#import "DataEntryViewController.h"
 
 
 @implementation DataSetViewController
@@ -151,6 +152,8 @@
 			cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
 		}
 		
+		cell.hidesAccessoryWhenEditing = YES;
+		cell.accessoryType = UITableViewCellAccessoryNone;
 		cell.text = @"Add a new data item";
 		
 		return cell;
@@ -163,6 +166,14 @@
 			cell = [[[EditableTableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
 		}
 		
+		if (indexPath.row == 0) {
+			cell.accessoryType = UITableViewCellAccessoryNone;
+			cell.hidesAccessoryWhenEditing = YES;
+		} else {
+			cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+			cell.hidesAccessoryWhenEditing = NO;
+		}
+
 		cell.delegate = self;
 		cell.indexPath = indexPath;
 		
@@ -196,7 +207,7 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.section == 1 & indexPath.row == 0) {
+	if (indexPath.section == 1 && indexPath.row == 0) {
 		if (activeTextField) {
 			[activeTextField resignFirstResponder];
 		}
@@ -215,6 +226,24 @@
 		
 		[tableView selectRowAtIndexPath:[indexPaths objectAtIndex:0] animated:NO scrollPosition:UITableViewScrollPositionBottom];
 	}
+}
+
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+	if (activeTextField) {
+		[activeTextField resignFirstResponder];
+	}
+	
+	NSLog(@"Selected %d", indexPath.row);
+	
+	DataEntryViewController *controller = [[DataEntryViewController alloc] initWithStyle:UITableViewStyleGrouped];
+	
+//	controller.delegate = self;
+	controller.dataItem = [dataItems objectAtIndex:indexPath.row - 1];
+	
+	[self.navigationController pushViewController:controller animated:YES];
+	
+	[controller release];
 }
 
 
