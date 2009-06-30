@@ -18,7 +18,7 @@
     [super viewDidLoad];
 	
 	if (panelColors == nil) {
-		panelColors = [[NSArray alloc] initWithObjects:@"Blue", @"Green", @"Red", nil];
+		panelColors = [[NSArray alloc] initWithObjects:@"Blue", @"Green", @"Red", @"Cyan", @"Yellow", @"Purple", @"Gray", nil];
 	}
 }
 
