@@ -15,7 +15,7 @@
 
 @implementation EditDataEntryViewController
 
-@synthesize dataEntry, dataItem, formTableView, datePickerView, keyPad, dataEntryValue, dataEntryTimeStamp, dateFormatter, valueFormatter;
+@synthesize dataEntry, dataItem, formTableView, datePickerView, keyPad, dataEntryValue, dataEntryTimeStamp, dateFormatter, valueFormatter, delegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -78,12 +78,20 @@
 	dataItem.lastUpdated = [NSDate date];
 	[dataItem dehydrate];
 	
-	[self.navigationController popViewControllerAnimated:YES];
+	if (delegate) {
+		[delegate didCloseEditDataEntryView];
+	} else {
+		[self.navigationController popViewControllerAnimated:YES];
+	}
 }
 
 
 - (void)cancel:(id)sender {
-	[self.navigationController popViewControllerAnimated:YES];
+	if (delegate) {
+		[delegate didCloseEditDataEntryView];
+	} else {
+		[self.navigationController popViewControllerAnimated:YES];
+	}
 }
 
 
@@ -159,10 +167,10 @@
 }
 
 
-- (void)didTapKeyPad:(KeyPadViewController *)keyPad onKey:(NSString *)key {
+- (void)didTapKeyPad:(KeyPadViewController *)keyPad onKey:(NSInteger)key {
 	NSMutableString *valueString = [[NSMutableString alloc] initWithString:[dataEntryValue stringValue]];
 	
-	if ([key isEqualToString:@"⌫"]) {
+	if (key == 14) {
 		NSRange range = [valueString rangeOfString:@"."];
 		
 		if (valueFormatter.alwaysShowsDecimalSeparator & range.location == NSNotFound) {
@@ -173,21 +181,21 @@
 			[valueString release];
 			valueString = [[NSMutableString alloc] initWithString:@"0"];
 		}
-	} else if ([key isEqualToString:@"C"]) {
+	} else if (key == 12) {
 		[valueString release];
 		valueString = [[NSMutableString alloc] initWithString:@"0"];
 		[valueFormatter setAlwaysShowsDecimalSeparator:NO];
-	} else if ([key isEqualToString:@"±"]) {
+	} else if (key == 13) {
 		if ([valueString hasPrefix:@"-"]) {
 			[valueString replaceCharactersInRange:NSMakeRange(0, 1) withString:@""];
 		} else {
 			[valueString insertString:@"-" atIndex:0];
 		}
-	} else if ([key isEqualToString:@"."]) {
+	} else if (key == 11) {
 		[valueFormatter setAlwaysShowsDecimalSeparator:YES];
 	} else {
 		if ([[valueString substringToIndex:1] isEqualToString:@"0"] & !valueFormatter.alwaysShowsDecimalSeparator) {
-			[valueString replaceCharactersInRange:NSMakeRange(0, 1) withString:key];
+			[valueString replaceCharactersInRange:NSMakeRange(0, 1) withString:[NSString stringWithFormat:@"%d", key]];
 		} else {
 			if (valueFormatter.alwaysShowsDecimalSeparator) {
 				NSRange range = [valueString rangeOfString:@"."];
@@ -197,7 +205,7 @@
 				}
 			}
 			
-			[valueString appendString:key];
+			[valueString appendString:[NSString stringWithFormat:@"%d", key]];
 		}
 	}
 	

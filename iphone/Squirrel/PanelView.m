@@ -6,20 +6,17 @@
 //  Copyright 2009 Taylan Pince. All rights reserved.
 //
 
-#import <QuartzCore/QuartzCore.h>
-
 #import "PanelView.h"
 #import "PanelColor.h"
 #import "DataPanel.h"
 #import "DataItem.h"
 #import "DataSet.h"
 #import "DataEntry.h"
-#import "LayerDelegate.h"
 
 
 @implementation PanelView
 
-@synthesize dataPanel, delegate, rendered;
+@synthesize dataPanel, rendered;
 
 
 #define SMALL_FONT_SIZE 12
@@ -368,14 +365,6 @@ static UIFont *largeFont = nil;
 		
 		[numberFormatter release];
 	}
-}
-
-
-- (void)didTouchAddButton:(id)sender {
-	UIButton *addButton = (UIButton *)sender;
-	DataItem *dataItem = [dataPanel.dataSet.dataItems objectAtIndex:addButton.tag];
-	
-	[delegate didBeginAddingNewDataEntryForView:self forDataItem:dataItem];
 }
 
 

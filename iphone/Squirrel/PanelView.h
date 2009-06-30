@@ -8,13 +8,9 @@
 
 @class DataPanel, DataItem;
 
-@protocol PanelViewDelegate;
-
 
 @interface PanelView : UIView {
 	DataPanel *dataPanel;
-	
-	id <PanelViewDelegate> delegate;
 	
 	BOOL rendered;
 }
@@ -22,11 +18,4 @@
 @property (nonatomic, assign) DataPanel *dataPanel;
 @property (nonatomic, assign) BOOL rendered;
 
-@property (nonatomic, assign) id <PanelViewDelegate> delegate;
-
-@end
-
-
-@protocol PanelViewDelegate
-- (void)didBeginAddingNewDataEntryForView:(PanelView *)panelView forDataItem:(DataItem *)dataItem;
 @end

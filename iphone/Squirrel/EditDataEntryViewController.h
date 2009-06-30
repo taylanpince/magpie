@@ -8,6 +8,8 @@
 
 #import "KeyPadViewController.h"
 
+@protocol EditDataEntryViewControllerDelegate;
+
 @class DataEntry, DataItem, KeyPadViewController;
 
 
@@ -22,6 +24,8 @@
 	NSDateFormatter *dateFormatter;
 	
 	IBOutlet UITableView *formTableView;
+	
+	id <EditDataEntryViewControllerDelegate> delegate;
 }
 
 @property (nonatomic, retain) UIDatePicker *datePickerView;
@@ -35,4 +39,11 @@
 
 @property (nonatomic, retain) IBOutlet UITableView *formTableView;
 
+@property (nonatomic, assign) id <EditDataEntryViewControllerDelegate> delegate;
+
+@end
+
+
+@protocol EditDataEntryViewControllerDelegate
+- (void)didCloseEditDataEntryView;
 @end

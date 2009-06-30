@@ -228,8 +228,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -287,7 +285,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 256}, {266, 764}}</string>
+							<string>{{0, 40}, {266, 764}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -317,12 +315,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DataEntryViewController.m</string>
+								<string>EditDataEntryViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -330,61 +330,63 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DataEntryViewController.m</string>
+										<string>EditDataEntryViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ECDAE0970FFA44A800ABD2BC</string>
+										<string>ECDAE19B0FFAB25A00ABD2BC</string>
 										<key>history</key>
 										<array>
-											<string>ECB3AA360FD1DDC700F81F02</string>
 											<string>ECB3AA380FD1DDC700F81F02</string>
 											<string>ECFBFC5B0FD2998700EEE684</string>
 											<string>ECFB03420FD4D9F400EEE684</string>
 											<string>EC341DA30FD5AD450003212C</string>
 											<string>EC341DDE0FD5B1A70003212C</string>
 											<string>EC341E820FD5D0FE0003212C</string>
-											<string>ECFD54C70FD972AA00D6117E</string>
 											<string>ECFD552D0FD97CB000D6117E</string>
 											<string>ECFD57770FD9D82500D6117E</string>
-											<string>ECFD57E00FD9F28D00D6117E</string>
-											<string>ECF516360FDC1CD900DA2B74</string>
 											<string>ECB752F50FF17B2E007CCBCB</string>
 											<string>ECB752F60FF17B2E007CCBCB</string>
 											<string>ECB752F80FF17B2E007CCBCB</string>
 											<string>ECB752F90FF17B2E007CCBCB</string>
-											<string>EC5D23290FF2873F0043482A</string>
 											<string>ECC8826A0FF9210F0092B227</string>
-											<string>ECC8826B0FF9210F0092B227</string>
 											<string>ECC8826C0FF9210F0092B227</string>
-											<string>ECC8826D0FF9210F0092B227</string>
 											<string>ECC8828D0FF925050092B227</string>
-											<string>ECC882910FF925050092B227</string>
 											<string>ECC882A90FF925710092B227</string>
 											<string>ECC882B10FF927AE0092B227</string>
 											<string>ECC882B20FF927AE0092B227</string>
 											<string>ECC882B30FF927AE0092B227</string>
-											<string>ECC882C70FF930AB0092B227</string>
 											<string>ECFE4A310FF95C59004C85F5</string>
 											<string>ECFE4A730FF96518004C85F5</string>
 											<string>ECFE4A740FF96518004C85F5</string>
-											<string>ECFE4A8F0FF96AE3004C85F5</string>
 											<string>ECFE4A900FF96AE3004C85F5</string>
 											<string>ECFE4AC40FF96FF5004C85F5</string>
 											<string>ECFE4AC60FF96FF5004C85F5</string>
 											<string>ECFE4AE70FF9730C004C85F5</string>
 											<string>ECFE4AF40FF973C2004C85F5</string>
 											<string>ECFE4AF50FF973C2004C85F5</string>
-											<string>ECFE4B120FF98FDA004C85F5</string>
-											<string>ECFE4B150FF98FDA004C85F5</string>
-											<string>ECFE4B270FF9B1D7004C85F5</string>
 											<string>ECFE4B460FF9B664004C85F5</string>
 											<string>ECFE4B470FF9B664004C85F5</string>
 											<string>ECFE4B480FF9B664004C85F5</string>
 											<string>ECFE4B490FF9B664004C85F5</string>
 											<string>ECFE4B4A0FF9B664004C85F5</string>
-											<string>ECFE4B4B0FF9B664004C85F5</string>
-											<string>ECFE4B550FF9B754004C85F5</string>
+											<string>ECDAE0C40FFA87D700ABD2BC</string>
+											<string>ECDAE0C50FFA87D700ABD2BC</string>
+											<string>ECDAE0C60FFA87D700ABD2BC</string>
+											<string>ECDAE0C80FFA87D700ABD2BC</string>
+											<string>ECDAE0C90FFA87D700ABD2BC</string>
+											<string>ECDAE0CA0FFA87D700ABD2BC</string>
+											<string>ECDAE0CB0FFA87D700ABD2BC</string>
+											<string>ECDAE12A0FFA8CDA00ABD2BC</string>
+											<string>ECDAE12B0FFA8CDA00ABD2BC</string>
+											<string>ECDAE12C0FFA8CDA00ABD2BC</string>
+											<string>ECDAE12D0FFA8CDA00ABD2BC</string>
+											<string>ECDAE1300FFA8CDA00ABD2BC</string>
+											<string>ECDAE1320FFA8CDA00ABD2BC</string>
+											<string>ECDAE1820FFAAC5E00ABD2BC</string>
+											<string>ECDAE1940FFAB1AF00ABD2BC</string>
+											<string>ECDAE1950FFAB1AF00ABD2BC</string>
+											<string>ECDAE1960FFAB1AF00ABD2BC</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -411,7 +413,6 @@
 											<string>EC341E850FD5D0FE0003212C</string>
 											<string>ECE93AB00FD8D96B006BA407</string>
 											<string>ECFD54D00FD972AA00D6117E</string>
-											<string>ECFD568E0FD9BDA400D6117E</string>
 											<string>ECFD57630FD9D3AF00D6117E</string>
 											<string>ECFD57800FD9D82500D6117E</string>
 											<string>ECFD58EF0FDB01DD00D6117E</string>
@@ -422,7 +423,6 @@
 											<string>ECC8827A0FF9210F0092B227</string>
 											<string>ECC882960FF925050092B227</string>
 											<string>ECC882970FF925050092B227</string>
-											<string>ECFE4A940FF96AE3004C85F5</string>
 											<string>ECFE4AC90FF96FF5004C85F5</string>
 											<string>ECFE4ACB0FF96FF5004C85F5</string>
 											<string>ECFE4AD70FF9712D004C85F5</string>
@@ -432,6 +432,35 @@
 											<string>ECFE4B190FF98FDA004C85F5</string>
 											<string>ECFE4B1A0FF98FDA004C85F5</string>
 											<string>ECFE4B4E0FF9B664004C85F5</string>
+											<string>ECDAE0CF0FFA87D700ABD2BC</string>
+											<string>ECDAE0D00FFA87D700ABD2BC</string>
+											<string>ECDAE0D10FFA87D700ABD2BC</string>
+											<string>ECDAE0D20FFA87D700ABD2BC</string>
+											<string>ECDAE0D60FFA87D700ABD2BC</string>
+											<string>ECDAE0DD0FFA87D700ABD2BC</string>
+											<string>ECDAE0DE0FFA87D700ABD2BC</string>
+											<string>ECDAE0DF0FFA87D700ABD2BC</string>
+											<string>ECDAE0E00FFA87D700ABD2BC</string>
+											<string>ECDAE0E10FFA87D700ABD2BC</string>
+											<string>ECDAE0E20FFA87D700ABD2BC</string>
+											<string>ECDAE0E30FFA87D700ABD2BC</string>
+											<string>ECDAE0E40FFA87D700ABD2BC</string>
+											<string>ECDAE1340FFA8CDA00ABD2BC</string>
+											<string>ECDAE1350FFA8CDA00ABD2BC</string>
+											<string>ECDAE1360FFA8CDA00ABD2BC</string>
+											<string>ECDAE1370FFA8CDA00ABD2BC</string>
+											<string>ECDAE1380FFA8CDA00ABD2BC</string>
+											<string>ECDAE1390FFA8CDA00ABD2BC</string>
+											<string>ECDAE13B0FFA8CDA00ABD2BC</string>
+											<string>ECDAE13C0FFA8CDA00ABD2BC</string>
+											<string>ECDAE13D0FFA8CDA00ABD2BC</string>
+											<string>ECDAE13E0FFA8CDA00ABD2BC</string>
+											<string>ECDAE13F0FFA8CDA00ABD2BC</string>
+											<string>ECDAE1400FFA8CDA00ABD2BC</string>
+											<string>ECDAE1830FFAAC5E00ABD2BC</string>
+											<string>ECDAE1970FFAB1AF00ABD2BC</string>
+											<string>ECDAE1980FFAB1AF00ABD2BC</string>
+											<string>ECDAE1990FFAB1AF00ABD2BC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -625,10 +654,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>ECDAE1920FFAB15D00ABD2BC</string>
+		<string>ECDAE1930FFAB15D00ABD2BC</string>
 		<string>EC6EB79A0FD0AB2E00E6F9D8</string>
-		<string>/Users/taylan/Documents/Development/Personal/squirrel/iphone/Squirrel/Squirrel.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>/Users/taylan/Documents/Development/Personal/squirrel/iphone/Squirrel/Squirrel.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>4 55 1436 823 0 0 1440 878 </string>
@@ -647,12 +678,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>MainViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

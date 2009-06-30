@@ -14,15 +14,17 @@
 @synthesize delegate;
 
 
-- (void)loadView {
-	[super loadView];
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	
+	[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-keypad.png"]]];
 }
 
 
 - (IBAction)didTapKey:(id)sender {
 	UIButton *button = (UIButton *)sender;
 	
-	[delegate didTapKeyPad:self onKey:button.currentTitle];
+	[delegate didTapKeyPad:self onKey:button.tag];
 }
 
 

@@ -21,5 +21,5 @@
 
 
 @protocol KeyPadViewControllerDelegate
-- (void)didTapKeyPad:(KeyPadViewController *)keyPad onKey:(NSString *)key;
+- (void)didTapKeyPad:(KeyPadViewController *)keyPad onKey:(NSInteger)key;
 @end

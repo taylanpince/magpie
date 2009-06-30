@@ -9,7 +9,7 @@
 #import "SquirrelAppDelegate.h"
 #import "MainViewController.h"
 #import "FlipsideViewController.h"
-#import "DataEntryViewController.h"
+#import "EditDataEntryViewController.h"
 #import "DataPanel.h"
 #import "DataSet.h"
 #import "DataItem.h"
@@ -51,7 +51,6 @@
 		[dataPanel.dataSet selectRelated];
 
 		panelView.dataPanel = dataPanel;
-		panelView.delegate = self;
 
 		[scrollView addSubview:panelView];
 		
@@ -64,21 +63,7 @@
 }
 
 
-- (void)didBeginAddingNewDataEntryForView:(PanelView *)panelView forDataItem:(DataItem *)dataItem {
-	DataEntryViewController *controller = [[DataEntryViewController alloc] initWithStyle:UITableViewStyleGrouped];
-	
-	controller.dataItem = dataItem;
-	
-	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
-	
-	[self presentModalViewController:navController animated:YES];
-	
-	[controller release];
-	[navController release];
-}
-
-
-- (void)didCloseDataEntryView {
+- (void)didCloseEditDataEntryView {
 	[self dismissModalViewControllerAnimated:YES];
 	[self reloadPanels];
 }
@@ -90,8 +75,22 @@
 }
 
 
-- (IBAction)showInfo {
+- (IBAction)showSettings {
 	FlipsideViewController *controller = [[FlipsideViewController alloc] initWithStyle:UITableViewStyleGrouped];
+	controller.delegate = self;
+	
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+	
+	[self presentModalViewController:navController animated:YES];
+	
+	[controller release];
+	[navController release];
+}
+
+
+- (IBAction)showQuickAdd {
+	EditDataEntryViewController *controller = [[EditDataEntryViewController alloc] initWithNibName:@"DataEntryView" bundle:nil];
+	
 	controller.delegate = self;
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];

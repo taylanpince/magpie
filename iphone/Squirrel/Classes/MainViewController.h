@@ -7,15 +7,16 @@
 //
 
 #import "FlipsideViewController.h"
-#import "PanelView.h"
+#import "EditDataEntryViewController.h"
 
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, PanelViewDelegate> {
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, EditDataEntryViewControllerDelegate> {
 	IBOutlet UIScrollView *scrollView;
 }
 
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 
-- (IBAction)showInfo;
+- (IBAction)showSettings;
+- (IBAction)showQuickAdd;
 
 @end
