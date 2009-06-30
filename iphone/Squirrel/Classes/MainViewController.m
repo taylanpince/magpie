@@ -67,7 +67,6 @@
 - (void)didBeginAddingNewDataEntryForView:(PanelView *)panelView forDataItem:(DataItem *)dataItem {
 	DataEntryViewController *controller = [[DataEntryViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	
-	controller.delegate = self;
 	controller.dataItem = dataItem;
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];

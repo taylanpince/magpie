@@ -15,7 +15,7 @@
 
 @implementation DataEntryViewController
 
-@synthesize dataItem, dateFormatter, valueFormatter, delegate;
+@synthesize dataItem, dateFormatter, valueFormatter;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -33,9 +33,9 @@
 	valueFormatter = [[NSNumberFormatter alloc] init];
 	[valueFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
 	
-	UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
-	[self.navigationItem setRightBarButtonItem:doneButton];
-	[doneButton release];
+	UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
+	[self.navigationItem setRightBarButtonItem:saveButton];
+	[saveButton release];
 }
 
 
@@ -52,8 +52,8 @@
 }
 
 
-- (void)done:(id)sender {
-	[delegate didCloseDataEntryView];
+- (void)save:(id)sender {
+	[self.navigationController popViewControllerAnimated:YES];
 }
 
 

@@ -285,7 +285,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {266, 764}}</string>
+							<string>{{0, 256}, {266, 764}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -322,7 +322,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DataSetViewController.m</string>
+								<string>DataEntryViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -330,11 +330,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DataSetViewController.m</string>
+										<string>DataEntryViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ECFE4B010FF9746C004C85F5</string>
+										<string>ECFE4B530FF9B664004C85F5</string>
 										<key>history</key>
 										<array>
 											<string>ECB3AA360FD1DDC700F81F02</string>
@@ -354,12 +354,6 @@
 											<string>ECB752F80FF17B2E007CCBCB</string>
 											<string>ECB752F90FF17B2E007CCBCB</string>
 											<string>EC5D23290FF2873F0043482A</string>
-											<string>EC5D23380FF2876C0043482A</string>
-											<string>EC5D23390FF2876C0043482A</string>
-											<string>EC5D23530FF2911E0043482A</string>
-											<string>EC5D23550FF2911E0043482A</string>
-											<string>ECDB5B7D0FF3293900FC52FA</string>
-											<string>ECDB5B7E0FF3293900FC52FA</string>
 											<string>ECC8826A0FF9210F0092B227</string>
 											<string>ECC8826B0FF9210F0092B227</string>
 											<string>ECC8826C0FF9210F0092B227</string>
@@ -371,7 +365,6 @@
 											<string>ECC882B20FF927AE0092B227</string>
 											<string>ECC882B30FF927AE0092B227</string>
 											<string>ECC882C70FF930AB0092B227</string>
-											<string>ECFE4A1C0FF95B5F004C85F5</string>
 											<string>ECFE4A310FF95C59004C85F5</string>
 											<string>ECFE4A730FF96518004C85F5</string>
 											<string>ECFE4A740FF96518004C85F5</string>
@@ -382,9 +375,16 @@
 											<string>ECFE4AE70FF9730C004C85F5</string>
 											<string>ECFE4AF40FF973C2004C85F5</string>
 											<string>ECFE4AF50FF973C2004C85F5</string>
-											<string>ECFE4AF60FF973C2004C85F5</string>
-											<string>ECFE4AF70FF973C2004C85F5</string>
-											<string>ECFE4AF80FF973C2004C85F5</string>
+											<string>ECFE4B120FF98FDA004C85F5</string>
+											<string>ECFE4B150FF98FDA004C85F5</string>
+											<string>ECFE4B270FF9B1D7004C85F5</string>
+											<string>ECFE4B460FF9B664004C85F5</string>
+											<string>ECFE4B470FF9B664004C85F5</string>
+											<string>ECFE4B480FF9B664004C85F5</string>
+											<string>ECFE4B490FF9B664004C85F5</string>
+											<string>ECFE4B4A0FF9B664004C85F5</string>
+											<string>ECFE4B4B0FF9B664004C85F5</string>
+											<string>ECFE4B4C0FF9B664004C85F5</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -411,16 +411,13 @@
 											<string>EC341E850FD5D0FE0003212C</string>
 											<string>ECE93AB00FD8D96B006BA407</string>
 											<string>ECFD54D00FD972AA00D6117E</string>
-											<string>ECFD56080FD9B28300D6117E</string>
 											<string>ECFD568E0FD9BDA400D6117E</string>
 											<string>ECFD57630FD9D3AF00D6117E</string>
 											<string>ECFD57800FD9D82500D6117E</string>
-											<string>ECFD57E20FD9F28D00D6117E</string>
 											<string>ECFD58EF0FDB01DD00D6117E</string>
 											<string>ECFD59AA0FDB8AB300D6117E</string>
 											<string>ECD2AF4B0FE065B40054A901</string>
 											<string>ECB752FD0FF17B2E007CCBCB</string>
-											<string>EC5D23200FF286540043482A</string>
 											<string>ECC882760FF9210F0092B227</string>
 											<string>ECC8827A0FF9210F0092B227</string>
 											<string>ECC882960FF925050092B227</string>
@@ -439,8 +436,27 @@
 											<string>ECFE4AF90FF973C2004C85F5</string>
 											<string>ECFE4AFA0FF973C2004C85F5</string>
 											<string>ECFE4AFB0FF973C2004C85F5</string>
-											<string>ECFE4AFC0FF973C2004C85F5</string>
 											<string>ECFE4AFD0FF973C2004C85F5</string>
+											<string>ECFE4B170FF98FDA004C85F5</string>
+											<string>ECFE4B180FF98FDA004C85F5</string>
+											<string>ECFE4B190FF98FDA004C85F5</string>
+											<string>ECFE4B1A0FF98FDA004C85F5</string>
+											<string>ECFE4B1B0FF98FDA004C85F5</string>
+											<string>ECFE4B1C0FF98FDA004C85F5</string>
+											<string>ECFE4B1D0FF98FDA004C85F5</string>
+											<string>ECFE4B2B0FF9B1D7004C85F5</string>
+											<string>ECFE4B2C0FF9B1D7004C85F5</string>
+											<string>ECFE4B2D0FF9B1D7004C85F5</string>
+											<string>ECFE4B2E0FF9B1D7004C85F5</string>
+											<string>ECFE4B340FF9B215004C85F5</string>
+											<string>ECFE4B3B0FF9B252004C85F5</string>
+											<string>ECFE4B400FF9B4E7004C85F5</string>
+											<string>ECFE4B4D0FF9B664004C85F5</string>
+											<string>ECFE4B4E0FF9B664004C85F5</string>
+											<string>ECFE4B4F0FF9B664004C85F5</string>
+											<string>ECFE4B500FF9B664004C85F5</string>
+											<string>ECFE4B510FF9B664004C85F5</string>
+											<string>ECFE4B520FF9B664004C85F5</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -658,12 +674,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>MainViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -680,8 +698,6 @@
 							<string>421pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>

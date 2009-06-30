@@ -25,7 +25,7 @@
 	self.editing = YES;
 	self.tableView.allowsSelectionDuringEditing = YES;
 	
-	UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
+	UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveAndQuit:)];
 	
 	if (dataSet.primaryKey) {
 		self.title = dataSet.name;
@@ -78,7 +78,7 @@
 }
 
 
-- (void)save:(id)sender {
+- (void)save {
 	if (activeTextField) {
 		[activeTextField resignFirstResponder];
 	}
@@ -92,12 +92,10 @@
 	}
 
 	for (DataItem *dataItem in dataItems) {
-		if (dataItem.name != nil & ![dataItem.name isEqualToString:@""]) {
-			if ([dataSet.dataItems containsObject:dataItem]) {
-				[dataItem dehydrate];
-			} else {
-				[dataSet addDataItem:dataItem];
-			}
+		if ([dataSet.dataItems containsObject:dataItem]) {
+			[dataItem dehydrate];
+		} else {
+			[dataSet addDataItem:dataItem];
 		}
 	}
 	
@@ -106,7 +104,11 @@
 			[dataSet removeDataItem:dataItem];
 		}
 	}
-	
+}
+
+
+- (void)saveAndQuit:(id)sender {
+	[self save];
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -234,11 +236,10 @@
 		[activeTextField resignFirstResponder];
 	}
 	
-	NSLog(@"Selected %d", indexPath.row);
+	[self save];
 	
 	DataEntryViewController *controller = [[DataEntryViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	
-//	controller.delegate = self;
 	controller.dataItem = [dataItems objectAtIndex:indexPath.row - 1];
 	
 	[self.navigationController pushViewController:controller animated:YES];
