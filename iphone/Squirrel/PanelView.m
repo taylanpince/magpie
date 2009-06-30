@@ -24,10 +24,12 @@
 
 #define SMALL_FONT_SIZE 12
 #define MAIN_FONT_SIZE 18
+#define LARGE_FONT_SIZE 24
 
 static UIFont *smallFont = nil;
 static UIFont *smallBoldFont = nil;
 static UIFont *mainFont = nil;
+static UIFont *largeFont = nil;
 
 
 - (id)initWithFrame:(CGRect)frame {
@@ -35,6 +37,7 @@ static UIFont *mainFont = nil;
 		smallFont = [[UIFont systemFontOfSize:SMALL_FONT_SIZE] retain];
 		smallBoldFont = [[UIFont boldSystemFontOfSize:SMALL_FONT_SIZE] retain];
         mainFont = [[UIFont boldSystemFontOfSize:MAIN_FONT_SIZE] retain];
+        largeFont = [[UIFont boldSystemFontOfSize:LARGE_FONT_SIZE] retain];
 		
 		[self setBackgroundColor:[UIColor clearColor]];
     }
@@ -49,17 +52,16 @@ static UIFont *mainFont = nil;
 		CGRect frame = self.frame;
 		
 		if ([dataPanel.type isEqualToString:@"Bar Chart"]) {
-			frame.size.height = 70.0 + [dataPanel.dataSet.dataItems count] * 46.0;
+			frame.size.height = 70.0 + [dataPanel.dataSet.dataItems count] * 40.0;
 		} else if ([dataPanel.type isEqualToString:@"Pie Chart"]) {
 			frame.size.height = 280.0 + [dataPanel.dataSet.dataItems count] * 30.0;
 		} else if ([dataPanel.type isEqualToString:@"Latest Entry as Words"]) {
 			NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+			NSNumber *numberValue = [[[dataPanel.dataSet latestDataItem] latestDataEntry] value];
 			
 			[numberFormatter setNumberStyle:NSNumberFormatterSpellOutStyle];
 			
-			NSNumber *numberValue = [[[dataPanel.dataSet latestDataItem] latestDataEntry] value];
-			
-			CGSize textSize = [[[numberFormatter stringFromNumber:numberValue] uppercaseString] sizeWithFont:mainFont constrainedToSize:CGSizeMake(frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
+			CGSize textSize = [[[numberFormatter stringFromNumber:numberValue] uppercaseString] sizeWithFont:largeFont constrainedToSize:CGSizeMake(frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
 			
 			frame.size.height = 70.0 + textSize.height;
 			
@@ -67,13 +69,30 @@ static UIFont *mainFont = nil;
 		} else if ([dataPanel.type isEqualToString:@"Latest Entry as Numbers"]) {
 			NSNumber *numberValue = [[[dataPanel.dataSet latestDataItem] latestDataEntry] value];
 			
-			CGSize textSize = [[numberValue stringValue] sizeWithFont:mainFont constrainedToSize:CGSizeMake(frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
+			CGSize textSize = [[[numberValue stringValue] uppercaseString] sizeWithFont:largeFont constrainedToSize:CGSizeMake(frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
 			
 			frame.size.height = 70.0 + textSize.height;
 		} else if ([dataPanel.type isEqualToString:@"Latest Entry Type"]) {
 			NSString *entryName = [[dataPanel.dataSet latestDataItem] name];
 			
-			CGSize textSize = [entryName sizeWithFont:mainFont constrainedToSize:CGSizeMake(frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
+			CGSize textSize = [[entryName uppercaseString] sizeWithFont:mainFont constrainedToSize:CGSizeMake(frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
+			
+			frame.size.height = 70.0 + textSize.height;
+		} else if ([dataPanel.type isEqualToString:@"Total as Words"]) {
+			NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+			NSNumber *numberValue = [NSNumber numberWithDouble:dataPanel.dataSet.total];
+			
+			[numberFormatter setNumberStyle:NSNumberFormatterSpellOutStyle];
+			
+			CGSize textSize = [[[numberFormatter stringFromNumber:numberValue] uppercaseString] sizeWithFont:largeFont constrainedToSize:CGSizeMake(frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
+			
+			frame.size.height = 70.0 + textSize.height;
+			
+			[numberFormatter release];
+		} else if ([dataPanel.type isEqualToString:@"Total as Numbers"]) {
+			NSNumber *numberValue = [NSNumber numberWithDouble:dataPanel.dataSet.total];
+			
+			CGSize textSize = [[[numberValue stringValue] uppercaseString] sizeWithFont:largeFont constrainedToSize:CGSizeMake(frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
 			
 			frame.size.height = 70.0 + textSize.height;
 		}
@@ -82,251 +101,6 @@ static UIFont *mainFont = nil;
 		[self setNeedsDisplay];
 	}
 }
-
-
-//- (void)layoutSubviews {
-//	if (rendered) return;
-//
-//	CGPoint point = CGPointMake(20.0, 5.0);
-//	UIColor *textColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0];
-//	
-//	UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, self.frame.size.width - 40.0, 14.0)];
-//	
-//	titleLabel.text = dataPanel.name;
-//	titleLabel.font = smallBoldFont;
-//	titleLabel.textAlignment = UITextAlignmentRight;
-//	titleLabel.backgroundColor = [UIColor clearColor];
-//	titleLabel.textColor = textColor;
-//	
-//	[self addSubview:titleLabel];
-//	
-//	point.y += titleLabel.frame.size.height;
-//	
-//	[titleLabel release];
-//	
-//	UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, self.frame.size.width - 40.0, 20.0)];
-//	
-//	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//	[dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-//	[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
-//	
-//	dateLabel.text = [dateFormatter stringFromDate:dataPanel.dataSet.lastUpdated];
-//	dateLabel.font = smallFont;
-//	dateLabel.textAlignment = UITextAlignmentRight;
-//	dateLabel.backgroundColor = [UIColor clearColor];
-//	dateLabel.textColor = textColor;
-//	
-//	[self addSubview:dateLabel];
-//	
-//	point.y += dateLabel.frame.size.height + 10.0;
-//	
-//	[dateLabel release];
-//	
-//	int counter = 0;
-//	
-//	if ([dataPanel.type isEqualToString:@"Bar Chart"]) {
-//		for (DataItem *dataItem in dataPanel.dataSet.dataItems) {
-//			NSString *title = [NSString stringWithFormat:@"%@ (%1.2f)", dataItem.name, dataItem.total];
-//			CGSize titleSize = [title sizeWithFont:mainFont];
-//			UIButton *titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//			
-//			[titleButton setTitle:title forState:UIControlStateNormal];
-//			[titleButton setTitleColor:textColor forState:UIControlStateNormal];
-//			[titleButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
-//			[titleButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchUpInside];
-//			
-//			titleButton.frame = CGRectMake(point.x, point.y, titleSize.width, titleSize.height);
-//			titleButton.font = mainFont;
-//			titleButton.tag = counter;
-//			
-//			[self addSubview:titleButton];
-//			
-//			UIButton *editButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//			
-//			[editButton setImage:[UIImage imageNamed:@"cog.png"] forState:UIControlStateNormal];
-//			[editButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchUpInside];
-//			
-//			editButton.frame = CGRectMake(point.x + titleSize.width + 6.0, point.y + 3.0, 16.0, 16.0);
-//			editButton.tag = counter;
-//			
-//			[self addSubview:editButton];
-//			
-//			point.y += titleButton.frame.size.height + 6.0;
-//			
-//			CALayer *barLayer = [CALayer layer];
-//			
-//			barLayer.anchorPoint = CGPointMake(0.0, 0.0);
-//			barLayer.frame = CGRectMake(point.x, point.y, 0.0, 20.0);
-//			barLayer.backgroundColor = [[PanelColor colorWithName:dataPanel.color alpha:1.0] CGColor];
-//			
-//			CALayer *barBGLayer = [CALayer layer];
-//			
-//			barBGLayer.frame = CGRectMake(point.x, point.y, self.frame.size.width - 40.0, 20.0);
-//			barBGLayer.backgroundColor = [[PanelColor colorWithName:dataPanel.color alpha:0.5] CGColor];
-//			
-//			[self.layer addSublayer:barBGLayer];
-//			[self.layer addSublayer:barLayer];
-//			
-//			CABasicAnimation *resizeAnimation = [CABasicAnimation animationWithKeyPath:@"bounds.size.width"];
-//
-//			resizeAnimation.duration = 1.0;
-//			resizeAnimation.beginTime = CACurrentMediaTime() + (counter / 10.0);
-//			resizeAnimation.removedOnCompletion = NO;
-//			resizeAnimation.fillMode = kCAFillModeForwards;
-//			resizeAnimation.toValue = [NSNumber numberWithDouble:((self.frame.size.width - 40.0) * dataItem.percentage / 100.0)];
-//			resizeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
-//
-//			[barLayer addAnimation:resizeAnimation forKey:@"animateWidth"];
-//			
-//			point.y += barLayer.bounds.size.height + 6.0;
-//			
-//			counter++;
-//		}
-//	} else if ([dataPanel.type isEqualToString:@"Pie Chart"]) {
-//		double totalPercentage = 0.0;
-//		CGFloat circleTop = point.y;
-//		
-//		LayerDelegate *layerDelegate = [[LayerDelegate alloc] init];
-//		
-//		point.y += 210.0;
-//		
-//		for (DataItem *dataItem in dataPanel.dataSet.dataItems) {
-//			CALayer *circleLayer = [CALayer layer];
-//			
-//			circleLayer.frame = CGRectMake(point.x, circleTop, self.frame.size.width - 40.0, 200.0);
-//			circleLayer.opacity = 0.0;
-//
-//			[self.layer addSublayer:circleLayer];
-//			[circleLayer setValue:[NSNumber numberWithInt:counter] forKey:@"tag"];
-//			[circleLayer setValue:[NSNumber numberWithDouble:totalPercentage] forKey:@"totalPercentage"];
-//			[circleLayer setValue:[NSNumber numberWithDouble:dataItem.percentage] forKey:@"percentage"];
-//			[circleLayer setValue:dataPanel.color forKey:@"color"];
-//			[circleLayer setDelegate:layerDelegate];
-//			[circleLayer setNeedsDisplay];
-//			
-//			CABasicAnimation *fadeAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-//			
-//			fadeAnimation.duration = 1.0;
-//			fadeAnimation.beginTime = CACurrentMediaTime() + (counter / 10.0);
-//			fadeAnimation.removedOnCompletion = NO;
-//			fadeAnimation.fillMode = kCAFillModeForwards;
-//			fadeAnimation.toValue = [NSNumber numberWithDouble:1.0];
-//			fadeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
-//			
-//			[circleLayer addAnimation:fadeAnimation forKey:@"animateFade"];
-//
-//			CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-//			
-//			scaleAnimation.duration = 0.5;
-//			scaleAnimation.beginTime = CACurrentMediaTime() + (counter / 10.0);
-//			scaleAnimation.removedOnCompletion = NO;
-//			scaleAnimation.fillMode = kCAFillModeForwards;
-//			scaleAnimation.fromValue = [NSNumber numberWithDouble:1.5];
-//			scaleAnimation.toValue = [NSNumber numberWithDouble:1.0];
-//			scaleAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
-//			
-//			[circleLayer addAnimation:scaleAnimation forKey:@"animateScale"];
-//			
-//			totalPercentage += dataItem.percentage;
-//			
-//			CGSize titleSize = [dataItem.name sizeWithFont:mainFont];
-//			
-//			CALayer *boxLayer = [CALayer layer];
-//			
-//			boxLayer.frame = CGRectMake(point.x, point.y, titleSize.height, titleSize.height);
-//			boxLayer.backgroundColor = [[PanelColor colorWithName:dataPanel.color alpha:1.0 - (0.2 * counter)] CGColor];
-//			
-//			[self.layer addSublayer:boxLayer];
-//			
-//			UIButton *titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//			
-//			[titleButton setTitle:dataItem.name forState:UIControlStateNormal];
-//			[titleButton setTitleColor:textColor forState:UIControlStateNormal];
-//			[titleButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
-//			[titleButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchUpInside];
-//			
-//			titleButton.frame = CGRectMake(point.x + titleSize.height + 6.0, point.y, titleSize.width, titleSize.height);
-//			titleButton.font = mainFont;
-//			titleButton.tag = counter;
-//			
-//			[self addSubview:titleButton];
-//			
-//			UIButton *editButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//			
-//			[editButton setImage:[UIImage imageNamed:@"cog.png"] forState:UIControlStateNormal];
-//			[editButton addTarget:self action:@selector(didTouchAddButton:) forControlEvents:UIControlEventTouchUpInside];
-//			
-//			editButton.frame = CGRectMake(point.x + titleSize.width + titleSize.height + 12.0, point.y + 3.0, 16.0, 16.0);
-//			editButton.tag = counter;
-//			
-//			[self addSubview:editButton];
-//			
-//			point.y += titleButton.frame.size.height + 6.0;
-//			
-//			counter++;
-//		}
-//	} else if ([dataPanel.type isEqualToString:@"Latest Entry as Words"]) {
-//		NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-//		
-//		[numberFormatter setNumberStyle:NSNumberFormatterSpellOutStyle];
-//		
-//		NSNumber *numberValue = [[[dataPanel.dataSet latestDataItem] latestDataEntry] value];
-//		CGSize valueSize = [[[numberFormatter stringFromNumber:numberValue] uppercaseString] sizeWithFont:mainFont constrainedToSize:CGSizeMake(self.frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
-//		UILabel *valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, valueSize.width, valueSize.height)];
-//
-//		valueLabel.lineBreakMode = UILineBreakModeWordWrap;
-//		valueLabel.numberOfLines = 0;
-//		valueLabel.text = [[numberFormatter stringFromNumber:numberValue] uppercaseString];
-//		valueLabel.font = mainFont;
-//		valueLabel.backgroundColor = [UIColor clearColor];
-//		valueLabel.textColor = textColor;
-//		
-//		[self addSubview:valueLabel];
-//
-//		point.y += valueLabel.frame.size.height + 6.0;
-//
-//		[valueLabel release];
-//		[numberFormatter release];
-//	} else if ([dataPanel.type isEqualToString:@"Latest Entry as Numbers"]) {
-//		NSNumber *numberValue = [[[dataPanel.dataSet latestDataItem] latestDataEntry] value];
-//		CGSize valueSize = [[numberValue stringValue] sizeWithFont:mainFont constrainedToSize:CGSizeMake(self.frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
-//		UILabel *valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, valueSize.width, valueSize.height)];
-//		
-//		valueLabel.lineBreakMode = UILineBreakModeWordWrap;
-//		valueLabel.numberOfLines = 0;
-//		valueLabel.text = [numberValue stringValue];
-//		valueLabel.font = mainFont;
-//		valueLabel.backgroundColor = [UIColor clearColor];
-//		valueLabel.textColor = textColor;
-//		
-//		[self addSubview:valueLabel];
-//		
-//		point.y += valueLabel.frame.size.height + 6.0;
-//		
-//		[valueLabel release];
-//	} else if ([dataPanel.type isEqualToString:@"Latest Entry Type"]) {
-//		NSString *entryName = [[dataPanel.dataSet latestDataItem] name];
-//		CGSize valueSize = [[entryName uppercaseString] sizeWithFont:mainFont constrainedToSize:CGSizeMake(self.frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
-//		UILabel *valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(point.x, point.y, valueSize.width, valueSize.height)];
-//		
-//		valueLabel.lineBreakMode = UILineBreakModeWordWrap;
-//		valueLabel.numberOfLines = 0;
-//		valueLabel.text = [entryName uppercaseString];
-//		valueLabel.font = mainFont;
-//		valueLabel.backgroundColor = [UIColor clearColor];
-//		valueLabel.textColor = textColor;
-//		
-//		[self addSubview:valueLabel];
-//		
-//		point.y += valueLabel.frame.size.height + 6.0;
-//		
-//		[valueLabel release];
-//	}
-//	
-//	self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, point.y + 18.0);
-//	
-//	rendered = YES;
-//}
 
 
 - (void)drawRect:(CGRect)rect {
@@ -444,7 +218,7 @@ static UIFont *mainFont = nil;
 	
 	[textColor set];
 	
-	textSize = [dataPanel.name drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 14.0) withFont:smallBoldFont lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentRight];
+	textSize = [[dataPanel.name uppercaseString] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 14.0) withFont:smallBoldFont lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentRight];
 		
 	point.y += textSize.height + 3.0;
 	
@@ -472,23 +246,25 @@ static UIFont *mainFont = nil;
 		for (DataItem *dataItem in dataPanel.dataSet.dataItems) {
 			[textColor set];
 			
-			textSize = [dataItem.name drawAtPoint:point forWidth:rect.size.width - 100.0 withFont:mainFont lineBreakMode:UILineBreakModeTailTruncation];
+			textSize = [[dataItem.name uppercaseString] drawAtPoint:point forWidth:rect.size.width - 100.0 withFont:mainFont lineBreakMode:UILineBreakModeTailTruncation];
 			
-			[[NSString stringWithFormat:@"%1.2f", dataItem.total] drawAtPoint:CGPointMake(point.x + textSize.width + 6.0, point.y + 5.0) forWidth:40.0 withFont:smallBoldFont lineBreakMode:UILineBreakModeTailTruncation];
+			[[textColor colorWithAlphaComponent:0.5] set];
+			
+			[[NSString stringWithFormat:@"%1.2f", dataItem.total] drawAtPoint:CGPointMake(point.x + textSize.width + 6.0, point.y + 5.0) forWidth:40.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
 			
 			point.y += textSize.height;
 			
 			[[panelColor colorWithAlphaComponent:0.5] set];
 			
-			CGContextAddRect(context, CGRectMake(point.x, point.y, rect.size.width - 20.0, 20.0));
+			CGContextAddRect(context, CGRectMake(point.x, point.y, rect.size.width - 20.0, 10.0));
 			CGContextFillPath(context);
 			
 			[panelColor set];
 			
-			CGContextAddRect(context, CGRectMake(point.x, point.y, ((rect.size.width - 20.0) * dataItem.percentage / 100.0), 20.0));
+			CGContextAddRect(context, CGRectMake(point.x, point.y, ((rect.size.width - 20.0) * dataItem.percentage / 100.0), 10.0));
 			CGContextFillPath(context);
 			
-			point.y += 24.0;
+			point.y += 18.0;
 
 			counter++;
 		}
@@ -540,9 +316,11 @@ static UIFont *mainFont = nil;
 			
 			[textColor set];
 			
-			textSize = [dataItem.name drawAtPoint:CGPointMake(point.x + 32.0, point.y) forWidth:rect.size.width - 60.0 withFont:mainFont lineBreakMode:UILineBreakModeTailTruncation];
+			textSize = [[dataItem.name uppercaseString] drawAtPoint:CGPointMake(point.x + 32.0, point.y) forWidth:rect.size.width - 60.0 withFont:mainFont lineBreakMode:UILineBreakModeTailTruncation];
 			
-			[[NSString stringWithFormat:@"%1.2f", dataItem.total] drawAtPoint:CGPointMake(point.x + textSize.width + 38.0, point.y + 5.0) forWidth:40.0 withFont:smallBoldFont lineBreakMode:UILineBreakModeTailTruncation];
+			[[textColor colorWithAlphaComponent:0.5] set];
+			
+			[[NSString stringWithFormat:@"%1.2f", dataItem.total] drawAtPoint:CGPointMake(point.x + textSize.width + 38.0, point.y + 5.0) forWidth:40.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
 			
 			point.y += textSize.height + 8.0;
 
@@ -555,7 +333,7 @@ static UIFont *mainFont = nil;
 		
 		NSNumber *numberValue = [[[dataPanel.dataSet latestDataItem] latestDataEntry] value];
 		
-		textSize = [[[numberFormatter stringFromNumber:numberValue] uppercaseString] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:mainFont lineBreakMode:UILineBreakModeWordWrap];
+		textSize = [[[numberFormatter stringFromNumber:numberValue] uppercaseString] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:largeFont lineBreakMode:UILineBreakModeWordWrap];
 		
 		point.y += textSize.height + 6.0;
 
@@ -563,15 +341,32 @@ static UIFont *mainFont = nil;
 	} else if ([dataPanel.type isEqualToString:@"Latest Entry as Numbers"]) {
 		NSNumber *numberValue = [[[dataPanel.dataSet latestDataItem] latestDataEntry] value];
 
-		textSize = [[numberValue stringValue] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:mainFont lineBreakMode:UILineBreakModeWordWrap];
+		textSize = [[[numberValue stringValue] uppercaseString] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:largeFont lineBreakMode:UILineBreakModeWordWrap];
 		
 		point.y += textSize.height + 6.0;
 	} else if ([dataPanel.type isEqualToString:@"Latest Entry Type"]) {
 		NSString *entryName = [[dataPanel.dataSet latestDataItem] name];
 		
-		textSize = [entryName drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:mainFont lineBreakMode:UILineBreakModeWordWrap];
+		textSize = [[entryName uppercaseString] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:mainFont lineBreakMode:UILineBreakModeWordWrap];
 				
 		point.y += textSize.height + 6.0;
+	} else if ([dataPanel.type isEqualToString:@"Total as Numbers"]) {
+		NSNumber *numberValue = [NSNumber numberWithDouble:dataPanel.dataSet.total];
+		
+		textSize = [[[numberValue stringValue] uppercaseString] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:largeFont lineBreakMode:UILineBreakModeWordWrap];
+		
+		point.y += textSize.height + 6.0;
+	} else if ([dataPanel.type isEqualToString:@"Total as Words"]) {
+		NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+		NSNumber *numberValue = [NSNumber numberWithDouble:dataPanel.dataSet.total];
+		
+		[numberFormatter setNumberStyle:NSNumberFormatterSpellOutStyle];
+		
+		textSize = [[[numberFormatter stringFromNumber:numberValue] uppercaseString] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:largeFont lineBreakMode:UILineBreakModeWordWrap];
+		
+		point.y += textSize.height + 6.0;
+		
+		[numberFormatter release];
 	}
 }
 
