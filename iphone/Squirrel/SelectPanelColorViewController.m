@@ -56,7 +56,11 @@
 		cell.accessoryType = UITableViewCellAccessoryCheckmark;
 	}
 	
+	#ifndef __IPHONE_3_0
 	cell.text = [panelColors objectAtIndex:indexPath.row];
+	#else
+	cell.textLabel.text = [panelColors objectAtIndex:indexPath.row];
+	#endif
 	
     return cell;
 }

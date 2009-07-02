@@ -54,7 +54,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = EC6EB78E0FD0AA6100E6F9D8 /* Squirrel */;
-		activeSDKPreference = iphonesimulator2.2.1;
+		activeSDKPreference = iphonesimulator3.0;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Squirrel */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* Squirrel */,
@@ -308,6 +308,38 @@
 			EC7F4C290FFD5BAD006612C6 /* PBXTextBookmark */ = EC7F4C290FFD5BAD006612C6 /* PBXTextBookmark */;
 			EC7F4C2A0FFD5BAD006612C6 /* PBXTextBookmark */ = EC7F4C2A0FFD5BAD006612C6 /* PBXTextBookmark */;
 			EC7F4C2B0FFD5BAD006612C6 /* PBXTextBookmark */ = EC7F4C2B0FFD5BAD006612C6 /* PBXTextBookmark */;
+			EC7F4C2D0FFD5BDF006612C6 /* PBXTextBookmark */ = EC7F4C2D0FFD5BDF006612C6 /* PBXTextBookmark */;
+			EC7F4C310FFD62AE006612C6 /* PBXTextBookmark */ = EC7F4C310FFD62AE006612C6 /* PBXTextBookmark */;
+			EC7F4C330FFD62C4006612C6 /* PBXTextBookmark */ = EC7F4C330FFD62C4006612C6 /* PBXTextBookmark */;
+			EC7F4C340FFD62C4006612C6 /* PBXTextBookmark */ = EC7F4C340FFD62C4006612C6 /* PBXTextBookmark */;
+			EC7F4C510FFD6387006612C6 /* PBXTextBookmark */ = EC7F4C510FFD6387006612C6 /* PBXTextBookmark */;
+			EC7F4C520FFD6387006612C6 /* PBXTextBookmark */ = EC7F4C520FFD6387006612C6 /* PBXTextBookmark */;
+			EC7F4C580FFD63C0006612C6 /* PBXTextBookmark */ = EC7F4C580FFD63C0006612C6 /* PBXTextBookmark */;
+			EC7F4C590FFD63C0006612C6 /* PBXTextBookmark */ = EC7F4C590FFD63C0006612C6 /* PBXTextBookmark */;
+			EC7F4C5A0FFD63C0006612C6 /* PBXTextBookmark */ = EC7F4C5A0FFD63C0006612C6 /* PBXTextBookmark */;
+			EC7F4C5B0FFD63C0006612C6 /* PBXTextBookmark */ = EC7F4C5B0FFD63C0006612C6 /* PBXTextBookmark */;
+			EC7F4C5C0FFD63C4006612C6 /* PBXTextBookmark */ = EC7F4C5C0FFD63C4006612C6 /* PBXTextBookmark */;
+			EC7F4C5D0FFD63C4006612C6 /* PBXTextBookmark */ = EC7F4C5D0FFD63C4006612C6 /* PBXTextBookmark */;
+			EC7F4C5E0FFD63C4006612C6 /* PBXTextBookmark */ = EC7F4C5E0FFD63C4006612C6 /* PBXTextBookmark */;
+			EC7F4C5F0FFD63C4006612C6 /* PBXTextBookmark */ = EC7F4C5F0FFD63C4006612C6 /* PBXTextBookmark */;
+			EC7F4C600FFD63C4006612C6 /* PBXTextBookmark */ = EC7F4C600FFD63C4006612C6 /* PBXTextBookmark */;
+			EC7F4C610FFD63D8006612C6 /* PBXTextBookmark */ = EC7F4C610FFD63D8006612C6 /* PBXTextBookmark */;
+			EC7F4C620FFD63DD006612C6 /* PBXTextBookmark */ = EC7F4C620FFD63DD006612C6 /* PBXTextBookmark */;
+			EC7F4C650FFD63DD006612C6 /* PBXTextBookmark */ = EC7F4C650FFD63DD006612C6 /* PBXTextBookmark */;
+			EC7F4C660FFD63EB006612C6 /* PBXTextBookmark */ = EC7F4C660FFD63EB006612C6 /* PBXTextBookmark */;
+			EC7F4C670FFD63ED006612C6 /* PBXTextBookmark */ = EC7F4C670FFD63ED006612C6 /* PBXTextBookmark */;
+			EC7F4C6A0FFD63ED006612C6 /* PBXTextBookmark */ = EC7F4C6A0FFD63ED006612C6 /* PBXTextBookmark */;
+			EC7F4C6C0FFD63FE006612C6 /* PBXTextBookmark */ = EC7F4C6C0FFD63FE006612C6 /* PBXTextBookmark */;
+			EC7F4C6D0FFD63FE006612C6 /* PBXTextBookmark */ = EC7F4C6D0FFD63FE006612C6 /* PBXTextBookmark */;
+			EC7F4C6E0FFD63FE006612C6 /* PBXTextBookmark */ = EC7F4C6E0FFD63FE006612C6 /* PBXTextBookmark */;
+			EC7F4C6F0FFD63FE006612C6 /* PBXTextBookmark */ = EC7F4C6F0FFD63FE006612C6 /* PBXTextBookmark */;
+			EC7F4C700FFD63FE006612C6 /* PBXTextBookmark */ = EC7F4C700FFD63FE006612C6 /* PBXTextBookmark */;
+			EC7F4C710FFD63FE006612C6 /* PBXTextBookmark */ = EC7F4C710FFD63FE006612C6 /* PBXTextBookmark */;
+			EC7F4C730FFD6400006612C6 /* PBXTextBookmark */ = EC7F4C730FFD6400006612C6 /* PBXTextBookmark */;
+			EC7F4C760FFD6442006612C6 /* PBXTextBookmark */ = EC7F4C760FFD6442006612C6 /* PBXTextBookmark */;
+			EC7F4C770FFD6442006612C6 /* PBXTextBookmark */ = EC7F4C770FFD6442006612C6 /* PBXTextBookmark */;
+			EC7F4C780FFD6442006612C6 /* PBXTextBookmark */ = EC7F4C780FFD6442006612C6 /* PBXTextBookmark */;
+			EC7F4C790FFD6442006612C6 /* PBXTextBookmark */ = EC7F4C790FFD6442006612C6 /* PBXTextBookmark */;
 			ECB3AA380FD1DDC700F81F02 = ECB3AA380FD1DDC700F81F02 /* PBXTextBookmark */;
 			ECB3AA3A0FD1DDC700F81F02 = ECB3AA3A0FD1DDC700F81F02 /* PlistBookmark */;
 			ECB3AA3D0FD1DDC700F81F02 = ECB3AA3D0FD1DDC700F81F02 /* PBXTextBookmark */;
@@ -474,9 +506,9 @@
 	};
 	EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1260, 7004}}";
-			sepNavSelRange = "{2724, 0}";
-			sepNavVisRange = "{2425, 683}";
+			sepNavIntBoundsRect = "{{0, 0}, {1620, 7089}}";
+			sepNavSelRange = "{10760, 0}";
+			sepNavVisRange = "{10832, 508}";
 		};
 	};
 	EC341E850FD5D0FE0003212C /* PBXTextBookmark */ = {
@@ -898,9 +930,9 @@
 	};
 	EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1268, 5593}}";
-			sepNavSelRange = "{2470, 0}";
-			sepNavVisRange = "{2067, 693}";
+			sepNavIntBoundsRect = "{{0, 0}, {1268, 5610}}";
+			sepNavSelRange = "{4354, 0}";
+			sepNavVisRange = "{3983, 1037}";
 		};
 	};
 	EC6EB96E0FD1D26200E6F9D8 /* PBXTextBookmark */ = {
@@ -2717,6 +2749,314 @@
 		vrLen = 1352;
 		vrLoc = 9559;
 	};
+	EC7F4C2D0FFD5BDF006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECB7523D0FF1480B007CCBCB /* PanelView.m */;
+		name = "PanelView.m: 252";
+		rLen = 0;
+		rLoc = 10519;
+		rType = 0;
+		vrLen = 1197;
+		vrLoc = 9559;
+	};
+	EC7F4C310FFD62AE006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECB7523D0FF1480B007CCBCB /* PanelView.m */;
+		name = "PanelView.m: 252";
+		rLen = 0;
+		rLoc = 10519;
+		rType = 0;
+		vrLen = 1197;
+		vrLoc = 9559;
+	};
+	EC7F4C330FFD62C4006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "warning: 'setHidesAccessoryWhenEditing:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:199)";
+		fRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */;
+		rLen = 1;
+		rLoc = 156;
+		rType = 1;
+	};
+	EC7F4C340FFD62C4006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */;
+		name = "DataSetViewController.m: 157";
+		rLen = 0;
+		rLoc = 3801;
+		rType = 0;
+		vrLen = 744;
+		vrLoc = 3524;
+	};
+	EC7F4C510FFD6387006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:199)";
+		fRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */;
+		rLen = 1;
+		rLoc = 164;
+		rType = 1;
+	};
+	EC7F4C520FFD6387006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */;
+		name = "DataSetViewController.m: 158";
+		rLen = 0;
+		rLoc = 3986;
+		rType = 0;
+		vrLen = 739;
+		vrLoc = 3524;
+	};
+	EC7F4C580FFD63C0006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */;
+		name = "DataSetViewController.m: 165";
+		rLen = 0;
+		rLoc = 3986;
+		rType = 0;
+		vrLen = 682;
+		vrLoc = 3524;
+	};
+	EC7F4C590FFD63C0006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:199)";
+		fRef = ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */;
+		rLen = 0;
+		rLoc = 57;
+		rType = 1;
+	};
+	EC7F4C5A0FFD63C0006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */;
+		name = "DataSetViewController.m: 165";
+		rLen = 0;
+		rLoc = 3986;
+		rType = 0;
+		vrLen = 682;
+		vrLoc = 3524;
+	};
+	EC7F4C5B0FFD63C0006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */;
+		name = "SelectDataSetViewController.m: 58";
+		rLen = 0;
+		rLoc = 1582;
+		rType = 0;
+		vrLen = 717;
+		vrLoc = 810;
+	};
+	EC7F4C5C0FFD63C4006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECB7523D0FF1480B007CCBCB /* PanelView.m */;
+		name = "PanelView.m: 252";
+		rLen = 0;
+		rLoc = 10519;
+		rType = 0;
+		vrLen = 1352;
+		vrLoc = 9559;
+	};
+	EC7F4C5D0FFD63C4006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */;
+		name = "DataSetViewController.m: 163";
+		rLen = 0;
+		rLoc = 3976;
+		rType = 0;
+		vrLen = 1059;
+		vrLoc = 3663;
+	};
+	EC7F4C5E0FFD63C4006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECB7523D0FF1480B007CCBCB /* PanelView.m */;
+		name = "PanelView.m: 252";
+		rLen = 0;
+		rLoc = 10519;
+		rType = 0;
+		vrLen = 1352;
+		vrLoc = 9559;
+	};
+	EC7F4C5F0FFD63C4006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */;
+		name = "DataSetViewController.m: 163";
+		rLen = 0;
+		rLoc = 3976;
+		rType = 0;
+		vrLen = 1059;
+		vrLoc = 3663;
+	};
+	EC7F4C600FFD63C4006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */;
+		name = "SelectDataSetViewController.m: 58";
+		rLen = 0;
+		rLoc = 1474;
+		rType = 0;
+		vrLen = 1057;
+		vrLoc = 810;
+	};
+	EC7F4C610FFD63D8006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:199)";
+		fRef = ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */;
+		rLen = 1;
+		rLoc = 63;
+		rType = 1;
+	};
+	EC7F4C620FFD63DD006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */;
+		name = "SelectDataSetViewController.m: 62";
+		rLen = 0;
+		rLoc = 1575;
+		rType = 0;
+		vrLen = 1133;
+		vrLoc = 810;
+	};
+	EC7F4C650FFD63DD006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */;
+		name = "SelectPanelTypeViewController.m: 59";
+		rLen = 0;
+		rLoc = 1476;
+		rType = 0;
+		vrLen = 917;
+		vrLoc = 938;
+	};
+	EC7F4C660FFD63EB006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:199)";
+		fRef = ECC882640FF91A5E0092B227 /* SelectPanelColorViewController.m */;
+		rLen = 1;
+		rLoc = 63;
+		rType = 1;
+	};
+	EC7F4C670FFD63ED006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */;
+		name = "SelectDataSetViewController.m: 62";
+		rLen = 0;
+		rLoc = 1575;
+		rType = 0;
+		vrLen = 1110;
+		vrLoc = 810;
+	};
+	EC7F4C6A0FFD63ED006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECC882640FF91A5E0092B227 /* SelectPanelColorViewController.m */;
+		name = "SelectPanelColorViewController.m: 59";
+		rLen = 0;
+		rLoc = 1567;
+		rType = 0;
+		vrLen = 923;
+		vrLoc = 869;
+	};
+	EC7F4C6C0FFD63FE006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */;
+		name = "SelectDataSetViewController.m: 58";
+		rLen = 0;
+		rLoc = 1473;
+		rType = 0;
+		vrLen = 774;
+		vrLoc = 810;
+	};
+	EC7F4C6D0FFD63FE006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */;
+		name = "SelectPanelTypeViewController.m: 64";
+		rLen = 0;
+		rLoc = 1632;
+		rType = 0;
+		vrLen = 673;
+		vrLoc = 1212;
+	};
+	EC7F4C6E0FFD63FE006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:199)";
+		fRef = ECC882640FF91A5E0092B227 /* SelectPanelColorViewController.m */;
+		rLen = 1;
+		rLoc = 63;
+		rType = 1;
+	};
+	EC7F4C6F0FFD63FE006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */;
+		name = "SelectDataSetViewController.m: 58";
+		rLen = 0;
+		rLoc = 1473;
+		rType = 0;
+		vrLen = 774;
+		vrLoc = 810;
+	};
+	EC7F4C700FFD63FE006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */;
+		name = "SelectPanelTypeViewController.m: 64";
+		rLen = 0;
+		rLoc = 1632;
+		rType = 0;
+		vrLen = 673;
+		vrLoc = 1212;
+	};
+	EC7F4C710FFD63FE006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECC882640FF91A5E0092B227 /* SelectPanelColorViewController.m */;
+		name = "SelectPanelColorViewController.m: 64";
+		rLen = 0;
+		rLoc = 1567;
+		rType = 0;
+		vrLen = 680;
+		vrLoc = 1143;
+	};
+	EC7F4C730FFD6400006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */;
+		name = "SelectDataSetViewController.m: 62";
+		rLen = 0;
+		rLoc = 1575;
+		rType = 0;
+		vrLen = 1131;
+		vrLoc = 810;
+	};
+	EC7F4C760FFD6442006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */;
+		name = "SelectDataSetViewController.m: 62";
+		rLen = 0;
+		rLoc = 1575;
+		rType = 0;
+		vrLen = 1133;
+		vrLoc = 810;
+	};
+	EC7F4C770FFD6442006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */;
+		name = "DataSetViewController.m: 163";
+		rLen = 0;
+		rLoc = 3976;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 3663;
+	};
+	EC7F4C780FFD6442006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */;
+		name = "SelectDataSetViewController.m: 62";
+		rLen = 0;
+		rLoc = 1575;
+		rType = 0;
+		vrLen = 1133;
+		vrLoc = 810;
+	};
+	EC7F4C790FFD6442006612C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */;
+		name = "DataSetViewController.m: 176";
+		rLen = 0;
+		rLoc = 4354;
+		rType = 0;
+		vrLen = 1037;
+		vrLoc = 3983;
+	};
 	ECB3AA380FD1DDC700F81F02 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
@@ -2809,9 +3149,10 @@
 	};
 	ECC882640FF91A5E0092B227 /* SelectPanelColorViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1087, 1462}}";
-			sepNavSelRange = "{486, 0}";
-			sepNavVisRange = "{0, 658}";
+			sepNavIntBoundsRect = "{{0, 0}, {1028, 1394}}";
+			sepNavSelRange = "{1567, 0}";
+			sepNavVisRange = "{1143, 680}";
+			sepNavWindowFrame = "{{42, 107}, {1021, 745}}";
 		};
 	};
 	ECC8826A0FF9210F0092B227 /* PBXTextBookmark */ = {
@@ -3180,9 +3521,9 @@
 	};
 	ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1140, 1292}}";
-			sepNavSelRange = "{1057, 0}";
-			sepNavVisRange = "{810, 1062}";
+			sepNavIntBoundsRect = "{{0, 0}, {1140, 1360}}";
+			sepNavSelRange = "{1575, 0}";
+			sepNavVisRange = "{810, 1133}";
 		};
 	};
 	ECFB00EF0FD4897E00EEE684 /* PBXTextBookmark */ = {
@@ -3200,7 +3541,7 @@
 		fRef = ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */;
 		name = "SelectDataSetViewController.m: 65";
 		rLen = 0;
-		rLoc = 1621;
+		rLoc = 1699;
 		rType = 0;
 		vrLen = 1063;
 		vrLoc = 809;
@@ -3214,9 +3555,10 @@
 	};
 	ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1636, 1411}}";
-			sepNavSelRange = "{367, 0}";
-			sepNavVisRange = "{55, 757}";
+			sepNavIntBoundsRect = "{{0, 0}, {1636, 1426}}";
+			sepNavSelRange = "{1632, 0}";
+			sepNavVisRange = "{1212, 673}";
+			sepNavWindowFrame = "{{19, 128}, {1021, 745}}";
 		};
 	};
 	ECFB01500FD4911C00EEE684 /* PBXTextBookmark */ = {
@@ -3596,7 +3938,7 @@
 		fRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */;
 		name = "DataSetViewController.m: 214";
 		rLen = 0;
-		rLoc = 5521;
+		rLoc = 5798;
 		rType = 0;
 		vrLen = 1201;
 		vrLoc = 5256;
@@ -3676,7 +4018,7 @@
 		fRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */;
 		name = "DataSetViewController.m: 309";
 		rLen = 0;
-		rLoc = 8151;
+		rLoc = 8428;
 		rType = 0;
 		vrLen = 1186;
 		vrLoc = 5797;

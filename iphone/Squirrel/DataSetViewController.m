@@ -154,9 +154,13 @@
 			cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
 		}
 		
-		cell.hidesAccessoryWhenEditing = YES;
 		cell.accessoryType = UITableViewCellAccessoryNone;
+		
+		#ifndef __IPHONE_3_0
 		cell.text = @"Add a new data item";
+		#else
+		cell.textLabel.text = @"Add a new data item";
+		#endif
 		
 		return cell;
 	} else {
@@ -169,11 +173,19 @@
 		}
 		
 		if (indexPath.row == 0) {
-			cell.accessoryType = UITableViewCellAccessoryNone;
+			#ifndef __IPHONE_3_0
 			cell.hidesAccessoryWhenEditing = YES;
+			cell.accessoryType = UITableViewCellAccessoryNone;
+			#else
+			cell.editingAccessoryType = UITableViewCellAccessoryNone;
+			#endif
 		} else {
-			cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+			#ifndef __IPHONE_3_0
 			cell.hidesAccessoryWhenEditing = NO;
+			cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+			#else
+			cell.editingAccessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+			#endif
 		}
 
 		cell.delegate = self;

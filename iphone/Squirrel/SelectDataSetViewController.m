@@ -55,7 +55,11 @@
 		cell.accessoryType = UITableViewCellAccessoryCheckmark;
 	}
 	
+	#ifndef __IPHONE_3_0
 	cell.text = cellDataSet.name;
+	#else
+	cell.textLabel.text = cellDataSet.name;
+	#endif
 	
     return cell;
 }
