@@ -85,6 +85,7 @@
 	
 	dataItem.lastUpdated = [NSDate date];
 	[dataItem dehydrate];
+	[dataItem selectRelated];
 	
 	if (delegate) {
 		[delegate didCloseEditDataEntryView];
@@ -206,6 +207,7 @@
 				
 				[dataSetPicker selectRow:[[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] indexOfObject:dataItem.dataSet] inComponent:0 animated:NO];
 				[dataSetPicker selectRow:[dataItem.dataSet.dataItems indexOfObject:dataItem] inComponent:1 animated:NO];
+				[dataSetPicker reloadComponent:1];
 				
 				[self.view addSubview:dataSetPicker];
 			}

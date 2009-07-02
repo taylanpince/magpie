@@ -248,7 +248,7 @@ static UIFont *largeFont = nil;
 			[[textColor colorWithAlphaComponent:0.5] set];
 			
 			[[NSString stringWithFormat:@"%1.2f", dataItem.total] drawAtPoint:CGPointMake(point.x + textSize.width + 6.0, point.y + 5.0) forWidth:40.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
-			
+
 			point.y += textSize.height;
 			
 			[[panelColor colorWithAlphaComponent:0.5] set];
