@@ -19,10 +19,14 @@
 		EC341D9D0FD5AAE40003212C /* DataEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC341D9C0FD5AAE40003212C /* DataEntryViewController.m */; };
 		EC341E540FD5C9EE0003212C /* EditDataEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */; };
 		EC341E550FD5C9EE0003212C /* DataEntryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC341E530FD5C9EE0003212C /* DataEntryView.xib */; };
+		EC62D18F0FFD09DD00D9191C /* ScreenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC62D18E0FFD09DD00D9191C /* ScreenTableViewCell.m */; };
+		EC62D1950FFD0AB400D9191C /* bg-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = EC62D1940FFD0AB400D9191C /* bg-screen.png */; };
 		EC6EB8150FD197B600E6F9D8 /* DataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */; };
 		EC6EB8E20FD1B81E00E6F9D8 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB8E10FD1B81E00E6F9D8 /* EditableTableViewCell.m */; };
 		EC6EB9560FD1CFDC00E6F9D8 /* DataSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */; };
 		EC6EB9B20FD1D86400E6F9D8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6EB9B10FD1D86400E6F9D8 /* Icon.png */; };
+		EC7F4B260FFD229F006612C6 /* SubScreenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7F4B250FFD229F006612C6 /* SubScreenTableViewCell.m */; };
+		EC7F4B410FFD268D006612C6 /* bg-sub-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7F4B400FFD268D006612C6 /* bg-sub-screen.png */; };
 		ECB752C50FF16CAD007CCBCB /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB752C40FF16CAD007CCBCB /* bg.png */; };
 		ECC882650FF91A5E0092B227 /* SelectPanelColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC882640FF91A5E0092B227 /* SelectPanelColorViewController.m */; };
 		ECC8828B0FF9232F0092B227 /* PanelColor.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC8828A0FF9232F0092B227 /* PanelColor.m */; };
@@ -94,6 +98,9 @@
 		EC341E510FD5C9EE0003212C /* EditDataEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDataEntryViewController.h; sourceTree = "<group>"; };
 		EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditDataEntryViewController.m; sourceTree = "<group>"; };
 		EC341E530FD5C9EE0003212C /* DataEntryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataEntryView.xib; sourceTree = "<group>"; };
+		EC62D18D0FFD09DD00D9191C /* ScreenTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenTableViewCell.h; sourceTree = "<group>"; };
+		EC62D18E0FFD09DD00D9191C /* ScreenTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenTableViewCell.m; sourceTree = "<group>"; };
+		EC62D1940FFD0AB400D9191C /* bg-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-screen.png"; sourceTree = "<group>"; };
 		EC6EB8100FD197B600E6F9D8 /* DataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSet.h; sourceTree = "<group>"; };
 		EC6EB8110FD197B600E6F9D8 /* DataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSet.m; sourceTree = "<group>"; };
 		EC6EB8E00FD1B81E00E6F9D8 /* EditableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTableViewCell.h; sourceTree = "<group>"; };
@@ -101,6 +108,9 @@
 		EC6EB9540FD1CFDC00E6F9D8 /* DataSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSetViewController.h; sourceTree = "<group>"; };
 		EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSetViewController.m; sourceTree = "<group>"; };
 		EC6EB9B10FD1D86400E6F9D8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		EC7F4B240FFD229F006612C6 /* SubScreenTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubScreenTableViewCell.h; sourceTree = "<group>"; };
+		EC7F4B250FFD229F006612C6 /* SubScreenTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubScreenTableViewCell.m; sourceTree = "<group>"; };
+		EC7F4B400FFD268D006612C6 /* bg-sub-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-sub-screen.png"; sourceTree = "<group>"; };
 		ECB752C40FF16CAD007CCBCB /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		ECC882630FF91A5E0092B227 /* SelectPanelColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPanelColorViewController.h; sourceTree = "<group>"; };
 		ECC882640FF91A5E0092B227 /* SelectPanelColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPanelColorViewController.m; sourceTree = "<group>"; };
@@ -305,6 +315,10 @@
 				ECFB01DE0FD4AA7100EEE684 /* InfoTableViewCell.m */,
 				ECFB01E70FD4AD3900EEE684 /* FastTableViewCell.h */,
 				ECFB01E80FD4AD3900EEE684 /* FastTableViewCell.m */,
+				EC62D18D0FFD09DD00D9191C /* ScreenTableViewCell.h */,
+				EC62D18E0FFD09DD00D9191C /* ScreenTableViewCell.m */,
+				EC7F4B240FFD229F006612C6 /* SubScreenTableViewCell.h */,
+				EC7F4B250FFD229F006612C6 /* SubScreenTableViewCell.m */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -312,6 +326,8 @@
 		ECDAE1450FFAAB1700ABD2BC /* keypad */ = {
 			isa = PBXGroup;
 			children = (
+				EC7F4B400FFD268D006612C6 /* bg-sub-screen.png */,
+				EC62D1940FFD0AB400D9191C /* bg-screen.png */,
 				ECDAE1460FFAAB1700ABD2BC /* 0-down.png */,
 				ECDAE1470FFAAB1700ABD2BC /* 0.png */,
 				ECDAE1480FFAAB1700ABD2BC /* 1-down.png */,
@@ -451,6 +467,8 @@
 				ECDAE17D0FFAAB1700ABD2BC /* dot.png in Resources */,
 				ECDAE17E0FFAAB1700ABD2BC /* plus-minus-down.png in Resources */,
 				ECDAE17F0FFAAB1700ABD2BC /* plus-minus.png in Resources */,
+				EC62D1950FFD0AB400D9191C /* bg-screen.png in Resources */,
+				EC7F4B410FFD268D006612C6 /* bg-sub-screen.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +502,8 @@
 				ECFD58640FDAECF000D6117E /* LayerDelegate.m in Sources */,
 				ECC882650FF91A5E0092B227 /* SelectPanelColorViewController.m in Sources */,
 				ECC8828B0FF9232F0092B227 /* PanelColor.m in Sources */,
+				EC62D18F0FFD09DD00D9191C /* ScreenTableViewCell.m in Sources */,
+				EC7F4B260FFD229F006612C6 /* SubScreenTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

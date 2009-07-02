@@ -6,16 +6,20 @@
 //  Copyright 2009 Taylan Pince. All rights reserved.
 //
 
+#import "SquirrelAppDelegate.h"
 #import "EditDataEntryViewController.h"
-#import "SelectableTableViewCell.h"
+#import "ScreenTableViewCell.h"
+#import "SubScreenTableViewCell.h"
 #import "KeyPadViewController.h"
+#import "DataSet.h"
 #import "DataEntry.h"
 #import "DataItem.h"
 
 
 @implementation EditDataEntryViewController
 
-@synthesize dataEntry, dataItem, formTableView, datePickerView, keyPad, dataEntryValue, dataEntryTimeStamp, dateFormatter, valueFormatter, delegate;
+@synthesize dataEntry, dataItem, formTableView, datePickerView, dataSetPicker, keyPad, dataEntryValue, dataEntryTimeStamp;
+@synthesize dateFormatter, valueFormatter, delegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,6 +56,39 @@
 	UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
 	[self.navigationItem setLeftBarButtonItem:cancelButton];
 	[cancelButton release];
+	
+	[formTableView setBackgroundColor:[UIColor colorWithRed:0.34 green:0.35 blue:0.37 alpha:1.0]];
+	
+	if (datePickerView) [datePickerView release];
+	if (dataSetPicker) [dataSetPicker release];
+	if (keyPad) [keyPad release];
+	
+	keyPad = [[KeyPadViewController alloc] initWithNibName:@"KeyPadView" bundle:nil];
+	
+	[keyPad setDelegate:self];
+	[keyPad.view setFrame:CGRectMake(0.0, 200.0, self.view.frame.size.width, 216.0)];
+	
+	[self.view addSubview:keyPad.view];
+	
+	datePickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(480.0, 200.0, self.view.frame.size.width, 216.0)];
+	
+	[datePickerView addTarget:self action:@selector(didSelectDate:) forControlEvents:UIControlEventValueChanged];
+	[datePickerView setDate:dataEntryTimeStamp];
+	
+	[self.view addSubview:datePickerView];
+	
+	dataSetPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(480.0, 200.0, self.view.frame.size.width, 216.0)];
+	
+	[dataSetPicker setDelegate:self];
+	[dataSetPicker setDataSource:self];
+	[dataSetPicker setShowsSelectionIndicator:YES];
+	
+	[dataSetPicker selectRow:[[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] indexOfObject:dataItem.dataSet] inComponent:0 animated:NO];
+	[dataSetPicker selectRow:[dataItem.dataSet.dataItems indexOfObject:dataItem] inComponent:1 animated:NO];
+	
+	[self.view addSubview:dataSetPicker];
+	
+	[self.view setBackgroundColor:[UIColor darkGrayColor]];
 }
 
 
@@ -101,60 +138,72 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return 2;
+	return 3;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *CellIdentifier = @"Cell";
 	
-	SelectableTableViewCell *cell = (SelectableTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-	
-	if (cell == nil) {
-		cell = [[[SelectableTableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
-	}
-
 	if (indexPath.row == 0) {
-		cell.titleLabel.text = @"Value";
-		cell.dataLabel.text = [valueFormatter stringFromNumber:dataEntryValue];
+		ScreenTableViewCell *cell = (ScreenTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		
+		if (cell == nil) {
+			cell = [[[ScreenTableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+			cell.selectionStyle = UITableViewCellSelectionStyleNone;
+		}
+		
+		cell.valueLabel.text = [valueFormatter stringFromNumber:dataEntryValue];
+		
+		return cell;
 	} else {
-		cell.titleLabel.text = @"Time Stamp";
-		cell.dataLabel.text = [dateFormatter stringFromDate:dataEntryTimeStamp];
+		SubScreenTableViewCell *cell = (SubScreenTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		
+		if (cell == nil) {
+			cell = [[[SubScreenTableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+			cell.selectionStyle = UITableViewCellSelectionStyleNone;
+		}
+		
+		if (indexPath.row == 1) {
+			cell.titleLabel.text = @"DATE/TIME";
+			cell.dataLabel.text = [dateFormatter stringFromDate:dataEntryTimeStamp];
+		} else if (indexPath.row == 2) {
+			cell.titleLabel.text = @"DATA ITEM";
+			cell.dataLabel.text = [NSString stringWithFormat:@"%@ → %@", dataItem.dataSet.name, dataItem.name];
+		}
+		
+		return cell;
 	}
-	
-	return cell;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return (indexPath.row == 0) ? 82.0 : 59.0;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.row == 0 & !keyPad) {
-		if (datePickerView) {
-			[datePickerView removeFromSuperview];
-			[datePickerView release];
-
-			datePickerView = nil;
-		}
-
-		keyPad = [[KeyPadViewController alloc] initWithNibName:@"KeyPadView" bundle:nil];
-		
-		keyPad.delegate = self;
-		keyPad.view.frame = CGRectMake(0.0, 200.0, self.view.frame.size.width, 216.0);
-		
-		[self.view addSubview:keyPad.view];
-	} else if (indexPath.row == 1 & !datePickerView) {
-		if (keyPad) {
-			[keyPad.view removeFromSuperview];
-			[keyPad release];
-			
-			keyPad = nil;
-		}
-
-		datePickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0.0, 200.0, self.view.frame.size.width, 216.0)];
-		
-		[datePickerView addTarget:self action:@selector(didSelectDate:) forControlEvents:UIControlEventValueChanged];
-		[datePickerView setDate:dataEntryTimeStamp];
-		[self.view addSubview:datePickerView];
+	[UIView beginAnimations:@"moveKeyPads" context:nil];
+	
+	switch (indexPath.row) {
+		case 0:
+			[keyPad.view setFrame:CGRectMake(0.0, 200.0, keyPad.view.frame.size.width, keyPad.view.frame.size.height)];
+			[datePickerView setFrame:CGRectMake(0.0, 460.0, datePickerView.frame.size.width, datePickerView.frame.size.height)];
+			[dataSetPicker setFrame:CGRectMake(0.0, 460.0, dataSetPicker.frame.size.width, dataSetPicker.frame.size.height)];
+			break;
+		case 1:
+			[datePickerView setFrame:CGRectMake(0.0, 200.0, datePickerView.frame.size.width, datePickerView.frame.size.height)];
+			[keyPad.view setFrame:CGRectMake(0.0, 460.0, keyPad.view.frame.size.width, keyPad.view.frame.size.height)];
+			[dataSetPicker setFrame:CGRectMake(0.0, 460.0, dataSetPicker.frame.size.width, dataSetPicker.frame.size.height)];
+			break;
+		case 2:
+			[dataSetPicker setFrame:CGRectMake(0.0, 200.0, dataSetPicker.frame.size.width, dataSetPicker.frame.size.height)];
+			[keyPad.view setFrame:CGRectMake(0.0, 460.0, keyPad.view.frame.size.width, keyPad.view.frame.size.height)];
+			[datePickerView setFrame:CGRectMake(0.0, 460.0, datePickerView.frame.size.width, datePickerView.frame.size.height)];
+			break;
 	}
+	
+	[UIView commitAnimations];
 }
 
 
@@ -194,6 +243,8 @@
 	} else if (key == 11) {
 		[valueFormatter setAlwaysShowsDecimalSeparator:YES];
 	} else {
+		if (key == 10) key = 0;
+		
 		if ([[valueString substringToIndex:1] isEqualToString:@"0"] & !valueFormatter.alwaysShowsDecimalSeparator) {
 			[valueString replaceCharactersInRange:NSMakeRange(0, 1) withString:[NSString stringWithFormat:@"%d", key]];
 		} else {
@@ -217,6 +268,84 @@
 }
 
 
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+	return 2;
+}
+
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+	NSInteger total;
+	
+	switch (component) {
+		case 0: {
+			total = [[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] count];
+			
+			break;
+		}
+		case 1: {
+			NSInteger selectedRow = [pickerView selectedRowInComponent:0];
+
+			if (selectedRow >= 0) {
+				total = [[[[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] objectAtIndex:selectedRow] dataItems] count];
+			} else {
+				total = 0;
+			}
+
+			break;
+		}
+	}
+	
+	return total;
+}
+
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+	NSString *title;
+	
+	switch (component) {
+		case 0: {
+			title = [[[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] objectAtIndex:row] name];
+
+			break;
+		}
+		case 1: {
+			NSInteger selectedRow = [pickerView selectedRowInComponent:0];
+			
+			if (selectedRow >= 0) {
+				DataSet *activeSet = [[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] objectAtIndex:selectedRow];
+				
+				title = [[activeSet.dataItems objectAtIndex:row] name];
+			} else {
+				title = @"";
+			}
+			
+			break;
+		}
+	}
+	
+	return title;
+}
+
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+	switch (component) {
+		case 0: {
+			[pickerView reloadComponent:1];
+			[self setDataItem:[[[[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] objectAtIndex:row] dataItems] objectAtIndex:[pickerView selectedRowInComponent:1]]];
+			[formTableView reloadData];
+			
+			break;
+		}
+		case 1: {
+			[self setDataItem:[[[[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] objectAtIndex:[pickerView selectedRowInComponent:0]] dataItems] objectAtIndex:row]];
+			[formTableView reloadData];
+			
+			break;
+		}
+	}
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -231,6 +360,7 @@
 	[dateFormatter release];
 	[formTableView release];
 	[datePickerView release];
+	[dataSetPicker release];
 	[keyPad release];
     [super dealloc];
 }

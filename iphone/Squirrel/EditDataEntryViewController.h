@@ -13,8 +13,9 @@
 @class DataEntry, DataItem, KeyPadViewController;
 
 
-@interface EditDataEntryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, KeyPadViewControllerDelegate> {
+@interface EditDataEntryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, KeyPadViewControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
 	UIDatePicker *datePickerView;
+	UIPickerView *dataSetPicker;
 	KeyPadViewController *keyPad;
 	DataEntry *dataEntry;
 	DataItem *dataItem;
@@ -29,6 +30,7 @@
 }
 
 @property (nonatomic, retain) UIDatePicker *datePickerView;
+@property (nonatomic, retain) UIPickerView *dataSetPicker;
 @property (nonatomic, retain) KeyPadViewController *keyPad;
 @property (nonatomic, retain) DataEntry *dataEntry;
 @property (nonatomic, retain) DataItem *dataItem;

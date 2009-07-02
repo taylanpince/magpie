@@ -14,6 +14,7 @@
 #import "DataSet.h"
 #import "DataItem.h"
 #import "DataEntry.h"
+#import "DataPanel.h"
 #import "PanelView.h"
 
 
@@ -92,6 +93,14 @@
 	EditDataEntryViewController *controller = [[EditDataEntryViewController alloc] initWithNibName:@"DataEntryView" bundle:nil];
 	
 	controller.delegate = self;
+	controller.dataEntry = [[[DataEntry alloc] init] autorelease];
+	
+	for (PanelView *view in scrollView.subviews) {
+		if ([view isKindOfClass:[PanelView class]] && view.frame.origin.y > scrollView.contentOffset.y && view.frame.origin.y < scrollView.contentOffset.y + scrollView.contentSize.height) {
+			controller.dataItem = [view.dataPanel.dataSet.dataItems objectAtIndex:0];
+			break;
+		}
+	}
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
 	
