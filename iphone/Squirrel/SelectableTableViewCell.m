@@ -49,6 +49,21 @@
 }
 
 
+#ifdef __IPHONE_3_0
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+    [super setHighlighted:highlighted animated:animated];
+	
+    if (highlighted) {
+		titleLabel.textColor = [UIColor whiteColor];
+		dataLabel.textColor = [UIColor whiteColor];
+	} else {
+		titleLabel.textColor = [UIColor blackColor];
+		dataLabel.textColor = (blank) ? [UIColor lightGrayColor] : [UIColor blackColor];
+	}
+}
+#endif
+
+
 - (void)dealloc {
 	[titleLabel release];
 	[dataLabel release];

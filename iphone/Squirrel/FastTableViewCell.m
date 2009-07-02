@@ -71,6 +71,16 @@
 	[super setSelected:selected animated:animated];
 }
 
+#ifdef __IPHONE_3_0
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+	if (self.highlighted != highlighted) {
+		[self setNeedsDisplay];
+	}
+	
+	[super setHighlighted:highlighted animated:animated];
+}
+#endif
+
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
 	if (self.editing != editing) {
 		[self setNeedsDisplay];
