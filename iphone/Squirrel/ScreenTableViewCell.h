@@ -9,8 +9,11 @@
 
 @interface ScreenTableViewCell : UITableViewCell {
 	UILabel *valueLabel;
+	
+	BOOL active;
 }
 
 @property (nonatomic, retain) UILabel *valueLabel;
+@property (nonatomic, assign) BOOL active;
 
 @end

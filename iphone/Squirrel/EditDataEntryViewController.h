@@ -23,6 +23,7 @@
 	NSNumberFormatter *valueFormatter;
 	NSDate *dataEntryTimeStamp;
 	NSDateFormatter *dateFormatter;
+	NSInteger activeRow;
 	
 	IBOutlet UITableView *formTableView;
 	
@@ -38,6 +39,7 @@
 @property (nonatomic, retain) NSNumberFormatter *valueFormatter;
 @property (nonatomic, retain) NSDate *dataEntryTimeStamp;
 @property (nonatomic, retain) NSDateFormatter *dateFormatter;
+@property (nonatomic, assign) NSInteger activeRow;
 
 @property (nonatomic, retain) IBOutlet UITableView *formTableView;
 

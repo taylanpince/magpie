@@ -19,7 +19,7 @@
 @implementation EditDataEntryViewController
 
 @synthesize dataEntry, dataItem, formTableView, datePickerView, dataSetPicker, keyPad, dataEntryValue, dataEntryTimeStamp;
-@synthesize dateFormatter, valueFormatter, delegate;
+@synthesize activeRow, dateFormatter, valueFormatter, delegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -58,35 +58,6 @@
 	[cancelButton release];
 	
 	[formTableView setBackgroundColor:[UIColor colorWithRed:0.34 green:0.35 blue:0.37 alpha:1.0]];
-	
-	if (datePickerView) [datePickerView release];
-	if (dataSetPicker) [dataSetPicker release];
-	if (keyPad) [keyPad release];
-	
-	keyPad = [[KeyPadViewController alloc] initWithNibName:@"KeyPadView" bundle:nil];
-	
-	[keyPad setDelegate:self];
-	[keyPad.view setFrame:CGRectMake(0.0, 200.0, self.view.frame.size.width, 216.0)];
-	
-	[self.view addSubview:keyPad.view];
-	
-	datePickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(480.0, 200.0, self.view.frame.size.width, 216.0)];
-	
-	[datePickerView addTarget:self action:@selector(didSelectDate:) forControlEvents:UIControlEventValueChanged];
-	[datePickerView setDate:dataEntryTimeStamp];
-	
-	[self.view addSubview:datePickerView];
-	
-	dataSetPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(480.0, 200.0, self.view.frame.size.width, 216.0)];
-	
-	[dataSetPicker setDelegate:self];
-	[dataSetPicker setDataSource:self];
-	[dataSetPicker setShowsSelectionIndicator:YES];
-	
-	[dataSetPicker selectRow:[[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] indexOfObject:dataItem.dataSet] inComponent:0 animated:NO];
-	[dataSetPicker selectRow:[dataItem.dataSet.dataItems indexOfObject:dataItem] inComponent:1 animated:NO];
-	
-	[self.view addSubview:dataSetPicker];
 	
 	[self.view setBackgroundColor:[UIColor darkGrayColor]];
 }
@@ -153,6 +124,7 @@
 			cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		}
 		
+		cell.active = (activeRow == indexPath.row);
 		cell.valueLabel.text = [valueFormatter stringFromNumber:dataEntryValue];
 		
 		return cell;
@@ -164,6 +136,8 @@
 			cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		}
 		
+		cell.active = (activeRow == indexPath.row);
+
 		if (indexPath.row == 1) {
 			cell.titleLabel.text = @"DATE/TIME";
 			cell.dataLabel.text = [dateFormatter stringFromDate:dataEntryTimeStamp];
@@ -183,27 +157,70 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	[UIView beginAnimations:@"moveKeyPads" context:nil];
+	activeRow = indexPath.row;
 	
 	switch (indexPath.row) {
-		case 0:
+		case 0: {
+			if (!keyPad) {
+				keyPad = [[KeyPadViewController alloc] initWithNibName:@"KeyPadView" bundle:nil];
+				
+				[keyPad setDelegate:self];
+				[keyPad.view setFrame:CGRectMake(0.0, 460.0, self.view.frame.size.width, 216.0)];
+				
+				[self.view addSubview:keyPad.view];
+			}
+			
+			[UIView beginAnimations:@"moveKeyPads" context:nil];
 			[keyPad.view setFrame:CGRectMake(0.0, 200.0, keyPad.view.frame.size.width, keyPad.view.frame.size.height)];
 			[datePickerView setFrame:CGRectMake(0.0, 460.0, datePickerView.frame.size.width, datePickerView.frame.size.height)];
 			[dataSetPicker setFrame:CGRectMake(0.0, 460.0, dataSetPicker.frame.size.width, dataSetPicker.frame.size.height)];
+			[UIView commitAnimations];
+
 			break;
-		case 1:
+		}
+		case 1: {
+			if (!datePickerView) {
+				datePickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0.0, 460.0, self.view.frame.size.width, 216.0)];
+				
+				[datePickerView addTarget:self action:@selector(didSelectDate:) forControlEvents:UIControlEventValueChanged];
+				[datePickerView setDate:dataEntryTimeStamp];
+				
+				[self.view addSubview:datePickerView];
+			}
+
+			[UIView beginAnimations:@"moveKeyPads" context:nil];
 			[datePickerView setFrame:CGRectMake(0.0, 200.0, datePickerView.frame.size.width, datePickerView.frame.size.height)];
 			[keyPad.view setFrame:CGRectMake(0.0, 460.0, keyPad.view.frame.size.width, keyPad.view.frame.size.height)];
 			[dataSetPicker setFrame:CGRectMake(0.0, 460.0, dataSetPicker.frame.size.width, dataSetPicker.frame.size.height)];
+			[UIView commitAnimations];
+
 			break;
-		case 2:
+		}
+		case 2: {
+			if (!dataSetPicker) {
+				dataSetPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0, 460.0, self.view.frame.size.width, 216.0)];
+				
+				[dataSetPicker setDelegate:self];
+				[dataSetPicker setDataSource:self];
+				[dataSetPicker setShowsSelectionIndicator:YES];
+				
+				[dataSetPicker selectRow:[[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] indexOfObject:dataItem.dataSet] inComponent:0 animated:NO];
+				[dataSetPicker selectRow:[dataItem.dataSet.dataItems indexOfObject:dataItem] inComponent:1 animated:NO];
+				
+				[self.view addSubview:dataSetPicker];
+			}
+
+			[UIView beginAnimations:@"moveKeyPads" context:nil];
 			[dataSetPicker setFrame:CGRectMake(0.0, 200.0, dataSetPicker.frame.size.width, dataSetPicker.frame.size.height)];
 			[keyPad.view setFrame:CGRectMake(0.0, 460.0, keyPad.view.frame.size.width, keyPad.view.frame.size.height)];
 			[datePickerView setFrame:CGRectMake(0.0, 460.0, datePickerView.frame.size.width, datePickerView.frame.size.height)];
+			[UIView commitAnimations];
+
 			break;
+		}
 	}
 	
-	[UIView commitAnimations];
+	[formTableView reloadData];
 }
 
 
@@ -331,14 +348,23 @@
 	switch (component) {
 		case 0: {
 			[pickerView reloadComponent:1];
-			[self setDataItem:[[[[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] objectAtIndex:row] dataItems] objectAtIndex:[pickerView selectedRowInComponent:1]]];
-			[formTableView reloadData];
+			
+			DataItem *newDataItem = [[[[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] objectAtIndex:row] dataItems] objectAtIndex:[pickerView selectedRowInComponent:1]];
+			
+			if (newDataItem != nil) {
+				[self setDataItem:newDataItem];
+				[formTableView reloadData];
+			}
 			
 			break;
 		}
 		case 1: {
-			[self setDataItem:[[[[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] objectAtIndex:[pickerView selectedRowInComponent:0]] dataItems] objectAtIndex:row]];
-			[formTableView reloadData];
+			DataItem *newDataItem = [[[[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] objectAtIndex:[pickerView selectedRowInComponent:0]] dataItems] objectAtIndex:row];
+
+			if (newDataItem != nil) {
+				[self setDataItem:newDataItem];
+				[formTableView reloadData];
+			}
 			
 			break;
 		}

@@ -11,7 +11,7 @@
 
 @implementation ScreenTableViewCell
 
-@synthesize valueLabel;
+@synthesize valueLabel, active;
 
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
@@ -32,13 +32,8 @@
 	[super layoutSubviews];
 	
 	[valueLabel setFrame:self.contentView.frame];
-}
-
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
 	
-    if (selected) {
+	if (active) {
 		valueLabel.textColor = [UIColor colorWithRed:0.64 green:0.77 blue:0.88 alpha:1.0];
 	} else {
 		valueLabel.textColor = [UIColor whiteColor];

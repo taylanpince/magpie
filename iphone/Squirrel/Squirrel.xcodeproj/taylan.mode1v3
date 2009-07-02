@@ -285,7 +285,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {266, 764}}</string>
+							<string>{{0, 63}, {266, 764}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -322,7 +322,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MainViewController.m</string>
+								<string>EditDataEntryViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -330,11 +330,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MainViewController.m</string>
+										<string>EditDataEntryViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>EC7F4BA00FFD3B27006612C6</string>
+										<string>EC7F4BE10FFD4D6A006612C6</string>
 										<key>history</key>
 										<array>
 											<string>ECB3AA380FD1DDC700F81F02</string>
@@ -378,19 +378,19 @@
 											<string>ECDAE1320FFA8CDA00ABD2BC</string>
 											<string>ECDAE1940FFAB1AF00ABD2BC</string>
 											<string>ECDAE1950FFAB1AF00ABD2BC</string>
-											<string>EC62D19F0FFD0C6600D9191C</string>
 											<string>EC62D1A20FFD0C6600D9191C</string>
 											<string>EC62D1B30FFD0D6800D9191C</string>
-											<string>EC7F4B2A0FFD2554006612C6</string>
 											<string>EC7F4B2B0FFD2554006612C6</string>
 											<string>EC7F4B2C0FFD2554006612C6</string>
-											<string>EC7F4B450FFD26CE006612C6</string>
-											<string>EC7F4B4F0FFD27B9006612C6</string>
-											<string>EC7F4B580FFD2DCB006612C6</string>
 											<string>EC7F4B670FFD2FF0006612C6</string>
-											<string>EC7F4B9B0FFD3B27006612C6</string>
 											<string>EC7F4B9C0FFD3B27006612C6</string>
-											<string>EC7F4B9D0FFD3B27006612C6</string>
+											<string>EC7F4BA70FFD4155006612C6</string>
+											<string>EC7F4BB40FFD4AF1006612C6</string>
+											<string>EC7F4BB60FFD4AF1006612C6</string>
+											<string>EC7F4BB70FFD4AF1006612C6</string>
+											<string>EC7F4BC90FFD4BD9006612C6</string>
+											<string>EC7F4BD80FFD4CFB006612C6</string>
+											<string>EC7F4BD90FFD4CFB006612C6</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -456,6 +456,23 @@
 											<string>EC7F4B8E0FFD3A13006612C6</string>
 											<string>EC7F4B9E0FFD3B27006612C6</string>
 											<string>EC7F4B9F0FFD3B27006612C6</string>
+											<string>EC7F4BA80FFD4155006612C6</string>
+											<string>EC7F4BBA0FFD4AF1006612C6</string>
+											<string>EC7F4BBB0FFD4AF1006612C6</string>
+											<string>EC7F4BBC0FFD4AF1006612C6</string>
+											<string>EC7F4BBD0FFD4AF1006612C6</string>
+											<string>EC7F4BBE0FFD4AF1006612C6</string>
+											<string>EC7F4BBF0FFD4AF1006612C6</string>
+											<string>EC7F4BC00FFD4AF1006612C6</string>
+											<string>EC7F4BC10FFD4AF1006612C6</string>
+											<string>EC7F4BC20FFD4AF1006612C6</string>
+											<string>EC7F4BC30FFD4AF1006612C6</string>
+											<string>EC7F4BC40FFD4AF1006612C6</string>
+											<string>EC7F4BC50FFD4AF1006612C6</string>
+											<string>EC7F4BC60FFD4AF1006612C6</string>
+											<string>EC7F4BCB0FFD4BD9006612C6</string>
+											<string>EC7F4BD20FFD4C24006612C6</string>
+											<string>EC7F4BDA0FFD4CFB006612C6</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
