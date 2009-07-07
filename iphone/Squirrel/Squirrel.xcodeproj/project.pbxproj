@@ -74,14 +74,13 @@
 		ECFBFBA80FD1EDCA00EEE684 /* Squirrel.sql in Resources */ = {isa = PBXBuildFile; fileRef = ECFBFBA70FD1EDCA00EEE684 /* Squirrel.sql */; };
 		ECFBFC420FD28B1700EEE684 /* DataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */; };
 		ECFBFFF50FD463F000EEE684 /* DataPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */; };
-		ECFD58640FDAECF000D6117E /* LayerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFD58630FDAECF000D6117E /* LayerDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* SquirrelAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquirrelAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* SquirrelAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquirrelAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* Squirrel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Squirrel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* Magpie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Magpie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		280E754B0DD40C5E005A515E /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		280E754C0DD40C5E005A515E /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -171,8 +170,6 @@
 		ECFBFC410FD28B1700EEE684 /* DataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataItem.m; sourceTree = "<group>"; };
 		ECFBFFF30FD463F000EEE684 /* DataPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPanel.h; sourceTree = "<group>"; };
 		ECFBFFF40FD463F000EEE684 /* DataPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPanel.m; sourceTree = "<group>"; };
-		ECFD58620FDAECF000D6117E /* LayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerDelegate.h; sourceTree = "<group>"; };
-		ECFD58630FDAECF000D6117E /* LayerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,7 +200,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* Squirrel.app */,
+				1D6058910D05DD3D006BFB54 /* Magpie.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -211,7 +208,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				ECFD58610FDAECDC00D6117E /* Layers */,
 				ECFB03390FD4D7F100EEE684 /* Views */,
 				EC6EB8DF0FD1B7F500E6F9D8 /* Table View Cells */,
 				EC6EB88B0FD1A58C00E6F9D8 /* View Controllers */,
@@ -372,15 +368,6 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		ECFD58610FDAECDC00D6117E /* Layers */ = {
-			isa = PBXGroup;
-			children = (
-				ECFD58620FDAECF000D6117E /* LayerDelegate.h */,
-				ECFD58630FDAECF000D6117E /* LayerDelegate.m */,
-			);
-			name = Layers;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -398,7 +385,7 @@
 			);
 			name = Squirrel;
 			productName = Squirrel;
-			productReference = 1D6058910D05DD3D006BFB54 /* Squirrel.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* Magpie.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -499,7 +486,6 @@
 				EC341D9D0FD5AAE40003212C /* DataEntryViewController.m in Sources */,
 				EC341E540FD5C9EE0003212C /* EditDataEntryViewController.m in Sources */,
 				ECE93A960FD8D48D006BA407 /* KeyPadViewController.m in Sources */,
-				ECFD58640FDAECF000D6117E /* LayerDelegate.m in Sources */,
 				ECC882650FF91A5E0092B227 /* SelectPanelColorViewController.m in Sources */,
 				ECC8828B0FF9232F0092B227 /* PanelColor.m in Sources */,
 				EC62D18F0FFD09DD00D9191C /* ScreenTableViewCell.m in Sources */,
@@ -520,7 +506,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Squirrel_Prefix.pch;
 				INFOPLIST_FILE = "Squirrel-Info.plist";
-				PRODUCT_NAME = Squirrel;
+				PRODUCT_NAME = Magpie;
 			};
 			name = Debug;
 		};
@@ -532,7 +518,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Squirrel_Prefix.pch;
 				INFOPLIST_FILE = "Squirrel-Info.plist";
-				PRODUCT_NAME = Squirrel;
+				PRODUCT_NAME = Magpie;
 			};
 			name = Release;
 		};
