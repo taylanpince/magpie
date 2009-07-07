@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ActivePerspectiveName</key>
-	<string>Debug</string>
+	<string>Project</string>
 	<key>AllowedModules</key>
 	<array>
 		<dict>
@@ -301,6 +301,8 @@
 							<string>MainColumn</string>
 							<real>270</real>
 						</array>
+						<key>RubberWindowFrame</key>
+						<string>4 55 1436 823 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -328,7 +330,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>EC30A02B1003D41A00A0C623</string>
+										<string>EC30A0531003DEA600A0C623</string>
 										<key>history</key>
 										<array>
 											<string>EC309FB81003BDC100A0C623</string>
@@ -341,7 +343,7 @@
 											<string>EC30A0011003CD3C00A0C623</string>
 											<string>EC30A0021003CD3C00A0C623</string>
 											<string>EC30A0271003D41A00A0C623</string>
-											<string>EC30A0281003D41A00A0C623</string>
+											<string>EC30A0521003DEA500A0C623</string>
 										</array>
 										<key>nextStack</key>
 										<array>
@@ -376,6 +378,8 @@
 							<dict>
 								<key>Frame</key>
 								<string>{{0, 0}, {1144, 619}}</string>
+								<key>RubberWindowFrame</key>
+								<string>4 55 1436 823 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -399,6 +403,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1144, 131}}</string>
+										<key>RubberWindowFrame</key>
+										<string>4 55 1436 823 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -523,8 +529,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
@@ -536,8 +540,6 @@
 					<dict>
 						<key>Frame</key>
 						<string>{{0, 0}, {1436, 334}}</string>
-						<key>RubberWindowFrame</key>
-						<string>4 55 1436 823 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
@@ -612,11 +614,7 @@
 							</array>
 							<key>Frame</key>
 							<string>{{700, 0}, {736, 215}}</string>
-							<key>RubberWindowFrame</key>
-							<string>4 55 1436 823 0 0 1440 878 </string>
 						</dict>
-						<key>RubberWindowFrame</key>
-						<string>4 55 1436 823 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
@@ -676,6 +674,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>EC30A0501003DE9400A0C623</string>
+		<string>EC30A0511003DE9400A0C623</string>
 		<string>/Users/taylan/Documents/Development/Personal/squirrel/iphone/Squirrel/Squirrel.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

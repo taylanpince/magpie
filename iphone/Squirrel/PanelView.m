@@ -6,6 +6,8 @@
 //  Copyright 2009 Taylan Pince. All rights reserved.
 //
 
+#import <math.h>
+
 #import "PanelView.h"
 #import "PanelColor.h"
 #import "DataPanel.h"
@@ -222,13 +224,19 @@ static UIFont *largeFont = nil;
 	NSString *dateText;
 
 	if ([dataPanel.dataSet.lastUpdated timeIntervalSince1970]) {
-		NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-		[dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-		[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+		NSTimeInterval intervalInSeconds = fabs([dataPanel.dataSet.lastUpdated timeIntervalSinceNow]);
+		double intervalInMinutes = round(intervalInSeconds / 60.0);
 		
-		dateText = [dateFormatter stringFromDate:dataPanel.dataSet.lastUpdated];
-		
-		[dateFormatter release];
+		if (intervalInMinutes >= 0 && intervalInMinutes <= 1) dateText = (intervalInMinutes == 0) ? @"less than a minute ago" : @"1 minute ago";
+		else if (intervalInMinutes >= 2 && intervalInMinutes <= 44) dateText = [NSString stringWithFormat:@"%.0f minutes ago", intervalInMinutes];
+		else if (intervalInMinutes >= 45 && intervalInMinutes <= 89) dateText = @"about 1 hour ago";
+		else if (intervalInMinutes >= 90 && intervalInMinutes <= 1439) dateText = [NSString stringWithFormat:@"about %.0f hours ago", round(intervalInMinutes / 60.0)];
+		else if (intervalInMinutes >= 1440 && intervalInMinutes <= 2879) dateText = @"1 day ago";
+		else if (intervalInMinutes >= 2880 && intervalInMinutes <= 43199) dateText = [NSString stringWithFormat:@"%.0f days ago", round(intervalInMinutes / 1440.0)];
+		else if (intervalInMinutes >= 43200 && intervalInMinutes <= 86399) dateText = @"about 1 month ago";
+		else if (intervalInMinutes >= 86400 && intervalInMinutes <= 525599) dateText = [NSString stringWithFormat:@"%.0f months ago", round(intervalInMinutes / 43200.0)];
+		else if (intervalInMinutes >= 525600 && intervalInMinutes <= 1051199) dateText = @"about 1 year ago";
+		else dateText = [NSString stringWithFormat:@"over %.0f years ago", round(intervalInMinutes / 525600.0)];
 	} else {
 		dateText = @"N/A";
 	}
@@ -266,7 +274,7 @@ static UIFont *largeFont = nil;
 			counter++;
 		}
 	} else if ([dataPanel.type isEqualToString:@"Vertical Bar Chart"]) {
-		point.y += 204.0;
+		point.y += 200.0;
 		
 		CGPoint topPoint = point;
 		CGFloat barHeight;
@@ -283,7 +291,7 @@ static UIFont *largeFont = nil;
 			[[panelColor colorWithAlphaComponent:1.0 - (0.1 * counter)] set];
 			
 			if (dataItem.percentage > 0.0) {
-				barHeight = 200.0 * dataItem.percentage / topItem.percentage;
+				barHeight = 196.0 * dataItem.percentage / topItem.percentage;
 				
 				CGContextAddRect(context, CGRectMake(topPoint.x, topPoint.y - barHeight, barWidth * 0.75, barHeight));
 				CGContextFillPath(context);

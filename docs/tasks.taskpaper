@@ -16,5 +16,5 @@ MagPie Tasks:
 - Do memory leak check
 - Research performance improvements for the scrolling view
 	- Convert to a horizontal page view mode (?)
-- Fix the way dates are formatted on the panels
+- Fix the way dates are formatted on the panels @done
 - Fix the highlight issue under OS 3.0 @done
