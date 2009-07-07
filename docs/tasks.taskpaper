@@ -1,10 +1,11 @@
 MagPie Tasks:
 - Finalize logo, background, splash screen design
 - Add timeline charts
+- Add vertical bar charts @done
 - Add colour squares under colour selection view 
 - Add panel type icons, show them in both type selection and panel listing views
-- Fix the way automated colour reduction works so it can at least accommodate 10 items per panel
-- Fix ordering for pie chart panels, it should be from highest to lowest
+- Fix the way automated colour reduction works so it can at least accommodate 10 items per panel @done
+- Fix ordering for pie chart panels, it should be from highest to lowest @done
 - Fix numeric entry bugs:
 	- Can't do zero after decimal point (1.05)
 	- Something happens when you enter too many decimals (can't delete, or enter more)
