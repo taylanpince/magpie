@@ -54,7 +54,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = EC6EB78E0FD0AA6100E6F9D8 /* Squirrel */;
-		activeSDKPreference = iphonesimulator2.2.1;
+		activeSDKPreference = iphonesimulator3.0;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Squirrel */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* Squirrel */,
@@ -232,6 +232,20 @@
 			EC30A04F1003DE9400A0C623 /* PBXTextBookmark */ = EC30A04F1003DE9400A0C623 /* PBXTextBookmark */;
 			EC30A0521003DEA500A0C623 /* PBXTextBookmark */ = EC30A0521003DEA500A0C623 /* PBXTextBookmark */;
 			EC30A0531003DEA600A0C623 /* PBXTextBookmark */ = EC30A0531003DEA600A0C623 /* PBXTextBookmark */;
+			EC30A0551003E0BB00A0C623 /* PBXTextBookmark */ = EC30A0551003E0BB00A0C623 /* PBXTextBookmark */;
+			EC30A0571003E12100A0C623 /* PBXTextBookmark */ = EC30A0571003E12100A0C623 /* PBXTextBookmark */;
+			EC30A0581003E12100A0C623 /* PBXTextBookmark */ = EC30A0581003E12100A0C623 /* PBXTextBookmark */;
+			EC30A05B1003E16F00A0C623 /* PBXTextBookmark */ = EC30A05B1003E16F00A0C623 /* PBXTextBookmark */;
+			EC30A05C1003E16F00A0C623 /* PBXTextBookmark */ = EC30A05C1003E16F00A0C623 /* PBXTextBookmark */;
+			EC30A05D1003E16F00A0C623 /* PBXTextBookmark */ = EC30A05D1003E16F00A0C623 /* PBXTextBookmark */;
+			EC30A05E1003E16F00A0C623 /* PBXTextBookmark */ = EC30A05E1003E16F00A0C623 /* PBXTextBookmark */;
+			EC30A0601003E19F00A0C623 /* PBXTextBookmark */ = EC30A0601003E19F00A0C623 /* PBXTextBookmark */;
+			EC30A0611003E19F00A0C623 /* PBXTextBookmark */ = EC30A0611003E19F00A0C623 /* PBXTextBookmark */;
+			EC30A0621003E1A000A0C623 /* PBXTextBookmark */ = EC30A0621003E1A000A0C623 /* PBXTextBookmark */;
+			EC30A0671003E32200A0C623 /* PBXTextBookmark */ = EC30A0671003E32200A0C623 /* PBXTextBookmark */;
+			EC30A0681003E32300A0C623 /* PBXTextBookmark */ = EC30A0681003E32300A0C623 /* PBXTextBookmark */;
+			EC30A0691003E34400A0C623 /* PBXTextBookmark */ = EC30A0691003E34400A0C623 /* PBXTextBookmark */;
+			EC30A06A1003E34500A0C623 /* PBXTextBookmark */ = EC30A06A1003E34500A0C623 /* PBXTextBookmark */;
 			EC89595310016E400009E0DF = EC89595310016E400009E0DF /* PBXTextBookmark */;
 			EC89595410016E400009E0DF = EC89595410016E400009E0DF /* PBXTextBookmark */;
 		};
@@ -515,7 +529,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 279";
 		rLen = 0;
-		rLoc = 13189;
+		rLoc = 13272;
 		rType = 0;
 		vrLen = 1377;
 		vrLoc = 10774;
@@ -525,7 +539,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 279";
 		rLen = 0;
-		rLoc = 13189;
+		rLoc = 13272;
 		rType = 0;
 		vrLen = 1249;
 		vrLoc = 10902;
@@ -547,7 +561,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 282";
 		rLen = 0;
-		rLoc = 13195;
+		rLoc = 13278;
 		rType = 0;
 		vrLen = 467;
 		vrLoc = 11157;
@@ -597,7 +611,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 281";
 		rLen = 0;
-		rLoc = 13188;
+		rLoc = 13271;
 		rType = 0;
 		vrLen = 1318;
 		vrLoc = 11016;
@@ -607,7 +621,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 281";
 		rLen = 0;
-		rLoc = 13188;
+		rLoc = 13271;
 		rType = 0;
 		vrLen = 1317;
 		vrLoc = 10995;
@@ -617,7 +631,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 273";
 		rLen = 0;
-		rLoc = 12794;
+		rLoc = 12866;
 		rType = 0;
 		vrLen = 396;
 		vrLoc = 11016;
@@ -627,7 +641,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 281";
 		rLen = 0;
-		rLoc = 13121;
+		rLoc = 13204;
 		rType = 0;
 		vrLen = 1363;
 		vrLoc = 11016;
@@ -637,7 +651,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 281";
 		rLen = 0;
-		rLoc = 13121;
+		rLoc = 13204;
 		rType = 0;
 		vrLen = 1131;
 		vrLoc = 10995;
@@ -647,7 +661,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 281";
 		rLen = 0;
-		rLoc = 13121;
+		rLoc = 13204;
 		rType = 0;
 		vrLen = 494;
 		vrLoc = 11104;
@@ -687,7 +701,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 275";
 		rLen = 0;
-		rLoc = 12790;
+		rLoc = 12862;
 		rType = 0;
 		vrLen = 1149;
 		vrLoc = 10995;
@@ -697,7 +711,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 275";
 		rLen = 0;
-		rLoc = 12790;
+		rLoc = 12862;
 		rType = 0;
 		vrLen = 1032;
 		vrLoc = 10807;
@@ -707,7 +721,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 275";
 		rLen = 0;
-		rLoc = 12790;
+		rLoc = 12862;
 		rType = 0;
 		vrLen = 476;
 		vrLoc = 11176;
@@ -717,7 +731,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 278";
 		rLen = 0;
-		rLoc = 12888;
+		rLoc = 12971;
 		rType = 0;
 		vrLen = 1363;
 		vrLoc = 11034;
@@ -727,7 +741,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 278";
 		rLen = 0;
-		rLoc = 12888;
+		rLoc = 12971;
 		rType = 0;
 		vrLen = 1058;
 		vrLoc = 10836;
@@ -737,7 +751,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 278";
 		rLen = 0;
-		rLoc = 12888;
+		rLoc = 12971;
 		rType = 0;
 		vrLen = 404;
 		vrLoc = 11104;
@@ -747,7 +761,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 288";
 		rLen = 0;
-		rLoc = 13195;
+		rLoc = 13278;
 		rType = 0;
 		vrLen = 1293;
 		vrLoc = 10991;
@@ -757,7 +771,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 288";
 		rLen = 0;
-		rLoc = 13195;
+		rLoc = 13278;
 		rType = 0;
 		vrLen = 1281;
 		vrLoc = 11127;
@@ -767,7 +781,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 288";
 		rLen = 0;
-		rLoc = 13195;
+		rLoc = 13278;
 		rType = 0;
 		vrLen = 498;
 		vrLoc = 11155;
@@ -777,7 +791,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 288";
 		rLen = 0;
-		rLoc = 13195;
+		rLoc = 13278;
 		rType = 0;
 		vrLen = 1313;
 		vrLoc = 11127;
@@ -827,7 +841,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 277";
 		rLen = 0;
-		rLoc = 12585;
+		rLoc = 12657;
 		rType = 0;
 		vrLen = 1204;
 		vrLoc = 10836;
@@ -917,7 +931,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 285";
 		rLen = 0;
-		rLoc = 13011;
+		rLoc = 13094;
 		rType = 0;
 		vrLen = 1324;
 		vrLoc = 10991;
@@ -927,7 +941,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 285";
 		rLen = 0;
-		rLoc = 13011;
+		rLoc = 13094;
 		rType = 0;
 		vrLen = 1377;
 		vrLoc = 11034;
@@ -937,7 +951,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 280";
 		rLen = 0;
-		rLoc = 12793;
+		rLoc = 12865;
 		rType = 0;
 		vrLen = 549;
 		vrLoc = 11155;
@@ -947,7 +961,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 281";
 		rLen = 0;
-		rLoc = 12834;
+		rLoc = 12906;
 		rType = 0;
 		vrLen = 1531;
 		vrLoc = 11034;
@@ -957,7 +971,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 281";
 		rLen = 0;
-		rLoc = 12834;
+		rLoc = 12906;
 		rType = 0;
 		vrLen = 1112;
 		vrLoc = 10995;
@@ -967,7 +981,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 281";
 		rLen = 0;
-		rLoc = 12837;
+		rLoc = 12909;
 		rType = 0;
 		vrLen = 534;
 		vrLoc = 11261;
@@ -977,7 +991,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 327";
 		rLen = 0;
-		rLoc = 14662;
+		rLoc = 14815;
 		rType = 0;
 		vrLen = 1469;
 		vrLoc = 12299;
@@ -987,7 +1001,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 327";
 		rLen = 0;
-		rLoc = 14662;
+		rLoc = 14815;
 		rType = 0;
 		vrLen = 1540;
 		vrLoc = 12721;
@@ -997,7 +1011,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 303";
 		rLen = 0;
-		rLoc = 13791;
+		rLoc = 13874;
 		rType = 0;
 		vrLen = 425;
 		vrLoc = 12299;
@@ -1027,7 +1041,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 299";
 		rLen = 0;
-		rLoc = 13525;
+		rLoc = 13608;
 		rType = 0;
 		vrLen = 419;
 		vrLoc = 11934;
@@ -1057,7 +1071,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 280";
 		rLen = 0;
-		rLoc = 12793;
+		rLoc = 12865;
 		rType = 0;
 		vrLen = 548;
 		vrLoc = 11176;
@@ -1067,7 +1081,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 275";
 		rLen = 0;
-		rLoc = 12487;
+		rLoc = 12559;
 		rType = 0;
 		vrLen = 1263;
 		vrLoc = 10596;
@@ -1077,7 +1091,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 275";
 		rLen = 0;
-		rLoc = 12487;
+		rLoc = 12559;
 		rType = 0;
 		vrLen = 1280;
 		vrLoc = 10807;
@@ -1087,7 +1101,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 275";
 		rLen = 0;
-		rLoc = 12487;
+		rLoc = 12559;
 		rType = 0;
 		vrLen = 595;
 		vrLoc = 11264;
@@ -1107,7 +1121,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 283";
 		rLen = 0;
-		rLoc = 12888;
+		rLoc = 12971;
 		rType = 0;
 		vrLen = 1621;
 		vrLoc = 12963;
@@ -1127,7 +1141,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 353";
 		rLen = 0;
-		rLoc = 15789;
+		rLoc = 15964;
 		rType = 0;
 		vrLen = 1552;
 		vrLoc = 13750;
@@ -1137,7 +1151,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 353";
 		rLen = 0;
-		rLoc = 15789;
+		rLoc = 15964;
 		rType = 0;
 		vrLen = 1469;
 		vrLoc = 13837;
@@ -1147,7 +1161,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 353";
 		rLen = 0;
-		rLoc = 15789;
+		rLoc = 15964;
 		rType = 0;
 		vrLen = 579;
 		vrLoc = 13750;
@@ -1157,7 +1171,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 334";
 		rLen = 0;
-		rLoc = 14959;
+		rLoc = 15112;
 		rType = 0;
 		vrLen = 1262;
 		vrLoc = 10596;
@@ -1197,7 +1211,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 286";
 		rLen = 0;
-		rLoc = 12968;
+		rLoc = 13051;
 		rType = 0;
 		vrLen = 1180;
 		vrLoc = 10991;
@@ -1207,7 +1221,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 286";
 		rLen = 0;
-		rLoc = 12968;
+		rLoc = 13051;
 		rType = 0;
 		vrLen = 1389;
 		vrLoc = 11104;
@@ -1217,7 +1231,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 286";
 		rLen = 0;
-		rLoc = 12968;
+		rLoc = 13051;
 		rType = 0;
 		vrLen = 273;
 		vrLoc = 10991;
@@ -1347,7 +1361,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 429";
 		rLen = 0;
-		rLoc = 18794;
+		rLoc = 18969;
 		rType = 0;
 		vrLen = 1390;
 		vrLoc = 17404;
@@ -1357,7 +1371,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 429";
 		rLen = 0;
-		rLoc = 18794;
+		rLoc = 18969;
 		rType = 0;
 		vrLen = 1390;
 		vrLoc = 17404;
@@ -1367,7 +1381,7 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 401";
 		rLen = 0;
-		rLoc = 17790;
+		rLoc = 17965;
 		rType = 0;
 		vrLen = 728;
 		vrLoc = 17404;
@@ -1377,10 +1391,150 @@
 		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
 		name = "PanelView.m: 401";
 		rLen = 0;
-		rLoc = 17790;
+		rLoc = 17965;
 		rType = 0;
 		vrLen = 2059;
 		vrLoc = 16680;
+	};
+	EC30A0551003E0BB00A0C623 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 397";
+		rLen = 0;
+		rLoc = 17744;
+		rType = 0;
+		vrLen = 2199;
+		vrLoc = 9763;
+	};
+	EC30A0571003E12100A0C623 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 397";
+		rLen = 0;
+		rLoc = 17744;
+		rType = 0;
+		vrLen = 639;
+		vrLoc = 11323;
+	};
+	EC30A0581003E12100A0C623 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 262";
+		rLen = 0;
+		rLoc = 11836;
+		rType = 0;
+		vrLen = 639;
+		vrLoc = 11323;
+	};
+	EC30A05B1003E16F00A0C623 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECC8828A0FF9232F0092B227 /* PanelColor.m */;
+		name = "PanelColor.m: 22";
+		rLen = 0;
+		rLoc = 712;
+		rType = 0;
+		vrLen = 1076;
+		vrLoc = 0;
+	};
+	EC30A05C1003E16F00A0C623 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 253";
+		rLen = 0;
+		rLoc = 11322;
+		rType = 0;
+		vrLen = 1233;
+		vrLoc = 11966;
+	};
+	EC30A05D1003E16F00A0C623 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECC8828A0FF9232F0092B227 /* PanelColor.m */;
+		name = "PanelColor.m: 22";
+		rLen = 0;
+		rLoc = 712;
+		rType = 0;
+		vrLen = 1076;
+		vrLoc = 0;
+	};
+	EC30A05E1003E16F00A0C623 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 361";
+		rLen = 0;
+		rLoc = 15964;
+		rType = 0;
+		vrLen = 1551;
+		vrLoc = 14395;
+	};
+	EC30A0601003E19F00A0C623 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 361";
+		rLen = 0;
+		rLoc = 15964;
+		rType = 0;
+		vrLen = 714;
+		vrLoc = 14395;
+	};
+	EC30A0611003E19F00A0C623 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 361";
+		rLen = 0;
+		rLoc = 15964;
+		rType = 0;
+		vrLen = 714;
+		vrLoc = 14395;
+	};
+	EC30A0621003E1A000A0C623 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 361";
+		rLen = 0;
+		rLoc = 15964;
+		rType = 0;
+		vrLen = 1675;
+		vrLoc = 14008;
+	};
+	EC30A0671003E32200A0C623 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 364";
+		rLen = 0;
+		rLoc = 15964;
+		rType = 0;
+		vrLen = 1540;
+		vrLoc = 14774;
+	};
+	EC30A0681003E32300A0C623 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 364";
+		rLen = 0;
+		rLoc = 15964;
+		rType = 0;
+		vrLen = 1491;
+		vrLoc = 15145;
+	};
+	EC30A0691003E34400A0C623 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 347";
+		rLen = 0;
+		rLoc = 15194;
+		rType = 0;
+		vrLen = 631;
+		vrLoc = 14774;
+	};
+	EC30A06A1003E34500A0C623 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */;
+		name = "PanelView.m: 347";
+		rLen = 0;
+		rLoc = 15194;
+		rType = 0;
+		vrLen = 1666;
+		vrLoc = 14228;
 	};
 	EC341D9B0FD5AAE40003212C /* DataEntryViewController.h */ = {
 		uiCtxt = {
@@ -1565,7 +1719,7 @@
 	};
 	ECC8828A0FF9232F0092B227 /* PanelColor.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1087, 572}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1083, 587}}";
 			sepNavSelRange = "{712, 0}";
 			sepNavVisRange = "{0, 1076}";
 		};
@@ -1678,9 +1832,9 @@
 	};
 	ECFB033B0FD4D80100EEE684 /* PanelView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1756, 7599}}";
-			sepNavSelRange = "{17790, 0}";
-			sepNavVisRange = "{16680, 2059}";
+			sepNavIntBoundsRect = "{{0, 0}, {1756, 7497}}";
+			sepNavSelRange = "{15194, 0}";
+			sepNavVisRange = "{14228, 1666}";
 		};
 	};
 	ECFB05880FD57CF000EEE684 /* DataEntry.h */ = {

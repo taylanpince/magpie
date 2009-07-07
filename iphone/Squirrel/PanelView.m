@@ -280,6 +280,8 @@ static UIFont *largeFont = nil;
 		CGFloat barHeight;
 		CGFloat barWidth = (rect.size.width - 20.0) / [dataPanel.dataSet.dataItems count];
 		
+		double colorIncrement = 0.9 / [dataPanel.dataSet.dataItems count];
+		
 		barWidth += barWidth * 0.25 / [dataPanel.dataSet.dataItems count];
 		point.y += 12.0;
 		
@@ -288,7 +290,7 @@ static UIFont *largeFont = nil;
 		DataItem *topItem = [sortedItems objectAtIndex:0];
 		
 		for (DataItem *dataItem in sortedItems) {
-			[[panelColor colorWithAlphaComponent:1.0 - (0.1 * counter)] set];
+			[[panelColor colorWithAlphaComponent:1.0 - (colorIncrement * counter)] set];
 			
 			if (dataItem.percentage > 0.0) {
 				barHeight = 196.0 * dataItem.percentage / topItem.percentage;
@@ -316,6 +318,7 @@ static UIFont *largeFont = nil;
 		}
 	} else if ([dataPanel.type isEqualToString:@"Pie Chart"]) {
 		double totalPercentage = 0.0;
+		double colorIncrement = 0.9 / [dataPanel.dataSet.dataItems count];
 		
 		CGFloat centerX = point.x + (rect.size.width - 20.0) / 2;
 		CGFloat radius = 98.0;
@@ -325,7 +328,7 @@ static UIFont *largeFont = nil;
 		
 		point.y += 212.0;
 		
-		CGContextSetFillColorWithColor(context, [[panelColor colorWithAlphaComponent:0.1] CGColor]);
+		CGContextSetFillColorWithColor(context, [[panelColor colorWithAlphaComponent:0.15] CGColor]);
 		CGContextMoveToPoint(context, centerX, centerY);
 		CGContextAddArc(context, centerX, centerY, radius, 0, 2 * M_PI, 0);
 		CGContextFillPath(context);
@@ -341,7 +344,7 @@ static UIFont *largeFont = nil;
 				startAngle = ((360.0 * totalPercentage / 100.0) - 5.0) * (M_PI / 180.0);
 				endAngle = startAngle + ((360.0 * dataItem.percentage / 100.0) * (M_PI / 180.0));
 
-				CGContextSetFillColorWithColor(context, [[panelColor colorWithAlphaComponent:1.0 - (0.1 * counter)] CGColor]);
+				CGContextSetFillColorWithColor(context, [[panelColor colorWithAlphaComponent:1.0 - (colorIncrement * counter)] CGColor]);
 				CGContextMoveToPoint(context, centerX, centerY);
 				CGContextAddArc(context, centerX, centerY, radius, startAngle, endAngle, 0);
 				CGContextClosePath(context);
@@ -358,7 +361,7 @@ static UIFont *largeFont = nil;
 				totalPercentage += dataItem.percentage;
 			}
 			
-			[[panelColor colorWithAlphaComponent:1.0 - (0.1 * counter)] set];
+			[[panelColor colorWithAlphaComponent:1.0 - (colorIncrement * counter)] set];
 			
 			CGContextAddRect(context, CGRectMake(point.x, point.y, 24.0, 24.0));
 			CGContextFillPath(context);
