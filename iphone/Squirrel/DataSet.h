@@ -43,6 +43,8 @@
 - (void)removeDataItem:(DataItem *)dataItem;
 
 - (DataItem *)latestDataItem;
+
 - (double)totalForDay:(NSDate *)day;
+- (double)totalForMonth:(NSDate *)month;
 
 @end

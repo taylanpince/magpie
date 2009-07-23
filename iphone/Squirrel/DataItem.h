@@ -46,6 +46,8 @@
 - (void)removeDataEntry:(DataEntry *)dataEntry;
 
 - (DataEntry *)latestDataEntry;
+
 - (double)totalForDay:(NSDate *)day;
+- (double)totalForMonth:(NSDate *)month;
 
 @end

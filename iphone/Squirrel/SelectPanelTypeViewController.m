@@ -28,6 +28,7 @@
 					  @"Total as Words", 
 					  @"Total as Numbers", 
 					  @"Daily Timeline", 
+					  @"Monthly Timeline", 
 					  nil];
 	}
 }

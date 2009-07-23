@@ -21,10 +21,12 @@
 @synthesize dataPanel, rendered;
 
 
+#define TINY_FONT_SIZE 8
 #define SMALL_FONT_SIZE 12
 #define MAIN_FONT_SIZE 18
 #define LARGE_FONT_SIZE 24
 
+static UIFont *tinyFont = nil;
 static UIFont *smallFont = nil;
 static UIFont *smallBoldFont = nil;
 static UIFont *mainFont = nil;
@@ -33,6 +35,7 @@ static UIFont *largeFont = nil;
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+		tinyFont = [[UIFont systemFontOfSize:TINY_FONT_SIZE] retain];
 		smallFont = [[UIFont systemFontOfSize:SMALL_FONT_SIZE] retain];
 		smallBoldFont = [[UIFont boldSystemFontOfSize:SMALL_FONT_SIZE] retain];
         mainFont = [[UIFont boldSystemFontOfSize:MAIN_FONT_SIZE] retain];
@@ -94,7 +97,7 @@ static UIFont *largeFont = nil;
 			CGSize textSize = [[[numberValue stringValue] uppercaseString] sizeWithFont:largeFont constrainedToSize:CGSizeMake(frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
 			
 			frame.size.height = 70.0 + textSize.height;
-		} else if ([dataPanel.type isEqualToString:@"Daily Timeline"]) {
+		} else if ([dataPanel.type isEqualToString:@"Daily Timeline"] || [dataPanel.type isEqualToString:@"Monthly Timeline"]) {
 			frame.size.height = 288.0 + [dataPanel.dataSet.dataItems count] * 30.0;
 		}
 		
@@ -460,9 +463,11 @@ static UIFont *largeFont = nil;
 		
 		[[dateFormatter stringFromDate:[NSDate date]] drawAtPoint:CGPointMake(rect.size.width - dateSize.width, point.y) forWidth:rect.size.width - 60.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
 		
+		[dateFormatter release];
+		
 		point.y += 20.0;
 		
-		CGContextSetStrokeColorWithColor(context, [[UIColor whiteColor] CGColor]);
+		CGContextSetRGBStrokeColor(context, 0.88, 0.88, 0.88, 1.0);
 		
 		NSMutableArray *dayTotals = [[NSMutableArray alloc] init];
 		
@@ -486,7 +491,7 @@ static UIFont *largeFont = nil;
 						
 						CGContextSetFillColorWithColor(context, [[panelColor colorWithAlphaComponent:1.0 - (colorIncrement * counter)] CGColor]);
 						CGContextFillRect(context, rect);
-						//CGContextStrokeRect(context, rect);
+						CGContextStrokeRect(context, rect);
 						
 						barPosition += barHeight;
 					}
@@ -499,6 +504,114 @@ static UIFont *largeFont = nil;
 		}
 		
 		[dayTotals release];
+		
+		counter = 0;
+		
+		for (DataItem *dataItem in sortedItems) {
+			[[panelColor colorWithAlphaComponent:1.0 - (colorIncrement * counter)] set];
+			
+			CGContextAddRect(context, CGRectMake(point.x, point.y, 24.0, 24.0));
+			CGContextFillPath(context);
+			
+			[textColor set];
+			
+			textSize = [[dataItem.name uppercaseString] drawAtPoint:CGPointMake(point.x + 32.0, point.y) forWidth:rect.size.width - 60.0 withFont:mainFont lineBreakMode:UILineBreakModeTailTruncation];
+			
+			[[textColor colorWithAlphaComponent:0.5] set];
+			
+			[[NSString stringWithFormat:@"%1.2f", dataItem.total] drawAtPoint:CGPointMake(point.x + textSize.width + 38.0, point.y + 5.0) forWidth:40.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
+			
+			point.y += textSize.height + 8.0;
+			
+			counter++;
+		}
+	} else if ([dataPanel.type isEqualToString:@"Monthly Timeline"]) {
+		point.y += 200.0;
+		
+		[[UIColor lightGrayColor] set];
+		
+		CGContextSetLineWidth(context, 1.0f);
+		CGContextMoveToPoint(context, point.x - 5.0, point.y + 1.0);
+		CGContextAddLineToPoint(context, rect.size.width + 5.0, point.y + 1.0);
+		CGContextStrokePath(context);
+		
+		CGPoint topPoint = point;
+		CGFloat barHeight;
+		CGFloat barPosition;
+		CGFloat barWidth = (rect.size.width - 20.0) / 13.0;
+		
+		double colorIncrement = 0.9 / [dataPanel.dataSet.dataItems count];
+		
+		barWidth += barWidth * 0.25 / 30;
+		point.y += 2.0;
+		
+		NSSortDescriptor *sorter = [[[NSSortDescriptor alloc] initWithKey:@"total" ascending:NO] autorelease];
+		NSArray *sortedItems = [dataPanel.dataSet.dataItems sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sorter, nil]];
+		
+		NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+		NSDateComponents *interval = [[NSDateComponents alloc] init];
+		
+		[interval setMonth:-12];
+		[dateFormatter setDateFormat:@"MMM"];
+		
+		NSDate *startDate = [[NSCalendar currentCalendar] dateByAddingComponents:interval toDate:[NSDate date] options:0];
+
+		CGSize dateSize;
+		CGFloat dateOffset = 0.0;
+		
+		for (NSUInteger i = 0; i < 13; i++) {
+			[interval setMonth:i];
+			
+			dateSize = [[[dateFormatter stringFromDate:[[NSCalendar currentCalendar] dateByAddingComponents:interval toDate:startDate options:0]] uppercaseString] drawAtPoint:CGPointMake(point.x + dateOffset, point.y) forWidth:rect.size.width - 60.0 withFont:tinyFont lineBreakMode:UILineBreakModeTailTruncation];
+			
+			dateOffset += dateSize.width + 5.9;
+		}
+		
+		[dateFormatter release];
+		
+		point.y += 20.0;
+		
+		CGContextSetRGBStrokeColor(context, 0.88, 0.88, 0.88, 1.0);
+		
+		NSMutableArray *monthTotals = [[NSMutableArray alloc] init];
+		
+		for (NSUInteger i = 0; i < 30; i++) {
+			[interval setMonth:i];
+			[monthTotals addObject:[NSNumber numberWithDouble:[dataPanel.dataSet totalForMonth:[[NSCalendar currentCalendar] dateByAddingComponents:interval toDate:startDate options:0]]]];
+		}
+		
+		sorter = [[[NSSortDescriptor alloc] initWithKey:@"doubleValue" ascending:NO] autorelease];
+		double largestMonthTotal = [[[monthTotals sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sorter, nil]] objectAtIndex:0] doubleValue];
+		
+		for (NSUInteger i = 0; i < 30; i++) {
+			if ([[monthTotals objectAtIndex:i] doubleValue] > 0) {
+				counter = 0;
+				barPosition = 0.0;
+				
+				[interval setMonth:i];
+				
+				for (DataItem *dataItem in sortedItems) {
+					barHeight = 196.0 * [dataItem totalForMonth:[[NSCalendar currentCalendar] dateByAddingComponents:interval toDate:startDate options:0]] / largestMonthTotal;
+					
+					if (barHeight > 0.0) {
+						CGRect rect = CGRectMake(topPoint.x, topPoint.y - barHeight - barPosition, barWidth * 0.75, barHeight);
+						
+						CGContextSetFillColorWithColor(context, [[panelColor colorWithAlphaComponent:1.0 - (colorIncrement * counter)] CGColor]);
+						CGContextFillRect(context, rect);
+						CGContextStrokeRect(context, rect);
+						
+						barPosition += barHeight;
+					}
+					
+					counter++;
+				}
+			}
+			
+			topPoint.x += barWidth;
+		}
+		
+		[monthTotals release];
+		[interval release];
 		
 		counter = 0;
 		
