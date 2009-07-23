@@ -43,5 +43,6 @@
 - (void)removeDataItem:(DataItem *)dataItem;
 
 - (DataItem *)latestDataItem;
+- (double)totalForDay:(NSDate *)day;
 
 @end

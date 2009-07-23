@@ -46,5 +46,6 @@
 - (void)removeDataEntry:(DataEntry *)dataEntry;
 
 - (DataEntry *)latestDataEntry;
+- (double)totalForDay:(NSDate *)day;
 
 @end

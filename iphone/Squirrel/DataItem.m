@@ -326,4 +326,25 @@ static sqlite3_stmt *select_related_statement = nil;
 	return [sortedItems lastObject];
 }
 
+- (double)totalForDay:(NSDate *)day {
+	double total_value = 0.0;
+	
+	NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:day];
+	NSDateComponents *interval = [[NSDateComponents alloc] init];
+	
+	[interval setDay:1];
+	
+	NSDate *startDate = [[NSCalendar currentCalendar] dateFromComponents:comps];
+	NSDate *endDate = [[NSCalendar currentCalendar] dateByAddingComponents:interval toDate:startDate options:0];
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"timeStamp between {%@, %@}", startDate, endDate];
+	
+	for (DataEntry *entry in [dataEntries filteredArrayUsingPredicate:predicate]) {
+		total_value += [entry.value doubleValue];
+	}
+	
+	[interval release];
+	
+	return total_value;
+}
+
 @end

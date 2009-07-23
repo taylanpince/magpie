@@ -316,4 +316,15 @@ static sqlite3_stmt *select_related_statement = nil;
 	return [sortedItems lastObject];
 }
 
+
+- (double)totalForDay:(NSDate *)day {
+	double total_value = 0.0;
+	
+	for (DataItem *item in dataItems) {
+		total_value += [item totalForDay:day];
+	}
+	
+	return total_value;
+}
+
 @end

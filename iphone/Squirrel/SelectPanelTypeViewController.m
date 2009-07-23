@@ -27,6 +27,7 @@
 					  @"Latest Entry Type", 
 					  @"Total as Words", 
 					  @"Total as Numbers", 
+					  @"Daily Timeline", 
 					  nil];
 	}
 }
