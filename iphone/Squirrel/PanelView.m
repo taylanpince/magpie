@@ -564,7 +564,7 @@ static UIFont *largeFont = nil;
 			
 			dateSize = [[[dateFormatter stringFromDate:[[NSCalendar currentCalendar] dateByAddingComponents:interval toDate:startDate options:0]] uppercaseString] drawAtPoint:CGPointMake(point.x + dateOffset, point.y) forWidth:rect.size.width - 60.0 withFont:tinyFont lineBreakMode:UILineBreakModeTailTruncation];
 			
-			dateOffset += dateSize.width + 5.9;
+			dateOffset += dateSize.width + 4.8;
 		}
 		
 		[dateFormatter release];

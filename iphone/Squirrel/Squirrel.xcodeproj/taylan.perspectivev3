@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ActivePerspectiveName</key>
-	<string>Project</string>
+	<string>Debug</string>
 	<key>AllowedModules</key>
 	<array>
 		<dict>
@@ -300,8 +300,6 @@
 							<string>MainColumn</string>
 							<real>270</real>
 						</array>
-						<key>RubberWindowFrame</key>
-						<string>4 55 1436 823 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -312,8 +310,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -331,7 +327,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>EC25E28010190B020033D540</string>
+										<string>EC496449101A0DE7001B4630</string>
 										<key>history</key>
 										<array>
 											<string>EC309FB81003BDC100A0C623</string>
@@ -348,18 +344,11 @@
 											<string>ECF917691016396100AAF4DE</string>
 											<string>EC25E1EE1018CED10033D540</string>
 											<string>EC25E22B1018F76F0033D540</string>
-											<string>EC25E26A101909F20033D540</string>
 											<string>EC25E26B101909F20033D540</string>
 											<string>EC25E26C101909F20033D540</string>
 											<string>EC25E26D101909F20033D540</string>
-											<string>EC25E27F10190AEC0033D540</string>
-										</array>
-										<key>nextStack</key>
-										<array>
-											<string>EC25E1881018B9260033D540</string>
-											<string>EC25E1F01018CED10033D540</string>
-											<string>EC25E2211018F6CE0033D540</string>
-											<string>EC25E22D1018F76F0033D540</string>
+											<string>EC49643D101A0D74001B4630</string>
+											<string>EC496446101A0DE0001B4630</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -379,17 +368,8 @@
 											<string>ECAF9AFD100FD3DB00A238FB</string>
 											<string>ECAF9AFF100FD3DB00A238FB</string>
 											<string>ECF9176C1016396100AAF4DE</string>
-											<string>EC25E1781018B5FF0033D540</string>
-											<string>EC25E1791018B5FF0033D540</string>
-											<string>EC25E17A1018B5FF0033D540</string>
-											<string>EC25E17B1018B5FF0033D540</string>
-											<string>EC25E1C71018C55B0033D540</string>
 											<string>EC8713871007D1870055627A</string>
-											<string>EC25E26F101909F20033D540</string>
-											<string>EC25E270101909F20033D540</string>
-											<string>EC25E271101909F20033D540</string>
-											<string>EC25E272101909F20033D540</string>
-											<string>EC25E273101909F20033D540</string>
+											<string>EC49643F101A0D74001B4630</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -404,8 +384,6 @@
 							<dict>
 								<key>Frame</key>
 								<string>{{0, 0}, {1144, 777}}</string>
-								<key>RubberWindowFrame</key>
-								<string>4 55 1436 823 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -429,8 +407,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1144, -27}}</string>
-										<key>RubberWindowFrame</key>
-										<string>4 55 1436 823 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -484,7 +460,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 31}, {603, 297}}</string>
+										<string>{{10, 27}, {1144, 206}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -512,11 +488,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC25E16C10189A930033D540</string>
+				<string>EC496434101A0C7A001B4630</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>EC25E16D10189A930033D540</string>
+				<string>EC496435101A0C7A001B4630</string>
 				<string>EC89595110016E400009E0DF</string>
-				<string>EC25E16E10189A930033D540</string>
+				<string>EC496436101A0C7A001B4630</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -555,6 +531,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
@@ -566,6 +544,8 @@
 					<dict>
 						<key>Frame</key>
 						<string>{{0, 0}, {1436, 334}}</string>
+						<key>RubberWindowFrame</key>
+						<string>4 55 1436 823 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
@@ -640,7 +620,11 @@
 							</array>
 							<key>Frame</key>
 							<string>{{701, 0}, {735, 213}}</string>
+							<key>RubberWindowFrame</key>
+							<string>4 55 1436 823 0 0 1440 878 </string>
 						</dict>
+						<key>RubberWindowFrame</key>
+						<string>4 55 1436 823 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
@@ -663,14 +647,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC25E17E1018B5FF0033D540</string>
+				<string>EC496437101A0C7A001B4630</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>EC25E17F1018B5FF0033D540</string>
-				<string>EC25E1801018B5FF0033D540</string>
-				<string>EC25E1811018B5FF0033D540</string>
-				<string>EC25E1821018B5FF0033D540</string>
-				<string>EC89595110016E400009E0DF</string>
+				<string>EC496438101A0C7A001B4630</string>
+				<string>EC496439101A0C7A001B4630</string>
+				<string>EC49643A101A0C7A001B4630</string>
+				<string>EC49643B101A0C7A001B4630</string>
+				<string>EC49642F101A0C75001B4630</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
