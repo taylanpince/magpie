@@ -88,12 +88,12 @@
 	}
 	
 	if (indexPath.row == 0) {
-		cell.mainLabel.text = @"Add New Data Entry";
+		cell.mainLabel = @"Add New Data Entry";
 	} else {
 		DataEntry *dataEntry = [dataItem.dataEntries objectAtIndex:(indexPath.row - 1)];
 
-		cell.mainLabel.text = [valueFormatter stringFromNumber:dataEntry.value];
-		cell.subLabel.text = [dateFormatter stringFromDate:dataEntry.timeStamp];
+		cell.mainLabel = [valueFormatter stringFromNumber:dataEntry.value];
+		cell.subLabel = [dateFormatter stringFromDate:dataEntry.timeStamp];
 	}
 	
 	return cell;

@@ -66,8 +66,7 @@
 		ECFB00B80FD4830300EEE684 /* SelectDataSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */; };
 		ECFB01450FD48F3B00EEE684 /* SelectPanelTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */; };
 		ECFB01650FD49CE000EEE684 /* SelectableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB01640FD49CE000EEE684 /* SelectableTableViewCell.m */; };
-		ECFB01DF0FD4AA7100EEE684 /* InfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB01DE0FD4AA7100EEE684 /* InfoTableViewCell.m */; };
-		ECFB01E90FD4AD3900EEE684 /* FastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB01E80FD4AD3900EEE684 /* FastTableViewCell.m */; };
+		ECFB01E90FD4AD3900EEE684 /* InfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB01E80FD4AD3900EEE684 /* InfoTableViewCell.m */; };
 		ECFB033C0FD4D80100EEE684 /* PanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */; };
 		ECFB058A0FD57CF000EEE684 /* DataEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */; };
 		ECFBFBA60FD1E87B00EEE684 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFBFBA50FD1E87B00EEE684 /* libsqlite3.0.dylib */; };
@@ -156,10 +155,8 @@
 		ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPanelTypeViewController.m; sourceTree = "<group>"; };
 		ECFB01630FD49CE000EEE684 /* SelectableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectableTableViewCell.h; sourceTree = "<group>"; };
 		ECFB01640FD49CE000EEE684 /* SelectableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectableTableViewCell.m; sourceTree = "<group>"; };
-		ECFB01DD0FD4AA7100EEE684 /* InfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoTableViewCell.h; sourceTree = "<group>"; };
-		ECFB01DE0FD4AA7100EEE684 /* InfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoTableViewCell.m; sourceTree = "<group>"; };
-		ECFB01E70FD4AD3900EEE684 /* FastTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastTableViewCell.h; sourceTree = "<group>"; };
-		ECFB01E80FD4AD3900EEE684 /* FastTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastTableViewCell.m; sourceTree = "<group>"; };
+		ECFB01E70FD4AD3900EEE684 /* InfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoTableViewCell.h; sourceTree = "<group>"; };
+		ECFB01E80FD4AD3900EEE684 /* InfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoTableViewCell.m; sourceTree = "<group>"; };
 		ECFB033A0FD4D80100EEE684 /* PanelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelView.h; sourceTree = "<group>"; };
 		ECFB033B0FD4D80100EEE684 /* PanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelView.m; sourceTree = "<group>"; };
 		ECFB05880FD57CF000EEE684 /* DataEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataEntry.h; sourceTree = "<group>"; };
@@ -307,10 +304,8 @@
 				EC6EB8E10FD1B81E00E6F9D8 /* EditableTableViewCell.m */,
 				ECFB01630FD49CE000EEE684 /* SelectableTableViewCell.h */,
 				ECFB01640FD49CE000EEE684 /* SelectableTableViewCell.m */,
-				ECFB01DD0FD4AA7100EEE684 /* InfoTableViewCell.h */,
-				ECFB01DE0FD4AA7100EEE684 /* InfoTableViewCell.m */,
-				ECFB01E70FD4AD3900EEE684 /* FastTableViewCell.h */,
-				ECFB01E80FD4AD3900EEE684 /* FastTableViewCell.m */,
+				ECFB01E70FD4AD3900EEE684 /* InfoTableViewCell.h */,
+				ECFB01E80FD4AD3900EEE684 /* InfoTableViewCell.m */,
 				EC62D18D0FFD09DD00D9191C /* ScreenTableViewCell.h */,
 				EC62D18E0FFD09DD00D9191C /* ScreenTableViewCell.m */,
 				EC7F4B240FFD229F006612C6 /* SubScreenTableViewCell.h */,
@@ -479,8 +474,7 @@
 				ECFB00B80FD4830300EEE684 /* SelectDataSetViewController.m in Sources */,
 				ECFB01450FD48F3B00EEE684 /* SelectPanelTypeViewController.m in Sources */,
 				ECFB01650FD49CE000EEE684 /* SelectableTableViewCell.m in Sources */,
-				ECFB01DF0FD4AA7100EEE684 /* InfoTableViewCell.m in Sources */,
-				ECFB01E90FD4AD3900EEE684 /* FastTableViewCell.m in Sources */,
+				ECFB01E90FD4AD3900EEE684 /* InfoTableViewCell.m in Sources */,
 				ECFB033C0FD4D80100EEE684 /* PanelView.m in Sources */,
 				ECFB058A0FD57CF000EEE684 /* DataEntry.m in Sources */,
 				EC341D9D0FD5AAE40003212C /* DataEntryViewController.m in Sources */,

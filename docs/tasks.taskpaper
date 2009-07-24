@@ -1,6 +1,6 @@
 MagPie Tasks:
 - Finalize logo, background, splash screen design
-- Add timeline charts
+- Add timeline charts @done(2009-07-24)
 - Add vertical bar charts @done
 - Add colour squares under colour selection view 
 - Add panel type icons, show them in both type selection and panel listing views

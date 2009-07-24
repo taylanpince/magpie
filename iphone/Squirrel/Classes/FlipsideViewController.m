@@ -71,23 +71,28 @@
 		NSMutableArray *dataSets = [(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets];
 		
 		if (indexPath.row == [dataSets count]) {
-			cell.mainLabel.text = @"Add a new data set";
-			cell.subLabel.text = @"";
+			cell.mainLabel = @"Add a new data set";
+			cell.subLabel = @"";
+			cell.iconType = @"";
 		} else {
 			DataSet *dataSet = [dataSets objectAtIndex:indexPath.row];
-			cell.mainLabel.text = dataSet.name;
-			cell.subLabel.text = @"";
+			cell.mainLabel = dataSet.name;
+			cell.subLabel = @"";
+			cell.iconType = @"";
 		}
 	} else {
 		NSMutableArray *dataPanels = [(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels];
 		
 		if (indexPath.row == [dataPanels count]) {
-			cell.mainLabel.text = @"Add a new data panel";
-			cell.subLabel.text = @"";
+			cell.mainLabel = @"Add a new data panel";
+			cell.subLabel = @"";
+			cell.iconType = @"";
 		} else {
 			DataPanel *dataPanel = [dataPanels objectAtIndex:indexPath.row];
-			cell.mainLabel.text = dataPanel.name;
-			cell.subLabel.text = [NSString stringWithFormat:@"%@, %@", dataPanel.type, dataPanel.dataSet.name];
+			cell.mainLabel = dataPanel.name;
+			cell.subLabel = [NSString stringWithFormat:@"%@, %@", dataPanel.type, dataPanel.dataSet.name];
+			cell.iconType = dataPanel.type;
+			cell.iconColor = dataPanel.color;
 		}
 	}
 
