@@ -7,6 +7,7 @@
 //
 
 #import "SelectPanelColorViewController.h"
+#import "InfoTableViewCell.h"
 
 
 @implementation SelectPanelColorViewController
@@ -18,7 +19,14 @@
     [super viewDidLoad];
 	
 	if (panelColors == nil) {
-		panelColors = [[NSArray alloc] initWithObjects:@"Blue", @"Green", @"Red", @"Cyan", @"Yellow", @"Purple", @"Gray", nil];
+		panelColors = [[NSArray alloc] initWithObjects:
+					   @"Blue", 
+					   @"Green", 
+					   @"Red", 
+					   @"Cyan", 
+					   @"Yellow", 
+					   @"Purple", 
+					   @"Gray", nil];
 	}
 }
 
@@ -46,25 +54,29 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    InfoTableViewCell *cell = (InfoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[InfoTableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
     }
     
 	if ([[panelColors objectAtIndex:indexPath.row] isEqualToString:panelColor]) {
 		cell.accessoryType = UITableViewCellAccessoryCheckmark;
+	} else {
+		cell.accessoryType = UITableViewCellAccessoryNone;
 	}
-	
-	#ifndef __IPHONE_3_0
-	cell.text = [panelColors objectAtIndex:indexPath.row];
-	#else
-	cell.textLabel.text = [panelColors objectAtIndex:indexPath.row];
-	#endif
+
+	cell.mainLabel = [panelColors objectAtIndex:indexPath.row];
+	cell.subLabel = @"";
+	cell.iconType = @"Color";
+	cell.iconColor = [panelColors objectAtIndex:indexPath.row];
 	
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return 56.0;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[delegate didUpdatePanelColor:[panelColors objectAtIndex:indexPath.row]];

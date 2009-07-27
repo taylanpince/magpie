@@ -90,6 +90,36 @@ static UIFont *subFont = nil;
 	}
 }
 
+- (void)setSubLabel:(NSString *)newSubLabel {
+	if (subLabel != newSubLabel) {
+		[subLabel release];
+		
+		subLabel = [newSubLabel retain];
+		
+		[self setNeedsDisplay];
+	}
+}
+
+- (void)setIconType:(NSString *)newIconType {
+	if (iconType != newIconType) {
+		[iconType release];
+		
+		iconType = [newIconType retain];
+		
+		[self setNeedsDisplay];
+	}
+}
+
+- (void)setIconColor:(NSString *)newIconColor {
+	if (iconColor != newIconColor) {
+		[iconColor release];
+		
+		iconColor = [newIconColor retain];
+		
+		[self setNeedsDisplay];
+	}
+}
+
 - (void)setFrame:(CGRect)f {
 	[super setFrame:f];
 	CGRect b = [self bounds];
@@ -112,40 +142,69 @@ static UIFont *subFont = nil;
 	}
 	
 	CGPoint top = CGPointMake(20.0, 12.0);
-	CGFloat left = (![iconType isEqualToString:@""]) ? 30.0 : 0.0;
+	CGFloat leftOffset = (![iconType isEqualToString:@""]) ? 34.0 : 0.0;
+	CGFloat topOffset = ([subLabel isEqualToString:@""] && ![iconType isEqualToString:@""]) ? 6.0 : 0.0;
 	
 	[mainColour set];
 	
-	CGSize textSize = [mainLabel drawInRect:CGRectMake(top.x + left, top.y, rect.size.width - 65.0 - left, 600.0f) withFont:mainFont lineBreakMode:UILineBreakModeWordWrap];
+	CGSize textSize = [mainLabel drawInRect:CGRectMake(top.x + leftOffset, top.y + topOffset, rect.size.width - 65.0 - leftOffset, 600.0f) withFont:mainFont lineBreakMode:UILineBreakModeWordWrap];
 	
 	top.y += textSize.height + 2.0;
 	
-	[subColour set];
-	[subLabel drawInRect:CGRectMake(top.x + left, top.y, rect.size.width - 65.0 - left, 600.0f) withFont:subFont lineBreakMode:UILineBreakModeTailTruncation];
+	if (![subLabel isEqualToString:@""]) {
+		[subColour set];
+		[subLabel drawInRect:CGRectMake(top.x + leftOffset, top.y, rect.size.width - 65.0 - leftOffset, 600.0f) withFont:subFont lineBreakMode:UILineBreakModeTailTruncation];
+	}
 	
-	if ([iconType isEqualToString:@"Pie Chart"]) {
+	if (![iconType isEqualToString:@""]) {
 		CGContextRef context = UIGraphicsGetCurrentContext();
-		CGFloat radius = 14.0;
-		CGPoint center = CGPointMake(30.0, 30.0);
 		UIColor *panelColor = [PanelColor colorWithName:iconColor alpha:1.0];
 		
-		CGContextSetFillColorWithColor(context, [panelColor CGColor]);
-		CGContextMoveToPoint(context, center.x, center.y);
-		CGContextAddLineToPoint(context, center.x + (radius *  (M_PI / 180.0) * 20.0), center.y + (radius * sin((M_PI / 180.0) * 20.0)));
-		CGContextMoveToPoint(context, center.x, center.y);
-		CGContextAddArc(context, center.x, center.y, radius, (M_PI / 180.0) * 20.0, (M_PI / 180.0) * 300.0, 0);
-		CGContextAddLineToPoint(context, center.x, center.y);
-		CGContextClosePath(context);
-		CGContextFillPath(context);
-		
-		CGContextSetFillColorWithColor(context, [[panelColor colorWithAlphaComponent:0.75] CGColor]);
-		CGContextMoveToPoint(context, center.x, center.y);
-		CGContextAddLineToPoint(context, center.x + (radius * cos((M_PI / 180.0) * 295.0)), center.y + (radius * sin((M_PI / 180.0) * 295.0)));
-		CGContextMoveToPoint(context, center.x, center.y);
-		CGContextAddArc(context, center.x, center.y, radius, (M_PI / 180.0) * 300.0, (M_PI / 180.0) * 380.0, 0);
-		CGContextAddLineToPoint(context, center.x, center.y);
-		CGContextClosePath(context);
-		CGContextFillPath(context);
+		if ([iconType isEqualToString:@"Pie Chart"]) {
+			CGFloat radius = 14.0;
+			CGPoint center = CGPointMake(32.0, 30.0);
+			
+			CGContextSetFillColorWithColor(context, [panelColor CGColor]);
+			CGContextMoveToPoint(context, center.x, center.y);
+			CGContextAddLineToPoint(context, center.x + (radius *  (M_PI / 180.0) * 20.0), center.y + (radius * sin((M_PI / 180.0) * 20.0)));
+			CGContextMoveToPoint(context, center.x, center.y);
+			CGContextAddArc(context, center.x, center.y, radius, (M_PI / 180.0) * 20.0, (M_PI / 180.0) * 300.0, 0);
+			CGContextAddLineToPoint(context, center.x, center.y);
+			CGContextClosePath(context);
+			CGContextFillPath(context);
+			
+			CGContextSetFillColorWithColor(context, [[panelColor colorWithAlphaComponent:0.5] CGColor]);
+			CGContextMoveToPoint(context, center.x, center.y);
+			CGContextAddLineToPoint(context, center.x + (radius * cos((M_PI / 180.0) * 295.0)), center.y + (radius * sin((M_PI / 180.0) * 295.0)));
+			CGContextMoveToPoint(context, center.x, center.y);
+			CGContextAddArc(context, center.x, center.y, radius, (M_PI / 180.0) * 300.0, (M_PI / 180.0) * 380.0, 0);
+			CGContextAddLineToPoint(context, center.x, center.y);
+			CGContextClosePath(context);
+			CGContextFillPath(context);
+		} else if ([iconType isEqualToString:@"Horizontal Bar Chart"]) {
+			CGContextSetFillColorWithColor(context, [panelColor CGColor]);
+			CGContextFillRect(context, CGRectMake(18.0, 16.0, 20.0, 6.0));
+			CGContextSetFillColorWithColor(context, [[panelColor colorWithAlphaComponent:0.75] CGColor]);
+			CGContextFillRect(context, CGRectMake(18.0, 24.0, 28.0, 6.0));
+			CGContextSetFillColorWithColor(context, [[panelColor colorWithAlphaComponent:0.5] CGColor]);
+			CGContextFillRect(context, CGRectMake(18.0, 32.0, 14.0, 6.0));
+		} else if ([iconType isEqualToString:@"Vertical Bar Chart"] || [iconType isEqualToString:@"Daily Timeline"] || [iconType isEqualToString:@"Monthly Timeline"]) {
+			CGContextSetFillColorWithColor(context, [panelColor CGColor]);
+			CGContextFillRect(context, CGRectMake(18.0, 24.0, 6.0, 20.0));
+			CGContextSetFillColorWithColor(context, [[panelColor colorWithAlphaComponent:0.75] CGColor]);
+			CGContextFillRect(context, CGRectMake(26.0, 16.0, 6.0, 28.0));
+			CGContextSetFillColorWithColor(context, [[panelColor colorWithAlphaComponent:0.5] CGColor]);
+			CGContextFillRect(context, CGRectMake(34.0, 30.0, 6.0, 14.0));
+		} else if ([iconType isEqualToString:@"Latest Entry as Words"] || [iconType isEqualToString:@"Latest Entry Type"] || [iconType isEqualToString:@"Total as Words"]) {
+			[panelColor set];
+			[@"Aa" drawInRect:CGRectMake(18.0, 16.0, 28.0, 28.0) withFont:[UIFont boldSystemFontOfSize:20] lineBreakMode:UILineBreakModeWordWrap];
+		} else if ([iconType isEqualToString:@"Latest Entry as Numbers"] || [iconType isEqualToString:@"Total as Numbers"]) {
+			[panelColor set];
+			[@"1.2" drawInRect:CGRectMake(18.0, 16.0, 28.0, 28.0) withFont:[UIFont boldSystemFontOfSize:20] lineBreakMode:UILineBreakModeWordWrap];
+		} else if ([iconType isEqualToString:@"Color"]) {
+			CGContextSetFillColorWithColor(context, [panelColor CGColor]);
+			CGContextFillRect(context, CGRectMake(18.0, 16.0, 28.0, 28.0));
+		}
 	}
 }
 

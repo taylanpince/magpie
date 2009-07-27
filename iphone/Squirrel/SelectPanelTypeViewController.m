@@ -7,12 +7,12 @@
 //
 
 #import "SelectPanelTypeViewController.h"
+#import "InfoTableViewCell.h"
 
 
 @implementation SelectPanelTypeViewController
 
 @synthesize panelType, panelTypes, delegate;
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,60 +33,57 @@
 	}
 }
 
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [panelTypes count];
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    InfoTableViewCell *cell = (InfoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[InfoTableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
     }
     
 	if ([[panelTypes objectAtIndex:indexPath.row] isEqualToString:panelType]) {
 		cell.accessoryType = UITableViewCellAccessoryCheckmark;
+	} else {
+		cell.accessoryType = UITableViewCellAccessoryNone;
 	}
+
 	
-	#ifndef __IPHONE_3_0
-	cell.text = [panelTypes objectAtIndex:indexPath.row];
-	#else
-	cell.textLabel.text = [panelTypes objectAtIndex:indexPath.row];
-	#endif
+	cell.mainLabel = [panelTypes objectAtIndex:indexPath.row];
+	cell.subLabel = @"";
+	cell.iconType = [panelTypes objectAtIndex:indexPath.row];
 	
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return 56.0;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[delegate didUpdatePanelType:[panelTypes objectAtIndex:indexPath.row]];
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
-
 - (void)dealloc {
 	[panelTypes release];
     [super dealloc];
 }
-
 
 @end
