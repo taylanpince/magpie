@@ -14,6 +14,7 @@ MagPie Tasks:
 - Add welcome text box with tutorial (?)
 - Disable quick entry when there are no panels
 - Do memory leak check
+- Put data item legends in two columns @done(2009-07-27)
 - Research performance improvements for the scrolling view
 	- Convert to a horizontal page view mode (?)
 - Fix the way dates are formatted on the panels @done

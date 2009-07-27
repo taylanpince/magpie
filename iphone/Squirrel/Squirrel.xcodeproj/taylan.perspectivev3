@@ -278,8 +278,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>12</integer>
-									<integer>6</integer>
+									<integer>5</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -315,7 +315,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>EC89595110016E400009E0DF</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>InfoTableViewCell.m</string>
+								<string>PanelView.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -323,11 +323,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>EC89595210016E400009E0DF</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>InfoTableViewCell.m</string>
+										<string>PanelView.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>EC0C4300101D5B58009C8515</string>
+										<string>EC2FCBF9101DF74F001C402E</string>
 										<key>history</key>
 										<array>
 											<string>EC309FB91003BDC100A0C623</string>
@@ -353,12 +353,12 @@
 											<string>EC49646C101A3D8A001B4630</string>
 											<string>EC4964AB101A3EAF001B4630</string>
 											<string>EC4964B4101A3F45001B4630</string>
-											<string>EC4964FB101A44F0001B4630</string>
 											<string>EC0C42CE101D597A009C8515</string>
 											<string>EC0C42EC101D5A4D009C8515</string>
 											<string>EC0C42F6101D5B27009C8515</string>
 											<string>EC0C42F7101D5B27009C8515</string>
-											<string>EC0C42F8101D5B27009C8515</string>
+											<string>EC2FCB64101DEDD2001C402E</string>
+											<string>EC2FCBF6101DF747001C402E</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -388,23 +388,8 @@
 											<string>EC4964AE101A3EAF001B4630</string>
 											<string>EC0C4271101D5106009C8515</string>
 											<string>EC0C429F101D5300009C8515</string>
-											<string>EC0C42A9101D5431009C8515</string>
-											<string>EC0C42AA101D5431009C8515</string>
-											<string>EC0C42B6101D588F009C8515</string>
-											<string>EC0C42B7101D588F009C8515</string>
-											<string>EC0C42BF101D5905009C8515</string>
-											<string>EC0C42C7101D5958009C8515</string>
-											<string>EC0C42D0101D597A009C8515</string>
-											<string>EC0C42D1101D597A009C8515</string>
-											<string>EC0C42DD101D59A9009C8515</string>
-											<string>EC0C42E6101D5A33009C8515</string>
 											<string>EC0C42EE101D5A4D009C8515</string>
-											<string>EC0C42EF101D5A4D009C8515</string>
-											<string>EC0C42F9101D5B27009C8515</string>
-											<string>EC0C42FA101D5B27009C8515</string>
-											<string>EC0C42FB101D5B27009C8515</string>
-											<string>EC0C42FC101D5B27009C8515</string>
-											<string>EC0C42FD101D5B27009C8515</string>
+											<string>EC2FCB66101DEDD2001C402E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -523,11 +508,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC0C4275101D5106009C8515</string>
+				<string>EC2FCB5A101DEC7B001C402E</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>EC0C4276101D5106009C8515</string>
+				<string>EC2FCB5B101DEC7B001C402E</string>
 				<string>EC89595110016E400009E0DF</string>
-				<string>EC0C4277101D5106009C8515</string>
+				<string>EC2FCB5C101DEC7B001C402E</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -682,14 +667,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC0C4278101D5106009C8515</string>
+				<string>EC2FCB5D101DEC7B001C402E</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>EC0C4279101D5106009C8515</string>
-				<string>EC0C427A101D5106009C8515</string>
-				<string>EC0C427B101D5106009C8515</string>
-				<string>EC0C427C101D5106009C8515</string>
-				<string>EC89595110016E400009E0DF</string>
+				<string>EC2FCB5E101DEC7B001C402E</string>
+				<string>EC2FCB5F101DEC7B001C402E</string>
+				<string>EC2FCB60101DEC7B001C402E</string>
+				<string>EC2FCB61101DEC7B001C402E</string>
+				<string>EC2FCB53101DEC6F001C402E</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>

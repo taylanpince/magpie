@@ -23,12 +23,14 @@
 
 #define TINY_FONT_SIZE 8
 #define SMALL_FONT_SIZE 12
+#define MEDIUM_FONT_SIZE 15
 #define MAIN_FONT_SIZE 18
 #define LARGE_FONT_SIZE 24
 
 static UIFont *tinyFont = nil;
 static UIFont *smallFont = nil;
 static UIFont *smallBoldFont = nil;
+static UIFont *mediumFont = nil;
 static UIFont *mainFont = nil;
 static UIFont *largeFont = nil;
 
@@ -38,6 +40,7 @@ static UIFont *largeFont = nil;
 		tinyFont = [[UIFont systemFontOfSize:TINY_FONT_SIZE] retain];
 		smallFont = [[UIFont systemFontOfSize:SMALL_FONT_SIZE] retain];
 		smallBoldFont = [[UIFont boldSystemFontOfSize:SMALL_FONT_SIZE] retain];
+		mediumFont = [[UIFont boldSystemFontOfSize:MEDIUM_FONT_SIZE] retain];
         mainFont = [[UIFont boldSystemFontOfSize:MAIN_FONT_SIZE] retain];
         largeFont = [[UIFont boldSystemFontOfSize:LARGE_FONT_SIZE] retain];
 		
@@ -56,7 +59,7 @@ static UIFont *largeFont = nil;
 		if ([dataPanel.type isEqualToString:@"Horizontal Bar Chart"]) {
 			frame.size.height = 70.0 + [dataPanel.dataSet.dataItems count] * 40.0;
 		} else if ([dataPanel.type isEqualToString:@"Pie Chart"] || [dataPanel.type isEqualToString:@"Vertical Bar Chart"]) {
-			frame.size.height = 280.0 + [dataPanel.dataSet.dataItems count] * 30.0;
+			frame.size.height = 280.0 + ceil([dataPanel.dataSet.dataItems count] / 2.0) * 24.0;
 		} else if ([dataPanel.type isEqualToString:@"Latest Entry as Words"]) {
 			NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
 			NSNumber *numberValue = [[[dataPanel.dataSet latestDataItem] latestDataEntry] value];
@@ -98,7 +101,7 @@ static UIFont *largeFont = nil;
 			
 			frame.size.height = 70.0 + textSize.height;
 		} else if ([dataPanel.type isEqualToString:@"Daily Timeline"] || [dataPanel.type isEqualToString:@"Monthly Timeline"]) {
-			frame.size.height = 288.0 + [dataPanel.dataSet.dataItems count] * 30.0;
+			frame.size.height = 288.0 + ceil([dataPanel.dataSet.dataItems count] / 2.0) * 24.0;
 		}
 		
 		[self setFrame:frame];
@@ -288,6 +291,8 @@ static UIFont *largeFont = nil;
 		CGContextStrokePath(context);
 		
 		CGPoint topPoint = point;
+		CGSize totalSize;
+		NSString *totalText;
 		CGFloat barHeight;
 		CGFloat barWidth = (rect.size.width - 20.0) / [dataPanel.dataSet.dataItems count];
 		
@@ -312,18 +317,22 @@ static UIFont *largeFont = nil;
 				topPoint.x += barWidth;
 			}
 			
-			CGContextAddRect(context, CGRectMake(point.x, point.y, 24.0, 24.0));
+			point.x = (counter % 2 == 0) ? rect.origin.x + 10.0 : point.x + (rect.size.width - 20.0) / 2;
+			
+			CGContextFillRect(context, CGRectMake(point.x, point.y + 2.5, 15.0, 15.0));
 			CGContextFillPath(context);
 			
 			[textColor set];
 			
-			textSize = [[dataItem.name uppercaseString] drawAtPoint:CGPointMake(point.x + 32.0, point.y) forWidth:rect.size.width - 60.0 withFont:mainFont lineBreakMode:UILineBreakModeTailTruncation];
+			totalText = [NSString stringWithFormat:@"%1.2f", dataItem.total];
+			totalSize = [totalText sizeWithFont:smallFont forWidth:40.0 lineBreakMode:UILineBreakModeTailTruncation];
+			textSize = [[dataItem.name uppercaseString] drawAtPoint:CGPointMake(point.x + 20.0, point.y) forWidth:(rect.size.width - 20.0) / 2 - totalSize.width - 30.0 withFont:mediumFont lineBreakMode:UILineBreakModeTailTruncation];
 			
 			[[textColor colorWithAlphaComponent:0.5] set];
 			
-			[[NSString stringWithFormat:@"%1.2f", dataItem.total] drawAtPoint:CGPointMake(point.x + textSize.width + 38.0, point.y + 5.0) forWidth:40.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
+			[totalText drawAtPoint:CGPointMake(point.x + textSize.width + 24.0, point.y + 3.0) forWidth:40.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
 			
-			point.y += textSize.height + 8.0;
+			if (counter % 2 > 0) point.y += textSize.height + 5.0;
 			
 			counter++;
 		}
@@ -346,6 +355,9 @@ static UIFont *largeFont = nil;
 		
 		NSSortDescriptor *sorter = [[[NSSortDescriptor alloc] initWithKey:@"total" ascending:NO] autorelease];
 		NSArray *sortedItems = [dataPanel.dataSet.dataItems sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sorter, nil]];
+
+		CGSize totalSize;
+		NSString *totalText;
 
 		for (DataItem *dataItem in sortedItems) {
 			if (dataItem.percentage > 0.0) {
@@ -372,20 +384,24 @@ static UIFont *largeFont = nil;
 				totalPercentage += dataItem.percentage;
 			}
 			
+			point.x = (counter % 2 == 0) ? rect.origin.x + 10.0 : point.x + (rect.size.width - 20.0) / 2;
+			
 			[[panelColor colorWithAlphaComponent:1.0 - (colorIncrement * counter)] set];
 			
-			CGContextAddRect(context, CGRectMake(point.x, point.y, 24.0, 24.0));
+			CGContextFillRect(context, CGRectMake(point.x, point.y + 2.5, 15.0, 15.0));
 			CGContextFillPath(context);
 			
 			[textColor set];
 			
-			textSize = [[dataItem.name uppercaseString] drawAtPoint:CGPointMake(point.x + 32.0, point.y) forWidth:rect.size.width - 60.0 withFont:mainFont lineBreakMode:UILineBreakModeTailTruncation];
+			totalText = [NSString stringWithFormat:@"%1.2f", dataItem.total];
+			totalSize = [totalText sizeWithFont:smallFont forWidth:40.0 lineBreakMode:UILineBreakModeTailTruncation];
+			textSize = [[dataItem.name uppercaseString] drawAtPoint:CGPointMake(point.x + 20.0, point.y) forWidth:(rect.size.width - 20.0) / 2 - totalSize.width - 30.0 withFont:mediumFont lineBreakMode:UILineBreakModeTailTruncation];
 			
 			[[textColor colorWithAlphaComponent:0.5] set];
 			
-			[[NSString stringWithFormat:@"%1.2f", dataItem.total] drawAtPoint:CGPointMake(point.x + textSize.width + 38.0, point.y + 5.0) forWidth:40.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
+			[totalText drawAtPoint:CGPointMake(point.x + textSize.width + 24.0, point.y + 3.0) forWidth:40.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
 			
-			point.y += textSize.height + 8.0;
+			if (counter % 2 > 0) point.y += textSize.height + 5.0;
 
 			counter++;
 		}
@@ -507,21 +523,28 @@ static UIFont *largeFont = nil;
 		
 		counter = 0;
 		
+		CGSize totalSize;
+		NSString *totalText;
+
 		for (DataItem *dataItem in sortedItems) {
+			point.x = (counter % 2 == 0) ? rect.origin.x + 10.0 : point.x + (rect.size.width - 20.0) / 2;
+			
 			[[panelColor colorWithAlphaComponent:1.0 - (colorIncrement * counter)] set];
 			
-			CGContextAddRect(context, CGRectMake(point.x, point.y, 24.0, 24.0));
+			CGContextFillRect(context, CGRectMake(point.x, point.y + 2.5, 15.0, 15.0));
 			CGContextFillPath(context);
 			
 			[textColor set];
 			
-			textSize = [[dataItem.name uppercaseString] drawAtPoint:CGPointMake(point.x + 32.0, point.y) forWidth:rect.size.width - 60.0 withFont:mainFont lineBreakMode:UILineBreakModeTailTruncation];
+			totalText = [NSString stringWithFormat:@"%1.2f", dataItem.total];
+			totalSize = [totalText sizeWithFont:smallFont forWidth:40.0 lineBreakMode:UILineBreakModeTailTruncation];
+			textSize = [[dataItem.name uppercaseString] drawAtPoint:CGPointMake(point.x + 20.0, point.y) forWidth:(rect.size.width - 20.0) / 2 - totalSize.width - 30.0 withFont:mediumFont lineBreakMode:UILineBreakModeTailTruncation];
 			
 			[[textColor colorWithAlphaComponent:0.5] set];
 			
-			[[NSString stringWithFormat:@"%1.2f", dataItem.total] drawAtPoint:CGPointMake(point.x + textSize.width + 38.0, point.y + 5.0) forWidth:40.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
+			[totalText drawAtPoint:CGPointMake(point.x + textSize.width + 24.0, point.y + 3.0) forWidth:40.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
 			
-			point.y += textSize.height + 8.0;
+			if (counter % 2 > 0) point.y += textSize.height + 5.0;
 			
 			counter++;
 		}
@@ -615,21 +638,28 @@ static UIFont *largeFont = nil;
 		
 		counter = 0;
 		
+		CGSize totalSize;
+		NSString *totalText;
+		
 		for (DataItem *dataItem in sortedItems) {
+			point.x = (counter % 2 == 0) ? rect.origin.x + 10.0 : point.x + (rect.size.width - 20.0) / 2;
+			
 			[[panelColor colorWithAlphaComponent:1.0 - (colorIncrement * counter)] set];
 			
-			CGContextAddRect(context, CGRectMake(point.x, point.y, 24.0, 24.0));
+			CGContextFillRect(context, CGRectMake(point.x, point.y + 2.5, 15.0, 15.0));
 			CGContextFillPath(context);
 			
 			[textColor set];
 			
-			textSize = [[dataItem.name uppercaseString] drawAtPoint:CGPointMake(point.x + 32.0, point.y) forWidth:rect.size.width - 60.0 withFont:mainFont lineBreakMode:UILineBreakModeTailTruncation];
+			totalText = [NSString stringWithFormat:@"%1.2f", dataItem.total];
+			totalSize = [totalText sizeWithFont:smallFont forWidth:40.0 lineBreakMode:UILineBreakModeTailTruncation];
+			textSize = [[dataItem.name uppercaseString] drawAtPoint:CGPointMake(point.x + 20.0, point.y) forWidth:(rect.size.width - 20.0) / 2 - totalSize.width - 30.0 withFont:mediumFont lineBreakMode:UILineBreakModeTailTruncation];
 			
 			[[textColor colorWithAlphaComponent:0.5] set];
 			
-			[[NSString stringWithFormat:@"%1.2f", dataItem.total] drawAtPoint:CGPointMake(point.x + textSize.width + 38.0, point.y + 5.0) forWidth:40.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
+			[totalText drawAtPoint:CGPointMake(point.x + textSize.width + 24.0, point.y + 3.0) forWidth:40.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
 			
-			point.y += textSize.height + 8.0;
+			if (counter % 2 > 0) point.y += textSize.height + 5.0;
 			
 			counter++;
 		}
