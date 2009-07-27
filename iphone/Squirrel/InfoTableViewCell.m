@@ -142,7 +142,7 @@ static UIFont *subFont = nil;
 	}
 	
 	CGPoint top = CGPointMake(20.0, 12.0);
-	CGFloat leftOffset = (![iconType isEqualToString:@""]) ? 34.0 : 0.0;
+	CGFloat leftOffset = (![iconType isEqualToString:@""] || self.editing) ? 34.0 : 0.0;
 	CGFloat topOffset = ([subLabel isEqualToString:@""] && ![iconType isEqualToString:@""]) ? 6.0 : 0.0;
 	
 	[mainColour set];
@@ -156,7 +156,7 @@ static UIFont *subFont = nil;
 		[subLabel drawInRect:CGRectMake(top.x + leftOffset, top.y, rect.size.width - 65.0 - leftOffset, 600.0f) withFont:subFont lineBreakMode:UILineBreakModeTailTruncation];
 	}
 	
-	if (![iconType isEqualToString:@""]) {
+	if (![iconType isEqualToString:@""] && !self.editing) {
 		CGContextRef context = UIGraphicsGetCurrentContext();
 		UIColor *panelColor = [PanelColor colorWithName:iconColor alpha:1.0];
 		
