@@ -12,9 +12,11 @@
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate, EditDataEntryViewControllerDelegate> {
 	IBOutlet UIScrollView *scrollView;
+	IBOutlet UIBarButtonItem *quickEntryButton;
 }
 
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *quickEntryButton;
 
 - (IBAction)showSettings;
 - (IBAction)showQuickAdd;

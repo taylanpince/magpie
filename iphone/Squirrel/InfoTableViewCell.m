@@ -153,7 +153,7 @@ static UIFont *subFont = nil;
 	
 	if (![subLabel isEqualToString:@""]) {
 		[subColour set];
-		[subLabel drawInRect:CGRectMake(top.x + leftOffset, top.y, rect.size.width - 65.0 - leftOffset, 600.0f) withFont:subFont lineBreakMode:UILineBreakModeTailTruncation];
+		[subLabel drawInRect:CGRectMake(top.x + leftOffset, top.y, rect.size.width - 65.0 - leftOffset, 20.0f) withFont:subFont lineBreakMode:UILineBreakModeTailTruncation];
 	}
 	
 	if (![iconType isEqualToString:@""] && !self.editing) {
@@ -195,10 +195,10 @@ static UIFont *subFont = nil;
 			CGContextFillRect(context, CGRectMake(26.0, 16.0, 6.0, 28.0));
 			CGContextSetFillColorWithColor(context, [[panelColor colorWithAlphaComponent:0.5] CGColor]);
 			CGContextFillRect(context, CGRectMake(34.0, 30.0, 6.0, 14.0));
-		} else if ([iconType isEqualToString:@"Latest Entry as Words"] || [iconType isEqualToString:@"Latest Entry Type"] || [iconType isEqualToString:@"Total as Words"]) {
+		} else if ([iconType isEqualToString:@"Latest Entry as Words"] || [iconType isEqualToString:@"Largest Entry as Words"] || [iconType isEqualToString:@"Latest Entry Type"] || [iconType isEqualToString:@"Largest Entry Type"] || [iconType isEqualToString:@"Average Entry as Words"] || [iconType isEqualToString:@"Total as Words"]) {
 			[panelColor set];
 			[@"Aa" drawInRect:CGRectMake(18.0, 16.0, 28.0, 28.0) withFont:[UIFont boldSystemFontOfSize:20] lineBreakMode:UILineBreakModeWordWrap];
-		} else if ([iconType isEqualToString:@"Latest Entry as Numbers"] || [iconType isEqualToString:@"Total as Numbers"]) {
+		} else if ([iconType isEqualToString:@"Latest Entry as Numbers"] || [iconType isEqualToString:@"Largest Entry as Numbers"] || [iconType isEqualToString:@"Average Entry as Numbers"] || [iconType isEqualToString:@"Total as Numbers"]) {
 			[panelColor set];
 			[@"1.2" drawInRect:CGRectMake(18.0, 16.0, 28.0, 28.0) withFont:[UIFont boldSystemFontOfSize:20] lineBreakMode:UILineBreakModeWordWrap];
 		} else if ([iconType isEqualToString:@"Color"]) {

@@ -9,6 +9,7 @@
 #import "DataSet.h"
 #import "DataItem.h"
 #import "DataPanel.h"
+#import "DataEntry.h"
 
 static sqlite3_stmt *insert_statement = nil;
 static sqlite3_stmt *init_statement = nil;
@@ -316,6 +317,26 @@ static sqlite3_stmt *select_related_statement = nil;
 	return [sortedItems lastObject];
 }
 
+- (DataItem *)largestDataItem {
+	NSSortDescriptor *sorter = [[[NSSortDescriptor alloc] initWithKey:@"total" ascending:YES] autorelease];
+	NSArray *sortedItems = [dataItems sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sorter, nil]];
+	
+	return [sortedItems lastObject];
+}
+
+- (DataEntry *)largestDataEntry {
+	NSMutableArray *largestDataEntries = [NSMutableArray arrayWithCapacity:[dataItems count]];
+	
+	for (DataItem *dataItem in dataItems) {
+		[largestDataEntries addObject:[dataItem largestDataEntry]];
+	}
+	
+	NSSortDescriptor *sorter = [[[NSSortDescriptor alloc] initWithKey:@"value" ascending:YES] autorelease];
+	NSArray *sortedItems = [largestDataEntries sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sorter, nil]];
+	
+	return [sortedItems lastObject];
+}
+
 
 - (double)totalForDay:(NSDate *)day {
 	double total_value = 0.0;
@@ -335,6 +356,16 @@ static sqlite3_stmt *select_related_statement = nil;
 	}
 	
 	return total_value;
+}
+
+- (double)averageEntry {
+	double averageTotal = 0.0;
+	
+	for (DataItem *dataItem in dataItems) {
+		averageTotal += [dataItem averageEntry];
+	}
+
+	return averageTotal / [dataItems count];
 }
 
 @end

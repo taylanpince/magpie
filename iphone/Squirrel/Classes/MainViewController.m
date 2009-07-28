@@ -25,7 +25,7 @@
 
 @implementation MainViewController
 
-@synthesize scrollView;
+@synthesize scrollView, quickEntryButton;
 
 
 - (void)viewDidLoad {
@@ -34,6 +34,16 @@
 	[scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]]];
 	
 	[self reloadPanels];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	
+	if ([[(SquirrelAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels] count] > 0) {
+		[quickEntryButton setEnabled:YES];
+	} else {
+		[quickEntryButton setEnabled:NO];
+	}
 }
 
 
@@ -118,6 +128,7 @@
 
 - (void)dealloc {
 	[scrollView release];
+	[quickEntryButton release];
     [super dealloc];
 }
 

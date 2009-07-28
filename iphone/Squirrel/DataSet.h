@@ -6,7 +6,7 @@
 //  Copyright 2009 Taylan Pince. All rights reserved.
 //
 
-@class DataItem;
+@class DataItem, DataEntry;
 
 @interface DataSet : NSObject {
 	sqlite3 *database;
@@ -43,8 +43,11 @@
 - (void)removeDataItem:(DataItem *)dataItem;
 
 - (DataItem *)latestDataItem;
+- (DataItem *)largestDataItem;
+- (DataEntry *)largestDataEntry;
 
 - (double)totalForDay:(NSDate *)day;
 - (double)totalForMonth:(NSDate *)month;
+- (double)averageEntry;
 
 @end

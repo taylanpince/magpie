@@ -326,6 +326,13 @@ static sqlite3_stmt *select_related_statement = nil;
 	return [sortedItems lastObject];
 }
 
+- (DataEntry *)largestDataEntry {
+	NSSortDescriptor *sorter = [[[NSSortDescriptor alloc] initWithKey:@"value" ascending:YES] autorelease];
+	NSArray *sortedItems = [dataEntries sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sorter, nil]];
+	
+	return [sortedItems lastObject];
+}
+
 - (double)totalForDay:(NSDate *)day {
 	double total_value = 0.0;
 	
@@ -366,6 +373,10 @@ static sqlite3_stmt *select_related_statement = nil;
 	[interval release];
 	
 	return total_value;
+}
+
+- (double)averageEntry {
+	return self.total / [dataEntries count];
 }
 
 @end

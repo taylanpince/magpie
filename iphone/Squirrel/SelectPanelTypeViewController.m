@@ -22,13 +22,18 @@
 					  @"Pie Chart", 
 					  @"Horizontal Bar Chart", 
 					  @"Vertical Bar Chart", 
-					  @"Latest Entry as Words", 
-					  @"Latest Entry as Numbers", 
-					  @"Latest Entry Type", 
-					  @"Total as Words", 
-					  @"Total as Numbers", 
 					  @"Daily Timeline", 
 					  @"Monthly Timeline", 
+					  @"Latest Entry as Words", 
+					  @"Latest Entry as Numbers", 
+					  @"Largest Entry as Words", 
+					  @"Largest Entry as Numbers", 
+					  @"Latest Entry Type", 
+					  @"Largest Entry Type", 
+					  @"Average Entry as Words", 
+					  @"Average Entry as Numbers", 
+					  @"Total as Words", 
+					  @"Total as Numbers", 
 					  nil];
 	}
 }

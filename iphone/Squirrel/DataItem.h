@@ -46,8 +46,10 @@
 - (void)removeDataEntry:(DataEntry *)dataEntry;
 
 - (DataEntry *)latestDataEntry;
+- (DataEntry *)largestDataEntry;
 
 - (double)totalForDay:(NSDate *)day;
 - (double)totalForMonth:(NSDate *)month;
+- (double)averageEntry;
 
 @end

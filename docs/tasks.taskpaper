@@ -10,9 +10,16 @@ MagPie Tasks:
 	- Can't do zero after decimal point (1.05)
 	- Something happens when you enter too many decimals (can't delete, or enter more)
 - Research for more chart types
+	- Line Charts
+	- Largest Entry as Words @done(2009-07-27)
+	- Largest Entry as Numbers @done(2009-07-27)
+	- Largest Item @done(2009-07-27)
+	- Average Entry @done(2009-07-27)
 - Research for more colours
-- Add welcome text box with tutorial (?)
-- Disable quick entry when there are no panels
+- Add welcome text box with tutorial
+	- Speech bubbles
+	- Lead through adding first data set, data panel, etc.
+- Disable quick entry when there are no panels @done(2009-07-27)
 - Do memory leak check
 - Put data item legends in two columns @done(2009-07-27)
 - Research performance improvements for the scrolling view

@@ -60,9 +60,15 @@ static UIFont *largeFont = nil;
 			frame.size.height = 70.0 + [dataPanel.dataSet.dataItems count] * 40.0;
 		} else if ([dataPanel.type isEqualToString:@"Pie Chart"] || [dataPanel.type isEqualToString:@"Vertical Bar Chart"]) {
 			frame.size.height = 280.0 + ceil([dataPanel.dataSet.dataItems count] / 2.0) * 24.0;
-		} else if ([dataPanel.type isEqualToString:@"Latest Entry as Words"]) {
+		} else if ([dataPanel.type isEqualToString:@"Latest Entry as Words"] || [dataPanel.type isEqualToString:@"Largest Entry as Words"]) {
 			NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-			NSNumber *numberValue = [[[dataPanel.dataSet latestDataItem] latestDataEntry] value];
+			NSNumber *numberValue;
+			
+			if ([dataPanel.type isEqualToString:@"Latest Entry as Words"]) {
+				numberValue = [[[dataPanel.dataSet latestDataItem] latestDataEntry] value];
+			} else if ([dataPanel.type isEqualToString:@"Largest Entry as Words"]) {
+				numberValue = [[dataPanel.dataSet largestDataEntry] value];
+			}
 			
 			[numberFormatter setNumberStyle:NSNumberFormatterSpellOutStyle];
 			
@@ -71,21 +77,39 @@ static UIFont *largeFont = nil;
 			frame.size.height = 70.0 + textSize.height;
 			
 			[numberFormatter release];
-		} else if ([dataPanel.type isEqualToString:@"Latest Entry as Numbers"]) {
-			NSNumber *numberValue = [[[dataPanel.dataSet latestDataItem] latestDataEntry] value];
+		} else if ([dataPanel.type isEqualToString:@"Latest Entry as Numbers"] || [dataPanel.type isEqualToString:@"Largest Entry as Numbers"]) {
+			NSNumber *numberValue;
+			
+			if ([dataPanel.type isEqualToString:@"Latest Entry as Words"]) {
+				numberValue = [[[dataPanel.dataSet latestDataItem] latestDataEntry] value];
+			} else if ([dataPanel.type isEqualToString:@"Largest Entry as Numbers"]) {
+				numberValue = [[dataPanel.dataSet largestDataEntry] value];
+			}
 			
 			CGSize textSize = [[[numberValue stringValue] uppercaseString] sizeWithFont:largeFont constrainedToSize:CGSizeMake(frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
 			
 			frame.size.height = 70.0 + textSize.height;
-		} else if ([dataPanel.type isEqualToString:@"Latest Entry Type"]) {
-			NSString *entryName = [[dataPanel.dataSet latestDataItem] name];
+		} else if ([dataPanel.type isEqualToString:@"Latest Entry Type"] || [dataPanel.type isEqualToString:@"Largest Entry Type"]) {
+			NSString *entryName;
+			
+			if ([dataPanel.type isEqualToString:@"Latest Entry Type"]) {
+				entryName = [[dataPanel.dataSet latestDataItem] name];
+			} else if ([dataPanel.type isEqualToString:@"Largest Entry Type"]) {
+				entryName = [[dataPanel.dataSet largestDataItem] name];
+			}
 			
 			CGSize textSize = [[entryName uppercaseString] sizeWithFont:mainFont constrainedToSize:CGSizeMake(frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
 			
 			frame.size.height = 70.0 + textSize.height;
-		} else if ([dataPanel.type isEqualToString:@"Total as Words"]) {
+		} else if ([dataPanel.type isEqualToString:@"Total as Words"] || [dataPanel.type isEqualToString:@"Average Entry as Words"]) {
 			NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-			NSNumber *numberValue = [NSNumber numberWithDouble:dataPanel.dataSet.total];
+			NSNumber *numberValue;
+			
+			if ([dataPanel.type isEqualToString:@"Total as Words"]) {
+				numberValue = [NSNumber numberWithDouble:dataPanel.dataSet.total];
+			} else if ([dataPanel.type isEqualToString:@"Average Entry as Words"]) {
+				numberValue = [NSNumber numberWithDouble:[[NSString stringWithFormat:@"%1.2f", [dataPanel.dataSet averageEntry]] doubleValue]];
+			}
 			
 			[numberFormatter setNumberStyle:NSNumberFormatterSpellOutStyle];
 			
@@ -94,9 +118,15 @@ static UIFont *largeFont = nil;
 			frame.size.height = 70.0 + textSize.height;
 			
 			[numberFormatter release];
-		} else if ([dataPanel.type isEqualToString:@"Total as Numbers"]) {
-			NSNumber *numberValue = [NSNumber numberWithDouble:dataPanel.dataSet.total];
+		} else if ([dataPanel.type isEqualToString:@"Total as Numbers"] || [dataPanel.type isEqualToString:@"Average Entry as Numbers"]) {
+			NSNumber *numberValue;
 			
+			if ([dataPanel.type isEqualToString:@"Total as Numbers"]) {
+				numberValue = [NSNumber numberWithDouble:dataPanel.dataSet.total];
+			} else if ([dataPanel.type isEqualToString:@"Average Entry as Numbers"]) {
+				numberValue = [NSNumber numberWithDouble:[[NSString stringWithFormat:@"%1.2f", [dataPanel.dataSet averageEntry]] doubleValue]];
+			}
+
 			CGSize textSize = [[[numberValue stringValue] uppercaseString] sizeWithFont:largeFont constrainedToSize:CGSizeMake(frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
 			
 			frame.size.height = 70.0 + textSize.height;
@@ -405,39 +435,69 @@ static UIFont *largeFont = nil;
 
 			counter++;
 		}
-	} else if ([dataPanel.type isEqualToString:@"Latest Entry as Words"]) {
+	} else if ([dataPanel.type isEqualToString:@"Latest Entry as Words"] || [dataPanel.type isEqualToString:@"Largest Entry as Words"]) {
 		NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
 		
 		[numberFormatter setNumberStyle:NSNumberFormatterSpellOutStyle];
 		
-		NSNumber *numberValue = [[[dataPanel.dataSet latestDataItem] latestDataEntry] value];
+		NSNumber *numberValue;
+		
+		if ([dataPanel.type isEqualToString:@"Latest Entry as Words"]) {
+			numberValue = [[[dataPanel.dataSet latestDataItem] latestDataEntry] value];
+		} else if ([dataPanel.type isEqualToString:@"Largest Entry as Words"]) {
+			numberValue = [[dataPanel.dataSet largestDataEntry] value];
+		}
 		
 		textSize = [[[numberFormatter stringFromNumber:numberValue] uppercaseString] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:largeFont lineBreakMode:UILineBreakModeWordWrap];
 		
 		point.y += textSize.height + 6.0;
 
 		[numberFormatter release];
-	} else if ([dataPanel.type isEqualToString:@"Latest Entry as Numbers"]) {
-		NSNumber *numberValue = [[[dataPanel.dataSet latestDataItem] latestDataEntry] value];
+	} else if ([dataPanel.type isEqualToString:@"Latest Entry as Numbers"] || [dataPanel.type isEqualToString:@"Largest Entry as Numbers"]) {
+		NSNumber *numberValue;
+		
+		if ([dataPanel.type isEqualToString:@"Latest Entry as Numbers"]) {
+			numberValue = [[[dataPanel.dataSet latestDataItem] latestDataEntry] value];
+		} else if ([dataPanel.type isEqualToString:@"Largest Entry as Numbers"]) {
+			numberValue = [[dataPanel.dataSet largestDataEntry] value];
+		}
 
 		textSize = [[[numberValue stringValue] uppercaseString] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:largeFont lineBreakMode:UILineBreakModeWordWrap];
 		
 		point.y += textSize.height + 6.0;
-	} else if ([dataPanel.type isEqualToString:@"Latest Entry Type"]) {
-		NSString *entryName = [[dataPanel.dataSet latestDataItem] name];
+	} else if ([dataPanel.type isEqualToString:@"Latest Entry Type"] || [dataPanel.type isEqualToString:@"Largest Entry Type"]) {
+		NSString *entryName;
+		
+		if ([dataPanel.type isEqualToString:@"Latest Entry Type"]) {
+			entryName = [[dataPanel.dataSet latestDataItem] name];
+		} else if ([dataPanel.type isEqualToString:@"Largest Entry Type"]) {
+			entryName = [[dataPanel.dataSet largestDataItem] name];
+		}
 		
 		textSize = [[entryName uppercaseString] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:mainFont lineBreakMode:UILineBreakModeWordWrap];
 				
 		point.y += textSize.height + 6.0;
-	} else if ([dataPanel.type isEqualToString:@"Total as Numbers"]) {
-		NSNumber *numberValue = [NSNumber numberWithDouble:dataPanel.dataSet.total];
+	} else if ([dataPanel.type isEqualToString:@"Total as Numbers"] || [dataPanel.type isEqualToString:@"Average Entry as Numbers"]) {
+		NSNumber *numberValue;
+		
+		if ([dataPanel.type isEqualToString:@"Total as Numbers"]) {
+			numberValue = [NSNumber numberWithDouble:dataPanel.dataSet.total];
+		} else if ([dataPanel.type isEqualToString:@"Average Entry as Numbers"]) {
+			numberValue = [NSNumber numberWithDouble:[[NSString stringWithFormat:@"%1.2f", [dataPanel.dataSet averageEntry]] doubleValue]];
+		}
 		
 		textSize = [[[numberValue stringValue] uppercaseString] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:largeFont lineBreakMode:UILineBreakModeWordWrap];
 		
 		point.y += textSize.height + 6.0;
-	} else if ([dataPanel.type isEqualToString:@"Total as Words"]) {
+	} else if ([dataPanel.type isEqualToString:@"Total as Words"] || [dataPanel.type isEqualToString:@"Average Entry as Words"]) {
 		NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-		NSNumber *numberValue = [NSNumber numberWithDouble:dataPanel.dataSet.total];
+		NSNumber *numberValue;
+		
+		if ([dataPanel.type isEqualToString:@"Total as Words"]) {
+			numberValue = [NSNumber numberWithDouble:dataPanel.dataSet.total];
+		} else if ([dataPanel.type isEqualToString:@"Average Entry as Words"]) {
+			numberValue = [NSNumber numberWithDouble:[[NSString stringWithFormat:@"%1.2f", [dataPanel.dataSet averageEntry]] doubleValue]];
+		}
 		
 		[numberFormatter setNumberStyle:NSNumberFormatterSpellOutStyle];
 		
