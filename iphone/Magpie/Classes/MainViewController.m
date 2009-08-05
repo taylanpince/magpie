@@ -16,10 +16,12 @@
 #import "DataEntry.h"
 #import "DataPanel.h"
 #import "PanelView.h"
+#import "HelpView.h"
 
 
 @interface MainViewController (PrivateMethods)
 - (void)reloadPanels;
+- (void)displayLogoAndTutorial;
 @end
 
 
@@ -33,7 +35,11 @@
 	
 	[scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]]];
 	
-	[self reloadPanels];
+	if ([[(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels] count] > 0) {
+		[self reloadPanels];
+	} else {
+		[self displayLogoAndTutorial];
+	}
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -71,6 +77,24 @@
 	}
 	
 	scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, top.y);
+}
+
+
+- (void)displayLogoAndTutorial {
+	HelpView *helpView = [[HelpView alloc] initWithFrame:CGRectMake(0.0, 270.0, 250.0, 200.0)];
+	
+	[helpView setAlpha:0.0];
+	[helpView setHelpText:@"Welcome to Magpie!\nYou seem to be new around here. To start setting up your data sets, tap on the gear icon below."];
+	[helpView setHelpBubbleCorner:4];
+	
+	[self.view addSubview:helpView];
+	
+	[UIView beginAnimations:@"fadeInHelp" context:NULL];
+	[helpView setAlpha:100.0];
+	[helpView setFrame:CGRectMake(0.0, 215.0, 250.0, 200.0)];
+	[UIView commitAnimations];
+	
+	[helpView release];
 }
 
 

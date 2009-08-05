@@ -16,6 +16,7 @@
 		288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765580DF743DE002DB57D /* CoreGraphics.framework */; };
 		289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */; };
 		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
+		EC180A271024E9E7004CEFFF /* HelpView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC180A261024E9E7004CEFFF /* HelpView.m */; };
 		EC341D9D0FD5AAE40003212C /* DataEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC341D9C0FD5AAE40003212C /* DataEntryViewController.m */; };
 		EC341E540FD5C9EE0003212C /* EditDataEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */; };
 		EC341E550FD5C9EE0003212C /* DataEntryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC341E530FD5C9EE0003212C /* DataEntryView.xib */; };
@@ -91,6 +92,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Magpie_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Magpie_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Magpie-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Magpie-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		EC180A251024E9E7004CEFFF /* HelpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpView.h; sourceTree = "<group>"; };
+		EC180A261024E9E7004CEFFF /* HelpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpView.m; sourceTree = "<group>"; };
 		EC341D9B0FD5AAE40003212C /* DataEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataEntryViewController.h; sourceTree = "<group>"; };
 		EC341D9C0FD5AAE40003212C /* DataEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEntryViewController.m; sourceTree = "<group>"; };
 		EC341E510FD5C9EE0003212C /* EditDataEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDataEntryViewController.h; sourceTree = "<group>"; };
@@ -359,6 +362,8 @@
 				ECC8828A0FF9232F0092B227 /* PanelColor.m */,
 				ECFB033A0FD4D80100EEE684 /* PanelView.h */,
 				ECFB033B0FD4D80100EEE684 /* PanelView.m */,
+				EC180A251024E9E7004CEFFF /* HelpView.h */,
+				EC180A261024E9E7004CEFFF /* HelpView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -484,6 +489,7 @@
 				ECC8828B0FF9232F0092B227 /* PanelColor.m in Sources */,
 				EC62D18F0FFD09DD00D9191C /* ScreenTableViewCell.m in Sources */,
 				EC7F4B260FFD229F006612C6 /* SubScreenTableViewCell.m in Sources */,
+				EC180A271024E9E7004CEFFF /* HelpView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
