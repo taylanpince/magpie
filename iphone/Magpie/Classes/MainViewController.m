@@ -81,7 +81,7 @@
 
 
 - (void)displayLogoAndTutorial {
-	HelpView *helpView = [[HelpView alloc] initWithFrame:CGRectMake(0.0, 270.0, 250.0, 200.0)];
+	HelpView *helpView = [[HelpView alloc] initWithFrame:CGRectMake(0.0, 350.0, 250.0, 120.0)];
 	
 	[helpView setAlpha:0.0];
 	[helpView setHelpText:@"Welcome to Magpie!\nYou seem to be new around here. To start setting up your data sets, tap on the gear icon below."];
@@ -91,7 +91,7 @@
 	
 	[UIView beginAnimations:@"fadeInHelp" context:NULL];
 	[helpView setAlpha:100.0];
-	[helpView setFrame:CGRectMake(0.0, 215.0, 250.0, 200.0)];
+	[helpView setFrame:CGRectMake(0.0, 295.0, 250.0, 120.0)];
 	[UIView commitAnimations];
 	
 	[helpView release];

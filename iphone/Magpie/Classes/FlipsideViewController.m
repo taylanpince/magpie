@@ -13,6 +13,7 @@
 #import "DataSetViewController.h"
 #import "DataPanelViewController.h"
 #import "InfoTableViewCell.h"
+#import "HelpView.h"
 
 
 @implementation FlipsideViewController
@@ -35,6 +36,21 @@
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 	[self.tableView reloadData];
+	
+	HelpView *helpView = [[HelpView alloc] initWithFrame:CGRectMake(100.0, 120.0, 200.0, 100.0)];
+	
+	[helpView setAlpha:0.0];
+	[helpView setHelpText:@"Start by adding a new data set."];
+	[helpView setHelpBubbleCorner:2];
+	
+	[self.view addSubview:helpView];
+	
+	[UIView beginAnimations:@"fadeInHelp" context:NULL];
+	[helpView setAlpha:100.0];
+	[helpView setFrame:CGRectMake(100.0, 80.0, 200.0, 100.0)];
+	[UIView commitAnimations];
+	
+	[helpView release];
 }
 
 

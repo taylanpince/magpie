@@ -49,24 +49,61 @@
     CGFloat maxx = CGRectGetMaxX(rrect) - 10.0f;
     CGFloat miny = CGRectGetMinY(rrect);
     CGFloat midy = CGRectGetMidY(rrect);
-    CGFloat maxy = CGRectGetMaxY(rrect) - 20.0f;
+    CGFloat maxy = CGRectGetMaxY(rrect);
+
+	CGPoint corner1, corner2, corner3;
+	
+	switch (helpBubbleCorner) {
+		case 1:
+			miny = miny + 20.0;
+			maxy = maxy - 20.0;
+			corner1 = CGPointMake(minx + 10.0, miny + 2.0);
+			corner2 = CGPointMake(minx + 20.0, miny - 10.0);
+			corner3 = CGPointMake(minx + 30.0, miny + 2.0);
+			break;
+		case 2:
+			miny = miny + 20.0;
+			maxy = maxy - 20.0;
+			corner3 = CGPointMake(maxx - 10.0, miny + 2.0);
+			corner2 = CGPointMake(maxx - 20.0, miny - 10.0);
+			corner1 = CGPointMake(maxx - 30.0, miny + 2.0);
+			break;
+		case 3:
+			maxy = maxy - 20.0;
+			corner1 = CGPointMake(maxx - 10.0, maxy - 2.0);
+			corner2 = CGPointMake(maxx - 20.0, maxy + 10.0);
+			corner3 = CGPointMake(maxx - 30.0, maxy - 2.0);
+			break;
+		case 4:
+			maxy = maxy - 20.0;
+			corner3 = CGPointMake(minx + 10.0, maxy - 2.0);
+			corner2 = CGPointMake(minx + 20.0, maxy + 10.0);
+			corner1 = CGPointMake(minx + 30.0, maxy - 2.0);
+			break;
+		default:
+			break;
+	}
 
 	CGContextSaveGState(context);
 	CGContextSetShadow(context, CGSizeMake(2.0, -8.0), 4.0);
 
+	CGContextMoveToPoint(context, corner1.x, corner1.y);
+	CGContextAddLineToPoint(context, corner2.x, corner2.y);
+	CGContextAddLineToPoint(context, corner3.x, corner3.y);
 	CGContextMoveToPoint(context, minx, midy);
     CGContextAddArcToPoint(context, minx, miny, midx, miny, radius);
     CGContextAddArcToPoint(context, maxx, miny, maxx, midy, radius);
     CGContextAddArcToPoint(context, maxx, maxy, midx, maxy, radius);
     CGContextAddArcToPoint(context, minx, maxy, minx, midy, radius);
     CGContextClosePath(context);
-	CGContextDrawPath(context, kCGPathFillStroke);
-	
-	CGContextMoveToPoint(context, minx + 10.0, maxy - 1.0);
-	CGContextAddLineToPoint(context, minx + 20.0, maxy + 10.0);
-	CGContextAddLineToPoint(context, minx + 30.0, maxy - 1.0);
-	CGContextClosePath(context);
 	CGContextFillPath(context);
+//	CGContextDrawPath(context, kCGPathFillStroke);
+	
+//	CGContextMoveToPoint(context, corner1.x, corner1.y);
+//	CGContextAddLineToPoint(context, corner2.x, corner2.y);
+//	CGContextAddLineToPoint(context, corner3.x, corner3.y);
+//	CGContextClosePath(context);
+//	CGContextFillPath(context);
 	
 	CGContextRestoreGState(context);
 	
