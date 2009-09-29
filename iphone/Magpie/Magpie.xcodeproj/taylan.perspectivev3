@@ -331,7 +331,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ECAE8D011072A7B10047273C</string>
+										<string>ECAE8D341072B1310047273C</string>
 										<key>history</key>
 										<array>
 											<string>EC309FB91003BDC100A0C623</string>
@@ -371,7 +371,6 @@
 											<string>ECAE8B29107267510047273C</string>
 											<string>ECAE8B2A107267510047273C</string>
 											<string>ECAE8B2B107267510047273C</string>
-											<string>ECAE8B3E107267FE0047273C</string>
 											<string>ECAE8B8C10726EC90047273C</string>
 											<string>ECAE8BB710727D620047273C</string>
 											<string>ECAE8BF3107283BE0047273C</string>
@@ -381,7 +380,8 @@
 											<string>ECAE8CF5107297240047273C</string>
 											<string>ECAE8CFE1072A7B10047273C</string>
 											<string>ECAE8CFF1072A7B10047273C</string>
-											<string>ECAE8D001072A7B10047273C</string>
+											<string>ECAE8D281072ADE10047273C</string>
+											<string>ECAE8D291072ADE10047273C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -696,7 +696,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>ECAE8D021072A7B10047273C</string>
+		<string>ECAE8D351072B1310047273C</string>
 		<string>ECAE89FA107257AA0047273C</string>
 		<string>ECAE89F7107257860047273C</string>
 		<string>/Users/taylan/Documents/Development/Personal/magpie/iphone/Magpie/Magpie.xcodeproj</string>

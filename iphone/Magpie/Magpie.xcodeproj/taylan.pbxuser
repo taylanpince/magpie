@@ -439,6 +439,18 @@
 			ECAE8CFF1072A7B10047273C /* PBXTextBookmark */ = ECAE8CFF1072A7B10047273C /* PBXTextBookmark */;
 			ECAE8D001072A7B10047273C /* PBXTextBookmark */ = ECAE8D001072A7B10047273C /* PBXTextBookmark */;
 			ECAE8D011072A7B10047273C /* PBXTextBookmark */ = ECAE8D011072A7B10047273C /* PBXTextBookmark */;
+			ECAE8D071072A97C0047273C /* PBXTextBookmark */ = ECAE8D071072A97C0047273C /* PBXTextBookmark */;
+			ECAE8D0B1072A98C0047273C /* PBXTextBookmark */ = ECAE8D0B1072A98C0047273C /* PBXTextBookmark */;
+			ECAE8D0F1072A9A90047273C /* PBXTextBookmark */ = ECAE8D0F1072A9A90047273C /* PBXTextBookmark */;
+			ECAE8D131072AA340047273C /* PBXTextBookmark */ = ECAE8D131072AA340047273C /* PBXTextBookmark */;
+			ECAE8D171072AACD0047273C /* PBXTextBookmark */ = ECAE8D171072AACD0047273C /* PBXTextBookmark */;
+			ECAE8D191072AB150047273C /* PBXTextBookmark */ = ECAE8D191072AB150047273C /* PBXTextBookmark */;
+			ECAE8D201072ABF80047273C /* PBXTextBookmark */ = ECAE8D201072ABF80047273C /* PBXTextBookmark */;
+			ECAE8D281072ADE10047273C /* PBXTextBookmark */ = ECAE8D281072ADE10047273C /* PBXTextBookmark */;
+			ECAE8D291072ADE10047273C /* PBXTextBookmark */ = ECAE8D291072ADE10047273C /* PBXTextBookmark */;
+			ECAE8D2A1072ADE10047273C /* PBXTextBookmark */ = ECAE8D2A1072ADE10047273C /* PBXTextBookmark */;
+			ECAE8D2E1072AFB60047273C /* PBXTextBookmark */ = ECAE8D2E1072AFB60047273C /* PBXTextBookmark */;
+			ECAE8D341072B1310047273C /* PBXTextBookmark */ = ECAE8D341072B1310047273C /* PBXTextBookmark */;
 			ECEA2C3C101E9E2B005B07B0 = ECEA2C3C101E9E2B005B07B0 /* PBXTextBookmark */;
 			ECF5B2121024A124001B3969 = ECF5B2121024A124001B3969 /* PBXTextBookmark */;
 			ECF5B2261024E183001B3969 = ECF5B2261024E183001B3969 /* PBXBookmark */;
@@ -572,9 +584,9 @@
 	};
 	EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1436, 6647}}";
-			sepNavSelRange = "{9594, 0}";
-			sepNavVisRange = "{8404, 1323}";
+			sepNavIntBoundsRect = "{{0, 0}, {1260, 7225}}";
+			sepNavSelRange = "{1262, 66}";
+			sepNavVisRange = "{362, 1450}";
 		};
 	};
 	EC496464101A3D8A001B4630 /* PBXTextBookmark */ = {
@@ -743,7 +755,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 364";
 		rLen = 0;
-		rLoc = 11587;
+		rLoc = 12206;
 		rType = 0;
 		vrLen = 1046;
 		vrLoc = 10839;
@@ -1795,7 +1807,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 100";
 		rLen = 0;
-		rLoc = 2926;
+		rLoc = 3023;
 		rType = 0;
 		vrLen = 277;
 		vrLoc = 2732;
@@ -2437,7 +2449,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 364";
 		rLen = 0;
-		rLoc = 11587;
+		rLoc = 12206;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 9949;
@@ -2447,7 +2459,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 364";
 		rLen = 0;
-		rLoc = 11587;
+		rLoc = 12206;
 		rType = 0;
 		vrLen = 1653;
 		vrLoc = 429;
@@ -2457,7 +2469,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 364";
 		rLen = 0;
-		rLoc = 11587;
+		rLoc = 12206;
 		rType = 0;
 		vrLen = 1653;
 		vrLoc = 429;
@@ -2477,7 +2489,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 364";
 		rLen = 0;
-		rLoc = 11587;
+		rLoc = 12206;
 		rType = 0;
 		vrLen = 480;
 		vrLoc = 1602;
@@ -2487,7 +2499,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 45";
 		rLen = 0;
-		rLoc = 1448;
+		rLoc = 1545;
 		rType = 0;
 		vrLen = 1654;
 		vrLoc = 429;
@@ -2527,7 +2539,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 364";
 		rLen = 0;
-		rLoc = 11587;
+		rLoc = 12206;
 		rType = 0;
 		vrLen = 480;
 		vrLoc = 1602;
@@ -3051,7 +3063,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 45";
 		rLen = 0;
-		rLoc = 1448;
+		rLoc = 1545;
 		rType = 0;
 		vrLen = 1652;
 		vrLoc = 430;
@@ -3061,7 +3073,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 290";
 		rLen = 0;
-		rLoc = 9604;
+		rLoc = 10223;
 		rType = 0;
 		vrLen = 1307;
 		vrLoc = 8492;
@@ -3071,7 +3083,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 290";
 		rLen = 0;
-		rLoc = 9604;
+		rLoc = 10223;
 		rType = 0;
 		vrLen = 1320;
 		vrLoc = 8492;
@@ -3832,7 +3844,7 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 290";
 		rLen = 0;
-		rLoc = 9604;
+		rLoc = 10223;
 		rType = 0;
 		vrLen = 1320;
 		vrLoc = 8492;
@@ -3842,10 +3854,130 @@
 		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
 		name = "EditDataEntryViewController.m: 289";
 		rLen = 0;
-		rLoc = 9594;
+		rLoc = 10213;
 		rType = 0;
 		vrLen = 1323;
 		vrLoc = 8404;
+	};
+	ECAE8D071072A97C0047273C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
+		name = "EditDataEntryViewController.m: 41";
+		rLen = 0;
+		rLoc = 1264;
+		rType = 0;
+		vrLen = 1627;
+		vrLoc = 430;
+	};
+	ECAE8D0B1072A98C0047273C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
+		name = "EditDataEntryViewController.m: 41";
+		rLen = 0;
+		rLoc = 1325;
+		rType = 0;
+		vrLen = 1625;
+		vrLoc = 430;
+	};
+	ECAE8D0F1072A9A90047273C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
+		name = "EditDataEntryViewController.m: 42";
+		rLen = 0;
+		rLoc = 1423;
+		rType = 0;
+		vrLen = 1676;
+		vrLoc = 430;
+	};
+	ECAE8D131072AA340047273C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
+		name = "EditDataEntryViewController.m: 43";
+		rLen = 0;
+		rLoc = 1423;
+		rType = 0;
+		vrLen = 1624;
+		vrLoc = 430;
+	};
+	ECAE8D171072AACD0047273C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
+		name = "EditDataEntryViewController.m: 43";
+		rLen = 0;
+		rLoc = 1423;
+		rType = 0;
+		vrLen = 1626;
+		vrLoc = 430;
+	};
+	ECAE8D191072AB150047273C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
+		name = "EditDataEntryViewController.m: 42";
+		rLen = 0;
+		rLoc = 1423;
+		rType = 0;
+		vrLen = 1668;
+		vrLoc = 430;
+	};
+	ECAE8D201072ABF80047273C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
+		name = "EditDataEntryViewController.m: 266";
+		rLen = 0;
+		rLoc = 9019;
+		rType = 0;
+		vrLen = 1577;
+		vrLoc = 7724;
+	};
+	ECAE8D281072ADE10047273C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341E510FD5C9EE0003212C /* EditDataEntryViewController.h */;
+		name = "EditDataEntryViewController.h: 37";
+		rLen = 0;
+		rLoc = 1125;
+		rType = 0;
+		vrLen = 1479;
+		vrLoc = 183;
+	};
+	ECAE8D291072ADE10047273C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
+		name = "EditDataEntryViewController.m: 266";
+		rLen = 0;
+		rLoc = 9019;
+		rType = 0;
+		vrLen = 1555;
+		vrLoc = 7937;
+	};
+	ECAE8D2A1072ADE10047273C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
+		name = "EditDataEntryViewController.m: 248";
+		rLen = 0;
+		rLoc = 8293;
+		rType = 0;
+		vrLen = 1750;
+		vrLoc = 7937;
+	};
+	ECAE8D2E1072AFB60047273C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
+		name = "EditDataEntryViewController.m: 42";
+		rLen = 0;
+		rLoc = 1371;
+		rType = 0;
+		vrLen = 1462;
+		vrLoc = 848;
+	};
+	ECAE8D341072B1310047273C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */;
+		name = "EditDataEntryViewController.m: 41";
+		rLen = 66;
+		rLoc = 1262;
+		rType = 0;
+		vrLen = 1450;
+		vrLoc = 362;
 	};
 	ECC882630FF91A5E0092B227 /* SelectPanelColorViewController.h */ = {
 		uiCtxt = {

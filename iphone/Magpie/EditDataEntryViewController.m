@@ -38,7 +38,9 @@
 	[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
 	
 	valueFormatter = [[NSNumberFormatter alloc] init];
-	[valueFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+//	[valueFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+	[valueFormatter setMaximumFractionDigits:4];
+	[valueFormatter setGeneratesDecimalNumbers:NO];
 	
 	if (dataEntry.primaryKey) {
 		self.title = @"Edit Entry";
@@ -243,8 +245,9 @@
 	if (key == 14) {
 		NSRange range = [valueString rangeOfString:@"."];
 		
-		if (valueFormatter.alwaysShowsDecimalSeparator & range.location == NSNotFound) {
+		if (valueFormatter.alwaysShowsDecimalSeparator && range.location == NSNotFound) {
 			[valueFormatter setAlwaysShowsDecimalSeparator:NO];
+			[valueFormatter setMinimumFractionDigits:0];
 		} else if ([valueString length] > 1) {
 			[valueString deleteCharactersInRange:NSMakeRange([valueString length] - 1, 1)];
 		} else {
@@ -255,6 +258,7 @@
 		[valueString release];
 		valueString = [[NSMutableString alloc] initWithString:@"0"];
 		[valueFormatter setAlwaysShowsDecimalSeparator:NO];
+		[valueFormatter setMinimumFractionDigits:0];
 	} else if (key == 13) {
 		if ([valueString hasPrefix:@"-"]) {
 			[valueString replaceCharactersInRange:NSMakeRange(0, 1) withString:@""];
@@ -266,7 +270,7 @@
 	} else {
 		if (key == 10) key = 0;
 		
-		if ([[valueString substringToIndex:1] isEqualToString:@"0"] & !valueFormatter.alwaysShowsDecimalSeparator) {
+		if ([[valueString substringToIndex:1] isEqualToString:@"0"] && !valueFormatter.alwaysShowsDecimalSeparator) {
 			[valueString replaceCharactersInRange:NSMakeRange(0, 1) withString:[NSString stringWithFormat:@"%d", key]];
 		} else {
 			if (valueFormatter.alwaysShowsDecimalSeparator) {
@@ -277,7 +281,17 @@
 				}
 			}
 			
-			[valueString appendString:[NSString stringWithFormat:@"%d", key]];
+			if (key == 0 && valueFormatter.alwaysShowsDecimalSeparator) {
+				[valueFormatter setMinimumFractionDigits:valueFormatter.minimumFractionDigits + 1];
+			} else if (valueFormatter.minimumFractionDigits > 0) {
+				for (NSUInteger i = 0; i < valueFormatter.minimumFractionDigits; i++) {
+					[valueString appendString:@"0"];
+				}
+				
+				[valueString appendString:[NSString stringWithFormat:@"%d", key]];
+			} else {
+				[valueString appendString:[NSString stringWithFormat:@"%d", key]];
+			}
 		}
 	}
 	

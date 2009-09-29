@@ -7,7 +7,7 @@ MagPie Tasks:
 - Fix the way automated colour reduction works so it can at least accommodate 10 items per panel @done
 - Fix ordering for pie chart panels, it should be from highest to lowest @done
 - Fix numeric entry bugs:
-	- Can't do zero after decimal point (1.05)
+	- Can't do zero after decimal point (1.05) @done(2009-09-29)
 	- Something happens when you enter too many decimals (can't delete, or enter more)
 - Research for more chart types
 	- Line Charts
