@@ -278,13 +278,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>59</integer>
-									<integer>55</integer>
+									<integer>37</integer>
+									<integer>19</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {270, 764}}</string>
+							<string>{{0, 273}, {270, 764}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -319,7 +319,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>EC89595110016E400009E0DF</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MainViewController.m</string>
+								<string>EditDataEntryViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,11 +327,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>EC89595210016E400009E0DF</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MainViewController.m</string>
+										<string>EditDataEntryViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ECAE8CF7107297240047273C</string>
+										<string>ECAE8D011072A7B10047273C</string>
 										<key>history</key>
 										<array>
 											<string>EC309FB91003BDC100A0C623</string>
@@ -363,7 +363,6 @@
 											<string>ECAE8A6910725CF00047273C</string>
 											<string>ECAE8A6A10725CF00047273C</string>
 											<string>ECAE8AB210725F550047273C</string>
-											<string>ECAE8AB310725F550047273C</string>
 											<string>ECAE8ACC1072601A0047273C</string>
 											<string>ECAE8ACD1072601A0047273C</string>
 											<string>ECAE8ACF1072601A0047273C</string>
@@ -376,12 +375,13 @@
 											<string>ECAE8B8C10726EC90047273C</string>
 											<string>ECAE8BB710727D620047273C</string>
 											<string>ECAE8BF3107283BE0047273C</string>
-											<string>ECAE8BFA107283DC0047273C</string>
 											<string>ECAE8C6D10728B2B0047273C</string>
 											<string>ECAE8CF3107297240047273C</string>
 											<string>ECAE8CF4107297240047273C</string>
 											<string>ECAE8CF5107297240047273C</string>
-											<string>ECAE8CF6107297240047273C</string>
+											<string>ECAE8CFE1072A7B10047273C</string>
+											<string>ECAE8CFF1072A7B10047273C</string>
+											<string>ECAE8D001072A7B10047273C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -696,6 +696,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>ECAE8D021072A7B10047273C</string>
 		<string>ECAE89FA107257AA0047273C</string>
 		<string>ECAE89F7107257860047273C</string>
 		<string>/Users/taylan/Documents/Development/Personal/magpie/iphone/Magpie/Magpie.xcodeproj</string>

@@ -16,9 +16,9 @@ MagPie Tasks:
 	- Largest Item @done(2009-07-27)
 	- Average Entry @done(2009-07-27)
 - Research for more colours
-- Add welcome text box with tutorial
-	- Speech bubbles
-	- Lead through adding first data set, data panel, etc.
+- Add welcome text box with tutorial @done(2009-09-29)
+	- Speech bubbles @done(2009-09-29)
+	- Lead through adding first data set, data panel, etc. @done(2009-09-29)
 - Disable quick entry when there are no panels @done(2009-07-27)
 - Do memory leak check
 - Put data item legends in two columns @done(2009-07-27)

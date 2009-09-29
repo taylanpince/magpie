@@ -284,10 +284,10 @@
 	[dataEntryValue release];
 	dataEntryValue = [[NSNumber alloc] initWithDouble:[valueString doubleValue]];
 	
-	if ([dataEntryValue doubleValue] > 0.0) {
-		[[self.navigationItem rightBarButtonItem] setEnabled:YES];
-	} else {
+	if ([dataEntryValue doubleValue] == 0.0) {
 		[[self.navigationItem rightBarButtonItem] setEnabled:NO];
+	} else {
+		[[self.navigationItem rightBarButtonItem] setEnabled:YES];
 	}
 	
 	[valueString release];
