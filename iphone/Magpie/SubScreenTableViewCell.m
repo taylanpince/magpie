@@ -13,8 +13,8 @@
 
 @synthesize titleLabel, dataLabel, active;
 
-- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
-    if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
 		dataLabel = [[UILabel alloc] initWithFrame:CGRectZero];
 		

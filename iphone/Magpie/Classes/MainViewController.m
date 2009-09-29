@@ -21,34 +21,65 @@
 
 @interface MainViewController (PrivateMethods)
 - (void)reloadPanels;
-- (void)displayLogoAndTutorial;
+- (void)hideTutorial;
+- (void)displayTutorial:(NSUInteger)step;
 @end
 
 
 @implementation MainViewController
 
-@synthesize scrollView, quickEntryButton;
+@synthesize scrollView, quickEntryButton, helpView;
 
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	[scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]]];
+	[scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Default.png"]]];
 	
 	if ([[(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels] count] > 0) {
 		[self reloadPanels];
-	} else {
-		[self displayLogoAndTutorial];
 	}
+	
+	helpView = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	
+
 	if ([[(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels] count] > 0) {
 		[quickEntryButton setEnabled:YES];
 	} else {
 		[quickEntryButton setEnabled:NO];
+	}
+	
+	if (helpView != nil) {
+		[helpView removeFromSuperview];
+		[helpView release];
+		
+		helpView = nil;
+	}
+}
+
+
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSMutableArray *dataPanels = [(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels];
+	
+	if ([dataPanels count] == 0) {
+		[self displayTutorial:1];
+	} else if ([dataPanels count] == 1 && [[[dataPanels objectAtIndex:0] dataSet] total] == 0.0) {
+		[self displayTutorial:2];
+	} else if ([defaults boolForKey:@"tutorialCompleted"] == NO) {
+		[defaults setBool:YES forKey:@"tutorialCompleted"];
+		[self displayTutorial:3];
+	}
+	
+	if ([dataPanels count] > 0) {
+		[scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]]];
+	} else {
+		[scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-logo.png"]]];
 	}
 }
 
@@ -80,21 +111,62 @@
 }
 
 
-- (void)displayLogoAndTutorial {
-	HelpView *helpView = [[HelpView alloc] initWithFrame:CGRectMake(0.0, 350.0, 250.0, 120.0)];
-	
+- (void)hideTutorial {
+	[UIView beginAnimations:@"fadeOutHelp" context:NULL];
 	[helpView setAlpha:0.0];
-	[helpView setHelpText:@"Welcome to Magpie!\nYou seem to be new around here. To start setting up your data sets, tap on the gear icon below."];
-	[helpView setHelpBubbleCorner:4];
-	
-	[self.view addSubview:helpView];
-	
-	[UIView beginAnimations:@"fadeInHelp" context:NULL];
-	[helpView setAlpha:100.0];
-	[helpView setFrame:CGRectMake(0.0, 295.0, 250.0, 120.0)];
 	[UIView commitAnimations];
-	
-	[helpView release];
+}
+
+
+- (void)displayTutorial:(NSUInteger)step {
+	switch (step) {
+		case 1:
+			helpView = [[HelpView alloc] initWithFrame:CGRectMake(0.0, 335.0, 250.0, 120.0)];
+			
+			[helpView setAlpha:0.0];
+			[helpView setHelpText:@"Welcome to Magpie!\nYou don't seem to have any Displays setup yet. Tap on the gear icon below to start."];
+			[helpView setHelpBubbleCorner:4];
+			
+			[self.view addSubview:helpView];
+			
+			[UIView beginAnimations:@"fadeInHelp" context:NULL];
+			[helpView setAlpha:1.0];
+			[helpView setFrame:CGRectMake(0.0, 295.0, 250.0, 120.0)];
+			[UIView commitAnimations];
+			break;
+		case 2:
+			helpView = [[HelpView alloc] initWithFrame:CGRectMake(112.0, 325.0, 220.0, 130.0)];
+			
+			[helpView setAlpha:0.0];
+			[helpView setHelpText:@"Your Display is here, but there are no Entries yet.\nTap on the plus sign to launch the Quick Entry panel and add an Entry."];
+			[helpView setHelpBubbleCorner:3];
+			
+			[self.view addSubview:helpView];
+			
+			[UIView beginAnimations:@"fadeInHelp" context:NULL];
+			[helpView setAlpha:1.0];
+			[helpView setFrame:CGRectMake(112.0, 285.0, 220.0, 130.0)];
+			[UIView commitAnimations];
+			break;
+		case 3:
+			helpView = [[HelpView alloc] initWithFrame:CGRectMake(0.0, 325.0, 250.0, 130.0)];
+			
+			[helpView setAlpha:0.0];
+			[helpView setHelpText:@"Congratulations, you created your first Display and Entry!\nYou can also add, delete and modify Entries for an Item under its Category's settings panel."];
+			[helpView setHelpBubbleCorner:4];
+			
+			[self.view addSubview:helpView];
+			
+			[UIView beginAnimations:@"fadeInHelp" context:NULL];
+			[helpView setAlpha:1.0];
+			[helpView setFrame:CGRectMake(0.0, 285.0, 250.0, 130.0)];
+			[UIView commitAnimations];
+			
+			[NSTimer scheduledTimerWithTimeInterval:8.0 target:self selector:@selector(hideTutorial) userInfo:nil repeats:NO];
+			break;
+		default:
+			break;
+	}
 }
 
 
@@ -131,7 +203,7 @@
 	
 	for (PanelView *view in scrollView.subviews) {
 		if ([view isKindOfClass:[PanelView class]] && view.frame.origin.y > scrollView.contentOffset.y && view.frame.origin.y < scrollView.contentOffset.y + scrollView.contentSize.height) {
-			controller.dataItem = [view.dataPanel.dataSet.dataItems objectAtIndex:0];
+			[controller setDataItem:[view.dataPanel.dataSet.dataItems objectAtIndex:0]];
 			break;
 		}
 	}
@@ -151,6 +223,10 @@
 
 
 - (void)dealloc {
+	if (helpView != nil) {
+		[helpView release];
+	}
+	
 	[scrollView release];
 	[quickEntryButton release];
     [super dealloc];

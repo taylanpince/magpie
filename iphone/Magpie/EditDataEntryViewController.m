@@ -26,6 +26,8 @@
 	
 	UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
 	
+	[saveButton setEnabled:NO];
+	
 	if (dataEntryValue) [dataEntryValue release];
 	if (dataEntryTimeStamp) [dataEntryTimeStamp release];
 	if (dateFormatter) [dateFormatter release];
@@ -39,12 +41,12 @@
 	[valueFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
 	
 	if (dataEntry.primaryKey) {
-		self.title = @"Edit Data Entry";
+		self.title = @"Edit Entry";
 		
 		dataEntryValue = [dataEntry.value copy];
 		dataEntryTimeStamp = [dataEntry.timeStamp copy];
 	} else {
-		self.title = @"Add Data Entry";
+		self.title = @"Add Entry";
 		
 		dataEntryValue = [[NSNumber alloc] initWithDouble:0.0];
 		dataEntryTimeStamp = [[NSDate alloc] init];
@@ -143,7 +145,7 @@
 			cell.titleLabel.text = @"DATE/TIME";
 			cell.dataLabel.text = [dateFormatter stringFromDate:dataEntryTimeStamp];
 		} else if (indexPath.row == 2) {
-			cell.titleLabel.text = @"DATA ITEM";
+			cell.titleLabel.text = @"ITEM";
 			cell.dataLabel.text = [NSString stringWithFormat:@"%@ → %@", dataItem.dataSet.name, dataItem.name];
 		}
 		
@@ -281,6 +283,12 @@
 	
 	[dataEntryValue release];
 	dataEntryValue = [[NSNumber alloc] initWithDouble:[valueString doubleValue]];
+	
+	if ([dataEntryValue doubleValue] > 0.0) {
+		[[self.navigationItem rightBarButtonItem] setEnabled:YES];
+	} else {
+		[[self.navigationItem rightBarButtonItem] setEnabled:NO];
+	}
 	
 	[valueString release];
 	[formTableView reloadData];

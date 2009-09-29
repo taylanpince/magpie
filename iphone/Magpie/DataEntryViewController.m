@@ -73,7 +73,7 @@
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	return @"Data Entries";
+	return @"Entries";
 }
 
 
@@ -87,8 +87,10 @@
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
 	
+	cell.iconType = @"";
+	
 	if (indexPath.row == 0) {
-		cell.mainLabel = @"Add New Data Entry";
+		cell.mainLabel = @"Add New Entry";
 	} else {
 		DataEntry *dataEntry = [dataItem.dataEntries objectAtIndex:(indexPath.row - 1)];
 

@@ -7,13 +7,16 @@
 //
 
 @protocol FlipsideViewControllerDelegate;
+@class HelpView;
 
 
 @interface FlipsideViewController : UITableViewController {
 	id <FlipsideViewControllerDelegate> delegate;
+	HelpView *helpView;
 }
 
 @property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
+@property (nonatomic, retain) HelpView *helpView;
 
 @end
 

@@ -70,9 +70,10 @@
 			break;
 		case 3:
 			maxy = maxy - 20.0;
-			corner1 = CGPointMake(maxx - 10.0, maxy - 2.0);
-			corner2 = CGPointMake(maxx - 20.0, maxy + 10.0);
-			corner3 = CGPointMake(maxx - 30.0, maxy - 2.0);
+			maxx = maxx - 5.0;
+			corner1 = CGPointMake(maxx - 6.0, maxy - 4.0);
+			corner2 = CGPointMake(maxx - 16.0, maxy + 10.0);
+			corner3 = CGPointMake(maxx - 26.0, maxy - 4.0);
 			break;
 		case 4:
 			maxy = maxy - 20.0;
@@ -97,19 +98,12 @@
     CGContextAddArcToPoint(context, minx, maxy, minx, midy, radius);
     CGContextClosePath(context);
 	CGContextFillPath(context);
-//	CGContextDrawPath(context, kCGPathFillStroke);
-	
-//	CGContextMoveToPoint(context, corner1.x, corner1.y);
-//	CGContextAddLineToPoint(context, corner2.x, corner2.y);
-//	CGContextAddLineToPoint(context, corner3.x, corner3.y);
-//	CGContextClosePath(context);
-//	CGContextFillPath(context);
 	
 	CGContextRestoreGState(context);
 	
 	[[UIColor blackColor] set];
 	
-	[helpText drawInRect:CGRectMake(minx + 10.0, miny + 10.0, maxx - minx - 20.0, maxy - miny - 20.0) withFont:[UIFont systemFontOfSize:14] lineBreakMode:UILineBreakModeWordWrap];
+	[helpText drawInRect:CGRectMake(minx + 10.0, miny + 10.0, maxx - minx - 15.0, maxy - miny - 20.0) withFont:[UIFont systemFontOfSize:14] lineBreakMode:UILineBreakModeWordWrap];
 }
 
 

@@ -18,7 +18,7 @@
 
 @implementation FlipsideViewController
 
-@synthesize delegate;
+@synthesize delegate, helpView;
 
 
 - (void)viewDidLoad {
@@ -30,27 +30,58 @@
 	UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
 	[self.navigationItem setRightBarButtonItem:saveButton];
 	[saveButton release];
+	
+	helpView = nil;
+}
+
+
+-(void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+
+	if (helpView != nil) {
+		[helpView removeFromSuperview];
+		[helpView release];
+		
+		helpView = nil;
+	}
 }
 
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
+
 	[self.tableView reloadData];
 	
-	HelpView *helpView = [[HelpView alloc] initWithFrame:CGRectMake(100.0, 120.0, 200.0, 100.0)];
+	NSMutableArray *dataSets = [(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets];
+	NSMutableArray *dataPanels = [(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels];
 	
-	[helpView setAlpha:0.0];
-	[helpView setHelpText:@"Start by adding a new data set."];
-	[helpView setHelpBubbleCorner:2];
-	
-	[self.view addSubview:helpView];
-	
-	[UIView beginAnimations:@"fadeInHelp" context:NULL];
-	[helpView setAlpha:100.0];
-	[helpView setFrame:CGRectMake(100.0, 80.0, 200.0, 100.0)];
-	[UIView commitAnimations];
-	
-	[helpView release];
+	if ([dataSets count] == 0) {
+		helpView = [[HelpView alloc] initWithFrame:CGRectMake(100.0, 120.0, 200.0, 170.0)];
+		
+		[helpView setAlpha:0.0];
+		[helpView setHelpText:@"You should define a Category first. Categories are collections of Items, and each Item contains Entries. Tap on Add a new Category to continue."];
+		[helpView setHelpBubbleCorner:2];
+		
+		[self.view addSubview:helpView];
+		
+		[UIView beginAnimations:@"fadeInHelp" context:NULL];
+		[helpView setAlpha:1.0];
+		[helpView setFrame:CGRectMake(100.0, 80.0, 200.0, 170.0)];
+		[UIView commitAnimations];
+	} else if ([dataPanels count] == 0) {
+		helpView = [[HelpView alloc] initWithFrame:CGRectMake(100.0, 250.0, 200.0, 135.0)];
+		
+		[helpView setAlpha:0.0];
+		[helpView setHelpText:@"Add a Display to visualize the Category you created. Tap on Add a new Display to continue."];
+		[helpView setHelpBubbleCorner:2];
+		
+		[self.view addSubview:helpView];
+		
+		[UIView beginAnimations:@"fadeInHelp" context:NULL];
+		[helpView setAlpha:1.0];
+		[helpView setFrame:CGRectMake(100.0, 210.0, 200.0, 135.0)];
+		[UIView commitAnimations];
+	}
 }
 
 
@@ -87,7 +118,7 @@
 		NSMutableArray *dataSets = [(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets];
 		
 		if (indexPath.row == [dataSets count]) {
-			cell.mainLabel = @"Add a new data set";
+			cell.mainLabel = @"Add a new Category";
 			cell.subLabel = @"";
 			cell.iconType = @"";
 		} else {
@@ -100,7 +131,7 @@
 		NSMutableArray *dataPanels = [(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels];
 		
 		if (indexPath.row == [dataPanels count]) {
-			cell.mainLabel = @"Add a new data panel";
+			cell.mainLabel = @"Add a new Display";
 			cell.subLabel = @"";
 			cell.iconType = @"";
 		} else {
@@ -122,7 +153,7 @@
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return (section == 0) ? @"Data Sets" : @"Data Panels";
+    return (section == 0) ? @"Categories" : @"Displays";
 }
 
 
@@ -248,6 +279,10 @@
 
 
 - (void)dealloc {
+	if (helpView != nil) {
+		[helpView release];
+	}
+
     [super dealloc];
 }
 

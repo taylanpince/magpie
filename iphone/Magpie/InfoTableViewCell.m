@@ -30,8 +30,8 @@
 static UIFont *mainFont = nil;
 static UIFont *subFont = nil;
 
-- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
-    if(self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    if(self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
 		contentView = [[InfoTableViewCellView alloc] initWithFrame:CGRectZero];
 		contentView.opaque = YES;
 		contentView.backgroundColor = [UIColor clearColor];

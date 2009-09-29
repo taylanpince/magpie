@@ -30,7 +30,7 @@
 	if (dataSet.primaryKey) {
 		self.title = dataSet.name;
 	} else {
-		self.title = @"New Data Set";
+		self.title = @"New Category";
 		saveButton.enabled = NO;
 	}
 	
@@ -140,7 +140,7 @@
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	return (section == 0) ? nil : @"Data Items";
+	return (section == 0) ? nil : @"Items";
 }
 
 
@@ -157,9 +157,9 @@
 		cell.accessoryType = UITableViewCellAccessoryNone;
 		
 		#ifndef __IPHONE_3_0
-		cell.text = @"Add a new data item";
+		cell.text = @"Add a new Item";
 		#else
-		cell.textLabel.text = @"Add a new data item";
+		cell.textLabel.text = @"Add a new Item";
 		#endif
 		
 		return cell;
@@ -239,6 +239,12 @@
 		[tableView endUpdates];
 		
 		[tableView selectRowAtIndexPath:[indexPaths objectAtIndex:0] animated:NO scrollPosition:UITableViewScrollPositionBottom];
+		
+		if (![dataSetName isEqualToString:@""]) {
+			UIBarButtonItem *saveButton = self.navigationItem.rightBarButtonItem;
+			
+			saveButton.enabled = YES;
+		}
 	}
 }
 
@@ -272,6 +278,12 @@
 		[dataItems removeObject:dataItem];
 		
 		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+		
+		if ([dataItems count] == 0) {
+			UIBarButtonItem *saveButton = self.navigationItem.rightBarButtonItem;
+			
+			saveButton.enabled = NO;
+		}
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
 		[self tableView:tableView didSelectRowAtIndexPath:indexPath];
 	}
@@ -300,7 +312,7 @@
 
 		if ([newValue isEqualToString:@""]) {
 			saveButton.enabled = NO;
-		} else {
+		} else if ([dataItems count] > 0) {
 			saveButton.enabled = YES;
 		}
 	}

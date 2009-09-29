@@ -30,7 +30,7 @@
 	if (dataPanel.primaryKey) {
 		self.title = dataPanel.name;
 	} else {
-		self.title = @"New Data Panel";
+		self.title = @"New Display";
 		saveButton.enabled = NO;
 	}
 	
@@ -148,27 +148,27 @@
 		}
 		
 		if (indexPath.row == 1) {
-			cell.titleLabel.text = @"Data Set";
+			cell.titleLabel.text = @"Category";
 			
 			if (dataPanelSet.primaryKey) {
 				cell.dataLabel.text = dataPanelSet.name;
 				cell.blank = NO;
 			} else {
-				cell.dataLabel.text = @"Select a Data Set";
+				cell.dataLabel.text = @"Select a Category";
 				cell.blank = YES;
 			}
 		} else if (indexPath.row == 2) {
-			cell.titleLabel.text = @"Panel Type";
+			cell.titleLabel.text = @"Type";
 			
 			if (![dataPanelType isEqualToString:@""]) {
 				cell.dataLabel.text = dataPanelType;
 				cell.blank = NO;
 			} else {
-				cell.dataLabel.text = @"Select a Panel Type";
+				cell.dataLabel.text = @"Select a Display Type";
 				cell.blank = YES;
 			}
 		} else if (indexPath.row == 3) {
-			cell.titleLabel.text = @"Panel Color";
+			cell.titleLabel.text = @"Color";
 			cell.dataLabel.text = dataPanelColor;
 			cell.blank = NO;
 		}
