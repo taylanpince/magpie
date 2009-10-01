@@ -62,7 +62,6 @@ static UIFont *subFont = nil;
 	[super setSelected:selected animated:animated];
 }
 
-#ifdef __IPHONE_3_0
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
 	if (self.highlighted != highlighted) {
 		[self setNeedsDisplay];
@@ -70,7 +69,6 @@ static UIFont *subFont = nil;
 	
 	[super setHighlighted:highlighted animated:animated];
 }
-#endif
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
 	if (self.editing != editing) {
@@ -136,7 +134,7 @@ static UIFont *subFont = nil;
 	UIColor *mainColour = [UIColor blackColor];
 	UIColor *subColour = [UIColor lightGrayColor];
 	
-	if (self.selected) {
+	if (self.selected || self.highlighted) {
 		mainColour = [UIColor whiteColor];
 		subColour = [UIColor whiteColor];
 	}

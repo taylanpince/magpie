@@ -331,7 +331,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ECAE8D341072B1310047273C</string>
+										<string>EC1AD5911074F33000B9038B</string>
 										<key>history</key>
 										<array>
 											<string>EC309FB91003BDC100A0C623</string>
@@ -381,7 +381,7 @@
 											<string>ECAE8CFE1072A7B10047273C</string>
 											<string>ECAE8CFF1072A7B10047273C</string>
 											<string>ECAE8D281072ADE10047273C</string>
-											<string>ECAE8D291072ADE10047273C</string>
+											<string>ECAFAD50107408C200EBFB61</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -421,6 +421,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1144, -27}}</string>
+										<key>RubberWindowFrame</key>
+										<string>4 55 1436 823 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -474,9 +476,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1144, -27}}</string>
-										<key>RubberWindowFrame</key>
-										<string>4 55 1436 823 0 0 1440 878 </string>
+										<string>{{0, 0}, {568, 405}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -504,11 +504,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>ECAE89ED107257860047273C</string>
+				<string>EC1AD5921074F33000B9038B</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>ECAE89EE107257860047273C</string>
+				<string>EC1AD5931074F33000B9038B</string>
 				<string>EC89595110016E400009E0DF</string>
-				<string>ECAE89EF107257860047273C</string>
+				<string>EC1AD5941074F33000B9038B</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -696,9 +696,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>ECAE8D351072B1310047273C</string>
-		<string>ECAE89FA107257AA0047273C</string>
-		<string>ECAE89F7107257860047273C</string>
 		<string>/Users/taylan/Documents/Development/Personal/magpie/iphone/Magpie/Magpie.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

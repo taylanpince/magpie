@@ -38,7 +38,7 @@
 	[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
 	
 	valueFormatter = [[NSNumberFormatter alloc] init];
-//	[valueFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+	[valueFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
 	[valueFormatter setMaximumFractionDigits:4];
 	[valueFormatter setGeneratesDecimalNumbers:NO];
 	
