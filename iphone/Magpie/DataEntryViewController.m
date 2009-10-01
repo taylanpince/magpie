@@ -91,6 +91,7 @@
 	
 	if (indexPath.row == 0) {
 		cell.mainLabel = @"Add New Entry";
+		cell.subLabel = @"";
 	} else {
 		DataEntry *dataEntry = [dataItem.dataEntries objectAtIndex:(indexPath.row - 1)];
 

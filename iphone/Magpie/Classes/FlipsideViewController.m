@@ -158,9 +158,9 @@
 		UIFont *subFont = [UIFont systemFontOfSize:12];
 
 		CGSize mainLabelSize = [dataPanel.name sizeWithFont:mainFont constrainedToSize:CGSizeMake(221.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
-		CGSize subLabelSize = [[NSString stringWithFormat:@"%@, %@", dataPanel.type, dataPanel.dataSet.name] sizeWithFont:subFont constrainedToSize:CGSizeMake(221.0, 60.0) lineBreakMode:UILineBreakModeTailTruncation];
+		CGSize subLabelSize = [[NSString stringWithFormat:@"%@, %@", dataPanel.type, dataPanel.dataSet.name] sizeWithFont:subFont constrainedToSize:CGSizeMake(221.0, 20.0) lineBreakMode:UILineBreakModeTailTruncation];
 		
-		return mainLabelSize.height + subLabelSize.height + 20.0;
+		return mainLabelSize.height + subLabelSize.height + 25.0;
 	} else if (indexPath.section == 0 && indexPath.row < [dataSets count]) {
 		DataSet *dataSet = [dataSets objectAtIndex:indexPath.row];
 		
