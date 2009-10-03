@@ -169,6 +169,10 @@
 			EC799DB31077F49E00A1ADF1 /* PlistBookmark */ = EC799DB31077F49E00A1ADF1 /* PlistBookmark */;
 			EC799DB41077F49E00A1ADF1 /* PlistBookmark */ = EC799DB41077F49E00A1ADF1 /* PlistBookmark */;
 			EC799DB61077F4B300A1ADF1 /* PlistBookmark */ = EC799DB61077F4B300A1ADF1 /* PlistBookmark */;
+			EC799DC81077F78B00A1ADF1 /* PlistBookmark */ = EC799DC81077F78B00A1ADF1 /* PlistBookmark */;
+			EC799DC91077F78B00A1ADF1 /* PBXTextBookmark */ = EC799DC91077F78B00A1ADF1 /* PBXTextBookmark */;
+			EC799DCA1077F78B00A1ADF1 /* PlistBookmark */ = EC799DCA1077F78B00A1ADF1 /* PlistBookmark */;
+			EC799DCB1077F78B00A1ADF1 /* PlistBookmark */ = EC799DCB1077F78B00A1ADF1 /* PlistBookmark */;
 			ECAE8A6710725CF00047273C = ECAE8A6710725CF00047273C /* PBXTextBookmark */;
 			ECAE8A6910725CF00047273C = ECAE8A6910725CF00047273C /* PBXTextBookmark */;
 			ECAE8A6A10725CF00047273C = ECAE8A6A10725CF00047273C /* PBXTextBookmark */;
@@ -914,6 +918,49 @@
 		rLen = 0;
 		rLoc = 9223372036854775807;
 	};
+	EC799DC81077F78B00A1ADF1 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = EC799DAF1077F48D00A1ADF1 /* Entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/taylan/Documents/Development/Personal/magpie/iphone/Magpie/Entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	EC799DC91077F78B00A1ADF1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ECC882890FF9232F0092B227 /* PanelColor.h */;
+		name = "PanelColor.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 250;
+		vrLoc = 0;
+	};
+	EC799DCA1077F78B00A1ADF1 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Magpie-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/taylan/Documents/Development/Personal/magpie/iphone/Magpie/Magpie-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	EC799DCB1077F78B00A1ADF1 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Magpie-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/taylan/Documents/Development/Personal/magpie/iphone/Magpie/Magpie-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
 	EC7F4B240FFD229F006612C6 /* SubScreenTableViewCell.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1083, 745}}";
@@ -1174,9 +1221,9 @@
 	};
 	ECC882890FF9232F0092B227 /* PanelColor.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1087, 572}}";
-			sepNavSelRange = "{176, 0}";
-			sepNavVisRange = "{0, 252}";
+			sepNavIntBoundsRect = "{{0, 0}, {1083, 512}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 250}";
 		};
 	};
 	ECC8828A0FF9232F0092B227 /* PanelColor.m */ = {

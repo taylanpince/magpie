@@ -275,17 +275,18 @@
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
+								<string>19C28FACFE9D520D11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>72</integer>
-									<integer>71</integer>
+									<integer>56</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 503}, {270, 764}}</string>
+							<string>{{0, 613}, {270, 764}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -318,7 +319,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>EC89595110016E400009E0DF</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Entitlements.plist</string>
+								<string>Magpie-Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -326,11 +327,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>EC89595210016E400009E0DF</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Entitlements.plist</string>
+										<string>Magpie-Info.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>EC799DB61077F4B300A1ADF1</string>
+										<string>EC799DCB1077F78B00A1ADF1</string>
 										<key>history</key>
 										<array>
 											<string>EC309FB91003BDC100A0C623</string>
@@ -380,8 +381,9 @@
 											<string>EC1AD5E6107512B500B9038B</string>
 											<string>EC1AD5F81075163D00B9038B</string>
 											<string>EC799DB11077F49E00A1ADF1</string>
-											<string>EC799DB21077F49E00A1ADF1</string>
-											<string>EC799DB31077F49E00A1ADF1</string>
+											<string>EC799DC81077F78B00A1ADF1</string>
+											<string>EC799DC91077F78B00A1ADF1</string>
+											<string>EC799DCA1077F78B00A1ADF1</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
