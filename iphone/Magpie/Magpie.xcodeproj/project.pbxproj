@@ -28,6 +28,12 @@
 		EC6EB9B20FD1D86400E6F9D8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6EB9B10FD1D86400E6F9D8 /* Icon.png */; };
 		EC7F4B260FFD229F006612C6 /* SubScreenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7F4B250FFD229F006612C6 /* SubScreenTableViewCell.m */; };
 		EC7F4B410FFD268D006612C6 /* bg-sub-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7F4B400FFD268D006612C6 /* bg-sub-screen.png */; };
+		EC9D93C11077D9D700A06171 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9D93C01077D9D700A06171 /* CoreData.framework */; };
+		EC9D94881077DA1600A06171 /* Magpie.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = EC9D94871077DA1600A06171 /* Magpie.xcdatamodel */; };
+		EC9D94A41077E7E600A06171 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D949D1077E7E600A06171 /* Item.m */; };
+		EC9D94A51077E7E600A06171 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D949F1077E7E600A06171 /* Entry.m */; };
+		EC9D94A61077E7E600A06171 /* Display.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D94A11077E7E600A06171 /* Display.m */; };
+		EC9D94A71077E7E600A06171 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D94A31077E7E600A06171 /* Category.m */; };
 		ECAE8CA2107291390047273C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = ECAE8CA1107291390047273C /* Default.png */; };
 		ECAE8CD6107295D10047273C /* bg-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = ECAE8CD5107295D10047273C /* bg-logo.png */; };
 		ECB752C50FF16CAD007CCBCB /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB752C40FF16CAD007CCBCB /* bg.png */; };
@@ -72,8 +78,6 @@
 		ECFB01E90FD4AD3900EEE684 /* InfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB01E80FD4AD3900EEE684 /* InfoTableViewCell.m */; };
 		ECFB033C0FD4D80100EEE684 /* PanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB033B0FD4D80100EEE684 /* PanelView.m */; };
 		ECFB058A0FD57CF000EEE684 /* DataEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB05890FD57CF000EEE684 /* DataEntry.m */; };
-		ECFBFBA60FD1E87B00EEE684 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFBFBA50FD1E87B00EEE684 /* libsqlite3.0.dylib */; };
-		ECFBFBA80FD1EDCA00EEE684 /* Magpie.sql in Resources */ = {isa = PBXBuildFile; fileRef = ECFBFBA70FD1EDCA00EEE684 /* Magpie.sql */; };
 		ECFBFC420FD28B1700EEE684 /* DataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBFC410FD28B1700EEE684 /* DataItem.m */; };
 		ECFBFFF50FD463F000EEE684 /* DataPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBFFF40FD463F000EEE684 /* DataPanel.m */; };
 /* End PBXBuildFile section */
@@ -114,6 +118,16 @@
 		EC7F4B240FFD229F006612C6 /* SubScreenTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubScreenTableViewCell.h; sourceTree = "<group>"; };
 		EC7F4B250FFD229F006612C6 /* SubScreenTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubScreenTableViewCell.m; sourceTree = "<group>"; };
 		EC7F4B400FFD268D006612C6 /* bg-sub-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-sub-screen.png"; sourceTree = "<group>"; };
+		EC9D93C01077D9D700A06171 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EC9D94871077DA1600A06171 /* Magpie.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Magpie.xcdatamodel; sourceTree = "<group>"; };
+		EC9D949C1077E7E600A06171 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		EC9D949D1077E7E600A06171 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		EC9D949E1077E7E600A06171 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
+		EC9D949F1077E7E600A06171 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
+		EC9D94A01077E7E600A06171 /* Display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Display.h; sourceTree = "<group>"; };
+		EC9D94A11077E7E600A06171 /* Display.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Display.m; sourceTree = "<group>"; };
+		EC9D94A21077E7E600A06171 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
+		EC9D94A31077E7E600A06171 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
 		ECAE8CA1107291390047273C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		ECAE8CD5107295D10047273C /* bg-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-logo.png"; sourceTree = "<group>"; };
 		ECB752C40FF16CAD007CCBCB /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
@@ -168,8 +182,6 @@
 		ECFB033B0FD4D80100EEE684 /* PanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelView.m; sourceTree = "<group>"; };
 		ECFB05880FD57CF000EEE684 /* DataEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataEntry.h; sourceTree = "<group>"; };
 		ECFB05890FD57CF000EEE684 /* DataEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEntry.m; sourceTree = "<group>"; };
-		ECFBFBA50FD1E87B00EEE684 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		ECFBFBA70FD1EDCA00EEE684 /* Magpie.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = Magpie.sql; sourceTree = "<group>"; };
 		ECFBFC400FD28B1700EEE684 /* DataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataItem.h; sourceTree = "<group>"; };
 		ECFBFC410FD28B1700EEE684 /* DataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataItem.m; sourceTree = "<group>"; };
 		ECFBFFF30FD463F000EEE684 /* DataPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPanel.h; sourceTree = "<group>"; };
@@ -184,7 +196,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */,
-				ECFBFBA60FD1E87B00EEE684 /* libsqlite3.0.dylib in Frameworks */,
+				EC9D93C11077D9D700A06171 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +227,7 @@
 				ECFB03390FD4D7F100EEE684 /* Views */,
 				EC6EB8DF0FD1B7F500E6F9D8 /* Table View Cells */,
 				EC6EB88B0FD1A58C00E6F9D8 /* View Controllers */,
+				EC9D94891077DA4000A06171 /* CoreData Models */,
 				EC6EB7CE0FD196DA00E6F9D8 /* Models */,
 				080E96DDFE201D6D7F000001 /* Application Delegate */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -247,8 +260,8 @@
 				280E754C0DD40C5E005A515E /* MainWindow.xib */,
 				EC341E530FD5C9EE0003212C /* DataEntryView.xib */,
 				8D1107310486CEB800E47090 /* Magpie-Info.plist */,
-				ECFBFBA70FD1EDCA00EEE684 /* Magpie.sql */,
 				ECE93A970FD8D5A6006BA407 /* KeyPadView.xib */,
+				EC9D94871077DA1600A06171 /* Magpie.xcdatamodel */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -256,7 +269,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ECFBFBA50FD1E87B00EEE684 /* libsqlite3.0.dylib */,
+				EC9D93C01077D9D700A06171 /* CoreData.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765580DF743DE002DB57D /* CoreGraphics.framework */,
@@ -321,6 +334,21 @@
 				EC7F4B250FFD229F006612C6 /* SubScreenTableViewCell.m */,
 			);
 			name = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		EC9D94891077DA4000A06171 /* CoreData Models */ = {
+			isa = PBXGroup;
+			children = (
+				EC9D949C1077E7E600A06171 /* Item.h */,
+				EC9D949D1077E7E600A06171 /* Item.m */,
+				EC9D949E1077E7E600A06171 /* Entry.h */,
+				EC9D949F1077E7E600A06171 /* Entry.m */,
+				EC9D94A01077E7E600A06171 /* Display.h */,
+				EC9D94A11077E7E600A06171 /* Display.m */,
+				EC9D94A21077E7E600A06171 /* Category.h */,
+				EC9D94A31077E7E600A06171 /* Category.m */,
+			);
+			name = "CoreData Models";
 			sourceTree = "<group>";
 		};
 		ECDAE1450FFAAB1700ABD2BC /* keypad */ = {
@@ -426,7 +454,6 @@
 				280E754E0DD40C5E005A515E /* MainView.xib in Resources */,
 				280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */,
 				EC6EB9B20FD1D86400E6F9D8 /* Icon.png in Resources */,
-				ECFBFBA80FD1EDCA00EEE684 /* Magpie.sql in Resources */,
 				EC341E550FD5C9EE0003212C /* DataEntryView.xib in Resources */,
 				ECE93A980FD8D5A6006BA407 /* KeyPadView.xib in Resources */,
 				ECB752C50FF16CAD007CCBCB /* bg.png in Resources */,
@@ -498,6 +525,11 @@
 				EC62D18F0FFD09DD00D9191C /* ScreenTableViewCell.m in Sources */,
 				EC7F4B260FFD229F006612C6 /* SubScreenTableViewCell.m in Sources */,
 				EC180A271024E9E7004CEFFF /* HelpView.m in Sources */,
+				EC9D94881077DA1600A06171 /* Magpie.xcdatamodel in Sources */,
+				EC9D94A41077E7E600A06171 /* Item.m in Sources */,
+				EC9D94A51077E7E600A06171 /* Entry.m in Sources */,
+				EC9D94A61077E7E600A06171 /* Display.m in Sources */,
+				EC9D94A71077E7E600A06171 /* Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

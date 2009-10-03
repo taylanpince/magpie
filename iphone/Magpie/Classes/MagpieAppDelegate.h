@@ -9,7 +9,10 @@
 @class DataSet, DataPanel, MainViewController;
 
 @interface MagpieAppDelegate : NSObject <UIApplicationDelegate> {
-    sqlite3 *database;
+    NSManagedObjectModel *managedObjectModel;
+    NSManagedObjectContext *managedObjectContext;	    
+    NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
 	NSMutableArray *dataSets;
 	NSMutableArray *dataPanels;
 	
@@ -17,9 +20,12 @@
     MainViewController *mainViewController;
 }
 
+@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
 @property (nonatomic, retain) NSMutableArray *dataSets;
 @property (nonatomic, retain) NSMutableArray *dataPanels;
-@property (nonatomic, readonly) NSString *applicationDocumentsDirectory;
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) MainViewController *mainViewController;

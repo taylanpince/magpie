@@ -6,16 +6,16 @@
 //  Copyright 2009 Taylan Pince. All rights reserved.
 //
 
-@class DataPanel, DataItem;
+@class Display, Item;
 
 
 @interface PanelView : UIView {
-	DataPanel *dataPanel;
+	Display *display;
 	
 	BOOL rendered;
 }
 
-@property (nonatomic, assign) DataPanel *dataPanel;
+@property (nonatomic, assign) Display *display;
 @property (nonatomic, assign) BOOL rendered;
 
 @end

@@ -14,126 +14,93 @@
 #import "DataEntry.h"
 
 
-@interface MagpieAppDelegate (Private)
-- (void)createEditableCopyOfDatabaseIfNeeded;
-- (void)initializeDatabase;
-@end
-
-
 @implementation MagpieAppDelegate
 
 @synthesize window, mainViewController, dataSets, dataPanels;
 
-
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-	[self createEditableCopyOfDatabaseIfNeeded];
-	[self initializeDatabase];
+	NSManagedObjectContext *context = [self managedObjectContext];
 	
-	MainViewController *aController = [[MainViewController alloc] initWithNibName:@"MainView" bundle:nil];
-	self.mainViewController = aController;
-	[aController release];
+	if (!context) {
+		// Handle errors here
+	}
 	
-    mainViewController.view.frame = [UIScreen mainScreen].applicationFrame;
+	MainViewController *controller = [[MainViewController alloc] initWithNibName:@"MainView" bundle:nil];
+
+	[self setMainViewController:controller];
+
+	[mainViewController setContext:context];
+	[[[mainViewController view] setFrame:[[UIScreen mainScreen] applicationFrame]]];
+	
 	[window addSubview:[mainViewController view]];
     [window makeKeyAndVisible];
-}
-
-
-- (void)createEditableCopyOfDatabaseIfNeeded {
-    BOOL success;
-    NSError *error;
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *writableDBPath = [self.applicationDocumentsDirectory stringByAppendingPathComponent:@"Magpie.sql"];
-
-    success = [fileManager fileExistsAtPath:writableDBPath];
-    
-	if (success) return;
-
-    NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Magpie.sql"];
-    success = [fileManager copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
-    
-	if (!success) {
-        NSAssert1(0, @"Failed to create writable database file with message '%@'.", [error localizedDescription]);
-    }
-}
-
-
-- (void)initializeDatabase {
-	NSMutableDictionary *dataSetsDict = [[NSMutableDictionary alloc] init];
-    NSMutableArray *dataSetsArray = [[NSMutableArray alloc] init];
-    self.dataSets = dataSetsArray;
-    [dataSetsArray release];
-
-    NSMutableArray *dataPanelsArray = [[NSMutableArray alloc] init];
-    self.dataPanels = dataPanelsArray;
-    [dataPanelsArray release];
 	
-    NSString *path = [self.applicationDocumentsDirectory stringByAppendingPathComponent:@"Magpie.sql"];
-
-    if (sqlite3_open([path UTF8String], &database) == SQLITE_OK) {
-        const char *sql = "SELECT pk FROM data_sets";
-        sqlite3_stmt *statement;
-
-        if (sqlite3_prepare_v2(database, sql, -1, &statement, NULL) == SQLITE_OK) {
-            while (sqlite3_step(statement) == SQLITE_ROW) {
-                int primaryKey = sqlite3_column_int(statement, 0);
-
-                DataSet *dataSet = [[DataSet alloc] initWithPrimaryKey:primaryKey database:database];
-                [dataSets addObject:dataSet];
-				[dataSetsDict setObject:[dataSets lastObject] forKey:[NSNumber numberWithInt:primaryKey]];
-                [dataSet release];
-            }
-        } else {
-			NSAssert1(0, @"Failed to prepare statement with error message: '%s'.", sqlite3_errmsg(database));
-		}
-
-        sqlite3_finalize(statement);
-
-		sql = "SELECT pk, data_set FROM data_panels ORDER BY weight ASC";
-		
-        if (sqlite3_prepare_v2(database, sql, -1, &statement, NULL) == SQLITE_OK) {
-            while (sqlite3_step(statement) == SQLITE_ROW) {
-                int primaryKey = sqlite3_column_int(statement, 0);
-				int dataSetKey = sqlite3_column_int(statement, 1);
-				
-                DataPanel *dataPanel = [[DataPanel alloc] initWithPrimaryKey:primaryKey database:database];
-				dataPanel.dataSet = [dataSetsDict objectForKey:[NSNumber numberWithInt:dataSetKey]];
-                [dataPanels	addObject:dataPanel];
-                [dataPanel release];
-            }
-        } else {
-			NSAssert1(0, @"Failed to prepare statement with error message: '%s'.", sqlite3_errmsg(database));
-		}
-		
-        sqlite3_finalize(statement);
-    } else {
-        sqlite3_close(database);
-        NSAssert1(0, @"Failed to open database with message '%s'.", sqlite3_errmsg(database));
-    }
-	
-	[dataSetsDict release];
+	[controller release];
 }
+
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    [dataSets makeObjectsPerformSelector:@selector(dehydrate)];
-    [dataPanels makeObjectsPerformSelector:@selector(dehydrate)];
+    NSError *error = nil;
 	
-    [DataSet finalizeStatements];
-	[DataItem finalizeStatements];
-	[DataPanel finalizeStatements];
-	[DataEntry finalizeStatements];
-
-    if (sqlite3_close(database) != SQLITE_OK) {
-        NSAssert1(0, @"Error: failed to close database with message '%s'.", sqlite3_errmsg(database));
+    if (managedObjectContext != nil) {
+        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+			// Handle errors here
+			NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+			abort();
+        } 
     }
+}
+
+
+- (NSManagedObjectContext *)managedObjectContext {
+    if (managedObjectContext != nil) {
+        return managedObjectContext;
+    }
+	
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+	
+    if (coordinator != nil) {
+        managedObjectContext = [[NSManagedObjectContext alloc] init];
+        [managedObjectContext setPersistentStoreCoordinator: coordinator];
+    }
+    
+	return managedObjectContext;
+}
+
+
+- (NSManagedObjectModel *)managedObjectModel {
+    if (managedObjectModel != nil) {
+        return managedObjectModel;
+    }
+	
+    managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];    
+	
+    return managedObjectModel;
+}
+
+
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
+    if (persistentStoreCoordinator != nil) {
+        return persistentStoreCoordinator;
+    }
+	
+    NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"Magpie.sqlite"]];
+	NSError *error = nil;
+	
+    persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    
+	if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) {
+		// Handle errors here
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
+    }    
+	
+    return persistentStoreCoordinator;
 }
 
 
 - (NSString *)applicationDocumentsDirectory {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
-
-    return basePath;
+	return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }
 
 
@@ -174,11 +141,17 @@
 
 
 - (void)dealloc {
+    [managedObjectContext release];
+    [managedObjectModel release];
+    [persistentStoreCoordinator release];
+
 	[dataSets release];
 	[dataPanels release];
-    [mainViewController release];
+    
+	[mainViewController release];
     [window release];
-    [super dealloc];
+	
+	[super dealloc];
 }
 
 @end

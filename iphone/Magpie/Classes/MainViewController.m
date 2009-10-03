@@ -6,21 +6,21 @@
 //  Copyright Taylan Pince 2009. All rights reserved.
 //
 
-#import "MagpieAppDelegate.h"
 #import "MainViewController.h"
 #import "FlipsideViewController.h"
 #import "EditDataEntryViewController.h"
-#import "DataPanel.h"
-#import "DataSet.h"
-#import "DataItem.h"
-#import "DataEntry.h"
-#import "DataPanel.h"
+
 #import "PanelView.h"
 #import "HelpView.h"
 
+#import "Display.h"
+#import "Category.h"
+#import "Item.h"
+#import "Entry.h"
+
 
 @interface MainViewController (PrivateMethods)
-- (void)reloadPanels;
+- (void)refreshDisplays;
 - (void)hideTutorial;
 - (void)displayTutorial:(NSUInteger)step;
 @end
@@ -28,7 +28,7 @@
 
 @implementation MainViewController
 
-@synthesize scrollView, quickEntryButton, helpView;
+@synthesize scrollView, quickEntryButton, helpView, displays, context;
 
 
 - (void)viewDidLoad {
@@ -36,9 +36,7 @@
 	
 	[scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Default.png"]]];
 	
-	if ([[(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels] count] > 0) {
-		[self reloadPanels];
-	}
+	[self refreshDisplays];
 	
 	helpView = nil;
 }
@@ -46,7 +44,7 @@
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 
-	if ([[(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels] count] > 0) {
+	if ([displays count] > 0) {
 		[quickEntryButton setEnabled:YES];
 	} else {
 		[quickEntryButton setEnabled:NO];
@@ -65,18 +63,17 @@
 	[super viewDidAppear:animated];
 
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	NSMutableArray *dataPanels = [(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels];
 	
-	if ([dataPanels count] == 0) {
+	if ([displays count] == 0) {
 		[self displayTutorial:1];
-	} else if ([dataPanels count] == 1 && [[[dataPanels objectAtIndex:0] dataSet] total] == 0.0) {
+	} else if ([displays count] == 1 && [[[displays objectAtIndex:0] category] total] == 0.0) {
 		[self displayTutorial:2];
 	} else if ([defaults boolForKey:@"tutorialCompleted"] == NO) {
 		[defaults setBool:YES forKey:@"tutorialCompleted"];
 		[self displayTutorial:3];
 	}
 	
-	if ([dataPanels count] > 0) {
+	if ([displays count] > 0) {
 		[scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]]];
 	} else {
 		[scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-logo.png"]]];
@@ -84,8 +81,32 @@
 }
 
 
-- (void)reloadPanels {
-	for (UIView *view in scrollView.subviews) {
+- (void)refreshDisplays {
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Display" inManagedObjectContext:context];
+	
+	[request setEntity:entity];
+	
+	NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"weight" ascending:NO];
+	NSArray *sorters = [[NSArray alloc] initWithObjects:sorter, nil];
+	
+	[request setSortDescriptors:sorters];
+	
+	NSError *error;
+	NSMutableArray *results = [[context executeFetchRequest:request error:&error] mutableCopy];
+	
+	if (results == nil) {
+		// Handle errors here
+	}
+	
+	[self setDisplays:results];
+	
+	[sorter release];
+	[sorters release];
+	[results release];
+	[request release];
+	
+	for (UIView *view in [scrollView subviews]) {
 		if ([view isKindOfClass:[PanelView class]]) {
 			[view removeFromSuperview];
 		}
@@ -93,13 +114,10 @@
 	
 	CGPoint top = CGPointMake(0.0, 10.0);
 	
-	for (DataPanel *dataPanel in [(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels]) {
+	for (Display *display in displays) {
 		PanelView *panelView = [[PanelView alloc] initWithFrame:CGRectMake(top.x, top.y, scrollView.frame.size.width, 0.0)];
 		
-		[dataPanel.dataSet selectRelated];
-
-		panelView.dataPanel = dataPanel;
-
+		[panelView setDisplay:display];
 		[scrollView addSubview:panelView];
 		
 		top.y += panelView.frame.size.height + 10.0;
@@ -172,19 +190,20 @@
 
 - (void)didCloseEditDataEntryView {
 	[self dismissModalViewControllerAnimated:YES];
-	[self reloadPanels];
+	[self refreshDisplays];
 }
 
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
 	[self dismissModalViewControllerAnimated:YES];
-	[self reloadPanels];
+	[self refreshDisplays];
 }
 
 
 - (IBAction)showSettings {
 	FlipsideViewController *controller = [[FlipsideViewController alloc] initWithStyle:UITableViewStyleGrouped];
-	controller.delegate = self;
+	
+	[controller setDelegate:self];
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
 	
@@ -198,12 +217,12 @@
 - (IBAction)showQuickAdd {
 	EditDataEntryViewController *controller = [[EditDataEntryViewController alloc] initWithNibName:@"DataEntryView" bundle:nil];
 	
-	controller.delegate = self;
-	controller.dataEntry = [[[DataEntry alloc] init] autorelease];
+	[controller setDelegate:self];
+	[controller setEntry:(Entry *)[NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:context]];
 	
 	for (PanelView *view in scrollView.subviews) {
 		if ([view isKindOfClass:[PanelView class]] && view.frame.origin.y > scrollView.contentOffset.y && view.frame.origin.y < scrollView.contentOffset.y + scrollView.contentSize.height) {
-			[controller setDataItem:[view.dataPanel.dataSet.dataItems objectAtIndex:0]];
+			[controller setItem:[view.display.category.items objectAtIndex:0]];
 			break;
 		}
 	}
@@ -223,6 +242,9 @@
 
 
 - (void)dealloc {
+	[context release];
+	[displays release];
+	
 	if (helpView != nil) {
 		[helpView release];
 	}

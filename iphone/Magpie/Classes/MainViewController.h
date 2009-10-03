@@ -13,11 +13,17 @@
 
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate, EditDataEntryViewControllerDelegate> {
+	NSMutableArray *displays;
+	NSManagedObjectContext *context;
+	
 	IBOutlet UIScrollView *scrollView;
 	IBOutlet UIBarButtonItem *quickEntryButton;
 	
 	HelpView *helpView;
 }
+
+@property (nonatomic, retain) NSMutableArray *displays;
+@property (nonatomic, retain) NSManagedObjectContext *context;
 
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *quickEntryButton;

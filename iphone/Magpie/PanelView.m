@@ -10,15 +10,16 @@
 
 #import "PanelView.h"
 #import "PanelColor.h"
-#import "DataPanel.h"
-#import "DataItem.h"
-#import "DataSet.h"
-#import "DataEntry.h"
+
+#import "Display.h"
+#import "Category.h"
+#import "Item.h"
+#import "Entry.h"
 
 
 @implementation PanelView
 
-@synthesize dataPanel, rendered;
+@synthesize display, rendered;
 
 
 #define TINY_FONT_SIZE 8
@@ -50,24 +51,24 @@ static UIFont *largeFont = nil;
 }
 
 
-- (void)setDataPanel:(DataPanel *)aDataPanel {
-	if (dataPanel != aDataPanel) {
-		dataPanel = aDataPanel;
+- (void)setDisplay:(Display *)aDisplay {
+	if (display != aDisplay) {
+		display = aDisplay;
 		
 		CGRect frame = self.frame;
 		
-		if ([dataPanel.type isEqualToString:@"Horizontal Bar Chart"]) {
-			frame.size.height = 70.0 + [dataPanel.dataSet.dataItems count] * 40.0;
-		} else if ([dataPanel.type isEqualToString:@"Pie Chart"] || [dataPanel.type isEqualToString:@"Vertical Bar Chart"]) {
-			frame.size.height = 280.0 + ceil([dataPanel.dataSet.dataItems count] / 2.0) * 24.0;
-		} else if ([dataPanel.type isEqualToString:@"Latest Entry as Words"] || [dataPanel.type isEqualToString:@"Largest Entry as Words"]) {
+		if ([display.type isEqualToString:@"Horizontal Bar Chart"]) {
+			frame.size.height = 70.0 + [display.category.items count] * 40.0;
+		} else if ([display.type isEqualToString:@"Pie Chart"] || [display.type isEqualToString:@"Vertical Bar Chart"]) {
+			frame.size.height = 280.0 + ceil([display.dataSet.dataItems count] / 2.0) * 24.0;
+		} else if ([display.type isEqualToString:@"Latest Entry as Words"] || [display.type isEqualToString:@"Largest Entry as Words"]) {
 			NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
 			NSNumber *numberValue;
 			
-			if ([dataPanel.type isEqualToString:@"Latest Entry as Words"]) {
-				numberValue = [[[dataPanel.dataSet latestDataItem] latestDataEntry] value];
-			} else if ([dataPanel.type isEqualToString:@"Largest Entry as Words"]) {
-				numberValue = [[dataPanel.dataSet largestDataEntry] value];
+			if ([display.type isEqualToString:@"Latest Entry as Words"]) {
+				numberValue = [[[display.category lastItem] lastEntry] value];
+			} else if ([display.type isEqualToString:@"Largest Entry as Words"]) {
+				numberValue = [[display.category largestEntry] value];
 			}
 			
 			[numberFormatter setNumberStyle:NSNumberFormatterSpellOutStyle];
@@ -77,38 +78,38 @@ static UIFont *largeFont = nil;
 			frame.size.height = 70.0 + textSize.height;
 			
 			[numberFormatter release];
-		} else if ([dataPanel.type isEqualToString:@"Latest Entry as Numbers"] || [dataPanel.type isEqualToString:@"Largest Entry as Numbers"]) {
+		} else if ([display.type isEqualToString:@"Latest Entry as Numbers"] || [display.type isEqualToString:@"Largest Entry as Numbers"]) {
 			NSNumber *numberValue;
 			
-			if ([dataPanel.type isEqualToString:@"Latest Entry as Words"]) {
-				numberValue = [[[dataPanel.dataSet latestDataItem] latestDataEntry] value];
-			} else if ([dataPanel.type isEqualToString:@"Largest Entry as Numbers"]) {
-				numberValue = [[dataPanel.dataSet largestDataEntry] value];
+			if ([display.type isEqualToString:@"Latest Entry as Words"]) {
+				numberValue = [[[display.category lastItem] lastEntry] value];
+			} else if ([display.type isEqualToString:@"Largest Entry as Numbers"]) {
+				numberValue = [[display.category largestEntry] value];
 			}
 			
 			CGSize textSize = [[[numberValue stringValue] uppercaseString] sizeWithFont:largeFont constrainedToSize:CGSizeMake(frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
 			
 			frame.size.height = 70.0 + textSize.height;
-		} else if ([dataPanel.type isEqualToString:@"Latest Entry Type"] || [dataPanel.type isEqualToString:@"Largest Entry Type"]) {
+		} else if ([display.type isEqualToString:@"Latest Entry Type"] || [display.type isEqualToString:@"Largest Entry Type"]) {
 			NSString *entryName;
 			
-			if ([dataPanel.type isEqualToString:@"Latest Entry Type"]) {
-				entryName = [[dataPanel.dataSet latestDataItem] name];
-			} else if ([dataPanel.type isEqualToString:@"Largest Entry Type"]) {
-				entryName = [[dataPanel.dataSet largestDataItem] name];
+			if ([display.type isEqualToString:@"Latest Entry Type"]) {
+				entryName = [[display.category lastItem] name];
+			} else if ([display.type isEqualToString:@"Largest Entry Type"]) {
+				entryName = [[display.category largestItem] name];
 			}
 			
 			CGSize textSize = [[entryName uppercaseString] sizeWithFont:mainFont constrainedToSize:CGSizeMake(frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
 			
 			frame.size.height = 70.0 + textSize.height;
-		} else if ([dataPanel.type isEqualToString:@"Total as Words"] || [dataPanel.type isEqualToString:@"Average Entry as Words"]) {
+		} else if ([display.type isEqualToString:@"Total as Words"] || [display.type isEqualToString:@"Average Entry as Words"]) {
 			NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
 			NSNumber *numberValue;
 			
-			if ([dataPanel.type isEqualToString:@"Total as Words"]) {
-				numberValue = [NSNumber numberWithDouble:dataPanel.dataSet.total];
-			} else if ([dataPanel.type isEqualToString:@"Average Entry as Words"]) {
-				numberValue = [NSNumber numberWithDouble:[[NSString stringWithFormat:@"%1.2f", [dataPanel.dataSet averageEntry]] doubleValue]];
+			if ([display.type isEqualToString:@"Total as Words"]) {
+				numberValue = [NSNumber numberWithDouble:display.category.total];
+			} else if ([display.type isEqualToString:@"Average Entry as Words"]) {
+				numberValue = [NSNumber numberWithDouble:[[NSString stringWithFormat:@"%1.2f", [display.category averageEntry]] doubleValue]];
 			}
 			
 			[numberFormatter setNumberStyle:NSNumberFormatterSpellOutStyle];
@@ -118,20 +119,20 @@ static UIFont *largeFont = nil;
 			frame.size.height = 70.0 + textSize.height;
 			
 			[numberFormatter release];
-		} else if ([dataPanel.type isEqualToString:@"Total as Numbers"] || [dataPanel.type isEqualToString:@"Average Entry as Numbers"]) {
+		} else if ([display.type isEqualToString:@"Total as Numbers"] || [display.type isEqualToString:@"Average Entry as Numbers"]) {
 			NSNumber *numberValue;
 			
-			if ([dataPanel.type isEqualToString:@"Total as Numbers"]) {
-				numberValue = [NSNumber numberWithDouble:dataPanel.dataSet.total];
-			} else if ([dataPanel.type isEqualToString:@"Average Entry as Numbers"]) {
-				numberValue = [NSNumber numberWithDouble:[[NSString stringWithFormat:@"%1.2f", [dataPanel.dataSet averageEntry]] doubleValue]];
+			if ([display.type isEqualToString:@"Total as Numbers"]) {
+				numberValue = [NSNumber numberWithDouble:display.category.total];
+			} else if ([display.type isEqualToString:@"Average Entry as Numbers"]) {
+				numberValue = [NSNumber numberWithDouble:[[NSString stringWithFormat:@"%1.2f", [display.category averageEntry]] doubleValue]];
 			}
 
 			CGSize textSize = [[[numberValue stringValue] uppercaseString] sizeWithFont:largeFont constrainedToSize:CGSizeMake(frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
 			
 			frame.size.height = 70.0 + textSize.height;
-		} else if ([dataPanel.type isEqualToString:@"Daily Timeline"] || [dataPanel.type isEqualToString:@"Monthly Timeline"]) {
-			frame.size.height = 288.0 + ceil([dataPanel.dataSet.dataItems count] / 2.0) * 24.0;
+		} else if ([display.type isEqualToString:@"Daily Timeline"] || [display.type isEqualToString:@"Monthly Timeline"]) {
+			frame.size.height = 288.0 + ceil([display.category.items count] / 2.0) * 24.0;
 		}
 		
 		[self setFrame:frame];
@@ -183,7 +184,7 @@ static UIFont *largeFont = nil;
 
 	CGContextClip(context);
 	
-	UIColor *panelColor = [PanelColor colorWithName:dataPanel.color alpha:1.0];
+	UIColor *panelColor = [PanelColor colorWithName:display.color alpha:1.0];
 	
 	[panelColor set];
 	
@@ -260,8 +261,8 @@ static UIFont *largeFont = nil;
 	
 	NSString *dateText;
 
-	if ([dataPanel.dataSet.lastUpdated timeIntervalSince1970]) {
-		NSTimeInterval intervalInSeconds = fabs([dataPanel.dataSet.lastUpdated timeIntervalSinceNow]);
+	if ([display.category.lastUpdated timeIntervalSince1970]) {
+		NSTimeInterval intervalInSeconds = fabs([display.category.lastUpdated timeIntervalSinceNow]);
 		double intervalInMinutes = round(intervalInSeconds / 60.0);
 		
 		if (intervalInMinutes >= 0 && intervalInMinutes <= 1) dateText = (intervalInMinutes == 0) ? @"less than a minute ago" : @"1 minute ago";
@@ -284,8 +285,8 @@ static UIFont *largeFont = nil;
 
 	int counter = 0;
 	
-	if ([dataPanel.type isEqualToString:@"Horizontal Bar Chart"]) {
-		for (DataItem *dataItem in dataPanel.dataSet.dataItems) {
+	if ([display.type isEqualToString:@"Horizontal Bar Chart"]) {
+		for (Item *dataItem in display.category.items) {
 			[textColor set];
 			
 			textSize = [[dataItem.name uppercaseString] drawAtPoint:point forWidth:rect.size.width - 100.0 withFont:mainFont lineBreakMode:UILineBreakModeTailTruncation];
@@ -310,7 +311,7 @@ static UIFont *largeFont = nil;
 
 			counter++;
 		}
-	} else if ([dataPanel.type isEqualToString:@"Vertical Bar Chart"]) {
+	} else if ([display.type isEqualToString:@"Vertical Bar Chart"]) {
 		point.y += 200.0;
 		
 		[[UIColor lightGrayColor] set];
@@ -324,15 +325,15 @@ static UIFont *largeFont = nil;
 		CGSize totalSize;
 		NSString *totalText;
 		CGFloat barHeight;
-		CGFloat barWidth = (rect.size.width - 20.0) / [dataPanel.dataSet.dataItems count];
+		CGFloat barWidth = (rect.size.width - 20.0) / [display.category.items count];
 		
-		double colorIncrement = 0.9 / [dataPanel.dataSet.dataItems count];
+		double colorIncrement = 0.9 / [display.category.items count];
 		
-		barWidth += barWidth * 0.25 / [dataPanel.dataSet.dataItems count];
+		barWidth += barWidth * 0.25 / [display.category.items count];
 		point.y += 12.0;
 		
 		NSSortDescriptor *sorter = [[[NSSortDescriptor alloc] initWithKey:@"total" ascending:NO] autorelease];
-		NSArray *sortedItems = [dataPanel.dataSet.dataItems sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sorter, nil]];
+		NSArray *sortedItems = [display.category.items sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sorter, nil]];
 		DataItem *topItem = [sortedItems objectAtIndex:0];
 		
 		for (DataItem *dataItem in sortedItems) {

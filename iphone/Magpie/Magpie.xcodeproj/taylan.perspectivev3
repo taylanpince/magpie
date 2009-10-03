@@ -284,7 +284,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {270, 764}}</string>
+							<string>{{0, 48}, {270, 764}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -331,7 +331,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>EC1AD6021075167900B9038B</string>
+										<string>EC9D93731077D06F00A06171</string>
 										<key>history</key>
 										<array>
 											<string>EC309FB91003BDC100A0C623</string>
@@ -343,7 +343,6 @@
 											<string>EC0C42CE101D597A009C8515</string>
 											<string>ECF5B2261024E183001B3969</string>
 											<string>ECF5B2351024E255001B3969</string>
-											<string>ECF5B2371024E255001B3969</string>
 											<string>ECF5B2391024E255001B3969</string>
 											<string>ECF5B23B1024E255001B3969</string>
 											<string>ECF5B23D1024E255001B3969</string>
@@ -381,7 +380,8 @@
 											<string>EC1AD5E5107512B500B9038B</string>
 											<string>EC1AD5E6107512B500B9038B</string>
 											<string>EC1AD5F81075163D00B9038B</string>
-											<string>EC1AD5F91075163D00B9038B</string>
+											<string>EC1AD621107543AD00B9038B</string>
+											<string>EC07A4861076A60800C6571C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -504,11 +504,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC1AD5921074F33000B9038B</string>
+				<string>EC9D93741077D06F00A06171</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>EC1AD5931074F33000B9038B</string>
+				<string>EC9D93751077D06F00A06171</string>
 				<string>EC89595110016E400009E0DF</string>
-				<string>EC1AD5941074F33000B9038B</string>
+				<string>EC9D93761077D06F00A06171</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -696,9 +696,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>EC1AD6031075167900B9038B</string>
-		<string>EC1AD5D41075118400B9038B</string>
-		<string>EC1AD5D51075118400B9038B</string>
 		<string>/Users/taylan/Documents/Development/Personal/magpie/iphone/Magpie/Magpie.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
