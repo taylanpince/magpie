@@ -26,6 +26,7 @@
 		EC6EB8E20FD1B81E00E6F9D8 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB8E10FD1B81E00E6F9D8 /* EditableTableViewCell.m */; };
 		EC6EB9560FD1CFDC00E6F9D8 /* DataSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */; };
 		EC6EB9B20FD1D86400E6F9D8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6EB9B10FD1D86400E6F9D8 /* Icon.png */; };
+		EC799DB01077F48D00A1ADF1 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC799DAF1077F48D00A1ADF1 /* Entitlements.plist */; };
 		EC7F4B260FFD229F006612C6 /* SubScreenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7F4B250FFD229F006612C6 /* SubScreenTableViewCell.m */; };
 		EC7F4B410FFD268D006612C6 /* bg-sub-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7F4B400FFD268D006612C6 /* bg-sub-screen.png */; };
 		ECAE8CA2107291390047273C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = ECAE8CA1107291390047273C /* Default.png */; };
@@ -111,6 +112,7 @@
 		EC6EB9540FD1CFDC00E6F9D8 /* DataSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSetViewController.h; sourceTree = "<group>"; };
 		EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSetViewController.m; sourceTree = "<group>"; };
 		EC6EB9B10FD1D86400E6F9D8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		EC799DAF1077F48D00A1ADF1 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		EC7F4B240FFD229F006612C6 /* SubScreenTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubScreenTableViewCell.h; sourceTree = "<group>"; };
 		EC7F4B250FFD229F006612C6 /* SubScreenTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubScreenTableViewCell.m; sourceTree = "<group>"; };
 		EC7F4B400FFD268D006612C6 /* bg-sub-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-sub-screen.png"; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				EC799DAF1077F48D00A1ADF1 /* Entitlements.plist */,
 				ECFB03390FD4D7F100EEE684 /* Views */,
 				EC6EB8DF0FD1B7F500E6F9D8 /* Table View Cells */,
 				EC6EB88B0FD1A58C00E6F9D8 /* View Controllers */,
@@ -464,6 +467,7 @@
 				EC7F4B410FFD268D006612C6 /* bg-sub-screen.png in Resources */,
 				ECAE8CA2107291390047273C /* Default.png in Resources */,
 				ECAE8CD6107295D10047273C /* bg-logo.png in Resources */,
+				EC799DB01077F48D00A1ADF1 /* Entitlements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +526,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Magpie_Prefix.pch;
@@ -549,11 +554,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Taylan Pince";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "188125CD-35FB-4972-B24A-3F4E50282C2F";
 				SDKROOT = iphoneos3.0;
 			};
 			name = Release;
