@@ -7,14 +7,18 @@
 //
 
 #import "MagpieAppDelegate.h"
+
 #import "MainViewController.h"
 #import "FlipsideViewController.h"
 #import "EditDataEntryViewController.h"
+#import "IntroViewController.h"
+
 #import "DataPanel.h"
 #import "DataSet.h"
 #import "DataItem.h"
 #import "DataEntry.h"
 #import "DataPanel.h"
+
 #import "PanelView.h"
 #import "HelpView.h"
 
@@ -176,6 +180,12 @@
 }
 
 
+- (void)didCloseIntroView {
+	[self dismissModalViewControllerAnimated:YES];
+	[self reloadPanels];
+}
+
+
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
 	[self dismissModalViewControllerAnimated:YES];
 	[self reloadPanels];
@@ -209,6 +219,22 @@
 	}
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+	
+	[self presentModalViewController:navController animated:YES];
+	
+	[controller release];
+	[navController release];
+}
+
+
+- (IBAction)showIntro {
+	IntroViewController *controller = [[IntroViewController alloc] initWithNibName:@"IntroView" bundle:nil];
+	
+	[controller setDelegate:self];
+	
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+	
+	[navController setNavigationBarHidden:YES];
 	
 	[self presentModalViewController:navController animated:YES];
 	
