@@ -11,14 +11,34 @@
 
 @implementation IntroView
 
-@synthesize delegate;
+@synthesize delegate, type;
 
-- (id)initWithImage:(UIImage *)image {
-    if (self = [super initWithImage:image]) {
+- (id)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
         [self setUserInteractionEnabled:YES];
+		[self setOpaque:YES];
+		[self setBackgroundColor:[UIColor whiteColor]];
+		[self setType:0];
     }
 
     return self;
+}
+
+
+- (void)drawRect:(CGRect)rect {
+	switch (type) {
+		case 0:
+			[@"1" drawInRect:CGRectMake(10.0, 10.0, 100.0, 100.0) withFont:[UIFont systemFontOfSize:14] lineBreakMode:UILineBreakModeWordWrap];
+			break;
+		case 1:
+			[@"2" drawInRect:CGRectMake(10.0, 10.0, 100.0, 100.0) withFont:[UIFont systemFontOfSize:14] lineBreakMode:UILineBreakModeWordWrap];
+			break;
+		case 2:
+			[@"3" drawInRect:CGRectMake(10.0, 10.0, 100.0, 100.0) withFont:[UIFont systemFontOfSize:14] lineBreakMode:UILineBreakModeWordWrap];
+			break;
+		default:
+			break;
+	}
 }
 
 

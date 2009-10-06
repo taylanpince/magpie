@@ -85,6 +85,11 @@
 	} else {
 		[scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-logo.png"]]];
 	}
+	
+	if ([defaults boolForKey:@"firstLaunch"] == NO) {
+		//[defaults setBool:YES forKey:@"firstLaunch"];
+		[self showIntro];
+	}
 }
 
 

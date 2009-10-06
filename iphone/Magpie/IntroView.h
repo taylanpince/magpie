@@ -9,9 +9,13 @@
 @protocol IntroViewDelegate;
 
 
-@interface IntroView : UIImageView {
+@interface IntroView : UIView {
+	NSUInteger type;
+	
 	id <IntroViewDelegate> delegate;
 }
+
+@property (nonatomic, assign) NSUInteger type;
 
 @property (nonatomic, assign) id <IntroViewDelegate> delegate;
 

@@ -230,6 +230,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -279,13 +281,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>44</integer>
-									<integer>22</integer>
+									<integer>10</integer>
+									<integer>2</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 267}, {270, 764}}</string>
+							<string>{{0, 0}, {270, 764}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -313,14 +315,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>EC89595110016E400009E0DF</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>IntroViewController.m</string>
+								<string>IntroView.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -328,11 +328,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>EC89595210016E400009E0DF</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>IntroViewController.m</string>
+										<string>IntroView.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>EC86C6B7107A90AC00CF68F3</string>
+										<string>EC05B8E2107B7D9C00BF216B</string>
 										<key>history</key>
 										<array>
 											<string>EC309FB91003BDC100A0C623</string>
@@ -358,7 +358,6 @@
 											<string>ECAE8ACF1072601A0047273C</string>
 											<string>ECAE8AE2107260660047273C</string>
 											<string>ECAE8B29107267510047273C</string>
-											<string>ECAE8BF3107283BE0047273C</string>
 											<string>ECAE8C6D10728B2B0047273C</string>
 											<string>ECAE8CF3107297240047273C</string>
 											<string>ECAE8CF4107297240047273C</string>
@@ -384,19 +383,20 @@
 											<string>EC86C64A107A4FCF00CF68F3</string>
 											<string>EC86C64B107A4FCF00CF68F3</string>
 											<string>EC86C64C107A4FCF00CF68F3</string>
-											<string>EC86C65B107A512900CF68F3</string>
 											<string>EC86C65C107A512900CF68F3</string>
 											<string>EC86C67A107A8C1B00CF68F3</string>
 											<string>EC86C67B107A8C1B00CF68F3</string>
 											<string>EC86C67C107A8C1B00CF68F3</string>
-											<string>EC86C67F107A8C1B00CF68F3</string>
 											<string>EC86C693107A8F6F00CF68F3</string>
 											<string>EC86C694107A8F6F00CF68F3</string>
 											<string>EC86C695107A8F6F00CF68F3</string>
 											<string>EC86C696107A8F6F00CF68F3</string>
-											<string>EC86C6A4107A905400CF68F3</string>
-											<string>EC86C6B3107A90A100CF68F3</string>
-											<string>EC86C6B4107A90A100CF68F3</string>
+											<string>EC05B8D3107AE37900BF216B</string>
+											<string>EC05B8D5107AE37900BF216B</string>
+											<string>EC05B8DB107AE3B700BF216B</string>
+											<string>EC05B8DF107B7D9C00BF216B</string>
+											<string>EC05B8E0107B7D9C00BF216B</string>
+											<string>EC05B8E1107B7D9C00BF216B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -436,6 +436,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1144, -27}}</string>
+										<key>RubberWindowFrame</key>
+										<string>4 55 1436 823 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -489,9 +491,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1144, -27}}</string>
-										<key>RubberWindowFrame</key>
-										<string>4 55 1436 823 0 0 1440 878 </string>
+										<string>{{0, 0}, {568, 405}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -519,11 +519,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC86C61D107A416500CF68F3</string>
+				<string>EC05B8E3107B7D9C00BF216B</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>EC86C61E107A416500CF68F3</string>
+				<string>EC05B8E4107B7D9C00BF216B</string>
 				<string>EC89595110016E400009E0DF</string>
-				<string>EC86C61F107A416500CF68F3</string>
+				<string>EC05B8E5107B7D9C00BF216B</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -672,14 +672,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC86C62B107A441500CF68F3</string>
+				<string>EC05B8E6107B7D9C00BF216B</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>EC86C62C107A441500CF68F3</string>
-				<string>EC86C62D107A441500CF68F3</string>
-				<string>EC86C62E107A441500CF68F3</string>
-				<string>EC86C62F107A441500CF68F3</string>
-				<string>EC86C630107A441500CF68F3</string>
+				<string>EC05B8E7107B7D9C00BF216B</string>
+				<string>EC05B8E8107B7D9C00BF216B</string>
+				<string>EC05B8E9107B7D9C00BF216B</string>
+				<string>EC05B8EA107B7D9C00BF216B</string>
+				<string>EC89595110016E400009E0DF</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
 			<string>2</string>
@@ -711,8 +711,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>EC86C652107A4FCF00CF68F3</string>
-		<string>EC86C632107A441500CF68F3</string>
+		<string>EC05B8EB107B7D9C00BF216B</string>
+		<string>EC05B8EC107B7D9C00BF216B</string>
 		<string>/Users/taylan/Documents/Development/Personal/magpie/iphone/Magpie/Magpie.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

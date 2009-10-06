@@ -15,6 +15,7 @@
 @synthesize scrollView, pageControl, delegate;
 
 - (void)viewDidLoad {
+	[scrollView setBackgroundColor:[UIColor whiteColor]];
 	[scrollView setPagingEnabled:YES];
 	[scrollView setShowsVerticalScrollIndicator:NO];
 	[scrollView setShowsHorizontalScrollIndicator:NO];
@@ -23,9 +24,9 @@
 	[scrollView setContentSize:CGSizeMake(320 * 3, 440)];
 	
 	for (NSUInteger i = 0; i < 3; i++) {
-		IntroView *introView = [[IntroView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"intro-%d.png", (i + 1), nil]]];
+		IntroView *introView = [[IntroView alloc] initWithFrame:CGRectMake(320.0 * i, 0.0, 320.0, 440.0)];
 		
-		[introView setFrame:CGRectMake(320.0 * i, 0.0, 320.0, 440.0)];
+		[introView setType:i];
 		[introView setDelegate:self];
 		
 		[scrollView addSubview:introView];
