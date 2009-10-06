@@ -38,7 +38,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	[scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Default.png"]]];
+	[scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]]];
 	
 	if ([[(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels] count] > 0) {
 		[self reloadPanels];
@@ -80,14 +80,8 @@
 		[self displayTutorial:3];
 	}
 	
-	if ([dataPanels count] > 0) {
-		[scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]]];
-	} else {
-		[scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-logo.png"]]];
-	}
-	
 	if ([defaults boolForKey:@"firstLaunch"] == NO) {
-		//[defaults setBool:YES forKey:@"firstLaunch"];
+		[defaults setBool:YES forKey:@"firstLaunch"];
 		[self showIntro];
 	}
 }
@@ -130,17 +124,17 @@
 - (void)displayTutorial:(NSUInteger)step {
 	switch (step) {
 		case 1:
-			helpView = [[HelpView alloc] initWithFrame:CGRectMake(0.0, 335.0, 250.0, 120.0)];
+			helpView = [[HelpView alloc] initWithFrame:CGRectMake(0.0, 355.0, 250.0, 100.0)];
 			
 			[helpView setAlpha:0.0];
-			[helpView setHelpText:@"Welcome to Magpie!\nYou don't seem to have any Displays setup yet. Tap on the gear icon below to start."];
+			[helpView setHelpText:@"You don't seem to have any Displays setup yet. Tap on the gear icon below to start."];
 			[helpView setHelpBubbleCorner:4];
 			
 			[self.view addSubview:helpView];
 			
 			[UIView beginAnimations:@"fadeInHelp" context:NULL];
 			[helpView setAlpha:1.0];
-			[helpView setFrame:CGRectMake(0.0, 295.0, 250.0, 120.0)];
+			[helpView setFrame:CGRectMake(0.0, 325.0, 250.0, 100.0)];
 			[UIView commitAnimations];
 			break;
 		case 2:
