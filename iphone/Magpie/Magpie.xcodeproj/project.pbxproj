@@ -39,6 +39,8 @@
 		EC86C68E107A8E4D00CF68F3 /* intro-3.png in Resources */ = {isa = PBXBuildFile; fileRef = EC86C68B107A8E4D00CF68F3 /* intro-3.png */; };
 		ECAE8CA2107291390047273C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = ECAE8CA1107291390047273C /* Default.png */; };
 		ECB752C50FF16CAD007CCBCB /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB752C40FF16CAD007CCBCB /* bg.png */; };
+		ECBB4A0F107BD130009BDFB8 /* AboutView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBB4A0E107BD130009BDFB8 /* AboutView.m */; };
+		ECBB4A12107BD303009BDFB8 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBB4A11107BD303009BDFB8 /* logo.png */; };
 		ECC882650FF91A5E0092B227 /* SelectPanelColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC882640FF91A5E0092B227 /* SelectPanelColorViewController.m */; };
 		ECC8828B0FF9232F0092B227 /* PanelColor.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC8828A0FF9232F0092B227 /* PanelColor.m */; };
 		ECDAE1630FFAAB1700ABD2BC /* 0-down.png in Resources */ = {isa = PBXBuildFile; fileRef = ECDAE1460FFAAB1700ABD2BC /* 0-down.png */; };
@@ -135,6 +137,9 @@
 		EC86C68B107A8E4D00CF68F3 /* intro-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro-3.png"; sourceTree = "<group>"; };
 		ECAE8CA1107291390047273C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		ECB752C40FF16CAD007CCBCB /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		ECBB4A0D107BD130009BDFB8 /* AboutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutView.h; sourceTree = "<group>"; };
+		ECBB4A0E107BD130009BDFB8 /* AboutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutView.m; sourceTree = "<group>"; };
+		ECBB4A11107BD303009BDFB8 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		ECC882630FF91A5E0092B227 /* SelectPanelColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPanelColorViewController.h; sourceTree = "<group>"; };
 		ECC882640FF91A5E0092B227 /* SelectPanelColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPanelColorViewController.m; sourceTree = "<group>"; };
 		ECC882890FF9232F0092B227 /* PanelColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelColor.h; sourceTree = "<group>"; };
@@ -264,6 +269,7 @@
 				EC86C622107A438300CF68F3 /* logo-toolbar.png */,
 				ECAE8CA1107291390047273C /* Default.png */,
 				EC6EB9B10FD1D86400E6F9D8 /* Icon.png */,
+				ECBB4A11107BD303009BDFB8 /* logo.png */,
 				280E754B0DD40C5E005A515E /* MainView.xib */,
 				280E754C0DD40C5E005A515E /* MainWindow.xib */,
 				EC341E530FD5C9EE0003212C /* DataEntryView.xib */,
@@ -406,6 +412,8 @@
 				EC180A261024E9E7004CEFFF /* HelpView.m */,
 				EC86C677107A80F000CF68F3 /* IntroView.h */,
 				EC86C678107A80F000CF68F3 /* IntroView.m */,
+				ECBB4A0D107BD130009BDFB8 /* AboutView.h */,
+				ECBB4A0E107BD130009BDFB8 /* AboutView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -506,6 +514,7 @@
 				EC86C68C107A8E4D00CF68F3 /* intro-1.png in Resources */,
 				EC86C68D107A8E4D00CF68F3 /* intro-2.png in Resources */,
 				EC86C68E107A8E4D00CF68F3 /* intro-3.png in Resources */,
+				ECBB4A12107BD303009BDFB8 /* logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +551,7 @@
 				EC180A271024E9E7004CEFFF /* HelpView.m in Sources */,
 				EC86C639107A44DC00CF68F3 /* IntroViewController.m in Sources */,
 				EC86C679107A80F000CF68F3 /* IntroView.m in Sources */,
+				ECBB4A0F107BD130009BDFB8 /* AboutView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -55,7 +55,7 @@
 	} else {
 		[quickEntryButton setEnabled:NO];
 	}
-	
+
 	if (helpView != nil) {
 		[helpView removeFromSuperview];
 		[helpView release];
@@ -79,9 +79,8 @@
 		[defaults setBool:YES forKey:@"tutorialCompleted"];
 		[self displayTutorial:3];
 	}
-	
+
 	if ([defaults boolForKey:@"firstLaunch"] == NO) {
-		[defaults setBool:YES forKey:@"firstLaunch"];
 		[self showIntro];
 	}
 }
@@ -227,9 +226,15 @@
 
 
 - (IBAction)showIntro {
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	IntroViewController *controller = [[IntroViewController alloc] initWithNibName:@"IntroView" bundle:nil];
 	
 	[controller setDelegate:self];
+
+	if ([defaults boolForKey:@"firstLaunch"] == NO) {
+		[defaults setBool:YES forKey:@"firstLaunch"];
+		[controller setShowIntro:YES];
+	}
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
 	

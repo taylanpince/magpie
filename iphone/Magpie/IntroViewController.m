@@ -8,11 +8,12 @@
 
 #import "IntroViewController.h"
 #import "IntroView.h"
+#import "AboutView.h"
 
 
 @implementation IntroViewController
 
-@synthesize scrollView, pageControl, delegate;
+@synthesize scrollView, pageControl, showIntro, delegate;
 
 - (void)viewDidLoad {
 	[scrollView setBackgroundColor:[UIColor whiteColor]];
@@ -21,9 +22,16 @@
 	[scrollView setShowsHorizontalScrollIndicator:NO];
 	[scrollView setScrollsToTop:NO];
 	[scrollView setDelegate:self];
-	[scrollView setContentSize:CGSizeMake(320 * 3, 440)];
+	[scrollView setContentSize:CGSizeMake(320 * 4, 440)];
 	
-	for (NSUInteger i = 0; i < 3; i++) {
+	AboutView *aboutView = [[AboutView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 440.0)];
+	
+	[aboutView setDelegate:self];
+	[scrollView addSubview:aboutView];
+	
+	[aboutView release];
+	
+	for (NSUInteger i = 1; i < 4; i++) {
 		IntroView *introView = [[IntroView alloc] initWithFrame:CGRectMake(320.0 * i, 0.0, 320.0, 440.0)];
 		
 		[introView setType:i];
@@ -32,6 +40,13 @@
 		[scrollView addSubview:introView];
 		
 		[introView release];
+	}
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+	if (showIntro == YES) {
+		[pageControl setCurrentPage:1];
 	}
 }
 
@@ -73,6 +88,21 @@
 
 - (void)didTapIntroView:(IntroView *)introView {
 	[delegate didCloseIntroView];
+}
+
+
+- (void)didTapAboutView:(AboutView *)aboutView {
+	[delegate didCloseIntroView];
+}
+
+
+- (void)didTapCompanyLink:(AboutView *)aboutView {
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://hippofoundry.com"]];
+}
+
+
+- (void)didTapCompanyEmail:(AboutView *)aboutView {
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:support@hippofoundry.com"]];
 }
 
 
