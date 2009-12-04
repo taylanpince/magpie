@@ -6,13 +6,18 @@
 //  Copyright Taylan Pince 2009. All rights reserved.
 //
 
+#import "MagpieAppDelegate.h"
 #import "MainViewController.h"
 #import "FlipsideViewController.h"
 #import "EditDataEntryViewController.h"
-
+#import "IntroViewController.h"
+#import "DataPanel.h"
+#import "DataSet.h"
+#import "DataItem.h"
+#import "DataEntry.h"
+#import "DataPanel.h"
 #import "PanelView.h"
 #import "HelpView.h"
-
 #import "Display.h"
 #import "Category.h"
 #import "Item.h"
@@ -34,7 +39,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	[scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Default.png"]]];
+	[scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]]];
 	
 	[self refreshDisplays];
 	
@@ -49,7 +54,7 @@
 	} else {
 		[quickEntryButton setEnabled:NO];
 	}
-	
+
 	if (helpView != nil) {
 		[helpView removeFromSuperview];
 		[helpView release];
@@ -72,11 +77,9 @@
 		[defaults setBool:YES forKey:@"tutorialCompleted"];
 		[self displayTutorial:3];
 	}
-	
-	if ([displays count] > 0) {
-		[scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]]];
-	} else {
-		[scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-logo.png"]]];
+
+	if ([defaults boolForKey:@"firstLaunch"] == NO) {
+		[self showIntro];
 	}
 }
 
@@ -139,17 +142,17 @@
 - (void)displayTutorial:(NSUInteger)step {
 	switch (step) {
 		case 1:
-			helpView = [[HelpView alloc] initWithFrame:CGRectMake(0.0, 335.0, 250.0, 120.0)];
+			helpView = [[HelpView alloc] initWithFrame:CGRectMake(0.0, 355.0, 250.0, 100.0)];
 			
 			[helpView setAlpha:0.0];
-			[helpView setHelpText:@"Welcome to Magpie!\nYou don't seem to have any Displays setup yet. Tap on the gear icon below to start."];
+			[helpView setHelpText:@"You don't seem to have any Displays setup yet. Tap on the gear icon below to start."];
 			[helpView setHelpBubbleCorner:4];
 			
 			[self.view addSubview:helpView];
 			
 			[UIView beginAnimations:@"fadeInHelp" context:NULL];
 			[helpView setAlpha:1.0];
-			[helpView setFrame:CGRectMake(0.0, 295.0, 250.0, 120.0)];
+			[helpView setFrame:CGRectMake(0.0, 325.0, 250.0, 100.0)];
 			[UIView commitAnimations];
 			break;
 		case 2:
@@ -194,6 +197,12 @@
 }
 
 
+- (void)didCloseIntroView {
+	[self dismissModalViewControllerAnimated:YES];
+	[self reloadPanels];
+}
+
+
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
 	[self dismissModalViewControllerAnimated:YES];
 	[self refreshDisplays];
@@ -228,6 +237,28 @@
 	}
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+	
+	[self presentModalViewController:navController animated:YES];
+	
+	[controller release];
+	[navController release];
+}
+
+
+- (IBAction)showIntro {
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	IntroViewController *controller = [[IntroViewController alloc] initWithNibName:@"IntroView" bundle:nil];
+	
+	[controller setDelegate:self];
+
+	if ([defaults boolForKey:@"firstLaunch"] == NO) {
+		[defaults setBool:YES forKey:@"firstLaunch"];
+		[controller setShowIntro:YES];
+	}
+	
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+	
+	[navController setNavigationBarHidden:YES];
 	
 	[self presentModalViewController:navController animated:YES];
 	

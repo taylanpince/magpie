@@ -8,14 +8,12 @@
 
 #import "FlipsideViewController.h"
 #import "EditDataEntryViewController.h"
+#import "IntroViewController.h"
 
 @class HelpView;
 
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, EditDataEntryViewControllerDelegate> {
-	NSMutableArray *displays;
-	NSManagedObjectContext *context;
-	
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, EditDataEntryViewControllerDelegate, IntroViewControllerDelegate> {
 	IBOutlet UIScrollView *scrollView;
 	IBOutlet UIBarButtonItem *quickEntryButton;
 	
@@ -32,5 +30,6 @@
 
 - (IBAction)showSettings;
 - (IBAction)showQuickAdd;
+- (IBAction)showIntro;
 
 @end
