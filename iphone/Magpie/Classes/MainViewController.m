@@ -3,75 +3,70 @@
 //  Magpie
 //
 //  Created by Taylan Pince on 29/05/09.
-//  Copyright Taylan Pince 2009. All rights reserved.
+//  Copyright Hippo Foundry 2009. All rights reserved.
 //
 
-#import "MagpieAppDelegate.h"
 #import "MainViewController.h"
 #import "FlipsideViewController.h"
 #import "EditDataEntryViewController.h"
 #import "IntroViewController.h"
-#import "DataPanel.h"
-#import "DataSet.h"
-#import "DataItem.h"
-#import "DataEntry.h"
-#import "DataPanel.h"
 #import "PanelView.h"
 #import "HelpView.h"
 #import "Display.h"
-#import "Category.h"
-#import "Item.h"
-#import "Entry.h"
 
 
 @interface MainViewController (PrivateMethods)
-- (void)refreshDisplays;
+//- (void)refreshDisplays;
 - (void)hideTutorial;
 - (void)displayTutorial:(NSUInteger)step;
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
 
 @implementation MainViewController
 
-@synthesize scrollView, quickEntryButton, helpView, displays, context;
-
+@synthesize tableView, quickEntryButton, helpView;
+@synthesize managedObjectContext, fetchedResultsController;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	[scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]]];
-	
-	[self refreshDisplays];
+	[tableView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]]];
 	
 	helpView = nil;
+	
+	NSError *error;
+	
+	if (![[self fetchedResultsController] performFetch:&error]) {
+		// TODO: Handle the error
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		exit(-1);
+	}
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-
-	if ([displays count] > 0) {
-		[quickEntryButton setEnabled:YES];
-	} else {
-		[quickEntryButton setEnabled:NO];
-	}
-
+	
+	[quickEntryButton setEnabled:([[fetchedResultsController fetchedObjects] count] > 0)];
+	
 	if (helpView != nil) {
 		[helpView removeFromSuperview];
 		[helpView release];
 		
 		helpView = nil;
 	}
+	
+	[tableView reloadData];
 }
-
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	
-	if ([displays count] == 0) {
+	if ([[fetchedResultsController fetchedObjects] count] == 0) {
 		[self displayTutorial:1];
-	} else if ([displays count] == 1 && [[[displays objectAtIndex:0] category] total] == 0.0) {
+	} else if ([[fetchedResultsController fetchedObjects] count] == 1/*TODO: Make sure this works && [[[[fetchedResultsController fetchedObjects] objectAtIndex:0] category] total] == 0.0*/) {
 		[self displayTutorial:2];
 	} else if ([defaults boolForKey:@"tutorialCompleted"] == NO) {
 		[defaults setBool:YES forKey:@"tutorialCompleted"];
@@ -83,32 +78,8 @@
 	}
 }
 
-
-- (void)refreshDisplays {
-	NSFetchRequest *request = [[NSFetchRequest alloc] init];
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Display" inManagedObjectContext:context];
-	
-	[request setEntity:entity];
-	
-	NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"weight" ascending:NO];
-	NSArray *sorters = [[NSArray alloc] initWithObjects:sorter, nil];
-	
-	[request setSortDescriptors:sorters];
-	
-	NSError *error;
-	NSMutableArray *results = [[context executeFetchRequest:request error:&error] mutableCopy];
-	
-	if (results == nil) {
-		// Handle errors here
-	}
-	
-	[self setDisplays:results];
-	
-	[sorter release];
-	[sorters release];
-	[results release];
-	[request release];
-	
+// DEPRECATED
+/*- (void)refreshDisplays {
 	for (UIView *view in [scrollView subviews]) {
 		if ([view isKindOfClass:[PanelView class]]) {
 			[view removeFromSuperview];
@@ -129,15 +100,42 @@
 	}
 	
 	scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, top.y);
+}*/
+// END DEPRECATED
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [[fetchedResultsController sections] count];
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	return [[[fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
+	[self configureCell:cell atIndexPath:indexPath];
+	
+    return cell;
+}
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+	Display *display = [fetchedResultsController objectAtIndexPath:indexPath];
+	
+	cell.textLabel.text = display.name;
+}
 
 - (void)hideTutorial {
 	[UIView beginAnimations:@"fadeOutHelp" context:NULL];
 	[helpView setAlpha:0.0];
 	[UIView commitAnimations];
 }
-
 
 - (void)displayTutorial:(NSUInteger)step {
 	switch (step) {
@@ -190,29 +188,26 @@
 	}
 }
 
-
 - (void)didCloseEditDataEntryView {
 	[self dismissModalViewControllerAnimated:YES];
-	[self refreshDisplays];
+	[tableView reloadData];
 }
-
 
 - (void)didCloseIntroView {
 	[self dismissModalViewControllerAnimated:YES];
-	[self reloadPanels];
+	[tableView reloadData];
 }
-
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
 	[self dismissModalViewControllerAnimated:YES];
-	[self refreshDisplays];
+	[tableView reloadData];
 }
-
 
 - (IBAction)showSettings {
 	FlipsideViewController *controller = [[FlipsideViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	
 	[controller setDelegate:self];
+	[controller setManagedObjectContext:managedObjectContext];
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
 	
@@ -222,19 +217,20 @@
 	[navController release];
 }
 
-
 - (IBAction)showQuickAdd {
 	EditDataEntryViewController *controller = [[EditDataEntryViewController alloc] initWithNibName:@"DataEntryView" bundle:nil];
 	
 	[controller setDelegate:self];
-	[controller setEntry:(Entry *)[NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:context]];
+	// DEPRECATED
+	/*[controller setEntry:(Entry *)[NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:context]];
 	
 	for (PanelView *view in scrollView.subviews) {
 		if ([view isKindOfClass:[PanelView class]] && view.frame.origin.y > scrollView.contentOffset.y && view.frame.origin.y < scrollView.contentOffset.y + scrollView.contentSize.height) {
 			[controller setItem:[view.display.category.items objectAtIndex:0]];
 			break;
 		}
-	}
+	}*/
+	// END DEPRECATED
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
 	
@@ -243,7 +239,6 @@
 	[controller release];
 	[navController release];
 }
-
 
 - (IBAction)showIntro {
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -266,24 +261,50 @@
 	[navController release];
 }
 
+- (NSFetchedResultsController *)fetchedResultsController {
+	if (fetchedResultsController != nil) {
+		return fetchedResultsController;
+	}
+	
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Display" inManagedObjectContext:managedObjectContext];
+	
+	[request setEntity:entity];
+	
+	NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"weight" ascending:NO];
+	NSArray *sorters = [[NSArray alloc] initWithObjects:sorter, nil];
+	
+	[request setSortDescriptors:sorters];
+	
+	NSFetchedResultsController *controller = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:@"Root"];
+	
+	self.fetchedResultsController = controller;
+	
+	[sorter release];
+	[sorters release];
+	[request release];
+	[controller release];
+	
+	return fetchedResultsController;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+	
+	self.fetchedResultsController = nil;
 }
 
-
 - (void)dealloc {
-	[context release];
-	[displays release];
+	[managedObjectContext release];
+	[fetchedResultsController release];
 	
 	if (helpView != nil) {
 		[helpView release];
 	}
 	
-	[scrollView release];
+	[tableView release];
 	[quickEntryButton release];
     [super dealloc];
 }
-
 
 @end

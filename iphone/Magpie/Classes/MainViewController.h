@@ -3,7 +3,7 @@
 //  Magpie
 //
 //  Created by Taylan Pince on 29/05/09.
-//  Copyright Taylan Pince 2009. All rights reserved.
+//  Copyright Hippo Foundry 2009. All rights reserved.
 //
 
 #import "FlipsideViewController.h"
@@ -12,21 +12,23 @@
 
 @class HelpView;
 
-
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, EditDataEntryViewControllerDelegate, IntroViewControllerDelegate> {
-	IBOutlet UIScrollView *scrollView;
+@interface MainViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, FlipsideViewControllerDelegate, EditDataEntryViewControllerDelegate, IntroViewControllerDelegate> {
+	IBOutlet UITableView *tableView;
 	IBOutlet UIBarButtonItem *quickEntryButton;
 	
 	HelpView *helpView;
+	
+	NSFetchedResultsController *fetchedResultsController;
+	NSManagedObjectContext *managedObjectContext;
 }
 
-@property (nonatomic, retain) NSMutableArray *displays;
-@property (nonatomic, retain) NSManagedObjectContext *context;
-
-@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *quickEntryButton;
 
 @property (nonatomic, retain) HelpView *helpView;
+
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 - (IBAction)showSettings;
 - (IBAction)showQuickAdd;

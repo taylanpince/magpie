@@ -3,19 +3,16 @@
 //  Magpie
 //
 //  Created by Taylan Pince on 29/05/09.
-//  Copyright Taylan Pince 2009. All rights reserved.
+//  Copyright Hippo Foundry 2009. All rights reserved.
 //
 
-@class DataSet, DataPanel, MainViewController;
+@class MainViewController;
 
 @interface MagpieAppDelegate : NSObject <UIApplicationDelegate> {
     NSManagedObjectModel *managedObjectModel;
     NSManagedObjectContext *managedObjectContext;	    
     NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-	NSMutableArray *dataSets;
-	NSMutableArray *dataPanels;
-	
     UIWindow *window;
     MainViewController *mainViewController;
 }
@@ -30,11 +27,7 @@
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) MainViewController *mainViewController;
 
-- (void)removeDataSet:(DataSet *)dataSet;
-- (void)addDataSet:(DataSet *)dataSet;
-- (void)removeDataPanel:(DataPanel *)dataPanel;
-- (void)addDataPanel:(DataPanel *)dataPanel;
-- (void)reorderDataPanels;
+- (NSString *)applicationDocumentsDirectory;
 
 @end
 

@@ -3,23 +3,31 @@
 //  Magpie
 //
 //  Created by Taylan Pince on 29/05/09.
-//  Copyright Taylan Pince 2009. All rights reserved.
+//  Copyright Hippo Foundry 2009. All rights reserved.
 //
 
-@protocol FlipsideViewControllerDelegate;
 @class HelpView;
+@protocol FlipsideViewControllerDelegate;
 
-
-@interface FlipsideViewController : UITableViewController {
+@interface FlipsideViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
+	NSFetchedResultsController *displaysFetchedResultsController;
+	NSFetchedResultsController *categoriesFetchedResultsController;
+	NSManagedObjectContext *managedObjectContext;
+	
 	id <FlipsideViewControllerDelegate> delegate;
+	
 	HelpView *helpView;
 }
 
+@property (nonatomic, retain) NSFetchedResultsController *displaysFetchedResultsController;
+@property (nonatomic, retain) NSFetchedResultsController *categoriesFetchedResultsController;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+
 @property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
+
 @property (nonatomic, retain) HelpView *helpView;
 
 @end
-
 
 @protocol FlipsideViewControllerDelegate
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller;

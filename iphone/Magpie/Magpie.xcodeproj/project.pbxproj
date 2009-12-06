@@ -30,12 +30,6 @@
 		EC799DBF1077F77A00A1ADF1 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = EC799DBE1077F77A00A1ADF1 /* iTunesArtwork */; };
 		EC7F4B260FFD229F006612C6 /* SubScreenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7F4B250FFD229F006612C6 /* SubScreenTableViewCell.m */; };
 		EC7F4B410FFD268D006612C6 /* bg-sub-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7F4B400FFD268D006612C6 /* bg-sub-screen.png */; };
-		EC9D93C11077D9D700A06171 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9D93C01077D9D700A06171 /* CoreData.framework */; };
-		EC9D94881077DA1600A06171 /* Magpie.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = EC9D94871077DA1600A06171 /* Magpie.xcdatamodel */; };
-		EC9D94A41077E7E600A06171 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D949D1077E7E600A06171 /* Item.m */; };
-		EC9D94A51077E7E600A06171 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D949F1077E7E600A06171 /* Entry.m */; };
-		EC9D94A61077E7E600A06171 /* Display.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D94A11077E7E600A06171 /* Display.m */; };
-		EC9D94A71077E7E600A06171 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D94A31077E7E600A06171 /* Category.m */; };
 		EC86C623107A438300CF68F3 /* logo-toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = EC86C622107A438300CF68F3 /* logo-toolbar.png */; };
 		EC86C639107A44DC00CF68F3 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC86C638107A44DC00CF68F3 /* IntroViewController.m */; };
 		EC86C63B107A45BB00CF68F3 /* IntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC86C63A107A45BB00CF68F3 /* IntroView.xib */; };
@@ -43,6 +37,12 @@
 		EC86C68C107A8E4D00CF68F3 /* intro-1.png in Resources */ = {isa = PBXBuildFile; fileRef = EC86C689107A8E4D00CF68F3 /* intro-1.png */; };
 		EC86C68D107A8E4D00CF68F3 /* intro-2.png in Resources */ = {isa = PBXBuildFile; fileRef = EC86C68A107A8E4D00CF68F3 /* intro-2.png */; };
 		EC86C68E107A8E4D00CF68F3 /* intro-3.png in Resources */ = {isa = PBXBuildFile; fileRef = EC86C68B107A8E4D00CF68F3 /* intro-3.png */; };
+		EC9D93C11077D9D700A06171 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9D93C01077D9D700A06171 /* CoreData.framework */; };
+		EC9D94881077DA1600A06171 /* Magpie.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = EC9D94871077DA1600A06171 /* Magpie.xcdatamodel */; };
+		EC9D94A41077E7E600A06171 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D949D1077E7E600A06171 /* Item.m */; };
+		EC9D94A51077E7E600A06171 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D949F1077E7E600A06171 /* Entry.m */; };
+		EC9D94A61077E7E600A06171 /* Display.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D94A11077E7E600A06171 /* Display.m */; };
+		EC9D94A71077E7E600A06171 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9D94A31077E7E600A06171 /* Category.m */; };
 		ECAE8CA2107291390047273C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = ECAE8CA1107291390047273C /* Default.png */; };
 		ECB752C50FF16CAD007CCBCB /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB752C40FF16CAD007CCBCB /* bg.png */; };
 		ECBB4A0F107BD130009BDFB8 /* AboutView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBB4A0E107BD130009BDFB8 /* AboutView.m */; };
@@ -130,6 +130,15 @@
 		EC7F4B240FFD229F006612C6 /* SubScreenTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubScreenTableViewCell.h; sourceTree = "<group>"; };
 		EC7F4B250FFD229F006612C6 /* SubScreenTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubScreenTableViewCell.m; sourceTree = "<group>"; };
 		EC7F4B400FFD268D006612C6 /* bg-sub-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-sub-screen.png"; sourceTree = "<group>"; };
+		EC86C622107A438300CF68F3 /* logo-toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-toolbar.png"; sourceTree = "<group>"; };
+		EC86C637107A44DC00CF68F3 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
+		EC86C638107A44DC00CF68F3 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
+		EC86C63A107A45BB00CF68F3 /* IntroView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntroView.xib; sourceTree = "<group>"; };
+		EC86C677107A80F000CF68F3 /* IntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroView.h; sourceTree = "<group>"; };
+		EC86C678107A80F000CF68F3 /* IntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroView.m; sourceTree = "<group>"; };
+		EC86C689107A8E4D00CF68F3 /* intro-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro-1.png"; sourceTree = "<group>"; };
+		EC86C68A107A8E4D00CF68F3 /* intro-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro-2.png"; sourceTree = "<group>"; };
+		EC86C68B107A8E4D00CF68F3 /* intro-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro-3.png"; sourceTree = "<group>"; };
 		EC9D93C01077D9D700A06171 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		EC9D94871077DA1600A06171 /* Magpie.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Magpie.xcdatamodel; sourceTree = "<group>"; };
 		EC9D949C1077E7E600A06171 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
@@ -140,15 +149,6 @@
 		EC9D94A11077E7E600A06171 /* Display.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Display.m; sourceTree = "<group>"; };
 		EC9D94A21077E7E600A06171 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
 		EC9D94A31077E7E600A06171 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
-		EC86C622107A438300CF68F3 /* logo-toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-toolbar.png"; sourceTree = "<group>"; };
-		EC86C637107A44DC00CF68F3 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
-		EC86C638107A44DC00CF68F3 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
-		EC86C63A107A45BB00CF68F3 /* IntroView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntroView.xib; sourceTree = "<group>"; };
-		EC86C677107A80F000CF68F3 /* IntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroView.h; sourceTree = "<group>"; };
-		EC86C678107A80F000CF68F3 /* IntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroView.m; sourceTree = "<group>"; };
-		EC86C689107A8E4D00CF68F3 /* intro-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro-1.png"; sourceTree = "<group>"; };
-		EC86C68A107A8E4D00CF68F3 /* intro-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro-2.png"; sourceTree = "<group>"; };
-		EC86C68B107A8E4D00CF68F3 /* intro-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro-3.png"; sourceTree = "<group>"; };
 		ECAE8CA1107291390047273C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		ECB752C40FF16CAD007CCBCB /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		ECBB4A0D107BD130009BDFB8 /* AboutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutView.h; sourceTree = "<group>"; };
@@ -366,6 +366,16 @@
 			name = "Table View Cells";
 			sourceTree = "<group>";
 		};
+		EC86C688107A8E4D00CF68F3 /* intro */ = {
+			isa = PBXGroup;
+			children = (
+				EC86C689107A8E4D00CF68F3 /* intro-1.png */,
+				EC86C68A107A8E4D00CF68F3 /* intro-2.png */,
+				EC86C68B107A8E4D00CF68F3 /* intro-3.png */,
+			);
+			path = intro;
+			sourceTree = "<group>";
+		};
 		EC9D94891077DA4000A06171 /* CoreData Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,16 +389,6 @@
 				EC9D94A31077E7E600A06171 /* Category.m */,
 			);
 			name = "CoreData Models";
-			sourceTree = "<group>";
-		};
-		EC86C688107A8E4D00CF68F3 /* intro */ = {
-			isa = PBXGroup;
-			children = (
-				EC86C689107A8E4D00CF68F3 /* intro-1.png */,
-				EC86C68A107A8E4D00CF68F3 /* intro-2.png */,
-				EC86C68B107A8E4D00CF68F3 /* intro-3.png */,
-			);
-			path = intro;
 			sourceTree = "<group>";
 		};
 		ECDAE1450FFAAB1700ABD2BC /* keypad */ = {

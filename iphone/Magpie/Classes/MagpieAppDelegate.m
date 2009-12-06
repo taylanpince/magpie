@@ -16,21 +16,21 @@
 
 @implementation MagpieAppDelegate
 
-@synthesize window, mainViewController, dataSets, dataPanels;
+@synthesize window, mainViewController, managedObjectContext, managedObjectModel, persistentStoreCoordinator;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
 	NSManagedObjectContext *context = [self managedObjectContext];
 	
 	if (!context) {
-		// Handle errors here
+		// TODO: Handle errors here
 	}
 	
 	MainViewController *controller = [[MainViewController alloc] initWithNibName:@"MainView" bundle:nil];
 
 	[self setMainViewController:controller];
 
-	[mainViewController setContext:context];
-	[[[mainViewController view] setFrame:[[UIScreen mainScreen] applicationFrame]]];
+	[mainViewController setManagedObjectContext:context];
+	[mainViewController.view setFrame:[[UIScreen mainScreen] applicationFrame]];
 	
 	[window addSubview:[mainViewController view]];
     [window makeKeyAndVisible];
@@ -44,7 +44,7 @@
 	
     if (managedObjectContext != nil) {
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-			// Handle errors here
+			// TODO: Handle errors here
 			NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 			abort();
         } 
@@ -90,7 +90,7 @@
     persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     
 	if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) {
-		// Handle errors here
+		// TODO: Handle errors here
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		abort();
     }    
@@ -104,7 +104,8 @@
 }
 
 
-- (void)removeDataSet:(DataSet *)dataSet {
+// ALL OF THIS IS DEPRECATED
+/*- (void)removeDataSet:(DataSet *)dataSet {
     [dataSet deleteFromDatabase];
     [dataSets removeObject:dataSet];
 }
@@ -137,17 +138,14 @@
 		dataPanel.weight = [NSNumber numberWithInt:order];
 		order++;
 	}
-}
-
+}*/
+// UNTIL HERE
 
 - (void)dealloc {
     [managedObjectContext release];
     [managedObjectModel release];
     [persistentStoreCoordinator release];
 
-	[dataSets release];
-	[dataPanels release];
-    
 	[mainViewController release];
     [window release];
 	
