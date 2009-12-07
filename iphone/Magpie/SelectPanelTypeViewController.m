@@ -64,15 +64,14 @@
     }
     
 	if ([[panelTypes objectAtIndex:indexPath.row] isEqualToString:panelType]) {
-		cell.accessoryType = UITableViewCellAccessoryCheckmark;
+		[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
 	} else {
-		cell.accessoryType = UITableViewCellAccessoryNone;
+		[cell setAccessoryType:UITableViewCellAccessoryNone];
 	}
-
 	
-	cell.mainLabel = [panelTypes objectAtIndex:indexPath.row];
-	cell.subLabel = @"";
-	cell.iconType = [panelTypes objectAtIndex:indexPath.row];
+	[cell setMainLabel:[panelTypes objectAtIndex:indexPath.row]];
+	[cell setSubLabel:@""];
+	[cell setIconType:[panelTypes objectAtIndex:indexPath.row]];
 	
     return cell;
 }

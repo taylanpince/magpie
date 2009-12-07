@@ -17,14 +17,14 @@
 		289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */; };
 		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
 		EC180A271024E9E7004CEFFF /* HelpView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC180A261024E9E7004CEFFF /* HelpView.m */; };
-		EC341D9D0FD5AAE40003212C /* DataEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC341D9C0FD5AAE40003212C /* DataEntryViewController.m */; };
+		EC341D9D0FD5AAE40003212C /* EntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC341D9C0FD5AAE40003212C /* EntryViewController.m */; };
 		EC341E540FD5C9EE0003212C /* EditDataEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */; };
 		EC341E550FD5C9EE0003212C /* DataEntryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC341E530FD5C9EE0003212C /* DataEntryView.xib */; };
 		EC62D18F0FFD09DD00D9191C /* ScreenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC62D18E0FFD09DD00D9191C /* ScreenTableViewCell.m */; };
 		EC62D1950FFD0AB400D9191C /* bg-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = EC62D1940FFD0AB400D9191C /* bg-screen.png */; };
 		EC6EB8150FD197B600E6F9D8 /* DataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB8110FD197B600E6F9D8 /* DataSet.m */; };
 		EC6EB8E20FD1B81E00E6F9D8 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB8E10FD1B81E00E6F9D8 /* EditableTableViewCell.m */; };
-		EC6EB9560FD1CFDC00E6F9D8 /* DataSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */; };
+		EC6EB9560FD1CFDC00E6F9D8 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EB9550FD1CFDC00E6F9D8 /* CategoryViewController.m */; };
 		EC6EB9B20FD1D86400E6F9D8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6EB9B10FD1D86400E6F9D8 /* Icon.png */; };
 		EC799DB01077F48D00A1ADF1 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC799DAF1077F48D00A1ADF1 /* Entitlements.plist */; };
 		EC799DBF1077F77A00A1ADF1 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = EC799DBE1077F77A00A1ADF1 /* iTunesArtwork */; };
@@ -81,8 +81,8 @@
 		ECDB5B7A0FF3291100FC52FA /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = ECDB5B790FF3291100FC52FA /* gear.png */; };
 		ECE93A960FD8D48D006BA407 /* KeyPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE93A950FD8D48D006BA407 /* KeyPadViewController.m */; };
 		ECE93A980FD8D5A6006BA407 /* KeyPadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECE93A970FD8D5A6006BA407 /* KeyPadView.xib */; };
-		ECFB00510FD46F6600EEE684 /* DataPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */; };
-		ECFB00B80FD4830300EEE684 /* SelectDataSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */; };
+		ECFB00510FD46F6600EEE684 /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB00500FD46F6600EEE684 /* DisplayViewController.m */; };
+		ECFB00B80FD4830300EEE684 /* SelectCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB00B70FD4830300EEE684 /* SelectCategoryViewController.m */; };
 		ECFB01450FD48F3B00EEE684 /* SelectPanelTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */; };
 		ECFB01650FD49CE000EEE684 /* SelectableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB01640FD49CE000EEE684 /* SelectableTableViewCell.m */; };
 		ECFB01E90FD4AD3900EEE684 /* InfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB01E80FD4AD3900EEE684 /* InfoTableViewCell.m */; };
@@ -110,8 +110,8 @@
 		8D1107310486CEB800E47090 /* Magpie-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Magpie-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		EC180A251024E9E7004CEFFF /* HelpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpView.h; sourceTree = "<group>"; };
 		EC180A261024E9E7004CEFFF /* HelpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpView.m; sourceTree = "<group>"; };
-		EC341D9B0FD5AAE40003212C /* DataEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataEntryViewController.h; sourceTree = "<group>"; };
-		EC341D9C0FD5AAE40003212C /* DataEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEntryViewController.m; sourceTree = "<group>"; };
+		EC341D9B0FD5AAE40003212C /* EntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryViewController.h; sourceTree = "<group>"; };
+		EC341D9C0FD5AAE40003212C /* EntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryViewController.m; sourceTree = "<group>"; };
 		EC341E510FD5C9EE0003212C /* EditDataEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDataEntryViewController.h; sourceTree = "<group>"; };
 		EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditDataEntryViewController.m; sourceTree = "<group>"; };
 		EC341E530FD5C9EE0003212C /* DataEntryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataEntryView.xib; sourceTree = "<group>"; };
@@ -122,8 +122,8 @@
 		EC6EB8110FD197B600E6F9D8 /* DataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSet.m; sourceTree = "<group>"; };
 		EC6EB8E00FD1B81E00E6F9D8 /* EditableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTableViewCell.h; sourceTree = "<group>"; };
 		EC6EB8E10FD1B81E00E6F9D8 /* EditableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableTableViewCell.m; sourceTree = "<group>"; };
-		EC6EB9540FD1CFDC00E6F9D8 /* DataSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSetViewController.h; sourceTree = "<group>"; };
-		EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSetViewController.m; sourceTree = "<group>"; };
+		EC6EB9540FD1CFDC00E6F9D8 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
+		EC6EB9550FD1CFDC00E6F9D8 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		EC6EB9B10FD1D86400E6F9D8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		EC799DAF1077F48D00A1ADF1 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		EC799DBE1077F77A00A1ADF1 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
@@ -191,10 +191,10 @@
 		ECE93A940FD8D48D006BA407 /* KeyPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyPadViewController.h; sourceTree = "<group>"; };
 		ECE93A950FD8D48D006BA407 /* KeyPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyPadViewController.m; sourceTree = "<group>"; };
 		ECE93A970FD8D5A6006BA407 /* KeyPadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyPadView.xib; sourceTree = "<group>"; };
-		ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPanelViewController.h; sourceTree = "<group>"; };
-		ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPanelViewController.m; sourceTree = "<group>"; };
-		ECFB00B60FD4830300EEE684 /* SelectDataSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectDataSetViewController.h; sourceTree = "<group>"; };
-		ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectDataSetViewController.m; sourceTree = "<group>"; };
+		ECFB004F0FD46F6600EEE684 /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
+		ECFB00500FD46F6600EEE684 /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
+		ECFB00B60FD4830300EEE684 /* SelectCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCategoryViewController.h; sourceTree = "<group>"; };
+		ECFB00B70FD4830300EEE684 /* SelectCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCategoryViewController.m; sourceTree = "<group>"; };
 		ECFB01430FD48F3B00EEE684 /* SelectPanelTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPanelTypeViewController.h; sourceTree = "<group>"; };
 		ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPanelTypeViewController.m; sourceTree = "<group>"; };
 		ECFB01630FD49CE000EEE684 /* SelectableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectableTableViewCell.h; sourceTree = "<group>"; };
@@ -305,6 +305,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EC18AA6610CCCF5E00A79573 /* Category Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EC6EB9540FD1CFDC00E6F9D8 /* CategoryViewController.h */,
+				EC6EB9550FD1CFDC00E6F9D8 /* CategoryViewController.m */,
+				EC341D9B0FD5AAE40003212C /* EntryViewController.h */,
+				EC341D9C0FD5AAE40003212C /* EntryViewController.m */,
+				EC341E510FD5C9EE0003212C /* EditDataEntryViewController.h */,
+				EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */,
+				ECE93A940FD8D48D006BA407 /* KeyPadViewController.h */,
+				ECE93A950FD8D48D006BA407 /* KeyPadViewController.m */,
+			);
+			name = "Category Controllers";
+			sourceTree = "<group>";
+		};
+		EC18AA6710CCCF6A00A79573 /* Display Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ECFB004F0FD46F6600EEE684 /* DisplayViewController.h */,
+				ECFB00500FD46F6600EEE684 /* DisplayViewController.m */,
+				ECFB00B60FD4830300EEE684 /* SelectCategoryViewController.h */,
+				ECFB00B70FD4830300EEE684 /* SelectCategoryViewController.m */,
+				ECFB01430FD48F3B00EEE684 /* SelectPanelTypeViewController.h */,
+				ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */,
+				ECC882630FF91A5E0092B227 /* SelectPanelColorViewController.h */,
+				ECC882640FF91A5E0092B227 /* SelectPanelColorViewController.m */,
+			);
+			name = "Display Controllers";
+			sourceTree = "<group>";
+		};
 		EC6EB7CE0FD196DA00E6F9D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,24 +357,10 @@
 				289233A90DB2D0DB0083E9F9 /* MainViewController.m */,
 				289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */,
 				289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */,
-				EC6EB9540FD1CFDC00E6F9D8 /* DataSetViewController.h */,
-				EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */,
-				ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */,
-				ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */,
-				ECFB00B60FD4830300EEE684 /* SelectDataSetViewController.h */,
-				ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */,
-				ECFB01430FD48F3B00EEE684 /* SelectPanelTypeViewController.h */,
-				ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */,
-				ECC882630FF91A5E0092B227 /* SelectPanelColorViewController.h */,
-				ECC882640FF91A5E0092B227 /* SelectPanelColorViewController.m */,
-				EC341D9B0FD5AAE40003212C /* DataEntryViewController.h */,
-				EC341D9C0FD5AAE40003212C /* DataEntryViewController.m */,
-				EC341E510FD5C9EE0003212C /* EditDataEntryViewController.h */,
-				EC341E520FD5C9EE0003212C /* EditDataEntryViewController.m */,
-				ECE93A940FD8D48D006BA407 /* KeyPadViewController.h */,
-				ECE93A950FD8D48D006BA407 /* KeyPadViewController.m */,
 				EC86C637107A44DC00CF68F3 /* IntroViewController.h */,
 				EC86C638107A44DC00CF68F3 /* IntroViewController.m */,
+				EC18AA6710CCCF6A00A79573 /* Display Controllers */,
+				EC18AA6610CCCF5E00A79573 /* Category Controllers */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -558,17 +574,17 @@
 				289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */,
 				EC6EB8150FD197B600E6F9D8 /* DataSet.m in Sources */,
 				EC6EB8E20FD1B81E00E6F9D8 /* EditableTableViewCell.m in Sources */,
-				EC6EB9560FD1CFDC00E6F9D8 /* DataSetViewController.m in Sources */,
+				EC6EB9560FD1CFDC00E6F9D8 /* CategoryViewController.m in Sources */,
 				ECFBFC420FD28B1700EEE684 /* DataItem.m in Sources */,
 				ECFBFFF50FD463F000EEE684 /* DataPanel.m in Sources */,
-				ECFB00510FD46F6600EEE684 /* DataPanelViewController.m in Sources */,
-				ECFB00B80FD4830300EEE684 /* SelectDataSetViewController.m in Sources */,
+				ECFB00510FD46F6600EEE684 /* DisplayViewController.m in Sources */,
+				ECFB00B80FD4830300EEE684 /* SelectCategoryViewController.m in Sources */,
 				ECFB01450FD48F3B00EEE684 /* SelectPanelTypeViewController.m in Sources */,
 				ECFB01650FD49CE000EEE684 /* SelectableTableViewCell.m in Sources */,
 				ECFB01E90FD4AD3900EEE684 /* InfoTableViewCell.m in Sources */,
 				ECFB033C0FD4D80100EEE684 /* PanelView.m in Sources */,
 				ECFB058A0FD57CF000EEE684 /* DataEntry.m in Sources */,
-				EC341D9D0FD5AAE40003212C /* DataEntryViewController.m in Sources */,
+				EC341D9D0FD5AAE40003212C /* EntryViewController.m in Sources */,
 				EC341E540FD5C9EE0003212C /* EditDataEntryViewController.m in Sources */,
 				ECE93A960FD8D48D006BA407 /* KeyPadViewController.m in Sources */,
 				ECC882650FF91A5E0092B227 /* SelectPanelColorViewController.m in Sources */,

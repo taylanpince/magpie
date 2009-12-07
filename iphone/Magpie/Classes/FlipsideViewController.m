@@ -7,8 +7,8 @@
 //
 
 #import "FlipsideViewController.h"
-#import "DataSetViewController.h"
-#import "DataPanelViewController.h"
+#import "CategoryViewController.h"
+#import "DisplayViewController.h"
 #import "InfoTableViewCell.h"
 #import "HelpView.h"
 #import "Category.h"
@@ -17,6 +17,7 @@
 
 @interface FlipsideViewController (PrivateMethods)
 - (NSFetchedResultsController *)generateFetchedResultsControllerForModel:(NSString *)model withSortKey:(NSString *)sortKey;
+- (void)configureCell:(InfoTableViewCell *)cell withMainLabel:(NSString *)mainLabel subLabel:(NSString *)subLabel iconType:(NSString *)iconType iconColor:(NSString *)iconColor;
 @end
 
 
@@ -113,6 +114,13 @@
 	}
 }
 
+- (void)configureCell:(InfoTableViewCell *)cell withMainLabel:(NSString *)mainLabel subLabel:(NSString *)subLabel iconType:(NSString *)iconType iconColor:(NSString *)iconColor {
+	[cell setMainLabel:mainLabel];
+	[cell setSubLabel:subLabel];
+	[cell setIconType:iconType];
+	[cell setIconColor:iconColor];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     
@@ -125,28 +133,19 @@
 	
 	if (indexPath.section == 0) {
 		if (indexPath.row == [[categoriesFetchedResultsController fetchedObjects] count]) {
-			cell.mainLabel = @"Add a new Category";
-			cell.subLabel = @"";
-			cell.iconType = @"";
+			[self configureCell:cell withMainLabel:@"Add a new Category" subLabel:@"" iconType:@"" iconColor:@""];
 		} else {
-			Category *category = [[categoriesFetchedResultsController fetchedObjects] objectAtIndex:indexPath.row];
+			Category *category = [categoriesFetchedResultsController objectAtIndexPath:indexPath];
 			
-			cell.mainLabel = category.name;
-			cell.subLabel = @"";
-			cell.iconType = @"";
+			[self configureCell:cell withMainLabel:category.name subLabel:@"" iconType:@"" iconColor:@""];
 		}
 	} else {
 		if (indexPath.row == [[displaysFetchedResultsController fetchedObjects] count]) {
-			cell.mainLabel = @"Add a new Display";
-			cell.subLabel = @"";
-			cell.iconType = @"";
+			[self configureCell:cell withMainLabel:@"Add a new Display" subLabel:@"" iconType:@"" iconColor:@""];
 		} else {
-			Display *display = [[displaysFetchedResultsController fetchedObjects] objectAtIndex:indexPath.row];
+			Display *display = [displaysFetchedResultsController objectAtIndexPath:indexPath];
 			
-			cell.mainLabel = display.name;
-			cell.subLabel = [NSString stringWithFormat:@"%@, %@", display.type, display.category.name];
-			cell.iconType = display.type;
-			cell.iconColor = display.color;
+			[self configureCell:cell withMainLabel:display.name subLabel:[NSString stringWithFormat:@"%@, %@", display.type, display.category.name] iconType:display.type iconColor:display.color];
 		}
 	}
 
@@ -183,22 +182,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == 0) {
-		// DEPRECATED
-		/*DataSet *dataSet;
+		CategoryViewController *controller = [[CategoryViewController alloc] initWithStyle:UITableViewStyleGrouped];
+		NSManagedObjectContext *addingContext = [[NSManagedObjectContext alloc] init];
 		
-		if (indexPath.row == [[(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] count]) {
-			dataSet = [[[DataSet alloc] init] autorelease];
-		} else {
-			dataSet = [[(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] objectAtIndex:indexPath.row];
+		[addingContext setPersistentStoreCoordinator:[managedObjectContext persistentStoreCoordinator]];
+		[controller setManagedObjectContext:addingContext];
+		
+		if (indexPath.row < [[categoriesFetchedResultsController fetchedObjects] count]) {
+			[controller setObjectID:[[[categoriesFetchedResultsController fetchedObjects] objectAtIndex:indexPath.row] objectID]];
 		}
-
-		DataSetViewController *controller = [[DataSetViewController alloc] initWithStyle:UITableViewStyleGrouped];
-
-		controller.dataSet = dataSet;
 		
 		[self.navigationController pushViewController:controller animated:YES];
 		
-		[controller release];*/
+		[addingContext release];
+		[controller release];
 	} else {
 		// DEPRECATED
 		/*DataPanel *dataPanel;
@@ -345,6 +342,43 @@
 	return displaysFetchedResultsController;
 }
 
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+	[self.tableView beginUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+	switch(type) {
+		case NSFetchedResultsChangeInsert:
+			[self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+		case NSFetchedResultsChangeDelete:
+			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+		case NSFetchedResultsChangeUpdate:
+			[self configureCell:[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+			break;
+		case NSFetchedResultsChangeMove:
+			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+			[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:newIndexPath.section] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+	}
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+	switch(type) {
+		case NSFetchedResultsChangeInsert:
+			[self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+		case NSFetchedResultsChangeDelete:
+			[self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+	}
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+	[self.tableView endUpdates];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 	
@@ -363,6 +397,5 @@
 
     [super dealloc];
 }
-
 
 @end

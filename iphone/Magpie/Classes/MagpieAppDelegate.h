@@ -21,9 +21,6 @@
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-@property (nonatomic, retain) NSMutableArray *dataSets;
-@property (nonatomic, retain) NSMutableArray *dataPanels;
-
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) MainViewController *mainViewController;
 

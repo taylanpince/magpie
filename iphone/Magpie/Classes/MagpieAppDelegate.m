@@ -16,7 +16,8 @@
 
 @implementation MagpieAppDelegate
 
-@synthesize window, mainViewController, managedObjectContext, managedObjectModel, persistentStoreCoordinator;
+@synthesize window, mainViewController
+@synthesize managedObjectContext, managedObjectModel, persistentStoreCoordinator;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
 	NSManagedObjectContext *context = [self managedObjectContext];
@@ -38,7 +39,6 @@
 	[controller release];
 }
 
-
 - (void)applicationWillTerminate:(UIApplication *)application {
     NSError *error = nil;
 	
@@ -50,7 +50,6 @@
         } 
     }
 }
-
 
 - (NSManagedObjectContext *)managedObjectContext {
     if (managedObjectContext != nil) {
@@ -67,7 +66,6 @@
 	return managedObjectContext;
 }
 
-
 - (NSManagedObjectModel *)managedObjectModel {
     if (managedObjectModel != nil) {
         return managedObjectModel;
@@ -77,7 +75,6 @@
 	
     return managedObjectModel;
 }
-
 
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
     if (persistentStoreCoordinator != nil) {
@@ -98,11 +95,9 @@
     return persistentStoreCoordinator;
 }
 
-
 - (NSString *)applicationDocumentsDirectory {
 	return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }
-
 
 // ALL OF THIS IS DEPRECATED
 /*- (void)removeDataSet:(DataSet *)dataSet {
@@ -110,18 +105,15 @@
     [dataSets removeObject:dataSet];
 }
 
-
 - (void)addDataSet:(DataSet *)dataSet {
     [dataSet insertIntoDatabase:database];
     [dataSets addObject:dataSet];
 }
 
-
 - (void)removeDataPanel:(DataPanel *)dataPanel {
     [dataPanel deleteFromDatabase];
     [dataPanels removeObject:dataPanel];
 }
-
 
 - (void)addDataPanel:(DataPanel *)dataPanel {
 	dataPanel.weight = [NSNumber numberWithInt:[dataPanels count]];
@@ -129,7 +121,6 @@
     [dataPanel insertIntoDatabase:database];
     [dataPanels addObject:dataPanel];
 }
-
 
 - (void)reorderDataPanels {
 	int order = 0;

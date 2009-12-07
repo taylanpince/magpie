@@ -14,7 +14,6 @@
 
 @synthesize panelColor, panelColors, delegate;
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
@@ -30,26 +29,21 @@
 	}
 }
 
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [panelColors count];
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
@@ -61,15 +55,15 @@
     }
     
 	if ([[panelColors objectAtIndex:indexPath.row] isEqualToString:panelColor]) {
-		cell.accessoryType = UITableViewCellAccessoryCheckmark;
+		[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
 	} else {
-		cell.accessoryType = UITableViewCellAccessoryNone;
+		[cell setAccessoryType:UITableViewCellAccessoryNone];
 	}
-
-	cell.mainLabel = [panelColors objectAtIndex:indexPath.row];
-	cell.subLabel = @"";
-	cell.iconType = @"Color";
-	cell.iconColor = [panelColors objectAtIndex:indexPath.row];
+	
+	[cell setMainLabel:[panelColors objectAtIndex:indexPath.row]];
+	[cell setSubLabel:@""];
+	[cell setIconType:@"Color"];
+	[cell setIconColor:[panelColors objectAtIndex:indexPath.row]];
 	
     return cell;
 }
@@ -83,11 +77,9 @@
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
-
 - (void)dealloc {
 	[panelColors release];
     [super dealloc];
 }
-
 
 @end

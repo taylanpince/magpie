@@ -2,16 +2,16 @@
 {
 	1D3623240D0F684500981E51 /* MagpieAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1083, 745}}";
-			sepNavSelRange = "{1054, 0}";
-			sepNavVisRange = "{0, 1263}";
+			sepNavIntBoundsRect = "{{0, 0}, {1091, 720}}";
+			sepNavSelRange = "{735, 0}";
+			sepNavVisRange = "{0, 915}";
 		};
 	};
 	1D3623250D0F684500981E51 /* MagpieAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1083, 2669}}";
-			sepNavSelRange = "{715, 0}";
-			sepNavVisRange = "{136, 1143}";
+			sepNavIntBoundsRect = "{{0, 0}, {1155, 2482}}";
+			sepNavSelRange = "{3103, 0}";
+			sepNavVisRange = "{0, 1114}";
 		};
 	};
 	1D6058900D05DD3D006BFB54 /* Magpie */ = {
@@ -22,33 +22,33 @@
 	};
 	289233A80DB2D0DB0083E9F9 /* MainViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1204, 745}}";
-			sepNavSelRange = "{524, 0}";
-			sepNavVisRange = "{0, 797}";
+			sepNavIntBoundsRect = "{{0, 0}, {1556, 720}}";
+			sepNavSelRange = "{667, 0}";
+			sepNavVisRange = "{0, 1102}";
 			sepNavWindowFrame = "{{19, 128}, {1021, 745}}";
 		};
 	};
 	289233A90DB2D0DB0083E9F9 /* MainViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1540, 4539}}";
-			sepNavSelRange = "{946, 6}";
-			sepNavVisRange = "{171, 1026}";
+			sepNavIntBoundsRect = "{{0, 0}, {1564, 5270}}";
+			sepNavSelRange = "{8047, 0}";
+			sepNavVisRange = "{7883, 1245}";
 			sepNavWindowFrame = "{{19, 54}, {1182, 819}}";
 		};
 	};
 	289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1083, 720}}";
-			sepNavSelRange = "{441, 0}";
-			sepNavVisRange = "{0, 595}";
+			sepNavIntBoundsRect = "{{0, 0}, {1091, 720}}";
+			sepNavSelRange = "{619, 0}";
+			sepNavVisRange = "{0, 1074}";
 			sepNavWindowFrame = "{{19, 54}, {1182, 819}}";
 		};
 	};
 	289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1748, 5338}}";
-			sepNavSelRange = "{6445, 0}";
-			sepNavVisRange = "{3117, 1647}";
+			sepNavIntBoundsRect = "{{0, 0}, {1732, 6834}}";
+			sepNavSelRange = "{10448, 0}";
+			sepNavVisRange = "{9508, 2063}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -269,18 +269,18 @@
 		vrLen = 1074;
 		vrLoc = 0;
 	};
-	EC341D9B0FD5AAE40003212C /* DataEntryViewController.h */ = {
+	EC341D9B0FD5AAE40003212C /* EntryViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1083, 745}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 502}";
+			sepNavIntBoundsRect = "{{0, 0}, {1091, 720}}";
+			sepNavSelRange = "{187, 0}";
+			sepNavVisRange = "{0, 476}";
 		};
 	};
-	EC341D9C0FD5AAE40003212C /* DataEntryViewController.m */ = {
+	EC341D9C0FD5AAE40003212C /* EntryViewController.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1212, 2720}}";
-			sepNavSelRange = "{3697, 0}";
-			sepNavVisRange = "{3209, 1306}";
+			sepNavSelRange = "{155, 23}";
+			sepNavVisRange = "{0, 1213}";
 			sepNavWindowFrame = "{{19, 54}, {1182, 819}}";
 		};
 	};
@@ -330,7 +330,7 @@
 	};
 	EC4F7335106D1F6800DDE88C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */;
+		fRef = ECFB00B70FD4830300EEE684 /* SelectCategoryViewController.m */;
 		name = "SelectDataSetViewController.m: 1";
 		rLen = 0;
 		rLoc = 0;
@@ -420,22 +420,22 @@
 	};
 	EC6EB8100FD197B600E6F9D8 /* DataSet.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1083, 935}}";
-			sepNavSelRange = "{365, 0}";
-			sepNavVisRange = "{158, 718}";
+			sepNavIntBoundsRect = "{{0, 0}, {1091, 918}}";
+			sepNavSelRange = "{191, 0}";
+			sepNavVisRange = "{0, 964}";
 			sepNavWindowFrame = "{{19, 54}, {1182, 819}}";
 		};
 	};
 	EC6EB8110FD197B600E6F9D8 /* DataSet.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1563, 6324}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1091, 8262}}";
 			sepNavSelRange = "{9459, 0}";
-			sepNavVisRange = "{8685, 1326}";
+			sepNavVisRange = "{9096, 915}";
 		};
 	};
 	EC6EB8E00FD1B81E00E6F9D8 /* EditableTableViewCell.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1083, 720}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1091, 720}}";
 			sepNavSelRange = "{171, 0}";
 			sepNavVisRange = "{0, 993}";
 		};
@@ -447,18 +447,18 @@
 			sepNavVisRange = "{45, 1222}";
 		};
 	};
-	EC6EB9540FD1CFDC00E6F9D8 /* DataSetViewController.h */ = {
+	EC6EB9540FD1CFDC00E6F9D8 /* CategoryViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1083, 745}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 730}";
+			sepNavIntBoundsRect = "{{0, 0}, {1091, 720}}";
+			sepNavSelRange = "{555, 0}";
+			sepNavVisRange = "{0, 679}";
 		};
 	};
-	EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */ = {
+	EC6EB9550FD1CFDC00E6F9D8 /* CategoryViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1268, 5661}}";
-			sepNavSelRange = "{7629, 0}";
-			sepNavVisRange = "{0, 1175}";
+			sepNavIntBoundsRect = "{{0, 0}, {1260, 4029}}";
+			sepNavSelRange = "{1769, 0}";
+			sepNavVisRange = "{1376, 1222}";
 		};
 	};
 	EC799DC91077F78B00A1ADF1 /* PBXTextBookmark */ = {
@@ -594,7 +594,7 @@
 	};
 	EC86C637107A44DC00CF68F3 /* IntroViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1083, 720}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1091, 720}}";
 			sepNavSelRange = "{665, 0}";
 			sepNavVisRange = "{0, 853}";
 		};
@@ -608,10 +608,10 @@
 	};
 	EC86C642107A4FCF00CF68F3 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = EC6EB9550FD1CFDC00E6F9D8 /* DataSetViewController.m */;
+		fRef = EC6EB9550FD1CFDC00E6F9D8 /* CategoryViewController.m */;
 		name = "DataSetViewController.m: 284";
 		rLen = 0;
-		rLoc = 7629;
+		rLoc = 6153;
 		rType = 0;
 		vrLen = 1175;
 		vrLoc = 0;
@@ -628,7 +628,7 @@
 	};
 	EC86C644107A4FCF00CF68F3 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = EC341D9B0FD5AAE40003212C /* DataEntryViewController.h */;
+		fRef = EC341D9B0FD5AAE40003212C /* EntryViewController.h */;
 		name = "DataEntryViewController.h: 1";
 		rLen = 0;
 		rLoc = 0;
@@ -658,7 +658,7 @@
 	};
 	EC86C647107A4FCF00CF68F3 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = ECFB00B60FD4830300EEE684 /* SelectDataSetViewController.h */;
+		fRef = ECFB00B60FD4830300EEE684 /* SelectCategoryViewController.h */;
 		name = "SelectDataSetViewController.h: 1";
 		rLen = 0;
 		rLoc = 0;
@@ -668,7 +668,7 @@
 	};
 	EC86C648107A4FCF00CF68F3 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */;
+		fRef = ECFB004F0FD46F6600EEE684 /* DisplayViewController.h */;
 		name = "DataPanelViewController.h: 1";
 		rLen = 0;
 		rLoc = 0;
@@ -678,7 +678,7 @@
 	};
 	EC86C649107A4FCF00CF68F3 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = EC6EB9540FD1CFDC00E6F9D8 /* DataSetViewController.h */;
+		fRef = EC6EB9540FD1CFDC00E6F9D8 /* CategoryViewController.h */;
 		name = "DataSetViewController.h: 1";
 		rLen = 0;
 		rLoc = 0;
@@ -691,7 +691,7 @@
 		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
 		name = "MainViewController.h: 22";
 		rLen = 0;
-		rLoc = 524;
+		rLoc = 670;
 		rType = 0;
 		vrLen = 797;
 		vrLoc = 0;
@@ -914,6 +914,13 @@
 			sepNavVisRange = "{0, 248}";
 		};
 	};
+	EC9D94A01077E7E600A06171 /* Display.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1091, 745}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 452}";
+		};
+	};
 	EC9D94A11077E7E600A06171 /* Display.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1563, 925}}";
@@ -921,9 +928,16 @@
 			sepNavVisRange = "{0, 289}";
 		};
 	};
+	EC9D94A21077E7E600A06171 /* Category.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1091, 745}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 777}";
+		};
+	};
 	EC9D94A31077E7E600A06171 /* Category.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1563, 925}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1091, 745}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 298}";
 		};
@@ -1069,7 +1083,7 @@
 		fRef = ECC882640FF91A5E0092B227 /* SelectPanelColorViewController.m */;
 		name = "SelectPanelColorViewController.m: 79";
 		rLen = 0;
-		rLoc = 1891;
+		rLoc = 1904;
 		rType = 0;
 		vrLen = 749;
 		vrLoc = 0;
@@ -1082,8 +1096,8 @@
 		isa = PBXTextBookmark;
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 44";
-		rLen = 6;
-		rLoc = 946;
+		rLen = 0;
+		rLoc = 866;
 		rType = 0;
 		vrLen = 1026;
 		vrLoc = 171;
@@ -1140,16 +1154,16 @@
 	};
 	ECC882630FF91A5E0092B227 /* SelectPanelColorViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1083, 745}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 706}";
+			sepNavIntBoundsRect = "{{0, 0}, {1091, 720}}";
+			sepNavSelRange = "{204, 0}";
+			sepNavVisRange = "{0, 704}";
 		};
 	};
 	ECC882640FF91A5E0092B227 /* SelectPanelColorViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1083, 1598}}";
-			sepNavSelRange = "{1891, 0}";
-			sepNavVisRange = "{0, 749}";
+			sepNavIntBoundsRect = "{{0, 0}, {1091, 1445}}";
+			sepNavSelRange = "{1677, 0}";
+			sepNavVisRange = "{0, 830}";
 			sepNavWindowFrame = "{{42, 107}, {1021, 745}}";
 		};
 	};
@@ -1172,7 +1186,7 @@
 		fRef = 289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */;
 		name = "FlipsideViewController.h: 19";
 		rLen = 0;
-		rLoc = 441;
+		rLoc = 921;
 		rType = 0;
 		vrLen = 595;
 		vrLoc = 0;
@@ -1182,7 +1196,7 @@
 		fRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */;
 		name = "FlipsideViewController.m: 191";
 		rLen = 0;
-		rLoc = 6445;
+		rLoc = 7612;
 		rType = 0;
 		vrLen = 1647;
 		vrLoc = 3117;
@@ -1199,17 +1213,17 @@
 	};
 	ECCB9CF610C3206800D624BE /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */;
+		fRef = ECFB00500FD46F6600EEE684 /* DisplayViewController.m */;
 		name = "DataPanelViewController.m: 128";
 		rLen = 0;
-		rLoc = 3262;
+		rLoc = 2301;
 		rType = 0;
 		vrLen = 1326;
 		vrLoc = 2884;
 	};
 	ECCB9CF710C3206800D624BE /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = EC341D9C0FD5AAE40003212C /* DataEntryViewController.m */;
+		fRef = EC341D9C0FD5AAE40003212C /* EntryViewController.m */;
 		name = "DataEntryViewController.m: 133";
 		rLen = 0;
 		rLoc = 3697;
@@ -1219,14 +1233,14 @@
 	};
 	ECE93A940FD8D48D006BA407 /* KeyPadViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1087, 572}}";
-			sepNavSelRange = "{512, 0}";
-			sepNavVisRange = "{0, 523}";
+			sepNavIntBoundsRect = "{{0, 0}, {1091, 720}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 521}";
 		};
 	};
 	ECE93A950FD8D48D006BA407 /* KeyPadViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1083, 745}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1091, 720}}";
 			sepNavSelRange = "{238, 0}";
 			sepNavVisRange = "{0, 645}";
 		};
@@ -1285,46 +1299,47 @@
 		vrLen = 1115;
 		vrLoc = 158;
 	};
-	ECFB004F0FD46F6600EEE684 /* DataPanelViewController.h */ = {
+	ECFB004F0FD46F6600EEE684 /* DisplayViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1676, 745}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1083}";
+			sepNavIntBoundsRect = "{{0, 0}, {1668, 720}}";
+			sepNavSelRange = "{440, 0}";
+			sepNavVisRange = "{0, 915}";
 		};
 	};
-	ECFB00500FD46F6600EEE684 /* DataPanelViewController.m */ = {
+	ECFB00500FD46F6600EEE684 /* DisplayViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1260, 4709}}";
-			sepNavSelRange = "{3262, 0}";
-			sepNavVisRange = "{2884, 1326}";
+			sepNavIntBoundsRect = "{{0, 0}, {1100, 4182}}";
+			sepNavSelRange = "{5007, 0}";
+			sepNavVisRange = "{5768, 996}";
+			sepNavWindowFrame = "{{19, 61}, {1174, 812}}";
 		};
 	};
-	ECFB00B60FD4830300EEE684 /* SelectDataSetViewController.h */ = {
+	ECFB00B60FD4830300EEE684 /* SelectCategoryViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1083, 745}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 594}";
+			sepNavIntBoundsRect = "{{0, 0}, {1091, 720}}";
+			sepNavSelRange = "{865, 0}";
+			sepNavVisRange = "{0, 871}";
 		};
 	};
-	ECFB00B70FD4830300EEE684 /* SelectDataSetViewController.m */ = {
+	ECFB00B70FD4830300EEE684 /* SelectCategoryViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1124, 1360}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{611, 1329}";
+			sepNavIntBoundsRect = "{{0, 0}, {1564, 1734}}";
+			sepNavSelRange = "{2752, 0}";
+			sepNavVisRange = "{262, 780}";
 		};
 	};
 	ECFB01430FD48F3B00EEE684 /* SelectPanelTypeViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1083, 745}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 694}";
+			sepNavIntBoundsRect = "{{0, 0}, {1091, 720}}";
+			sepNavSelRange = "{270, 0}";
+			sepNavVisRange = "{0, 692}";
 		};
 	};
 	ECFB01440FD48F3B00EEE684 /* SelectPanelTypeViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1083, 1615}}";
-			sepNavSelRange = "{690, 0}";
-			sepNavVisRange = "{1173, 1327}";
+			sepNavIntBoundsRect = "{{0, 0}, {1091, 1581}}";
+			sepNavSelRange = "{2513, 0}";
+			sepNavVisRange = "{1171, 1342}";
 			sepNavWindowFrame = "{{19, 128}, {1021, 745}}";
 		};
 	};
@@ -1393,9 +1408,9 @@
 	};
 	ECFBFC410FD28B1700EEE684 /* DataItem.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1196, 6715}}";
-			sepNavSelRange = "{10199, 0}";
-			sepNavVisRange = "{9534, 1556}";
+			sepNavIntBoundsRect = "{{0, 0}, {1196, 7004}}";
+			sepNavSelRange = "{10761, 0}";
+			sepNavVisRange = "{8599, 1552}";
 		};
 	};
 	ECFBFFF30FD463F000EEE684 /* DataPanel.h */ = {
