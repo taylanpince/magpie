@@ -8,7 +8,7 @@
 
 @class Item;
 
-@interface EntryViewController : UITableViewController {
+@interface EntryViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
 	Item *item;
 	
 	NSDateFormatter *dateFormatter;

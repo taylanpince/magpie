@@ -13,6 +13,11 @@
 #import "Item.h"
 
 
+@interface EntryViewController (PrivateMethods)
+- (void)configureCell:(InfoTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+@end
+
+
 @implementation EntryViewController
 
 @synthesize item, dateFormatter, valueFormatter;
@@ -62,11 +67,25 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return [dataItem.dataEntries count] + 1;
+	return [[fetchedResultsController fetchedObjects] count] + 1;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 	return @"Entries";
+}
+
+- (void)configureCell:(InfoTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+	[cell setIconType:@""];
+	
+	if (indexPath.row == 0) {
+		[cell setMainLabel:@"Add New Entry"];
+		[cell setSubLabel:@""];
+	} else {
+		Entry *entry = [fetchedResultsController objectAtIndexPath:indexPath];
+		
+		[cell setMainLabel:[valueFormatter stringFromNumber:entry.value]];
+		[cell setSubLabel:[dateFormatter stringFromDate:entry.timeStamp]];
+	}
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -76,20 +95,11 @@
 	
 	if (cell == nil) {
 		cell = [[[InfoTableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
-		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+		
+		[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
 	}
 	
-	cell.iconType = @"";
-	
-	if (indexPath.row == 0) {
-		cell.mainLabel = @"Add New Entry";
-		cell.subLabel = @"";
-	} else {
-		DataEntry *dataEntry = [dataItem.dataEntries objectAtIndex:(indexPath.row - 1)];
-
-		cell.mainLabel = [valueFormatter stringFromNumber:dataEntry.value];
-		cell.subLabel = [dateFormatter stringFromDate:dataEntry.timeStamp];
-	}
+	[self configureCell:cell atIndexPath:indexPath];
 	
 	return cell;
 }
@@ -107,7 +117,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	DataEntry *dataEntry;
+	// DEPRECATED
+	/*DataEntry *dataEntry;
 	
 	if (indexPath.row == 0) {
 		dataEntry = [[[DataEntry alloc] init] autorelease];
@@ -122,15 +133,16 @@
 	
 	[self.navigationController pushViewController:controller animated:YES];
 	
-	[controller release];
+	[controller release];*/
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-		DataEntry *dataEntry = [dataItem.dataEntries objectAtIndex:(indexPath.row - 1)];
+		// DEPRECATED
+		/*DataEntry *dataEntry = [dataItem.dataEntries objectAtIndex:(indexPath.row - 1)];
 		
 		[dataItem removeDataEntry:dataEntry];
-		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];*/
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
 		[self tableView:tableView didSelectRowAtIndexPath:indexPath];
 	}
@@ -153,6 +165,8 @@
 	
 	NSFetchedResultsController *controller = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:@"Root"];
 	
+	[controller setDelegate:self];
+	
 	self.fetchedResultsController = controller;
 	
 	[sorter release];
@@ -161,6 +175,43 @@
 	[controller release];
 	
 	return fetchedResultsController;
+}
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+	[self.tableView beginUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+	switch(type) {
+		case NSFetchedResultsChangeInsert:
+			[self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+		case NSFetchedResultsChangeDelete:
+			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+		case NSFetchedResultsChangeUpdate:
+			[self configureCell:(InfoTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+			break;
+		case NSFetchedResultsChangeMove:
+			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+			[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:newIndexPath.section] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+	}
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+	switch(type) {
+		case NSFetchedResultsChangeInsert:
+			[self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+		case NSFetchedResultsChangeDelete:
+			[self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+	}
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+	[self.tableView endUpdates];
 }
 
 - (void)dealloc {

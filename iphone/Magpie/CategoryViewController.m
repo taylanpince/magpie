@@ -15,8 +15,8 @@
 
 @implementation CategoryViewController
 
-@synthesize category, activeTextField;
-@synthesize objectID, managedObjectContext;
+@synthesize category, managedObjectContext;
+@synthesize activeTextField;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,9 +26,7 @@
 	
 	UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
 	
-	if (objectID != nil) {
-		self.category = (Category *)[managedObjectContext objectWithID:objectID];
-		
+	if (category != nil) {
 		[self setTitle:category.name];
 	} else {
 		self.category = (Category *)[NSEntityDescription insertNewObjectForEntityForName:@"Category" inManagedObjectContext:managedObjectContext];
@@ -48,9 +46,10 @@
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 	
-	if (!objectID) {
+	// TODO: Check to see if the object has been inserted or not
+	/*if ([category ]) {
 		[self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
-	}
+	}*/
 }
 
 - (void)save:(id)sender {
@@ -58,11 +57,23 @@
 		[activeTextField resignFirstResponder];
 	}
 	
+	[category setLastUpdated:[NSDate date]];
+	
+	NSError *error;
+	
+	if (![managedObjectContext save:&error]) {
+		// TODO: Update to handle the error appropriately.
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		exit(-1);  // Fail
+	}
+	
 	// TODO: Make delegate call so context can be merged
+	[self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)cancel:(id)sender {
 	// TODO: Make delegate call with no merging
+	[self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -148,10 +159,10 @@
 		[tableView deselectRowAtIndexPath:indexPath animated:YES];
 
 		NSArray *indexPaths = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:1 inSection:1], nil];
+		Item *item = (Item *)[NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:managedObjectContext];
 		
-		Item *item = [[Item alloc] init];
+		[item setLastUpdated:[NSDate date]];
 		[category addItemsObject:item];
-		[item release];
 		
 		[tableView beginUpdates];
 		[tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationLeft];
@@ -171,8 +182,9 @@
 	}
 	
 	EntryViewController *controller = [[EntryViewController alloc] initWithStyle:UITableViewStyleGrouped];
+	Item *item = [[[category items] allObjects] objectAtIndex:(indexPath.row - 1)];
 	
-	[controller setCategory:category];
+	[controller setItem:item];
 	[controller setManagedObjectContext:managedObjectContext];
 	
 	[self.navigationController pushViewController:controller animated:YES];
@@ -186,7 +198,7 @@
 			[activeTextField resignFirstResponder];
 		}
 		
-		Item *item = (Item *)[[[category items] allObjects] objectAtIndex:(indexPath.row - 1)];
+		Item *item = [[[category items] allObjects] objectAtIndex:(indexPath.row - 1)];
 		
 		[category removeItemsObject:item];
 		
@@ -226,9 +238,7 @@
 
 - (void)dealloc {
 	[category release];
-	[objectID release];
 	[managedObjectContext release];
-	[activeTextField release];
     [super dealloc];
 }
 

@@ -7,12 +7,12 @@
 //
 
 #import "FlipsideViewController.h"
-#import "EditDataEntryViewController.h"
+#import "QuickEntryViewController.h"
 #import "IntroViewController.h"
 
 @class HelpView;
 
-@interface MainViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, FlipsideViewControllerDelegate, EditDataEntryViewControllerDelegate, IntroViewControllerDelegate> {
+@interface MainViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, FlipsideViewControllerDelegate, QuickEntryViewControllerDelegate, IntroViewControllerDelegate> {
 	IBOutlet UITableView *tableView;
 	IBOutlet UIBarButtonItem *quickEntryButton;
 	

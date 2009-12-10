@@ -17,7 +17,7 @@
 
 @interface FlipsideViewController (PrivateMethods)
 - (NSFetchedResultsController *)generateFetchedResultsControllerForModel:(NSString *)model withSortKey:(NSString *)sortKey;
-- (void)configureCell:(InfoTableViewCell *)cell withMainLabel:(NSString *)mainLabel subLabel:(NSString *)subLabel iconType:(NSString *)iconType iconColor:(NSString *)iconColor;
+- (void)configureCell:(InfoTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
 
@@ -114,11 +114,38 @@
 	}
 }
 
-- (void)configureCell:(InfoTableViewCell *)cell withMainLabel:(NSString *)mainLabel subLabel:(NSString *)subLabel iconType:(NSString *)iconType iconColor:(NSString *)iconColor {
-	[cell setMainLabel:mainLabel];
-	[cell setSubLabel:subLabel];
-	[cell setIconType:iconType];
-	[cell setIconColor:iconColor];
+- (void)configureCell:(InfoTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+	switch (indexPath.section) {
+		case 0:
+			if (indexPath.row == [[categoriesFetchedResultsController fetchedObjects] count]) {
+				[cell setMainLabel:@"Add a new Category"];
+				[cell setSubLabel:@""];
+				[cell setIconType:@""];
+			} else {
+				Category *category = [categoriesFetchedResultsController objectAtIndexPath:indexPath];
+				
+				[cell setMainLabel:category.name];
+				[cell setSubLabel:@""];
+				[cell setIconType:@""];
+			}
+			break;
+		case 1:
+			if (indexPath.row == [[displaysFetchedResultsController fetchedObjects] count]) {
+				[cell setMainLabel:@"Add a new Display"];
+				[cell setSubLabel:@""];
+				[cell setIconType:@""];
+			} else {
+				Display *display = [displaysFetchedResultsController objectAtIndexPath:indexPath];
+				
+				[cell setMainLabel:display.name];
+				[cell setSubLabel:[NSString stringWithFormat:@"%@, %@", display.type, display.category.name]];
+				[cell setIconType:display.type];
+				[cell setIconColor:display.color];
+			}
+			break;
+		default:
+			break;
+	}
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -128,26 +155,11 @@
 
     if (cell == nil) {
         cell = [[[InfoTableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
-		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+		
+		[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     }
 	
-	if (indexPath.section == 0) {
-		if (indexPath.row == [[categoriesFetchedResultsController fetchedObjects] count]) {
-			[self configureCell:cell withMainLabel:@"Add a new Category" subLabel:@"" iconType:@"" iconColor:@""];
-		} else {
-			Category *category = [categoriesFetchedResultsController objectAtIndexPath:indexPath];
-			
-			[self configureCell:cell withMainLabel:category.name subLabel:@"" iconType:@"" iconColor:@""];
-		}
-	} else {
-		if (indexPath.row == [[displaysFetchedResultsController fetchedObjects] count]) {
-			[self configureCell:cell withMainLabel:@"Add a new Display" subLabel:@"" iconType:@"" iconColor:@""];
-		} else {
-			Display *display = [displaysFetchedResultsController objectAtIndexPath:indexPath];
-			
-			[self configureCell:cell withMainLabel:display.name subLabel:[NSString stringWithFormat:@"%@, %@", display.type, display.category.name] iconType:display.type iconColor:display.color];
-		}
-	}
+	[self configureCell:cell atIndexPath:indexPath];
 
     return cell;
 }
@@ -183,18 +195,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == 0) {
 		CategoryViewController *controller = [[CategoryViewController alloc] initWithStyle:UITableViewStyleGrouped];
-		NSManagedObjectContext *addingContext = [[NSManagedObjectContext alloc] init];
 		
-		[addingContext setPersistentStoreCoordinator:[managedObjectContext persistentStoreCoordinator]];
-		[controller setManagedObjectContext:addingContext];
+		[controller setManagedObjectContext:managedObjectContext];
 		
 		if (indexPath.row < [[categoriesFetchedResultsController fetchedObjects] count]) {
-			[controller setObjectID:[[[categoriesFetchedResultsController fetchedObjects] objectAtIndex:indexPath.row] objectID]];
+			[controller setCategory:[[categoriesFetchedResultsController fetchedObjects] objectAtIndex:indexPath.row]];
 		}
 		
 		[self.navigationController pushViewController:controller animated:YES];
 		
-		[addingContext release];
 		[controller release];
 	} else {
 		// DEPRECATED
@@ -264,8 +273,7 @@
 			[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];*/
 		}
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-		// DEPRECATED
-		//[self tableView:tableView didSelectRowAtIndexPath:indexPath];
+		[self tableView:tableView didSelectRowAtIndexPath:indexPath];
 	}
 }
 
@@ -311,33 +319,31 @@
 	[sorters release];
 	[request release];
 	
-	return controller;
+	return [controller autorelease];
 }
 
 - (NSFetchedResultsController *)categoriesFetchedResultsController {
-	if (self.categoriesFetchedResultsController != nil) {
+	if (categoriesFetchedResultsController != nil) {
 		return categoriesFetchedResultsController;
 	}
 	
 	NSFetchedResultsController *controller = [self generateFetchedResultsControllerForModel:@"Category" withSortKey:@"name"];
 	
 	self.categoriesFetchedResultsController = controller;
-	
-	[controller release];
+	self.categoriesFetchedResultsController.delegate = self;
 	
 	return categoriesFetchedResultsController;
 }
 
 - (NSFetchedResultsController *)displaysFetchedResultsController {
-	if (self.displaysFetchedResultsController != nil) {
+	if (displaysFetchedResultsController != nil) {
 		return displaysFetchedResultsController;
 	}
 	
 	NSFetchedResultsController *controller = [self generateFetchedResultsControllerForModel:@"Display" withSortKey:@"weight"];
 	
 	self.displaysFetchedResultsController = controller;
-	
-	[controller release];
+	self.displaysFetchedResultsController.delegate = self;
 	
 	return displaysFetchedResultsController;
 }
@@ -355,7 +361,7 @@
 			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
 			break;
 		case NSFetchedResultsChangeUpdate:
-			[self configureCell:[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+			[self configureCell:(InfoTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
 			break;
 		case NSFetchedResultsChangeMove:
 			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];

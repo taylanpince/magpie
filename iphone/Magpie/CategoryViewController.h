@@ -13,7 +13,6 @@
 @interface CategoryViewController : UITableViewController <EditableTableViewCellDelegate> {
 	Category *category;
 	
-	NSManagedObjectID *objectID;
 	NSManagedObjectContext *managedObjectContext;
 	
 	UITextField *activeTextField;
@@ -21,7 +20,6 @@
 
 @property (nonatomic, retain) Category *category;
 
-@property (nonatomic, retain) NSManagedObjectID *objectID;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @property (nonatomic, assign) UITextField *activeTextField;

@@ -7,6 +7,7 @@
 //
 
 @class HelpView;
+
 @protocol FlipsideViewControllerDelegate;
 
 @interface FlipsideViewController : UITableViewController <NSFetchedResultsControllerDelegate> {

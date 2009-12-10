@@ -8,15 +8,11 @@
 
 #import "MagpieAppDelegate.h"
 #import "MainViewController.h"
-#import "DataSet.h"
-#import "DataItem.h"
-#import "DataPanel.h"
-#import "DataEntry.h"
 
 
 @implementation MagpieAppDelegate
 
-@synthesize window, mainViewController
+@synthesize window, mainViewController;
 @synthesize managedObjectContext, managedObjectModel, persistentStoreCoordinator;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {

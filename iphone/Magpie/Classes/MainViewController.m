@@ -8,9 +8,8 @@
 
 #import "MainViewController.h"
 #import "FlipsideViewController.h"
-#import "EditDataEntryViewController.h"
+#import "QuickEntryViewController.h"
 #import "IntroViewController.h"
-#import "PanelView.h"
 #import "HelpView.h"
 #import "Display.h"
 
@@ -218,7 +217,7 @@
 }
 
 - (IBAction)showQuickAdd {
-	EditDataEntryViewController *controller = [[EditDataEntryViewController alloc] initWithNibName:@"DataEntryView" bundle:nil];
+	QuickEntryViewController *controller = [[QuickEntryViewController alloc] initWithNibName:@"DataEntryView" bundle:nil];
 	
 	[controller setDelegate:self];
 	// DEPRECATED
