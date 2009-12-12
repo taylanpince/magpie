@@ -333,7 +333,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>EC8429AE10D0BA96003B8416</string>
+										<string>ECFC287410D3EE560070FADE</string>
 										<key>history</key>
 										<array>
 											<string>EC309FBA1003BDC100A0C623</string>
@@ -402,7 +402,7 @@
 											<string>EC84299C10D0BA17003B8416</string>
 											<string>EC84299D10D0BA17003B8416</string>
 											<string>EC8429A710D0BA61003B8416</string>
-											<string>EC8429AD10D0BA95003B8416</string>
+											<string>ECFC287310D3EE4A0070FADE</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -459,7 +459,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1152, -27}}</string>
+										<string>{{0, 0}, {614, 336}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXProjectFindModule</string>
@@ -497,7 +497,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1152, -27}}</string>
+										<string>{{0, 0}, {568, 405}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -525,11 +525,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC84287A10D0A9E3003B8416</string>
+				<string>ECFC285110D3EA390070FADE</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>EC84287B10D0A9E3003B8416</string>
+				<string>ECFC285210D3EA390070FADE</string>
 				<string>EC89595110016E400009E0DF</string>
-				<string>EC84287C10D0A9E3003B8416</string>
+				<string>ECFC285310D3EA390070FADE</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -678,14 +678,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC84287D10D0A9E3003B8416</string>
+				<string>ECFC285810D3ED600070FADE</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>EC84287E10D0A9E3003B8416</string>
-				<string>EC84287F10D0A9E3003B8416</string>
-				<string>EC84288010D0A9E3003B8416</string>
-				<string>EC84288110D0A9E3003B8416</string>
-				<string>EC84288210D0A9E3003B8416</string>
+				<string>ECFC285910D3ED600070FADE</string>
+				<string>ECFC285A10D3ED600070FADE</string>
+				<string>ECFC285B10D3ED600070FADE</string>
+				<string>ECFC285C10D3ED600070FADE</string>
+				<string>EC89595110016E400009E0DF</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
 			<string>2</string>
@@ -717,8 +717,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>EC84289310D0AA76003B8416</string>
-		<string>EC84288410D0A9E3003B8416</string>
+		<string>ECFC287210D3EE260070FADE</string>
+		<string>ECFC285E10D3ED600070FADE</string>
 		<string>/Users/taylan/Documents/Development/Personal/magpie/iphone/Magpie/Magpie.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

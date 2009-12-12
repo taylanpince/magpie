@@ -244,33 +244,29 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
 		if (indexPath.section == 0) {
-			// DEPRECATED
-			/*MagpieAppDelegate *appDelegate = (MagpieAppDelegate *)[[UIApplication sharedApplication] delegate];
-			DataSet *dataSet = [[appDelegate dataSets] objectAtIndex:indexPath.row];
+			Category *category = [[categoriesFetchedResultsController fetchedObjects] objectAtIndex:indexPath.row];
 			
-			NSMutableArray *deletedRows = [NSMutableArray arrayWithObject:indexPath];
-			int rowNumber = 0;
+			[managedObjectContext deleteObject:category];
 			
-			for (DataPanel *dataPanel in [appDelegate dataPanels]) {
-				if (dataPanel.dataSet.primaryKey == dataSet.primaryKey) {
-					[appDelegate removeDataPanel:dataPanel];
-					[deletedRows addObject:[NSIndexPath indexPathForRow:rowNumber inSection:1]];
-				}
-				
-				rowNumber++;
+			NSError *error;
+			
+			if (![managedObjectContext save:&error]) {
+				// TODO: Handle the error
+				NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+				exit(-1);
 			}
-			
-			[appDelegate removeDataSet:dataSet];
-			
-			[tableView deleteRowsAtIndexPaths:deletedRows withRowAnimation:UITableViewRowAnimationFade];*/
 		} else {
-			// DEPRECATED
-			/*MagpieAppDelegate *appDelegate = (MagpieAppDelegate *)[[UIApplication sharedApplication] delegate];
-			DataPanel *dataPanel = [[appDelegate dataPanels] objectAtIndex:indexPath.row];
+			Display *display = [[displaysFetchedResultsController fetchedObjects] objectAtIndex:indexPath.row];
 			
-			[appDelegate removeDataPanel:dataPanel];
+			[managedObjectContext deleteObject:display];
 			
-			[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];*/
+			NSError *error;
+			
+			if (![managedObjectContext save:&error]) {
+				// TODO: Handle the error
+				NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+				exit(-1);
+			}
 		}
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
 		[self tableView:tableView didSelectRowAtIndexPath:indexPath];
