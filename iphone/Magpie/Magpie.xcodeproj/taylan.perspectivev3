@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ActivePerspectiveName</key>
-	<string>Project</string>
+	<string>Debug</string>
 	<key>AllowedModules</key>
 	<array>
 		<dict>
@@ -280,13 +280,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>35</integer>
-									<integer>31</integer>
+									<integer>6</integer>
+									<integer>2</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 164}, {262, 764}}</string>
+							<string>{{0, 50}, {262, 764}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -302,8 +302,6 @@
 							<string>MainColumn</string>
 							<real>262</real>
 						</array>
-						<key>RubberWindowFrame</key>
-						<string>4 55 1436 823 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -314,14 +312,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>EC89595110016E400009E0DF</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>FlipsideViewController.m</string>
+								<string>DisplayViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>EC89595210016E400009E0DF</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>FlipsideViewController.m</string>
+										<string>DisplayViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ECFC287410D3EE560070FADE</string>
+										<string>ECFC292710D46B260070FADE</string>
 										<key>history</key>
 										<array>
 											<string>EC309FBA1003BDC100A0C623</string>
@@ -367,7 +363,6 @@
 											<string>ECC4E09510C7EB4B004E4896</string>
 											<string>ECC4E09610C7EB4B004E4896</string>
 											<string>EC7A5B0710C998A900C43E3E</string>
-											<string>EC7A5B0A10C998A900C43E3E</string>
 											<string>EC18AA6D10CD484F00A79573</string>
 											<string>EC18AA6E10CD484F00A79573</string>
 											<string>EC18AA7210CD484F00A79573</string>
@@ -375,8 +370,6 @@
 											<string>EC18AA7710CD484F00A79573</string>
 											<string>EC18AA7910CD484F00A79573</string>
 											<string>EC18AA7A10CD484F00A79573</string>
-											<string>EC18AA7C10CD484F00A79573</string>
-											<string>EC18AA7D10CD484F00A79573</string>
 											<string>EC18AA7F10CD484F00A79573</string>
 											<string>EC18AA8010CD484F00A79573</string>
 											<string>EC18AA8110CD484F00A79573</string>
@@ -385,24 +378,27 @@
 											<string>EC84286710D0A9E3003B8416</string>
 											<string>EC84286810D0A9E3003B8416</string>
 											<string>EC84286910D0A9E3003B8416</string>
-											<string>EC84286B10D0A9E3003B8416</string>
-											<string>EC84286C10D0A9E3003B8416</string>
 											<string>EC84286E10D0A9E3003B8416</string>
 											<string>EC84286F10D0A9E3003B8416</string>
 											<string>EC84287010D0A9E3003B8416</string>
 											<string>EC84287110D0A9E3003B8416</string>
 											<string>EC84287510D0A9E3003B8416</string>
-											<string>EC84287610D0A9E3003B8416</string>
-											<string>EC84287710D0A9E3003B8416</string>
 											<string>EC84288910D0AA65003B8416</string>
-											<string>EC8428C710D0B0F1003B8416</string>
 											<string>EC8428CA10D0B0F1003B8416</string>
 											<string>EC84298910D0B98C003B8416</string>
 											<string>EC84299B10D0BA17003B8416</string>
-											<string>EC84299C10D0BA17003B8416</string>
 											<string>EC84299D10D0BA17003B8416</string>
-											<string>EC8429A710D0BA61003B8416</string>
-											<string>ECFC287310D3EE4A0070FADE</string>
+											<string>ECFC28CF10D458D80070FADE</string>
+											<string>ECFC28D010D458D80070FADE</string>
+											<string>ECFC28D110D458D80070FADE</string>
+											<string>ECFC28D210D458D80070FADE</string>
+											<string>ECFC28E210D45ACB0070FADE</string>
+											<string>ECFC290710D45DE50070FADE</string>
+											<string>ECFC290810D45DE50070FADE</string>
+											<string>ECFC290E10D45E360070FADE</string>
+											<string>ECFC292310D46B260070FADE</string>
+											<string>ECFC292410D46B260070FADE</string>
+											<string>ECFC292510D46B260070FADE</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -417,8 +413,6 @@
 							<dict>
 								<key>Frame</key>
 								<string>{{0, 0}, {1152, 777}}</string>
-								<key>RubberWindowFrame</key>
-								<string>4 55 1436 823 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -442,8 +436,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1152, -27}}</string>
-										<key>RubberWindowFrame</key>
-										<string>4 55 1436 823 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -497,7 +489,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{0, 0}, {568, 405}}</string>
+										<string>{{10, 27}, {1152, -27}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -570,6 +562,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
@@ -581,6 +575,8 @@
 					<dict>
 						<key>Frame</key>
 						<string>{{0, 0}, {1436, 322}}</string>
+						<key>RubberWindowFrame</key>
+						<string>4 55 1436 823 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
@@ -655,7 +651,11 @@
 							</array>
 							<key>Frame</key>
 							<string>{{701, 0}, {735, 220}}</string>
+							<key>RubberWindowFrame</key>
+							<string>4 55 1436 823 0 0 1440 878 </string>
 						</dict>
+						<key>RubberWindowFrame</key>
+						<string>4 55 1436 823 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
@@ -717,6 +717,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>ECFC292810D46B260070FADE</string>
 		<string>ECFC287210D3EE260070FADE</string>
 		<string>ECFC285E10D3ED600070FADE</string>
 		<string>/Users/taylan/Documents/Development/Personal/magpie/iphone/Magpie/Magpie.xcodeproj</string>

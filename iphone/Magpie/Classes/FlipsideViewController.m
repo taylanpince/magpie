@@ -122,7 +122,7 @@
 				[cell setSubLabel:@""];
 				[cell setIconType:@""];
 			} else {
-				Category *category = [categoriesFetchedResultsController objectAtIndexPath:indexPath];
+				Category *category = [[categoriesFetchedResultsController fetchedObjects] objectAtIndex:indexPath.row];
 				
 				[cell setMainLabel:category.name];
 				[cell setSubLabel:@""];
@@ -135,7 +135,7 @@
 				[cell setSubLabel:@""];
 				[cell setIconType:@""];
 			} else {
-				Display *display = [displaysFetchedResultsController objectAtIndexPath:indexPath];
+				Display *display = [[displaysFetchedResultsController fetchedObjects] objectAtIndex:indexPath.row];
 				
 				[cell setMainLabel:display.name];
 				[cell setSubLabel:[NSString stringWithFormat:@"%@, %@", display.type, display.category.name]];
@@ -206,22 +206,17 @@
 		
 		[controller release];
 	} else {
-		// DEPRECATED
-		/*DataPanel *dataPanel;
+		DisplayViewController *controller = [[DisplayViewController alloc] initWithStyle:UITableViewStyleGrouped];
 		
-		if (indexPath.row == [[(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels] count]) {
-			dataPanel = [[[DataPanel alloc] init] autorelease];
-		} else {
-			dataPanel = [[(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataPanels] objectAtIndex:indexPath.row];
+		[controller setManagedObjectContext:managedObjectContext];
+		
+		if (indexPath.row < [[displaysFetchedResultsController fetchedObjects] count]) {
+			[controller setDisplay:[[displaysFetchedResultsController fetchedObjects] objectAtIndex:indexPath.row]];
 		}
-		
-		DataPanelViewController *controller = [[DataPanelViewController alloc] initWithStyle:UITableViewStyleGrouped];
-		
-		controller.dataPanel = dataPanel;
 		
 		[self.navigationController pushViewController:controller animated:YES];
 		
-		[controller release];*/
+		[controller release];
 	}
 }
 
@@ -274,18 +269,38 @@
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-	return (indexPath.section == 1 & indexPath.row < [[displaysFetchedResultsController fetchedObjects] count]);
+	return (indexPath.section == 1 && indexPath.row < [[displaysFetchedResultsController fetchedObjects] count]);
 }
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-	// DEPRECATED
-	/*MagpieAppDelegate *appDelegate = (MagpieAppDelegate *)[[UIApplication sharedApplication] delegate];
-	DataPanel *dataPanel = [[[appDelegate dataPanels] objectAtIndex:fromIndexPath.row] retain];
+	Display *display;
+	NSInteger startRow = fromIndexPath.row;
+	NSInteger endRow = toIndexPath.row;
 	
-	[[appDelegate dataPanels] removeObjectAtIndex:fromIndexPath.row];
-	[[appDelegate dataPanels] insertObject:dataPanel atIndex:toIndexPath.row];
+	if (fromIndexPath.row > toIndexPath.row) {
+		startRow = toIndexPath.row;
+		endRow = fromIndexPath.row;
+	}
 	
-	[appDelegate reorderDataPanels];*/
+	for (NSInteger i = startRow; i <= endRow; i++) {
+		display = [[displaysFetchedResultsController fetchedObjects] objectAtIndex:i];
+		
+		if (i == fromIndexPath.row) {
+			[display setWeight:[NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithInt:toIndexPath.row] decimalValue]]];
+		} else if (fromIndexPath.row < toIndexPath.row) {
+			[display setWeight:[NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithInt:(i - 1)] decimalValue]]];
+		} else {
+			[display setWeight:[NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithInt:(i + 1)] decimalValue]]];
+		}
+	}
+	
+	NSError *error;
+	
+	if (![managedObjectContext save:&error]) {
+		// TODO: Handle the error
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		exit(-1);
+	}
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath {
@@ -349,19 +364,36 @@
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+	NSIndexPath *indexPathWithSection;
+	NSIndexPath *newIndexPathWithSection;
+	
+	if ([anObject isKindOfClass:[Display class]]) {
+		indexPathWithSection = [NSIndexPath indexPathForRow:indexPath.row inSection:1];
+		
+		if (newIndexPath) {
+			newIndexPathWithSection = [NSIndexPath indexPathForRow:newIndexPath.row inSection:1];
+		}
+	} else {
+		indexPathWithSection = [NSIndexPath indexPathForRow:indexPath.row inSection:0];
+		
+		if (newIndexPath) {
+			newIndexPathWithSection = [NSIndexPath indexPathForRow:newIndexPath.row inSection:0];
+		}
+	}
+	
 	switch(type) {
 		case NSFetchedResultsChangeInsert:
-			[self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+			[self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPathWithSection] withRowAnimation:UITableViewRowAnimationFade];
 			break;
 		case NSFetchedResultsChangeDelete:
-			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPathWithSection] withRowAnimation:UITableViewRowAnimationFade];
 			break;
 		case NSFetchedResultsChangeUpdate:
-			[self configureCell:(InfoTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+			[self configureCell:(InfoTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPathWithSection] atIndexPath:indexPathWithSection];
 			break;
 		case NSFetchedResultsChangeMove:
-			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-			[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:newIndexPath.section] withRowAnimation:UITableViewRowAnimationFade];
+			//[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+			//[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:newIndexPath.section] withRowAnimation:UITableViewRowAnimationFade];
 			break;
 	}
 }

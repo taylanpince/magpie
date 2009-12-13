@@ -13,21 +13,20 @@
 #import "SelectPanelTypeViewController.h"
 #import "SelectPanelColorViewController.h"
 #import "Display.h"
+#import "Category.h"
 
 
 @implementation DisplayViewController
 
 @synthesize display, activeTextField;
-@synthesize objectID, managedObjectContext;
+@synthesize managedObjectContext;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
 	UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
 	
-	if (objectID != nil) {
-		self.display = (Display *)[managedObjectContext objectWithID:objectID];
-		
+	if (display != nil) {
 		[self setTitle:display.name];
 	} else {
 		self.display = (Display *)[NSEntityDescription insertNewObjectForEntityForName:@"Display" inManagedObjectContext:managedObjectContext];
@@ -47,9 +46,7 @@
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 	
-	if (!objectID) {
-		[self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
-	}
+	[self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
 }
 
 - (void)save:(id)sender {
@@ -57,11 +54,21 @@
 		[activeTextField resignFirstResponder];
 	}
 	
-	// TODO: Make delegate call to merge the context
+	NSError *error;
+	
+	if (![managedObjectContext save:&error]) {
+		// TODO: Update to handle the error appropriately.
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		exit(-1);  // Fail
+	}
+	
+	// TODO: Make delegate call so context can be merged
+	[self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)cancel:(id)sender {
 	// TODO: Make delegate call to cancel
+	[self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -107,7 +114,7 @@
 				[cell.titleLabel setText:@"Category"];
 				
 				if (display.category) {
-					[cell.dataLabel setText:display.name];
+					[cell.dataLabel setText:display.category.name];
 					[cell setBlank:NO];
 				} else {
 					[cell.dataLabel setText:@"Select a Category"];
@@ -153,6 +160,7 @@
 			SelectCategoryViewController *controller = [[SelectCategoryViewController alloc] initWithStyle:UITableViewStyleGrouped];
 			
 			[controller setCategory:display.category];
+			[controller setManagedObjectContext:managedObjectContext];
 			[controller setDelegate:self];
 			
 			[self.navigationController pushViewController:controller animated:YES];
@@ -237,8 +245,6 @@
 - (void)dealloc {
 	[display release];
 	[managedObjectContext release];
-	[objectID release];
-	[activeTextField release];
     [super dealloc];
 }
 

@@ -16,7 +16,6 @@
 @interface DisplayViewController : UITableViewController <EditableTableViewCellDelegate, SelectCategoryViewControllerDelegate, SelectPanelTypeViewControllerDelegate, SelectPanelColorViewControllerDelegate> {
 	Display *display;
 	
-	NSManagedObjectID *objectID;
 	NSManagedObjectContext *managedObjectContext;
 	
 	UITextField *activeTextField;
@@ -24,7 +23,6 @@
 
 @property (nonatomic, retain) Display *display;
 
-@property (nonatomic, retain) NSManagedObjectID *objectID;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @property (nonatomic, assign) UITextField *activeTextField;
