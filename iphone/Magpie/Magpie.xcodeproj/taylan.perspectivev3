@@ -280,8 +280,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>42</integer>
-									<integer>38</integer>
+									<integer>33</integer>
 									<integer>31</integer>
 									<integer>0</integer>
 								</array>
@@ -318,7 +317,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>EC89595110016E400009E0DF</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>EntryViewController.m</string>
+								<string>MainViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -326,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>EC89595210016E400009E0DF</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>EntryViewController.m</string>
+										<string>MainViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ECCEF19A10D5C0CC00351CCC</string>
+										<string>ECCEF1BC10D5C17B00351CCC</string>
 										<key>history</key>
 										<array>
 											<string>EC309FBA1003BDC100A0C623</string>
@@ -385,7 +384,6 @@
 											<string>EC84299D10D0BA17003B8416</string>
 											<string>ECFC28D010D458D80070FADE</string>
 											<string>ECFC28D110D458D80070FADE</string>
-											<string>ECFC28E210D45ACB0070FADE</string>
 											<string>ECFC290810D45DE50070FADE</string>
 											<string>ECFC290E10D45E360070FADE</string>
 											<string>ECFC292410D46B260070FADE</string>
@@ -400,7 +398,8 @@
 											<string>ECCEF18B10D5BFCF00351CCC</string>
 											<string>ECCEF19610D5C0CC00351CCC</string>
 											<string>ECCEF19710D5C0CC00351CCC</string>
-											<string>ECCEF19810D5C0CC00351CCC</string>
+											<string>ECCEF1B910D5C17B00351CCC</string>
+											<string>ECCEF1BA10D5C17B00351CCC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -719,7 +718,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>ECCEF19B10D5C0CC00351CCC</string>
+		<string>ECCEF1BD10D5C17B00351CCC</string>
 		<string>ECCEF13910D5B90B00351CCC</string>
 		<string>ECCEF12910D5B8BB00351CCC</string>
 		<string>/Users/taylan/Documents/Development/Personal/magpie/iphone/Magpie/Magpie.xcodeproj</string>

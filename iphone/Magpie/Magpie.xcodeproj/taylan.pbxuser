@@ -30,9 +30,9 @@
 	};
 	289233A90DB2D0DB0083E9F9 /* MainViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1540, 5168}}";
-			sepNavSelRange = "{2198, 0}";
-			sepNavVisRange = "{5741, 1575}";
+			sepNavIntBoundsRect = "{{0, 0}, {1540, 5287}}";
+			sepNavSelRange = "{5651, 0}";
+			sepNavVisRange = "{5471, 268}";
 			sepNavWindowFrame = "{{19, 54}, {1182, 819}}";
 		};
 	};
@@ -232,6 +232,14 @@
 			ECCEF19810D5C0CC00351CCC /* PBXTextBookmark */ = ECCEF19810D5C0CC00351CCC /* PBXTextBookmark */;
 			ECCEF19910D5C0CC00351CCC /* PBXTextBookmark */ = ECCEF19910D5C0CC00351CCC /* PBXTextBookmark */;
 			ECCEF19A10D5C0CC00351CCC /* PBXTextBookmark */ = ECCEF19A10D5C0CC00351CCC /* PBXTextBookmark */;
+			ECCEF1B110D5C12E00351CCC /* PBXTextBookmark */ = ECCEF1B110D5C12E00351CCC /* PBXTextBookmark */;
+			ECCEF1B210D5C12E00351CCC /* PBXTextBookmark */ = ECCEF1B210D5C12E00351CCC /* PBXTextBookmark */;
+			ECCEF1B910D5C17B00351CCC /* PBXTextBookmark */ = ECCEF1B910D5C17B00351CCC /* PBXTextBookmark */;
+			ECCEF1BA10D5C17B00351CCC /* XCBuildMessageTextBookmark */ = ECCEF1BA10D5C17B00351CCC /* XCBuildMessageTextBookmark */;
+			ECCEF1BB10D5C17B00351CCC /* PBXTextBookmark */ = ECCEF1BB10D5C17B00351CCC /* PBXTextBookmark */;
+			ECCEF1BC10D5C17B00351CCC /* PBXTextBookmark */ = ECCEF1BC10D5C17B00351CCC /* PBXTextBookmark */;
+			ECCEF1BF10D5C18700351CCC /* PBXTextBookmark */ = ECCEF1BF10D5C18700351CCC /* PBXTextBookmark */;
+			ECCEF1C010D5C18700351CCC /* PBXTextBookmark */ = ECCEF1C010D5C18700351CCC /* PBXTextBookmark */;
 			ECF5B2261024E183001B3969 = ECF5B2261024E183001B3969 /* PBXBookmark */;
 			ECF5B2351024E255001B3969 = ECF5B2351024E255001B3969 /* PBXTextBookmark */;
 			ECF5B2391024E255001B3969 = ECF5B2391024E255001B3969 /* PBXTextBookmark */;
@@ -430,9 +438,9 @@
 	};
 	EC341D9C0FD5AAE40003212C /* EntryViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1732, 3859}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1732, 3944}}";
 			sepNavSelRange = "{7978, 0}";
-			sepNavVisRange = "{5815, 2163}";
+			sepNavVisRange = "{7520, 460}";
 			sepNavWindowFrame = "{{19, 54}, {1182, 819}}";
 		};
 	};
@@ -1686,6 +1694,85 @@
 		rType = 0;
 		vrLen = 2163;
 		vrLoc = 5815;
+	};
+	ECCEF1B110D5C12E00351CCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC6EB9550FD1CFDC00E6F9D8 /* CategoryViewController.m */;
+		name = "CategoryViewController.m: 172";
+		rLen = 0;
+		rLoc = 5275;
+		rType = 0;
+		vrLen = 484;
+		vrLoc = 4770;
+	};
+	ECCEF1B210D5C12E00351CCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341D9C0FD5AAE40003212C /* EntryViewController.m */;
+		name = "EntryViewController.m: 232";
+		rLen = 0;
+		rLoc = 7978;
+		rType = 0;
+		vrLen = 460;
+		vrLoc = 7520;
+	};
+	ECCEF1B910D5C17B00351CCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341D9C0FD5AAE40003212C /* EntryViewController.m */;
+		name = "EntryViewController.m: 232";
+		rLen = 0;
+		rLoc = 7978;
+		rType = 0;
+		vrLen = 2165;
+		vrLoc = 5815;
+	};
+	ECCEF1BA10D5C17B00351CCC /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Method definition for '-didCloseQuickEntryView' not found";
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 309;
+		rType = 1;
+	};
+	ECCEF1BB10D5C17B00351CCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
+		name = "MainViewController.m: 190";
+		rLen = 0;
+		rLoc = 5651;
+		rType = 0;
+		vrLen = 1439;
+		vrLoc = 4905;
+	};
+	ECCEF1BC10D5C17B00351CCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
+		name = "MainViewController.m: 190";
+		rLen = 0;
+		rLoc = 5651;
+		rType = 0;
+		vrLen = 1429;
+		vrLoc = 4915;
+	};
+	ECCEF1BF10D5C18700351CCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EC341D9C0FD5AAE40003212C /* EntryViewController.m */;
+		name = "EntryViewController.m: 232";
+		rLen = 0;
+		rLoc = 7978;
+		rType = 0;
+		vrLen = 460;
+		vrLoc = 7520;
+	};
+	ECCEF1C010D5C18700351CCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
+		name = "MainViewController.m: 190";
+		rLen = 0;
+		rLoc = 5651;
+		rType = 0;
+		vrLen = 268;
+		vrLoc = 5471;
 	};
 	ECE93A940FD8D48D006BA407 /* KeyPadViewController.h */ = {
 		uiCtxt = {

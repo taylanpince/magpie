@@ -187,7 +187,7 @@
 	}
 }
 
-- (void)didCloseEditDataEntryView {
+- (void)didCloseQuickEntryView {
 	[self dismissModalViewControllerAnimated:YES];
 	[tableView reloadData];
 }
@@ -210,6 +210,7 @@
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
 	
+	[navController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
 	[self presentModalViewController:navController animated:YES];
 	
 	[controller release];
