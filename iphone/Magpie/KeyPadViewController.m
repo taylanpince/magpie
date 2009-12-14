@@ -13,13 +13,11 @@
 
 @synthesize delegate;
 
-
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
 	[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-keypad.png"]]];
 }
-
 
 - (IBAction)didTapKey:(id)sender {
 	UIButton *button = (UIButton *)sender;
@@ -27,15 +25,12 @@
 	[delegate didTapKeyPad:self onKey:button.tag];
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-
 - (void)dealloc {
     [super dealloc];
 }
-
 
 @end

@@ -17,7 +17,7 @@
 
 @implementation QuickEntryViewController
 
-@synthesize entry, item, managedObjectContext;
+@synthesize entry, item, managedObjectContext, categoriesList;
 @synthesize formTableView, datePickerView, dataSetPicker, keyPad;
 @synthesize activeRow, dateFormatter, valueFormatter, delegate;
 
@@ -45,7 +45,11 @@
 	} else {
 		self.entry = (Entry *)[NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:managedObjectContext];
 		
+		[entry setTimeStamp:[NSDate date]];
+		[entry setItem:item];
+		
 		[self setTitle:@"Add Entry"];
+		
 		[saveButton setEnabled:NO];
 	}
 	
@@ -58,6 +62,28 @@
 	
 	[formTableView setBackgroundColor:[UIColor colorWithRed:0.34 green:0.35 blue:0.37 alpha:1.0]];
 	[self.view setBackgroundColor:[UIColor darkGrayColor]];
+	
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Category" inManagedObjectContext:managedObjectContext];
+	NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+	NSArray *sorters = [[NSArray alloc] initWithObjects:sorter, nil];
+	
+	[request setEntity:entity];
+	[request setSortDescriptors:sorters];
+	
+	[sorter release];
+	[sorters release];
+	
+	NSError *error;
+	NSMutableArray *results = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+	
+	if (results == nil) {
+		// TODO: Handle the error
+	}
+	
+	[self setCategoriesList:results];
+	[results release];
+	[request release];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -70,34 +96,27 @@
 }
 
 - (void)save:(id)sender {
-	// TODO: Save and call delegate with save
-	/*dataEntry.value = dataEntryValue;
-	dataEntry.timeStamp = dataEntryTimeStamp;
+	NSError *error;
 	
-	if (!dataEntry.primaryKey) {
-		[dataItem addDataEntry:dataEntry];
-	} else {
-		[dataEntry dehydrate];
+	if (![managedObjectContext save:&error]) {
+		// TODO: Update to handle the error appropriately.
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		exit(-1);
 	}
 	
-	dataItem.lastUpdated = [NSDate date];
-	[dataItem dehydrate];
-	[dataItem selectRelated];
-	
 	if (delegate) {
-		[delegate didCloseEditDataEntryView];
+		[delegate didCloseQuickEntryView];
 	} else {
 		[self.navigationController popViewControllerAnimated:YES];
-	}*/
+	}
 }
 
 - (void)cancel:(id)sender {
-	// TODO: Cancel save and call delegate
-	/*if (delegate) {
-		[delegate didCloseEditDataEntryView];
+	if (delegate) {
+		[delegate didCloseQuickEntryView];
 	} else {
 		[self.navigationController popViewControllerAnimated:YES];
-	}*/
+	}
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -196,9 +215,8 @@
 				[dataSetPicker setDelegate:self];
 				[dataSetPicker setDataSource:self];
 				[dataSetPicker setShowsSelectionIndicator:YES];
-				// TODO: Figure out how to select the correct category and item in the picker
-				//[dataSetPicker selectRow:[[(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] indexOfObject:dataItem.dataSet] inComponent:0 animated:NO];
-				//[dataSetPicker selectRow:[[item.category.items allObjects] indexOfObject:item] inComponent:1 animated:NO];
+				[dataSetPicker selectRow:[categoriesList indexOfObject:item.category] inComponent:0 animated:NO];
+				[dataSetPicker selectRow:[[item.category.items allObjects] indexOfObject:item] inComponent:1 animated:NO];
 				[dataSetPicker reloadComponent:1];
 				
 				[self.view addSubview:dataSetPicker];
@@ -290,29 +308,27 @@
 	[formTableView reloadData];
 }
 
-
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
 	return 2;
 }
 
-
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
 	NSInteger total = 0;
-	// TODO: Figure out how to get all category and item counts for the picker
+	
 	switch (component) {
 		case 0: {
-			//total = [[(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] count];
+			total = [categoriesList count];
 			
 			break;
 		}
 		case 1: {
-			/*NSInteger selectedRow = [pickerView selectedRowInComponent:0];
+			NSInteger selectedRow = [pickerView selectedRowInComponent:0];
 
 			if (selectedRow >= 0) {
-				total = [[[[(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] objectAtIndex:selectedRow] dataItems] count];
+				total = [[[categoriesList objectAtIndex:selectedRow] items] count];
 			} else {
 				total = 0;
-			}*/
+			}
 
 			break;
 		}
@@ -321,26 +337,25 @@
 	return total;
 }
 
-
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-	NSString *title = @"";
+	NSString *title;
 	
 	switch (component) {
 		case 0: {
-			//title = [[[(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] objectAtIndex:row] name];
+			title = [[categoriesList objectAtIndex:row] name];
 
 			break;
 		}
 		case 1: {
-			/*NSInteger selectedRow = [pickerView selectedRowInComponent:0];
+			NSInteger selectedRow = [pickerView selectedRowInComponent:0];
 			
 			if (selectedRow >= 0) {
-				DataSet *activeSet = [[(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] objectAtIndex:selectedRow];
+				Category *category = [categoriesList objectAtIndex:selectedRow];
 				
-				title = [[activeSet.dataItems objectAtIndex:row] name];
+				title = [[[category.items allObjects] objectAtIndex:row] name];
 			} else {
 				title = @"";
-			}*/
+			}
 			
 			break;
 		}
@@ -349,28 +364,29 @@
 	return title;
 }
 
-
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
 	switch (component) {
 		case 0: {
 			[pickerView reloadComponent:1];
 			
-			/*DataItem *newDataItem = [[[[(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] objectAtIndex:row] dataItems] objectAtIndex:[pickerView selectedRowInComponent:1]];
+			Item *newItem = [[[(Category *)[categoriesList objectAtIndex:row] items] allObjects] objectAtIndex:[pickerView selectedRowInComponent:1]];
 			
-			if (newDataItem != nil) {
-				[self setDataItem:newDataItem];
+			if (newItem != nil) {
+				[self setItem:newItem];
+				
 				[formTableView reloadData];
-			}*/
+			}
 			
 			break;
 		}
 		case 1: {
-			/*DataItem *newDataItem = [[[[(MagpieAppDelegate *)[[UIApplication sharedApplication] delegate] dataSets] objectAtIndex:[pickerView selectedRowInComponent:0]] dataItems] objectAtIndex:row];
+			Item *newItem = [[[(Category *)[categoriesList objectAtIndex:[pickerView selectedRowInComponent:0]] items] allObjects] objectAtIndex:row];
 
-			if (newDataItem != nil) {
-				[self setDataItem:newDataItem];
+			if (newItem != nil) {
+				[self setItem:newItem];
+				
 				[formTableView reloadData];
-			}*/
+			}
 			
 			break;
 		}

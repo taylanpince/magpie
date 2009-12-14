@@ -64,7 +64,7 @@
 	if (![managedObjectContext save:&error]) {
 		// TODO: Update to handle the error appropriately.
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		exit(-1);  // Fail
+		exit(-1);
 	}
 	
 	// TODO: Make delegate call so context can be merged
@@ -116,9 +116,9 @@
 		}
 		
 		if (indexPath.row == 0) {
-			[cell setAccessoryType:UITableViewCellAccessoryNone];
+			[cell setEditingAccessoryType:UITableViewCellAccessoryNone];
 		} else {
-			[cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
+			[cell setEditingAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
 		}
 		
 		[cell setDelegate:self];
@@ -161,6 +161,7 @@
 		NSArray *indexPaths = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:1 inSection:1], nil];
 		Item *item = (Item *)[NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:managedObjectContext];
 		
+		[item setName:@""];
 		[item setLastUpdated:[NSDate date]];
 		[category addItemsObject:item];
 		

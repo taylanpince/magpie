@@ -20,6 +20,7 @@
 	Entry *entry;
 	Item *item;
 	
+	NSMutableArray *categoriesList;
 	NSManagedObjectContext *managedObjectContext;
 	NSNumberFormatter *valueFormatter;
 	NSDateFormatter *dateFormatter;
@@ -37,6 +38,7 @@
 @property (nonatomic, retain) Entry *entry;
 @property (nonatomic, retain) Item *item;
 
+@property (nonatomic, retain) NSMutableArray *categoriesList;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain) NSNumberFormatter *valueFormatter;
 @property (nonatomic, retain) NSDateFormatter *dateFormatter;

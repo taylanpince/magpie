@@ -45,7 +45,13 @@
 	[self.navigationItem setRightBarButtonItem:saveButton];
 	[saveButton release];
 	
+	NSError *error;
 	
+	if (![[self fetchedResultsController] performFetch:&error]) {
+		// TODO: Handle the error
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		exit(-1);
+	}
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -78,10 +84,10 @@
 	[cell setIconType:@""];
 	
 	if (indexPath.row == 0) {
-		[cell setMainLabel:@"Add New Entry"];
+		[cell setMainLabel:@"Add new Entry"];
 		[cell setSubLabel:@""];
 	} else {
-		Entry *entry = [fetchedResultsController objectAtIndexPath:indexPath];
+		Entry *entry = [[fetchedResultsController fetchedObjects] objectAtIndex:(indexPath.row - 1)];
 		
 		[cell setMainLabel:[valueFormatter stringFromNumber:entry.value]];
 		[cell setSubLabel:[dateFormatter stringFromDate:entry.timeStamp]];
@@ -117,32 +123,32 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	// DEPRECATED
-	/*DataEntry *dataEntry;
+	QuickEntryViewController *controller = [[QuickEntryViewController alloc] initWithNibName:@"DataEntryView" bundle:nil];
 	
-	if (indexPath.row == 0) {
-		dataEntry = [[[DataEntry alloc] init] autorelease];
-	} else {
-		dataEntry = [dataItem.dataEntries objectAtIndex:(indexPath.row - 1)];
+	if (indexPath.row > 0) {
+		[controller setEntry:[[fetchedResultsController fetchedObjects] objectAtIndex:(indexPath.row - 1)]];
 	}
 	
-	EditDataEntryViewController *controller = [[EditDataEntryViewController alloc] initWithNibName:@"DataEntryView" bundle:nil];
-	
-	controller.dataEntry = dataEntry;
-	controller.dataItem = dataItem;
+	[controller setItem:item];
+	[controller setManagedObjectContext:managedObjectContext];
 	
 	[self.navigationController pushViewController:controller animated:YES];
-	
-	[controller release];*/
+	[controller release];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-		// DEPRECATED
-		/*DataEntry *dataEntry = [dataItem.dataEntries objectAtIndex:(indexPath.row - 1)];
+		Entry *entry = [[fetchedResultsController fetchedObjects] objectAtIndex:(indexPath.row - 1)];
 		
-		[dataItem removeDataEntry:dataEntry];
-		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];*/
+		[managedObjectContext deleteObject:entry];
+		
+		NSError *error;
+		
+		if (![managedObjectContext save:&error]) {
+			// TODO: Handle the error
+			NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+			exit(-1);
+		}
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
 		[self tableView:tableView didSelectRowAtIndexPath:indexPath];
 	}
@@ -157,6 +163,10 @@
 	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Entry" inManagedObjectContext:managedObjectContext];
 	
 	[request setEntity:entity];
+	
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"item == %@", item];
+	
+	[request setPredicate:predicate];
 	
 	NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
 	NSArray *sorters = [[NSArray alloc] initWithObjects:sorter, nil];
@@ -182,19 +192,26 @@
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+	NSIndexPath *newIndexPathWithOffset;
+	NSIndexPath *indexPathWithOffset = [NSIndexPath indexPathForRow:(indexPath.row + 1) inSection:indexPath.section];
+	
+	if (newIndexPath) {
+		newIndexPathWithOffset = [NSIndexPath indexPathForRow:(newIndexPath.row + 1) inSection:newIndexPath.section];
+	}
+	
 	switch(type) {
 		case NSFetchedResultsChangeInsert:
-			[self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+			[self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPathWithOffset] withRowAnimation:UITableViewRowAnimationFade];
 			break;
 		case NSFetchedResultsChangeDelete:
-			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPathWithOffset] withRowAnimation:UITableViewRowAnimationFade];
 			break;
 		case NSFetchedResultsChangeUpdate:
 			[self configureCell:(InfoTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
 			break;
 		case NSFetchedResultsChangeMove:
-			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-			[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:newIndexPath.section] withRowAnimation:UITableViewRowAnimationFade];
+			//[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+			//[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:newIndexPath.section] withRowAnimation:UITableViewRowAnimationFade];
 			break;
 	}
 }
