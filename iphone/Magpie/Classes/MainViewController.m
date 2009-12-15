@@ -12,10 +12,10 @@
 #import "IntroViewController.h"
 #import "HelpView.h"
 #import "Display.h"
+#import "Category.h"
 
 
 @interface MainViewController (PrivateMethods)
-//- (void)refreshDisplays;
 - (void)hideTutorial;
 - (void)displayTutorial:(NSUInteger)step;
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -77,31 +77,6 @@
 	}
 }
 
-// DEPRECATED
-/*- (void)refreshDisplays {
-	for (UIView *view in [scrollView subviews]) {
-		if ([view isKindOfClass:[PanelView class]]) {
-			[view removeFromSuperview];
-		}
-	}
-	
-	CGPoint top = CGPointMake(0.0, 10.0);
-	
-	for (Display *display in displays) {
-		PanelView *panelView = [[PanelView alloc] initWithFrame:CGRectMake(top.x, top.y, scrollView.frame.size.width, 0.0)];
-		
-		[panelView setDisplay:display];
-		[scrollView addSubview:panelView];
-		
-		top.y += panelView.frame.size.height + 10.0;
-
-		[panelView release];
-	}
-	
-	scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, top.y);
-}*/
-// END DEPRECATED
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return [[fetchedResultsController sections] count];
 }
@@ -127,7 +102,7 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 	Display *display = [fetchedResultsController objectAtIndexPath:indexPath];
 	
-	cell.textLabel.text = display.name;
+	[cell.textLabel setText:display.name];
 }
 
 - (void)hideTutorial {
@@ -221,16 +196,9 @@
 	QuickEntryViewController *controller = [[QuickEntryViewController alloc] initWithNibName:@"DataEntryView" bundle:nil];
 	
 	[controller setDelegate:self];
-	// DEPRECATED
-	/*[controller setEntry:(Entry *)[NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:context]];
-	
-	for (PanelView *view in scrollView.subviews) {
-		if ([view isKindOfClass:[PanelView class]] && view.frame.origin.y > scrollView.contentOffset.y && view.frame.origin.y < scrollView.contentOffset.y + scrollView.contentSize.height) {
-			[controller setItem:[view.display.category.items objectAtIndex:0]];
-			break;
-		}
-	}*/
-	// END DEPRECATED
+	[controller setManagedObjectContext:managedObjectContext];
+	[controller setItem:[[[(Category *)[[[fetchedResultsController fetchedObjects] objectAtIndex:0] category] items] allObjects] objectAtIndex:0]];
+	// TODO: Use [tableView visibleCells] to figure out which display to use for the entry panel
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
 	

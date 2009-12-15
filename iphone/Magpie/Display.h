@@ -8,17 +8,14 @@
 
 @class Category;
 
-@interface Display :  NSManagedObject  
-{
+@interface Display : NSManagedObject {
+	
 }
 
-@property (nonatomic, retain) NSDecimalNumber * weight;
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * type;
-@property (nonatomic, retain) NSString * color;
-@property (nonatomic, retain) Category * category;
+@property (nonatomic, retain) NSDecimalNumber *weight;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *type;
+@property (nonatomic, retain) NSString *color;
+@property (nonatomic, retain) Category *category;
 
 @end
-
-
-

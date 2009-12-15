@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ActivePerspectiveName</key>
-	<string>Debug</string>
+	<string>Project</string>
 	<key>AllowedModules</key>
 	<array>
 		<dict>
@@ -274,6 +274,7 @@
 								<string>EC18AA6710CCCF6A00A79573</string>
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
+								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
 							</array>
@@ -286,7 +287,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 144}, {262, 764}}</string>
+							<string>{{0, 321}, {262, 764}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -302,6 +303,8 @@
 							<string>MainColumn</string>
 							<real>262</real>
 						</array>
+						<key>RubberWindowFrame</key>
+						<string>4 55 1436 823 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -312,6 +315,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -329,7 +334,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ECCEF1BC10D5C17B00351CCC</string>
+										<string>ECECE41310D84DBD00A8E051</string>
 										<key>history</key>
 										<array>
 											<string>EC309FBA1003BDC100A0C623</string>
@@ -378,7 +383,6 @@
 											<string>EC84286F10D0A9E3003B8416</string>
 											<string>EC84287010D0A9E3003B8416</string>
 											<string>EC84287110D0A9E3003B8416</string>
-											<string>EC84287510D0A9E3003B8416</string>
 											<string>EC84288910D0AA65003B8416</string>
 											<string>EC84299B10D0BA17003B8416</string>
 											<string>EC84299D10D0BA17003B8416</string>
@@ -394,12 +398,13 @@
 											<string>ECCEF15C10D5BDAF00351CCC</string>
 											<string>ECCEF15D10D5BDAF00351CCC</string>
 											<string>ECCEF15F10D5BDAF00351CCC</string>
-											<string>ECCEF16810D5BDDA00351CCC</string>
 											<string>ECCEF18B10D5BFCF00351CCC</string>
 											<string>ECCEF19610D5C0CC00351CCC</string>
 											<string>ECCEF19710D5C0CC00351CCC</string>
 											<string>ECCEF1B910D5C17B00351CCC</string>
-											<string>ECCEF1BA10D5C17B00351CCC</string>
+											<string>ECECE40A10D84D3600A8E051</string>
+											<string>ECECE41110D84DBD00A8E051</string>
+											<string>ECECE41210D84DBD00A8E051</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -414,6 +419,8 @@
 							<dict>
 								<key>Frame</key>
 								<string>{{0, 0}, {1152, 777}}</string>
+								<key>RubberWindowFrame</key>
+								<string>4 55 1436 823 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -437,6 +444,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1152, -27}}</string>
+										<key>RubberWindowFrame</key>
+										<string>4 55 1436 823 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -490,7 +499,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1152, -27}}</string>
+										<string>{{0, 0}, {568, 405}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -518,11 +527,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>ECCEF12010D5B8BB00351CCC</string>
+				<string>ECECE3D510D84B0500A8E051</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>ECCEF12110D5B8BB00351CCC</string>
+				<string>ECECE3D610D84B0500A8E051</string>
 				<string>EC89595110016E400009E0DF</string>
-				<string>ECCEF12210D5B8BB00351CCC</string>
+				<string>ECECE3D710D84B0500A8E051</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -563,8 +572,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
@@ -576,8 +583,6 @@
 					<dict>
 						<key>Frame</key>
 						<string>{{0, 0}, {1436, 322}}</string>
-						<key>RubberWindowFrame</key>
-						<string>4 55 1436 823 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
@@ -652,11 +657,7 @@
 							</array>
 							<key>Frame</key>
 							<string>{{701, 0}, {735, 220}}</string>
-							<key>RubberWindowFrame</key>
-							<string>4 55 1436 823 0 0 1440 878 </string>
 						</dict>
-						<key>RubberWindowFrame</key>
-						<string>4 55 1436 823 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
@@ -679,13 +680,13 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>ECCEF12310D5B8BB00351CCC</string>
+				<string>ECECE3DE10D84B7C00A8E051</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>ECCEF12410D5B8BB00351CCC</string>
-				<string>ECCEF12510D5B8BB00351CCC</string>
-				<string>ECCEF12610D5B8BB00351CCC</string>
-				<string>ECCEF12710D5B8BB00351CCC</string>
+				<string>ECECE3DF10D84B7C00A8E051</string>
+				<string>ECECE3E010D84B7C00A8E051</string>
+				<string>ECECE3E110D84B7C00A8E051</string>
+				<string>ECECE3E210D84B7C00A8E051</string>
 				<string>EC89595110016E400009E0DF</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
@@ -718,9 +719,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>ECCEF1BD10D5C17B00351CCC</string>
-		<string>ECCEF13910D5B90B00351CCC</string>
-		<string>ECCEF12910D5B8BB00351CCC</string>
+		<string>ECECE3EF10D84BEC00A8E051</string>
+		<string>ECECE3E410D84B7C00A8E051</string>
 		<string>/Users/taylan/Documents/Development/Personal/magpie/iphone/Magpie/Magpie.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

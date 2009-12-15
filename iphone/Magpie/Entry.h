@@ -8,15 +8,12 @@
 
 @class Item;
 
-@interface Entry :  NSManagedObject  
-{
+@interface Entry : NSManagedObject {
+	
 }
 
-@property (nonatomic, retain) NSNumber * value;
-@property (nonatomic, retain) NSDate * timeStamp;
-@property (nonatomic, retain) Item * item;
+@property (nonatomic, retain) NSNumber *value;
+@property (nonatomic, retain) NSDate *timeStamp;
+@property (nonatomic, retain) Item *item;
 
 @end
-
-
-

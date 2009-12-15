@@ -9,17 +9,20 @@
 @class Category;
 @class Entry;
 
-@interface Item :  NSManagedObject  
-{
+@interface Item : NSManagedObject {
+	double total;
+	double percentage;
 }
 
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSDate * lastUpdated;
-@property (nonatomic, retain) NSSet* entries;
-@property (nonatomic, retain) Category * category;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSDate *lastUpdated;
+@property (nonatomic, retain) NSSet *entries;
+@property (nonatomic, retain) Category *category;
+
+@property (nonatomic, assign, readonly) double total;
+@property (nonatomic, assign, readonly) double percentage;
 
 @end
-
 
 @interface Item (CoreDataGeneratedAccessors)
 - (void)addEntriesObject:(Entry *)value;
@@ -27,5 +30,10 @@
 - (void)addEntries:(NSSet *)value;
 - (void)removeEntries:(NSSet *)value;
 
-@end
+- (Entry *)latestEntry;
+- (Entry *)largestEntry;
 
+- (double)totalForDay:(NSDate *)day;
+- (double)totalForMonth:(NSDate *)month;
+- (double)averageEntryValue;
+@end
