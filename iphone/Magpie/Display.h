@@ -18,4 +18,7 @@
 @property (nonatomic, retain) NSString *color;
 @property (nonatomic, retain) Category *category;
 
+- (CGFloat)heightForDisplay;
+- (UIImage *)imageForDisplay;
+
 @end

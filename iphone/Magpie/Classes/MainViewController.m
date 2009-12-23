@@ -26,6 +26,7 @@
 
 @synthesize tableView, quickEntryButton, helpView;
 @synthesize managedObjectContext, fetchedResultsController;
+@synthesize operationQueue;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -65,7 +66,7 @@
 	
 	if ([[fetchedResultsController fetchedObjects] count] == 0) {
 		[self displayTutorial:1];
-	} else if ([[fetchedResultsController fetchedObjects] count] == 1/*TODO: Make sure this works && [[[[fetchedResultsController fetchedObjects] objectAtIndex:0] category] total] == 0.0*/) {
+	} else if ([[fetchedResultsController fetchedObjects] count] == 1 && [[[[fetchedResultsController fetchedObjects] objectAtIndex:0] category] total] == 0.0) {
 		[self displayTutorial:2];
 	} else if ([defaults boolForKey:@"tutorialCompleted"] == NO) {
 		[defaults setBool:YES forKey:@"tutorialCompleted"];
@@ -91,7 +92,7 @@
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
     }
     
 	[self configureCell:cell atIndexPath:indexPath];
@@ -103,6 +104,7 @@
 	Display *display = [fetchedResultsController objectAtIndexPath:indexPath];
 	
 	[cell.textLabel setText:display.name];
+	[cell.detailTextLabel setText:[NSString stringWithFormat:@"%1.2f", display.category.total]];
 }
 
 - (void)hideTutorial {
@@ -260,6 +262,7 @@
     [super didReceiveMemoryWarning];
 	
 	self.fetchedResultsController = nil;
+	self.operationQueue = nil;
 }
 
 - (void)dealloc {
@@ -272,6 +275,8 @@
 	
 	[tableView release];
 	[quickEntryButton release];
+	[operationQueue cancelAllOperations];
+	[operationQueue release];
     [super dealloc];
 }
 

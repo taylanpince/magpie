@@ -20,6 +20,7 @@
 	
 	NSFetchedResultsController *fetchedResultsController;
 	NSManagedObjectContext *managedObjectContext;
+	NSOperationQueue *operationQueue;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
@@ -29,6 +30,7 @@
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
 
 - (IBAction)showSettings;
 - (IBAction)showQuickAdd;
