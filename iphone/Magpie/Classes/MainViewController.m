@@ -10,9 +10,12 @@
 #import "FlipsideViewController.h"
 #import "QuickEntryViewController.h"
 #import "IntroViewController.h"
+#import "DisplayTableViewCell.h"
 #import "HelpView.h"
 #import "Display.h"
 #import "Category.h"
+
+#define displayCellID @"displayCell"
 
 
 @interface MainViewController (PrivateMethods)
@@ -87,12 +90,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    DisplayTableViewCell *cell = (DisplayTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:displayCellID];
 	
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[DisplayTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:displayCellID] autorelease];
     }
     
 	[self configureCell:cell atIndexPath:indexPath];
@@ -100,11 +101,18 @@
     return cell;
 }
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+- (void)configureCell:(DisplayTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 	Display *display = [fetchedResultsController objectAtIndexPath:indexPath];
 	
-	[cell.textLabel setText:display.name];
-	[cell.detailTextLabel setText:[NSString stringWithFormat:@"%1.2f", display.category.total]];
+	[cell setDisplay:display];
+	/*[cell.textLabel setText:display.name];
+	[cell.detailTextLabel setText:[NSString stringWithFormat:@"%1.2f", display.category.total]];*/
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	Display *display = [fetchedResultsController objectAtIndexPath:indexPath];
+	
+	return [display heightForDisplay];
 }
 
 - (void)hideTutorial {

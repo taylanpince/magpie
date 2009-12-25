@@ -42,6 +42,7 @@
 		EC86C68E107A8E4D00CF68F3 /* intro-3.png in Resources */ = {isa = PBXBuildFile; fileRef = EC86C68B107A8E4D00CF68F3 /* intro-3.png */; };
 		EC9D93C11077D9D700A06171 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9D93C01077D9D700A06171 /* CoreData.framework */; };
 		EC9D94881077DA1600A06171 /* Magpie.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = EC9D94871077DA1600A06171 /* Magpie.xcdatamodel */; };
+		ECA9691010E4BD6C0005B94C /* DisplayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA9690F10E4BD6C0005B94C /* DisplayTableViewCell.m */; };
 		ECAE8CA2107291390047273C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = ECAE8CA1107291390047273C /* Default.png */; };
 		ECB752C50FF16CAD007CCBCB /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB752C40FF16CAD007CCBCB /* bg.png */; };
 		ECBB4A0F107BD130009BDFB8 /* AboutView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBB4A0E107BD130009BDFB8 /* AboutView.m */; };
@@ -143,6 +144,8 @@
 		EC86C68B107A8E4D00CF68F3 /* intro-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro-3.png"; sourceTree = "<group>"; };
 		EC9D93C01077D9D700A06171 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		EC9D94871077DA1600A06171 /* Magpie.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Magpie.xcdatamodel; sourceTree = "<group>"; };
+		ECA9690E10E4BD6C0005B94C /* DisplayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayTableViewCell.h; sourceTree = "<group>"; };
+		ECA9690F10E4BD6C0005B94C /* DisplayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayTableViewCell.m; sourceTree = "<group>"; };
 		ECAE8CA1107291390047273C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		ECB752C40FF16CAD007CCBCB /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		ECBB4A0D107BD130009BDFB8 /* AboutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutView.h; sourceTree = "<group>"; };
@@ -351,6 +354,8 @@
 				EC62D18E0FFD09DD00D9191C /* ScreenTableViewCell.m */,
 				EC7F4B240FFD229F006612C6 /* SubScreenTableViewCell.h */,
 				EC7F4B250FFD229F006612C6 /* SubScreenTableViewCell.m */,
+				ECA9690E10E4BD6C0005B94C /* DisplayTableViewCell.h */,
+				ECA9690F10E4BD6C0005B94C /* DisplayTableViewCell.m */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -576,6 +581,7 @@
 				EC84285C10D0A9C0003B8416 /* Entry.m in Sources */,
 				EC84285D10D0A9C0003B8416 /* Item.m in Sources */,
 				ECF3624F10E194A200EE5FBD /* StatOperation.m in Sources */,
+				ECA9691010E4BD6C0005B94C /* DisplayTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

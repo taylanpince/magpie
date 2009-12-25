@@ -14,10 +14,10 @@
 
 @synthesize display, cellIndex, statImage, delegate;
 
-- (id)initWithDisplay:(Display *)display index:(NSUInteger)cellIndex {
+- (id)initWithDisplay:(Display *)aDisplay index:(NSUInteger)aCellIndex {
 	if (self = [super init]) {
-		self.display = [display retain];
-		self.cellIndex = cellIndex;
+		display = [aDisplay retain];
+		cellIndex = aCellIndex;
 	}
 	
 	return self;
@@ -30,14 +30,14 @@
 }
 
 - (void)main {
-	if (!self.cancelled) {
+	if (!self.isCancelled) {
 		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 		
-		statImage = [[display imageForDisplay] retain];
+		//statImage = [[display imageForDisplay] retain];
 		
 		[pool drain];
 		
-		if (!self.cancelled && delegate) {
+		if (!self.isCancelled && delegate) {
 			[delegate statOperationComplete:self];
 		}
 	}

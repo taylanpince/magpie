@@ -9,6 +9,8 @@
 #import "Display.h"
 
 #import "Category.h"
+#import "Item.h"
+#import "Entry.h"
 
 @implementation Display 
 
@@ -20,63 +22,23 @@
 
 - (CGFloat)heightForDisplay {
 	CGFloat height = 0.0;
-	CGFloat width = [[[[UIScreen mainScreen] applicationFrame] size] width] - 40.0;
+	CGFloat width = [[UIScreen mainScreen] applicationFrame].size.width - 40.0;
 	
 	UIFont *largeFont = [UIFont boldSystemFontOfSize:24];
+	UIFont *mainFont = [UIFont boldSystemFontOfSize:18];
 	
-	if ([type isEqualToString:@"Horizontal Bar Chart"]) {
-		height = 70.0 + [category.items count] * 40.0;
-	} else if ([type isEqualToString:@"Pie Chart"] || [type isEqualToString:@"Vertical Bar Chart"]) {
-		height = 280.0 + ceil([category.items count] / 2.0) * 24.0;
-	} else if ([type isEqualToString:@"Latest Entry as Words"] || [type isEqualToString:@"Largest Entry as Words"]) {
+	if ([self.type isEqualToString:@"Horizontal Bar Chart"]) {
+		height = 70.0 + [self.category.items count] * 40.0;
+	} else if ([self.type isEqualToString:@"Pie Chart"] || [self.type isEqualToString:@"Vertical Bar Chart"]) {
+		height = 280.0 + ceil([self.category.items count] / 2.0) * 24.0;
+	} else if ([self.type isEqualToString:@"Latest Entry as Words"] || [self.type isEqualToString:@"Largest Entry as Words"]) {
 		NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
 		NSNumber *numberValue;
 		
-		if ([type isEqualToString:@"Latest Entry as Words"]) {
-			numberValue = [[[category latestItem] latestEntry] value];
-		} else if ([type isEqualToString:@"Largest Entry as Words"]) {
-			numberValue = [[category largestEntry] value];
-		}
-		
-		[numberFormatter setNumberStyle:NSNumberFormatterSpellOutStyle];
-		
-		CGSize textSize = [[[numberFormatter stringFromNumber:numberValue] uppercaseString] sizeWithFont:largeFont constrainedToSize:CGSizeMake(frame.size.width - 40.0, 600.0) lineBreakMode:UILineBreakModeWordWrap];
-		
-		height = 70.0 + textSize.height;
-		
-		[numberFormatter release];
-	} else if ([type isEqualToString:@"Latest Entry as Numbers"] || [type isEqualToString:@"Largest Entry as Numbers"]) {
-		NSNumber *numberValue;
-		
-		if ([type isEqualToString:@"Latest Entry as Words"]) {
-			numberValue = [[[category latestItem] latestEntry] value];
-		} else if ([type isEqualToString:@"Largest Entry as Numbers"]) {
-			numberValue = [[category largestEntry] value];
-		}
-		
-		CGSize textSize = [[[numberValue stringValue] uppercaseString] sizeWithFont:largeFont constrainedToSize:CGSizeMake(width, 600.0) lineBreakMode:UILineBreakModeWordWrap];
-		
-		frame.size.height = 70.0 + textSize.height;
-	} else if ([type isEqualToString:@"Latest Entry Type"] || [type isEqualToString:@"Largest Entry Type"]) {
-		NSString *entryName;
-		
-		if ([type isEqualToString:@"Latest Entry Type"]) {
-			entryName = [[category latestItem] name];
-		} else if ([type isEqualToString:@"Largest Entry Type"]) {
-			entryName = [[category largestItem] name];
-		}
-		
-		CGSize textSize = [[entryName uppercaseString] sizeWithFont:mainFont constrainedToSize:CGSizeMake(width, 600.0) lineBreakMode:UILineBreakModeWordWrap];
-		
-		height = 70.0 + textSize.height;
-	} else if ([type isEqualToString:@"Total as Words"] || [type isEqualToString:@"Average Entry as Words"]) {
-		NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-		NSNumber *numberValue;
-		
-		if ([type isEqualToString:@"Total as Words"]) {
-			numberValue = [NSNumber numberWithDouble:[category total]];
-		} else if ([type isEqualToString:@"Average Entry as Words"]) {
-			numberValue = [NSNumber numberWithDouble:[NSString stringWithFormat:@"%1.2f", [category averageEntryValue]]];
+		if ([self.type isEqualToString:@"Latest Entry as Words"]) {
+			numberValue = [[[self.category latestItem] latestEntry] value];
+		} else if ([self.type isEqualToString:@"Largest Entry as Words"]) {
+			numberValue = [[self.category largestEntry] value];
 		}
 		
 		[numberFormatter setNumberStyle:NSNumberFormatterSpellOutStyle];
@@ -86,26 +48,67 @@
 		height = 70.0 + textSize.height;
 		
 		[numberFormatter release];
-	} else if ([type isEqualToString:@"Total as Numbers"] || [type isEqualToString:@"Average Entry as Numbers"]) {
+	} else if ([self.type isEqualToString:@"Latest Entry as Numbers"] || [self.type isEqualToString:@"Largest Entry as Numbers"]) {
 		NSNumber *numberValue;
 		
-		if ([type isEqualToString:@"Total as Numbers"]) {
-			numberValue = [NSNumber numberWithDouble:[category total]];
-		} else if ([type isEqualToString:@"Average Entry as Numbers"]) {
-			numberValue = [NSNumber numberWithDouble:[NSString stringWithFormat:@"%1.2f", [category averageEntryValue]]];
+		if ([self.type isEqualToString:@"Latest Entry as Words"]) {
+			numberValue = [[[self.category latestItem] latestEntry] value];
+		} else if ([self.type isEqualToString:@"Largest Entry as Numbers"]) {
+			numberValue = [[self.category largestEntry] value];
 		}
 		
 		CGSize textSize = [[[numberValue stringValue] uppercaseString] sizeWithFont:largeFont constrainedToSize:CGSizeMake(width, 600.0) lineBreakMode:UILineBreakModeWordWrap];
 		
 		height = 70.0 + textSize.height;
-	} else if ([type isEqualToString:@"Daily Timeline"] || [type isEqualToString:@"Monthly Timeline"]) {
-		height = 288.0 + ceil([category.items count] / 2.0) * 24.0;
+	} else if ([self.type isEqualToString:@"Latest Entry Type"] || [self.type isEqualToString:@"Largest Entry Type"]) {
+		NSString *entryName;
+		
+		if ([self.type isEqualToString:@"Latest Entry Type"]) {
+			entryName = [[self.category latestItem] name];
+		} else if ([self.type isEqualToString:@"Largest Entry Type"]) {
+			entryName = [[self.category largestItem] name];
+		}
+		
+		CGSize textSize = [[entryName uppercaseString] sizeWithFont:mainFont constrainedToSize:CGSizeMake(width, 600.0) lineBreakMode:UILineBreakModeWordWrap];
+		
+		height = 70.0 + textSize.height;
+	} else if ([self.type isEqualToString:@"Total as Words"] || [self.type isEqualToString:@"Average Entry as Words"]) {
+		NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+		NSNumber *numberValue;
+		
+		if ([self.type isEqualToString:@"Total as Words"]) {
+			numberValue = [NSNumber numberWithDouble:[self.category total]];
+		} else if ([self.type isEqualToString:@"Average Entry as Words"]) {
+			numberValue = [NSNumber numberWithDouble:[self.category averageEntryValue]];
+		}
+		
+		[numberFormatter setNumberStyle:NSNumberFormatterSpellOutStyle];
+		
+		CGSize textSize = [[[numberFormatter stringFromNumber:numberValue] uppercaseString] sizeWithFont:largeFont constrainedToSize:CGSizeMake(width, 600.0) lineBreakMode:UILineBreakModeWordWrap];
+		
+		height = 70.0 + textSize.height;
+		
+		[numberFormatter release];
+	} else if ([self.type isEqualToString:@"Total as Numbers"] || [self.type isEqualToString:@"Average Entry as Numbers"]) {
+		NSNumber *numberValue;
+		
+		if ([self.type isEqualToString:@"Total as Numbers"]) {
+			numberValue = [NSNumber numberWithDouble:[self.category total]];
+		} else if ([self.type isEqualToString:@"Average Entry as Numbers"]) {
+			numberValue = [NSNumber numberWithDouble:[self.category averageEntryValue]];
+		}
+		
+		CGSize textSize = [[[numberValue stringValue] uppercaseString] sizeWithFont:largeFont constrainedToSize:CGSizeMake(width, 600.0) lineBreakMode:UILineBreakModeWordWrap];
+		
+		height = 70.0 + textSize.height;
+	} else if ([self.type isEqualToString:@"Daily Timeline"] || [self.type isEqualToString:@"Monthly Timeline"]) {
+		height = 288.0 + ceil([self.category.items count] / 2.0) * 24.0;
 	}
 	
 	return height;
 }
 
-- (UIImage *)imageForDisplay {
+/*- (UIImage *)imageForDisplay {
 	CGRect rect = CGRectMake(10.0, 0.0, [[[[UIScreen mainScreen] applicationFrame] size] width], [self heightForDisplay]);
 	CGContextRef context = CreateCGBitmapContextForWidthAndHeight(rect.size.width, rect.size.height, NULL, kDefaultCGBitmapInfoNoAlpha);
 	
@@ -693,6 +696,6 @@
 	}
 	
 	return image;
-}
+}*/
 
 @end
