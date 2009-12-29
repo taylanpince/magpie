@@ -21,7 +21,7 @@
 @dynamic category;
 
 - (CGFloat)heightForDisplay {
-	CGFloat height = 0.0;
+	CGFloat height = 10.0;
 	CGFloat width = [[UIScreen mainScreen] applicationFrame].size.width - 40.0;
 	
 	UIFont *largeFont = [UIFont boldSystemFontOfSize:24];

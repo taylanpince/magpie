@@ -35,6 +35,7 @@
 	[super viewDidLoad];
 	
 	[tableView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]]];
+	[tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 	
 	helpView = nil;
 	
