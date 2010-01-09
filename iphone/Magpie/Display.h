@@ -9,7 +9,8 @@
 @class Category;
 
 @interface Display : NSManagedObject {
-	
+	BOOL hasImage;
+	BOOL hasQueuedOperation;
 }
 
 @property (nonatomic, retain) NSDecimalNumber *weight;
@@ -17,6 +18,9 @@
 @property (nonatomic, retain) NSString *type;
 @property (nonatomic, retain) NSString *color;
 @property (nonatomic, retain) Category *category;
+
+@property (nonatomic, assign) BOOL hasImage;
+@property (nonatomic, assign) BOOL hasQueuedOperation;
 
 - (CGFloat)heightForDisplay;
 

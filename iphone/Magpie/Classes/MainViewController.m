@@ -11,6 +11,7 @@
 #import "QuickEntryViewController.h"
 #import "IntroViewController.h"
 #import "DisplayTableViewCell.h"
+#import "StatOperation.h"
 #import "HelpView.h"
 #import "Display.h"
 #import "Category.h"
@@ -29,15 +30,17 @@
 
 @synthesize tableView, quickEntryButton, helpView;
 @synthesize managedObjectContext, fetchedResultsController;
-@synthesize operationQueue;
+@synthesize operationQueue, placeHolderImage;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
 	[tableView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]]];
 	[tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+	[tableView setAllowsSelection:NO];
 	
 	helpView = nil;
+	placeHolderImage = [[UIImage imageNamed:@"placeholder.png"] retain];
 	
 	NSError *error;
 	
@@ -82,6 +85,24 @@
 	}
 }
 
+- (UIImage *)requestImageForDisplay:(Display *)display withIndex:(NSUInteger)cellIndex {
+	if (display.hasImage == NO && display.hasQueuedOperation == NO) {
+		StatOperation *operation = [[StatOperation alloc] initWithDisplay:display index:cellIndex];
+		
+		[operation setDelegate:self];
+		[operationQueue addOperation:operation];
+		[operation release];
+		
+		[display setHasQueuedOperation:YES];
+	}
+	
+	return placeHolderImage;
+}
+
+- (void)statOperationComplete:(StatOperation *)operation {
+	
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return [[fetchedResultsController sections] count];
 }
@@ -106,6 +127,7 @@
 	Display *display = [fetchedResultsController objectAtIndexPath:indexPath];
 	
 	[cell setDisplay:display];
+	[cell setStatImage:[self requestImageForDisplay:display withIndex:indexPath.row]];
 	/*[cell.textLabel setText:display.name];
 	[cell.detailTextLabel setText:[NSString stringWithFormat:@"%1.2f", display.category.total]];*/
 }
@@ -286,6 +308,7 @@
 	[quickEntryButton release];
 	[operationQueue cancelAllOperations];
 	[operationQueue release];
+	[placeHolderImage release];
     [super dealloc];
 }
 
