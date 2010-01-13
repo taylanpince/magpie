@@ -41,6 +41,9 @@
 	
 	helpView = nil;
 	placeHolderImage = [[UIImage imageNamed:@"placeholder.png"] retain];
+	operationQueue = [[NSOperationQueue alloc] init];
+	
+	[operationQueue setMaxConcurrentOperationCount:[[NSProcessInfo processInfo] activeProcessorCount] + 1];
 	
 	NSError *error;
 	
@@ -87,6 +90,7 @@
 
 - (UIImage *)requestImageForDisplay:(Display *)display withIndex:(NSUInteger)cellIndex {
 	if (display.hasImage == NO && display.hasQueuedOperation == NO) {
+		NSLog(@"FIRING STAT OP");
 		StatOperation *operation = [[StatOperation alloc] initWithDisplay:display index:cellIndex];
 		
 		[operation setDelegate:self];
@@ -100,7 +104,23 @@
 }
 
 - (void)statOperationComplete:(StatOperation *)operation {
+	NSLog(@"STAT OP COMPLETE");
+	if (operation.isCancelled) {
+		return;
+	}
 	
+	if ([NSThread isMainThread]) {
+		DisplayTableViewCell *cell = (DisplayTableViewCell *)[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:operation.cellIndex inSection:0]];
+		
+		if (cell && operation.statImage) {
+			[cell setStatImage:operation.statImage];
+		}
+		
+		operation.display.hasQueuedOperation = NO;
+		operation.display.hasImage = (operation.statImage != nil);
+	} else {
+		[self performSelectorOnMainThread:@selector(statOperationComplete:) withObject:operation waitUntilDone:NO];
+	}
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

@@ -85,6 +85,16 @@ static UIFont *smallBoldFont = nil;
 	}
 }
 
+- (void)setStatImage:(UIImage *)newStatImage {
+	if (statImage != newStatImage) {
+		[statImage release];
+		
+		statImage = [newStatImage retain];
+		
+		[self setNeedsLayout];
+	}
+}
+
 - (void)setFrame:(CGRect)rect {
 	[super setFrame:rect];
 	[contentView setFrame:[self bounds]];
@@ -98,6 +108,13 @@ static UIFont *smallBoldFont = nil;
 - (void)layoutSubviews {
 	[super layoutSubviews];
 	[contentView setNeedsDisplay];
+	
+	if (statImage != nil) {
+		UIImageView *imageView = [[UIImageView alloc] initWithImage:statImage];
+		
+		[self addSubview:imageView];
+		[imageView release];
+	}
 }
 
 - (void)drawContentView:(CGRect)rect {

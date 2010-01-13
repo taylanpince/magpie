@@ -34,40 +34,41 @@
 }
 
 - (void)main {
+	NSLog(@"STAT OPERATION STARTED");
 	if (!self.isCancelled) {
 		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 		
 		CGRect rect = CGRectMake(10.0, 0.0, [[UIScreen mainScreen] applicationFrame].size.width, [display heightForDisplay]);
 		CGColorSpaceRef	colorSpace = CGColorSpaceCreateDeviceRGB();
-		CGBitmapInfo alphaInfo = (kCGImageAlphaNoneSkipFirst | kCGBitmapByteOrder32Host);
+		CGBitmapInfo alphaInfo = (kCGImageAlphaPremultipliedFirst | kCGBitmapByteOrder32Host);
 		CGContextRef context = CGBitmapContextCreate(NULL, rect.size.width, rect.size.height, 8, 0, colorSpace, alphaInfo);
 		CGImageRef cgImage = NULL;
 		
 		UIColor *panelColor = [PanelColor colorWithName:display.color alpha:1.0];
 		UIColor *textColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0];
 		
-		UIFont *largeFont = [UIFont boldSystemFontOfSize:24];
+		/*UIFont *largeFont = [UIFont boldSystemFontOfSize:24];
 		UIFont *mainFont = [UIFont boldSystemFontOfSize:18];
 		UIFont *mediumFont = [UIFont boldSystemFontOfSize:15];
 		UIFont *smallFont = [UIFont systemFontOfSize:12];
-		UIFont *tinyFont = [UIFont systemFontOfSize:8];
+		UIFont *tinyFont = [UIFont systemFontOfSize:8];*/
 		
 		CGPoint point = CGPointMake(rect.origin.x + 10.0, rect.origin.y + 50.0);
-		CGSize textSize;
+		//CGSize textSize;
 		
 		int counter = 0;
-		
-		if ([display.type isEqualToString:@"Horizontal Bar Chart"]) {
+		NSLog(@"RENDERING: %@", display.type);
+		if ([display.type isEqualToString:@"Horizontal Bar Chart"] && !self.isCancelled) {
 			for (Item *item in display.category.items) {
 				[textColor set];
 				
-				textSize = [[item.name uppercaseString] drawAtPoint:point forWidth:rect.size.width - 100.0 withFont:mainFont lineBreakMode:UILineBreakModeTailTruncation];
+				/*textSize = [[item.name uppercaseString] drawAtPoint:point forWidth:rect.size.width - 100.0 withFont:mainFont lineBreakMode:UILineBreakModeTailTruncation];
 				
 				[[textColor colorWithAlphaComponent:0.5] set];
 				
 				[[NSString stringWithFormat:@"%1.2f", item.total] drawAtPoint:CGPointMake(point.x + textSize.width + 6.0, point.y + 5.0) forWidth:40.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
 				
-				point.y += textSize.height;
+				point.y += textSize.height;*/
 				
 				[[panelColor colorWithAlphaComponent:0.5] set];
 				
@@ -83,7 +84,7 @@
 				
 				counter++;
 			}
-		} else if ([display.type isEqualToString:@"Vertical Bar Chart"]) {
+		} else if ([display.type isEqualToString:@"Vertical Bar Chart"] && !self.isCancelled) {
 			point.y += 200.0;
 			
 			[[UIColor lightGrayColor] set];
@@ -94,8 +95,8 @@
 			CGContextStrokePath(context);
 			
 			CGPoint topPoint = point;
-			CGSize totalSize;
-			NSString *totalText;
+			/*CGSize totalSize;
+			NSString *totalText;*/
 			CGFloat barHeight;
 			CGFloat barWidth = (rect.size.width - 20.0) / [display.category.items count];
 			
@@ -125,7 +126,7 @@
 				CGContextFillRect(context, CGRectMake(point.x, point.y + 2.5, 15.0, 15.0));
 				CGContextFillPath(context);
 				
-				[textColor set];
+				/*[textColor set];
 				
 				totalText = [NSString stringWithFormat:@"%1.2f", item.total];
 				totalSize = [totalText sizeWithFont:smallFont forWidth:40.0 lineBreakMode:UILineBreakModeTailTruncation];
@@ -135,11 +136,11 @@
 				
 				[totalText drawAtPoint:CGPointMake(point.x + textSize.width + 24.0, point.y + 3.0) forWidth:40.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
 				
-				if (counter % 2 > 0) point.y += textSize.height + 5.0;
+				if (counter % 2 > 0) point.y += textSize.height + 5.0;*/
 				
 				counter++;
 			}
-		} else if ([display.type isEqualToString:@"Pie Chart"]) {
+		} else if ([display.type isEqualToString:@"Pie Chart"] && !self.isCancelled) {
 			double totalPercentage = 0.0;
 			double colorIncrement = 0.9 / [display.category.items count];
 			
@@ -159,8 +160,8 @@
 			NSSortDescriptor *sorter = [[[NSSortDescriptor alloc] initWithKey:@"total" ascending:NO] autorelease];
 			NSArray *sortedItems = [[display.category.items allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sorter, nil]];
 			
-			CGSize totalSize;
-			NSString *totalText;
+			/*CGSize totalSize;
+			NSString *totalText;*/
 			
 			for (Item *item in sortedItems) {
 				if (item.percentage > 0.0) {
@@ -194,7 +195,7 @@
 				CGContextFillRect(context, CGRectMake(point.x, point.y + 2.5, 15.0, 15.0));
 				CGContextFillPath(context);
 				
-				[textColor set];
+				/*[textColor set];
 				
 				totalText = [NSString stringWithFormat:@"%1.2f", item.total];
 				totalSize = [totalText sizeWithFont:smallFont forWidth:40.0 lineBreakMode:UILineBreakModeTailTruncation];
@@ -204,16 +205,16 @@
 				
 				[totalText drawAtPoint:CGPointMake(point.x + textSize.width + 24.0, point.y + 3.0) forWidth:40.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
 				
-				if (counter % 2 > 0) point.y += textSize.height + 5.0;
+				if (counter % 2 > 0) point.y += textSize.height + 5.0;*/
 				
 				counter++;
 			}
-		} else if ([display.type isEqualToString:@"Latest Entry as Words"] || [display.type isEqualToString:@"Largest Entry as Words"]) {
+		} else if (([display.type isEqualToString:@"Latest Entry as Words"] || [display.type isEqualToString:@"Largest Entry as Words"]) && !self.isCancelled) {
 			NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
 			
 			[numberFormatter setNumberStyle:NSNumberFormatterSpellOutStyle];
 			
-			NSNumber *numberValue;
+			NSNumber *numberValue = 0;
 			
 			if ([display.type isEqualToString:@"Latest Entry as Words"]) {
 				numberValue = [[[display.category latestItem] latestEntry] value];
@@ -221,13 +222,13 @@
 				numberValue = [[display.category largestEntry] value];
 			}
 			
-			textSize = [[[numberFormatter stringFromNumber:numberValue] uppercaseString] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:largeFont lineBreakMode:UILineBreakModeWordWrap];
+			/*textSize = [[[numberFormatter stringFromNumber:numberValue] uppercaseString] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:largeFont lineBreakMode:UILineBreakModeWordWrap];
 			
-			point.y += textSize.height + 6.0;
+			point.y += textSize.height + 6.0;*/
 			
 			[numberFormatter release];
-		} else if ([display.type isEqualToString:@"Latest Entry as Numbers"] || [display.type isEqualToString:@"Largest Entry as Numbers"]) {
-			NSNumber *numberValue;
+		} else if (([display.type isEqualToString:@"Latest Entry as Numbers"] || [display.type isEqualToString:@"Largest Entry as Numbers"]) && !self.isCancelled) {
+			NSNumber *numberValue = 0;
 			
 			if ([display.type isEqualToString:@"Latest Entry as Numbers"]) {
 				numberValue = [[[display.category latestItem] latestEntry] value];
@@ -235,10 +236,10 @@
 				numberValue = [[display.category largestEntry] value];
 			}
 			
-			textSize = [[[numberValue stringValue] uppercaseString] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:largeFont lineBreakMode:UILineBreakModeWordWrap];
+			/*textSize = [[[numberValue stringValue] uppercaseString] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:largeFont lineBreakMode:UILineBreakModeWordWrap];
 			
-			point.y += textSize.height + 6.0;
-		} else if ([display.type isEqualToString:@"Latest Entry Type"] || [display.type isEqualToString:@"Largest Entry Type"]) {
+			point.y += textSize.height + 6.0;*/
+		} else if (([display.type isEqualToString:@"Latest Entry Type"] || [display.type isEqualToString:@"Largest Entry Type"]) && !self.isCancelled) {
 			NSString *entryName;
 			
 			if ([display.type isEqualToString:@"Latest Entry Type"]) {
@@ -247,11 +248,11 @@
 				entryName = [[display.category largestItem] name];
 			}
 			
-			textSize = [[entryName uppercaseString] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:mainFont lineBreakMode:UILineBreakModeWordWrap];
+			/*textSize = [[entryName uppercaseString] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:mainFont lineBreakMode:UILineBreakModeWordWrap];
 			
-			point.y += textSize.height + 6.0;
-		} else if ([display.type isEqualToString:@"Total as Numbers"] || [display.type isEqualToString:@"Average Entry as Numbers"]) {
-			NSNumber *numberValue;
+			point.y += textSize.height + 6.0;*/
+		} else if (([display.type isEqualToString:@"Total as Numbers"] || [display.type isEqualToString:@"Average Entry as Numbers"]) && !self.isCancelled) {
+			NSNumber *numberValue = 0;
 			
 			if ([display.type isEqualToString:@"Total as Numbers"]) {
 				numberValue = [NSNumber numberWithDouble:display.category.total];
@@ -259,12 +260,12 @@
 				numberValue = [NSNumber numberWithDouble:[[NSString stringWithFormat:@"%1.2f", [display.category averageEntryValue]] doubleValue]];
 			}
 			
-			textSize = [[[numberValue stringValue] uppercaseString] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:largeFont lineBreakMode:UILineBreakModeWordWrap];
+			/*textSize = [[[numberValue stringValue] uppercaseString] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:largeFont lineBreakMode:UILineBreakModeWordWrap];
 			
-			point.y += textSize.height + 6.0;
-		} else if ([display.type isEqualToString:@"Total as Words"] || [display.type isEqualToString:@"Average Entry as Words"]) {
+			point.y += textSize.height + 6.0;*/
+		} else if (([display.type isEqualToString:@"Total as Words"] || [display.type isEqualToString:@"Average Entry as Words"]) && !self.isCancelled) {
 			NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-			NSNumber *numberValue;
+			NSNumber *numberValue = 0;
 			
 			if ([display.type isEqualToString:@"Total as Words"]) {
 				numberValue = [NSNumber numberWithDouble:display.category.total];
@@ -274,12 +275,12 @@
 			
 			[numberFormatter setNumberStyle:NSNumberFormatterSpellOutStyle];
 			
-			textSize = [[[numberFormatter stringFromNumber:numberValue] uppercaseString] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:largeFont lineBreakMode:UILineBreakModeWordWrap];
+			/*textSize = [[[numberFormatter stringFromNumber:numberValue] uppercaseString] drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 600.0) withFont:largeFont lineBreakMode:UILineBreakModeWordWrap];
 			
-			point.y += textSize.height + 6.0;
+			point.y += textSize.height + 6.0;*/
 			
 			[numberFormatter release];
-		} else if ([display.type isEqualToString:@"Daily Timeline"]) {
+		} else if ([display.type isEqualToString:@"Daily Timeline"] && !self.isCancelled) {
 			point.y += 200.0;
 			
 			[[UIColor lightGrayColor] set];
@@ -306,11 +307,11 @@
 			NSDate *startDate = [NSDate dateWithTimeIntervalSinceNow:-1 * 60 * 60 * 24 * 29];
 			
 			[dateFormatter setDateStyle:NSDateFormatterShortStyle];
-			[[dateFormatter stringFromDate:startDate] drawAtPoint:point forWidth:rect.size.width - 60.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
+			/*[[dateFormatter stringFromDate:startDate] drawAtPoint:point forWidth:rect.size.width - 60.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
 			
 			CGSize dateSize = [[dateFormatter stringFromDate:[NSDate date]] sizeWithFont:smallFont constrainedToSize:CGSizeMake(rect.size.width - 60.0, rect.size.height) lineBreakMode:UILineBreakModeTailTruncation];
 			
-			[[dateFormatter stringFromDate:[NSDate date]] drawAtPoint:CGPointMake(rect.size.width - dateSize.width, point.y) forWidth:rect.size.width - 60.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
+			[[dateFormatter stringFromDate:[NSDate date]] drawAtPoint:CGPointMake(rect.size.width - dateSize.width, point.y) forWidth:rect.size.width - 60.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];*/
 			
 			[dateFormatter release];
 			
@@ -356,8 +357,8 @@
 			
 			counter = 0;
 			
-			CGSize totalSize;
-			NSString *totalText;
+			/*CGSize totalSize;
+			NSString *totalText;*/
 			
 			for (Item *item in sortedItems) {
 				point.x = (counter % 2 == 0) ? rect.origin.x + 10.0 : point.x + (rect.size.width - 20.0) / 2;
@@ -367,7 +368,7 @@
 				CGContextFillRect(context, CGRectMake(point.x, point.y + 2.5, 15.0, 15.0));
 				CGContextFillPath(context);
 				
-				[textColor set];
+				/*[textColor set];
 				
 				totalText = [NSString stringWithFormat:@"%1.2f", item.total];
 				totalSize = [totalText sizeWithFont:smallFont forWidth:40.0 lineBreakMode:UILineBreakModeTailTruncation];
@@ -377,11 +378,11 @@
 				
 				[totalText drawAtPoint:CGPointMake(point.x + textSize.width + 24.0, point.y + 3.0) forWidth:40.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
 				
-				if (counter % 2 > 0) point.y += textSize.height + 5.0;
+				if (counter % 2 > 0) point.y += textSize.height + 5.0;*/
 				
 				counter++;
 			}
-		} else if ([display.type isEqualToString:@"Monthly Timeline"]) {
+		} else if ([display.type isEqualToString:@"Monthly Timeline"] && !self.isCancelled) {
 			point.y += 200.0;
 			
 			[[UIColor lightGrayColor] set];
@@ -412,15 +413,15 @@
 			
 			NSDate *startDate = [[NSCalendar currentCalendar] dateByAddingComponents:interval toDate:[NSDate date] options:0];
 			
-			CGSize dateSize;
-			CGFloat dateOffset = 0.0;
+			/*CGSize dateSize;
+			CGFloat dateOffset = 0.0;*/
 			
 			for (NSUInteger i = 0; i < 13; i++) {
 				[interval setMonth:i];
 				
-				dateSize = [[[dateFormatter stringFromDate:[[NSCalendar currentCalendar] dateByAddingComponents:interval toDate:startDate options:0]] uppercaseString] drawAtPoint:CGPointMake(point.x + dateOffset, point.y) forWidth:rect.size.width - 60.0 withFont:tinyFont lineBreakMode:UILineBreakModeTailTruncation];
+				/*dateSize = [[[dateFormatter stringFromDate:[[NSCalendar currentCalendar] dateByAddingComponents:interval toDate:startDate options:0]] uppercaseString] drawAtPoint:CGPointMake(point.x + dateOffset, point.y) forWidth:rect.size.width - 60.0 withFont:tinyFont lineBreakMode:UILineBreakModeTailTruncation];
 				
-				dateOffset += dateSize.width + 4.8;
+				dateOffset += dateSize.width + 4.8;*/
 			}
 			
 			[dateFormatter release];
@@ -471,8 +472,8 @@
 			
 			counter = 0;
 			
-			CGSize totalSize;
-			NSString *totalText;
+			/*CGSize totalSize;
+			NSString *totalText;*/
 			
 			for (Item *item in sortedItems) {
 				point.x = (counter % 2 == 0) ? rect.origin.x + 10.0 : point.x + (rect.size.width - 20.0) / 2;
@@ -482,7 +483,7 @@
 				CGContextFillRect(context, CGRectMake(point.x, point.y + 2.5, 15.0, 15.0));
 				CGContextFillPath(context);
 				
-				[textColor set];
+				/*[textColor set];
 				
 				totalText = [NSString stringWithFormat:@"%1.2f", item.total];
 				totalSize = [totalText sizeWithFont:smallFont forWidth:40.0 lineBreakMode:UILineBreakModeTailTruncation];
@@ -492,7 +493,7 @@
 				
 				[totalText drawAtPoint:CGPointMake(point.x + textSize.width + 24.0, point.y + 3.0) forWidth:40.0 withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
 				
-				if (counter % 2 > 0) point.y += textSize.height + 5.0;
+				if (counter % 2 > 0) point.y += textSize.height + 5.0;*/
 				
 				counter++;
 			}
@@ -503,6 +504,7 @@
 		}
 		
 		CGContextRelease(context);
+		CGColorSpaceRelease(colorSpace);
 		
 		if (cgImage) {
 			if (!self.isCancelled) {

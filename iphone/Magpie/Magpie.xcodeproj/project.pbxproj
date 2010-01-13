@@ -81,6 +81,7 @@
 		ECDB5B7A0FF3291100FC52FA /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = ECDB5B790FF3291100FC52FA /* gear.png */; };
 		ECE93A960FD8D48D006BA407 /* KeyPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE93A950FD8D48D006BA407 /* KeyPadViewController.m */; };
 		ECE93A980FD8D5A6006BA407 /* KeyPadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECE93A970FD8D5A6006BA407 /* KeyPadView.xib */; };
+		ECECDB5E10FDEBD200B47F5E /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = ECECDB5D10FDEBD200B47F5E /* placeholder.png */; };
 		ECF3624F10E194A200EE5FBD /* StatOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF3624E10E194A200EE5FBD /* StatOperation.m */; };
 		ECFB00510FD46F6600EEE684 /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB00500FD46F6600EEE684 /* DisplayViewController.m */; };
 		ECFB00B80FD4830300EEE684 /* SelectCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB00B70FD4830300EEE684 /* SelectCategoryViewController.m */; };
@@ -188,6 +189,7 @@
 		ECE93A940FD8D48D006BA407 /* KeyPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyPadViewController.h; sourceTree = "<group>"; };
 		ECE93A950FD8D48D006BA407 /* KeyPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyPadViewController.m; sourceTree = "<group>"; };
 		ECE93A970FD8D5A6006BA407 /* KeyPadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyPadView.xib; sourceTree = "<group>"; };
+		ECECDB5D10FDEBD200B47F5E /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		ECF3624D10E194A200EE5FBD /* StatOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatOperation.h; sourceTree = "<group>"; };
 		ECF3624E10E194A200EE5FBD /* StatOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatOperation.m; sourceTree = "<group>"; };
 		ECFB004F0FD46F6600EEE684 /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				EC799DBE1077F77A00A1ADF1 /* iTunesArtwork */,
 				ECDAE1450FFAAB1700ABD2BC /* keypad */,
 				EC86C688107A8E4D00CF68F3 /* intro */,
+				ECECDB5D10FDEBD200B47F5E /* placeholder.png */,
 				ECDB5B790FF3291100FC52FA /* gear.png */,
 				ECB752C40FF16CAD007CCBCB /* bg.png */,
 				EC86C622107A438300CF68F3 /* logo-toolbar.png */,
@@ -543,6 +546,7 @@
 				EC86C68D107A8E4D00CF68F3 /* intro-2.png in Resources */,
 				EC86C68E107A8E4D00CF68F3 /* intro-3.png in Resources */,
 				ECBB4A12107BD303009BDFB8 /* logo.png in Resources */,
+				ECECDB5E10FDEBD200B47F5E /* placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
