@@ -10,14 +10,19 @@
 
 @interface DisplayTableViewCell : UITableViewCell {
 	UIView *contentView;
-	UIImage *statImage;
+	UIImageView *imageView;
+	UIActivityIndicatorView *activityIndicator;
+	
+	BOOL hasImage;
 	
 	Display *display;
 }
 
 @property (nonatomic, retain) Display *display;
-@property (nonatomic, retain) UIImage *statImage;
+@property (nonatomic, retain) UIImageView *imageView;
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
 
 - (void)drawContentView:(CGRect)rect;
+- (void)setStatImage:(UIImage *)statImage;
 
 @end

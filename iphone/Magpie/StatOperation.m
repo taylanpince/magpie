@@ -34,18 +34,130 @@
 }
 
 - (void)main {
-	NSLog(@"STAT OPERATION STARTED");
 	if (!self.isCancelled) {
 		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 		
-		CGRect rect = CGRectMake(10.0, 0.0, [[UIScreen mainScreen] applicationFrame].size.width, [display heightForDisplay]);
+		CGRect rect = CGRectMake(0.0, 0.0, [[UIScreen mainScreen] applicationFrame].size.width, [display heightForDisplay]);
 		CGColorSpaceRef	colorSpace = CGColorSpaceCreateDeviceRGB();
 		CGBitmapInfo alphaInfo = (kCGImageAlphaPremultipliedFirst | kCGBitmapByteOrder32Host);
 		CGContextRef context = CGBitmapContextCreate(NULL, rect.size.width, rect.size.height, 8, 0, colorSpace, alphaInfo);
 		CGImageRef cgImage = NULL;
 		
 		UIColor *panelColor = [PanelColor colorWithName:display.color alpha:1.0];
-		UIColor *textColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0];
+		/*UIColor *textColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0];*/
+		
+		int corner_radius = 10;
+		int header_height = 40;
+		
+		CGContextTranslateCTM(context, 0, rect.size.height);
+		CGContextScaleCTM(context, 1.0, -1.0 );
+		CGContextSetPatternPhase(context, CGSizeMake(0, rect.size.height));
+		
+		rect.size.width -= 20.0;
+		rect.size.height -= 24.0;
+		rect.origin.x += 10.0;
+		rect.origin.y += 10.0;
+		
+		if (!self.isCancelled) {
+			CGContextSaveGState(context);
+			CGContextSetShadow(context, CGSizeMake(2.0, -8.0), 4.0);
+			CGContextSetRGBFillColor(context, 0.88, 0.88, 0.88, 1.0);
+			
+			CGContextBeginPath(context);
+			CGContextMoveToPoint(context, rect.origin.x, rect.origin.y + corner_radius);
+			CGContextAddArcToPoint(context, rect.origin.x, rect.origin.y, rect.origin.x + corner_radius, rect.origin.y, corner_radius);
+			CGContextAddLineToPoint(context, rect.origin.x + rect.size.width - corner_radius, rect.origin.y);
+			CGContextAddArcToPoint(context, rect.origin.x + rect.size.width, rect.origin.y, rect.origin.x + rect.size.width, rect.origin.y + corner_radius, corner_radius);
+			CGContextAddLineToPoint(context, rect.origin.x + rect.size.width, rect.origin.y + rect.size.height - corner_radius);
+			CGContextAddArcToPoint(context, rect.origin.x + rect.size.width, rect.origin.y + rect.size.height, rect.origin.x + rect.size.width - corner_radius, rect.origin.y + rect.size.height, corner_radius);
+			CGContextAddLineToPoint(context, rect.origin.x + corner_radius, rect.origin.y + rect.size.height);
+			CGContextAddArcToPoint(context, rect.origin.x, rect.origin.y + rect.size.height, rect.origin.x, rect.origin.y + rect.size.height - corner_radius, corner_radius);
+			CGContextAddLineToPoint(context, rect.origin.x, rect.origin.y + corner_radius);
+			CGContextClosePath(context);
+			
+			CGContextFillPath(context);
+			CGContextRestoreGState(context);
+			CGContextSaveGState(context);
+		}
+		
+		if (!self.isCancelled) {
+			CGContextBeginPath(context);
+			CGContextMoveToPoint(context, rect.origin.x, rect.origin.y + corner_radius);
+			CGContextAddArcToPoint(context, rect.origin.x, rect.origin.y, rect.origin.x + corner_radius, rect.origin.y, corner_radius);
+			CGContextAddLineToPoint(context, rect.origin.x + rect.size.width - corner_radius, rect.origin.y);
+			CGContextAddArcToPoint(context, rect.origin.x + rect.size.width, rect.origin.y, rect.origin.x + rect.size.width, rect.origin.y + corner_radius, corner_radius);
+			CGContextAddLineToPoint(context, rect.origin.x + rect.size.width, rect.origin.y + header_height);
+			CGContextAddLineToPoint(context, rect.origin.x, rect.origin.y + header_height);
+			CGContextAddLineToPoint(context, rect.origin.x, rect.origin.y + corner_radius);
+			CGContextClosePath(context);
+			
+			CGContextClip(context);
+			
+			CGContextSetFillColorWithColor(context, [panelColor CGColor]);
+			CGContextAddRect(context, CGRectMake(0.0, rect.origin.y, rect.origin.x + rect.size.width, rect.origin.y + header_height));
+			CGContextFillPath(context);
+		}
+		
+		if (!self.isCancelled) {
+			size_t num_locations = 6;
+			CGFloat locations[6] = {
+				0.0,
+				0.025,
+				0.5,
+				0.5,
+				0.975,
+				1.0
+			};
+			
+			CGFloat components[24] = {
+				1.0, 1.0, 1.0, 0.5,
+				0.75, 0.75, 0.75, 0.5,
+				0.6, 0.6, 0.6, 0.5,
+				0.5, 0.5, 0.5, 0.5,
+				0.25, 0.25, 0.25, 0.5,
+				0.0, 0.0, 0.0, 0.5
+			};
+			
+			CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, components, locations, num_locations);
+			
+			CGContextDrawLinearGradient(context, gradient, CGPointMake(0.0, rect.origin.y), CGPointMake(0.0, rect.origin.y + header_height), 0);
+			CGGradientRelease(gradient);
+			CGContextRestoreGState(context);
+			
+			CGContextBeginPath(context);
+			CGContextMoveToPoint(context, rect.origin.x, rect.origin.y + corner_radius);
+			CGContextAddArcToPoint(context, rect.origin.x, rect.origin.y, rect.origin.x + corner_radius, rect.origin.y, corner_radius);
+			CGContextAddLineToPoint(context, rect.origin.x + rect.size.width - corner_radius, rect.origin.y);
+			CGContextAddArcToPoint(context, rect.origin.x + rect.size.width, rect.origin.y, rect.origin.x + rect.size.width, rect.origin.y + corner_radius, corner_radius);
+			CGContextAddLineToPoint(context, rect.origin.x + rect.size.width, rect.origin.y + rect.size.height - corner_radius);
+			CGContextAddArcToPoint(context, rect.origin.x + rect.size.width, rect.origin.y + rect.size.height, rect.origin.x + rect.size.width - corner_radius, rect.origin.y + rect.size.height, corner_radius);
+			CGContextAddLineToPoint(context, rect.origin.x + corner_radius, rect.origin.y + rect.size.height);
+			CGContextAddArcToPoint(context, rect.origin.x, rect.origin.y + rect.size.height, rect.origin.x, rect.origin.y + rect.size.height - corner_radius, corner_radius);
+			CGContextAddLineToPoint(context, rect.origin.x, rect.origin.y + corner_radius);
+			CGContextClosePath(context);
+			
+			CGContextClip(context);
+		}
+		
+		if (!self.isCancelled) {
+			size_t bottom_locations_num = 2;
+			CGFloat bottom_locations[2] = {
+				0.0,
+				1.0
+			};
+			
+			CGFloat bottom_components[16] = {
+				0.88, 0.88, 0.88, 1.0,
+				0.6, 0.6, 0.6, 1.0
+			};
+			
+			CGGradientRef bottom_gradient = CGGradientCreateWithColorComponents(colorSpace, bottom_components, bottom_locations, bottom_locations_num);
+			
+			CGContextDrawLinearGradient(context, bottom_gradient, CGPointMake(0.0, rect.origin.y + rect.size.height - 6.0), CGPointMake(0.0, rect.origin.y + rect.size.height), 0);
+			CGGradientRelease(bottom_gradient);
+		}
+		
+		CGPoint point = CGPointMake(rect.origin.x + 10.0, rect.origin.y + 50.0);
 		
 		/*UIFont *largeFont = [UIFont boldSystemFontOfSize:24];
 		UIFont *mainFont = [UIFont boldSystemFontOfSize:18];
@@ -53,16 +165,15 @@
 		UIFont *smallFont = [UIFont systemFontOfSize:12];
 		UIFont *tinyFont = [UIFont systemFontOfSize:8];*/
 		
-		CGPoint point = CGPointMake(rect.origin.x + 10.0, rect.origin.y + 50.0);
 		//CGSize textSize;
 		
 		int counter = 0;
-		NSLog(@"RENDERING: %@", display.type);
+		
 		if ([display.type isEqualToString:@"Horizontal Bar Chart"] && !self.isCancelled) {
 			for (Item *item in display.category.items) {
-				[textColor set];
+				/*[textColor set];
 				
-				/*textSize = [[item.name uppercaseString] drawAtPoint:point forWidth:rect.size.width - 100.0 withFont:mainFont lineBreakMode:UILineBreakModeTailTruncation];
+				textSize = [[item.name uppercaseString] drawAtPoint:point forWidth:rect.size.width - 100.0 withFont:mainFont lineBreakMode:UILineBreakModeTailTruncation];
 				
 				[[textColor colorWithAlphaComponent:0.5] set];
 				
@@ -70,13 +181,11 @@
 				
 				point.y += textSize.height;*/
 				
-				[[panelColor colorWithAlphaComponent:0.5] set];
-				
+				CGContextSetFillColorWithColor(context, [[panelColor colorWithAlphaComponent:0.5] CGColor]);
 				CGContextAddRect(context, CGRectMake(point.x, point.y, rect.size.width - 20.0, 10.0));
 				CGContextFillPath(context);
 				
-				[panelColor set];
-				
+				CGContextSetFillColorWithColor(context, [panelColor CGColor]);
 				CGContextAddRect(context, CGRectMake(point.x, point.y, ((rect.size.width - 20.0) * item.percentage / 100.0), 10.0));
 				CGContextFillPath(context);
 				
@@ -87,8 +196,7 @@
 		} else if ([display.type isEqualToString:@"Vertical Bar Chart"] && !self.isCancelled) {
 			point.y += 200.0;
 			
-			[[UIColor lightGrayColor] set];
-			
+			CGContextSetStrokeColorWithColor(context, [[UIColor lightGrayColor] CGColor]);
 			CGContextSetLineWidth(context, 1.0f);
 			CGContextMoveToPoint(context, point.x - 5.0, point.y + 1.0);
 			CGContextAddLineToPoint(context, rect.size.width + 5.0, point.y + 1.0);
@@ -110,7 +218,7 @@
 			Item *topItem = [sortedItems objectAtIndex:0];
 			
 			for (Item *item in sortedItems) {
-				[[panelColor colorWithAlphaComponent:1.0 - (colorIncrement * counter)] set];
+				CGContextSetFillColorWithColor(context, [[panelColor colorWithAlphaComponent:1.0 - (colorIncrement * counter)] CGColor]);
 				
 				if (item.percentage > 0.0) {
 					barHeight = 196.0 * item.percentage / topItem.percentage;
@@ -190,8 +298,7 @@
 				
 				point.x = (counter % 2 == 0) ? rect.origin.x + 10.0 : point.x + (rect.size.width - 20.0) / 2;
 				
-				[[panelColor colorWithAlphaComponent:1.0 - (colorIncrement * counter)] set];
-				
+				CGContextSetFillColorWithColor(context, [[panelColor colorWithAlphaComponent:1.0 - (colorIncrement * counter)] CGColor]);
 				CGContextFillRect(context, CGRectMake(point.x, point.y + 2.5, 15.0, 15.0));
 				CGContextFillPath(context);
 				
@@ -283,8 +390,7 @@
 		} else if ([display.type isEqualToString:@"Daily Timeline"] && !self.isCancelled) {
 			point.y += 200.0;
 			
-			[[UIColor lightGrayColor] set];
-			
+			CGContextSetStrokeColorWithColor(context, [[UIColor lightGrayColor] CGColor]);
 			CGContextSetLineWidth(context, 1.0f);
 			CGContextMoveToPoint(context, point.x - 5.0, point.y + 1.0);
 			CGContextAddLineToPoint(context, rect.size.width + 5.0, point.y + 1.0);
@@ -363,8 +469,7 @@
 			for (Item *item in sortedItems) {
 				point.x = (counter % 2 == 0) ? rect.origin.x + 10.0 : point.x + (rect.size.width - 20.0) / 2;
 				
-				[[panelColor colorWithAlphaComponent:1.0 - (colorIncrement * counter)] set];
-				
+				CGContextSetFillColorWithColor(context, [[panelColor colorWithAlphaComponent:1.0 - (colorIncrement * counter)] CGColor]);
 				CGContextFillRect(context, CGRectMake(point.x, point.y + 2.5, 15.0, 15.0));
 				CGContextFillPath(context);
 				
@@ -385,8 +490,7 @@
 		} else if ([display.type isEqualToString:@"Monthly Timeline"] && !self.isCancelled) {
 			point.y += 200.0;
 			
-			[[UIColor lightGrayColor] set];
-			
+			CGContextSetStrokeColorWithColor(context, [[UIColor lightGrayColor] CGColor]);
 			CGContextSetLineWidth(context, 1.0f);
 			CGContextMoveToPoint(context, point.x - 5.0, point.y + 1.0);
 			CGContextAddLineToPoint(context, rect.size.width + 5.0, point.y + 1.0);
@@ -478,8 +582,7 @@
 			for (Item *item in sortedItems) {
 				point.x = (counter % 2 == 0) ? rect.origin.x + 10.0 : point.x + (rect.size.width - 20.0) / 2;
 				
-				[[panelColor colorWithAlphaComponent:1.0 - (colorIncrement * counter)] set];
-				
+				CGContextSetFillColorWithColor(context, [[panelColor colorWithAlphaComponent:1.0 - (colorIncrement * counter)] CGColor]);
 				CGContextFillRect(context, CGRectMake(point.x, point.y + 2.5, 15.0, 15.0));
 				CGContextFillPath(context);
 				
