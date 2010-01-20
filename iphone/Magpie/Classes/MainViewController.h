@@ -13,7 +13,7 @@
 
 @class HelpView;
 
-@interface MainViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, FlipsideViewControllerDelegate, QuickEntryViewControllerDelegate, IntroViewControllerDelegate, StatOperationDelegate> {
+@interface MainViewController : UIViewController <UITableViewDelegate, UIScrollViewDelegate, UITableViewDataSource, FlipsideViewControllerDelegate, QuickEntryViewControllerDelegate, IntroViewControllerDelegate, StatOperationDelegate> {
 	IBOutlet UITableView *tableView;
 	IBOutlet UIBarButtonItem *quickEntryButton;
 	
@@ -22,7 +22,6 @@
 	NSFetchedResultsController *fetchedResultsController;
 	NSManagedObjectContext *managedObjectContext;
 	NSOperationQueue *operationQueue;
-	UIImage *placeHolderImage;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
@@ -33,7 +32,6 @@
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain) NSOperationQueue *operationQueue;
-@property (nonatomic, retain) UIImage *placeHolderImage;
 
 - (IBAction)showSettings;
 - (IBAction)showQuickAdd;

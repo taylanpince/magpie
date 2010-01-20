@@ -23,6 +23,9 @@
 - (void)hideTutorial;
 - (void)displayTutorial:(NSUInteger)step;
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void)statOperationComplete:(StatOperation *)operation;
+- (void)reloadAllCells;
+- (void)reloadVisibleCells;
 @end
 
 
@@ -30,7 +33,7 @@
 
 @synthesize tableView, quickEntryButton, helpView;
 @synthesize managedObjectContext, fetchedResultsController;
-@synthesize operationQueue, placeHolderImage;
+@synthesize operationQueue;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -38,9 +41,9 @@
 	[tableView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]]];
 	[tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 	[tableView setAllowsSelection:NO];
+	[tableView setDelegate:self];
 	
 	helpView = nil;
-	placeHolderImage = [[UIImage imageNamed:@"placeholder.png"] retain];
 	operationQueue = [[NSOperationQueue alloc] init];
 	
 	[operationQueue setMaxConcurrentOperationCount:[[NSProcessInfo processInfo] activeProcessorCount] + 1];
@@ -52,6 +55,8 @@
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		exit(-1);
 	}
+	
+	[self reloadAllCells];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -91,7 +96,7 @@
 - (UIImage *)requestImageForDisplay:(Display *)display withIndex:(NSUInteger)cellIndex {
 	if (display.hasImage == NO && display.hasQueuedOperation == NO) {
 		StatOperation *operation = [[StatOperation alloc] initWithDisplay:display index:cellIndex];
-		
+
 		[operation setDelegate:self];
 		[operationQueue addOperation:operation];
 		[operation release];
@@ -100,6 +105,30 @@
 	}
 	
 	return nil;
+}
+
+- (void)cancelOperationsForHiddenDisplays {
+	for (StatOperation *operation in [operationQueue operations]) {
+		if (!operation.isCancelled) {
+			UITableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:operation.cellIndex inSection:0]];
+			
+			if (cell == nil) {
+				operation.display.hasQueuedOperation = NO;
+				
+				[operation cancel];
+			}
+		}
+	}
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+	[self cancelOperationsForHiddenDisplays];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+	if (!decelerate) {
+		[self cancelOperationsForHiddenDisplays];
+	}
 }
 
 - (void)statOperationComplete:(StatOperation *)operation {
@@ -144,8 +173,32 @@
 - (void)configureCell:(DisplayTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 	Display *display = [fetchedResultsController objectAtIndexPath:indexPath];
 	
+	display.hasImage = NO;
+	
 	[cell setDisplay:display];
 	[cell setStatImage:[self requestImageForDisplay:display withIndex:indexPath.row]];
+}
+
+- (void)reloadVisibleCells {
+	int counter = 0;
+	
+	for (UITableViewCell *cell in [tableView visibleCells]) {
+		[self configureCell:cell atIndexPath:[NSIndexPath indexPathForRow:counter inSection:0]];
+		
+		counter += 1;
+	}
+}
+
+- (void)reloadAllCells {
+	[operationQueue cancelAllOperations];
+	
+	for (Display *display in [fetchedResultsController fetchedObjects]) {
+		display.hasImage = NO;
+		display.hasQueuedOperation = NO;
+	}
+	
+	[self reloadVisibleCells];
+	[tableView reloadData];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -218,17 +271,16 @@
 
 - (void)didCloseQuickEntryView {
 	[self dismissModalViewControllerAnimated:YES];
-	[tableView reloadData];
+	[self reloadAllCells];
 }
 
 - (void)didCloseIntroView {
 	[self dismissModalViewControllerAnimated:YES];
-	[tableView reloadData];
 }
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
 	[self dismissModalViewControllerAnimated:YES];
-	[tableView reloadData];
+	[self reloadAllCells];
 }
 
 - (IBAction)showSettings {
@@ -252,6 +304,7 @@
 	[controller setDelegate:self];
 	[controller setManagedObjectContext:managedObjectContext];
 	[controller setItem:[[[(Category *)[[[fetchedResultsController fetchedObjects] objectAtIndex:0] category] items] allObjects] objectAtIndex:0]];
+	
 	// TODO: Use [tableView visibleCells] to figure out which display to use for the entry panel
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
@@ -329,7 +382,6 @@
 	[quickEntryButton release];
 	[operationQueue cancelAllOperations];
 	[operationQueue release];
-	[placeHolderImage release];
     [super dealloc];
 }
 

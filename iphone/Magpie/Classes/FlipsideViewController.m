@@ -23,7 +23,7 @@
 
 @implementation FlipsideViewController
 
-@synthesize delegate, helpView;
+@synthesize delegate, helpView, changeIsUserDriven;
 @synthesize displaysFetchedResultsController, categoriesFetchedResultsController, managedObjectContext;
 
 - (void)viewDidLoad {
@@ -37,6 +37,7 @@
 	[saveButton release];
 	
 	helpView = nil;
+	changeIsUserDriven = NO;
 	
 	NSError *error;
 	
@@ -276,22 +277,27 @@
 	Display *display;
 	NSInteger startRow = fromIndexPath.row;
 	NSInteger endRow = toIndexPath.row;
+	NSInteger finalRow;
 	
 	if (fromIndexPath.row > toIndexPath.row) {
 		startRow = toIndexPath.row;
 		endRow = fromIndexPath.row;
 	}
 	
+	changeIsUserDriven = YES;
+
 	for (NSInteger i = startRow; i <= endRow; i++) {
 		display = [[displaysFetchedResultsController fetchedObjects] objectAtIndex:i];
 		
 		if (i == fromIndexPath.row) {
-			[display setWeight:[NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithInt:toIndexPath.row] decimalValue]]];
+			finalRow = toIndexPath.row;
 		} else if (fromIndexPath.row < toIndexPath.row) {
-			[display setWeight:[NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithInt:(i - 1)] decimalValue]]];
+			finalRow = i - 1;
 		} else {
-			[display setWeight:[NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithInt:(i + 1)] decimalValue]]];
+			finalRow = i + 1;
 		}
+		
+		[display setWeight:[NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithInt:finalRow] decimalValue]]];
 	}
 	
 	NSError *error;
@@ -301,6 +307,8 @@
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		exit(-1);
 	}
+	
+	changeIsUserDriven = NO;
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath {
@@ -360,13 +368,21 @@
 }
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+	if (changeIsUserDriven) {
+		return;
+	}
+	
 	[self.tableView beginUpdates];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+	if (changeIsUserDriven) {
+		return;
+	}
+	
 	NSIndexPath *indexPathWithSection;
 	NSIndexPath *newIndexPathWithSection;
-	
+
 	if ([anObject isKindOfClass:[Display class]]) {
 		indexPathWithSection = [NSIndexPath indexPathForRow:indexPath.row inSection:1];
 		
@@ -392,8 +408,8 @@
 			[self configureCell:(InfoTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPathWithSection] atIndexPath:indexPathWithSection];
 			break;
 		case NSFetchedResultsChangeMove:
-			//[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-			//[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:newIndexPath.section] withRowAnimation:UITableViewRowAnimationFade];
+			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPathWithSection] withRowAnimation:UITableViewRowAnimationFade];
+			[self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPathWithSection] withRowAnimation:UITableViewRowAnimationFade];
 			break;
 	}
 }
@@ -410,6 +426,10 @@
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+	if (changeIsUserDriven) {
+		return;
+	}
+	
 	[self.tableView endUpdates];
 }
 

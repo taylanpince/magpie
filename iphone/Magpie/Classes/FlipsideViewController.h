@@ -18,6 +18,8 @@
 	id <FlipsideViewControllerDelegate> delegate;
 	
 	HelpView *helpView;
+	
+	BOOL changeIsUserDriven;
 }
 
 @property (nonatomic, retain) NSFetchedResultsController *displaysFetchedResultsController;
@@ -27,6 +29,8 @@
 @property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
 
 @property (nonatomic, retain) HelpView *helpView;
+
+@property (nonatomic, assign) BOOL changeIsUserDriven;
 
 @end
 

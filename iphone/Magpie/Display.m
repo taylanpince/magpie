@@ -107,7 +107,7 @@
 		height = 288.0 + ceil([self.category.items count] / 2.0) * 24.0;
 	}
 	
-	return height;
+	return height + 10.0;
 }
 
 @end

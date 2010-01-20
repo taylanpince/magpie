@@ -216,7 +216,7 @@
 				CGContextFillRect(context, CGRectMake(point.x, point.y + 2.5, 15.0, 15.0));
 				CGContextFillPath(context);
 				
-				if (counter % 2 > 0) point.y += 17.0;
+				if (counter % 2 > 0) point.y += 24.0;
 				
 				counter++;
 			}
@@ -271,7 +271,7 @@
 				CGContextFillRect(context, CGRectMake(point.x, point.y + 2.5, 15.0, 15.0));
 				CGContextFillPath(context);
 				
-				if (counter % 2 > 0) point.y += 17.0;
+				if (counter % 2 > 0) point.y += 24.0;
 				
 				counter++;
 			}
@@ -345,7 +345,7 @@
 				CGContextFillRect(context, CGRectMake(point.x, point.y + 2.5, 15.0, 15.0));
 				CGContextFillPath(context);
 				
-				if (counter % 2 > 0) point.y += 17.0;
+				if (counter % 2 > 0) point.y += 24.0;
 				
 				counter++;
 			}
@@ -427,7 +427,7 @@
 				CGContextFillRect(context, CGRectMake(point.x, point.y + 2.5, 15.0, 15.0));
 				CGContextFillPath(context);
 				
-				if (counter % 2 > 0) point.y += 17.0;
+				if (counter % 2 > 0) point.y += 24.0;
 				
 				counter++;
 			}

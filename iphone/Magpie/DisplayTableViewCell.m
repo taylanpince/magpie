@@ -203,6 +203,8 @@ static UIFont *largeFont = nil;
 		
 		[dateText drawInRect:CGRectMake(point.x, point.y, rect.size.width - 20.0, 14.0) withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentRight];
 		
+		point.y += 28.0;
+		
 		int counter = 0;
 		
 		if ([display.type isEqualToString:@"Horizontal Bar Chart"]) {
