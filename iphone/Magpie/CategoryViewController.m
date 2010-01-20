@@ -12,6 +12,8 @@
 #import "Category.h"
 #import "Item.h"
 
+#define addCellID @"addCell"
+#define nameCellID @"nameCell"
 
 @implementation CategoryViewController
 
@@ -94,12 +96,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == 1 & indexPath.row == 0) {
-		static NSString *CellIdentifier = @"AddCell";
-		
-		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:addCellID];
 		
 		if (cell == nil) {
-			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:addCellID] autorelease];
 		}
 		
 		[cell setAccessoryType:UITableViewCellAccessoryNone];
@@ -107,12 +107,10 @@
 		
 		return cell;
 	} else {
-		static NSString *CellIdentifier = @"NameCell";
-		
-		EditableTableViewCell *cell = (EditableTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		EditableTableViewCell *cell = (EditableTableViewCell *)[tableView dequeueReusableCellWithIdentifier:nameCellID];
 		
 		if (cell == nil) {
-			cell = [[[EditableTableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+			cell = [[[EditableTableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:nameCellID] autorelease];
 		}
 		
 		if (indexPath.row == 0) {
@@ -127,7 +125,7 @@
 		if (indexPath.section == 0) {
 			[cell.textField setText:category.name];
 		} else {
-			[cell.textField setText:[[[[category items] allObjects] objectAtIndex:(indexPath.row - 1)] name]];
+			[cell.textField setText:[[[category itemsByLastUpdated] objectAtIndex:(indexPath.row - 1)] name]];
 		}
 		
 		return cell;
@@ -163,6 +161,7 @@
 		
 		[item setName:@""];
 		[item setLastUpdated:[NSDate date]];
+		
 		[category addItemsObject:item];
 		
 		[tableView beginUpdates];
@@ -183,7 +182,7 @@
 	}
 	
 	EntryViewController *controller = [[EntryViewController alloc] initWithStyle:UITableViewStyleGrouped];
-	Item *item = [[[category items] allObjects] objectAtIndex:(indexPath.row - 1)];
+	Item *item = [[category itemsByLastUpdated] objectAtIndex:(indexPath.row - 1)];
 	
 	[controller setItem:item];
 	[controller setManagedObjectContext:managedObjectContext];
@@ -199,9 +198,18 @@
 			[activeTextField resignFirstResponder];
 		}
 		
-		Item *item = [[[category items] allObjects] objectAtIndex:(indexPath.row - 1)];
+		Item *item = [[category itemsByLastUpdated] objectAtIndex:(indexPath.row - 1)];
 		
 		[category removeItemsObject:item];
+		[managedObjectContext deleteObject:item];
+		
+		NSError *error;
+		
+		if (![managedObjectContext save:&error]) {
+			// TODO: Handle the error
+			NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+			exit(-1);
+		}
 		
 		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
 		
@@ -221,7 +229,7 @@
 	if (indexPath.section == 0) {
 		[category setName:newValue];
 	} else {
-		Item *item = (Item *)[[[category items] allObjects] objectAtIndex:(indexPath.row - 1)];
+		Item *item = (Item *)[[category itemsByLastUpdated] objectAtIndex:(indexPath.row - 1)];
 		
 		[item setName:newValue];
 	}

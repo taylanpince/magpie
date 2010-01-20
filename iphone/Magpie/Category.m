@@ -85,4 +85,11 @@
 	return averageTotal / [self.items count];
 }
 
+- (NSArray *)itemsByLastUpdated {
+	NSSortDescriptor *sorter = [[[NSSortDescriptor alloc] initWithKey:@"lastUpdated" ascending:NO] autorelease];
+	NSArray *sortedItems = [[self.items allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sorter, nil]];
+	
+	return sortedItems;
+}
+
 @end

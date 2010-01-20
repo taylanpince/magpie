@@ -207,6 +207,8 @@ static UIFont *largeFont = nil;
 		
 		if ([display.type isEqualToString:@"Horizontal Bar Chart"]) {
 			for (Item *item in display.category.items) {
+				[textColor set];
+				
 				textSize = [[item.name uppercaseString] drawAtPoint:point forWidth:rect.size.width - 100.0 withFont:mainFont lineBreakMode:UILineBreakModeTailTruncation];
 
 				[[textColor colorWithAlphaComponent:0.5] set];
@@ -228,6 +230,8 @@ static UIFont *largeFont = nil;
 			
 			for (Item *item in sortedItems) {
 				point.x = (counter % 2 == 0) ? rect.origin.x + 10.0 : point.x + (rect.size.width - 20.0) / 2;
+				
+				[textColor set];
 				
 				totalText = [NSString stringWithFormat:@"%1.2f", item.total];
 				totalSize = [totalText sizeWithFont:smallFont forWidth:40.0 lineBreakMode:UILineBreakModeTailTruncation];
@@ -252,7 +256,9 @@ static UIFont *largeFont = nil;
 			
 			for (Item *item in sortedItems) {
 				point.x = (counter % 2 == 0) ? rect.origin.x + 10.0 : point.x + (rect.size.width - 20.0) / 2;
-				 
+				
+				[textColor set];
+				
 				totalText = [NSString stringWithFormat:@"%1.2f", item.total];
 				totalSize = [totalText sizeWithFont:smallFont forWidth:40.0 lineBreakMode:UILineBreakModeTailTruncation];
 				textSize = [[item.name uppercaseString] drawAtPoint:CGPointMake(point.x + 20.0, point.y) forWidth:(rect.size.width - 20.0) / 2 - totalSize.width - 30.0 withFont:mediumFont lineBreakMode:UILineBreakModeTailTruncation];
@@ -364,6 +370,8 @@ static UIFont *largeFont = nil;
 			for (Item *item in sortedItems) {
 				point.x = (counter % 2 == 0) ? rect.origin.x + 10.0 : point.x + (rect.size.width - 20.0) / 2;
 				
+				[textColor set];
+				
 				totalText = [NSString stringWithFormat:@"%1.2f", item.total];
 				totalSize = [totalText sizeWithFont:smallFont forWidth:40.0 lineBreakMode:UILineBreakModeTailTruncation];
 				textSize = [[item.name uppercaseString] drawAtPoint:CGPointMake(point.x + 20.0, point.y) forWidth:(rect.size.width - 20.0) / 2 - totalSize.width - 30.0 withFont:mediumFont lineBreakMode:UILineBreakModeTailTruncation];
@@ -412,6 +420,8 @@ static UIFont *largeFont = nil;
 			
 			for (Item *item in sortedItems) {
 				point.x = (counter % 2 == 0) ? rect.origin.x + 10.0 : point.x + (rect.size.width - 20.0) / 2;
+				
+				[textColor set];
 				
 				totalText = [NSString stringWithFormat:@"%1.2f", item.total];
 				totalSize = [totalText sizeWithFont:smallFont forWidth:40.0 lineBreakMode:UILineBreakModeTailTruncation];

@@ -146,14 +146,17 @@
 	
 	[cell setDisplay:display];
 	[cell setStatImage:[self requestImageForDisplay:display withIndex:indexPath.row]];
-	/*[cell.textLabel setText:display.name];
-	[cell.detailTextLabel setText:[NSString stringWithFormat:@"%1.2f", display.category.total]];*/
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	Display *display = [fetchedResultsController objectAtIndexPath:indexPath];
 	
-	return [display heightForDisplay];
+	if (display) {
+		return [display heightForDisplay];
+	} else {
+		return 0.0;
+	}
+
 }
 
 - (void)hideTutorial {

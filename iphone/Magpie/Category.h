@@ -37,6 +37,7 @@
 - (Item *)latestItem;
 - (Item *)largestItem;
 - (Entry *)largestEntry;
+- (NSArray *)itemsByLastUpdated;
 
 - (double)totalForDay:(NSDate *)day;
 - (double)totalForMonth:(NSDate *)month;
