@@ -301,9 +301,10 @@
 	
 	[controller setDelegate:self];
 	[controller setManagedObjectContext:managedObjectContext];
-	[controller setItem:[[[(Category *)[[[fetchedResultsController fetchedObjects] objectAtIndex:0] category] items] allObjects] objectAtIndex:0]];
 	
-	// TODO: Use [tableView visibleCells] to figure out which display to use for the entry panel
+	Display *topDisplay = [(DisplayTableViewCell *)[[tableView visibleCells] objectAtIndex:0] display];
+	
+	[controller setItem:[[topDisplay.category.items allObjects] objectAtIndex:0]];
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
 	
