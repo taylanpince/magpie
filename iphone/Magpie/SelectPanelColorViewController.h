@@ -9,13 +9,13 @@
 @protocol SelectPanelColorViewControllerDelegate;
 
 @interface SelectPanelColorViewController : UITableViewController {
-	NSMutableString *panelColor;
+	NSString *panelColor;
 	NSArray *panelColors;
 	
 	id <SelectPanelColorViewControllerDelegate> delegate;
 }
 
-@property (nonatomic, assign) NSMutableString *panelColor;
+@property (nonatomic, assign) NSString *panelColor;
 @property (nonatomic, retain) NSArray *panelColors;
 
 @property (nonatomic, assign) id <SelectPanelColorViewControllerDelegate> delegate;

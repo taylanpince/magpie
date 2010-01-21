@@ -171,7 +171,7 @@
 		case 2: {
 			SelectPanelTypeViewController *controller = [[SelectPanelTypeViewController alloc] initWithStyle:UITableViewStyleGrouped];
 			
-			[controller setPanelType:[[display.type mutableCopy] autorelease]];
+			[controller setPanelType:display.type];
 			[controller setDelegate:self];
 			
 			[self.navigationController pushViewController:controller animated:YES];
@@ -182,7 +182,7 @@
 		case 3: {
 			SelectPanelColorViewController *controller = [[SelectPanelColorViewController alloc] initWithStyle:UITableViewStyleGrouped];
 			
-			[controller setPanelColor:[[display.color mutableCopy] autorelease]];
+			[controller setPanelColor:display.color];
 			[controller setDelegate:self];
 			
 			[self.navigationController pushViewController:controller animated:YES];

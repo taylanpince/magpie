@@ -15,22 +15,20 @@
 	NSFetchedResultsController *categoriesFetchedResultsController;
 	NSManagedObjectContext *managedObjectContext;
 	
-	id <FlipsideViewControllerDelegate> delegate;
-	
 	HelpView *helpView;
-	
 	BOOL changeIsUserDriven;
+	
+	id <FlipsideViewControllerDelegate> delegate;
 }
 
 @property (nonatomic, retain) NSFetchedResultsController *displaysFetchedResultsController;
 @property (nonatomic, retain) NSFetchedResultsController *categoriesFetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
-@property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
-
 @property (nonatomic, retain) HelpView *helpView;
-
 @property (nonatomic, assign) BOOL changeIsUserDriven;
+
+@property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
 
 @end
 

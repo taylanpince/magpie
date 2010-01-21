@@ -9,13 +9,13 @@
 @protocol SelectPanelTypeViewControllerDelegate;
 
 @interface SelectPanelTypeViewController : UITableViewController {
-	NSMutableString *panelType;
+	NSString *panelType;
 	NSArray *panelTypes;
 	
 	id <SelectPanelTypeViewControllerDelegate> delegate;
 }
 
-@property (nonatomic, assign) NSMutableString *panelType;
+@property (nonatomic, assign) NSString *panelType;
 @property (nonatomic, retain) NSArray *panelTypes;
 
 @property (nonatomic, assign) id <SelectPanelTypeViewControllerDelegate> delegate;

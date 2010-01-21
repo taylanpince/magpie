@@ -194,6 +194,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	changeIsUserDriven = YES;
+	
 	if (indexPath.section == 0) {
 		CategoryViewController *controller = [[CategoryViewController alloc] initWithStyle:UITableViewStyleGrouped];
 		
@@ -219,6 +221,8 @@
 		
 		[controller release];
 	}
+	
+	changeIsUserDriven = NO;
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {

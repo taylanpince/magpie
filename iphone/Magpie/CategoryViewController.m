@@ -48,10 +48,9 @@
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 	
-	// TODO: Check to see if the object has been inserted or not
-	/*if ([category ]) {
+	if ([[category objectID] isTemporaryID]) {
 		[self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
-	}*/
+	}
 }
 
 - (void)save:(id)sender {
@@ -69,12 +68,10 @@
 		exit(-1);
 	}
 	
-	// TODO: Make delegate call so context can be merged
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)cancel:(id)sender {
-	// TODO: Make delegate call with no merging
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
