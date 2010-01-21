@@ -16,7 +16,7 @@
 
 
 @interface FlipsideViewController (PrivateMethods)
-- (NSFetchedResultsController *)generateFetchedResultsControllerForModel:(NSString *)model withSortKey:(NSString *)sortKey;
+- (NSFetchedResultsController *)generateFetchedResultsControllerForModel:(NSString *)model withSortKey:(NSString *)sortKey withOrderAscending:(BOOL)ascending;
 - (void)configureCell:(InfoTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
@@ -321,13 +321,13 @@
 	}
 }
 
-- (NSFetchedResultsController *)generateFetchedResultsControllerForModel:(NSString *)model withSortKey:(NSString *)sortKey {
+- (NSFetchedResultsController *)generateFetchedResultsControllerForModel:(NSString *)model withSortKey:(NSString *)sortKey withOrderAscending:(BOOL)ascending {
 	NSFetchRequest *request = [[NSFetchRequest alloc] init];
 	NSEntityDescription *entity = [NSEntityDescription entityForName:model inManagedObjectContext:managedObjectContext];
 	
 	[request setEntity:entity];
 	
-	NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:sortKey ascending:NO];
+	NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:sortKey ascending:ascending];
 	NSArray *sorters = [[NSArray alloc] initWithObjects:sorter, nil];
 	
 	[request setSortDescriptors:sorters];
@@ -346,7 +346,7 @@
 		return categoriesFetchedResultsController;
 	}
 	
-	NSFetchedResultsController *controller = [self generateFetchedResultsControllerForModel:@"Category" withSortKey:@"name"];
+	NSFetchedResultsController *controller = [self generateFetchedResultsControllerForModel:@"Category" withSortKey:@"name" withOrderAscending:NO];
 	
 	self.categoriesFetchedResultsController = controller;
 	self.categoriesFetchedResultsController.delegate = self;
@@ -359,7 +359,7 @@
 		return displaysFetchedResultsController;
 	}
 	
-	NSFetchedResultsController *controller = [self generateFetchedResultsControllerForModel:@"Display" withSortKey:@"weight"];
+	NSFetchedResultsController *controller = [self generateFetchedResultsControllerForModel:@"Display" withSortKey:@"weight" withOrderAscending:YES];
 	
 	self.displaysFetchedResultsController = controller;
 	self.displaysFetchedResultsController.delegate = self;

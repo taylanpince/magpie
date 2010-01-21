@@ -13,7 +13,7 @@
 
 @class HelpView;
 
-@interface MainViewController : UIViewController <UITableViewDelegate, UIScrollViewDelegate, UITableViewDataSource, FlipsideViewControllerDelegate, QuickEntryViewControllerDelegate, IntroViewControllerDelegate, StatOperationDelegate> {
+@interface MainViewController : UIViewController <UITableViewDelegate, UIScrollViewDelegate, UITableViewDataSource, FlipsideViewControllerDelegate, QuickEntryViewControllerDelegate, IntroViewControllerDelegate, StatOperationDelegate, NSFetchedResultsControllerDelegate> {
 	IBOutlet UITableView *tableView;
 	IBOutlet UIBarButtonItem *quickEntryButton;
 	

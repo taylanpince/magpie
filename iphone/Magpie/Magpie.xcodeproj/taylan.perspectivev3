@@ -288,7 +288,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 92}, {262, 764}}</string>
+							<string>{{0, 0}, {262, 764}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -335,7 +335,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>EC9DFEC111079341009F7145</string>
+										<string>EC5545CF1108BE3A0075E96A</string>
 										<key>history</key>
 										<array>
 											<string>EC309FBA1003BDC100A0C623</string>
@@ -384,7 +384,6 @@
 											<string>ECCEF15C10D5BDAF00351CCC</string>
 											<string>ECCEF15D10D5BDAF00351CCC</string>
 											<string>ECCEF1B910D5C17B00351CCC</string>
-											<string>ECECE40A10D84D3600A8E051</string>
 											<string>ECECE42C10D85C5400A8E051</string>
 											<string>ECF3625410E271C800EE5FBD</string>
 											<string>ECF3625910E271C800EE5FBD</string>
@@ -402,15 +401,16 @@
 											<string>EC9DFD1B11076C27009F7145</string>
 											<string>EC9DFD3011076C8F009F7145</string>
 											<string>EC9DFDA911077A2D009F7145</string>
-											<string>EC9DFDF611078354009F7145</string>
-											<string>EC9DFDF711078354009F7145</string>
 											<string>EC9DFE7311078D78009F7145</string>
 											<string>EC9DFE7411078D78009F7145</string>
 											<string>EC9DFE7511078D78009F7145</string>
-											<string>EC9DFE7611078D78009F7145</string>
-											<string>EC9DFE7E11078DFA009F7145</string>
 											<string>EC9DFEB911079307009F7145</string>
-											<string>EC9DFEC011079341009F7145</string>
+											<string>EC55451F1108B8450075E96A</string>
+											<string>EC55455C1108BB080075E96A</string>
+											<string>EC5545BE1108BD280075E96A</string>
+											<string>EC5545BF1108BD280075E96A</string>
+											<string>EC5545C01108BD280075E96A</string>
+											<string>EC5545CE1108BE330075E96A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -533,11 +533,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC9DFCB31107441E009F7145</string>
+				<string>EC5544DD1108B64D0075E96A</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>EC9DFCB41107441E009F7145</string>
+				<string>EC5544DE1108B64D0075E96A</string>
 				<string>EC89595110016E400009E0DF</string>
-				<string>EC9DFCB51107441E009F7145</string>
+				<string>EC5544DF1108B64D0075E96A</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -686,14 +686,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EC9DFCC911076107009F7145</string>
+				<string>EC5544E01108B64D0075E96A</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>EC9DFCCA11076107009F7145</string>
-				<string>EC9DFCCB11076107009F7145</string>
-				<string>EC9DFCCC11076107009F7145</string>
-				<string>EC9DFCCD11076107009F7145</string>
-				<string>EC89595110016E400009E0DF</string>
+				<string>EC5544E11108B64D0075E96A</string>
+				<string>EC5544E21108B64D0075E96A</string>
+				<string>EC5544E31108B64D0075E96A</string>
+				<string>EC5544E41108B64D0075E96A</string>
+				<string>EC5544E51108B64D0075E96A</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
 			<string>2</string>
@@ -725,8 +725,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>EC9DFCD2110761C7009F7145</string>
-		<string>EC9DFCCF11076107009F7145</string>
+		<string>EC5544F41108B7940075E96A</string>
+		<string>EC5544EB1108B7580075E96A</string>
 		<string>/Users/taylan/Documents/Development/Personal/magpie/iphone/Magpie/Magpie.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

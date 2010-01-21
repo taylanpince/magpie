@@ -271,7 +271,6 @@
 
 - (void)didCloseQuickEntryView {
 	[self dismissModalViewControllerAnimated:YES];
-	[self reloadAllCells];
 }
 
 - (void)didCloseIntroView {
@@ -280,7 +279,6 @@
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
 	[self dismissModalViewControllerAnimated:YES];
-	[self reloadAllCells];
 }
 
 - (IBAction)showSettings {
@@ -346,7 +344,7 @@
 	
 	[request setEntity:entity];
 	
-	NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"weight" ascending:NO];
+	NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"weight" ascending:YES];
 	NSArray *sorters = [[NSArray alloc] initWithObjects:sorter, nil];
 	
 	[request setSortDescriptors:sorters];
@@ -354,6 +352,7 @@
 	NSFetchedResultsController *controller = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:@"Root"];
 	
 	self.fetchedResultsController = controller;
+	self.fetchedResultsController.delegate = self;
 	
 	[sorter release];
 	[sorters release];
@@ -361,6 +360,43 @@
 	[controller release];
 	
 	return fetchedResultsController;
+}
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+	[self.tableView beginUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+	switch(type) {
+		case NSFetchedResultsChangeInsert:
+			[self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+		case NSFetchedResultsChangeDelete:
+			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+		case NSFetchedResultsChangeUpdate:
+			[self configureCell:(DisplayTableViewCell *)[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+			break;
+		case NSFetchedResultsChangeMove:
+			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+			[self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+	}
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+	switch(type) {
+		case NSFetchedResultsChangeInsert:
+			[self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+		case NSFetchedResultsChangeDelete:
+			[self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+	}
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+	[self.tableView endUpdates];
 }
 
 - (void)didReceiveMemoryWarning {

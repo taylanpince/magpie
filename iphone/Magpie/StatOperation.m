@@ -162,9 +162,9 @@
 		int counter = 0;
 		
 		if ([display.type isEqualToString:@"Horizontal Bar Chart"] && !self.isCancelled) {
+			point.y += 22.0;
+			
 			for (Item *item in display.category.items) {
-				point.y += 20.0;
-				
 				CGContextSetFillColorWithColor(context, [[panelColor colorWithAlphaComponent:0.5] CGColor]);
 				CGContextAddRect(context, CGRectMake(point.x, point.y, rect.size.width - 20.0, 10.0));
 				CGContextFillPath(context);
@@ -173,7 +173,7 @@
 				CGContextAddRect(context, CGRectMake(point.x, point.y, ((rect.size.width - 20.0) * item.percentage / 100.0), 10.0));
 				CGContextFillPath(context);
 				
-				point.y += 18.0;
+				point.y += 40.0;
 				
 				counter++;
 			}
