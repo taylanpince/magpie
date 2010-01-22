@@ -8,11 +8,12 @@
 
 #import "SelectCategoryViewController.h"
 #import "Category.h"
+#import "Display.h"
 
 
 @implementation SelectCategoryViewController
 
-@synthesize category, delegate, fetchedResultsController, managedObjectContext;
+@synthesize display, delegate, fetchedResultsController, managedObjectContext;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -51,7 +52,7 @@
     
 	Category *cellCategory = [fetchedResultsController objectAtIndexPath:indexPath];
 	
-	if (cellCategory == category) {
+	if (cellCategory == display.category) {
 		[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
 	}
 	
@@ -61,7 +62,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	[delegate didUpdateCategory:[fetchedResultsController objectAtIndexPath:indexPath]];
+	[display setCategory:[fetchedResultsController objectAtIndexPath:indexPath]];
+	[delegate didUpdateCategory];
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -93,7 +95,7 @@
 }
 
 - (void)dealloc {
-	[category release];
+	[display release];
 	[fetchedResultsController release];
 	[managedObjectContext release];
     [super dealloc];

@@ -114,8 +114,11 @@ static UIFont *largeFont = nil;
 		
 		[imageView setImage:statImage];
 		[imageView sizeToFit];
-		[self setNeedsLayout];
+	} else {
+		hasImage = NO;
 	}
+	
+	[self setNeedsLayout];
 }
 
 - (void)setFrame:(CGRect)rect {
@@ -133,9 +136,11 @@ static UIFont *largeFont = nil;
 	[contentView setNeedsDisplay];
 	
 	if (!hasImage) {
-		[activityIndicator setFrame:CGRectMake(50.0, 50.0, activityIndicator.frame.size.width, activityIndicator.frame.size.height)];
+		[imageView setHidden:YES];
+		[activityIndicator setFrame:CGRectMake(self.frame.size.width / 2, self.frame.size.height / 2, activityIndicator.frame.size.width, activityIndicator.frame.size.height)];
 		[activityIndicator startAnimating];
 	} else {
+		[imageView setHidden:NO];
 		[activityIndicator stopAnimating];
 	}
 
@@ -307,7 +312,13 @@ static UIFont *largeFont = nil;
 			NSString *entryName;
 			
 			if ([display.type isEqualToString:@"Latest Entry Type"]) {
-				entryName = [[display.category latestItem] name];
+				Item *latestItem = [display.category latestItem];
+				
+				if (latestItem != nil) {
+					entryName = [latestItem name];
+				} else {
+					entryName = @"N/A";
+				}
 			} else if ([display.type isEqualToString:@"Largest Entry Type"]) {
 				entryName = [[display.category largestItem] name];
 			}

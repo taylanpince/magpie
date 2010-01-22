@@ -54,7 +54,13 @@
 		NSNumber *numberValue;
 		
 		if ([self.type isEqualToString:@"Latest Entry as Words"]) {
-			numberValue = [[[self.category latestItem] latestEntry] value];
+			Item *latestItem = [self.category latestItem];
+			
+			if (latestItem != nil) {
+				numberValue = [[latestItem latestEntry] value];
+			} else {
+				numberValue = [NSNumber numberWithInt:0];
+			}
 		} else if ([self.type isEqualToString:@"Largest Entry as Numbers"]) {
 			numberValue = [[self.category largestEntry] value];
 		}
@@ -66,7 +72,13 @@
 		NSString *entryName;
 		
 		if ([self.type isEqualToString:@"Latest Entry Type"]) {
-			entryName = [[self.category latestItem] name];
+			Item *latestItem = [self.category latestItem];
+			
+			if (latestItem != nil) {
+				entryName = [latestItem name];
+			} else {
+				entryName = @"N/A";
+			}
 		} else if ([self.type isEqualToString:@"Largest Entry Type"]) {
 			entryName = [[self.category largestItem] name];
 		}

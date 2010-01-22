@@ -159,7 +159,7 @@
 		case 1: {
 			SelectCategoryViewController *controller = [[SelectCategoryViewController alloc] initWithStyle:UITableViewStyleGrouped];
 			
-			[controller setCategory:display.category];
+			[controller setDisplay:display];
 			[controller setManagedObjectContext:managedObjectContext];
 			[controller setDelegate:self];
 			
@@ -211,8 +211,7 @@
 	}
 }
 
-- (void)didUpdateCategory:(Category *)newCategory {
-	[self.display setCategory:newCategory];
+- (void)didUpdateCategory {
 	[self.tableView reloadData];
 	
 	if (![self.display.name isEqualToString:@""] && ![self.display.type isEqualToString:@""]) {

@@ -8,10 +8,10 @@
 
 @protocol SelectCategoryViewControllerDelegate;
 
-@class Category;
+@class Display;
 
 @interface SelectCategoryViewController : UITableViewController {
-	Category *category;
+	Display *display;
 	
 	NSFetchedResultsController *fetchedResultsController;
 	NSManagedObjectContext *managedObjectContext;
@@ -19,7 +19,7 @@
 	id <SelectCategoryViewControllerDelegate> delegate;
 }
 
-@property (nonatomic, assign) Category *category;
+@property (nonatomic, retain) Display *display;
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
@@ -29,5 +29,5 @@
 @end
 
 @protocol SelectCategoryViewControllerDelegate
-- (void)didUpdateCategory:(Category *)newCategory;
+- (void)didUpdateCategory;
 @end

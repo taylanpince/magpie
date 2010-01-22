@@ -271,6 +271,7 @@
 
 - (void)didCloseQuickEntryView {
 	[self dismissModalViewControllerAnimated:YES];
+	[self reloadAllCells];
 }
 
 - (void)didCloseIntroView {

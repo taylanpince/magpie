@@ -15,7 +15,7 @@
 	id <SelectPanelTypeViewControllerDelegate> delegate;
 }
 
-@property (nonatomic, assign) NSString *panelType;
+@property (nonatomic, retain) NSString *panelType;
 @property (nonatomic, retain) NSArray *panelTypes;
 
 @property (nonatomic, assign) id <SelectPanelTypeViewControllerDelegate> delegate;

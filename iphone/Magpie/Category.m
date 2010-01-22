@@ -32,7 +32,13 @@
 	NSSortDescriptor *sorter = [[[NSSortDescriptor alloc] initWithKey:@"lastUpdated" ascending:YES] autorelease];
 	NSArray *sortedItems = [[self.items allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sorter, nil]];
 	
-	return [sortedItems lastObject];
+	for (Item *item in sortedItems) {
+		if ([item total] > 0) {
+			return item;
+		}
+	}
+	
+	return nil;
 }
 
 - (Item *)largestItem {

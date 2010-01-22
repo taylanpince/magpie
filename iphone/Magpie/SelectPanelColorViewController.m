@@ -78,6 +78,7 @@
 }
 
 - (void)dealloc {
+	[panelColor release];
 	[panelColors release];
     [super dealloc];
 }

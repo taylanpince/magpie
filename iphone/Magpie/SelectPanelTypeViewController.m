@@ -86,6 +86,7 @@
 }
 
 - (void)dealloc {
+	[panelType release];
 	[panelTypes release];
     [super dealloc];
 }

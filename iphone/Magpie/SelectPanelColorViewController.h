@@ -15,7 +15,7 @@
 	id <SelectPanelColorViewControllerDelegate> delegate;
 }
 
-@property (nonatomic, assign) NSString *panelColor;
+@property (nonatomic, retain) NSString *panelColor;
 @property (nonatomic, retain) NSArray *panelColors;
 
 @property (nonatomic, assign) id <SelectPanelColorViewControllerDelegate> delegate;
