@@ -18,13 +18,14 @@
 @interface FlipsideViewController (PrivateMethods)
 - (NSFetchedResultsController *)generateFetchedResultsControllerForModel:(NSString *)model withSortKey:(NSString *)sortKey withOrderAscending:(BOOL)ascending;
 - (void)configureCell:(InfoTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void)scratchContextDidSave:(NSNotification*)saveNotification;
 @end
 
 
 @implementation FlipsideViewController
 
 @synthesize delegate, helpView, changeIsUserDriven;
-@synthesize displaysFetchedResultsController, categoriesFetchedResultsController, managedObjectContext;
+@synthesize displaysFetchedResultsController, categoriesFetchedResultsController, managedObjectContext, scratchObjectContext;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -211,10 +212,21 @@
 	} else {
 		DisplayViewController *controller = [[DisplayViewController alloc] initWithStyle:UITableViewStyleGrouped];
 		
-		[controller setManagedObjectContext:managedObjectContext];
+		[controller setDelegate:self];
 		
 		if (indexPath.row < [[displaysFetchedResultsController fetchedObjects] count]) {
 			[controller setDisplay:[[displaysFetchedResultsController fetchedObjects] objectAtIndex:indexPath.row]];
+			[controller setManagedObjectContext:managedObjectContext];
+		} else {
+			NSManagedObjectContext *scratchContext = [[NSManagedObjectContext alloc] init];
+			
+			self.scratchObjectContext = scratchContext;
+			
+			[scratchContext release];
+			
+			[scratchObjectContext setPersistentStoreCoordinator:[managedObjectContext persistentStoreCoordinator]];
+			
+			[controller setManagedObjectContext:scratchObjectContext];
 		}
 		
 		[self.navigationController pushViewController:controller animated:YES];
@@ -437,6 +449,45 @@
 	[self.tableView endUpdates];
 }
 
+- (void)displayViewController:(DisplayViewController *)controller didFinishWithSave:(BOOL)save inScratch:(BOOL)scratch {
+	if (scratch) {
+		if (save) {
+			NSNotificationCenter *dnc = [NSNotificationCenter defaultCenter];
+			
+			[dnc addObserver:self selector:@selector(scratchContextDidSave:) name:NSManagedObjectContextDidSaveNotification object:scratchObjectContext];
+			
+			NSError *error;
+			
+			if (![scratchObjectContext save:&error]) {
+				NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+				exit(-1);
+			}
+			
+			[dnc removeObserver:self name:NSManagedObjectContextDidSaveNotification object:scratchObjectContext];
+		}
+		
+		self.scratchObjectContext = nil;
+	} else {
+		if (save) {
+			NSError *error;
+			
+			if (![managedObjectContext save:&error]) {
+				// TODO: Handle the error
+				NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+				exit(-1);
+			}
+		} else {
+			[managedObjectContext rollback];
+		}
+	}
+	
+	[self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)scratchContextDidSave:(NSNotification*)saveNotification {
+	[managedObjectContext mergeChangesFromContextDidSaveNotification:saveNotification];	
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 	
@@ -446,6 +497,7 @@
 
 - (void)dealloc {
 	[managedObjectContext release];
+	[scratchObjectContext release];
 	[displaysFetchedResultsController release];
 	[categoriesFetchedResultsController release];
 	

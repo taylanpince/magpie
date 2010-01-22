@@ -6,14 +6,17 @@
 //  Copyright Hippo Foundry 2009. All rights reserved.
 //
 
+#import "DisplayViewController.h"
+
 @class HelpView;
 
 @protocol FlipsideViewControllerDelegate;
 
-@interface FlipsideViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
+@interface FlipsideViewController : UITableViewController <NSFetchedResultsControllerDelegate, DisplayViewControllerDelegate> {
 	NSFetchedResultsController *displaysFetchedResultsController;
 	NSFetchedResultsController *categoriesFetchedResultsController;
 	NSManagedObjectContext *managedObjectContext;
+	NSManagedObjectContext *scratchObjectContext;
 	
 	HelpView *helpView;
 	BOOL changeIsUserDriven;
@@ -24,6 +27,7 @@
 @property (nonatomic, retain) NSFetchedResultsController *displaysFetchedResultsController;
 @property (nonatomic, retain) NSFetchedResultsController *categoriesFetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain) NSManagedObjectContext *scratchObjectContext;
 
 @property (nonatomic, retain) HelpView *helpView;
 @property (nonatomic, assign) BOOL changeIsUserDriven;

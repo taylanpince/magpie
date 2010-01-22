@@ -13,12 +13,16 @@
 
 @class Display;
 
+@protocol DisplayViewControllerDelegate;
+
 @interface DisplayViewController : UITableViewController <EditableTableViewCellDelegate, SelectCategoryViewControllerDelegate, SelectPanelTypeViewControllerDelegate, SelectPanelColorViewControllerDelegate> {
 	Display *display;
 	
 	NSManagedObjectContext *managedObjectContext;
 	
 	UITextField *activeTextField;
+	
+	id <DisplayViewControllerDelegate> delegate;
 }
 
 @property (nonatomic, retain) Display *display;
@@ -27,4 +31,10 @@
 
 @property (nonatomic, assign) UITextField *activeTextField;
 
+@property (nonatomic, assign) id <DisplayViewControllerDelegate> delegate;
+
+@end
+
+@protocol DisplayViewControllerDelegate
+- (void)displayViewController:(DisplayViewController *)controller didFinishWithSave:(BOOL)save inScratch:(BOOL)scratch;
 @end

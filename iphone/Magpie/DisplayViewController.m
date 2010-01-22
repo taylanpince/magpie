@@ -19,7 +19,7 @@
 @implementation DisplayViewController
 
 @synthesize display, activeTextField;
-@synthesize managedObjectContext;
+@synthesize managedObjectContext, delegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,21 +54,15 @@
 		[activeTextField resignFirstResponder];
 	}
 	
-	NSError *error;
-	
-	if (![managedObjectContext save:&error]) {
-		// TODO: Update to handle the error appropriately.
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		exit(-1);  // Fail
-	}
-	
-	// TODO: Make delegate call so context can be merged
-	[self.navigationController popViewControllerAnimated:YES];
+	[delegate displayViewController:self didFinishWithSave:YES inScratch:[[display objectID] isTemporaryID]];
 }
 
 - (void)cancel:(id)sender {
-	// TODO: Make delegate call to cancel
-	[self.navigationController popViewControllerAnimated:YES];
+	if (activeTextField) {
+		[activeTextField resignFirstResponder];
+	}
+	
+	[delegate displayViewController:self didFinishWithSave:NO inScratch:[[display objectID] isTemporaryID]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -113,7 +107,7 @@
 			case 1:
 				[cell.titleLabel setText:@"Category"];
 				
-				if (display.category) {
+				if (display.category != nil) {
 					[cell.dataLabel setText:display.category.name];
 					[cell setBlank:NO];
 				} else {
@@ -125,7 +119,7 @@
 			case 2:
 				[cell.titleLabel setText:@"Type"];
 				
-				if (display.type) {
+				if (display.type != nil) {
 					[cell.dataLabel setText:display.type];
 					[cell setBlank:NO];
 				} else {
@@ -137,7 +131,7 @@
 			case 3:
 				[cell.titleLabel setText:@"Color"];
 				
-				if (display.color) {
+				if (display.color != nil) {
 					[cell.dataLabel setText:display.color];
 					[cell setBlank:NO];
 				} else {
